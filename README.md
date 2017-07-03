@@ -1,6 +1,6 @@
 # The Buildkite Site
 
-The Buildkite public website, built with [Next.js](https://github.com/zeit/next.js/)
+The Buildkite public website, built with [Next.js](https://github.com/zeit/next.js/) 🐶
 
 ## Get started
 
