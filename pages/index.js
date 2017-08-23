@@ -1,3 +1,10 @@
+import styled from 'styled-components'
+
+const Title = styled.h1`
+  color: red;
+  font-size: 50px;
+`
+
 export default () => (
-  <div>oh hai world</div>
+  <Title>oh hai world</Title>
 )
