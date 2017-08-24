@@ -2,6 +2,5 @@ steps:
   - command: yarn test
     label: ":jest:"
     plugins:
-      docker-compose#v1.3.2:
+      docker-compose#v1.5.1:
         run: site
-        config: .buildkite/docker-compose.yml
