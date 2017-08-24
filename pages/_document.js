@@ -1,6 +1,7 @@
 
 import Document, { Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import { ServerStyleSheet, ThemeProvider } from 'styled-components'
+import theme from '../theme'
 
 export default class MyDocument extends Document {
   render () {
@@ -8,18 +9,21 @@ export default class MyDocument extends Document {
     const main = sheet.collectStyles(<Main />)
     const styleTags = sheet.getStyleElement()
     return (
-      <html>
-        <Head>
-          <title>Buildkite</title>
-          {styleTags}
-        </Head>
-        <body>
-          <div className='root'>
-            {main}
-          </div>
-          <NextScript />
-        </body>
-      </html>
+      <ThemeProvider theme={theme}>
+        <html>
+          <Head>
+            <title>Buildkite</title>
+            <style>{theme.root}</style>
+            {styleTags}
+          </Head>
+          <body>
+            <div className='root'>
+              {main}
+            </div>
+            <NextScript />
+          </body>
+        </html>
+      </ThemeProvider>
     )
   }
 }
