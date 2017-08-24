@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import * as theme from '../theme';
 
 const Title = styled.h1`
-  ${props => props.theme.mainCallout}
+  ${theme.textStyles.mainCallout}
 `
 
 export default () => (

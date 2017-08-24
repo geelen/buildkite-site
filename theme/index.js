@@ -1,6 +1,27 @@
 import { css } from 'styled-components'
 
-const root = css`
+export const root = css`
+  @font-face {
+    font-family: BK-Circular;
+    src: url(/static/fonts/lineto-circular-book.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: BK-Circular;
+    src: url(/static/fonts/lineto-circular-bold.woff2) format("woff2");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: BK-Circular;
+    src: url(/static/fonts/lineto-circular-black.woff2) format("woff2");
+    font-weight: 900;
+    font-style: normal;
+  }
+  
   :root {
     font-family: BK-Circular, -apple-system, BlinkMacSystemFont;
     font-size: 18px;
@@ -12,9 +33,12 @@ const root = css`
     margin: 0;
     padding: 0;
   }
+  *, :after, :before {
+    box-sizing: border-box;
+  }
 `
 
-const innerSpacing = {
+export const innerSpacing = {
   s1: '20px',
   s2: '40px',
   negative: {
@@ -22,24 +46,24 @@ const innerSpacing = {
   },
 };
 
-const outerSpacing = {
+export const outerSpacing = {
   s1: '100px',
   s2: '150px',
   s3: '200px',
   s4: '300px',
 };
 
-const textSpacing = {
+export const textSpacing = {
   s1: '.5rem',
 };
 
-const maxWidthContainer = css`
+export const maxWidthContainer = css`
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
 `;
 
-const colors = {
+export const colors = {
   backgrounds: {
     black: '#333',
     blackHover: 'black',
@@ -54,31 +78,31 @@ const colors = {
   }
 };
 
-const textStyles = {
+export const textStyles = {
   mainCallout: css`
-    fontSize: 48px;
-    lineHeight: 1.1;
-    fontWeight: 900;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 900;
   `,
   bodyCopy: css`
-    fontSize: 18px;
+    font-size: 18px;
   `,
   bodyCopySmall: css`
-    fontSize: 16px;
+    font-size: 16px;
   `,
   bodyCopyLarge: css`
-    fontSize: 24px;
+    font-size: 24px;
   `,
   thirdLevelHeading: css`
-    fontSize: 24px;
-    fontWeight: bold;
+    font-size: 24px;
+    font-weight: bold;
   `
 }
 
-const button = {
+export const button = {
   normal: css`
     display: inline-block;
-    backgroundColor: ${colors.backgrounds.black};
+    background-color: ${colors.backgrounds.black};
     color: ${colors.text.white};
     padding-left: ${innerSpacing.s1},
     padding-right: ${innerSpacing.s1},
@@ -93,7 +117,7 @@ const button = {
   `
 }
 
-const grid = {
+export const grid = {
   container: css`
     display: flex;
     margin-left: ${innerSpacing.negative.s1};
@@ -108,22 +132,9 @@ const grid = {
   }
 }
 
-const images = {
+export const images = {
   screenshots: css`
     box-shadow: 0 4px 8px 2px rgba(0,0,0,.1),
                 0 0 2px rgba(0,0,0,.2)';
   `
-}
-
-export default {
-  root: root,
-  button: button,
-  colors: colors,
-  innerSpacing: innerSpacing,
-  outerSpacing: outerSpacing,
-  textSpacing: textSpacing,
-  maxWidthContainer: maxWidthContainer,
-  grid: grid,
-  textStyles: textStyles,
-  images: images
 }

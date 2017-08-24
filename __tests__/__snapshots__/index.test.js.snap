@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`With Snapshot Testing App shows "oh hai world" 1`] = `
-<div>
+<h1
+  className="sc-bdVaJa iLyilk"
+>
   oh hai world
-</div>
+</h1>
 `;
