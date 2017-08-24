@@ -5,7 +5,7 @@ The Buildkite public website, built with [Next.js](https://github.com/zeit/next.
 ## Get started
 
 ```shell
-yarn install && yarn dev
+yarn install && yarn start
 ```
 
 Or if you prefer Docker:
@@ -23,5 +23,5 @@ yarn test
 ## Building for production
 
 ```shell
-yarn build && yarn start
+yarn build && NODE_ENV=production yarn start
 ```

@@ -1,7 +1,7 @@
 
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import * as theme from '../theme';
+import * as theme from '../theme'
 
 export default class MyDocument extends Document {
   render () {

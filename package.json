@@ -16,7 +16,6 @@
   },
   "scripts": {
     "test": "jest",
-    "dev": "next",
     "build": "next build",
     "start": "node server.js"
   }
