@@ -1,6 +1,16 @@
 steps:
-  - command: yarn test
-    label: ":jest:"
+
+  - label: ":jest:"
+    command: yarn test
     plugins:
       docker-compose#v1.5.1:
         run: site
+
+  - wait
+
+  - label: ":docker: :rocket:"
+    branches: deploy-test
+    plugins:
+      docker-compose#v1.5.1:
+        push:
+          - site:$ECR_REPOSITORY:$BUILDKITE_BUILD_NUMBER
