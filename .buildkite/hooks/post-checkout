@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -euo pipefail
+
+aws s3 cp "s3://$FONTS_S3_BUCKET/fonts" static --recursive
