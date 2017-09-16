@@ -2,4 +2,6 @@
 
 set -euo pipefail
 
+echo "~~~ Copying fonts from S3"
+echo "$ aws s3 cp \"s3://$FONTS_S3_BUCKET/fonts\" static --recursive"
 aws s3 cp "s3://$FONTS_S3_BUCKET/fonts" static --recursive
