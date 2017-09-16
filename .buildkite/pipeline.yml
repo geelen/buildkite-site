@@ -9,7 +9,7 @@ steps:
   - wait
 
   - label: ":docker: :rocket:"
-    branches: deploy-test
+    branches: master
     plugins:
       ecr#v1.1.2:
         login: true
