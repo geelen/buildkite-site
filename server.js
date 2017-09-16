@@ -1,8 +1,19 @@
+const dev = process.env.NODE_ENV !== 'production'
+
+// First we do the module aliasing we need to use Preact
+const moduleAlias = require('module-alias')
+
+// For the development version, we'll use React.
+// Because, it support react hot loading and so on.
+if (!dev) {
+  moduleAlias.addAlias('react', 'preact-compat')
+  moduleAlias.addAlias('react-dom', 'preact-compat')
+}
+
+// No we do all the normal module require'ing
 const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
-
-const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
