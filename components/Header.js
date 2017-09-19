@@ -16,7 +16,6 @@ const HeaderWrapper = styled('header')`
   height: ${height};
   box-shadow: ${props => props.transparent ? '0 0 15px rgba(0, 0, 0, 0)' : '0 0 15px rgba(0, 0, 0, 0.1)'};
   padding: ${props => theme.innerSpacing.s1};
-  font-weight: bold;
   background-color: ${props => !props.transparent && 'white'};
   box-bizing: border-box;
   will-change: background-color, box-shadow;
@@ -41,11 +40,12 @@ const LinkAnchor = styled('a')`
   text-decoration: none;
   margin-left: ${props => props.right && theme.innerSpacing.s1};
   margin-right: ${props => props.left && theme.innerSpacing.s1};
+  font-weight: bold;
+  transition: color 300ms;
+  will-change: color;
   &:hover {
     color: ${props => props.light ? 'white' : theme.colors.text.green};
   }
-  transition: color 300ms;
-  will-change: color;
 `
 
 export default class Header extends React.PureComponent {
