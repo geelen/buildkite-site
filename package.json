@@ -21,7 +21,6 @@
   "scripts": {
     "test": "jest",
     "build": "next build",
-    "start": "node server.js",
-    "download-fonts": "./scripts/download-fonts"
+    "start": "node server.js"
   }
 }

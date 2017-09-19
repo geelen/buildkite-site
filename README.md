@@ -6,12 +6,16 @@ The Buildkite public website, built with [Next.js](https://github.com/zeit/next.
 
 ```shell
 yarn install && yarn start
+# Or with docker...
+# docker-compose up
 ```
 
-Or if you prefer Docker:
+## Testing in development
 
 ```shell
-docker-compose up
+yarn test
+# Or with docker...
+# docker-compose run site yarn test
 ```
 
 ## Downloading the fonts
@@ -19,17 +23,13 @@ docker-compose up
 If you have access to the S3 bucket:
 
 ```shell
-aws-vault exec buildkite-dev -- yarn run download-fonts
-```
-
-## Testing in development
-
-```shell
-yarn test
+aws-vault exec buildkite-dev -- ./scripts/download-fonts
 ```
 
 ## Building for production
 
 ```shell
 yarn build && NODE_ENV=production yarn start
+# Or with docker...
+# env NODE_ENV=production docker-compose up
 ```
