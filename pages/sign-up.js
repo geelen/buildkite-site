@@ -9,6 +9,6 @@ const Title = styled.h1`
 export default () => (
   <div>
     <Header transparent />
-    <Title>Sign Up</Title>
+    <Title>Get Started</Title>
   </div>
 )

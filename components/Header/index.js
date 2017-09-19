@@ -1,8 +1,8 @@
-import React from 'react'
 import Link from 'next/link'
 
-import * as theme from '../theme'
+import * as theme from '../../theme'
 import styled from 'styled-components'
+import LogoLink from './logo-link'
 
 export const height = '70px';
 
@@ -57,7 +57,7 @@ export default class Header extends React.PureComponent {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleWindowScroll);
+  window.addEventListener('scroll', this.handleWindowScroll);
   }
 
   componentWillUnmount() {
@@ -76,25 +76,25 @@ export default class Header extends React.PureComponent {
       <HeaderWrapper transparent={transparent} light={light}>
         <Content>
           <LinkContainer left>
-            <Link href="/features">
+            <Link prefetch href="/features">
               <LinkAnchor href="/features" left light={light}>Features</LinkAnchor>
             </Link>
-            <Link href="/screencasts">
+            <Link prefetch href="/screencasts">
               <LinkAnchor href="/screencasts" left light={light}>Screencasts</LinkAnchor>
             </Link>
-            <Link href="/support">
+            <Link prefetch href="/support">
               <LinkAnchor href="/support" left light={light}>Support</LinkAnchor>
             </Link>
           </LinkContainer>
-          <span>Logo</span>
+          <LogoLink/>
           <LinkContainer right>
-            <Link href="/pricing">
+            <Link prefetch href="/pricing">
               <LinkAnchor href="/pricing" right light={light}>Pricing</LinkAnchor>
             </Link>
-            <Link href="/login">
+            <Link prefetch href="/login">
               <LinkAnchor href="/login" right light={light}>Sign In</LinkAnchor>
             </Link>
-            <Link href="/sign-up">
+            <Link prefetch href="/sign-up">
               <LinkAnchor href="/sign-up" right light={light}>Get Started</LinkAnchor>
             </Link>
           </LinkContainer>
@@ -103,6 +103,7 @@ export default class Header extends React.PureComponent {
     );
   }
 
+  // TODO: debounce
   handleWindowScroll = () => {
     if (window.scrollY > scrollTransparencyThreshold) {
       if (!this.state.scrolled) {
