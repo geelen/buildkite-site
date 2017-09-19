@@ -14,6 +14,14 @@ Or if you prefer Docker:
 docker-compose up
 ```
 
+## Downloading the fonts
+
+If you have access to the S3 bucket:
+
+```shell
+aws-vault exec buildkite-dev -- yarn run download-fonts
+```
+
 ## Testing in development
 
 ```shell
