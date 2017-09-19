@@ -4,6 +4,8 @@ import * as theme from '../../theme'
 import styled from 'styled-components'
 import LogoLink from './logo-link'
 
+import throttle from 'raf-throttle'
+
 export const height = '70px';
 
 const scrollTransparencyThreshold = 60;
@@ -15,7 +17,7 @@ const HeaderWrapper = styled('header')`
   width: 100%;
   height: ${height};
   box-shadow: ${props => props.transparent ? '0 0 15px rgba(0, 0, 0, 0)' : '0 0 15px rgba(0, 0, 0, 0.1)'};
-  padding: ${props => theme.innerSpacing.s1};
+  padding: ${theme.innerSpacing.s1};
   background-color: ${props => !props.transparent && 'white'};
   box-bizing: border-box;
   will-change: background-color, box-shadow;
@@ -35,8 +37,7 @@ const LinkContainer = styled('div')`
 `;
 
 const LinkAnchor = styled('a')`
-  color: ${props => props.light ? '#eef' : 'black'};
-  mix-blend-mode: ${props => props.light && 'lighten'};
+  color: black;
   text-decoration: none;
   margin-left: ${props => props.right && theme.innerSpacing.s1};
   margin-right: ${props => props.left && theme.innerSpacing.s1};
@@ -44,7 +45,7 @@ const LinkAnchor = styled('a')`
   transition: color 300ms;
   will-change: color;
   &:hover {
-    color: ${props => props.light ? 'white' : theme.colors.text.green};
+    color: ${theme.colors.text.green};
   }
 `
 
@@ -57,7 +58,7 @@ export default class Header extends React.PureComponent {
   }
 
   componentDidMount() {
-  window.addEventListener('scroll', this.handleWindowScroll);
+    window.addEventListener('scroll', this.handleWindowScroll);
   }
 
   componentWillUnmount() {
@@ -65,37 +66,36 @@ export default class Header extends React.PureComponent {
   }
 
   render() {
-    var { transparent, light } = this.props;
+    var { transparent } = this.props;
 
     if (this.state.scrolled) {
       transparent = false;
-      light = false;
     }
 
     return (
-      <HeaderWrapper transparent={transparent} light={light}>
+      <HeaderWrapper transparent={transparent}>
         <Content>
           <LinkContainer left>
             <Link prefetch href="/features">
-              <LinkAnchor href="/features" left light={light}>Features</LinkAnchor>
+              <LinkAnchor href="/features" left>Features</LinkAnchor>
             </Link>
             <Link prefetch href="/screencasts">
-              <LinkAnchor href="/screencasts" left light={light}>Screencasts</LinkAnchor>
+              <LinkAnchor href="/screencasts" left>Screencasts</LinkAnchor>
             </Link>
             <Link prefetch href="/support">
-              <LinkAnchor href="/support" left light={light}>Support</LinkAnchor>
+              <LinkAnchor href="/support" left>Support</LinkAnchor>
             </Link>
           </LinkContainer>
           <LogoLink/>
           <LinkContainer right>
             <Link prefetch href="/pricing">
-              <LinkAnchor href="/pricing" right light={light}>Pricing</LinkAnchor>
+              <LinkAnchor href="/pricing" right>Pricing</LinkAnchor>
             </Link>
             <Link prefetch href="/login">
-              <LinkAnchor href="/login" right light={light}>Sign In</LinkAnchor>
+              <LinkAnchor href="/login" right>Sign In</LinkAnchor>
             </Link>
             <Link prefetch href="/sign-up">
-              <LinkAnchor href="/sign-up" right light={light}>Get Started</LinkAnchor>
+              <LinkAnchor href="/sign-up" right>Get Started</LinkAnchor>
             </Link>
           </LinkContainer>
         </Content>
@@ -103,8 +103,7 @@ export default class Header extends React.PureComponent {
     );
   }
 
-  // TODO: debounce
-  handleWindowScroll = () => {
+  handleWindowScroll = throttle(() => {
     if (window.scrollY > scrollTransparencyThreshold) {
       if (!this.state.scrolled) {
         this.setState({scrolled: true});
@@ -114,5 +113,5 @@ export default class Header extends React.PureComponent {
         this.setState({scrolled: false});
       }
     }
-  }
+  })
 }
