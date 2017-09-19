@@ -63,6 +63,12 @@ export const maxWidthContainer = css`
   margin-right: auto;
 `;
 
+export const pageContainer = css`
+  margin-top: ${outerSpacing.s2};
+  ${maxWidthContainer}
+  min-height: 3000px;
+`
+
 export const colors = {
   backgrounds: {
     black: '#333',
