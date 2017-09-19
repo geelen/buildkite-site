@@ -1,0 +1,5 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "~~~ 🎁 Downloading fonts from S3 into static/fonts"
+aws s3 sync "s3://${FONTS_S3_BUCKET}/" static/fonts
