@@ -14,8 +14,11 @@ echo "Creating Percy snapshot"
 PERCY_OUTPUT=$(percy --trace snapshot .)
 echo "${PERCY_OUTPUT}"
 
-if [[ "${BUILDKITE_JOB_ID:-}" != "" ]]; then
-  buildkite-agent annotate "${PERCY_OUTPUT}"
+PERCY_BUILD_LINK=$(echo "${PERCY_OUTPUT}" | grep -o 'http[^ ]*')
+
+if [[ "${BUILDKITE_JOB_ID:-}" != "" && "${PERCY_BUILD_LINK}" != "" ]]; then
+  ANNOTATION=":percy: View the [Percy Visual Diff](${PERCY_BUILD_LINK})"
+  buildkite-agent annotate --style success --context percy "${ANNOTATION}"
 else
-  echo "Skipping buildkite-agent annoate (missing \$BUILDKITE_JOB_ID)"
+  echo "Skipping buildkite-agent annotate"
 fi
