@@ -1,0 +1,25 @@
+# For generating Percy screenshots
+
+# Build and export to /app/out
+
+FROM    node:7
+ENV     NODE_ENV=production
+WORKDIR /app
+COPY    yarn.lock package.json /app/
+RUN     yarn install
+COPY    . /app
+RUN     yarn run build && yarn run export
+
+# Send /app/out to percy
+
+FROM    ruby:latest
+RUN     gem install --no-rdoc --no-ri percy-cli
+# Add buildkite-agent so we can annotate
+ADD     http://download.buildkite.com/agent/unstable/latest/buildkite-agent-linux-amd64 /usr/local/bin/buildkite-agent
+RUN     chmod +x /usr/local/bin/buildkite-agent
+# Copy the site over from the previous layer
+COPY    --from=0 /app/out /site
+WORKDIR /site
+# Finally, add the percy bash script that'll do all the work
+ADD     .buildkite/steps/percy /.buildkite/steps/percy
+CMD     ["/.buildkite/steps/percy"]

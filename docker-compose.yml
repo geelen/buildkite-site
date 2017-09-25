@@ -5,5 +5,4 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - CI
-      - NODE_ENV
+      - CI # Makes sure Jest doesn't do interactive cli when run in Buildkite

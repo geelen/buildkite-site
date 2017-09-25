@@ -19,8 +19,9 @@
     "react-test-renderer": "^15.6.1"
   },
   "scripts": {
-    "test": "jest",
+    "test": "env NODE_ENV=test jest",
     "build": "next build",
+    "export": "next export",
     "start": "node server.js"
   }
 }
