@@ -29,7 +29,7 @@ aws-vault exec buildkite-dev -- ./scripts/download-fonts
 ## Building for production
 
 ```shell
-yarn build && NODE_ENV=production yarn start
+NODE_ENV=production yarn build && NODE_ENV=production yarn start
 # Or with docker...
-# env NODE_ENV=production docker-compose up
+# NODE_ENV=production docker-compose build && NODE_ENV=production docker-compose up
 ```
