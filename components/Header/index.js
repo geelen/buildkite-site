@@ -18,8 +18,7 @@ const HeaderWrapper = styled('header')`
   height: ${height};
   box-shadow: ${props => props.transparent ? '0 0 15px rgba(0, 0, 0, 0)' : '0 0 15px rgba(0, 0, 0, 0.1)'};
   padding: ${theme.innerSpacing.s1};
-  background-color: ${props => !props.transparent && 'white'};
-  box-bizing: border-box;
+  background-color: ${props => props.transparent ? 'rgba(255,255,255,0)' : 'rgba(255,255,255,1)'};
   will-change: background-color, box-shadow;
   transition: background-color 300ms, box-shadow 300ms;
   z-index: 1;
