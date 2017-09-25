@@ -6,6 +6,12 @@ steps:
       docker-compose#v1.5.1:
         run: site
 
+  - label: ":percy:"
+    plugins:
+      docker-compose#v1.5.1:
+        config: docker-compose.percy.yml
+        run: percy
+
   - wait
 
   - label: ":docker: :rocket:"
@@ -15,5 +21,6 @@ steps:
         login: true
         account-ids: $ECR_ACCOUNT_ID
       docker-compose#v1.5.1:
+        config: docker-compose.prod.yml
         push:
           - site:$ECR_REPOSITORY:$BUILDKITE_BUILD_NUMBER

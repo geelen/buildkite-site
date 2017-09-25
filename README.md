@@ -31,5 +31,13 @@ aws-vault exec buildkite-dev -- ./scripts/download-fonts
 ```shell
 NODE_ENV=production yarn build && NODE_ENV=production yarn start
 # Or with docker...
-# NODE_ENV=production docker-compose build && NODE_ENV=production docker-compose up
+# docker-compose -y docker-compose.prod.yml up
+```
+
+## Creating Percy snapshots
+
+```shell
+export PERCY_TOKEN=...
+export PERCY_PROJECT=...
+docker-compose -y docker-compose.percy.yml run percy
 ```

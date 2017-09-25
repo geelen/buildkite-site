@@ -1,0 +1,19 @@
+# For generating Percy screenshots
+
+# Build and export to /app/out
+
+FROM    node:7
+ENV     NODE_ENV=production
+WORKDIR /app
+COPY    yarn.lock package.json /app/
+RUN     yarn install
+COPY    . /app
+RUN     yarn run build && yarn run export
+
+# Send /app/out to percy
+
+FROM    ruby:latest
+RUN     gem install --no-rdoc --no-ri percy-cli
+COPY    --from=0 /app/out /site
+WORKDIR /site
+CMD     ["percy", "--trace", "snapshot", "."]

@@ -21,6 +21,7 @@
   "scripts": {
     "test": "jest",
     "build": "next build",
+    "export": "next export",
     "start": "node server.js"
   }
 }
