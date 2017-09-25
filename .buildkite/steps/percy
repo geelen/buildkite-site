@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Creates a percy snapshot and annotates the Buildkite build with a handy link
+# to the Percy build using the output from the Percy command
+#
+# Designed to be run inside the percy container via Docker Compose, ie:
+#
+#   docker-compose -f docker-compose.percy.yml run percy
+
+set -euo pipefail
+
+echo "Creating Percy snapshot"
+
+PERCY_OUTPUT=$(percy --trace snapshot .)
+echo "${PERCY_OUTPUT}"
+
+if [[ "${BUILDKITE_JOB_ID:-}" != "" ]]; then
+  buildkite-agent annotate "${PERCY_OUTPUT}"
+else
+  echo "Skipping buildkite-agent annoate (missing \$BUILDKITE_JOB_ID)"
+fi

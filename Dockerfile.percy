@@ -14,6 +14,12 @@ RUN     yarn run build && yarn run export
 
 FROM    ruby:latest
 RUN     gem install --no-rdoc --no-ri percy-cli
+# Add buildkite-agent so we can annotate
+ADD     http://download.buildkite.com/agent/unstable/latest/buildkite-agent-linux-amd64 /usr/local/bin/buildkite-agent
+RUN     chmod +x /usr/local/bin/buildkite-agent
+# Copy the site over from the previous layer
 COPY    --from=0 /app/out /site
 WORKDIR /site
-CMD     ["percy", "--trace", "snapshot", "."]
+# Finally, add the percy bash script that'll do all the work
+ADD     .buildkite/steps/percy /.buildkite/steps/percy
+CMD     ["/.buildkite/steps/percy"]

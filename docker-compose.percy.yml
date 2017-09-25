@@ -7,5 +7,8 @@ services:
     environment:
       - PERCY_TOKEN
       - PERCY_PROJECT
+      - BUILDKITE_JOB_ID
+      - BUILDKITE_AGENT_ACCESS_TOKEN
     volumes:
       - ".git:/site/.git" # Percy needs to be able to find the git commit
+      - ".buildkite/steps:/.buildkite/steps"
