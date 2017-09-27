@@ -17,6 +17,7 @@ export default class MyDocument extends Document {
           <title>Buildkite</title>
           <style dangerouslySetInnerHTML={{ __html: theme.root }} />
           {this.props.styleTags}
+          <meta name="robots" content="noindex" />
         </Head>
         <body>
           <div className='root'>
