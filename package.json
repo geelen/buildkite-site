@@ -4,20 +4,18 @@
   "private": true,
   "dependencies": {
     "babel-plugin-styled-components": "^1.2.0",
-    "module-alias": "^2.0.1",
-    "next": "^3.2.2",
+    "next": "^4.0.0-beta.1",
     "nprogress": "^0.2.0",
-    "preact": "^8.2.5",
-    "preact-compat": "^3.17.0",
     "raf-throttle": "^2.0.3",
     "styled-components": "^2.1.2"
   },
   "devDependencies": {
-    "enzyme": "^2.9.1",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.0",
     "jest": "^21.1.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-test-renderer": "^15.6.1"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.0.0"
   },
   "scripts": {
     "test": "env NODE_ENV=test jest",
