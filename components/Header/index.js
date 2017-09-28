@@ -1,10 +1,10 @@
 import Link from 'next/link'
+import styled from 'styled-components'
+import throttle from 'raf-throttle'
 
 import * as theme from '../../theme'
-import styled from 'styled-components'
 import LogoLink from './logo-link'
-
-import throttle from 'raf-throttle'
+import LoadingBar from './loading-bar'
 
 export const height = '70px';
 
@@ -73,6 +73,7 @@ export default class Header extends React.PureComponent {
 
     return (
       <HeaderWrapper transparent={transparent}>
+        <LoadingBar/>
         <Content>
           <LinkContainer left>
             <Link prefetch href="/features">

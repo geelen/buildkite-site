@@ -6,6 +6,7 @@
     "babel-plugin-styled-components": "^1.2.0",
     "module-alias": "^2.0.1",
     "next": "^3.2.2",
+    "nprogress": "^0.2.0",
     "preact": "^8.2.5",
     "preact-compat": "^3.17.0",
     "raf-throttle": "^2.0.3",
