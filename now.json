@@ -1,0 +1,19 @@
+{
+  "name": "bk-new-site",
+  "type": "npm",
+  "env": {
+    "NODE_ENV": "production"    
+  },
+  "engines": {
+    "node": "8.4.0"
+  },
+  "public": false,
+  "files": [
+    "static/fonts",
+    "components",
+    "pages",
+    "static",
+    "theme",
+    "server.js"
+  ]
+}
