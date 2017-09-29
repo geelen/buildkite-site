@@ -10,6 +10,7 @@ const LinkTag = styled.a`
   position: relative;
   width: 152px;
   height: 30px;
+  display: inline-block;
   ${showDebugOutlines && 'outline: 1px solid red'};
 `
 
