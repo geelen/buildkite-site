@@ -35,7 +35,7 @@ const LinkContainer = styled.div`
   text-align: ${props => props.left ? 'left' : 'right'};
 `;
 
-const LinkAnchor = styled('a')`
+const LinkAnchor = styled.a`
   color: black;
   text-decoration: none;
   margin-left: ${props => props.right && theme.innerSpacing.s1};
