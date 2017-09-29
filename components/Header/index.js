@@ -10,7 +10,7 @@ export const height = '70px';
 
 const scrollTransparencyThreshold = 60;
 
-const HeaderWrapper = styled('header')`
+const HeaderWrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
@@ -24,13 +24,13 @@ const HeaderWrapper = styled('header')`
   z-index: 1;
 `;
 
-const Content = styled('div')`
+const Content = styled.div`
   ${theme.maxWidthContainer}
   display: flex;
   align-items: center;
 `;
 
-const LinkContainer = styled('div')`
+const LinkContainer = styled.div`
   flex: 2;
   text-align: ${props => props.left ? 'left' : 'right'};
 `;
