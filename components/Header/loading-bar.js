@@ -4,9 +4,24 @@ import Head from 'next/head'
 import styled, { css } from 'styled-components'
 import * as theme from '../../theme'
 
-Router.onRouteChangeStart = () => NProgress.start()
-Router.onRouteChangeComplete = () => NProgress.done()
-Router.onRouteChangeError = () => NProgress.done()
+const noticeableDelay = 200;
+var noticeableDelayTimeout = null;
+
+const showProgressBar = function() {
+  // We only want to show the loading bar if they've been waiting 100ms, because
+  // some pages are pre-fetched and ready to go
+  if (noticeableDelayTimeout) clearTimeout(noticeableDelayTimeout)
+  noticeableDelayTimeout = setTimeout(function() { NProgress.start() }, noticeableDelay)
+}
+
+const finishProgressBar = function() {
+  if (noticeableDelayTimeout) clearTimeout(noticeableDelayTimeout)
+  NProgress.done()
+}
+
+Router.onRouteChangeStart = () => showProgressBar()
+Router.onRouteChangeComplete = () => finishProgressBar()
+Router.onRouteChangeError = () => finishProgressBar()
 
 const nprogressCss = css`
   #nprogress { pointer-events: none; }
