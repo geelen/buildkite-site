@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import * as theme from 'theme'
 import Header from 'components/Header'
+import Head from 'next/head'
 
 const Page = styled.div`
   ${theme.pageContainer}
@@ -28,6 +29,9 @@ const ExplanationStatement = styled.p`
 
 export default () => (
   <div>
+    <Head>
+      <title>Buildkite</title>
+    </Head>
     <Header transparent />
     <Page>
       <PositioningStatement>Lightning fast testing and delivery<br/>for all your software projects</PositioningStatement>
