@@ -18,9 +18,9 @@ const HeaderWrapper = styled.header`
   left: 0;
   width: 100%;
   height: ${height};
-  box-shadow: ${props => props.transparent ? '0 0 15px rgba(0, 0, 0, 0)' : '0 0 15px rgba(0, 0, 0, 0.1)'};
+  box-shadow: ${props => !props.scrolled ? '0 0 15px rgba(0, 0, 0, 0)' : '0 0 15px rgba(0, 0, 0, 0.1)'};
   padding: ${theme.innerSpacing.s1};
-  background-color: ${props => props.transparent ? 'rgba(255,255,255,0)' : 'rgba(255,255,255,1)'};
+  background-color: ${props => props.transparent && !props.scrolled ? 'rgba(255,255,255,0)' : 'rgba(255,255,255,1)'};
   will-change: background-color, box-shadow;
   transition: background-color ${theme.timings.color}, box-shadow ${theme.timings.color};
   z-index: 1;
@@ -91,12 +91,8 @@ export default class Header extends React.PureComponent {
   render() {
     var { transparent } = this.props;
 
-    if (this.state.scrolled) {
-      transparent = false;
-    }
-
     return (
-      <HeaderWrapper transparent={transparent}>
+      <HeaderWrapper transparent={transparent} scrolled={this.state.scrolled}>
         <LoadingBar/>
         <Content>
           <LinkContainer left>

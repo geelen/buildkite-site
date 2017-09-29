@@ -17,7 +17,7 @@ export default () => (
     <Head>
       <title>Login to Buildkite</title>
     </Head>
-    <Header transparent />
+    <Header />
     <Page>
       <Title>Sign In</Title>
     </Page>

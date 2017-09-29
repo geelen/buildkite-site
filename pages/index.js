@@ -34,7 +34,7 @@ export default () => (
     <Head>
       <title>Buildkite</title>
     </Head>
-    <Header transparent />
+    <Header />
     <Page>
       <PositioningStatement>Lightning fast testing and delivery<br/>for all your software projects</PositioningStatement>
       <ExplanationStatement>Buildkite makes it simple to run and scale your own continuous integration pipelines, so you can stay productive no matter how large you grow.</ExplanationStatement>
