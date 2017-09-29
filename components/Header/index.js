@@ -76,26 +76,26 @@ export default class Header extends React.PureComponent {
         <LoadingBar/>
         <Content>
           <LinkContainer left>
-            <Link prefetch href="/features">
-              <LinkAnchor href="/features" left>Features</LinkAnchor>
+            <Link prefetch href="/features" passHref>
+              <LinkAnchor left>Features</LinkAnchor>
             </Link>
-            <Link prefetch href="/screencasts">
-              <LinkAnchor href="/screencasts" left>Screencasts</LinkAnchor>
+            <Link prefetch href="/screencasts" passHref>
+              <LinkAnchor left>Screencasts</LinkAnchor>
             </Link>
-            <Link prefetch href="/support">
-              <LinkAnchor href="/support" left>Support</LinkAnchor>
+            <Link prefetch href="/support" passHref>
+              <LinkAnchor left>Support</LinkAnchor>
             </Link>
           </LinkContainer>
           <LogoLink/>
           <LinkContainer right>
-            <Link prefetch href="/pricing">
+            <Link prefetch href="/pricing" passHref>
               <LinkAnchor href="/pricing" right>Pricing</LinkAnchor>
             </Link>
-            <Link prefetch href="/login">
-              <LinkAnchor href="/login" right>Sign In</LinkAnchor>
+            <Link prefetch href="/login" passHref>
+              <LinkAnchor right>Sign In</LinkAnchor>
             </Link>
-            <Link prefetch href="/sign-up">
-              <LinkAnchor href="/sign-up" right>Get Started</LinkAnchor>
+            <Link prefetch href="/sign-up" passHref>
+              <LinkAnchor right>Get Started</LinkAnchor>
             </Link>
           </LinkContainer>
         </Content>
