@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import * as theme from 'theme'
 
 const Link = styled.a`
+  color: black;
   transition: color ${theme.timings.color};
   will-change: color;
 
