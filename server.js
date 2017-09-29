@@ -1,22 +1,52 @@
+// Borrowed from styled-components website:
+// https://github.com/styled-components/styled-components-website/blob/6afb14b81a3bdedebb2e7a50d8868dc0b8d32269/server.js
+
 const dev = process.env.NODE_ENV !== 'production'
 
-const { createServer } = require('http')
+const path = require('path')
 const { parse } = require('url')
+const express = require('express')
 const next = require('next')
-const app = next({ dev })
+
+const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
 
-app.prepare().then(() => {
-  createServer((req, res) => {
-    // Be sure to pass `true` as the second argument to `url.parse`.
-    // This tells it to parse the query portion of the URL.
-    const parsedUrl = parse(req.url, true)
-    const { pathname, query } = parsedUrl
+const PORT = process.env.PORT || 3000
 
-    handle(req, res, parsedUrl)
+app.prepare()
+  .then(() => {
+    const server = express()
+
+    server.disable('x-powered-by')
+
+    // Strip the hashes from the static-cache URLs.
+    //
+    // For example:
+    //   /static-cached/1uT8cdz/images/brand/mark.svg ->
+    //   /static-cached/images/brand/mark.svg
+    server.use('/static-cached', function(req, res, next){
+      req.url = req.url.replace(/\/[^/]+\//, '/static-cached/');
+      next();
+    });
+
+    server.use('/static-cached', express.static('./static', {
+      index: false,
+      redirect: false,
+      lastModified: false,
+      immutable: true,
+      maxAge: '365d'
+    }))
+
+    server.get('*', (req, res) => {
+      const parsedUrl = parse(req.url, true)
+      handle(req, res, parsedUrl)
+    })
+
+    server.listen(PORT, err => {
+      if (err) {
+        throw err
+      }
+
+      console.log(`> Ready on http://localhost:${PORT}`)
+    })
   })
-  .listen(3000, (err) => {
-    if (err) throw err
-    console.log('> Ready on http://localhost:3000')
-  })
-})

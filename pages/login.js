@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import * as theme from '../theme'
-import Header from '../components/Header'
+import * as theme from 'theme'
+import Header from 'components/Header'
 
 const Page = styled.div`
   ${theme.pageContainer}

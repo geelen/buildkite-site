@@ -1,13 +1,15 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import * as theme from '../theme'
+import * as theme from 'theme'
 
 export default class MyDocument extends Document {
   static getInitialProps ({ renderPage }) {
     const sheet = new ServerStyleSheet()
-    const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
-    const styleTags = sheet.getStyleElement()
-    return { ...page, styleTags }
+    const page = renderPage(Component => props =>
+      sheet.collectStyles(<Component {...props} />
+    ))
+    const styles = sheet.getStyleElement()
+    return { ...page, styles }
   }
 
   render () {
@@ -15,9 +17,11 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>Buildkite</title>
-          <style dangerouslySetInnerHTML={{ __html: theme.root }} />
-          {this.props.styleTags}
           <meta name="robots" content="noindex" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+          <meta name="theme-color" content="#da936a" />
+          <style dangerouslySetInnerHTML={{ __html: theme.reset }} />
+          {this.props.styles}
         </Head>
         <body>
           <div className='root'>

@@ -2,7 +2,7 @@ import NProgress from 'nprogress'
 import Router from 'next/router'
 import Head from 'next/head'
 import styled, { css } from 'styled-components'
-import * as theme from '../../theme'
+import * as theme from 'theme'
 
 const noticeableDelay = 200;
 var noticeableDelayTimeout = null;

@@ -1,9 +1,13 @@
 import { css } from 'styled-components'
 
-export const root = css`
+const woffBookPath = require('../static/fonts/lineto-circular-book.woff2');
+const woffBoldPath = require('../static/fonts/lineto-circular-bold.woff2');
+const woffBlackPath = require('../static/fonts/lineto-circular-black.woff2');
+
+export const reset = `
   @font-face {
     font-family: BK-Circular;
-    src: url(/static/fonts/lineto-circular-book.woff2) format("woff2");
+    src: url(${woffBookPath}) format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -11,7 +15,7 @@ export const root = css`
 
   @font-face {
     font-family: BK-Circular;
-    src: url(/static/fonts/lineto-circular-bold.woff2) format("woff2");
+    src: url(${woffBoldPath}) format("woff2");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -19,12 +23,12 @@ export const root = css`
 
   @font-face {
     font-family: BK-Circular;
-    src: url(/static/fonts/lineto-circular-black.woff2) format("woff2");
-    font-weight: 900;
+    src: url(${woffBlackPath}) format("woff2");
+    font-weight: 800;
     font-style: normal;
     font-display: swap;
   }
-  
+
   :root {
     font-family: BK-Circular, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
     font-size: 18px;
@@ -39,7 +43,7 @@ export const root = css`
   *, :after, :before {
     box-sizing: border-box;
   }
-`
+`;
 
 export const innerSpacing = {
   s1: '20px',
@@ -91,7 +95,7 @@ export const textStyles = {
   mainCallout: css`
     font-size: 48px;
     line-height: 1.1;
-    font-weight: 900;
+    font-weight: 800;
   `,
   bodyCopy: css`
     font-size: 18px;

@@ -3,6 +3,9 @@ import styled from 'styled-components'
 
 const showDebugOutlines = false;
 
+const markSvgPath = require('../../static/images/brand/mark.svg');
+const wordmarkSvgPath = require('../../static/images/brand/wordmark.svg');
+
 const LinkTag = styled.a`
   position: relative;
   width: 152px;
@@ -51,8 +54,8 @@ const WordMark = styled.img`
 export default () => (
   <Link prefetch href="/">
     <LinkTag href="/">
-      <Mark src="/static/images/brand/mark.svg" alt="Buildkite logo" />
-      <WordMark src="/static/images/brand/wordmark.svg" alt="Buildkite" />
+      <Mark src={markSvgPath} alt="Buildkite logo" />
+      <WordMark src={wordmarkSvgPath} alt="Buildkite" />
     </LinkTag>
   </Link>
 )

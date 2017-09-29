@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import throttle from 'raf-throttle'
 
-import * as theme from '../../theme'
+import * as theme from 'theme'
 import LogoLink from './logo-link'
 import LoadingBar from './loading-bar'
 
