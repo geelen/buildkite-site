@@ -69,6 +69,7 @@ export default class Header extends React.PureComponent {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleWindowScroll);
+    this.checkScroll();
   }
 
   componentWillUnmount() {
@@ -114,7 +115,9 @@ export default class Header extends React.PureComponent {
     );
   }
 
-  handleWindowScroll = throttle(() => {
+  handleWindowScroll = throttle(() => this.checkScroll())
+
+  checkScroll() {
     if (window.scrollY > scrollTransparencyThreshold) {
       if (!this.state.scrolled) {
         this.setState({scrolled: true});
@@ -124,5 +127,5 @@ export default class Header extends React.PureComponent {
         this.setState({scrolled: false});
       }
     }
-  })
+  }
 }
