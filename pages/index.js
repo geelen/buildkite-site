@@ -12,6 +12,8 @@ const PositioningStatement = styled.p`
   margin-top: ${theme.outerSpacing.s2};
   margin-bottom: ${theme.innerSpacing.s1};
   max-width: 50rem;
+  padding-left: ${theme.innerSpacing.s1};
+  padding-right: ${theme.innerSpacing.s1};
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -34,7 +36,7 @@ export default () => (
     </Head>
     <Header transparent />
     <Page>
-      <PositioningStatement>Lightning fast testing and delivery<br/>for all your software projects</PositioningStatement>
+      <PositioningStatement>Lightning fast testing and delivery<br/>for all your software projects</PositioningStatement>
       <ExplanationStatement>Buildkite makes it simple to run and scale your own continuous integration pipelines, so you can stay productive no matter how large you grow.</ExplanationStatement>
     </Page>
   </div>
