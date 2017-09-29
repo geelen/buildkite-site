@@ -1,6 +1,6 @@
 # For local development
 
-FROM    node:8.6.0
+FROM    node:8.4.0
 ENV     NODE_ENV=development
 EXPOSE  3000
 WORKDIR /app
