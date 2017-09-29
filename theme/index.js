@@ -6,6 +6,7 @@ export const root = css`
     src: url(/static/fonts/lineto-circular-book.woff2) format("woff2");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -13,6 +14,7 @@ export const root = css`
     src: url(/static/fonts/lineto-circular-bold.woff2) format("woff2");
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -20,10 +22,11 @@ export const root = css`
     src: url(/static/fonts/lineto-circular-black.woff2) format("woff2");
     font-weight: 900;
     font-style: normal;
+    font-display: swap;
   }
   
   :root {
-    font-family: BK-Circular, -apple-system, BlinkMacSystemFont;
+    font-family: BK-Circular, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
     font-size: 18px;
     -webkit-font-smoothing: antialiased;
     margin: 0;
