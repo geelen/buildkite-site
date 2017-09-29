@@ -1,11 +1,12 @@
 import { withRouter } from 'next/router'
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import throttle from 'raf-throttle'
 
 import * as theme from 'theme'
 import LogoLink from './logo-link'
 import LoadingBar from './loading-bar'
+import MenuLink from './menu-link'
 
 export const height = '70px';
 
@@ -21,7 +22,7 @@ const HeaderWrapper = styled.header`
   padding: ${theme.innerSpacing.s1};
   background-color: ${props => props.transparent ? 'rgba(255,255,255,0)' : 'rgba(255,255,255,1)'};
   will-change: background-color, box-shadow;
-  transition: background-color 300ms, box-shadow 300ms;
+  transition: background-color ${theme.timings.color}, box-shadow ${theme.timings.color};
   z-index: 1;
 `;
 
@@ -39,20 +40,31 @@ const LinkContainer = styled.div`
 const LinkAnchor = styled.a`
   color: ${props => props.active ? theme.colors.text.green : 'black'};
   text-decoration: none;
-  margin-left: ${props => props.right && theme.innerSpacing.s1};
-  margin-right: ${props => props.left && theme.innerSpacing.s1};
+  margin-left: ${props => props.right ? theme.innerSpacing.s1 : 0};
+  margin-right: ${props => props.left ? theme.innerSpacing.s1 : 0};
   font-weight: bold;
-  transition: color 300ms;
+  transition: color ${theme.timings.color};
   will-change: color;
+  flex: none;
   &:hover {
     color: ${theme.colors.text.green};
   }
+  ${props => props.widescreenOnly && css`
+    @media (max-width: 799px) {
+      display: none;
+    }
+  `}
 `
 
-const NavLink = withRouter(({ children, router, href, prefetch, left, right }) => {
+const NavLink = withRouter(({ children, router, href, prefetch, left, right, widescreenOnly }) => {
   return (
     <Link prefetch href={href} passHref>
-      <LinkAnchor left={left} right={right} active={router.pathname === href}>
+      <LinkAnchor
+        left={left}
+        right={right}
+        widescreenOnly={widescreenOnly}
+        active={router.pathname === href}
+      >
         {children}
       </LinkAnchor>
     </Link>
@@ -88,26 +100,27 @@ export default class Header extends React.PureComponent {
         <LoadingBar/>
         <Content>
           <LinkContainer left>
-            <NavLink left prefetch href="/features">
+            <MenuLink/>
+            <NavLink left prefetch widescreenOnly href="/features">
               Features
             </NavLink>
-            <NavLink left prefetch href="/screencasts">
+            <NavLink left prefetch widescreenOnly href="/screencasts">
               Screencasts
             </NavLink>
-            <NavLink left prefetch href="/support">
+            <NavLink left prefetch widescreenOnly href="/support">
               Support
             </NavLink>
           </LinkContainer>
           <LogoLink/>
           <LinkContainer right>
-            <NavLink left prefetch href="/pricing">
+            <NavLink right prefetch widescreenOnly href="/pricing">
               Pricing
             </NavLink>
-            <NavLink left prefetch href="/login">
-              Sign In
+            <NavLink right prefetch widescreenOnly href="/login">
+              Login
             </NavLink>
-            <NavLink left prefetch href="/sign-up">
-              Get Started
+            <NavLink right prefetch href="/sign-up">
+              Signup
             </NavLink>
           </LinkContainer>
         </Content>

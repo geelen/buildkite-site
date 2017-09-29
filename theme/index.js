@@ -136,3 +136,7 @@ export const images = {
                 0 0 2px rgba(0,0,0,.2)';
   `
 }
+
+export const timings = {
+  color: '300ms'
+}

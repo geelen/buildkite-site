@@ -8,6 +8,9 @@ const wordmarkSvgPath = require('../../static/images/brand/wordmark.svg');
 
 const LinkTag = styled.a`
   position: relative;
+  @media (max-width: 799px) {
+    width: 52px;
+  }
   width: 152px;
   height: 30px;
   display: inline-block;
@@ -17,16 +20,20 @@ const LinkTag = styled.a`
 const Mark = styled.img`
   position: absolute;
   top: 0px;
-  left: 52px;
+  left: 0;
   width: 45px;
   height: 30px;
   ${showDebugOutlines && 'outline: 1px solid green'};
-  pointer-events: none;
-  will-change: transform;
-  transition: transform 200ms;
 
-  ${LinkTag}:hover & {
-    transform: translateX(-50px) scale(.85);
+  @media (min-width: 800px) {
+    left: 52px;
+    pointer-events: none;
+    will-change: transform;
+    transition: transform 200ms;
+
+    ${LinkTag}:hover & {
+      transform: translateX(-50px) scale(.85);
+    }  
   }
 `
 
@@ -37,18 +44,22 @@ const WordMark = styled.img`
   top: 4px;
   left: 53px;
   ${showDebugOutlines && 'outline: 1px solid blue'};
-  pointer-events: none;
-  opacity: 0;
-  transform: translateX(-20px);
-  perspective: 20px;
-  transform-origin: left top;
-  will-change: opacity, transform;
-  transition: opacity 120ms, transform 200ms;
+  display: none;
 
-  ${LinkTag}:hover & {
-    opacity: 1;
-    transform: translateX(0px);
-    transition: opacity 200ms, transform 200ms;
+  @media (min-width: 800px) {
+    display: inline-block;
+    pointer-events: none;
+    opacity: 0;    
+    transform: translateX(-20px);
+    perspective: 20px;
+    transform-origin: left top;
+    will-change: opacity, transform;
+    transition: opacity 120ms, transform 200ms;
+    ${LinkTag}:hover & {
+      opacity: 1;
+      transform: translateX(0px);
+      transition: opacity 200ms, transform 200ms;
+    }
   }
 `
 
