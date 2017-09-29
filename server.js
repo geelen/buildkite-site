@@ -26,7 +26,8 @@ app.prepare()
     //   /static-cached/1uT8cdz/images/brand/mark.svg ->
     //   /static-cached/images/brand/mark.svg
     server.use('/static-cached', function(req, res, next){
-      req.url = req.url.replace(/\/[^/]+\//, '/static-cached/');
+      const originalUrl = req.url;
+      req.url = req.url.replace(/\/[^/]+\//, '/');
       next();
     });
 
