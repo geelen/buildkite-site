@@ -1,6 +1,6 @@
 # For running the production Node app
 
-FROM    node:7
+FROM    node:8.6.0
 ENV     NODE_ENV=production
 EXPOSE  3000
 WORKDIR /app
