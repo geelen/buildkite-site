@@ -1,3 +1,4 @@
+import { withRouter } from 'next/router'
 import Link from 'next/link'
 import styled from 'styled-components'
 import throttle from 'raf-throttle'
@@ -36,7 +37,7 @@ const LinkContainer = styled.div`
 `;
 
 const LinkAnchor = styled.a`
-  color: black;
+  color: ${props => props.active ? theme.colors.text.green : 'black'};
   text-decoration: none;
   margin-left: ${props => props.right && theme.innerSpacing.s1};
   margin-right: ${props => props.left && theme.innerSpacing.s1};
@@ -47,6 +48,16 @@ const LinkAnchor = styled.a`
     color: ${theme.colors.text.green};
   }
 `
+
+const NavLink = withRouter(({ children, router, href, prefetch, left, right }) => {
+  return (
+    <Link prefetch href={href} passHref>
+      <LinkAnchor left={left} right={right} active={router.pathname === href}>
+        {children}
+      </LinkAnchor>
+    </Link>
+  )
+})
 
 export default class Header extends React.PureComponent {
   constructor(props) {
@@ -76,27 +87,27 @@ export default class Header extends React.PureComponent {
         <LoadingBar/>
         <Content>
           <LinkContainer left>
-            <Link prefetch href="/features" passHref>
-              <LinkAnchor left>Features</LinkAnchor>
-            </Link>
-            <Link prefetch href="/screencasts" passHref>
-              <LinkAnchor left>Screencasts</LinkAnchor>
-            </Link>
-            <Link prefetch href="/support" passHref>
-              <LinkAnchor left>Support</LinkAnchor>
-            </Link>
+            <NavLink left prefetch href="/features">
+              Features
+            </NavLink>
+            <NavLink left prefetch href="/screencasts">
+              Screencasts
+            </NavLink>
+            <NavLink left prefetch href="/support">
+              Support
+            </NavLink>
           </LinkContainer>
           <LogoLink/>
           <LinkContainer right>
-            <Link prefetch href="/pricing" passHref>
-              <LinkAnchor href="/pricing" right>Pricing</LinkAnchor>
-            </Link>
-            <Link prefetch href="/login" passHref>
-              <LinkAnchor right>Sign In</LinkAnchor>
-            </Link>
-            <Link prefetch href="/sign-up" passHref>
-              <LinkAnchor right>Get Started</LinkAnchor>
-            </Link>
+            <NavLink left prefetch href="/pricing">
+              Pricing
+            </NavLink>
+            <NavLink left prefetch href="/login">
+              Sign In
+            </NavLink>
+            <NavLink left prefetch href="/sign-up">
+              Get Started
+            </NavLink>
           </LinkContainer>
         </Content>
       </HeaderWrapper>
