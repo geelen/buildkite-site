@@ -126,21 +126,6 @@ export const button = {
   `
 }
 
-export const grid = {
-  container: css`
-    display: flex;
-    margin-left: ${innerSpacing.negative.s1};
-  `,
-  cell: css`
-    padding-left: ${innerSpacing.s1};
-    margin-bottom: ${innerSpacing.s1};
-  `,
-  width: {
-    oneThird: '33.4%',
-    twoThirds: '66.6%'
-  }
-}
-
 export const images = {
   screenshots: css`
     box-shadow: 0 4px 8px 2px rgba(0,0,0,.1),
