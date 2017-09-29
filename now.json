@@ -9,6 +9,7 @@
   },
   "public": false,
   "files": [
+    ".babelrc",
     "static/fonts",
     "components",
     "pages",
