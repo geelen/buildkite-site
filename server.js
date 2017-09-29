@@ -19,7 +19,8 @@ app.prepare()
 
     server.disable('x-powered-by')
 
-    // Strip the hashes from the static-cache URLs.
+    // Hashed assets need their hash stripped from the URL. The hash is added by
+    // babel plugin transform-assets in .babelrc
     //
     // For example:
     //   /static-cached/1uT8cdz/images/brand/mark.svg ->
@@ -29,12 +30,19 @@ app.prepare()
       next();
     });
 
+    // Hashed assets are immutable, so they can be cached indefinitely
     server.use('/static-cached', express.static('./static', {
       index: false,
       redirect: false,
       lastModified: false,
       immutable: true,
       maxAge: '365d'
+    }))
+
+    // Non-hashed assets use standard etag/last-modified headers
+    server.use('/static', express.static('./static', {
+      index: false,
+      redirect: false
     }))
 
     server.get('*', (req, res) => {
