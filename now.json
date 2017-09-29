@@ -2,7 +2,7 @@
   "name": "bk-new-site",
   "type": "npm",
   "env": {
-    "NODE_ENV": "production"    
+    "NODE_ENV": "production"
   },
   "engines": {
     "node": "8.4.0"

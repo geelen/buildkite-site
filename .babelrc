@@ -27,6 +27,7 @@
   },
   "plugins": [
     ["module-resolver", {
+      "root": ["."],
       "alias": {
         "components": "./components",
         "theme": "./theme"
