@@ -140,3 +140,7 @@ export const images = {
 export const timings = {
   color: '300ms'
 }
+
+export const boxShadows = {
+  menuBar: '0 0 15px rgba(0, 0, 0, 0.1)'
+}

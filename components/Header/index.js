@@ -7,6 +7,7 @@ import * as theme from 'theme'
 import LogoLink from './logo-link'
 import LoadingBar from './loading-bar'
 import MenuLink from './menu-link'
+import Menu from './menu'
 
 export const height = '70px';
 
@@ -18,18 +19,19 @@ const HeaderWrapper = styled.header`
   left: 0;
   width: 100%;
   height: ${height};
-  box-shadow: ${props => !props.scrolled ? '0 0 15px rgba(0, 0, 0, 0)' : '0 0 15px rgba(0, 0, 0, 0.1)'};
+  box-shadow: ${props => props.shadow ? theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
   padding: ${theme.innerSpacing.s1};
-  background-color: ${props => props.transparent && !props.scrolled ? 'rgba(255,255,255,0)' : 'rgba(255,255,255,1)'};
-  will-change: background-color, box-shadow;
-  transition: background-color ${theme.timings.color}, box-shadow ${theme.timings.color};
-  z-index: 1;
+  background-color: white;
+  will-change: box-shadow;
+  transition: box-shadow ${theme.timings.color};
+  z-index: 10;
 `;
 
 const Content = styled.div`
   ${theme.maxWidthContainer}
   display: flex;
   align-items: center;
+  line-height: 1;
 `;
 
 const LinkContainer = styled.div`
@@ -75,7 +77,8 @@ export default class Header extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      scrolled: false
+      scrolled: false,
+      showMenu: false
     };
   }
 
@@ -85,46 +88,52 @@ export default class Header extends React.PureComponent {
   }
 
   componentWillUnmount() {
-    window.addEventListener('scroll', this.handleWindowScroll);
+    window.removeEventListener('scroll', this.handleWindowScroll);
   }
 
   render() {
-    var { transparent } = this.props;
-
     return (
-      <HeaderWrapper transparent={transparent} scrolled={this.state.scrolled}>
-        <LoadingBar/>
-        <Content>
-          <LinkContainer left>
-            <MenuLink/>
-            <NavLink left prefetch widescreenOnly href="/features">
-              Features
-            </NavLink>
-            <NavLink left prefetch widescreenOnly href="/screencasts">
-              Screencasts
-            </NavLink>
-            <NavLink left prefetch widescreenOnly href="/support">
-              Support
-            </NavLink>
-          </LinkContainer>
-          <LogoLink/>
-          <LinkContainer right>
-            <NavLink right prefetch widescreenOnly href="/pricing">
-              Pricing
-            </NavLink>
-            <NavLink right prefetch widescreenOnly href="/login">
-              Login
-            </NavLink>
-            <NavLink right prefetch href="/sign-up">
-              Signup
-            </NavLink>
-          </LinkContainer>
-        </Content>
-      </HeaderWrapper>
+      <div>
+        <HeaderWrapper shadow={this.state.scrolled || this.state.showMenu}>
+          <LoadingBar/>
+          <Content>
+            <LinkContainer left>
+              <MenuLink onClick={this.handleMenuLinkClick} />
+              <NavLink left prefetch widescreenOnly href="/features">
+                Features
+              </NavLink>
+              <NavLink left prefetch widescreenOnly href="/screencasts">
+                Screencasts
+              </NavLink>
+              <NavLink left prefetch widescreenOnly href="/support">
+                Support
+              </NavLink>
+            </LinkContainer>
+            <LogoLink/>
+            <LinkContainer right>
+              <NavLink right prefetch widescreenOnly href="/pricing">
+                Pricing
+              </NavLink>
+              <NavLink right prefetch widescreenOnly href="/login">
+                Login
+              </NavLink>
+              <NavLink right prefetch href="/sign-up">
+                Signup
+              </NavLink>
+            </LinkContainer>
+          </Content>
+        </HeaderWrapper>
+        {this.state.showMenu && <Menu top={height} />}
+      </div>
     );
   }
 
   handleWindowScroll = throttle(() => this.checkScroll())
+
+  handleMenuLinkClick = (e) => {
+    e.preventDefault();
+    this.setState({ showMenu: !this.state.showMenu })
+  }
 
   checkScroll() {
     if (window.scrollY > scrollTransparencyThreshold) {
