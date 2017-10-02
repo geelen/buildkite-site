@@ -20,7 +20,6 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
           <meta name="theme-color" content="#da936a" />
           <style dangerouslySetInnerHTML={{ __html: theme.reset }} />
-          {this.props.styles}
         </Head>
         <body>
           <div className='root'>
