@@ -31,20 +31,18 @@ app.prepare()
       next();
     });
 
-    // Hashed assets are immutable, so they can be cached indefinitely
-    server.use('/static-cached', express.static('./static', {
-      index: false,
-      redirect: false,
+    // Hashed assets are immutable, so they can be cached indefinitely.
+    //
+    // For some reason in dev the `transform-assets` babel plugin doesn't update
+    // the hashed URL (perhaps a node loader cache?), so we have to disable the
+    // long expires header so the browser refetches when you reload the page.
+    const staticCachedOptions = dev ? {} : {
       lastModified: false,
       immutable: true,
       maxAge: '365d'
-    }))
+    };
 
-    // Non-hashed assets use standard etag/last-modified headers
-    server.use('/static', express.static('./static', {
-      index: false,
-      redirect: false
-    }))
+    server.use('/static-cached', express.static('./static', staticCachedOptions));
 
     server.get('*', (req, res) => {
       const parsedUrl = parse(req.url, true)
