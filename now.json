@@ -1,5 +1,6 @@
 {
   "name": "bk-new-site",
+  "alias": "bk-new-site.now.sh",
   "type": "npm",
   "env": {
     "NODE_ENV": "production"
