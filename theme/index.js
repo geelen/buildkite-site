@@ -133,7 +133,7 @@ export const button = {
 export const images = {
   screenshots: css`
     box-shadow: 0 4px 8px 2px rgba(0,0,0,.1),
-                0 0 2px rgba(0,0,0,.2)';
+                0 0 2px rgba(0,0,0,.2);
   `
 }
 
