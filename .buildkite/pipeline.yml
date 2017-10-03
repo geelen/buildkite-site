@@ -16,7 +16,9 @@ steps:
   - wait
 
   - label: ":docker: :package:"
-    branches: master
+    branches:
+      - master
+      - deploy-on-ecs
     plugins:
       ecr#v1.1.2:
         login: true
@@ -29,7 +31,9 @@ steps:
   - wait
 
   - label: ":docker: :rocket:"
-    branches: master
+    branches:
+      - master
+      - deploy-on-ecs
     command: scripts/deploy-ecs
 
     # 🤔
