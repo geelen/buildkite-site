@@ -73,7 +73,7 @@ export const maxWidthContainer = css`
 export const pageContainer = css`
   margin-top: ${outerSpacing.s2};
   ${maxWidthContainer}
-  min-height: 3000px;
+  margin-bottom: ${outerSpacing.s3};
 `
 
 export const colors = {
