@@ -15,13 +15,27 @@ steps:
 
   - wait
 
-  - label: ":docker: :rocket:"
+  - label: ":docker: :package:"
     branches: master
     plugins:
       ecr#v1.1.2:
         login: true
-        account-ids: $ECR_ACCOUNT_ID
+        account-ids: ${ECR_ACCOUNT_ID}
       docker-compose#v1.5.1:
         config: docker-compose.prod.yml
         push:
-          - site:$ECR_REPOSITORY:$BUILDKITE_BUILD_NUMBER
+          - site:${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}
+
+  - wait
+
+  - label: ":docker: :rocket:"
+    branches: master
+    command: scripts/deploy-ecs
+
+    # 🤔
+    # plugins:
+    #   ecs-deploy#v1.0.0:
+    #     cluster: site-example
+    #     service: site
+    #     task-family: site
+    #     image: ${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}
