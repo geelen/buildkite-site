@@ -144,3 +144,18 @@ export const timings = {
 export const boxShadows = {
   menuBar: '0 0 15px rgba(0, 0, 0, 0.1)'
 }
+
+// Adapted from https://labs.ssbbartgroup.com/index.php/Offscreen_Text
+//
+// Without `white-space`, certain assistive technologies will announce a
+// sentence as if it has no whitespace between words */
+export const offscreen = css`
+  position: absolute;
+  clip-path: inset(50%);
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  white-space: nowrap;
+`

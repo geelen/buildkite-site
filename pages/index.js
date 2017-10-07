@@ -1,14 +1,21 @@
-import styled from 'styled-components'
-import * as theme from 'theme'
-import Header from 'components/Header'
 import Head from 'next/head'
 import Link from 'next/link'
+import styled from 'styled-components'
+
+import * as theme from 'theme'
+import Header from 'components/Header'
+import GetStarted from 'components/sections/GetStarted'
+import Screencasts from 'components/sections/Screencasts'
+
+const OffscreenH1 = styled.h1`
+  ${theme.offscreen}
+`
 
 const Page = styled.div`
   ${theme.pageContainer}
 `
 
-const PositioningStatement = styled.h1`
+const PositioningStatement = styled.h2`
   ${theme.textStyles.mainCallout}
   margin-top: ${theme.outerSpacing.s2};
   margin-bottom: ${theme.innerSpacing.s1};
@@ -38,12 +45,13 @@ export default () => (
     <Header />
     <Page>
       <section>
+        <OffscreenH1>Buildkite</OffscreenH1>
         <PositioningStatement>Lightning fast testing and delivery<br/>for all your software projects</PositioningStatement>
         <ExplanationStatement>Buildkite makes it simple to run and scale your own continuous integration pipelines, so you can stay productive no matter how large you grow.</ExplanationStatement>
       </section>
 
       <section>
-        <h1>Features</h1>
+        <OffscreenH1>Features</OffscreenH1>
 
         <p>Screenshot</p>
 
@@ -73,7 +81,7 @@ export default () => (
       </section>
 
       <section>
-        <h1>Screencasts</h1>
+        <OffscreenH1>Customers</OffscreenH1>
         <p>Join these teams who’ve switched to Buildkite…</p>
 
         <ul>
@@ -90,22 +98,9 @@ export default () => (
         </p>
       </section>
 
-      <section>
-        <h1>Screencasts</h1>
-        <p>See what it’s like in production, with our short series of 60 second screencasts</p>
+      <Screencasts/>
 
-        <p>
-          <Link href="/screencasts" passHref><a>View the screencasts</a></Link>
-        </p>
-      </section>
-
-      <section>
-        <h1>Get Started</h1>
-        <p>Get started and connect your first agent.</p>
-        <p>
-          <Link href="/sign-up" passHref><a>Sign up</a></Link>
-        </p>
-      </section>
+      <GetStarted/>
     </Page>
   </div>
 )
