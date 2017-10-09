@@ -3,6 +3,8 @@ import * as theme from 'theme'
 import Header from 'components/Header'
 import Head from 'next/head'
 
+import { team, leadership, advisors } from './people'
+
 const Page = styled.div`
   ${theme.pageContainer}
 `
@@ -12,20 +14,22 @@ const Title = styled.h1`
   text-align: center;
 `
 
-const PlaceholderPerson = (props) => (
-  <div {...props}>
-    <h3>Jessica Stokes</h3>
-    <img src="/static/TODO" alt="Photo of Jessica" />
-    <p>Hi, I’m Jess! I work on frontend and backend engineering. Some cool fact about me is a bit longer than one line.</p>
-    <nav>
-      <ul>
-        <li><a href="/TODO">GitHub</a></li>
-        <li><a href="/TODO">Twitter</a></li>
-        <li><a href="/TODO">Keybase</a></li>
-      </ul>
-    </nav>
-  </div>
-)
+const Person = ({ person }) => {
+  return (
+    <div>
+      <h3>{person.name}</h3>
+      <img src={person.photo} alt={`Photo of ${person.name}`} />
+      <p>{person.bio}</p>
+      <nav>
+        <ul>
+          {person.links.map((link) => (
+            <li key={link.name}><a href={link.url}>{link.name}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  )
+}
 
 export default () => (
   <div>
@@ -38,13 +42,20 @@ export default () => (
       <p>The Buildkite team is dedicated to creating a CI platform that gives you fast and reliable builds. We want you to love using Buildkite as much as we love making it for you.</p>
       <section>
         <h1>Get to know the team</h1>
+        
         <h2>Everyone</h2>
-        {[1,2,3,4,5,6].map((n) => (
-          <PlaceholderPerson key={n} />
+        {team.map((person) => (
+          <Person person={person} key={person.name} />
         ))}
+
         <h2>Leadership Team</h2>
-        {[1,2,3].map((n) => (
-          <PlaceholderPerson key={n} />
+        {leadership.map((person) => (
+          <Person person={person} key={person.name} />
+        ))}
+
+        <h2>Advisors</h2>
+        {advisors.map((person) => (
+          <Person person={person} key={person.name} />
         ))}
       </section>
     </Page>
