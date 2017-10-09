@@ -111,6 +111,9 @@ export default class Header extends React.PureComponent {
             </LinkContainer>
             <LogoLink/>
             <LinkContainer right>
+              <NavLink right prefetch widescreenOnly href="/about">
+                About
+              </NavLink>
               <NavLink right prefetch widescreenOnly href="/pricing">
                 Pricing
               </NavLink>
