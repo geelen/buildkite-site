@@ -14,22 +14,26 @@ const Title = styled.h1`
   text-align: center;
 `
 
-const Person = ({ person }) => {
-  return (
-    <div>
-      <h3>{person.name}</h3>
-      <img src={person.photo} alt={`Photo of ${person.name}`} />
-      <p>{person.bio}</p>
-      <nav>
-        <ul>
-          {person.links.map((link) => (
-            <li key={link.name}><a href={link.url}>{link.name}</a></li>
-          ))}
-        </ul>
-      </nav>
-    </div>
-  )
-}
+const PersonImage = styled.img`
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+`
+
+const Person = ({ person }) => (
+  <div>
+    <h3>{person.name}</h3>
+    <PersonImage src={person.photo} alt={`Photo of ${person.name}`} />
+    <p>{person.bio}</p>
+    <nav>
+      <ul>
+        {person.links.map((link) => (
+          <li key={link.name}><a href={link.url}>{link.name}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+)
 
 export default () => (
   <div>
