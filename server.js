@@ -17,8 +17,9 @@ app.prepare()
   .then(() => {
     const server = express()
 
+    // Don't need to report exact versions of things (for security's sake)
     server.disable('x-powered-by')
-
+    
     // Hashed assets need their hash stripped from the URL. The hash is added by
     // babel plugin transform-assets in .babelrc
     //
@@ -57,3 +58,9 @@ app.prepare()
       console.log(`> Ready on http://localhost:${PORT}`)
     })
   })
+
+
+process.on('unhandledRejection', error => {
+  // We simply log any unhandled promise rejections
+  console.log('Unhandled promise rejection', error);
+});
