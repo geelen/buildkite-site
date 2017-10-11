@@ -7,7 +7,6 @@ cluster="site-test"
 task_family="buildkite-site"
 service_name="buildkite-site"
 image="${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}"
-alb_arb="arn:aws:elasticloadbalancing:us-east-1:032379705303:targetgroup/site/b56b90272c1524f1"
 http_host="http://buildkite-site-test-2094865536.us-east-1.elb.amazonaws.com"
 
 ## This is the template definition of your containers
@@ -32,26 +31,6 @@ task_definition=$(cat << JSON
 JSON
 )
 
-## This is the load balancer definition (ALB created manually)
-alb_definition=$(cat << JSON
-[{
-  "targetGroupArn": "${alb_arb}",
-  "containerName": "site",
-  "containerPort": 3000
-}]
-JSON
-)
-
-service_exists() {
-  local service_name="$1"
-
-  aws ecs describe-services \
-    --cluster "${cluster}" \
-    --service "${service_name}" \
-    --query "services[?status!=\`INACTIVE\`]" | grep -q serviceName
-}
-
-## This is the revision of the task definition that gets created on each build
 echo "--- :ecs: Registering new task definition for ${task_family}"
 task_revision=$(
   aws ecs register-task-definition \
@@ -59,22 +38,11 @@ task_revision=$(
     --container-definitions "$task_definition" \
     | jq '.taskDefinition.revision')
 
-## Either create a new service, or update the existing one
-if service_exists "$service_name" ; then
-  echo "--- :ecs: Updating service for ${service_name}"
-  aws ecs update-service \
-    --cluster "${cluster}" \
-    --service "${service_name}" \
-    --task-definition "${task_family}:${task_revision}"
-else
-  echo "--- :ecs: Creating service for build ${service_name}"
-  aws ecs create-service \
-    --cluster "${cluster}" \
-    --service-name "${service_name}" \
-    --task-definition "${task_family}:${task_revision}" \
-    --load-balancers "${alb_definition}" \
-    --desired-count 1
-fi
+echo "--- :ecs: Updating service for ${service_name}"
+aws ecs update-service \
+  --cluster "${cluster}" \
+  --service "${service_name}" \
+  --task-definition "${task_family}:${task_revision}"
 
 ## Now we wait till it's stable
 echo "--- :ecs: Waiting for services to stabilize"
