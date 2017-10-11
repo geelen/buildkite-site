@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -euxo pipefail
 
 export AWS_DEFAULT_REGION=us-east-1
 
