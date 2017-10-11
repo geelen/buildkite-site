@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+export AWS_DEFAULT_REGION=us-east-1
+
 cluster="site-test"
 task_family="buildkite-site"
 service_name="${task_family}"
