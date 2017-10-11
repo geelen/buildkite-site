@@ -73,7 +73,6 @@ else
     --service-name "${service_name}" \
     --task-definition "${task_family}:${task_revision}" \
     --load-balancers "${alb_definition}" \
-    --role "arn:aws:iam::032379705303:role/buildbox-bastion-role" \
     --desired-count 1
 fi
 
