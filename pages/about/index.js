@@ -62,6 +62,75 @@ export default () => (
           <Person person={person} key={person.name} />
         ))}
       </section>
+
+      <section>
+        <h1>Head Office</h1>
+        <img src="/static/TODO"/>
+        <p>Buildkite HQ is in Melbourne, but our team is spread around the globe. If you want to visit HQ, or send us something, you can find us at:</p>
+        <p>149a Brunswick St<br/>Fitzroy, Victoria<br/>Australia, 3065</p>
+      </section>
+
+      <section>
+        <h1>Our Values</h1>
+        <div>
+          <h2>Transparency</h2>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+        </div>
+        <div>
+          <h2>Empathy</h2>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+        </div>
+        <div>
+          <h2>Quality</h2>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+        </div>
+        <div>
+          <h2>Collaboration</h2>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+        </div>
+        <div>
+          <h2>Diversity</h2>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+        </div>
+        <div>
+          <h2>Sustainable Growth</h2>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+        </div>
+        <div>
+          <h2>Independence</h2>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
+        </div>
+      </section>
+
+      <nav>
+        <a href="/brand-assets">
+          <section>
+            <h1>Brand Assets</h1>
+            <p>Download our official logos, screenshots and media assets.</p>
+            <p>View the brand assets</p>
+          </section>
+        </a>
+        <a href="https://shop.buildkite.com/">
+          <section>
+            <h1>Buildkite Shop</h1>
+            <p>Order yourself some official Buildkite stickers, t-shirts, and more.</p>
+            <p>Browse the Shop</p>
+          </section>
+        </a>
+      </nav>
+
+      <section>
+        <h1>Want to chat?</h1>
+        <p>We're here to help. Let us know if you have any questions about getting up and running.</p>
+        <p>support@buildkite.com</p>
+      </section>
     </Page>
   </div>
 )
