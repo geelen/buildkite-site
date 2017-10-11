@@ -47,7 +47,8 @@ service_exists() {
 
   aws ecs describe-services \
     --cluster "${cluster}" \
-    --service "${service_name}" | grep -q serviceName
+    --service "${service_name}" \
+    --query "services[?status!=\`INACTIVE\`]" | grep -q serviceName
 }
 
 ## This is the revision of the task definition that gets created on each build
