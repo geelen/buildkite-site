@@ -129,7 +129,7 @@ export default () => (
       <section>
         <h1>Want to chat?</h1>
         <p>We're here to help. Let us know if you have any questions about getting up and running.</p>
-        <p>support@buildkite.com</p>
+        <p><a href="mailto:support@buildkite.com">support@buildkite.com</a></p>
       </section>
     </Page>
   </div>
