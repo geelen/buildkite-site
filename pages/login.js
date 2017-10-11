@@ -1,25 +1,10 @@
-import styled from 'styled-components'
-import * as theme from 'theme'
-import Header from 'components/Header'
-import Head from 'next/head'
-
-const Page = styled.div`
-  ${theme.pageContainer}
-`
-
-const Title = styled.h1`
-  ${theme.textStyles.mainCallout}
-  text-align: center;
-`
+import Page from 'components/Page'
 
 export default () => (
-  <div>
-    <Head>
-      <title>Login to Buildkite</title>
-    </Head>
-    <Header />
-    <Page>
-      <Title>Sign In</Title>
-    </Page>
-  </div>
+  <Page
+    headTitle="Login to Buildkite"
+    title="Sign In"
+    description="TODO"
+    >
+  </Page>
 )
