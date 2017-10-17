@@ -1,8 +1,8 @@
 import { css } from 'styled-components'
 
-const woffBookPath = require('../static/fonts/lineto-circular-book.woff2');
-const woffBoldPath = require('../static/fonts/lineto-circular-bold.woff2');
-const woffBlackPath = require('../static/fonts/lineto-circular-black.woff2');
+const woffBookPath = require('../assets/fonts/lineto-circular-book.woff2');
+const woffBoldPath = require('../assets/fonts/lineto-circular-bold.woff2');
+const woffBlackPath = require('../assets/fonts/lineto-circular-black.woff2');
 
 export const reset = `
   @font-face {
