@@ -24,27 +24,28 @@ app.prepare()
     // babel plugin transform-assets in .babelrc
     //
     // For example:
-    //   /static-cached/1uT8cdz/images/brand/mark.svg ->
-    //   /static-cached/images/brand/mark.svg
-    server.use('/static-cached', function(req, res, next){
+    //   /site/assets/1uT8cdz/images/brand/mark.svg ->
+    //   /site/assets/images/brand/mark.svg
+    server.use('/site/assets', function(req, res, next){
       const originalUrl = req.url;
       req.url = req.url.replace(/\/[^/]+\//, '/');
       next();
     });
 
-    // Hashed assets are immutable, so they can be cached indefinitely.
+    // Hashed assets are immutable, so they can be cached indefinitely by
+    // clients.
     //
     // For some reason in dev the `transform-assets` babel plugin doesn't update
     // the hashed URL (perhaps a node loader cache?), so we have to disable the
     // long expires header so the browser refetches when you reload the page.
-    const staticCachedOptions = dev ? {} : {
+    const assetsOptions = dev ? {} : {
       lastModified: false,
       immutable: true,
       maxAge: '365d'
     };
 
-    server.use('/static-cached', express.static('./static', staticCachedOptions));
-
+    server.use('/site/assets', express.static('./assets', assetsOptions));
+    
     server.get('*', (req, res) => {
       const parsedUrl = parse(req.url, true)
       handle(req, res, parsedUrl)

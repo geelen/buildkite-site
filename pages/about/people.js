@@ -1,13 +1,13 @@
-const photoHarriet = require('../../static/images/about/harriet.jpg');
-const photoJess = require('../../static/images/about/jess.jpg');
-const photoKeith = require('../../static/images/about/keithpitt.jpg');
-const photoLox = require('../../static/images/about/lox.jpg');
-const photoSam = require('../../static/images/about/sam.jpg');
-const photoTim = require('../../static/images/about/toolmantim.jpg');
+const photoHarriet = require('../../assets/images/about/harriet.jpg');
+const photoJess = require('../../assets/images/about/jess.jpg');
+const photoKeith = require('../../assets/images/about/keithpitt.jpg');
+const photoLox = require('../../assets/images/about/lox.jpg');
+const photoSam = require('../../assets/images/about/sam.jpg');
+const photoTim = require('../../assets/images/about/toolmantim.jpg');
 
-const photoJml = require('../../static/images/about/jml.jpg');
-const photoMattAllen = require('../../static/images/about/mattallen.jpg');
-const photoJohnBarton = require('../../static/images/about/johnbarton.jpg');
+const photoJml = require('../../assets/images/about/jml.jpg');
+const photoMattAllen = require('../../assets/images/about/mattallen.jpg');
+const photoJohnBarton = require('../../assets/images/about/johnbarton.jpg');
 
 export const team = [
   {

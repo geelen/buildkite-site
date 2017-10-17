@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 const showDebugOutlines = false;
 
-const markSvgPath = require('../../static/images/brand/mark.svg');
-const wordmarkSvgPath = require('../../static/images/brand/wordmark.svg');
+const markSvgPath = require('../../assets/images/brand/mark.svg');
+const wordmarkSvgPath = require('../../assets/images/brand/wordmark.svg');
 
 const LinkTag = styled.a`
   position: relative;
