@@ -112,24 +112,6 @@ export const textStyles = {
   `
 }
 
-export const button = {
-  normal: css`
-    display: inline-block;
-    background-color: ${colors.backgrounds.black};
-    color: ${colors.text.white};
-    padding-left: ${innerSpacing.s1},
-    padding-right: ${innerSpacing.s1},
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-weight: bold;
-    border-radius: 3px;
-    text-decoration: none;
-    :hover {
-      backgroundColor: ${colors.backgrounds.blackHover}
-    }
-  `
-}
-
 export const images = {
   screenshots: css`
     box-shadow: 0 4px 8px 2px rgba(0,0,0,.1),
