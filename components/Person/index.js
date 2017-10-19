@@ -1,16 +1,30 @@
 import styled from 'styled-components'
 
-const PersonImage = styled.img`
+import * as theme from 'theme'
+
+const Image = styled.img`
   border-radius: 50%;
   height: 120px;
   width: 120px;
 `
 
-export default ({ person, showRoles }) => (
+const Name = styled.h3`
+  margin-top: ${theme.textSpacing.s1};
+  margin-bottom: 0;
+  ${theme.textStyles.bodyCopy}
+`
+
+const Roles = styled.p`
+  margin-top: 0;
+  ${theme.textStyles.bodyCopySmall}
+  color: ${theme.colors.text.subdued};
+`
+
+export default ({ person, showRoles, showName }) => (
   <div>
-    {/* <h3>{person.name}</h3> */}
-    <PersonImage src={person.photo} alt={`Photo of ${person.name}`} />
-    {showRoles && <p>{person.roles.join(", ")}</p>}
+    <Image src={person.photo} alt={`Photo of ${person.name}`} />
+    {showName && <Name>{person.name}</Name>}
+    {showRoles && <Roles>{person.roles.join(", ")}</Roles>}
     {/* <p>{person.bio}</p> */}
     {/* <nav>
       <ul>

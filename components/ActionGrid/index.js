@@ -7,8 +7,8 @@ import { Grid, Cell } from 'components/Grid'
 import * as theme from 'theme'
 
 const Nav = styled.nav`
-  margin-top: ${theme.outerSpacing.s2};
-  margin-bottom: ${theme.outerSpacing.s2};
+  margin-top: ${theme.outerSpacing.s3};
+  margin-bottom: ${theme.outerSpacing.s3};
 `
 
 const SpanButton = Button.withComponent('span')
@@ -41,6 +41,7 @@ const Paragraph = styled.p`
 `
 
 const Anchor = styled.a`
+  display: block;
   text-decoration: none;
   color: inherit;
   text-align: center;
