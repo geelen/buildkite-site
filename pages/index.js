@@ -45,6 +45,11 @@ const ExplanationStatement = styled.p`
   color: ${theme.colors.text.subdued};
 `
 
+const Section = styled.section`
+  margin-top: ${theme.outerSpacing.s2};
+  margin-bottom: ${theme.outerSpacing.s2};
+`
+
 // For this content it should be ul/li instead of div/div
 const CustomerGrid = Grid.withComponent('ul');
 const CustomerCell = Grid.withComponent('li');
@@ -86,7 +91,7 @@ export default () => (
       <CenteredLink href="/features"><Button>See all the features</Button></CenteredLink>
     </section>
 
-    <section>
+    <Section>
       <OffscreenH1>Customers</OffscreenH1>
       <p>Join these teams who’ve switched to Buildkite…</p>
 
@@ -100,10 +105,14 @@ export default () => (
       </CustomerGrid>
 
       <CenteredLink href="/features"><Button>Read the case studies</Button></CenteredLink>
-    </section>
+    </Section>
 
-    <Screencasts/>
+    <Section>
+      <Screencasts/>
+    </Section>
 
-    <GetStarted/>
+    <Section>
+      <GetStarted/>
+    </Section>
   </Page>
 )
