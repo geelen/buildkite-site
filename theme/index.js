@@ -106,6 +106,10 @@ export const textStyles = {
   bodyCopyLarge: css`
     font-size: 24px;
   `,
+  secondLevelHeading: css`
+    font-size: 36px;
+    font-weight: 800;
+  `,
   thirdLevelHeading: css`
     font-size: 24px;
     font-weight: bold;
