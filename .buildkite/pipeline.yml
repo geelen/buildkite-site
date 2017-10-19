@@ -31,11 +31,11 @@ steps:
   - wait
 
   - label: ":docker: :rocket:"
-    branches:
-      - master
-      - deploy-on-ecs
+    branches: master
+    concurrency: 1
+    concurrency_group: site-deploy
     agents:
-      queue: "deploy"
+      queue: deploy
     command: scripts/deploy-ecs
 
     # 🤔
@@ -45,3 +45,9 @@ steps:
     #     service: site
     #     task-family: site
     #     image: ${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}
+
+  - wait
+  
+  - label: ":partyparrot:"
+    branches: master
+    command: "buildkite-agent annotate 'Deployed to https://new-site.buildkite.com/'"
