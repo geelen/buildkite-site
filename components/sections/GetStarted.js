@@ -8,8 +8,12 @@ import * as theme from 'theme'
 
 const image = require('../../assets/images/get-started/get-started.png');
 
-const Header = styled.h1`
-  ${theme.textStyles.secondLevelHeading}
+const OffscreenH1 = styled.h1`
+  ${theme.offscreen}
+`
+
+const Paragraph = styled.p`
+  ${theme.textStyles.bodyCopyLarge}
 `
 
 export default () => (
@@ -19,10 +23,10 @@ export default () => (
         <img src={image} alt="" />
       </Cell>
       <Cell>
-        <Header>Get Started</Header>
-        <p>Get started and connect your first agent.</p>
+        <OffscreenH1>Get Started</OffscreenH1>
+        <Paragraph>Jump in, and connect your first agent.</Paragraph>
         <p>
-          <Link href="/sign-up" passHref><Button>Sign up</Button></Link>
+          <Link href="/sign-up" passHref><Button primary>Get Started →</Button></Link>
         </p>
       </Cell>
     </Grid>

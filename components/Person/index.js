@@ -8,16 +8,16 @@ const PersonImage = styled.img`
 
 export default ({ person, showRoles }) => (
   <div>
-    <h3>{person.name}</h3>
+    {/* <h3>{person.name}</h3> */}
     <PersonImage src={person.photo} alt={`Photo of ${person.name}`} />
     {showRoles && <p>{person.roles.join(", ")}</p>}
-    <p>{person.bio}</p>
-    <nav>
+    {/* <p>{person.bio}</p> */}
+    {/* <nav>
       <ul>
         {person.links.map((link) => (
           <li key={link.name}><a href={link.url}>{link.name}</a></li>
         ))}
       </ul>
-    </nav>
+    </nav> */}
   </div>
 )

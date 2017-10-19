@@ -1,29 +1,67 @@
+import Link from 'next/link'
 import styled from 'styled-components'
 
+import Button, { colors as buttonColors } from 'components/Button'
 import { Grid, Cell } from 'components/Grid'
-import Button from 'components/Button'
+
+import * as theme from 'theme'
+
+const Nav = styled.nav`
+  margin-top: ${theme.outerSpacing.s2};
+  margin-bottom: ${theme.outerSpacing.s2};
+`
+
+const SpanButton = Button.withComponent('span')
 
 export const ActionGrid = ({ children }) => (
-  <nav>
+  <Nav>
     <Grid columns={2}>
       {children}
     </Grid>
-  </nav>
+  </Nav>
 )
 
+const Heading = styled.h1`
+  ${theme.textStyles.thirdLevelHeading}
+  margin-bottom: ${theme.textSpacing.s1};
+`
+
 const ItemImage = styled.img`
-  max-width: 100%;
+  width: 100%;
+  max-width: 250px;
+`
+
+const Paragraph = styled.p`
+  max-width: 20em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: ${theme.innerSpacing.s1};
+  color: ${theme.colors.text.subdued};
+`
+
+const Anchor = styled.a`
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: ${theme.innerSpacing.s2};
+
+  :hover ${SpanButton} {
+    background-color: ${buttonColors.default.backgroundHover};
+  }
 `
 
 export const ActionGridItem = ({ heading, description, url, buttonTitle, image, imageAlt }) => (
   <Cell>
-    <a href={url}>
-      <section>
-        <h1>{heading}</h1>
-        <ItemImage src={image} alt={imageAlt} />
-        <p>{description}</p>
-        <Button>{buttonTitle}</Button>
-      </section>
-    </a>
+    <Link href={url} passHref>
+      <Anchor>
+        <section>
+          <ItemImage src={image} alt={imageAlt} />
+          <Heading>{heading}</Heading>
+          <Paragraph>{description}</Paragraph>
+          <SpanButton>{buttonTitle}</SpanButton>
+        </section>
+      </Anchor>
+    </Link>
   </Cell>
 )

@@ -1,7 +1,24 @@
+import Link from 'next/link'
+import styled from 'styled-components'
+
+import Button from 'components/Button'
+
+import * as theme from 'theme'
+
+const Section = styled.section`
+  margin-top: ${theme.outerSpacing.s2};
+  margin-bottom: ${theme.outerSpacing.s2};
+  text-align: center;
+`
+
+const Header = styled.h1`
+  ${theme.textStyles.secondLevelHeading}
+`
+
 export default ({ heading, description, url, buttonTitle }) => (
-  <section>
-    <h1>{heading}</h1>
+  <Section>
+    <Header>{heading}</Header>
     <p>{description}</p>
-    <p><a href={url}>{buttonTitle}</a></p>
-  </section>
+    <p><Link href={url} passHref><Button>{buttonTitle}</Button></Link></p>
+  </Section>
 )
