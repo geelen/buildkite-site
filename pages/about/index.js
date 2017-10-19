@@ -10,8 +10,8 @@ import Person from 'components/Person'
 
 import { team, leadership, advisors } from './people'
 
-const hqImage = require('../../assets/images/about/hq.png')
-const brandAssetsImage = require('../../assets/images/about/brand-assets.png')
+const headOfficeImage = require('../../assets/images/about/head-office.jpg')
+const brandAssetsImage = require('../../assets/images/about/brand-assets.jpg')
 
 const OffscreenH2 = styled.h2`
   ${theme.offscreen}
@@ -20,8 +20,14 @@ const OffscreenH2 = styled.h2`
 const SectionHeader = styled.h1`
   ${theme.textStyles.secondLevelHeading}
   margin-top: ${theme.innerSpacing.s2};
-  margin-bottom: ${theme.innerSpacing.s2};
+  margin-bottom: ${theme.outerSpacing.s1};
   text-align: center;
+`
+
+const InlineSectionHeader = SectionHeader.extend`
+  margin-top: 0;
+  text-align: left;
+  margin-bottom: ${theme.textSpacing.s1};
 `
 
 const SectionSecondLevelHeader = styled.h2`
@@ -32,16 +38,26 @@ const SectionSecondLevelHeader = styled.h2`
 `
 
 const Section = styled.section`
-  margin-top: ${theme.outerSpacing.s2};
-  margin-bottom: ${theme.outerSpacing.s2};
+  margin-top: ${theme.outerSpacing.s3};
+  margin-bottom: ${theme.outerSpacing.s3};
 `
 
-const SubduedParagraph = styled.section`
+const LocationParagraph = styled.section`
+  ${theme.textStyles.bodyCopyLarge}
   color: ${theme.colors.text.subdued};
 `
 
 const PeopleSection = Section.extend`
   text-align: center;
+`
+
+const HeadOfficeImageCell = Cell.extend`
+  text-align: right;
+`
+
+const HeadOfficeImage = styled.img`
+  width: 100%;
+  max-width: 450px;
 `
 
 const People = ({ children }) => (
@@ -52,11 +68,19 @@ const People = ({ children }) => (
   </Grid>
 )
 
+const LocationLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  :hover, :active {
+    text-decoration: underline;
+  }
+`
+
 export default () => (
   <Page
     headTitle="About Buildkite"
     title="About"
-    description="The Buildkite team is dedicated to creating a CI platform that gives you fast and reliable builds. We want you to love using Buildkite as much as we love making it for you."
+    description="We’re building the best software automation tools"
     >
     <PeopleSection>
       <SectionHeader>Get to know the team</SectionHeader>
@@ -71,27 +95,27 @@ export default () => (
       <SectionSecondLevelHeader>Leadership Team</SectionSecondLevelHeader>
       <People>
         {leadership.map((person) => (
-          <Person person={person} key={person.name} showRoles />
+          <Person person={person} key={person.name} showName showRoles />
         ))}
       </People>
 
       <SectionSecondLevelHeader>Advisors</SectionSecondLevelHeader>
       <People>
         {advisors.map((person) => (
-          <Person person={person} key={person.name} showRoles />
+          <Person person={person} key={person.name} showName showRoles />
         ))}
       </People>
     </PeopleSection>
 
     <Section>
-      <SectionHeader>Head Office</SectionHeader>
       <Grid columns={2}>
-        <Cell>
-          <img src={hqImage} />
-        </Cell>
+        <HeadOfficeImageCell>
+          <HeadOfficeImage src={headOfficeImage} />
+        </HeadOfficeImageCell>
         <Cell style={{ width: '20em' }}>
-          <p>Our team is spread across the globe, but if you want to visit our head office or send us something in the post, you can find us at:</p>
-          <SubduedParagraph>149a Brunswick St<br/>Fitzroy, Victoria<br/>Australia, 3065</SubduedParagraph>
+          {<InlineSectionHeader>Head Office</InlineSectionHeader>}
+          <p>Our team is spread across the globe, but if you want to visit Buildkite HQ, or send us something in the post, you can find us at:</p>
+          <LocationParagraph><LocationLink href="https://www.google.com/maps/place/149A+Brunswick+St,+Fitzroy+VIC+3065/@-37.803127,144.9752413,17z">149a Brunswick St<br/>Fitzroy, Victoria<br/>Australia, 3065</LocationLink></LocationParagraph>
         </Cell>
       </Grid>
     </Section>
@@ -152,13 +176,13 @@ export default () => (
         imageAlt=""
         description="Order yourself some official Buildkite stickers, t-shirts, and more."
         url="https://shop.buildkite.com/"
-        buttonTitle="Browse the Shop"
+        buttonTitle="Browse the shop"
       />
     </ActionGrid>
 
     <Callout
-      heading="Want to chat?"
-      description="We're here to help. Let us know if you have any questions about getting up and running."
+      heading="Have a question?"
+      description="Drop us a line if you have any questions. We're here to help."
       url="mailto:support@buildkite.com"
       buttonTitle="support@buildkite.com"
     />

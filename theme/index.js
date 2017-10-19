@@ -71,7 +71,7 @@ export const maxWidthContainer = css`
 `;
 
 export const pageContainer = css`
-  margin-top: ${outerSpacing.s2};
+  margin-top: ${outerSpacing.s3};
   ${maxWidthContainer}
   margin-bottom: ${outerSpacing.s3};
 `
@@ -93,27 +93,36 @@ export const colors = {
   }
 };
 
+export const fontSizes = {
+  small: '16px',
+  regular: '18px',
+  large: '24px',
+  extraLarge: '36px',
+  giant: '48px'
+}
+
 export const textStyles = {
   mainCallout: css`
-    font-size: 48px;
+    font-size: ${fontSizes.giant};
     line-height: 1.1;
     font-weight: 800;
   `,
   bodyCopy: css`
-    font-size: 18px;
+    font-size: ${fontSizes.regular};
+    font-weight: normal;
   `,
   bodyCopySmall: css`
-    font-size: 16px;
+    font-size: ${fontSizes.small};
   `,
   bodyCopyLarge: css`
-    font-size: 24px;
+    font-size: ${fontSizes.large};
   `,
   secondLevelHeading: css`
-    font-size: 36px;
+    font-size: ${fontSizes.extraLarge};
     font-weight: 800;
   `,
   thirdLevelHeading: css`
-    font-size: 24px;
+    font-size: ${fontSizes.large};
     font-weight: bold;
   `
 }
