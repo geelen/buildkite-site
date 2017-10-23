@@ -6,6 +6,13 @@ steps:
       docker-compose#v1.5.1:
         run: site
 
+  - label: ":closed_lock_with_key:"
+    command: npm install -q -g nsp && nsp check
+    plugins:
+      docker#v1.0.0:
+        image: "node:latest"
+        workdir: /app
+
   - label: ":percy:"
     plugins:
       docker-compose#v1.5.1:
