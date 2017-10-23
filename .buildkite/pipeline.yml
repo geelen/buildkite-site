@@ -10,6 +10,8 @@ steps:
     command: .buildkite/steps/node-security-platform
     plugins:
       docker-compose#v1.5.1:
+        # We check for node dep vulnerabilities in our prod image, because
+        # that's whats running the site
         config: docker-compose.prod.yml
         run: site
 
@@ -17,7 +19,9 @@ steps:
     command: .buildkite/steps/retire
     plugins:
       docker-compose#v1.5.1:
-        config: docker-compose.prod.yml
+        # We check for frontend JS dep vulnerabilities in our dev image, because
+        # that's before packaging etc
+        config: docker-compose.yml
         run: site
 
   - label: ":percy:"
