@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -euo pipefail
+
+echo "~~~ :node: Installing retire"
+
+# Install https://github.com/RetireJS/retire.js
+npm install -q -g retire
+
+echo "+++ 🔐 Running retire security checks"
+
+# Check JS libraries against known vulnerabilities
+retire
+
+echo "✅ Looks AOK"

@@ -6,14 +6,15 @@ steps:
       docker-compose#v1.5.1:
         run: site
 
-  - label: ":closed_lock_with_key: nsp (dev)"
+  - label: ":closed_lock_with_key: nsp"
     command: .buildkite/steps/node-security-platform
     plugins:
       docker-compose#v1.5.1:
+        config: docker-compose.prod.yml
         run: site
 
-  - label: ":closed_lock_with_key: nsp (prod)"
-    command: .buildkite/steps/node-security-platform
+  - label: ":closed_lock_with_key: retire"
+    command: .buildkite/steps/retire
     plugins:
       docker-compose#v1.5.1:
         config: docker-compose.prod.yml
