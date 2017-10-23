@@ -6,12 +6,23 @@ steps:
       docker-compose#v1.5.1:
         run: site
 
-  - label: ":closed_lock_with_key:"
-    command: npm install -q -g nsp && nsp check
+  - label: ":closed_lock_with_key: nsp"
+    command: .buildkite/steps/node-security-platform
     plugins:
-      docker#v1.0.0:
-        image: "node:latest"
-        workdir: /app
+      docker-compose#v1.5.1:
+        # We check for node dep vulnerabilities in our prod image, because
+        # that's whats running the site
+        config: docker-compose.prod.yml
+        run: site
+
+  - label: ":closed_lock_with_key: retire"
+    command: .buildkite/steps/retire
+    plugins:
+      docker-compose#v1.5.1:
+        # We check for frontend JS dep vulnerabilities in our dev image, because
+        # that's before packaging etc
+        config: docker-compose.yml
+        run: site
 
   - label: ":percy:"
     plugins:
