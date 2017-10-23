@@ -7,13 +7,13 @@ steps:
         run: site
 
   - label: ":closed_lock_with_key: nsp (dev)"
-    command: bash -c 'npm install -q -g nsp && nsp check'
+    command: .buildkite/steps/node-security-platform
     plugins:
       docker-compose#v1.5.1:
         run: site
 
   - label: ":closed_lock_with_key: nsp (prod)"
-    command: bash -c 'npm install -q -g nsp && nsp check'
+    command: .buildkite/steps/node-security-platform
     plugins:
       docker-compose#v1.5.1:
         config: docker-compose.prod.yml

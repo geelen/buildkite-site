@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# Install https://github.com/nodesecurity/nsp
+npm install -q -g nsp
+
+# Check deps against known vulnerabilities
+nsp check
