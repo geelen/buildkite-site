@@ -44,7 +44,7 @@ export function page(fn) {
     const { bk_logged_in } = cookies(ctx)
     
     return {
-      loggedIn: bk_logged_in
+      loggedIn: (bk_logged_in == "true")
     }
   }
 
