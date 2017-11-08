@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 import * as theme from 'theme'
 import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 const Container = styled.div`
   ${theme.pageContainer}
@@ -36,16 +37,19 @@ const Image = styled.img`
 `
 
 export default ({ headTitle, title, description, image, imageAlt, children }) => (
-  <Container>
-    <Head>
-      <title>{headTitle}</title>
-    </Head>
-    <Header />
-    <div>
-      {image && <ImageContainer><Image src={image} alt={imageAlt} /></ImageContainer>}
-      <Title>{title}</Title>
-      <Description>{description}</Description>
-      {children}
-    </div>
-  </Container>
+  <div>
+    <Container>
+      <Head>
+        <title>{headTitle}</title>
+      </Head>
+      <Header />
+      <div>
+        {image && <ImageContainer><Image src={image} alt={imageAlt} /></ImageContainer>}
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        {children}
+      </div>
+    </Container>
+    <Footer />
+  </div>
 )
