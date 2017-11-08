@@ -12,6 +12,7 @@ import { team, leadership, advisors } from './people'
 
 const headOfficeImage = require('../../assets/images/about/head-office.jpg')
 const brandAssetsImage = require('../../assets/images/about/brand-assets.jpg')
+const shopImage = require('../../assets/images/about/shop.jpg')
 
 const OffscreenH2 = styled.h2`
   ${theme.offscreen}
@@ -172,7 +173,7 @@ export default () => (
       />
       <ActionGridItem
         heading="Buildkite Shop"
-        image={brandAssetsImage}
+        image={shopImage}
         imageAlt=""
         description="Order yourself some official Buildkite stickers, t-shirts, and more."
         url="https://shop.buildkite.com/"
@@ -182,7 +183,7 @@ export default () => (
 
     <Callout
       heading="Have a question?"
-      description="Drop us a line if you have any questions. We're here to help."
+      description="Drop us a line, we’re here to help."
       url="mailto:support@buildkite.com"
       buttonTitle="support@buildkite.com"
     />
