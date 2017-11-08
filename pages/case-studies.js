@@ -1,10 +1,11 @@
-import Page from 'components/Page'
+import Page, { page } from 'components/Page'
 
-export default () => (
+export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Case Studies"
     title="Case Studies"
     description="TODO"
+    loggedIn={loggedIn}
     >
   </Page>
-)
+))

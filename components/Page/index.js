@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Head from 'next/head'
+import cookies from 'next-cookies'
 
 import * as theme from 'theme'
 import Header from 'components/Header'
@@ -36,13 +37,27 @@ const Image = styled.img`
   margin-bottom: ${theme.innerSpacing.s2};
 `
 
-export default ({ headTitle, title, description, image, imageAlt, children }) => (
+// Helper function for setting up standard page props
+export function page(fn) {
+  fn.getInitialProps = (ctx) => {
+    // Uses next-cookies to get this in either the browser or backend
+    const { bk_logged_in } = cookies(ctx)
+    
+    return {
+      loggedIn: bk_logged_in
+    }
+  }
+
+  return fn;
+}
+
+export default ({ headTitle, title, description, image, imageAlt, children, loggedIn }) => (
   <div>
     <Container>
       <Head>
         <title>{headTitle}</title>
       </Head>
-      <Header />
+      <Header loggedIn={loggedIn} />
       <div>
         {image && <ImageContainer><Image src={image} alt={imageAlt} /></ImageContainer>}
         <Title>{title}</Title>

@@ -5,7 +5,7 @@ import * as theme from 'theme'
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Callout from 'components/Callout'
 import { Grid, Cell } from 'components/Grid'
-import Page from 'components/Page'
+import Page, { page } from 'components/Page'
 import Person from 'components/Person'
 
 import { team, leadership, advisors } from './people'
@@ -77,11 +77,12 @@ const LocationLink = styled.a`
   }
 `
 
-export default () => (
+export default page(({ loggedIn }) => (
   <Page
     headTitle="About Buildkite"
     title="About"
     description="We’re building the best software automation tools"
+    loggedIn={loggedIn}
     >
     <PeopleSection>
       <SectionHeader>Get to know the team</SectionHeader>
@@ -188,4 +189,4 @@ export default () => (
       buttonTitle="support@buildkite.com"
     />
   </Page>
-)
+))

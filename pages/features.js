@@ -1,12 +1,14 @@
-import Page from 'components/Page'
+import Page, { page } from 'components/Page'
+
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
-export default () => (
+export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Features"
     title="Features"
     description="TODO"
+    loggedIn={loggedIn}
     >
     <section>
       <h1>Build agents that give you full control</h1>
@@ -80,4 +82,4 @@ export default () => (
 
     <GetStarted/>
   </Page>
-)
+))

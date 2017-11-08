@@ -4,7 +4,7 @@ import * as theme from 'theme'
 import Button from 'components/Button'
 import CenteredLink from 'components/CenteredLink'
 import { Grid, Cell } from 'components/Grid'
-import Page from 'components/Page'
+import Page, { page } from 'components/Page'
 
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
@@ -53,9 +53,10 @@ const Section = styled.section`
 const CustomerGrid = Grid.withComponent('ul');
 const CustomerCell = Grid.withComponent('li');
 
-export default () => (
+export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite"
+    loggedIn={loggedIn}
     >
     <section>
       <OffscreenH1>Buildkite</OffscreenH1>
@@ -114,4 +115,4 @@ export default () => (
       <GetStarted/>
     </Section>
   </Page>
-)
+))
