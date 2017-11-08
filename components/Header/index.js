@@ -120,18 +120,34 @@ export default class Header extends React.PureComponent {
               <NavLink right prefetch widescreenOnly href="/about">
                 About
               </NavLink>
-              <NavLink right prefetch widescreenOnly href="/login">
-                Login
-              </NavLink>
-              <NavLink right prefetch href="/sign-up">
-                Signup
-              </NavLink>
+              {this.renderLoginLinks()}
             </LinkContainer>
           </Content>
         </HeaderWrapper>
         {this.state.showMenu && <Menu top={height} />}
       </div>
     );
+  }
+  
+  renderLoginLinks() {
+    if (this.props.loggedIn) {
+      return (
+        <NavLink right href="/dashboard">
+          Dashboard
+        </NavLink>
+      );
+    } else {
+      return (
+        [
+          <NavLink right prefetch widescreenOnly href="/login" key="login">
+            Login
+          </NavLink>,
+          <NavLink right prefetch href="/sign-up" key="signup">
+            Signup
+          </NavLink>
+        ]
+      )
+    }
   }
 
   handleWindowScroll = throttle(() => this.checkScroll())
