@@ -1,10 +1,10 @@
 # For running the production Node app
 
-FROM    node:8.4.0
+FROM    node:8.4.0-alpine
 ENV     NODE_ENV=production
 EXPOSE  3000
 WORKDIR /app
-COPY    package.json yarn.lock /app/
+COPY    package.json yarn.lock .yarnclean /app/
 RUN     yarn install --frozen-lockfile --silent
 COPY    . /app
 RUN     yarn run build

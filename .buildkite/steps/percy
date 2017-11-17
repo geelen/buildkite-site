@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Creates a percy snapshot and annotates the Buildkite build with a handy link
 # to the Percy build using the output from the Percy command
@@ -7,7 +7,7 @@
 #
 #   docker-compose -f docker-compose.percy.yml run percy
 
-set -euo pipefail
+set -eu
 
 echo "Creating Percy snapshot"
 
