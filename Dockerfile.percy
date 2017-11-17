@@ -2,7 +2,7 @@
 
 # Build and export to /app/out
 
-FROM    node:8.4.0
+FROM    node:8.4.0-alpine
 ENV     NODE_ENV=production
 WORKDIR /app
 COPY    yarn.lock package.json /app/
