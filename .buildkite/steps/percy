@@ -1,4 +1,5 @@
 #!/bin/sh
+set -euo pipefail
 
 # Creates a percy snapshot and annotates the Buildkite build with a handy link
 # to the Percy build using the output from the Percy command
@@ -6,8 +7,6 @@
 # Designed to be run inside the percy container via Docker Compose, ie:
 #
 #   docker-compose -f docker-compose.percy.yml run percy
-
-set -eu
 
 echo "Creating Percy snapshot"
 
