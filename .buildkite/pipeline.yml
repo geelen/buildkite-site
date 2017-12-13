@@ -6,30 +6,15 @@ steps:
       docker-compose#v1.7.0:
         run: site
 
-  - label: ":closed_lock_with_key: nsp"
-    command: .buildkite/steps/node-security-platform
-    plugins:
-      docker-compose#v1.7.0:
-        # We check for node dep vulnerabilities in our prod image, because
-        # that's whats running the site
-        config: docker-compose.prod.yml
-        run: site
-
-  - label: ":closed_lock_with_key: retire"
-    command: .buildkite/steps/retire
-    plugins:
-      docker-compose#v1.7.0:
-        # We check for frontend JS dep vulnerabilities in our dev image, because
-        # that's before packaging etc
-        config: docker-compose.yml
-        run: site
-
   - label: ":percy:"
     plugins:
       docker-compose#v1.7.0:
         config: docker-compose.percy.yml
         run: percy
     skip: "Static export doesn't work with cached assets"
+
+  - label: ":pipeline::closed_lock_with_key:"
+    command: "buildkite-agent pipeline upload .buildkite/pipeline.security.yml"
 
   - wait
 
