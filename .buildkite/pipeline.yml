@@ -3,13 +3,13 @@ steps:
   - label: ":jest:"
     command: yarn test
     plugins:
-      docker-compose#v1.5.1:
+      docker-compose#v1.7.0:
         run: site
 
   - label: ":closed_lock_with_key: nsp"
     command: .buildkite/steps/node-security-platform
     plugins:
-      docker-compose#v1.5.1:
+      docker-compose#v1.7.0:
         # We check for node dep vulnerabilities in our prod image, because
         # that's whats running the site
         config: docker-compose.prod.yml
@@ -18,7 +18,7 @@ steps:
   - label: ":closed_lock_with_key: retire"
     command: .buildkite/steps/retire
     plugins:
-      docker-compose#v1.5.1:
+      docker-compose#v1.7.0:
         # We check for frontend JS dep vulnerabilities in our dev image, because
         # that's before packaging etc
         config: docker-compose.yml
@@ -26,7 +26,7 @@ steps:
 
   - label: ":percy:"
     plugins:
-      docker-compose#v1.5.1:
+      docker-compose#v1.7.0:
         config: docker-compose.percy.yml
         run: percy
     skip: "Static export doesn't work with cached assets"
@@ -41,7 +41,7 @@ steps:
       ecr#v1.1.2:
         login: true
         account-ids: ${ECR_ACCOUNT_ID}
-      docker-compose#v1.5.1:
+      docker-compose#v1.7.0:
         config: docker-compose.prod.yml
         push:
           - site:${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}
