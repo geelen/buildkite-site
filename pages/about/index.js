@@ -62,7 +62,7 @@ const HeadOfficeImage = styled.img`
 `
 
 const People = ({ children }) => (
-  <Grid columns={children.length}>
+  <Grid columns="120px">
     {children.map((child, i) => (
       <Cell key={i}>{child}</Cell>
     ))}
@@ -110,7 +110,7 @@ export default page(({ loggedIn }) => (
     </PeopleSection>
 
     <Section>
-      <Grid columns={2}>
+      <Grid>
         <HeadOfficeImageCell>
           <HeadOfficeImage src={headOfficeImage} />
         </HeadOfficeImageCell>
@@ -124,7 +124,7 @@ export default page(({ loggedIn }) => (
 
     <Section>
       <SectionHeader>Our Values</SectionHeader>
-      <Grid columns={2}>
+      <Grid>
         <Cell>
           <h2>Transparency</h2>
           <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>

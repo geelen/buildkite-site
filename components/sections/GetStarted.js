@@ -32,7 +32,7 @@ const TextCell = Cell.extend`
 
 export default () => (
   <section>
-    <Grid columns={2}>
+    <Grid>
       <ImageCell>
         <Image src={image} alt="" />
       </ImageCell>
