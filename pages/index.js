@@ -95,7 +95,7 @@ export default page(({ loggedIn }) => (
       <OffscreenH1>Customers</OffscreenH1>
       <p>Join these teams who’ve switched to Buildkite…</p>
 
-      <CustomerGrid columns={3}>
+      <CustomerGrid>
         <CustomerCell>Logo 1</CustomerCell>
         <CustomerCell>Logo 1</CustomerCell>
         <CustomerCell>Logo 1</CustomerCell>
