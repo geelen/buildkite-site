@@ -2,10 +2,15 @@ import styled from 'styled-components'
 
 import * as theme from 'theme'
 
+const Wrapper = styled.div`
+  display: inline-block;
+`
+
 const Image = styled.img`
   border-radius: 50%;
-  height: 120px;
-  width: 120px;
+  height: 128px;
+  width: 128px;
+  border: 4px solid #fff;
 `
 
 const Name = styled.h3`
@@ -21,8 +26,8 @@ const Roles = styled.p`
 `
 
 export default ({ person, showRoles, showName }) => (
-  <div>
-    <Image src={person.photo} alt={`Photo of ${person.name}`} />
+  <Wrapper>
+    <Image src={person.photo} alt={`Photo of ${person.name}`} style={{backgroundColor: person.colour}} />
     {showName && <Name>{person.name}</Name>}
     {showRoles && <Roles>{person.roles.join(", ")}</Roles>}
     {/* <p>{person.bio}</p> */}
@@ -33,5 +38,5 @@ export default ({ person, showRoles, showName }) => (
         ))}
       </ul>
     </nav> */}
-  </div>
+  </Wrapper>
 )

@@ -61,13 +61,15 @@ const HeadOfficeImage = styled.img`
   max-width: 450px;
 `
 
-const People = ({ children }) => (
-  <Grid columns="120px">
-    {children.map((child, i) => (
-      <Cell key={i}>{child}</Cell>
-    ))}
-  </Grid>
-)
+const People = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  > * {
+    margin: -9px -6px;
+  }
+`
 
 const LocationLink = styled.a`
   text-decoration: none;
@@ -95,18 +97,18 @@ export default page(({ loggedIn }) => (
       </People>
 
       <SectionSecondLevelHeader>Leadership Team</SectionSecondLevelHeader>
-      <People>
+      <Grid columns="200px">
         {leadership.map((person) => (
           <Person person={person} key={person.name} showName showRoles />
         ))}
-      </People>
+      </Grid>
 
       <SectionSecondLevelHeader>Advisors</SectionSecondLevelHeader>
-      <People>
+      <Grid columns="200px">
         {advisors.map((person) => (
           <Person person={person} key={person.name} showName showRoles />
         ))}
-      </People>
+      </Grid>
     </PeopleSection>
 
     <Section>
