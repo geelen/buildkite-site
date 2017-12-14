@@ -18,7 +18,8 @@ export const team = [
       { name: "Twitter", url: "/TODO" },
       { name: "GitHub", url: "/TODO" },
       { name: "KeyBase", url: "/TODO" }
-    ]
+    ],
+    colour: "rgb(206,153,117)"
   },
   {
     photo: photoJess,
@@ -28,7 +29,8 @@ export const team = [
       { name: "Twitter", url: "/TODO" },
       { name: "GitHub", url: "/TODO" },
       { name: "KeyBase", url: "/TODO" }
-    ]
+    ],
+    colour: "rgb(236,188,217)"
   },
   {
     photo: photoSam,
@@ -38,7 +40,8 @@ export const team = [
       { name: "Twitter", url: "/TODO" },
       { name: "GitHub", url: "/TODO" },
       { name: "KeyBase", url: "/TODO" }
-    ]
+    ],
+    colour: "rgb(179,166,187)"
   },
   {
     photo: photoTim,
@@ -49,6 +52,7 @@ export const team = [
       { name: "GitHub", url: "/TODO" },
       { name: "KeyBase", url: "/TODO" }
     ],
+    colour: "rgb(129,188,228)",
     leadership: true,
     roles: ["Founder", "CEO"]
   },
@@ -61,6 +65,7 @@ export const team = [
       { name: "GitHub", url: "/TODO" },
       { name: "KeyBase", url: "/TODO" }
     ],
+    colour: "rgb(216,138,139)",
     leadership: true,    
     roles: ["Founder", "CTO"]
   },
@@ -73,6 +78,7 @@ export const team = [
       { name: "GitHub", url: "/TODO" },
       { name: "KeyBase", url: "/TODO" }
     ],
+    colour: "rgb(149,149,143)",
     leadership: true,
     roles: ["COO"]
   }
