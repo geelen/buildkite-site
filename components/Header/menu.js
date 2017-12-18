@@ -19,10 +19,15 @@ const MenuLinkAnchor = styled.a`
   will-change: color;
   display: block;
   line-height: 1;
+  ${theme.textStyles.bodyCopyLarge};
+
   & + * {
     margin-top: ${theme.innerSpacing.s1};
   }
-  ${theme.textStyles.bodyCopyLarge};
+
+  &:hover {
+    color: ${theme.colors.text.green};
+  }
 `
 
 const MenuLink = ({ children, href }) => (

@@ -53,9 +53,11 @@ const LinkAnchor = styled.a`
   will-change: color;
   flex: none;
   white-space: nowrap;
+
   &:hover {
     color: ${theme.colors.text.green};
   }
+
   ${props => props.widescreenOnly && css`
     @media (max-width: 959px) {
       display: none;
