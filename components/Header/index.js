@@ -12,8 +12,8 @@ import Menu from './menu'
 const scrollTransparencyThreshold = 60;
 
 const HeaderWrapper = styled.header`
-  position: fixed;
   position: -webkit-sticky;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
