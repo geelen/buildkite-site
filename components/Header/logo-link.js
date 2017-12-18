@@ -14,7 +14,7 @@ const LinkTag = styled.a`
   display: inline-block;
   ${showDebugOutlines && 'outline: 1px solid red'};
 
-  @media (max-width: 799px) {
+  @media (max-width: 349px) {
     width: 45px;
     flex-basis: 45px;
   }
@@ -28,14 +28,17 @@ const Mark = styled.img`
   height: 30px;
   ${showDebugOutlines && 'outline: 1px solid green'};
 
-  @media (min-width: 800px) {
+  @media (min-width: 350px) {
     left: 52px;
     pointer-events: none;
     will-change: transform;
     transition: transform 200ms;
 
-    ${LinkTag}:hover & {
-      transform: translateX(-50px) scale(.85);
+    ${LinkTag}:hover,
+    ${LinkTag}:focus {
+      & {
+        transform: translateX(-50px) scale(.85);
+      }
     }
   }
 `
@@ -49,7 +52,7 @@ const WordMark = styled.img`
   ${showDebugOutlines && 'outline: 1px solid blue'};
   display: none;
 
-  @media (min-width: 800px) {
+  @media (min-width: 350px) {
     display: inline-block;
     pointer-events: none;
     opacity: 0;    
@@ -59,10 +62,13 @@ const WordMark = styled.img`
     will-change: opacity, transform;
     transition: opacity 120ms, transform 200ms;
 
-    ${LinkTag}:hover & {
-      opacity: 1;
-      transform: translateX(0px);
-      transition: opacity 200ms, transform 200ms;
+    ${LinkTag}:hover,
+    ${LinkTag}:focus {
+      & {
+        opacity: 1;
+        transform: translateX(0px);
+        transition: opacity 200ms, transform 200ms;
+      }
     }
   }
 `
