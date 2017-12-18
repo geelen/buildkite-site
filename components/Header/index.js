@@ -9,8 +9,6 @@ import LoadingBar from './loading-bar'
 import MenuLink from './menu-link'
 import Menu from './menu'
 
-export const height = '70px';
-
 const scrollTransparencyThreshold = 60;
 
 const HeaderWrapper = styled.header`
@@ -19,10 +17,7 @@ const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  height: ${height};
   box-shadow: ${props => props.shadow ? theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
-  padding: ${theme.innerSpacing.s1} 0;
-  background-color: white;
   will-change: box-shadow;
   transition: box-shadow ${theme.timings.color};
   z-index: 10;
@@ -30,9 +25,15 @@ const HeaderWrapper = styled.header`
 
 const Content = styled.div`
   ${theme.maxWidthContainer}
+  position: relative;
+  background-color: white;
+  padding: ${theme.innerSpacing.s1};
   display: flex;
   align-items: center;
   line-height: 1;
+  box-shadow: ${props => props.shadow ? theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
+  will-change: box-shadow;
+  transition: box-shadow ${theme.timings.color};
 `;
 
 const LinkContainer = styled.div`
@@ -97,40 +98,42 @@ export default class Header extends React.PureComponent {
   }
 
   render() {
+    const shadow = this.state.scrolled || this.state.showMenu;
+
     return (
-      <div>
-        <HeaderWrapper shadow={this.state.scrolled || this.state.showMenu}>
-          <LoadingBar/>
-          <Content>
-            <LinkContainer left>
-              <MenuLink onClick={this.handleMenuLinkClick} />
-              <NavLink left prefetch widescreenOnly href="/features">
-                Features
-              </NavLink>
-              <NavLink left prefetch widescreenOnly href="/screencasts">
-                Screencasts
-              </NavLink>
-              <NavLink left prefetch widescreenOnly href="/case-studies">
-                Case Studies
-              </NavLink>
-            </LinkContainer>
-            <LogoLink/>
-            <LinkContainer right>
-              <NavLink right prefetch widescreenOnly href="/pricing">
-                Pricing
-              </NavLink>
-              <NavLink right prefetch widescreenOnly href="/support">
-                Support
-              </NavLink>
-              <NavLink right prefetch widescreenOnly href="/about">
-                About
-              </NavLink>
-              {this.renderLoginLinks()}
-            </LinkContainer>
-          </Content>
-        </HeaderWrapper>
-        {this.state.showMenu && <Menu top={height} />}
-      </div>
+      <HeaderWrapper shadow={shadow}>
+        <LoadingBar/>
+        <Content shadow={this.state.showMenu}>
+          <LinkContainer left>
+            <MenuLink onClick={this.handleMenuLinkClick} />
+            <NavLink left prefetch widescreenOnly href="/features">
+              Features
+            </NavLink>
+            <NavLink left prefetch widescreenOnly href="/screencasts">
+              Screencasts
+            </NavLink>
+            <NavLink left prefetch widescreenOnly href="/case-studies">
+              Case Studies
+            </NavLink>
+          </LinkContainer>
+          <LogoLink/>
+          <LinkContainer right>
+            <NavLink right prefetch widescreenOnly href="/pricing">
+              Pricing
+            </NavLink>
+            <NavLink right prefetch widescreenOnly href="/support">
+              Support
+            </NavLink>
+            <NavLink right prefetch widescreenOnly href="/about">
+              About
+            </NavLink>
+            {this.renderLoginLinks()}
+          </LinkContainer>
+        </Content>
+        {this.state.showMenu && (
+          <Menu />
+        )}
+      </HeaderWrapper>
     );
   }
   
