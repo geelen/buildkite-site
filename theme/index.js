@@ -90,7 +90,7 @@ export const maxWidthContainer = css`
 `;
 
 export const pageContainer = css`
-  margin-top: ${outerSpacing.s3};
+  margin-top: ${outerSpacing.s2};
   ${maxWidthContainer}
   margin-bottom: ${outerSpacing.s3};
 `
