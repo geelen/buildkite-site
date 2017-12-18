@@ -53,11 +53,11 @@ export function page(fn) {
 
 export default ({ headTitle, title, description, image, imageAlt, children, loggedIn }) => (
   <div>
+    <Head>
+      <title>{headTitle}</title>
+    </Head>
+    <Header loggedIn={loggedIn} />
     <Container>
-      <Head>
-        <title>{headTitle}</title>
-      </Head>
-      <Header loggedIn={loggedIn} />
       <div>
         {image && <ImageContainer><Image src={image} alt={imageAlt} /></ImageContainer>}
         <Title>{title}</Title>

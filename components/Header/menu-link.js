@@ -1,15 +1,19 @@
 import styled from 'styled-components'
 import * as theme from 'theme'
 
-const IconContainer = styled.div`
+const IconContainer = styled.button`
+  display: block;
   color: black;
   transition: color ${theme.timings.color};
   will-change: color;
-  display: block;
+  cursor: pointer;
   width: 30px;
   height: 30px;
+  padding: 0;
+  border: none;
+  background: none;
 
-  @media (min-width: 800px) {
+  @media (min-width: 960px) {
     display: none;
   }
 
@@ -18,13 +22,8 @@ const IconContainer = styled.div`
   }
 `
 
-const Image = styled.img`
-  width: 30px;
-  height: 30px;
-`
-
 export default ({ onClick }) => (
-  <IconContainer onClick={onClick}>
+  <IconContainer onClick={onClick} aria-label="Site Navigation Menu">
     <svg width="30px" height="30px" viewBox="0 0 30 30">
       <g stroke="none" strokeWidth="1" fill="currentColor" fillRule="evenodd">
         <rect x="5" y="7" width="20" height="2"></rect>

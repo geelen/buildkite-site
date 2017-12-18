@@ -26,7 +26,7 @@ const A = styled.a`
 export default () => (
   <Footer>
     <FooterInner>
-      <Grid columns={3}>
+      <Grid columns="180px">
         <Cell>
           <nav>
             <Link href="/" passHref><A>Home</A></Link>

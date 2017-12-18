@@ -15,7 +15,7 @@ const SpanButton = Button.withComponent('span')
 
 export const ActionGrid = ({ children }) => (
   <Nav>
-    <Grid columns={2}>
+    <Grid>
       {children}
     </Grid>
   </Nav>

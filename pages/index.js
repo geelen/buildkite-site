@@ -69,7 +69,7 @@ export default page(({ loggedIn }) => (
 
       <p><ScreenshotImage src={screenshotPath}/></p>
 
-      <Grid columns={2}>
+      <Grid>
         <Cell>
           <h2>buildkite-agent gives you full control</h2>
           <p>Small description of what this feature even means, how it works, intrigues them to read more.</p>
@@ -95,7 +95,7 @@ export default page(({ loggedIn }) => (
       <OffscreenH1>Customers</OffscreenH1>
       <p>Join these teams who’ve switched to Buildkite…</p>
 
-      <CustomerGrid columns={3}>
+      <CustomerGrid>
         <CustomerCell>Logo 1</CustomerCell>
         <CustomerCell>Logo 1</CustomerCell>
         <CustomerCell>Logo 1</CustomerCell>
