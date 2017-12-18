@@ -9,7 +9,7 @@ export default page(({ loggedIn }) => (
     title="Features"
     description="TODO"
     loggedIn={loggedIn}
-    >
+  >
     <section>
       <h1>Build agents that give you full control</h1>
       <p>Run the open-source buildkite-agent on your own infrastructure for maximum speed, control, and security. And your source code never leaves your machine.</p>

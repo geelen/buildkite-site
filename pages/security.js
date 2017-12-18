@@ -6,6 +6,6 @@ export default page(({ loggedIn }) => (
     title="Security"
     description="TODO"
     loggedIn={loggedIn}
-    >
+  >
   </Page>
 ))
