@@ -24,13 +24,10 @@ const OffscreenH1 = styled.h1`
 
 const PositioningStatement = styled.h2`
   ${theme.textStyles.mainCallout}
-  margin-top: ${theme.outerSpacing.s2};
-  margin-bottom: ${theme.innerSpacing.s1};
   max-width: 50rem;
   padding-left: ${theme.innerSpacing.s1};
   padding-right: ${theme.innerSpacing.s1};
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   text-align: center;
 `
 
@@ -57,7 +54,7 @@ export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite"
     loggedIn={loggedIn}
-    >
+  >
     <section>
       <OffscreenH1>Buildkite</OffscreenH1>
       <PositioningStatement>Lightning fast testing and delivery<br/>for all your software projects</PositioningStatement>
