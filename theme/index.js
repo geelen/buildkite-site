@@ -85,6 +85,8 @@ export const maxWidthContainer = css`
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: ${innerSpacing.s1};
+  padding-right: ${innerSpacing.s1};
 `;
 
 export const pageContainer = css`

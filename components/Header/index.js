@@ -15,12 +15,13 @@ const scrollTransparencyThreshold = 60;
 
 const HeaderWrapper = styled.header`
   position: fixed;
+  position: -webkit-sticky;
   top: 0;
   left: 0;
   width: 100%;
   height: ${height};
   box-shadow: ${props => props.shadow ? theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
-  padding: ${theme.innerSpacing.s1};
+  padding: ${theme.innerSpacing.s1} 0;
   background-color: white;
   will-change: box-shadow;
   transition: box-shadow ${theme.timings.color};
@@ -36,6 +37,9 @@ const Content = styled.div`
 
 const LinkContainer = styled.div`
   flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: ${props => props.left ? 'flex-start' : 'flex-end'};
   text-align: ${props => props.left ? 'left' : 'right'};
 `;
 
@@ -48,11 +52,12 @@ const LinkAnchor = styled.a`
   transition: color ${theme.timings.color};
   will-change: color;
   flex: none;
+  white-space: nowrap;
   &:hover {
     color: ${theme.colors.text.green};
   }
   ${props => props.widescreenOnly && css`
-    @media (max-width: 799px) {
+    @media (max-width: 959px) {
       display: none;
     }
   `}
