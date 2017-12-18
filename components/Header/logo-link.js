@@ -8,13 +8,15 @@ const wordmarkSvgPath = require('../../assets/images/brand/wordmark.svg');
 
 const LinkTag = styled.a`
   position: relative;
-  @media (max-width: 799px) {
-    width: 52px;
-  }
   width: 152px;
   height: 30px;
+  flex: 0 0 152px;
   display: inline-block;
   ${showDebugOutlines && 'outline: 1px solid red'};
+  @media (max-width: 799px) {
+    width: 52px;
+    flex-basis: 52px;
+  }
 `
 
 const Mark = styled.img`
