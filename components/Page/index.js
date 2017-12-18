@@ -59,9 +59,17 @@ export default ({ headTitle, title, description, image, imageAlt, children, logg
     <Header loggedIn={loggedIn} />
     <Container>
       <div>
-        {image && <ImageContainer><Image src={image} alt={imageAlt} /></ImageContainer>}
-        <Title>{title}</Title>
-        <Description>{description}</Description>
+        {image && (
+          <ImageContainer>
+            <Image src={image} alt={imageAlt} />
+          </ImageContainer>
+        )}
+        {title && (
+          <Title>{title}</Title>
+        )}
+        {description && (
+          <Description>{description}</Description>
+        )}
         {children}
       </div>
     </Container>
