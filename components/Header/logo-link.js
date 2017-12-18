@@ -34,11 +34,9 @@ const Mark = styled.img`
     will-change: transform;
     transition: transform 200ms;
 
-    ${LinkTag}:hover,
-    ${LinkTag}:focus {
-      & {
-        transform: translateX(-50px) scale(.85);
-      }
+    ${LinkTag}:hover &,
+    ${LinkTag}:focus & {
+      transform: translateX(-50px) scale(.85);
     }
   }
 `
@@ -62,13 +60,11 @@ const WordMark = styled.img`
     will-change: opacity, transform;
     transition: opacity 120ms, transform 200ms;
 
-    ${LinkTag}:hover,
-    ${LinkTag}:focus {
-      & {
-        opacity: 1;
-        transform: translateX(0px);
-        transition: opacity 200ms, transform 200ms;
-      }
+    ${LinkTag}:hover &,
+    ${LinkTag}:focus & {
+      opacity: 1;
+      transform: translateX(0px);
+      transition: opacity 200ms, transform 200ms;
     }
   }
 `
