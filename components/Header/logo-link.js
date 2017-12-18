@@ -13,9 +13,10 @@ const LinkTag = styled.a`
   flex: 0 0 152px;
   display: inline-block;
   ${showDebugOutlines && 'outline: 1px solid red'};
+
   @media (max-width: 799px) {
-    width: 52px;
-    flex-basis: 52px;
+    width: 45px;
+    flex-basis: 45px;
   }
 `
 
@@ -35,7 +36,7 @@ const Mark = styled.img`
 
     ${LinkTag}:hover & {
       transform: translateX(-50px) scale(.85);
-    }  
+    }
   }
 `
 
@@ -57,6 +58,7 @@ const WordMark = styled.img`
     transform-origin: left top;
     will-change: opacity, transform;
     transition: opacity 120ms, transform 200ms;
+
     ${LinkTag}:hover & {
       opacity: 1;
       transform: translateX(0px);
