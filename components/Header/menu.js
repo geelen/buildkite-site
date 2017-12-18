@@ -3,14 +3,9 @@ import styled from 'styled-components'
 import * as theme from 'theme'
 
 const Menu = styled.nav`
-  position: fixed;
-  top: ${props => props.top};
-  left: 0;
-  width: 100%;
-  z-index: 9;
+  ${theme.maxWidthContainer}
   background-color: rgba(255,255,255,.98);
   padding: ${theme.innerSpacing.s2} ${theme.innerSpacing.s1};
-  box-shadow: ${theme.boxShadows.menuBar};
 `
 
 const MenuLinkAnchor = styled.a`
@@ -33,8 +28,8 @@ const MenuLink = ({ children, href }) => (
   </Link>
 )
 
-export default ({ top }) => (
-  <Menu top={top}>
+export default () => (
+  <Menu>
     <MenuLink href="/features">
       Features
     </MenuLink>
