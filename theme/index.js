@@ -90,9 +90,21 @@ export const maxWidthContainer = css`
 `;
 
 export const pageContainer = css`
-  margin-top: ${outerSpacing.s2};
   ${maxWidthContainer}
+  margin-top: 10px;
   margin-bottom: ${outerSpacing.s3};
+
+  @media (min-width: 350px) {
+    margin-top: 30px;
+  }
+
+  @media (min-width: 640px) {
+    margin-top: 60px;
+  }
+
+  @media (min-width: 960px) {
+    margin-top: ${outerSpacing.s2};
+  }
 `
 
 export const colors = {
@@ -122,9 +134,13 @@ export const fontSizes = {
 
 export const textStyles = {
   mainCallout: css`
-    font-size: ${fontSizes.giant};
+    font-size: ${fontSizes.extraLarge};
     line-height: 1.1;
     font-weight: 800;
+
+    @media (min-width: 350px) {
+      font-size: ${fontSizes.giant};
+    }
   `,
   bodyCopy: css`
     font-size: ${fontSizes.regular};
@@ -134,7 +150,11 @@ export const textStyles = {
     font-size: ${fontSizes.small};
   `,
   bodyCopyLarge: css`
-    font-size: ${fontSizes.large};
+    font-size: 20px;
+
+    @media (min-width: 350px) {
+      font-size: ${fontSizes.large};
+    }
   `,
   secondLevelHeading: css`
     font-size: ${fontSizes.extraLarge};
@@ -169,6 +189,7 @@ export const offscreen = css`
   position: absolute;
   clip-path: inset(50%);
   overflow: hidden;
+  margin: 0;
   padding: 0;
   border: 0;
   height: 1px;
