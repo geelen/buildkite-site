@@ -9,7 +9,7 @@ const IconContainer = styled.div`
   width: 30px;
   height: 30px;
 
-  @media (min-width: 800px) {
+  @media (min-width: 960px) {
     display: none;
   }
 
