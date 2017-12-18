@@ -4,8 +4,11 @@ import * as theme from 'theme'
 
 const Menu = styled.nav`
   ${theme.maxWidthContainer}
+  position: absolute;
+  width: 100%;
   background-color: rgba(255,255,255,.98);
   padding: ${theme.innerSpacing.s2} ${theme.innerSpacing.s1};
+  box-shadow: ${theme.boxShadows.menuBar};
 `
 
 const MenuLinkAnchor = styled.a`

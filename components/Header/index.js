@@ -32,8 +32,7 @@ const Content = styled.div`
   align-items: center;
   line-height: 1;
   box-shadow: ${props => props.shadow ? theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
-  will-change: box-shadow;
-  transition: box-shadow ${theme.timings.color};
+  z-index: 1;
 `;
 
 const LinkContainer = styled.div`
