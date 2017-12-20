@@ -101,7 +101,7 @@ export default page(({ loggedIn }) => (
         <CustomerCell>Logo 1</CustomerCell>
       </CustomerGrid>
 
-      <CenteredLink href="/features"><Button>Read the case studies</Button></CenteredLink>
+      <CenteredLink href="/case-studies"><Button>Read the case studies</Button></CenteredLink>
     </Section>
 
     <Section>
