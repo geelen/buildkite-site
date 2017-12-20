@@ -17,12 +17,18 @@ const FooterInner = styled.div`
   padding-bottom: ${theme.innerSpacing.s2};
 `
 
-const Anchor = styled.a`
+const FooterLinkAnchor = styled.a`
   ${theme.textStyles.hyperlink}
   margin-right: ${theme.innerSpacing.s1};
   margin-bottom: ${theme.textSpacing.s1};
   display: block;
 `
+
+const FooterLink = ({ children, href }) => (
+  <Link href={href} passHref>
+    <FooterLinkAnchor>{children}</FooterLinkAnchor>
+  </Link>
+)
 
 export default () => (
   <Footer>
@@ -30,28 +36,28 @@ export default () => (
       <Grid columns="180px">
         <Cell>
           <nav>
-            <Link href="/" passHref><Anchor>Home</Anchor></Link>
-            <Link href="/features" passHref><Anchor>Features</Anchor></Link>
-            <Link href="/screencasts" passHref><Anchor>Screencasts</Anchor></Link>
-            <Link href="/pricing" passHref><Anchor>Pricing</Anchor></Link>
-            <Link href="/enterprise" passHref><Anchor>Enterprise</Anchor></Link>
+            <FooterLink href="/">Home</FooterLink>
+            <FooterLink href="/features">Features</FooterLink>
+            <FooterLink href="/screencasts">Screencasts</FooterLink>
+            <FooterLink href="/pricing">Pricing</FooterLink>
+            <FooterLink href="/enterprise">Enterprise</FooterLink>
           </nav>
         </Cell>
         <Cell>
           <nav>
-            <Link href="/about" passHref><Anchor>About</Anchor></Link>
-            <Link href="/case-studies" passHref><Anchor>Case Studies</Anchor></Link>
-            <Link href="/brand-assets" passHref><Anchor>Brand Assets</Anchor></Link>
-            <Link href="/security" passHref><Anchor>Security</Anchor></Link>
-            <Link href="https://shop.buildkite.com/" passHref><Anchor>Shop</Anchor></Link>
+            <FooterLink href="/about">About</FooterLink>
+            <FooterLink href="/case-studies">Case Studies</FooterLink>
+            <FooterLink href="/brand-assets">Brand Assets</FooterLink>
+            <FooterLink href="/security">Security</FooterLink>
+            <FooterLink href="https://shop.buildkite.com/">Shop</FooterLink>
           </nav>
         </Cell>
         <Cell>
           <nav>
-            <Link href="/docs" passHref><Anchor>Documentation</Anchor></Link>
-            <Link href="/support" passHref><Anchor>Support</Anchor></Link>
-            <Link href="/contact" passHref><Anchor>Contact Us</Anchor></Link>
-            <Link href="https://buildkitestatus.com/" passHref><Anchor>System Status</Anchor></Link>
+            <FooterLink href="/docs">Documentation</FooterLink>
+            <FooterLink href="/support">Support</FooterLink>
+            <FooterLink href="/contact">Contact Us</FooterLink>
+            <FooterLink href="https://buildkitestatus.com/">System Status</FooterLink>
          </nav>
         </Cell>
       </Grid>
