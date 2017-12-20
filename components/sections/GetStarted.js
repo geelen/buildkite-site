@@ -21,9 +21,12 @@ const ImageCell = Cell.extend`
 `
 
 const Image = styled.img`
-  width: 100%;
-  max-width: 400px;
-  margin-right: ${theme.innerSpacing.s2};
+  width: 400px;
+  max-width: 100%;
+
+  @media (min-width: 350px) {
+    margin-right: ${theme.innerSpacing.s2};
+  }
 `
 
 const TextCell = Cell.extend`
