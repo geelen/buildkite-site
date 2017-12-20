@@ -7,9 +7,10 @@ const Wrapper = styled.div`
 `
 
 const ImageWrapper = styled.div`
-  background-color: white;
   border-radius: 50%;
   border: 2px solid #fff;
+  padding: 3px;
+  background-color: white;
   display: inline-flex;
 
   &:hover {
@@ -21,10 +22,9 @@ const Image = styled.img`
   border-radius: 50%;
   height: 128px;
   width: 128px;
-  border: 2px solid #fff;
 `
 
-const Headshot = ({person}) => (
+const Headshot = ({ person }) => (
   <ImageWrapper colour={person.colour}>
     <Image
       src={person.photo}
