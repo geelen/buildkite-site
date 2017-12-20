@@ -17,7 +17,8 @@ const FooterInner = styled.div`
   padding-bottom: ${theme.innerSpacing.s2};
 `
 
-const A = styled.a`
+const Anchor = styled.a`
+  ${theme.textStyles.hyperlink}
   margin-right: ${theme.innerSpacing.s1};
   margin-bottom: ${theme.textSpacing.s1};
   display: block;
@@ -29,28 +30,28 @@ export default () => (
       <Grid columns="180px">
         <Cell>
           <nav>
-            <Link href="/" passHref><A>Home</A></Link>
-            <Link href="/features" passHref><A>Features</A></Link>
-            <Link href="/screencasts" passHref><A>Screencasts</A></Link>
-            <Link href="/pricing" passHref><A>Pricing</A></Link>
-            <Link href="/enterprise" passHref><A>Enterprise</A></Link>
+            <Link href="/" passHref><Anchor>Home</Anchor></Link>
+            <Link href="/features" passHref><Anchor>Features</Anchor></Link>
+            <Link href="/screencasts" passHref><Anchor>Screencasts</Anchor></Link>
+            <Link href="/pricing" passHref><Anchor>Pricing</Anchor></Link>
+            <Link href="/enterprise" passHref><Anchor>Enterprise</Anchor></Link>
           </nav>
         </Cell>
         <Cell>
           <nav>
-            <Link href="/about" passHref><A>About</A></Link>
-            <Link href="/case-studies" passHref><A>Case Studies</A></Link>
-            <Link href="/brand-assets" passHref><A>Brand Assets</A></Link>
-            <Link href="/security" passHref><A>Security</A></Link>
-            <Link href="https://shop.buildkite.com/" passHref><A>Shop</A></Link>
+            <Link href="/about" passHref><Anchor>About</Anchor></Link>
+            <Link href="/case-studies" passHref><Anchor>Case Studies</Anchor></Link>
+            <Link href="/brand-assets" passHref><Anchor>Brand Assets</Anchor></Link>
+            <Link href="/security" passHref><Anchor>Security</Anchor></Link>
+            <Link href="https://shop.buildkite.com/" passHref><Anchor>Shop</Anchor></Link>
           </nav>
         </Cell>
         <Cell>
           <nav>
-            <Link href="/docs" passHref><A>Documentation</A></Link>
-            <Link href="/support" passHref><A>Support</A></Link>
-            <Link href="/contact" passHref><A>Contact Us</A></Link>
-            <Link href="https://buildkitestatus.com/" passHref><A>System Status</A></Link>
+            <Link href="/docs" passHref><Anchor>Documentation</Anchor></Link>
+            <Link href="/support" passHref><Anchor>Support</Anchor></Link>
+            <Link href="/contact" passHref><Anchor>Contact Us</Anchor></Link>
+            <Link href="https://buildkitestatus.com/" passHref><Anchor>System Status</Anchor></Link>
          </nav>
         </Cell>
       </Grid>

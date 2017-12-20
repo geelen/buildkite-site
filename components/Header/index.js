@@ -44,19 +44,12 @@ const LinkContainer = styled.div`
 `;
 
 const LinkAnchor = styled.a`
-  color: ${props => props.active ? theme.colors.text.green : 'black'};
-  text-decoration: none;
+  ${theme.textStyles.hyperlink}
   margin-left: ${props => props.right ? theme.innerSpacing.s1 : 0};
   margin-right: ${props => props.left ? theme.innerSpacing.s1 : 0};
   font-weight: bold;
-  transition: color ${theme.timings.color};
-  will-change: color;
   flex: none;
   white-space: nowrap;
-
-  &:hover {
-    color: ${theme.colors.text.green};
-  }
 
   ${props => props.widescreenOnly && css`
     @media (max-width: 959px) {
