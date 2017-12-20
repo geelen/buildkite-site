@@ -132,6 +132,10 @@ export const fontSizes = {
   giant: '48px'
 }
 
+export const timings = {
+  color: '300ms'
+}
+
 export const textStyles = {
   mainCallout: css`
     font-size: ${fontSizes.extraLarge};
@@ -163,6 +167,16 @@ export const textStyles = {
   thirdLevelHeading: css`
     font-size: ${fontSizes.large};
     font-weight: bold;
+  `,
+  hyperlink: css`
+    text-decoration: none;
+    color: ${props => props.active ? colors.text.green : 'black'};
+    transition: color ${timings.color};
+    will-change: color;
+
+    &:hover {
+      color: ${colors.text.green};
+    }
   `
 }
 
@@ -171,10 +185,6 @@ export const images = {
     box-shadow: 0 4px 8px 2px rgba(0,0,0,.1),
                 0 0 2px rgba(0,0,0,.2);
   `
-}
-
-export const timings = {
-  color: '300ms'
 }
 
 export const boxShadows = {
