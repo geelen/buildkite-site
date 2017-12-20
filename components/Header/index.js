@@ -43,20 +43,13 @@ const LinkContainer = styled.div`
   text-align: ${props => props.left ? 'left' : 'right'};
 `;
 
-const LinkAnchor = styled.a`
-  color: ${props => props.active ? theme.colors.text.green : 'black'};
-  text-decoration: none;
+const HeaderLinkAnchor = styled.a`
+  ${theme.textStyles.hyperlink}
   margin-left: ${props => props.right ? theme.innerSpacing.s1 : 0};
   margin-right: ${props => props.left ? theme.innerSpacing.s1 : 0};
   font-weight: bold;
-  transition: color ${theme.timings.color};
-  will-change: color;
   flex: none;
   white-space: nowrap;
-
-  &:hover {
-    color: ${theme.colors.text.green};
-  }
 
   ${props => props.widescreenOnly && css`
     @media (max-width: 959px) {
@@ -65,17 +58,17 @@ const LinkAnchor = styled.a`
   `}
 `
 
-const NavLink = withRouter(({ children, router, href, prefetch, left, right, widescreenOnly }) => {
+const HeaderLink = withRouter(({ children, router, href, prefetch, left, right, widescreenOnly }) => {
   return (
     <Link prefetch href={href} passHref>
-      <LinkAnchor
+      <HeaderLinkAnchor
         left={left}
         right={right}
         widescreenOnly={widescreenOnly}
         active={router.pathname === href}
       >
         {children}
-      </LinkAnchor>
+      </HeaderLinkAnchor>
     </Link>
   )
 })
@@ -107,27 +100,27 @@ export default class Header extends React.PureComponent {
         <Content shadow={this.state.showMenu}>
           <LinkContainer left>
             <MenuLink onClick={this.handleMenuLinkClick} />
-            <NavLink left prefetch widescreenOnly href="/features">
+            <HeaderLink left prefetch widescreenOnly href="/features">
               Features
-            </NavLink>
-            <NavLink left prefetch widescreenOnly href="/screencasts">
+            </HeaderLink>
+            <HeaderLink left prefetch widescreenOnly href="/screencasts">
               Screencasts
-            </NavLink>
-            <NavLink left prefetch widescreenOnly href="/case-studies">
+            </HeaderLink>
+            <HeaderLink left prefetch widescreenOnly href="/case-studies">
               Case Studies
-            </NavLink>
+            </HeaderLink>
           </LinkContainer>
           <LogoLink />
           <LinkContainer right>
-            <NavLink right prefetch widescreenOnly href="/pricing">
+            <HeaderLink right prefetch widescreenOnly href="/pricing">
               Pricing
-            </NavLink>
-            <NavLink right prefetch widescreenOnly href="/support">
+            </HeaderLink>
+            <HeaderLink right prefetch widescreenOnly href="/support">
               Support
-            </NavLink>
-            <NavLink right prefetch widescreenOnly href="/about">
+            </HeaderLink>
+            <HeaderLink right prefetch widescreenOnly href="/about">
               About
-            </NavLink>
+            </HeaderLink>
             {this.renderLoginLinks()}
           </LinkContainer>
         </Content>
@@ -141,19 +134,19 @@ export default class Header extends React.PureComponent {
   renderLoginLinks() {
     if (this.props.loggedIn) {
       return (
-        <NavLink right href="/dashboard">
+        <HeaderLink right href="/dashboard">
           Dashboard
-        </NavLink>
+        </HeaderLink>
       );
     } else {
       return (
         [
-          <NavLink right prefetch widescreenOnly href="/login" key="login">
+          <HeaderLink right prefetch widescreenOnly href="/login" key="login">
             Login
-          </NavLink>,
-          <NavLink right prefetch href="/sign-up" key="signup">
+          </HeaderLink>,
+          <HeaderLink right prefetch href="/sign-up" key="signup">
             Signup
-          </NavLink>
+          </HeaderLink>
         ]
       )
     }

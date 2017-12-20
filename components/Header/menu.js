@@ -12,21 +12,14 @@ const Menu = styled.nav`
 `
 
 const MenuLinkAnchor = styled.a`
-  color: ${props => props.active ? theme.colors.text.green : 'black'};
-  text-decoration: none;
+  ${theme.textStyles.bodyCopyLarge}
+  ${theme.textStyles.hyperlink}
   font-weight: bold;
-  transition: color ${theme.timings.color};
-  will-change: color;
   display: block;
   line-height: 1;
-  ${theme.textStyles.bodyCopyLarge};
 
   & + * {
     margin-top: ${theme.innerSpacing.s1};
-  }
-
-  &:hover {
-    color: ${theme.colors.text.green};
   }
 `
 

@@ -17,11 +17,18 @@ const FooterInner = styled.div`
   padding-bottom: ${theme.innerSpacing.s2};
 `
 
-const A = styled.a`
+const FooterLinkAnchor = styled.a`
+  ${theme.textStyles.hyperlink}
   margin-right: ${theme.innerSpacing.s1};
   margin-bottom: ${theme.textSpacing.s1};
   display: block;
 `
+
+const FooterLink = ({ children, href }) => (
+  <Link href={href} passHref>
+    <FooterLinkAnchor>{children}</FooterLinkAnchor>
+  </Link>
+)
 
 export default () => (
   <Footer>
@@ -29,28 +36,28 @@ export default () => (
       <Grid columns="180px">
         <Cell>
           <nav>
-            <Link href="/" passHref><A>Home</A></Link>
-            <Link href="/features" passHref><A>Features</A></Link>
-            <Link href="/screencasts" passHref><A>Screencasts</A></Link>
-            <Link href="/pricing" passHref><A>Pricing</A></Link>
-            <Link href="/enterprise" passHref><A>Enterprise</A></Link>
+            <FooterLink href="/">Home</FooterLink>
+            <FooterLink href="/features">Features</FooterLink>
+            <FooterLink href="/screencasts">Screencasts</FooterLink>
+            <FooterLink href="/pricing">Pricing</FooterLink>
+            <FooterLink href="/enterprise">Enterprise</FooterLink>
           </nav>
         </Cell>
         <Cell>
           <nav>
-            <Link href="/about" passHref><A>About</A></Link>
-            <Link href="/case-studies" passHref><A>Case Studies</A></Link>
-            <Link href="/brand-assets" passHref><A>Brand Assets</A></Link>
-            <Link href="/security" passHref><A>Security</A></Link>
-            <Link href="https://shop.buildkite.com/" passHref><A>Shop</A></Link>
+            <FooterLink href="/about">About</FooterLink>
+            <FooterLink href="/case-studies">Case Studies</FooterLink>
+            <FooterLink href="/brand-assets">Brand Assets</FooterLink>
+            <FooterLink href="/security">Security</FooterLink>
+            <FooterLink href="https://shop.buildkite.com/">Shop</FooterLink>
           </nav>
         </Cell>
         <Cell>
           <nav>
-            <Link href="/docs" passHref><A>Documentation</A></Link>
-            <Link href="/support" passHref><A>Support</A></Link>
-            <Link href="/contact" passHref><A>Contact Us</A></Link>
-            <Link href="https://buildkitestatus.com/" passHref><A>System Status</A></Link>
+            <FooterLink href="/docs">Documentation</FooterLink>
+            <FooterLink href="/support">Support</FooterLink>
+            <FooterLink href="/contact">Contact Us</FooterLink>
+            <FooterLink href="https://buildkitestatus.com/">System Status</FooterLink>
          </nav>
         </Cell>
       </Grid>
