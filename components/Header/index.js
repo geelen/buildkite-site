@@ -9,7 +9,7 @@ import LoadingBar from './loading-bar'
 import MenuLink from './menu-link'
 import Menu from './menu'
 
-const scrollTransparencyThreshold = 60;
+const scrollThreshold = 60;
 
 const HeaderWrapper = styled.header`
   position: -webkit-sticky;
@@ -84,11 +84,13 @@ export default class Header extends React.PureComponent {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleWindowScroll);
+    window.addEventListener('resize', this.handleWindowResize);
     this.checkScroll();
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleWindowScroll);
+    window.removeEventListener('resize', this.handleWindowResize);
   }
 
   render() {
@@ -153,6 +155,7 @@ export default class Header extends React.PureComponent {
   }
 
   handleWindowScroll = throttle(() => this.checkScroll())
+  handleWindowResize = throttle(() => this.checkResize())
 
   handleMenuLinkClick = (e) => {
     e.preventDefault();
@@ -160,13 +163,14 @@ export default class Header extends React.PureComponent {
   }
 
   checkScroll() {
-    if (window.scrollY > scrollTransparencyThreshold) {
-      if (!this.state.scrolled) {
-        this.setState({scrolled: true});
-      }
-    } else {
-      if (this.state.scrolled) {
-        this.setState({scrolled: false});
+    const scrolled = window.scrollY > scrollThreshold;
+    this.setState({ scrolled });
+  }
+
+  checkResize() {
+    if (this.state.showMenu) {
+      if (window.outerWidth >= 960) {
+        this.setState({ showMenu: false });
       }
     }
   }
