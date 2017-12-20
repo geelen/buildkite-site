@@ -6,12 +6,33 @@ const Wrapper = styled.div`
   display: inline-block;
 `
 
+const ImageWrapper = styled.div`
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: inline-flex;
+
+  &:hover {
+    border-color: ${props => props.colour};
+  }
+`
+
 const Image = styled.img`
   border-radius: 50%;
   height: 128px;
   width: 128px;
-  border: 4px solid #fff;
+  border: 2px solid #fff;
 `
+
+const Headshot = ({person}) => (
+  <ImageWrapper colour={person.colour}>
+    <Image
+      src={person.photo}
+      alt={`Photo of ${person.name}`}
+      style={{backgroundColor: person.colour}}
+    />
+  </ImageWrapper>
+);
 
 const Name = styled.h3`
   margin-top: ${theme.textSpacing.s1};
@@ -27,7 +48,7 @@ const Roles = styled.p`
 
 export default ({ person, showRoles, showName }) => (
   <Wrapper>
-    <Image src={person.photo} alt={`Photo of ${person.name}`} style={{backgroundColor: person.colour}} />
+    <Headshot person={person} />
     {showName && <Name>{person.name}</Name>}
     {showRoles && <Roles>{person.roles.join(", ")}</Roles>}
     {/* <p>{person.bio}</p> */}
