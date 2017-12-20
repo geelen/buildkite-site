@@ -47,7 +47,9 @@ const Section = styled.section`
 `
 
 // For this content it should be ul/li instead of div/div
-const CustomerGrid = Grid.withComponent('ul');
+const CustomerGrid = styled(Grid)`
+  padding: 0;
+`.withComponent('ul');
 const CustomerCell = Grid.withComponent('li');
 
 export default page(({ loggedIn }) => (
@@ -57,14 +59,19 @@ export default page(({ loggedIn }) => (
   >
     <section>
       <OffscreenH1>Buildkite</OffscreenH1>
-      <PositioningStatement>Lightning fast testing and delivery<br/>for all your software projects</PositioningStatement>
-      <ExplanationStatement>Buildkite makes it simple to run and scale your own continuous integration pipelines, so you can stay productive no matter how large you grow.</ExplanationStatement>
+      <PositioningStatement>
+        Lightning fast testing and delivery <br/>
+        for all your software projects
+      </PositioningStatement>
+      <ExplanationStatement>
+        Buildkite makes it simple to run and scale your own continuous integration pipelines, so you can stay productive no matter how large you grow.
+      </ExplanationStatement>
     </section>
 
-    <section>
+    <Section>
       <OffscreenH1>Features</OffscreenH1>
 
-      <p><ScreenshotImage src={screenshotPath}/></p>
+      <ScreenshotImage src={screenshotPath} />
 
       <Grid>
         <Cell>
@@ -86,7 +93,7 @@ export default page(({ loggedIn }) => (
       </Grid>
 
       <CenteredLink href="/features"><Button>See all the features</Button></CenteredLink>
-    </section>
+    </Section>
 
     <Section>
       <OffscreenH1>Customers</OffscreenH1>
