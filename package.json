@@ -16,7 +16,7 @@
     "react-dom": "^16.0.0",
     "react-transition-group": "^2.2.1",
     "styled-components": "^2.2.3",
-    "styled-transition-group": "^0.1.4"
+    "styled-transition-group": "^0.2.0"
   },
   "devDependencies": {
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
