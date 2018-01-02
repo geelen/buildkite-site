@@ -67,7 +67,7 @@ const People = styled.div`
   flex-wrap: wrap;
 
   > * {
-    margin: -9px -6px;
+    margin: -18px -12px;
   }
 `
 
