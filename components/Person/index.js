@@ -72,6 +72,8 @@ const PersonRoles = ({ person }) => {
 
 const PersonBio = styled.p`
   margin: 5px 0;
+  color: ${theme.colors.text.subdued};
+  font-size: ${theme.fontSizes.small};
 `;
 
 const PersonStats = styled.div`
@@ -79,7 +81,7 @@ const PersonStats = styled.div`
 `;
 
 const PaddedDropdown = styled.div`
-  padding: 0 10px;
+  padding: 10px 20px;
 `;
 
 const Links = styled.ul`
@@ -95,7 +97,8 @@ const Links = styled.ul`
     margin: .125em .25em;
 
     > a {
-      ${theme.textStyles.hyperlink}
+      color: ${theme.colors.text.subdued};
+      font-size: ${theme.fontSizes.small};
     }
   }
 `;
@@ -106,7 +109,7 @@ export default ({ person, showRoles, showName }) => {
 
   return (
     <Wrapper>
-      <Dropdown>
+      <Dropdown width={320}>
         <Headshot person={person} />
         <PaddedDropdown>
           {name}
