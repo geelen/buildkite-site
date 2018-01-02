@@ -16,6 +16,7 @@ const ImageWrapper = styled.div`
   display: inline-flex;
 
   &:hover {
+    border-color: lightgray;
     border-color: ${props => props.colour};
   }
 `
