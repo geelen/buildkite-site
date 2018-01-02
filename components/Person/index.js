@@ -8,16 +8,20 @@ const Wrapper = styled.div`
   display: inline-block;
 `
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled.button`
+  cursor: pointer;
   border-radius: 50%;
   border: 2px solid #fff;
   padding: 3px;
   background-color: white;
   display: inline-flex;
+  position: relative;
 
-  &:hover {
+  &:hover, &:focus {
+    outline: 0;
     border-color: lightgray;
     border-color: ${props => props.colour};
+    z-index: 1;
   }
 `
 
