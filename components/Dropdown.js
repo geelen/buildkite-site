@@ -75,7 +75,6 @@ export default class Dropdown extends React.PureComponent<Props, State> {
   };
 
   wrapperNode: ?HTMLSpanElement;
-  popupNode: ?HTMLElement;
   _resizeDebounceTimeout: ?number;
 
   handleWindowResize = () => {
@@ -132,12 +131,24 @@ export default class Dropdown extends React.PureComponent<Props, State> {
     //       see <https://github.com/facebook/flow/issues/4645>
     const target: Node = (event.target: any);
 
-    const clickWasInComponent = this.wrapperNode && this.wrapperNode.contains(target);
+    const popupNode = (
+      this.wrapperNode &&
+      this.wrapperNode.childElementCount == 2 &&
+      this.wrapperNode.lastElementChild
+    );
+
+    const clickWasInComponent = (
+      this.wrapperNode &&
+      this.wrapperNode.contains(target)
+    );
 
     // We don't have a ref to the popup button, so to detect a click on the
     // button we detect that it "wasn't" in the popup node, leaving only the
     // button that it could have been in
-    const buttonWasClicked = clickWasInComponent && (!this.popupNode || !this.popupNode.contains(target));
+    const buttonWasClicked = (
+      clickWasInComponent &&
+      (!popupNode || !popupNode.contains(target))
+    );
 
     if (buttonWasClicked) {
       this.setShowing(!this.state.showing);
@@ -171,7 +182,6 @@ export default class Dropdown extends React.PureComponent<Props, State> {
         offsetX={offsetX}
         offsetY={offsetY}
         nibOffsetX={nibOffsetX}
-        innerRef={(popupNode) => this.popupNode = popupNode}
         width={width}
         in={this.state.showing}
         mountOnEnter={true}
