@@ -16,7 +16,6 @@ const Wrapper = styled.div`
               rgba(0, 0, 0, 0.027451) 0px 0px 0px 1px;
   box-sizing: border-box;
   color: rgb(51, 51, 51);
-  line-height: 18px;
   margin-top: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
