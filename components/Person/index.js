@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 import * as theme from 'theme'
 
+import Dropdown from '../Dropdown';
+
 const Wrapper = styled.div`
   display: inline-block;
 `
@@ -46,18 +48,45 @@ const Roles = styled.p`
   color: ${theme.colors.text.subdued};
 `
 
-export default ({ person, showRoles, showName }) => (
-  <Wrapper>
-    <Headshot person={person} />
-    {showName && <Name>{person.name}</Name>}
-    {showRoles && <Roles>{person.roles.join(", ")}</Roles>}
-    {/* <p>{person.bio}</p> */}
-    {/* <nav>
-      <ul>
-        {person.links.map((link) => (
-          <li key={link.name}><a href={link.url}>{link.name}</a></li>
-        ))}
-      </ul>
-    </nav> */}
-  </Wrapper>
-)
+const PersonName = ({ person }) => (
+  <Name>{person.name}</Name>
+);
+
+const PersonRoles = ({ person }) => {
+  if (!person.roles) {
+    return null;
+  }
+
+  return (
+    <Roles>
+      {person.roles.join(", ")}
+    </Roles>
+  )
+};
+
+export default ({ person, showRoles, showName }) => {
+  const name = <PersonName person={person} />;
+  const roles = <PersonRoles person={person} />;
+
+  return (
+    <Wrapper>
+      <Dropdown>
+        <Headshot person={person} />
+        <div>
+          {name}
+          {roles}
+          <p>{person.bio}</p>
+          <nav>
+            <ul>
+              {person.links.map((link) => (
+                <li key={link.name}><a href={link.url}>{link.name}</a></li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </Dropdown>
+      {showName && name}
+      {showRoles && roles}
+    </Wrapper>
+  );
+}
