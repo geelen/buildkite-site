@@ -46,9 +46,12 @@ const Name = styled.h3`
   ${theme.textStyles.bodyCopy}
 `
 
-const Roles = styled.p`
-  margin-top: 0;
+const Roles = styled.ul`
   ${theme.textStyles.bodyCopySmall}
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   color: ${theme.colors.text.subdued};
 `
 
@@ -65,7 +68,7 @@ const PersonRoles = ({ person }) => {
 
   return (
     <Roles>
-      {person.roles.join(", ")}
+      {person.roles.map((role) => <li>{role}</li>)}
     </Roles>
   )
 };
