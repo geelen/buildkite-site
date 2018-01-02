@@ -131,6 +131,9 @@ export default class Dropdown extends React.PureComponent<Props, State> {
     //       see <https://github.com/facebook/flow/issues/4645>
     const target: Node = (event.target: any);
 
+    // NOTE: `wrapperNode`'s second element child (if any) is the popup node,
+    //       and the first is always the popup button. In normal operation there
+    //       will never be more than 2 element children, or fewer than one.
     const popupNode = (
       this.wrapperNode &&
       this.wrapperNode.childElementCount == 2 &&
