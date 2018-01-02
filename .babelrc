@@ -1,7 +1,9 @@
 {
   "env": {
     "development": {
-      "presets": "next/babel",
+      "presets": [
+        "next/babel"
+      ],
       "plugins": [
         ["babel-plugin-styled-components", {
           "displayName": true,
@@ -10,7 +12,9 @@
       ]
     },
     "production": {
-      "presets": "next/babel",
+      "presets": [
+        "next/babel"
+      ],
       "plugins": [
         ["babel-plugin-styled-components", {
           "displayName": true,
@@ -26,6 +30,7 @@
     }
   },
   "plugins": [
+    "transform-flow-strip-types",
     ["module-resolver", {
       "root": ["."],
       "alias": {
