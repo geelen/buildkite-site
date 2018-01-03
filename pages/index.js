@@ -45,6 +45,21 @@ const Section = styled.section`
   margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
 `
 
+const FeatureCell = styled(Cell)`
+  background-color: ${({ theme }) => theme.colors.backgrounds.grey};
+  padding: ${({ theme }) => theme.innerSpacing.s2};
+`
+
+const FeatureTitle = styled.h2`
+  ${({ theme }) => theme.textStyles.thirdLevelHeading}
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
+`
+
+const FeatureDescription = styled.p`
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  color: ${({ theme }) => theme.colors.text.subdued};
+`
+
 // For this content it should be ul/li instead of div/div
 const CustomerGrid = styled(Grid)`
   padding: 0;
@@ -73,22 +88,30 @@ export default page(({ loggedIn }) => (
       <ScreenshotImage src={screenshotPath} />
 
       <Grid>
-        <Cell>
-          <h2>buildkite-agent gives you full control</h2>
-          <p>Small description of what this feature even means, how it works, intrigues them to read more.</p>
-        </Cell>
-        <Cell>
-          <h2>Tools to scale and parallelize</h2>
-          <p>Small description of what this feature even means, how it works, intrigues them to read more.</p>
-        </Cell>      
-        <Cell>
-          <h2>Automate more than just tests</h2>
-          <p>Small description of what this feature even means, how it works, intrigues them to read more.</p>
-        </Cell>
-        <Cell>
-          <h2>Create beautiful build logs</h2>
-          <p>Small description of what this feature even means, how it works, intrigues them to read more.</p>
-        </Cell>
+        <FeatureCell>
+          <FeatureTitle>buildkite-agent gives you full control</FeatureTitle>
+          <FeatureDescription>
+            Small description of what this feature even means, how it works, intrigues them to read more.
+          </FeatureDescription>
+        </FeatureCell>
+        <FeatureCell>
+          <FeatureTitle>Tools to scale and parallelize</FeatureTitle>
+          <FeatureDescription>
+            Small description of what this feature even means, how it works, intrigues them to read more.
+          </FeatureDescription>
+        </FeatureCell>      
+        <FeatureCell>
+          <FeatureTitle>Automate more than just tests</FeatureTitle>
+          <FeatureDescription>
+            Small description of what this feature even means, how it works, intrigues them to read more.
+          </FeatureDescription>
+        </FeatureCell>
+        <FeatureCell>
+          <FeatureTitle>Create beautiful build logs</FeatureTitle>
+          <FeatureDescription>
+            Small description of what this feature even means, how it works, intrigues them to read more.
+          </FeatureDescription>
+        </FeatureCell>
       </Grid>
 
       <CenteredLink href="/features">
