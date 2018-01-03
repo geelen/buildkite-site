@@ -11,6 +11,7 @@
     "next": "^4.1.4",
     "next-cookies": "^1.0.2",
     "nprogress": "^0.2.0",
+    "query-string": "^5.0.1",
     "raf-throttle": "^2.0.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

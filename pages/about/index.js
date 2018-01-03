@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import queryString from 'query-string';
 
 import * as theme from 'theme'
 
@@ -45,6 +46,7 @@ const Section = styled.section`
 
 const LocationParagraph = styled.section`
   ${theme.textStyles.bodyCopyLarge}
+  margin-top: ${theme.textSpacing.s1};
   color: ${theme.colors.text.subdued};
 `
 
@@ -52,13 +54,9 @@ const PeopleSection = Section.extend`
   text-align: center;
 `
 
-const HeadOfficeImageCell = Cell.extend`
-  text-align: right;
-`
-
 const HeadOfficeImage = styled.img`
-  width: 100%;
-  max-width: 450px;
+  width: 500px;
+  max-width: 100%;
 `
 
 const People = styled.div`
@@ -67,7 +65,7 @@ const People = styled.div`
   flex-wrap: wrap;
 
   > * {
-    margin: -9px -6px;
+    margin: -18px -12px;
   }
 `
 
@@ -78,6 +76,12 @@ const LocationLink = styled.a`
     text-decoration: underline;
   }
 `
+
+const HeadOfficeLocation = {
+  address: '149a Brunswick St, Fitzroy, Victoria 3065, Australia',
+  z: 17,
+  t: 'r'
+}
 
 export default page(({ loggedIn }) => (
   <Page
@@ -112,21 +116,33 @@ export default page(({ loggedIn }) => (
     </PeopleSection>
 
     <Section>
-      <Grid>
-        <HeadOfficeImageCell>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', margin: '-5px' }}>
+        <div style={{ flex: '0 1 510px', padding: '5px' }}>
           <HeadOfficeImage src={headOfficeImage} />
-        </HeadOfficeImageCell>
-        <Cell style={{ width: '20em' }}>
-          {<InlineSectionHeader>Head Office</InlineSectionHeader>}
-          <p>Our team is spread across the globe, but if you want to visit Buildkite HQ, or send us something in the post, you can find us at:</p>
-          <LocationParagraph><LocationLink href="https://www.google.com/maps/place/149A+Brunswick+St,+Fitzroy+VIC+3065/@-37.803127,144.9752413,17z">149a Brunswick St<br/>Fitzroy, Victoria<br/>Australia, 3065</LocationLink></LocationParagraph>
-        </Cell>
-      </Grid>
+        </div>
+        <div style={{ flex: '1 1 400px', padding: '5px'  }}>
+          <InlineSectionHeader>
+            Head Office
+          </InlineSectionHeader>
+          <p>
+            Our team is spread across the globe, but if you want to visit Buildkite HQ, or send us something in the post, you can find us at:
+          </p>
+          <LocationParagraph>
+            <LocationLink
+              href={`https://maps.apple.com/?${queryString.stringify(HeadOfficeLocation)}`}
+            >
+              149a Brunswick St<br/>
+              Fitzroy, Victoria 3065<br/>
+              Australia
+            </LocationLink>
+          </LocationParagraph>
+        </div>
+      </div>
     </Section>
 
     <Section>
       <SectionHeader>Our Values</SectionHeader>
-      <Grid>
+      <Grid columns="280px">
         <Cell>
           <h2>Transparency</h2>
           <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
@@ -165,7 +181,7 @@ export default page(({ loggedIn }) => (
       </Grid>
     </Section>
 
-    <ActionGrid>
+    <ActionGrid columns="280px">
       <ActionGridItem
         heading="Brand Assets"
         image={brandAssetsImage}
