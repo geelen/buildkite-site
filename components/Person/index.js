@@ -68,7 +68,11 @@ const PersonRoles = ({ person }) => {
 
   return (
     <Roles>
-      {person.roles.map((role) => <li>{role}</li>)}
+      {person.roles.map((role) => (
+        <li key={role}>
+          {role}
+        </li>
+      )}
     </Roles>
   )
 };
