@@ -44,12 +44,6 @@ const Section = styled.section`
   margin-bottom: ${theme.outerSpacing.s3};
 `
 
-const LocationParagraph = styled.section`
-  ${theme.textStyles.bodyCopyLarge}
-  margin-top: ${theme.textSpacing.s1};
-  color: ${theme.colors.text.subdued};
-`
-
 const PeopleSection = Section.extend`
   text-align: center;
 `
@@ -69,9 +63,16 @@ const People = styled.div`
   }
 `
 
+const LocationParagraph = styled.section`
+  ${theme.textStyles.bodyCopyLarge}
+  margin-top: ${theme.textSpacing.s1};
+  color: ${theme.colors.text.subdued};
+`
+
 const LocationLink = styled.a`
   text-decoration: none;
   color: inherit;
+
   :hover, :active {
     text-decoration: underline;
   }
