@@ -1,25 +1,24 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import * as theme from 'theme'
 
 const Menu = styled.nav`
-  ${theme.maxWidthContainer}
+  ${({ theme }) => theme.maxWidthContainer}
   position: absolute;
   width: 100%;
   background-color: rgba(255,255,255,.98);
-  padding: ${theme.innerSpacing.s2} ${theme.innerSpacing.s1};
-  box-shadow: ${theme.boxShadows.menuBar};
+  padding: ${({ theme }) => theme.innerSpacing.s2} ${({ theme }) => theme.innerSpacing.s1};
+  box-shadow: ${({ theme }) => theme.boxShadows.menuBar};
 `
 
 const MenuLinkAnchor = styled.a`
-  ${theme.textStyles.bodyCopyLarge}
-  ${theme.textStyles.hyperlink}
+  ${({ theme }) => theme.textStyles.bodyCopyLarge}
+  ${({ theme }) => theme.textStyles.hyperlink}
   font-weight: bold;
   display: block;
   line-height: 1;
 
   & + * {
-    margin-top: ${theme.innerSpacing.s1};
+    margin-top: ${({ theme }) => theme.innerSpacing.s1};
   }
 `
 

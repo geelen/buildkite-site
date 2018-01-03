@@ -3,7 +3,6 @@ import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import throttle from 'raf-throttle'
 
-import * as theme from 'theme'
 import LogoLink from './logo-link'
 import LoadingBar from './loading-bar'
 import MenuLink from './menu-link'
@@ -17,21 +16,21 @@ const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  box-shadow: ${props => props.shadow ? theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
+  box-shadow: ${props => props.shadow ? props.theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
   will-change: box-shadow;
-  transition: box-shadow ${theme.timings.color};
+  transition: box-shadow ${({ theme }) => theme.timings.color};
   z-index: 10;
 `;
 
 const Content = styled.div`
-  ${theme.maxWidthContainer}
+  ${({ theme }) => theme.maxWidthContainer}
   position: relative;
   background-color: white;
-  padding: ${theme.innerSpacing.s1};
+  padding: ${({ theme }) => theme.innerSpacing.s1};
   display: flex;
   align-items: center;
   line-height: 1;
-  box-shadow: ${props => props.shadow ? theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
+  box-shadow: ${props => props.shadow ? props.theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
   z-index: 1;
 `;
 
@@ -44,9 +43,9 @@ const LinkContainer = styled.div`
 `;
 
 const HeaderLinkAnchor = styled.a`
-  ${theme.textStyles.hyperlink}
-  margin-left: ${props => props.right ? theme.innerSpacing.s1 : 0};
-  margin-right: ${props => props.left ? theme.innerSpacing.s1 : 0};
+  ${({ theme }) => theme.textStyles.hyperlink}
+  margin-left: ${props => props.right ? props.theme.innerSpacing.s1 : 0};
+  margin-right: ${props => props.left ? props.theme.innerSpacing.s1 : 0};
   font-weight: bold;
   flex: none;
   white-space: nowrap;

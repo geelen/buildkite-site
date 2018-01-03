@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import * as theme from 'theme'
-
 import Dropdown from '../Dropdown';
 
 const Wrapper = styled.div`
@@ -43,16 +41,16 @@ const Headshot = ({ person }) => (
 
 const Name = styled.h3`
   margin: 0;
-  ${theme.textStyles.bodyCopy}
+  ${({ theme }) => theme.textStyles.bodyCopy}
 `
 
 const Roles = styled.ul`
-  ${theme.textStyles.bodyCopySmall}
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
   list-style: none;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  color: ${theme.colors.text.subdued};
+  color: ${({ theme }) => theme.colors.text.subdued};
 `
 
 const PersonName = ({ person }) => (
@@ -78,9 +76,9 @@ const PersonRoles = ({ person }) => {
 };
 
 const PersonBio = styled.p`
-  ${theme.textStyles.bodyCopySmall}
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
   margin: 5px 0;
-  color: ${theme.colors.text.subdued};
+  color: ${({ theme }) => theme.colors.text.subdued};
 `;
 
 const PersonStats = styled.div`
@@ -99,13 +97,13 @@ const Links = styled.ul`
   justify-content: center;
   padding: 0;
   margin: -.125em 0;
-  ${theme.textStyles.bodyCopySmall}
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
 
   > li {
     margin: .125em .25em;
 
     > a {
-      color: ${theme.colors.text.subdued};
+      color: ${({ theme }) => theme.colors.text.subdued};
     }
   }
 `;
