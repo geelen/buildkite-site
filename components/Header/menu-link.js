@@ -1,10 +1,9 @@
 import styled from 'styled-components'
-import * as theme from 'theme'
 
 const IconContainer = styled.button`
   display: block;
   color: black;
-  transition: color ${theme.timings.color};
+  transition: color ${({ theme }) => theme.timings.color};
   will-change: color;
   cursor: pointer;
   width: 30px;
@@ -18,7 +17,7 @@ const IconContainer = styled.button`
   }
 
   &:hover {
-    color: ${theme.colors.text.green};
+    color: ${({ theme }) => theme.colors.text.green};
   }
 `
 

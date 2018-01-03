@@ -1,26 +1,25 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import * as theme from 'theme'
 import Header from 'components/Header'
 import Pricing from '../../pages/pricing';
-import {Grid, Cell} from '../Grid/index';
+import { Grid, Cell } from '../Grid/index';
 
 const Footer = styled.footer`
-  background-color: ${theme.colors.backgrounds.grey};
-  box-shadow: 0 50px 50px ${theme.colors.backgrounds.grey};
+  background-color: ${({ theme }) => theme.colors.backgrounds.grey};
+  box-shadow: 0 50px 50px ${({ theme }) => theme.colors.backgrounds.grey};
 `
 
 const FooterInner = styled.div`
-  ${theme.maxWidthContainer}
-  padding-top: ${theme.innerSpacing.s2};
-  padding-bottom: ${theme.innerSpacing.s2};
+  ${({ theme }) => theme.maxWidthContainer}
+  padding-top: ${({ theme }) => theme.innerSpacing.s2};
+  padding-bottom: ${({ theme }) => theme.innerSpacing.s2};
 `
 
 const FooterLinkAnchor = styled.a`
-  ${theme.textStyles.hyperlink}
-  margin-right: ${theme.innerSpacing.s1};
-  margin-bottom: ${theme.textSpacing.s1};
+  ${({ theme }) => theme.textStyles.hyperlink}
+  margin-right: ${({ theme }) => theme.innerSpacing.s1};
+  margin-bottom: ${({ theme }) => theme.textSpacing.s1};
   display: block;
 `
 
