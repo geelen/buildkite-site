@@ -91,7 +91,9 @@ export default page(({ loggedIn }) => (
         </Cell>
       </Grid>
 
-      <CenteredLink href="/features"><Button>See all the features</Button></CenteredLink>
+      <CenteredLink href="/features">
+        <Button>See all the features</Button>
+      </CenteredLink>
     </Section>
 
     <Section>
@@ -107,15 +109,17 @@ export default page(({ loggedIn }) => (
         <CustomerCell>Logo 1</CustomerCell>
       </CustomerGrid>
 
-      <CenteredLink href="/case-studies"><Button>Read the case studies</Button></CenteredLink>
+      <CenteredLink href="/case-studies">
+        <Button>Read the case studies</Button>
+      </CenteredLink>
     </Section>
 
     <Section>
-      <Screencasts/>
+      <Screencasts />
     </Section>
 
     <Section>
-      <GetStarted/>
+      <GetStarted />
     </Section>
   </Page>
 ))

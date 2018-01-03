@@ -46,11 +46,6 @@ const PeopleSection = Section.extend`
   text-align: center;
 `
 
-const HeadOfficeImage = styled.img`
-  width: 500px;
-  max-width: 100%;
-`
-
 const People = styled.div`
   display: flex;
   justify-content: center;
@@ -59,6 +54,30 @@ const People = styled.div`
   > * {
     margin: -18px -12px;
   }
+`
+
+const ImageGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -${({ theme }) => theme.innerSpacing.s1};
+`
+
+const ImageCell = styled.div`
+  flex: 1 2 300px;
+  padding: ${({ theme }) => theme.innerSpacing.s1};
+  text-align: center;
+`
+
+const TextCell = styled.div`
+  padding-top: ${({ theme }) => theme.innerSpacing.s1};
+  flex: 2 3 300px;
+  padding: ${({ theme }) => theme.innerSpacing.s1};
+`
+
+const HeadOfficeImage = styled.img`
+  width: 500px;
+  max-width: 100%;
 `
 
 const LocationParagraph = styled.section`
@@ -115,11 +134,11 @@ export default page(({ loggedIn }) => (
     </PeopleSection>
 
     <Section>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', margin: '-5px' }}>
-        <div style={{ flex: '0 1 510px', padding: '5px' }}>
+      <ImageGrid>
+        <ImageCell>
           <HeadOfficeImage src={headOfficeImage} />
-        </div>
-        <div style={{ flex: '1 1 400px', padding: '5px'  }}>
+        </ImageCell>
+        <TextCell>
           <InlineSectionHeader>
             Head Office
           </InlineSectionHeader>
@@ -135,8 +154,8 @@ export default page(({ loggedIn }) => (
               Australia
             </LocationLink>
           </LocationParagraph>
-        </div>
-      </div>
+        </TextCell>
+      </ImageGrid>
     </Section>
 
     <Section>
