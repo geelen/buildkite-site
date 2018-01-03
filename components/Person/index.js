@@ -78,9 +78,9 @@ const PersonRoles = ({ person }) => {
 };
 
 const PersonBio = styled.p`
+  ${theme.textStyles.bodyCopySmall}
   margin: 5px 0;
   color: ${theme.colors.text.subdued};
-  font-size: ${theme.fontSizes.small};
 `;
 
 const PersonStats = styled.div`
@@ -99,13 +99,13 @@ const Links = styled.ul`
   justify-content: center;
   padding: 0;
   margin: -.125em 0;
+  ${theme.textStyles.bodyCopySmall}
 
   > li {
     margin: .125em .25em;
 
     > a {
       color: ${theme.colors.text.subdued};
-      font-size: ${theme.fontSizes.small};
     }
   }
 `;
