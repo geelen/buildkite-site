@@ -72,7 +72,7 @@ const PersonRoles = ({ person }) => {
         <li key={role}>
           {role}
         </li>
-      )}
+      ))}
     </Roles>
   )
 };
