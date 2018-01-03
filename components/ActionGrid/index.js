@@ -13,9 +13,9 @@ const Nav = styled.nav`
 
 const SpanButton = Button.withComponent('span')
 
-export const ActionGrid = ({ children }) => (
-  <Nav>
-    <Grid>
+export const ActionGrid = ({ children, columns, ...props }) => (
+  <Nav {...props}>
+    <Grid columns={columns}>
       {children}
     </Grid>
   </Nav>
