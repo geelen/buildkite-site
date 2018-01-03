@@ -8,16 +8,20 @@ const Wrapper = styled.div`
   display: inline-block;
 `
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled.button`
+  cursor: pointer;
   border-radius: 50%;
   border: 2px solid #fff;
   padding: 3px;
   background-color: white;
   display: inline-flex;
+  position: relative;
 
-  &:hover {
+  &:hover, &:focus {
+    outline: 0;
     border-color: lightgray;
     border-color: ${props => props.colour};
+    z-index: 1;
   }
 `
 
@@ -42,9 +46,12 @@ const Name = styled.h3`
   ${theme.textStyles.bodyCopy}
 `
 
-const Roles = styled.p`
-  margin-top: 0;
+const Roles = styled.ul`
   ${theme.textStyles.bodyCopySmall}
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   color: ${theme.colors.text.subdued};
 `
 
@@ -61,13 +68,19 @@ const PersonRoles = ({ person }) => {
 
   return (
     <Roles>
-      {person.roles.join(", ")}
+      {person.roles.map((role) => (
+        <li key={role}>
+          {role}
+        </li>
+      ))}
     </Roles>
   )
 };
 
 const PersonBio = styled.p`
+  ${theme.textStyles.bodyCopySmall}
   margin: 5px 0;
+  color: ${theme.colors.text.subdued};
 `;
 
 const PersonStats = styled.div`
@@ -75,7 +88,7 @@ const PersonStats = styled.div`
 `;
 
 const PaddedDropdown = styled.div`
-  padding: 0 10px;
+  padding: 10px 20px;
 `;
 
 const Links = styled.ul`
@@ -86,12 +99,13 @@ const Links = styled.ul`
   justify-content: center;
   padding: 0;
   margin: -.125em 0;
+  ${theme.textStyles.bodyCopySmall}
 
   > li {
     margin: .125em .25em;
 
     > a {
-      ${theme.textStyles.hyperlink}
+      color: ${theme.colors.text.subdued};
     }
   }
 `;
@@ -102,7 +116,7 @@ export default ({ person, showRoles, showName }) => {
 
   return (
     <Wrapper>
-      <Dropdown>
+      <Dropdown width={320}>
         <Headshot person={person} />
         <PaddedDropdown>
           {name}
