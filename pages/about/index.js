@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import queryString from 'query-string';
 
-import * as theme from 'theme'
-
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Callout from 'components/Callout'
 import { Grid, Cell } from 'components/Grid'
@@ -16,32 +14,32 @@ const brandAssetsImage = require('../../assets/images/about/brand-assets.jpg')
 const shopImage = require('../../assets/images/about/shop.jpg')
 
 const OffscreenH2 = styled.h2`
-  ${theme.offscreen}
+  ${({ theme }) => theme.offscreen}
 `
 
 const SectionHeader = styled.h1`
-  ${theme.textStyles.secondLevelHeading}
-  margin-top: ${theme.innerSpacing.s2};
-  margin-bottom: ${theme.outerSpacing.s1};
+  ${({ theme }) => theme.textStyles.secondLevelHeading}
+  margin-top: ${({ theme }) => theme.innerSpacing.s2};
+  margin-bottom: ${({ theme }) => theme.outerSpacing.s1};
   text-align: center;
 `
 
 const InlineSectionHeader = SectionHeader.extend`
   margin-top: 0;
   text-align: left;
-  margin-bottom: ${theme.textSpacing.s1};
+  margin-bottom: ${({ theme }) => theme.textSpacing.s1};
 `
 
 const SectionSecondLevelHeader = styled.h2`
-  ${theme.textStyles.thirdLevelHeading}
+  ${({ theme }) => theme.textStyles.thirdLevelHeading}
   text-align: center;
-  margin-top: ${theme.outerSpacing.s1};
-  margin-bottom: ${theme.innerSpacing.s2};
+  margin-top: ${({ theme }) => theme.outerSpacing.s1};
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
 `
 
 const Section = styled.section`
-  margin-top: ${theme.outerSpacing.s3};
-  margin-bottom: ${theme.outerSpacing.s3};
+  margin-top: ${({ theme }) => theme.outerSpacing.s3};
+  margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
 `
 
 const PeopleSection = Section.extend`
@@ -64,9 +62,9 @@ const People = styled.div`
 `
 
 const LocationParagraph = styled.section`
-  ${theme.textStyles.bodyCopyLarge}
-  margin-top: ${theme.textSpacing.s1};
-  color: ${theme.colors.text.subdued};
+  ${({ theme }) => theme.textStyles.bodyCopyLarge}
+  margin-top: ${({ theme }) => theme.textSpacing.s1};
+  color: ${({ theme }) => theme.colors.text.subdued};
 `
 
 const LocationLink = styled.a`

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-import * as theme from 'theme'
 import Button from 'components/Button'
 import CenteredLink from 'components/CenteredLink'
 import { Grid, Cell } from 'components/Grid'
@@ -14,36 +13,36 @@ const screenshotPath = require('../assets/images/home/screenshot.png');
 const ScreenshotImage = styled.img`
   max-width: 100%;
   border: 1px solid black;
-  margin-top: ${theme.innerSpacing.s1};
-  margin-bottom: ${theme.innerSpacing.s1};
+  margin-top: ${({ theme }) => theme.innerSpacing.s1};
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
 `
 
 const OffscreenH1 = styled.h1`
-  ${theme.offscreen}
+  ${({ theme }) => theme.offscreen}
 `
 
 const PositioningStatement = styled.h2`
-  ${theme.textStyles.mainCallout}
+  ${({ theme }) => theme.textStyles.mainCallout}
   max-width: 50rem;
-  padding-left: ${theme.innerSpacing.s1};
-  padding-right: ${theme.innerSpacing.s1};
+  padding-left: ${({ theme }) => theme.innerSpacing.s1};
+  padding-right: ${({ theme }) => theme.innerSpacing.s1};
   margin: 0 auto;
   text-align: center;
 `
 
 const ExplanationStatement = styled.p`
-  ${theme.textStyles.bodyCopyLarge}
-  margin-top: ${theme.innerSpacing.s1};
+  ${({ theme }) => theme.textStyles.bodyCopyLarge}
+  margin-top: ${({ theme }) => theme.innerSpacing.s1};
   max-width: 33rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  color: ${theme.colors.text.subdued};
+  color: ${({ theme }) => theme.colors.text.subdued};
 `
 
 const Section = styled.section`
-  margin-top: ${theme.outerSpacing.s2};
-  margin-bottom: ${theme.outerSpacing.s2};
+  margin-top: ${({ theme }) => theme.outerSpacing.s2};
+  margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
 `
 
 // For this content it should be ul/li instead of div/div

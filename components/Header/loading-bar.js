@@ -2,7 +2,6 @@ import NProgress from 'nprogress'
 import Router from 'next/router'
 import Head from 'next/head'
 import styled, { css } from 'styled-components'
-import * as theme from 'theme'
 
 const noticeableDelay = 200;
 var noticeableDelayTimeout = null;
@@ -26,7 +25,7 @@ Router.onRouteChangeError = () => finishProgressBar()
 const nprogressCss = css`
   #nprogress { pointer-events: none; }
   #nprogress .bar {
-    background: ${theme.colors.text.green};
+    background: ${({ theme }) => theme.colors.text.green};
     position: fixed;
     z-index: 100;
     top: 0;

@@ -4,16 +4,14 @@ import styled from 'styled-components'
 import Button from 'components/Button'
 import { Grid, Cell } from 'components/Grid'
 
-import * as theme from 'theme'
-
 const image = require('../../assets/images/get-started/get-started.jpg');
 
 const OffscreenH1 = styled.h1`
-  ${theme.offscreen}
+  ${({ theme }) => theme.offscreen}
 `
 
 const Paragraph = styled.p`
-  ${theme.textStyles.bodyCopyLarge}
+  ${({ theme }) => theme.textStyles.bodyCopyLarge}
 `
 
 const ImageCell = Cell.extend`
@@ -25,12 +23,12 @@ const Image = styled.img`
   max-width: 100%;
 
   @media (min-width: 350px) {
-    margin-right: ${theme.innerSpacing.s2};
+    margin-right: ${({ theme }) => theme.innerSpacing.s2};
   }
 `
 
 const TextCell = Cell.extend`
-  padding-top: ${theme.innerSpacing.s1};
+  padding-top: ${({ theme }) => theme.innerSpacing.s1};
 `
 
 export default () => (
