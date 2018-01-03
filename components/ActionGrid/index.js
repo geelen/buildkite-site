@@ -4,11 +4,9 @@ import styled from 'styled-components'
 import Button, { colors as buttonColors } from 'components/Button'
 import { Grid, Cell } from 'components/Grid'
 
-import * as theme from 'theme'
-
 const Nav = styled.nav`
-  margin-top: ${theme.outerSpacing.s3};
-  margin-bottom: ${theme.outerSpacing.s3};
+  margin-top: ${({ theme }) => theme.outerSpacing.s3};
+  margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
 `
 
 const SpanButton = Button.withComponent('span')
@@ -22,8 +20,8 @@ export const ActionGrid = ({ children, columns, ...props }) => (
 )
 
 const Heading = styled.h1`
-  ${theme.textStyles.thirdLevelHeading}
-  margin-bottom: ${theme.textSpacing.s1};
+  ${({ theme }) => theme.textStyles.thirdLevelHeading}
+  margin-bottom: ${({ theme }) => theme.textSpacing.s1};
 `
 
 const ItemImage = styled.img`
@@ -36,8 +34,8 @@ const Paragraph = styled.p`
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
-  margin-bottom: ${theme.innerSpacing.s1};
-  color: ${theme.colors.text.subdued};
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
+  color: ${({ theme }) => theme.colors.text.subdued};
 `
 
 const Anchor = styled.a`
@@ -45,7 +43,7 @@ const Anchor = styled.a`
   text-decoration: none;
   color: inherit;
   text-align: center;
-  padding: ${theme.innerSpacing.s2};
+  padding: ${({ theme }) => theme.innerSpacing.s2};
 
   :hover ${SpanButton} {
     background-color: ${buttonColors.default.backgroundHover};

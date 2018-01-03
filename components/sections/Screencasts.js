@@ -2,16 +2,15 @@ import styled from 'styled-components'
 
 import Button from 'components/Button'
 import CenteredLink from 'components/CenteredLink'
-import * as theme from 'theme'
 
 const Section = styled.section`
-  margin-top: ${theme.outerSpacing.s2};
-  margin-bottom: ${theme.outerSpacing.s2};
+  margin-top: ${({ theme }) => theme.outerSpacing.s2};
+  margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
   text-align: center;
 `
 
 const OffscreenH1 = styled.h1`
-  ${theme.offscreen}
+  ${({ theme }) => theme.offscreen}
 `
 
 export default () => (
