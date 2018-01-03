@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import queryString from 'query-string';
 
 import * as theme from 'theme'
 
@@ -79,6 +80,12 @@ const LocationLink = styled.a`
   }
 `
 
+const HeadOfficeLocation = {
+  address: '149a Brunswick St, Fitzroy, Victoria 3065, Australia',
+  z: 17,
+  t: 'r'
+}
+
 export default page(({ loggedIn }) => (
   <Page
     headTitle="About Buildkite"
@@ -119,7 +126,15 @@ export default page(({ loggedIn }) => (
         <Cell style={{ width: '20em' }}>
           {<InlineSectionHeader>Head Office</InlineSectionHeader>}
           <p>Our team is spread across the globe, but if you want to visit Buildkite HQ, or send us something in the post, you can find us at:</p>
-          <LocationParagraph><LocationLink href="https://www.google.com/maps/place/149A+Brunswick+St,+Fitzroy+VIC+3065/@-37.803127,144.9752413,17z">149a Brunswick St<br/>Fitzroy, Victoria<br/>Australia, 3065</LocationLink></LocationParagraph>
+          <LocationParagraph>
+            <LocationLink
+              href={`https://maps.apple.com/?${queryString.stringify(HeadOfficeLocation)}`}
+            >
+              149a Brunswick St<br/>
+              Fitzroy, Victoria 3065<br/>
+              Australia
+            </LocationLink>
+          </LocationParagraph>
         </Cell>
       </Grid>
     </Section>
