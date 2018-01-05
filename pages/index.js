@@ -46,6 +46,7 @@ const Section = styled.section`
 `
 
 const FeatureGrid = Grid.extend`
+  margin: ${({ theme }) => theme.innerSpacing.s1} 0;
   grid-template-columns: repeat(2, 1fr);
 
   @media (max-width: 640px) {
@@ -69,9 +70,10 @@ const FeatureDescription = styled.p`
 `
 
 // For this content it should be ul/li instead of div/div
-const CustomerGrid = Grid.extend`
+const CustomerGrid = Grid.withComponent('ul').extend`
   list-style: none;
   padding: 0;
+  margin: ${({ theme }) => theme.innerSpacing.s1} 0;
 `
 const CustomerCell = Cell.withComponent('li');
 
@@ -134,11 +136,11 @@ export default page(({ loggedIn }) => (
 
       <CustomerGrid>
         <CustomerCell>Logo 1</CustomerCell>
-        <CustomerCell>Logo 1</CustomerCell>
-        <CustomerCell>Logo 1</CustomerCell>
-        <CustomerCell>Logo 1</CustomerCell>
-        <CustomerCell>Logo 1</CustomerCell>
-        <CustomerCell>Logo 1</CustomerCell>
+        <CustomerCell>Logo 2</CustomerCell>
+        <CustomerCell>Logo 3</CustomerCell>
+        <CustomerCell>Logo 4</CustomerCell>
+        <CustomerCell>Logo 5</CustomerCell>
+        <CustomerCell>Logo 6</CustomerCell>
       </CustomerGrid>
 
       <CenteredLink href="/case-studies">
