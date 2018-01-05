@@ -4,6 +4,7 @@ import queryString from 'query-string';
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Callout from 'components/Callout'
 import { Grid, Cell } from 'components/Grid'
+import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 import Page, { page } from 'components/Page'
 import Person from 'components/Person'
 
@@ -56,25 +57,6 @@ const People = styled.div`
   }
 `
 
-const ImageGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: -${({ theme }) => theme.innerSpacing.s1};
-`
-
-const ImageCell = styled.div`
-  flex: 1 2 300px;
-  padding: ${({ theme }) => theme.innerSpacing.s1};
-  text-align: center;
-`
-
-const TextCell = styled.div`
-  padding-top: ${({ theme }) => theme.innerSpacing.s1};
-  flex: 2 3 300px;
-  padding: ${({ theme }) => theme.innerSpacing.s1};
-`
-
 const HeadOfficeImage = styled.img`
   width: 500px;
   max-width: 100%;
@@ -100,6 +82,23 @@ const HeadOfficeLocation = {
   z: 17,
   t: 'r'
 }
+
+const Masonry = styled.div`
+  columns: auto 18rem;
+
+  > * {
+    page-break-inside: avoid; /* Firefox compat */
+    break-inside: avoid;
+  }
+`
+const Brick = styled.div`
+  padding: ${({ theme }) => theme.textSpacing.s1};
+`
+
+const ValueParagraph = styled.p`
+  color: ${({ theme }) => theme.colors.text.subdued};
+  padding: ${({ theme }) => theme.textSpacing.s1} 0;
+`
 
 export default page(({ loggedIn }) => (
   <Page
@@ -134,7 +133,7 @@ export default page(({ loggedIn }) => (
     </PeopleSection>
 
     <Section>
-      <ImageGrid>
+      <MediaItem>
         <ImageCell>
           <HeadOfficeImage src={headOfficeImage} />
         </ImageCell>
@@ -155,48 +154,45 @@ export default page(({ loggedIn }) => (
             </LocationLink>
           </LocationParagraph>
         </TextCell>
-      </ImageGrid>
+      </MediaItem>
     </Section>
 
     <Section>
       <SectionHeader>Our Values</SectionHeader>
-      <Grid columns="280px">
-        <Cell>
+      <Masonry>
+        <Brick>
           <h2>Transparency</h2>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-        </Cell>
-        <Cell>
-          <h2>Empathy</h2>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-        </Cell>
-        <Cell>
+          <ValueParagraph>We believe good work happens out in the open. Internally we believe it's important to .</ValueParagraph>
+          <ValueParagraph>Open-source, company growth / success / plans internally. Open and frank discussion about security, our infrastructure and how we plan to grow and improve areas of both strength and weakness. </ValueParagraph>
+        </Brick>
+        <Brick>
           <h2>Quality</h2>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-        </Cell>
-        <Cell>
-          <h2>Collaboration</h2>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-        </Cell>
-        <Cell>
+          <ValueParagraph>We think that developers need high-quality tools to build amazing products.</ValueParagraph>
+        </Brick>
+        <Brick>
           <h2>Diversity</h2>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-        </Cell>
-        <Cell>
-          <h2>Sustainable Growth</h2>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-        </Cell>
-        <Cell>
+          <ValueParagraph>We believe that mono-cultures are bad. All the diversity.</ValueParagraph>
+        </Brick>
+        <Brick>
           <h2>Independence</h2>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-          <p>TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo tellus sit amet quam iaculis, eu blandit tortor elementum. Nulla non tortor gravida, ultricies nisi ac, rhoncus est.</p>
-        </Cell>
-      </Grid>
+          <ValueParagraph>We are owned by employees and funded by our local developer community, we intend to keep the company focused on providing an amazing product for these people and by these people.</ValueParagraph>
+        </Brick>
+        <Brick>
+          <h2>Empathy</h2>
+          <ValueParagraph>Really great support, not just listening to customers (although we do that), but fixing things proactively and trying to deeply understand where people are coming from and what they are trying to accomplish and then being a strong partner in that.</ValueParagraph>
+        </Brick>
+        <Brick>
+          <h2>Collaboration</h2>
+          <ValueParagraph>Our platform is a story that is always being written, and we love contributions from outside the Buildkite team. This is reflected in our commitment to open-source as well...</ValueParagraph>
+          <ValueParagraph>We want to know how you are using our platform, and we want to work with you to make it better!</ValueParagraph>
+          <ValueParagraph>We also like to support other projects / tools and conferences that do amazing things.</ValueParagraph>
+          <ValueParagraph>design of platform to allow external integration and customization.</ValueParagraph>
+        </Brick>
+        <Brick>
+          <h2>Sustainable Growth</h2>
+          <ValueParagraph>We believe that great companies grow sustainably. We want to build a company that grows at a pace that we can ensure sticks to our values. We believe that work/life balance and enjoying the work you do is really important. Commercial success is one thing, but we believe it shouldn't come at the expense of the humans that make it possible.</ValueParagraph>
+        </Brick>
+      </Masonry>
     </Section>
 
     <ActionGrid columns="280px">

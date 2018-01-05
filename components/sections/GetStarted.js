@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 import Button from 'components/Button'
+import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 
 const image = require('../../assets/images/get-started/get-started.jpg');
 
@@ -14,23 +15,12 @@ const Paragraph = styled.p`
   margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
 `
 
-const ImageGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: -${({ theme }) => theme.innerSpacing.s1};
-`
-
-const ImageCell = styled.div`
-  flex: 1 2 300px;
-  padding: ${({ theme }) => theme.innerSpacing.s1};
+const GetStartedText = TextCell.extend`
   text-align: center;
-`
 
-const TextCell = styled.div`
-  padding-top: ${({ theme }) => theme.innerSpacing.s1};
-  flex: 2 3 300px;
-  padding: ${({ theme }) => theme.innerSpacing.s1};
+  @media (min-width: 600px) {
+    text-align: initial;
+  }
 `
 
 const Image = styled.img`
@@ -40,11 +30,11 @@ const Image = styled.img`
 
 export default () => (
   <section>
-    <ImageGrid>
+    <MediaItem>
       <ImageCell>
         <Image src={image} alt="" />
       </ImageCell>
-      <TextCell>
+      <GetStartedText>
         <OffscreenH1>Get Started</OffscreenH1>
         <Paragraph>Sign up for free, and connect your first agent.</Paragraph>
         <p>
@@ -52,7 +42,7 @@ export default () => (
             <Button primary>Get Started →</Button>
           </Link>
         </p>
-      </TextCell>
-    </ImageGrid>
+      </GetStartedText>
+    </MediaItem>
   </section>
 )
