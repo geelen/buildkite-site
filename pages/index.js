@@ -61,10 +61,11 @@ const FeatureDescription = styled.p`
 `
 
 // For this content it should be ul/li instead of div/div
-const CustomerGrid = styled(Grid)`
+const CustomerGrid = styled.ul`
+  list-style: none;
   padding: 0;
-`.withComponent('ul');
-const CustomerCell = Grid.withComponent('li');
+`.withComponent(Grid);
+const CustomerCell = Cell.withComponent('li');
 
 export default page(({ loggedIn }) => (
   <Page

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Grid = styled('div')`
+export const Grid = styled.div`
   display: grid;
   grid-gap: ${({ theme }) => theme.innerSpacing.s1};
   grid-template-columns: ${({ columns }) => {
@@ -21,4 +21,4 @@ Grid.defaultProps = {
   columns: '300px'
 }
 
-export const Cell = styled('div')``;
+export const Cell = styled.div``;
