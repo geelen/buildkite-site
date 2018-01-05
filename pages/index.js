@@ -45,7 +45,15 @@ const Section = styled.section`
   margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
 `
 
-const FeatureCell = styled(Cell)`
+const FeatureGrid = Grid.extend`
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 640px) {
+    grid-template-columns: initial;
+  }
+`
+
+const FeatureCell = Cell.extend`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s2};
 `
@@ -61,10 +69,10 @@ const FeatureDescription = styled.p`
 `
 
 // For this content it should be ul/li instead of div/div
-const CustomerGrid = styled.ul`
+const CustomerGrid = Grid.extend`
   list-style: none;
   padding: 0;
-`.withComponent(Grid);
+`
 const CustomerCell = Cell.withComponent('li');
 
 export default page(({ loggedIn }) => (
@@ -88,7 +96,7 @@ export default page(({ loggedIn }) => (
 
       <ScreenshotImage src={screenshotPath} />
 
-      <Grid>
+      <FeatureGrid>
         <FeatureCell>
           <FeatureTitle>buildkite-agent gives you full control</FeatureTitle>
           <FeatureDescription>
@@ -113,7 +121,7 @@ export default page(({ loggedIn }) => (
             Small description of what this feature even means, how it works, intrigues them to read more.
           </FeatureDescription>
         </FeatureCell>
-      </Grid>
+      </FeatureGrid>
 
       <CenteredLink href="/features">
         <Button>See all the features</Button>
