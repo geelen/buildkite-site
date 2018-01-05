@@ -7,7 +7,7 @@ export const Grid = styled.div`
     /*
      * Accept either a number of columns (which will be fixed at all sizes), or
      * a minimum column width. This must be less than the minimum screen size at
-     * which the component is likely to be displayed. "300px" is a good maximum.
+     * which the component is likely to be displayed. "280px" is a good maximum.
      */
     if (typeof columns === 'number') {
       return `repeat(${columns}, 1fr)`
@@ -18,7 +18,7 @@ export const Grid = styled.div`
 `
 
 Grid.defaultProps = {
-  columns: '300px'
+  columns: '280px'
 }
 
 export const Cell = styled.div``;
