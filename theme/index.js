@@ -109,6 +109,10 @@ export const textStyles = {
     font-weight: bold;
   `,
   hyperlink: css`
+    text-decoration: underline;
+    color: ${colors.text.subdued};
+  `,
+  navigationHyperlink: css`
     text-decoration: none;
     color: ${props => props.active ? colors.text.green : 'black'};
     transition: color ${timings.color};

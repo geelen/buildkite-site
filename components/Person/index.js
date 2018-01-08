@@ -103,7 +103,7 @@ const Links = styled.ul`
     margin: .125em .25em;
 
     > a {
-      color: ${({ theme }) => theme.colors.text.subdued};
+      ${({ theme }) => theme.textStyles.hyperlink}
     }
   }
 `;
