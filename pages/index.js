@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import Button from 'components/Button'
 import CenteredLink from 'components/CenteredLink'
+import { FeatureGrid, FeatureCell, FeatureTitle, FeatureDescription } from 'components/FeatureGrid'
 import { Grid, Cell } from 'components/Grid'
 import Page, { page } from 'components/Page'
 
@@ -43,30 +44,6 @@ const ExplanationStatement = styled.p`
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s2};
   margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
-`
-
-const FeatureGrid = Grid.extend`
-  margin: ${({ theme }) => theme.innerSpacing.s1} 0;
-  grid-template-columns: repeat(2, 1fr);
-
-  @media (max-width: 640px) {
-    grid-template-columns: initial;
-  }
-`
-
-const FeatureCell = Cell.extend`
-  background-color: ${({ theme }) => theme.colors.backgrounds.grey};
-  padding: ${({ theme }) => theme.innerSpacing.s2};
-`
-
-const FeatureTitle = styled.h2`
-  ${({ theme }) => theme.textStyles.thirdLevelHeading}
-  margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
-`
-
-const FeatureDescription = styled.p`
-  ${({ theme }) => theme.textStyles.bodyCopySmall}
-  color: ${({ theme }) => theme.colors.text.subdued};
 `
 
 // For this content it should be ul/li instead of div/div
