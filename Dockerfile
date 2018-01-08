@@ -1,6 +1,6 @@
 # For local development
 
-FROM    node:8.4.0-alpine
+FROM    node:8.9.4-alpine
 ENV     NODE_ENV=development
 EXPOSE  3000
 WORKDIR /app
