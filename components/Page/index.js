@@ -24,7 +24,7 @@ const Description = styled.p`
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
+  ${({ theme }) => theme.cssLerp('margin-bottom', theme.outerSpacing.s1, '320px', theme.outerSpacing.s2, '960px')};
 `
 
 const ImageContainer = styled.div`

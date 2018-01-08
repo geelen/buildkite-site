@@ -2,6 +2,23 @@ import { css } from 'styled-components';
 
 import './reset';
 
+export const cssLerp = (property, minValue, minWidth, maxValue, maxWidth) => css`
+  ${property}: ${minValue};
+
+  // linearly scale font size from minFontSize to maxFontSize between minPageWidth and maxPageWidth
+  ${property}: calc(${minValue} + (${maxValue.replace('px', '')} - ${minValue.replace('px', '')}) / (${maxWidth.replace('px', '')} - ${minWidth.replace('px', '')}) * (100vw - ${minWidth}));
+
+  @media (max-width: ${minWidth}) {
+    ${property}: ${minValue};
+  }
+
+  @media (min-width: ${maxWidth}) {
+    ${property}: ${maxValue};
+  }
+`
+
+export const dynamicFontSize = (...args) => cssLerp('font-size', ...args);
+
 export const innerSpacing = {
   s1: '20px',
   s2: '40px',
@@ -31,20 +48,9 @@ export const maxWidthContainer = css`
 
 export const pageContainer = css`
   ${maxWidthContainer}
-  margin-top: 10px;
-  margin-bottom: ${outerSpacing.s3};
 
-  @media (min-width: 350px) {
-    margin-top: 30px;
-  }
-
-  @media (min-width: 640px) {
-    margin-top: 60px;
-  }
-
-  @media (min-width: 960px) {
-    margin-top: ${outerSpacing.s2};
-  }
+  ${cssLerp('margin-top', '10px', '0px', outerSpacing.s2, '960px')}
+  ${cssLerp('margin-bottom', '10px', '0px', outerSpacing.s3, '960px')}
 `
 
 export const colors = {
@@ -78,13 +84,10 @@ export const timings = {
 
 export const textStyles = {
   mainCallout: css`
-    font-size: ${fontSizes.extraLarge};
     line-height: 1.1;
     font-weight: 800;
 
-    @media (min-width: 350px) {
-      font-size: ${fontSizes.giant};
-    }
+    ${dynamicFontSize(fontSizes.extraLarge, '320px', fontSizes.giant, '960px')}
   `,
   bodyCopy: css`
     font-size: ${fontSizes.regular};
@@ -94,11 +97,7 @@ export const textStyles = {
     font-size: ${fontSizes.small};
   `,
   bodyCopyLarge: css`
-    font-size: 20px;
-
-    @media (min-width: 350px) {
-      font-size: ${fontSizes.large};
-    }
+    ${dynamicFontSize('20px', '320px', fontSizes.large, '960px')}
   `,
   secondLevelHeading: css`
     font-size: ${fontSizes.extraLarge};

@@ -39,8 +39,8 @@ const SectionSecondLevelHeader = styled.h2`
 `
 
 const Section = styled.section`
-  margin-top: ${({ theme }) => theme.outerSpacing.s3};
-  margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
+  ${({ theme }) => theme.cssLerp('margin-top', '10px', '320px', theme.outerSpacing.s3, '960px')};
+  ${({ theme }) => theme.cssLerp('margin-bottom', '10px', '320px', theme.outerSpacing.s3, '960px')};
 `
 
 const PeopleSection = Section.extend`
