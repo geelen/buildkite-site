@@ -17,7 +17,7 @@ const FooterInner = styled.div`
 `
 
 const FooterLinkAnchor = styled.a`
-  ${({ theme }) => theme.textStyles.hyperlink}
+  ${({ theme }) => theme.textStyles.navigationHyperlink}
   margin-right: ${({ theme }) => theme.innerSpacing.s1};
   margin-bottom: ${({ theme }) => theme.textSpacing.s1};
   display: block;

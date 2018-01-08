@@ -43,7 +43,7 @@ const LinkContainer = styled.div`
 `;
 
 const HeaderLinkAnchor = styled.a`
-  ${({ theme }) => theme.textStyles.hyperlink}
+  ${({ theme }) => theme.textStyles.navigationHyperlink}
   margin-left: ${props => props.right ? props.theme.innerSpacing.s1 : 0};
   margin-right: ${props => props.left ? props.theme.innerSpacing.s1 : 0};
   font-weight: bold;

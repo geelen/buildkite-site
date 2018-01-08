@@ -14,6 +14,10 @@ const Description = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
 `
 
+const Link = styled.a`
+  ${({ theme }) => theme.textStyles.hyperlink}
+`
+
 const FeatureTitle = RawFeatureTitle.withComponent('h3');
 
 export default page(({ loggedIn }) => (
@@ -29,30 +33,30 @@ export default page(({ loggedIn }) => (
     </section>
     <section>
       <Heading>Tools to scale across hundreds or thousands of agents</Heading>
-      <Description>The agent’s <a href="/TODO">artifact</a> and <a href="/TODO">meta-data</a> storage allows for share-nothing, state-free build jobs that can be easily distributed across any number of agents.</Description>
-      <Description>Run up to 10,000 simultaneously connected build agents without breaking a sweat.</Description>
-      <Description>The <a href="/TODO">Elastic CI Stack for AWS</a> gives you an easy to maintain,  elastically scaling CI stack for your entire organization in minutes. Or use the same ops infrastructure you do for production, such as Packer and Terraform.</Description>
+      <Description>The agent’s <Link href="/TODO">artifact</Link> and <Link href="/TODO">meta-data</Link> storage allows for share-nothing, state-free build jobs that can be easily distributed across any number of agents.</Description>
+      <Description>Run up to 10,000 simultaneously connected build agents without breaking Link sweat.</Description>
+      <Description>The <Link href="/TODO">Elastic CI Stack for AWS</Link> gives you an easy to maintain,  elastically scaling CI stack for your entire organization in minutes. Or use the same ops infrastructure you do for production, such as Packer and Terraform.</Description>
       <Description>The buildkite-metrics collector allows you to send aggregated build activity to CloudWatch or StatsD. Scale up your testing infrastructure during busy times, and scale down to reduce costs during quiet times.</Description>
     </section>
     <section>
       <Heading>Pipelines that can automate more than just your tests</Heading>
-      <Description>Model delivery pipelines or ops tasks with <a href="/TODO">custom fields</a>, and unblock them via the web or the API with a full log of who did what when.</Description>
-      <Description><a href="/TODO">Dynamically generate pipeline steps</a>, and even modify running pipelines. Or build your own abstractions and tools for common delivery workflows.</Description>
-      <Description>Buildkite’s <a href="/TODO">open-source web interface</a> allows you to monitor, control and visualize all your pipelines in one place, whilst still having quick access to your own builds.</Description>
-      <Description>You can also <a href="/TODO">create teams</a>, ensuring only the people with the correct permissions have access to sensitive pipelines.</Description>
-      <Description>Treat infrastructure as code with <a href="/TODO">scheduled builds</a>, separate <a href="/TODO">agent queues</a>, <a href="/TODO">concurrency controls</a>, and <a href="/TODO">dynamic pipeline logic</a>. All using your existing ops scripts and infrastructure.</Description>
+      <Description>Model delivery pipelines or ops tasks with <Link href="/TODO">custom fields</Link>, and unblock them viLink the web or the API with Link full log of who did what when.</Description>
+      <Description><Link href="/TODO">Dynamically generate pipeline steps</Link>, and even modify running pipelines. Or build your own abstractions and tools for common delivery workflows.</Description>
+      <Description>Buildkite’s <Link href="/TODO">open-source web interface</Link> allows you to monitor, control and visualize all your pipelines in one place, whilst still having quick access to your own builds.</Description>
+      <Description>You can also <Link href="/TODO">create teams</Link>, ensuring only the people with the correct permissions have access to sensitive pipelines.</Description>
+      <Description>Treat infrastructure as code with <Link href="/TODO">scheduled builds</Link>, separate <Link href="/TODO">agent queues</Link>, <Link href="/TODO">concurrency controls</Link>, and <Link href="/TODO">dynamic pipeline logic</Link>. All using your existing ops scripts and infrastructure.</Description>
       <Description>Full control of your environment allows you take full advantage of the latest version of tools, so you can use Docker, SDK betas and pre-release operating systems without any constraints.</Description>
     </section>
     <section>
       <Heading>Build logs that are beautiful and powerful</Heading>
-      <Description><a href="/TODO">Embeddable image artifacts</a>, with inline gif support, means that you can show failures visually, and link directly to the failing piece of code.</Description>
-      <Description>Add your own, <a href="/TODO">custom build annotations</a> using Markdown or HTML. Link to deployments, summarise test failures, or report on your own flakey test analysis.</Description>
-      <Description><a href="/TODO">Log output grouping</a>, emoji support, and detailed timing information.</Description>
+      <Description><Link href="/TODO">Embeddable image artifacts</Link>, with inline gif support, means that you can show failures visually, and link directly to the failing piece of code.</Description>
+      <Description>Add your own, <Link href="/TODO">custom build annotations</Link> using Markdown or HTML. Link to deployments, summarise test failures, or report on your own flakey test analysis.</Description>
+      <Description><Link href="/TODO">Log output grouping</Link>, emoji support, and detailed timing information.</Description>
     </section>
     <section>
       <Heading>Customize any part of the build workflow</Heading>
-      <Description>The buildkite-agent exposes customizable <a href="/TODO">agent hooks</a>, allowing you to add your own high performing checkout logic, integrate with a secret store, expose environment variables, or add your own security checks.</Description>
-      <Description><a href="/TODO">Webhooks</a>, <a href="/TODO">REST APIs</a> and <a href="/TODO">GraphQL APIs</a> allow you to create your own tools and workflows, to fit your team’s needs.</Description>
+      <Description>The buildkite-agent exposes customizable <Link href="/TODO">agent hooks</Link>, allowing you to add your own high performing checkout logic, integrate with Link secret store, expose environment variables, or add your own security checks.</Description>
+      <Description><Link href="/TODO">Webhooks</Link>, <Link href="/TODO">REST APIs</Link> and <Link href="/TODO">GraphQL APIs</Link> allow you to create your own tools and workflows, to fit your team’s needs.</Description>
     </section>
     <section>
       <Heading>Other Features</Heading>
@@ -75,11 +79,11 @@ export default page(({ loggedIn }) => (
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Docker Support</FeatureTitle>
-          <FeatureDescription>The agent has built-in support for running build jobs via Docker Compose. Or use your own build scripts for maximum control.</FeatureDescription>
+          <FeatureDescription>The agent has built-in support for running build jobs viLink Docker Compose. Or use your own build scripts for maximum control.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Plugins</FeatureTitle>
-          <FeatureDescription>Use the agent’s new plugin system provides out of the box support for a variety of tools. And you can easily write your own.</FeatureDescription>
+          <FeatureDescription>Use the agent’s new plugin system provides out of the box support for Link variety of tools. And you can easily write your own.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>SSO and Permissions</FeatureTitle>

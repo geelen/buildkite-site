@@ -12,7 +12,7 @@ const Menu = styled.nav`
 
 const MenuLinkAnchor = styled.a`
   ${({ theme }) => theme.textStyles.bodyCopyLarge}
-  ${({ theme }) => theme.textStyles.hyperlink}
+  ${({ theme }) => theme.textStyles.navigationHyperlink}
   font-weight: bold;
   display: block;
   line-height: 1;
