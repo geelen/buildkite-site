@@ -1,7 +1,8 @@
 import NProgress from 'nprogress'
 import Router from 'next/router'
-import Head from 'next/head'
-import styled, { css } from 'styled-components'
+import { injectGlobal } from 'styled-components'
+
+import { colors } from '../../theme'
 
 const noticeableDelay = 200;
 var noticeableDelayTimeout = null;
@@ -22,10 +23,10 @@ Router.onRouteChangeStart = () => showProgressBar()
 Router.onRouteChangeComplete = () => finishProgressBar()
 Router.onRouteChangeError = () => finishProgressBar()
 
-const nprogressCss = css`
+injectGlobal`
   #nprogress { pointer-events: none; }
   #nprogress .bar {
-    background: ${({ theme }) => theme.colors.text.green};
+    background: ${colors.text.green};
     position: fixed;
     z-index: 100;
     top: 0;
@@ -34,9 +35,3 @@ const nprogressCss = css`
     height: 2px;
   }
 `
-
-export default () => (
-  <Head>
-    <style>{nprogressCss}</style>
-  </Head>
-) 
