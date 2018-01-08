@@ -54,7 +54,7 @@ export default page(({ loggedIn }) => (
           <p>A build agent runs on your machine, and is capable of running a single build job at one time. You can run as many agents as you wish, and Buildkite will coordinate the work between them.</p>
         </Cell>
         <Cell>
-          <h3>Students &amp; Teachers</h3>
+          <h3>Students &amp; teachers</h3>
           <p>We offer free accounts for all students and teachers. Simply create your account and email support.</p>
         </Cell>
         <Cell>
@@ -62,8 +62,8 @@ export default page(({ loggedIn }) => (
           <p>We offer heavy discounts for non-profit and charity organizations. Email support to see how we can help you.</p>
         </Cell>
         <Cell>
-          <h3>Open source</h3>
-          <p>We offer free accounts for open source. Sign up, create the organization for your project, and email support.</p>
+          <h3>Open-source</h3>
+          <p>We offer free accounts for open-source. Sign up, create the organization for your project, and email support.</p>
         </Cell>
       </Grid>
     </div>
