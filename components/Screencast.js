@@ -13,7 +13,6 @@ const NextUpImage = styled.img`
   max-width: 100%;
 `
 
-// Slightly different header to a normal page
 export default ({ screencast, nextScreencast }) => (
   <div>
     <p>
