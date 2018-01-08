@@ -9,6 +9,9 @@ import Screencasts from 'components/sections/Screencasts'
 
 const Heading = styled.h2`
   text-align: center;
+  font-weight: normal;
+  margin-top: ${({ theme }) => theme.outerSpacing.s2};
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
 `
 
 const Description = styled.p`
@@ -18,6 +21,7 @@ const Description = styled.p`
 
 const Image = styled.img`
   max-width: 100%;
+  padding: ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
 const Link = styled.a`
