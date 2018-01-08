@@ -11,6 +11,7 @@ const Heading = styled.h2`
 `
 
 const Description = styled.p`
+  padding: ${({ theme }) => theme.textSpacing.s1} 0;
   color: ${({ theme }) => theme.colors.text.subdued};
 `
 
