@@ -5,7 +5,7 @@ import { Grid, Cell } from 'components/Grid'
 import Page, { page } from 'components/Page'
 import Br from 'components/Br'
 
-const placeholderImage = require('../assets/images/screencasts/placeholder.png')
+import screencasts from './screencasts/_data'
 
 const ScreenshotImage = styled.img`
   width: 400px;
@@ -20,42 +20,17 @@ export default page(({ loggedIn }) => (
     loggedIn={loggedIn}
   >
     <Grid columns="180px">
-      <Cell>
-        <Link href="/screencasts/pipeline-steps">
-          <a>
-            <h2>Pipeline Steps</h2>
-            <ScreenshotImage src={placeholderImage} />
-            <p>Duration: 90s</p>
-          </a>
-        </Link>
-      </Cell>
-      <Cell>
-        <Link href="/screencasts/github">
-          <a>
-            <h2>GitHub Pull Requests</h2>
-            <ScreenshotImage src={placeholderImage} />
-            <p>Duration: 90s</p>
-          </a>
-        </Link>
-      </Cell>
-      <Cell>
-        <Link href="/screencasts/docker">
-          <a>
-            <h2>Testing with Docker</h2>
-            <ScreenshotImage src={placeholderImage} />
-            <p>Duration: 90s</p>
-          </a>
-        </Link>
-      </Cell>
-      <Cell>
-        <Link href="/screencasts/ops">
-          <a>
-            <h2>Ops Pipelines</h2>
-            <ScreenshotImage src={placeholderImage} />
-            <p>Duration: 90s</p>
-          </a>
-        </Link>
-      </Cell>
+      {screencasts.map((screencast, index) => (
+        <Cell id={index}>
+          <Link href={screencast.pathname}>
+            <a>
+              <h2>{screencast.title}</h2>
+              <ScreenshotImage src={screencast.image} />
+              <p>Duration: {screencast.duration}</p>
+            </a>
+          </Link>
+        </Cell>
+      ))}
     </Grid>
   </Page>
 ))

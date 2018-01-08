@@ -1,14 +1,3 @@
-import Page, { page } from 'components/Page'
-import Screencast from 'components/Screencast'
+import screencastPage from './_page'
 
-export default page(({ loggedIn }) => (
-  <Page
-    headTitle="Devops Pipelines Buildkite Screencast"
-    loggedIn={loggedIn}
-    >
-    <Screencast
-      screencast={{ title: "Ops Pipelines", href: "/screencasts/ops" }}
-      nextScreencast={{ title: "Pipeline Steps", href: "/screencasts/pipeline-steps"}}
-    />
-  </Page>
-))
+export default screencastPage('/screencasts/ops')
