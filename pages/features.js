@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import Page, { page } from 'components/Page'
-import { FeatureGrid, FeatureCell, FeatureTitle, FeatureDescription } from 'components/FeatureGrid'
+import { FeatureGrid, FeatureCell, FeatureTitle as RawFeatureTitle, FeatureDescription } from 'components/FeatureGrid'
 
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
@@ -13,6 +13,8 @@ const Heading = styled.h2`
 const Description = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
 `
+
+const FeatureTitle = RawFeatureTitle.withComponent('h3');
 
 export default page(({ loggedIn }) => (
   <Page
