@@ -118,7 +118,7 @@ export const textStyles = {
     transition: color ${timings.color};
     will-change: color;
 
-    &:hover {
+    &:hover, &:focus {
       color: ${colors.text.green};
     }
   `
