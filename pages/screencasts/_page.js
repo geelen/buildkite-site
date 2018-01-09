@@ -7,6 +7,21 @@ import screencasts from './_data'
 
 const placeholderImage = require('../../assets/images/screencasts/placeholder.png')
 
+const Wrapper = styled.div`
+  text-align: center;
+`
+
+const IndexLink = styled.a`
+  ${({ theme }) => theme.textStyles.mainCallout}
+  ${({ theme }) => theme.textStyles.navigationHyperlink}
+  display: inline-block;
+  margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
+`
+
+const ScreencastTitle = styled.h1`
+  ${({ theme }) => theme.textStyles.thirdLevelHeading}
+`
+
 const ScreenshotImage = styled.img`
   width: 800px;
   max-width: 100%;
@@ -25,16 +40,18 @@ export default function screencastPage(pathname) {
     <Page
       headTitle={screencast.headTitle}
       loggedIn={loggedIn}
-      >
-      <div>
-        <p>
-          <Link href="/screencasts">
-            <a>Screencasts</a>
-          </Link>
-        </p>
+    >
+      <Wrapper>
+        <Link href="/screencasts" passHref>
+          <IndexLink>Screencasts</IndexLink>
+        </Link>
 
-        <h1>{screencast.title}</h1>
-        <p>{screencast.description}</p>
+        <div>
+          <ScreencastTitle>
+            {screencast.title}
+          </ScreencastTitle>
+          <p>{screencast.description}</p>
+        </div>
 
         <ScreenshotImage src={screencast.image} />
 
@@ -48,9 +65,9 @@ export default function screencastPage(pathname) {
           ))}
         </p>
 
-        <h2>Next up…</h2>
+        <h3>Next up…</h3>
         <ScreencastLink screencast={nextScreencast} />
-      </div>
+      </Wrapper>
     </Page>
   ))
 }
