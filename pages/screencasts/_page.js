@@ -44,6 +44,24 @@ const ScreencastLink = styled(RawScreencastLink)`
   display: inline-block;
 `
 
+const Zip = ({ children: rawChildren, separator=', ', lastSeparator=' and ' }) => {
+  const children = React.Children.toArray(rawChildren)
+
+  return children.reduce((acc, child, index, children) => {
+    if (index > 0 && index < children.length - 1) {
+      acc.push(separator)
+    }
+
+    if (index === children.length - 1) {
+      acc.push(lastSeparator)
+    }
+
+    acc.push(child)
+
+    return acc
+  }, [])
+}
+
 export default function screencastPage(pathname) {
   const index = screencasts.findIndex((screencast) => screencast.pathname == pathname);
   const screencast = screencasts[index];
@@ -71,11 +89,13 @@ export default function screencastPage(pathname) {
         {screencast.relatedDocumentation && (
           <ScreencastParagraph>
             {'Related documentation: '}
-            {screencast.relatedDocumentation.map(({ title, url }, index) => (
-              <Link href={url} passHref key={index}>
-                <DocumentationLink>{title}</DocumentationLink>
-              </Link>
-            ))}
+            <Zip>
+              {screencast.relatedDocumentation.map(({ title, url }, index) => (
+                <Link href={url} passHref key={index}>
+                  <DocumentationLink>{title}</DocumentationLink>
+                </Link>
+              ))}
+            </Zip>
           </ScreencastParagraph>
         )}
 
