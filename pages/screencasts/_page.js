@@ -50,10 +50,8 @@ const ScreencastLink = styled(RawScreencastLink)`
   display: inline-block;
 `
 
-const Zip = ({ children: rawChildren, separator=', ', lastSeparator=' and ' }) => {
-  const children = React.Children.toArray(rawChildren)
-
-  return children.reduce((acc, child, index, children) => {
+const Zip = ({ children: rawChildren, separator=', ', lastSeparator=' and ' }) => (
+  React.Children.toArray(rawChildren).reduce((acc, child, index, children) => {
     if (index > 0 && index < children.length - 1) {
       acc.push(separator)
     }
@@ -66,7 +64,7 @@ const Zip = ({ children: rawChildren, separator=', ', lastSeparator=' and ' }) =
 
     return acc
   }, [])
-}
+)
 
 export default function screencastPage(pathname) {
   const index = screencasts.findIndex((screencast) => screencast.pathname == pathname);
