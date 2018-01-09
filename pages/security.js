@@ -37,7 +37,7 @@ export default page(({ loggedIn }) => (
 
     <h3>Infrastructure</h3>
     <h4>Physical Access</h4>
-    <p>All of our services run in the cloud. Buildkite does not run it's own routers, load balancers, DNS servers, or physical servers.</p>
+    <p>All of our services run in the cloud. Buildkite does not run it’s own routers, load balancers, DNS servers, or physical servers.</p>
 
     <h3>Application Security</h3>
     <h4>Training and Review</h4>
@@ -47,18 +47,18 @@ export default page(({ loggedIn }) => (
     <h4>Software Dependencies</h4>
     <p>Buildkite keeps up to date with software dependencies and has automated tools scanning for common security issues including Cross Site Scripting (XSS), Cross Site Request Forgery (CSRF), and SQL Injection.</p>
     <h4>Development and QA Environments</h4>
-    <p>These environments are separated physically from Buildkite's production environment. No customer data is ever used in development or QA environments.</p>
+    <p>These environments are separated physically from Buildkite’s production environment. No customer data is ever used in development or QA environments.</p>
     <h4>User Logins</h4>
     <p>We protect against brute force attacks with rate limiting technology. All sensitive data such as password and API tokens are filtered out of logs and exception trackers. User passwords are one-way encrypted and salted before being stored in our database.</p>
     <h4>Penetration Testing</h4>
     <p>Buildkite performs regular penetration test audits with a contracted third party.</p>
 
     <h3>Data in Transit</h3>
-    <p>All data transferred in and out of Buildkite is encrypted using hardened TLS. Buildkite is also protected by HTTP Strict Transport Security and is pre-loaded in major browsers. Additionally, data transferred to and from Buildkite's backend database is encrypted using TLS.</p>
+    <p>All data transferred in and out of Buildkite is encrypted using hardened TLS. Buildkite is also protected by HTTP Strict Transport Security and is pre-loaded in major browsers. Additionally, data transferred to and from Buildkite’s backend database is encrypted using TLS.</p>
 
     <h2>Policies and Compliance</h2>
     <h3>Employee Access to Data</h3>
-    <p>Buildkite employees will only ever access customer data when it's required for support related duties. When a customer contacts support, support staff may sign into their account to help debug a problem with builds or check pipeline settings. When this happens, staff will do their best to respect customer privacy and only access the builds and settings required to diagnose and debug the issue.</p>
+    <p>Buildkite employees will only ever access customer data when it’s required for support related duties. When a customer contacts support, support staff may sign into their account to help debug a problem with builds or check pipeline settings. When this happens, staff will do their best to respect customer privacy and only access the builds and settings required to diagnose and debug the issue.</p>
     <p>Buildkite does not have access to customer source code, or artifacts customers host on third parties such as Amazon S3 or Google Cloud.</p>
     <h3>PCI Obligations</h3>
     <p>Buildkite is not subject to PCI obligations. All payments processing is outsourced to Pin Payments and Stripe.</p>
