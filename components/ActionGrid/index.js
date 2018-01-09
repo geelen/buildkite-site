@@ -38,6 +38,16 @@ const Paragraph = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
 `
 
+const Note = styled.p`
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  max-width: 15em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: ${({ theme }) => theme.innerSpacing.s1};
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
+  color: ${({ theme }) => theme.colors.text.subdued};
+`
+
 const Anchor = styled.a`
   display: block;
   text-decoration: none;
@@ -50,7 +60,7 @@ const Anchor = styled.a`
   }
 `
 
-export const ActionGridItem = ({ heading, description, url, buttonTitle, image, imageAlt }) => (
+export const ActionGridItem = ({ heading, description, url, buttonTitle, image, imageAlt, note }) => (
   <Cell>
     <Link href={url} passHref>
       <Anchor>
@@ -59,6 +69,7 @@ export const ActionGridItem = ({ heading, description, url, buttonTitle, image, 
           <Heading>{heading}</Heading>
           <Paragraph>{description}</Paragraph>
           <SpanButton>{buttonTitle}</SpanButton>
+          {note && <Note>{note}</Note>}
         </section>
       </Anchor>
     </Link>
