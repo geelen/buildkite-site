@@ -20,11 +20,24 @@ const IndexLink = styled.a`
 
 const ScreencastTitle = styled.h1`
   ${({ theme }) => theme.textStyles.thirdLevelHeading}
+  margin: ${({ theme }) => theme.innerSpacing.s1} 0;
+`
+
+const ScreencastParagraph = styled.p`
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  color: ${({ theme }) => theme.colors.text.subdued};
+  margin: ${({ theme }) => theme.innerSpacing.s1} 0;
 `
 
 const ScreenshotImage = styled.img`
+  ${({ theme }) => theme.images.screenshots}
   width: 800px;
   max-width: 100%;
+  margin: ${({ theme }) => theme.innerSpacing.s2} 0;
+`
+
+const DocumentationLink = styled.a`
+  ${({ theme }) => theme.textStyles.hyperlink}
 `
 
 const ScreencastLink = styled(RawScreencastLink)`
@@ -32,7 +45,7 @@ const ScreencastLink = styled(RawScreencastLink)`
 `
 
 export default function screencastPage(pathname) {
-  const index = screencasts.findIndex((s) => s.pathname == pathname);
+  const index = screencasts.findIndex((screencast) => screencast.pathname == pathname);
   const screencast = screencasts[index];
   const nextScreencast = screencasts[index + 1] || screencasts[0];
 
@@ -46,24 +59,25 @@ export default function screencastPage(pathname) {
           <IndexLink>Screencasts</IndexLink>
         </Link>
 
-        <div>
-          <ScreencastTitle>
-            {screencast.title}
-          </ScreencastTitle>
-          <p>{screencast.description}</p>
-        </div>
+        <ScreencastTitle>
+          {screencast.title}
+        </ScreencastTitle>
+        <ScreencastParagraph>
+          {screencast.description}
+        </ScreencastParagraph>
 
         <ScreenshotImage src={screencast.image} />
 
-        <p>
-          Related documentation:
-          {' '}
-          {screencast.relatedDocumentation.map(({ title, url }, index) => (
-            <Link href={url} key={index}>
-              <a>{title}</a>
-            </Link>
-          ))}
-        </p>
+        {screencast.relatedDocumentation && (
+          <ScreencastParagraph>
+            {'Related documentation: '}
+            {screencast.relatedDocumentation.map(({ title, url }, index) => (
+              <Link href={url} passHref key={index}>
+                <DocumentationLink>{title}</DocumentationLink>
+              </Link>
+            ))}
+          </ScreencastParagraph>
+        )}
 
         <h3>Next up…</h3>
         <ScreencastLink screencast={nextScreencast} />
