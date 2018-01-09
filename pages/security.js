@@ -27,7 +27,7 @@ export default page(({ loggedIn }) => (
         imageAlt=""
         description="For any security questions or concerns, you can email our team"
         url="mailto:security@buildkite.com"
-        buttonTitle="Email Security"
+        buttonTitle="Email security@buildkite.com"
         note="For confidential information, please use our PGP key"
       />
     </ActionGrid>
