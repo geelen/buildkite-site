@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import Br from 'components/Br'
 import Button from 'components/Button'
 import CenteredLink from 'components/CenteredLink'
 
@@ -21,7 +22,7 @@ export default () => (
   <Section>
     <OffscreenH1>Screencasts</OffscreenH1>
     <Paragraph>
-      See what it’s like in production, with our short series of 60 second screencasts
+      See how Buildkite works in production, <Br maxWidth='30em'/>with our short series of 90 second videos.
     </Paragraph>
     <CenteredLink href="/screencasts">
       <Button>View the screencasts</Button>

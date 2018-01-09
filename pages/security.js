@@ -1,5 +1,6 @@
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Page, { page } from 'components/Page'
+import Br from 'components/Br'
 import Callout from 'components/Callout'
 
 const vulnerabilityImage = require('../assets/images/security/vulnerability.jpg')
@@ -106,7 +107,7 @@ export default page(({ loggedIn }) => (
 
     <Callout
       heading="Contact Us"
-      description="If you’ve got any questions, don’t hestitate to contact our team."
+      description={<span>If you’ve got any questions,<Br maxWidth='30em'/> don’t hestitate to contact our team.</span>}
       url="mailto:security@buildkite.com"
       buttonTitle="Email security@buildkite.com"
     />
