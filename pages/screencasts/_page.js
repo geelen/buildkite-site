@@ -42,7 +42,7 @@ export default function screencastPage(pathname) {
           Related documentation:
           {' '}
           {screencast.relatedDocumentation.map(({ title, url }, index) => (
-            <Link href={url} id={index}>
+            <Link href={url} key={index}>
               <a>{title}</a>
             </Link>
           ))}
