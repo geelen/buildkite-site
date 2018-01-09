@@ -9,8 +9,6 @@ const Nav = styled.nav`
   margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
 `
 
-const SpanButton = Button.withComponent('span')
-
 export const ActionGrid = ({ children, columns, ...props }) => (
   <Nav {...props}>
     <Grid columns={columns}>
@@ -18,6 +16,10 @@ export const ActionGrid = ({ children, columns, ...props }) => (
     </Grid>
   </Nav>
 )
+
+const Container = styled.div`
+  text-align: center;
+`
 
 const Heading = styled.h1`
   ${({ theme }) => theme.textStyles.thirdLevelHeading}
@@ -48,30 +50,16 @@ const Note = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
 `
 
-const Anchor = styled.a`
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  text-align: center;
-  padding: ${({ theme }) => theme.innerSpacing.s2};
-
-  :hover ${SpanButton} {
-    background-color: ${buttonColors.default.backgroundHover};
-  }
-`
-
 export const ActionGridItem = ({ heading, description, url, buttonTitle, image, imageAlt, note }) => (
   <Cell>
-    <Link href={url} passHref>
-      <Anchor>
-        <section>
-          <ItemImage src={image} alt={imageAlt} />
-          <Heading>{heading}</Heading>
-          <Paragraph>{description}</Paragraph>
-          <SpanButton>{buttonTitle}</SpanButton>
-          {note && <Note>{note}</Note>}
-        </section>
-      </Anchor>
-    </Link>
+    <Container>
+      <ItemImage src={image} alt={imageAlt} />
+      <Heading>{heading}</Heading>
+      <Paragraph>{description}</Paragraph>
+      <Link href={url} passHref>      
+        <Button>{buttonTitle}</Button>
+      </Link>
+      {note && <Note>{note}</Note>}
+    </Container>
   </Cell>
 )

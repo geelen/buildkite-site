@@ -202,7 +202,7 @@ export default page(({ loggedIn }) => (
         imageAlt=""
         description="Download our official logos, screenshots and media assets."
         url="/brand-assets"
-        buttonTitle="View the brand assets"
+        buttonTitle="View brand assets"
       />
       <ActionGridItem
         heading="Buildkite Shop"
@@ -218,7 +218,7 @@ export default page(({ loggedIn }) => (
       heading="Have a question?"
       description="Drop us a line, we’re here to help."
       url="mailto:support@buildkite.com"
-      buttonTitle="support@buildkite.com"
+      buttonTitle="Email support@buildkite.com"
     />
   </Page>
 ))
