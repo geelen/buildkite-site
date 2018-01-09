@@ -10,7 +10,8 @@ export default [
     image: placeholderImage,
     relatedDocumentation: [
       { title: 'Some Doc', url: '/docs/some-doc' },
-      { title: 'Some Doc', url: '/docs/some-doc' },
+      { title: 'Another Doc', url: '/docs/another-doc' },
+      { title: 'Yet Another Doc', url: '/docs/yet-another-doc' },
     ],
   },
   {
@@ -21,7 +22,7 @@ export default [
     duration: '90s',
     image: placeholderImage,
     relatedDocumentation: [
-      { title: 'Some Doc', url: '/docs/some-doc' },
+      { title: 'Yet Another Doc', url: '/docs/yet-another-doc' },
       { title: 'Some Doc', url: '/docs/some-doc' },
     ],
   },
@@ -33,8 +34,8 @@ export default [
     duration: '90s',
     image: placeholderImage,
     relatedDocumentation: [
-      { title: 'Some Doc', url: '/docs/some-doc' },
-      { title: 'Some Doc', url: '/docs/some-doc' },
+      { title: 'Another Doc', url: '/docs/another-doc' },
+      { title: 'Yet Another Doc', url: '/docs/yet-another-doc' },
     ],
   },
   {
@@ -45,7 +46,9 @@ export default [
     duration: '90s',
     image: placeholderImage,
     relatedDocumentation: [
-      { title: 'Some Doc', url: '/docs/some-doc' },
+      { title: 'Another Doc', url: '/docs/another-doc' },
+      { title: 'A Fourth Even More Enticing Doc', url: '/docs/a-fourth-even-more-enticing-doc' },
+      { title: 'Yet Another Doc', url: '/docs/yet-another-doc' },
       { title: 'Some Doc', url: '/docs/some-doc' },
     ],
   }
