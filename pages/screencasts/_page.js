@@ -40,6 +40,12 @@ const DocumentationLink = styled.a`
   ${({ theme }) => theme.textStyles.hyperlink}
 `
 
+const NextScreencastHeader = styled.h2`
+  ${({ theme }) => theme.textStyles.thirdLevelHeading}
+  margin-top: ${({ theme }) => theme.outerSpacing.s1};
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
+`
+
 const ScreencastLink = styled(RawScreencastLink)`
   display: inline-block;
 `
@@ -99,7 +105,7 @@ export default function screencastPage(pathname) {
           </ScreencastParagraph>
         )}
 
-        <h3>Next up…</h3>
+        <NextScreencastHeader>Next up…</NextScreencastHeader>
         <ScreencastLink screencast={nextScreencast} />
       </Wrapper>
     </Page>
