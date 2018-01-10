@@ -11,7 +11,7 @@ export default page(({ loggedIn }) => (
     <Grid columns='15rem'>
       <Cell>
         <h2>Standard Plan</h2>
-        <p>$19 USD per user per month</p>
+        <p>$15 USD per user per month</p>
         <ul>
           <li>Unlimited agents</li>
           <li>Unlimited builds</li>
