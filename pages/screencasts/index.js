@@ -3,7 +3,7 @@ import Page, { page } from 'components/Page'
 import Br from 'components/Br'
 import ScreencastLink from 'components/ScreencastLink'
 
-import screencasts from './screencasts/_data'
+import screencasts from './_data'
 
 export default page(({ loggedIn }) => (
   <Page
