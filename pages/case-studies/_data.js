@@ -32,7 +32,7 @@ export default [
       Li lingues differe solmen in li grammatica, li pronunciation e li plu
       commun vocabules.
     `,
-    words: <div>
+    words: <React.Fragment>
       <p>A short case story about the problem, the solution, the results.  Li
       Europan lingues es membres del sam familie. Lor separat existentie es un
       myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.
@@ -47,6 +47,6 @@ export default [
       refusa continuar payar custosi traductores. At solmen va esser necessi far
       uniform grammatica, pronunciation e plu sommun paroles. Li lingues differe
       solmen in li grammatica.</p>
-    </div>
+    </React.Fragment>
   }
 ]
