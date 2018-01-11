@@ -14,7 +14,7 @@ export default ({ caseStudy }) => (
 
     <p>{caseStudy.summaryWords}</p>
 
-    <Link href={caseStudy.pathname} passHref>
+    <Link href={caseStudy.pathname} passHref prefetch>
       <Button>{caseStudy.team} Case Study</Button>
     </Link>
 

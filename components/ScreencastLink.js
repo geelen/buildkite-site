@@ -33,7 +33,7 @@ const ScreencastDetail = styled.p`
 `
 
 export default ({ screencast, ...props }) => (
-  <Link href={screencast.pathname} passHref>
+  <Link href={screencast.pathname} passHref prefetch>
     <ScreencastLink {...props}>
       <ScreenshotImage src={screencast.image} />
       <ScreencastTitle>
