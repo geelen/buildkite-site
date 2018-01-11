@@ -1,7 +1,8 @@
 import { withRouter } from 'next/router'
-import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import throttle from 'raf-throttle'
+
+import Link from 'components/Link'
 
 import './loading-bar'
 import LogoLink from './logo-link'
@@ -57,9 +58,9 @@ const HeaderLinkAnchor = styled.a`
   `}
 `
 
-const HeaderLink = withRouter(({ children, router, href, prefetch, left, right, widescreenOnly }) => {
+const HeaderLink = withRouter(({ children, router, href, external, prefetch, left, right, widescreenOnly }) => {
   return (
-    <Link prefetch href={href} passHref>
+    <Link prefetch={prefetch} href={href} external={external}>
       <HeaderLinkAnchor
         left={left}
         right={right}
@@ -141,10 +142,10 @@ export default class Header extends React.PureComponent {
     } else {
       return (
         [
-          <HeaderLink right prefetch widescreenOnly href="/login" key="login">
+          <HeaderLink right widescreenOnly href="/login" external key="login">
             Login
           </HeaderLink>,
-          <HeaderLink right prefetch href="/sign-up" key="signup">
+          <HeaderLink right href="/sign-up" external key="signup">
             Signup
           </HeaderLink>
         ]

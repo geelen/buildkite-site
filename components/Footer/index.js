@@ -1,9 +1,7 @@
-import Link from 'next/link'
 import styled from 'styled-components'
 
-import Header from 'components/Header'
-import Pricing from '../../pages/pricing';
-import { Grid, Cell } from '../Grid/index';
+import { Grid, Cell } from 'components/Grid';
+import Link from 'components/Link'
 
 const Footer = styled.footer`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
@@ -23,8 +21,8 @@ const FooterLinkAnchor = styled.a`
   display: block;
 `
 
-const FooterLink = ({ children, href }) => (
-  <Link href={href} passHref>
+const FooterLink = ({ children, href, external }) => (
+  <Link href={href} external={external}>
     <FooterLinkAnchor>{children}</FooterLinkAnchor>
   </Link>
 )
@@ -53,7 +51,7 @@ export default () => (
         </Cell>
         <Cell>
           <nav>
-            <FooterLink href="/docs">Documentation</FooterLink>
+            <FooterLink href="/docs" external>Documentation</FooterLink>
             <FooterLink href="/support">Support</FooterLink>
             <FooterLink href="/contact">Contact Us</FooterLink>
             <FooterLink href="https://buildkitestatus.com/">System Status</FooterLink>

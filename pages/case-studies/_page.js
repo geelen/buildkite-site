@@ -1,5 +1,4 @@
-import Link from 'next/link'
-
+import Link from 'components/Link'
 import Page, { page } from 'components/Page'
 
 import caseStudies from './_data'

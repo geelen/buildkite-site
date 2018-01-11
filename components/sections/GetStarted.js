@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import styled from 'styled-components'
 
 import Button from 'components/Button'
+import Link from 'components/Link'
 import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 
 const image = require('../../assets/images/get-started/get-started.jpg');
@@ -38,7 +38,7 @@ export default () => (
         <OffscreenH1>Get Started</OffscreenH1>
         <Paragraph>Sign up for free, and connect your first agent.</Paragraph>
         <p>
-          <Link href="/sign-up" passHref>
+          <Link href="/sign-up" external>
             <Button primary>Get Started →</Button>
           </Link>
         </p>

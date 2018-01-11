@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import styled from 'styled-components'
+
+import Link from 'components/Link'
 
 const Menu = styled.nav`
   ${({ theme }) => theme.maxWidthContainer}
@@ -22,8 +23,8 @@ const MenuLinkAnchor = styled.a`
   }
 `
 
-const MenuLink = ({ children, href }) => (
-  <Link href={href} passHref>
+const MenuLink = ({ children, href, external }) => (
+  <Link href={href} external={external}>
     <MenuLinkAnchor>{children}</MenuLinkAnchor>
   </Link>
 )
@@ -42,7 +43,7 @@ export default () => (
     <MenuLink href="/pricing">
       Pricing
     </MenuLink>
-    <MenuLink href="/login">
+    <MenuLink href="/login" external>
       Login
     </MenuLink>
   </Menu>

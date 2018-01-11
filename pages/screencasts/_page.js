@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import styled from 'styled-components'
+
+import Link from 'components/Link'
 import Page, { page } from 'components/Page'
 import RawScreencastLink from 'components/ScreencastLink'
 
@@ -77,7 +78,7 @@ export default function screencastPage(pathname) {
       loggedIn={loggedIn}
     >
       <Wrapper>
-        <Link href="/screencasts" passHref>
+        <Link href="/screencasts">
           <IndexLink>Screencasts</IndexLink>
         </Link>
 
@@ -95,7 +96,7 @@ export default function screencastPage(pathname) {
             {'Related documentation: '}
             <Zip>
               {screencast.relatedDocumentation.map(({ title, url }, index) => (
-                <Link href={url} passHref key={index}>
+                <Link href={url} external key={index}>
                   <DocumentationLink>{title}</DocumentationLink>
                 </Link>
               ))}

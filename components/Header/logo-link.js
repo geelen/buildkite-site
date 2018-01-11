@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import styled from 'styled-components'
+
+import Link from 'components/Link'
 
 const showDebugOutlines = false;
 

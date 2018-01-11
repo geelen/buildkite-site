@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import Link from 'next/link'
 
 import Callout from 'components/Callout'
+import Link from 'components/Link'
 import Page, { page } from 'components/Page'
 
 const logoLightSvg = require('../assets/images/brand-assets/buildkite-logo-on-light.svg')

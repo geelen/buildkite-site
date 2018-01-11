@@ -1,6 +1,5 @@
-import Link from 'next/link'
-
 import Button from 'components/Button'
+import Link from 'components/Link'
 
 export default ({ caseStudy }) => (
   <div>
@@ -14,7 +13,7 @@ export default ({ caseStudy }) => (
 
     <p>{caseStudy.summaryWords}</p>
 
-    <Link href={caseStudy.pathname} passHref prefetch>
+    <Link href={caseStudy.pathname} prefetch>
       <Button>{caseStudy.team} Case Study</Button>
     </Link>
 

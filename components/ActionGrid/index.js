@@ -1,8 +1,8 @@
-import Link from 'next/link'
 import styled from 'styled-components'
 
 import Button, { colors as buttonColors } from 'components/Button'
 import { Grid, Cell } from 'components/Grid'
+import Link from 'components/Link'
 
 const Nav = styled.nav`
   margin-top: ${({ theme }) => theme.outerSpacing.s3};
@@ -56,7 +56,7 @@ export const ActionGridItem = ({ heading, description, url, buttonTitle, image, 
       <ItemImage src={image} alt={imageAlt} />
       <Heading>{heading}</Heading>
       <Paragraph>{description}</Paragraph>
-      <Link href={url} passHref>      
+      <Link href={url}>      
         <Button>{buttonTitle}</Button>
       </Link>
       {note && <Note>{note}</Note>}
