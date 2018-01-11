@@ -18,7 +18,7 @@ export const FeatureCell = Cell.extend`
 
 export const FeatureTitle = styled.h2`
   ${({ theme }) => theme.textStyles.thirdLevelHeading}
-  margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
+  margin-bottom: ${({ theme }) => theme.textSpacing.s1};
 `
 
 export const FeatureDescription = styled.p`

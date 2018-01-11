@@ -1,3 +1,5 @@
+import styled from 'styled-components'
+
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Page, { page } from 'components/Page'
 import Br from 'components/Br'
@@ -5,6 +7,11 @@ import Callout from 'components/Callout'
 
 const vulnerabilityImage = require('../assets/images/security/vulnerability.jpg')
 const securityImage = require('../assets/images/security/contact.jpg')
+
+const Monospace = styled.pre`
+  font-family: SFMono-Regular, Monaco, Menlo, Consolas, Liberation Mono, Courier, monospace;
+  overflow-x: auto;
+`
 
 export default page(({ loggedIn }) => (
   <Page
@@ -73,37 +80,37 @@ export default page(({ loggedIn }) => (
     <p><a href="https://keybase.io/buildkite">keybase.io/buildkite</a></p>
     <h3>Buildkite’s PGP Key</h3>
     <h4>Key ID</h4>
-    <p>6452D198</p>
+    <Monospace>6452D198</Monospace>
     <h4>Fingerprint</h4>
-    <p>mQENBFTHL0oBCADvaUEoRRDk4KIOm</p>
+    <Monospace>mQENBFTHL0oBCADvaUEoRRDk4KIOm</Monospace>
     <h4>Key</h4>
-    <p>
-      -----BEGIN PGP PUBLIC KEY BLOCK-----<br/>
-      mQENBFTHL0oBCADvaU++EoRRDk4KIOmD7ckUflNla3zF1As3WLD2iR8SdnlqZvgXGuX0PyjT
-      zFerS0eYO+0dyj8MqjrCH39N83Mj3hEfXCQdCO/wnzOZytmuowR0hg8T4ESy/84TXnoXo+c7
-      S+1a2Wz0IX9jrf390hKa70uSTvQ20CBbdiGI7JmoqiBGE1VeWWWY+utjEznY2HKrPRU6tBJb
-      EH8laAqnJQra/nIGNQJ5iUZU+be0Q6DUvVDrsg50t4zgBoJ6g/yEuWdkP2DwaYdd1RA5EGTN
-      Yr4xuYYAK6h/3HCcSSHef3eYDPzH0UUEv7ttlnaXvMREhKsgsD0xb8kCyFnRqJf9TKDXABEB
-      AAG0HUJ1aWxka2l0ZSA8ZGV2QGJ1aWxka2l0ZS5jb20+iQE3BBMBCgAhBQJUxy9KAhsDBQsJ
-      CAcDBRUKCQgLBRYDAgEAAh4BAheAAAoJEKeSBmlkUtGYqk4H/jIEqQZN8ILAH4eukwn3wejU
-      Zte+gAdmrQJ0rxwtmYlR3/dKZ4npnir1h30rUBncaB3lYIH1zyJk9ZbbnmmXQG/FuHY81qIY
-      B6xdmBnQJK4OrKR8SMN3E/jDfefykK+BBtv8wOMfKLgaoJTPGbfoX0BdVj4rHta8kGVFgiKc
-      mFRwozUi/oqBRTgd6z7kbQksoEcZp7zG7bO/8HuagwtYZJzF3x2UxAiFhLwcj+pGva/I8VzQ
-      WjUn0YHZhT/T66arMwvoGOq1OuHXGVr+j9c1p77BNuq6JLE3zcf7/N7ipwtzM6lIxC+ulh9e
-      LnE3tmkEwBUfUK4hd5lCStT5GJ5ox+u5AQ0EVMcvSgEIAKq7uI9/+MBbtEjxdbupGicqY3D3
-      FaLzh1xR7to0znfpgOUTLySPGleKtFZesIIPj/UXIdSeS99gzvn35lIWfUnLjfqBb2odfLOo
-      PmqWGFp3G2K72Cm53139yZWybWSgBaFtRx7otnY5g6Wmd0pmFQcNRGdYgEDp/Bxz4pTuQKLM
-      InsU9eujXLRaJSQp/8gaAGI/alsTkrQ6g1NxZuw1pomiKdQ6dNAVYp4Mjs8FPPNLfR3GNrZw
-      dkOWt4MYeXm7nQpf8SSyomqWg+GGPktCSJ21e/WQxtWzSURol7BsgXQlhcPuMCmwBiTdP+nx
-      A7qGsI420H+Ee0bvRzBvAB5SBKUAEQEAAYkBHwQYAQoACQUCVMcvSgIbDAAKCRCnkgZpZFLR
-      mAV1B/9iBTgld2tnxJZAcuUo88Lw9S1gZ600rwsmPnTOqrNpalVnd2Ac9ue6jfkFyr6AGc+t
-      XzsAkb0hJy8xu49qDFHqoGDBaAri7Q1tmfeLJ3h209TXQqzom/myWsSIB+pKvbq8LNj202Id
-      sc+K4mIdhjCXLqJWp1XYWAag5PkM6/yBKIckaz8UIM+SFKOxCAFHC02Wezl6v6jUnodUQxhI
-      Q3pVF3NJFf41DShbtrInG8wc3XwSOcQ2q75ifcZdHTSdzmJhWQToMlr0Ii7qc1g0et6iNxtZ
-      3FVyr2S2+aVtJ3oDUxtbZoib96C4AcFesjihZv++ChVBBLBoED8FwNXIvxV6
-      =JFW7<br/>
+    <Monospace>
+      -----BEGIN PGP PUBLIC KEY BLOCK-----<br />
+      mQENBFTHL0oBCADvaU++EoRRDk4KIOmD7ckUflNla3zF1As3WLD2iR8SdnlqZvgXGuX0PyjT<br />
+      zFerS0eYO+0dyj8MqjrCH39N83Mj3hEfXCQdCO/wnzOZytmuowR0hg8T4ESy/84TXnoXo+c7<br />
+      S+1a2Wz0IX9jrf390hKa70uSTvQ20CBbdiGI7JmoqiBGE1VeWWWY+utjEznY2HKrPRU6tBJb<br />
+      EH8laAqnJQra/nIGNQJ5iUZU+be0Q6DUvVDrsg50t4zgBoJ6g/yEuWdkP2DwaYdd1RA5EGTN<br />
+      Yr4xuYYAK6h/3HCcSSHef3eYDPzH0UUEv7ttlnaXvMREhKsgsD0xb8kCyFnRqJf9TKDXABEB<br />
+      AAG0HUJ1aWxka2l0ZSA8ZGV2QGJ1aWxka2l0ZS5jb20+iQE3BBMBCgAhBQJUxy9KAhsDBQsJ<br />
+      CAcDBRUKCQgLBRYDAgEAAh4BAheAAAoJEKeSBmlkUtGYqk4H/jIEqQZN8ILAH4eukwn3wejU<br />
+      Zte+gAdmrQJ0rxwtmYlR3/dKZ4npnir1h30rUBncaB3lYIH1zyJk9ZbbnmmXQG/FuHY81qIY<br />
+      B6xdmBnQJK4OrKR8SMN3E/jDfefykK+BBtv8wOMfKLgaoJTPGbfoX0BdVj4rHta8kGVFgiKc<br />
+      mFRwozUi/oqBRTgd6z7kbQksoEcZp7zG7bO/8HuagwtYZJzF3x2UxAiFhLwcj+pGva/I8VzQ<br />
+      WjUn0YHZhT/T66arMwvoGOq1OuHXGVr+j9c1p77BNuq6JLE3zcf7/N7ipwtzM6lIxC+ulh9e<br />
+      LnE3tmkEwBUfUK4hd5lCStT5GJ5ox+u5AQ0EVMcvSgEIAKq7uI9/+MBbtEjxdbupGicqY3D3<br />
+      FaLzh1xR7to0znfpgOUTLySPGleKtFZesIIPj/UXIdSeS99gzvn35lIWfUnLjfqBb2odfLOo<br />
+      PmqWGFp3G2K72Cm53139yZWybWSgBaFtRx7otnY5g6Wmd0pmFQcNRGdYgEDp/Bxz4pTuQKLM<br />
+      InsU9eujXLRaJSQp/8gaAGI/alsTkrQ6g1NxZuw1pomiKdQ6dNAVYp4Mjs8FPPNLfR3GNrZw<br />
+      dkOWt4MYeXm7nQpf8SSyomqWg+GGPktCSJ21e/WQxtWzSURol7BsgXQlhcPuMCmwBiTdP+nx<br />
+      A7qGsI420H+Ee0bvRzBvAB5SBKUAEQEAAYkBHwQYAQoACQUCVMcvSgIbDAAKCRCnkgZpZFLR<br />
+      mAV1B/9iBTgld2tnxJZAcuUo88Lw9S1gZ600rwsmPnTOqrNpalVnd2Ac9ue6jfkFyr6AGc+t<br />
+      XzsAkb0hJy8xu49qDFHqoGDBaAri7Q1tmfeLJ3h209TXQqzom/myWsSIB+pKvbq8LNj202Id<br />
+      sc+K4mIdhjCXLqJWp1XYWAag5PkM6/yBKIckaz8UIM+SFKOxCAFHC02Wezl6v6jUnodUQxhI<br />
+      Q3pVF3NJFf41DShbtrInG8wc3XwSOcQ2q75ifcZdHTSdzmJhWQToMlr0Ii7qc1g0et6iNxtZ<br />
+      3FVyr2S2+aVtJ3oDUxtbZoib96C4AcFesjihZv++ChVBBLBoED8FwNXIvxV6<br />
+      =JFW7<br />
       -----END PGP PUBLIC KEY BLOCK-----
-    </p>
+    </Monospace>
 
     <Callout
       heading="Contact Us"
