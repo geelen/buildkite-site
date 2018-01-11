@@ -46,6 +46,7 @@ injectGlobal`
   }
 
   /* Resets for relevant elements */
+  
   blockquote,
   dl,
   dd,
@@ -57,7 +58,15 @@ injectGlobal`
   h6,
   figure,
   p,
-  pre {
-      margin: 0;
+  pre,
+  ul,
+  ol,
+  li {
+    margin: 0;
+  }
+
+  ul, ol, li {
+    padding: 0;
+    list-style: none;
   }
 `;
