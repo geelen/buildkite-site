@@ -3,8 +3,11 @@ import Link from 'next/link'
 import Br from 'components/Br'
 import Button from 'components/Button'
 import Callout from 'components/Callout'
+import CaseStudyCallout from 'components/CaseStudyCallout'
 import Page, { page } from 'components/Page'
 import { FeatureGrid, FeatureCell, FeatureTitle, FeatureDescription } from 'components/FeatureGrid'
+
+import { shopify } from './case-studies/_data'
 
 export default page(({ loggedIn }) => (
   <Page
@@ -86,7 +89,9 @@ export default page(({ loggedIn }) => (
     </FeatureGrid>
 
     <h2>Case Study</h2>
-    <p>(Case study)</p>
+    
+    <CaseStudyCallout caseStudy={shopify} />
+    
     <Link href="/case-studies" passHref>
       <Button>View more case studies</Button>
     </Link>
