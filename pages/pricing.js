@@ -52,6 +52,55 @@ const PlanInclusions = styled.ul`
   }
 `
 
+const PriceContainer = styled.div`
+  text-align: center;
+  margin-top: ${({ theme }) => theme.textSpacing.s3};
+`
+
+const PriceBox = styled.div`
+  ${({ theme }) => theme.textStyles.thirdLevelHeading}
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 1.5;
+`
+
+const PriceValue = styled.span`
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 1;
+`
+
+const PricePeriod = styled.span`
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  font-weight: 800;
+  line-height: 1;
+`
+
+const PriceNotes = styled.div`
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  color: ${({ theme }) => theme.colors.text.subdued};
+  margin: 0 auto;
+  margin-top: ${({ theme }) => theme.textSpacing.s2};
+  max-width: 17em;
+
+  > * {
+    margin: ${({ theme }) => theme.textSpacing.s1} 0;
+  }
+`
+
+const Price = ({ value, period, notes }) => (
+  <PriceContainer>
+    <PriceBox>
+      $<PriceValue>{value}</PriceValue>
+    </PriceBox>
+    <PricePeriod>{period}</PricePeriod>
+    {notes && (
+      <PriceNotes>{notes}</PriceNotes>
+    )}
+  </PriceContainer>
+)
+
 const Plan = ({ name, description, inclusions, pricing }) => (
   <PlanBox>
     <PlanName>{name}</PlanName>
@@ -102,7 +151,20 @@ export default page(({ loggedIn }) => (
           'SSO',
           'Annual payment discount of 20%'
         ]}
-        pricing="$15 per user per month"
+        pricing={
+          <Price
+            value={15}
+            period={
+              <React.Fragment>
+                per user<br/>
+                per month
+              </React.Fragment>
+            }
+            notes={
+              <p>Pay annually for a 15% discount</p>
+            }
+          />
+        }
       />
       <Plan
         name="Enterprise Plan"
@@ -122,7 +184,18 @@ export default page(({ loggedIn }) => (
           'SLA',
           'Invoice payment'
         ]}
-        pricing="$2999 per month, paid annually"
+        pricing={
+          <Price
+            value={2999}
+            period="per month"
+            notes={
+              <React.Fragment>
+                <p>Annual payment only</p>
+                <p>Includes 100 users. Additional users $29/month (pro-rata)</p>
+              </React.Fragment>
+            }
+          />
+        }
       />
     </PlanSection>
 

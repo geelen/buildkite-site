@@ -20,7 +20,8 @@ export const outerSpacing = {
 
 export const textSpacing = {
   s1: '.5rem',
-  s2: '1rem'
+  s2: '1rem',
+  s3: '1.5rem'
 };
 
 export const maxWidthContainer = css`
