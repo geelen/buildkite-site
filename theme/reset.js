@@ -5,6 +5,20 @@ const woffBoldPath = require('../assets/fonts/lineto-circular-bold.woff2');
 const woffBlackPath = require('../assets/fonts/lineto-circular-black.woff2');
 
 injectGlobal`
+  /*
+   * Legal Disclaimer
+   *
+   * These Fonts are licensed only for use on these domains and their subdomains:
+   * www.buildkite.com
+   *
+   * It is illegal to download or use them on other websites.
+   *
+   * While the @font-face statements below may be modified by the client, this
+   * disclaimer may not be removed.
+   *
+   * Lineto.com, 2017
+   */
+
   @font-face {
     font-family: BK-Circular;
     src: url(${woffBookPath}) format("woff2");
