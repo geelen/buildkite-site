@@ -15,6 +15,11 @@ const InfoPane = styled.div`
   padding: ${({ theme }) => theme.innerSpacing.s2};
 `
 
+const Logo = styled.img`
+  width: 300px;
+  max-width: 100%;
+`
+
 const ResultPane = styled.div`
   flex: 1 2 280px;
   display: flex;
@@ -24,6 +29,12 @@ const ResultPane = styled.div`
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, .75) 0%, rgba(255, 255, 255, .75) 100%), url(${({ picture }) => picture});
   background-size: auto 100%;
   background-size: cover;
+  font-weight: 800;
+`
+
+const ResultNumber = styled.span`
+  font-size: 48px;
+  font-weight: 800;
 `
 
 export default ({ caseStudy }) => (
@@ -31,7 +42,12 @@ export default ({ caseStudy }) => (
     <InfoPane>
       <h2>
         <Link href={caseStudy.pathname}>
-          <a><img src={caseStudy.logoImage} alt={caseStudy.team} width={300} /></a>
+          <a>
+            <Logo
+              src={caseStudy.logoImage}
+              alt={caseStudy.team}
+            />
+          </a>
         </Link>
       </h2>
 
@@ -47,11 +63,11 @@ export default ({ caseStudy }) => (
     <ResultPane
       picture={caseStudy.indexBackgroundImage}
     >
-      {caseStudy.results.map((result, index) => (
-        <div key={index}>
-          {result.number}
-          {result.unit}
-          {' '}
+      {caseStudy.results.map((result) => (
+        <div key={result.label}>
+          <ResultNumber>
+            {result.number + result.unit}
+          </ResultNumber><br/>
           {result.label}
         </div>
       ))}
