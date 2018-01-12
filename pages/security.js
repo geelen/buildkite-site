@@ -75,9 +75,11 @@ export default page(({ loggedIn }) => (
 
     <h2>PGP Key</h2>
     <p>If you need to secure your communications with us secure, use our PGP details below.</p>
+    
     <h3>Keybase</h3>
     <p>Find us on Keybase, where you can symetrically PGP encrypt a message before emailing it to us.</p>
     <p><a href="https://keybase.io/buildkite">keybase.io/buildkite</a></p>
+
     <h3>Buildkite’s PGP Key</h3>
     <h4>Key ID</h4>
     <Monospace>6452D198</Monospace>

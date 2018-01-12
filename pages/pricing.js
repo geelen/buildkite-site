@@ -1,5 +1,76 @@
+import styled from 'styled-components'
+
 import Page, { page } from 'components/Page'
 import { Grid, Cell } from 'components/Grid'
+
+const PlanCurrencyNote = styled.p`
+  text-align: center;
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  color: ${({ theme }) => theme.colors.text.subdued};
+  margin-top: calc(-1 * (${({ theme }) => theme.outerSpacing.s2} - 30px));
+  margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
+`
+
+const PlanSection = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: -${({ theme }) => theme.innerSpacing.s0};
+`
+
+const PlanBox = styled.div`
+  flex: 1 0 300px;
+  background-color: ${({ theme }) => theme.colors.backgrounds.grey};
+  padding: ${({ theme }) => theme.innerSpacing.s2};
+  margin: ${({ theme }) => theme.innerSpacing.s0};
+`
+
+const PlanName = styled.h2`
+  margin-bottom: ${({ theme }) => theme.textSpacing.s1};
+`
+
+const PlanDescription = styled.p`
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  margin: ${({ theme }) => theme.textSpacing.s1} 0;
+`
+
+const PlanInclusionsHeading = styled.h3`
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  font-weight: normal;
+  color: ${({ theme }) => theme.colors.text.subdued};
+  padding-top: ${({ theme }) => theme.textSpacing.s2};
+  margin-bottom: ${({ theme }) => theme.textSpacing.s2};
+`
+
+const PlanInclusions = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: -${({ theme }) => theme.textSpacing.s1} 0;
+
+  > li {
+    padding: ${({ theme }) => theme.textSpacing.s1} 0;
+  }
+`
+
+const Plan = ({ name, description, inclusions, pricing }) => (
+  <PlanBox>
+    <PlanName>{name}</PlanName>
+    {description && (
+      <PlanDescription>{description}</PlanDescription>
+    )}
+    <PlanInclusionsHeading>
+      Inclusions
+    </PlanInclusionsHeading>
+    <PlanInclusions>
+      {inclusions.map((inclusion) => (
+        <li key={inclusion}>
+          {inclusion}
+        </li>
+      ))}
+    </PlanInclusions>
+    {pricing}
+  </PlanBox>
+)
 
 export default page(({ loggedIn }) => (
   <Page
@@ -8,42 +79,52 @@ export default page(({ loggedIn }) => (
     description="TODO"
     loggedIn={loggedIn}
   >
-    <Grid columns='15rem'>
-      <Cell>
-        <h2>Standard Plan</h2>
-        <p>$15 USD per user per month</p>
-        <ul>
-          <li>Unlimited agents</li>
-          <li>Unlimited builds</li>
-          <li>Unlimited artifacts</li>
-          <li>Priority email support</li>
-          <li>Free 30 day trial</li>
-          <li>Teams</li>
-          <li>SSO</li>
-          <li>Annual payment discount of 20%</li>
-        </ul>
-      </Cell>
-      <Cell>
-        <h2>Enterprise Plan</h2>
-        <p>$2999 USD per month, paid annually</p>
-        <ul>
-          <li>Includes 100 users</li>
-          <li>$29 per additional user</li>
-          <li>Unlimited agents</li>
-          <li>Unlimited builds</li>
-          <li>Unlimited artifacts</li>
-          <li>Priority email support</li>
-          <li>Free 30 day trial</li>
-          <li>Teams</li>
-          <li>SSO</li>
-          <li>Audit log</li>
-          <li>Live support via chat</li>
-          <li>Technical account manager</li>
-          <li>SLA</li>
-          <li>Invoice payment</li>
-        </ul>
-      </Cell>
-    </Grid>
+    <PlanCurrencyNote>All prices are in USD</PlanCurrencyNote>
+    <PlanSection>
+      {/* <Plan
+        name="Free Plan"
+        description="For open-source projects, development agencies, and teaching organizations."
+        inclusions={[
+          'Unlimited agents',
+          'Unlimited builds',
+          'Unlimited artifacts'
+        ]}
+      /> */}
+      <Plan
+        name="Standard Plan"
+        inclusions={[
+          'Unlimited agents',
+          'Unlimited builds',
+          'Unlimited artifacts',
+          'Priority email support',
+          'Free 30 day trial',
+          'Teams',
+          'SSO',
+          'Annual payment discount of 20%'
+        ]}
+        pricing="$15 per user per month"
+      />
+      <Plan
+        name="Enterprise Plan"
+        inclusions={[
+          'Includes 100 users',
+          '$29 per additional user',
+          'Unlimited agents',
+          'Unlimited builds',
+          'Unlimited artifacts',
+          'Priority email support',
+          'Free 30 day trial',
+          'Teams',
+          'SSO',
+          'Audit log',
+          'Live support via chat',
+          'Technical account manager',
+          'SLA',
+          'Invoice payment'
+        ]}
+        pricing="$2999 per month, paid annually"
+      />
+    </PlanSection>
 
     <div>
       <h2>Frequently Asked Questions</h2>
