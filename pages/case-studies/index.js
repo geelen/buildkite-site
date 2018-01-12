@@ -10,9 +10,11 @@ export default page(({ loggedIn }) => (
     description="TODO"
     loggedIn={loggedIn}
     >
-    <h1>Case Studies</h1>
-    {caseStudies.map((caseStudy, index) => (
-      <CaseStudyCallout caseStudy={caseStudy} key={index} />
+    {caseStudies.map((caseStudy) => (
+      <CaseStudyCallout
+        caseStudy={caseStudy}
+        key={caseStudy.pathname}
+      />
     ))}
   </Page>
 ))
