@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import Page, { page } from 'components/Page'
-import { Grid, Cell } from 'components/Grid'
+import { Masonry, Brick } from 'components/Masonry'
 
 const PlanCurrencyNote = styled.p`
   text-align: center;
@@ -121,6 +121,23 @@ const Plan = ({ name, description, inclusions, pricing }) => (
   </PlanBox>
 )
 
+const FAQHeader = styled.h2`
+  ${({ theme }) => theme.textStyles.thirdLevelHeading}
+  text-align: center;
+  margin-top: ${({ theme }) => theme.outerSpacing.s1};
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
+`
+
+const FAQQuestion = styled.h3`
+  ${({ theme }) => theme.textStyles.bodyCopy}
+`
+
+const FAQParagraph = styled.p`
+  ${({ theme }) => theme.textStyles.bodyCopy}
+  color: ${({ theme }) => theme.colors.text.subdued};
+  padding: ${({ theme }) => theme.textSpacing.s1} 0;
+`
+
 export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Pricing"
@@ -196,27 +213,41 @@ export default page(({ loggedIn }) => (
       />
     </PlanSection>
 
-    <div>
-      <h2>Frequently Asked Questions</h2>
+    <FAQHeader>Frequently Asked Questions</FAQHeader>
 
-      <Grid columns='12rem'>
-        <Cell>
-          <h3>What is an agent?</h3>
-          <p>A build agent runs on your machine, and is capable of running a single build job at one time. You can run as many agents as you wish, and Buildkite will coordinate the work between them.</p>
-        </Cell>
-        <Cell>
-          <h3>Students &amp; teachers</h3>
-          <p>We offer free accounts for all students and teachers. Simply create your account and email support.</p>
-        </Cell>
-        <Cell>
-          <h3>Non-profits &amp; charities</h3>
-          <p>We offer heavy discounts for non-profit and charity organizations. Email support to see how we can help you.</p>
-        </Cell>
-        <Cell>
-          <h3>Open-source</h3>
-          <p>We offer free accounts for open-source. Sign up, create the organization for your project, and email support.</p>
-        </Cell>
-      </Grid>
-    </div>
+    <Masonry>
+      <Brick>
+        <FAQQuestion>
+          What is an agent?
+        </FAQQuestion>
+        <FAQParagraph>
+          A build agent runs on your machine, and is capable of running a single build job at one time. You can run as many agents as you wish, and Buildkite will coordinate the work between them.
+        </FAQParagraph>
+      </Brick>
+      <Brick>
+        <FAQQuestion>
+          Students & teachers
+        </FAQQuestion>
+        <FAQParagraph>
+          We offer free accounts for all students and teachers. Simply create your account and email support.
+        </FAQParagraph>
+      </Brick>
+      <Brick>
+        <FAQQuestion>
+          Non-profits & charities
+        </FAQQuestion>
+        <FAQParagraph>
+          We offer heavy discounts for non-profit and charity organizations. Email support to see how we can help you.
+        </FAQParagraph>
+      </Brick>
+      <Brick>
+        <FAQQuestion>
+          Open-source
+        </FAQQuestion>
+        <FAQParagraph>
+          We offer free accounts for open-source. Sign up, create the organization for your project, and email support.
+        </FAQParagraph>
+      </Brick>
+    </Masonry>
   </Page>
 ))
