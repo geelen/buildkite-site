@@ -10,6 +10,7 @@ const placeholderImage = require('../../assets/images/screencasts/placeholder.pn
 
 const Wrapper = styled.div`
   text-align: center;
+  margin-top: -${({ theme }) => theme.outerSpacing.s1};
 `
 
 const IndexLink = styled.a`
@@ -19,18 +20,13 @@ const IndexLink = styled.a`
   margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
 `
 
-const ScreencastTitle = styled.h1`
-  ${({ theme }) => theme.textStyles.thirdLevelHeading}
-  margin: ${({ theme }) => theme.innerSpacing.s1} 0;
-`
-
 const ScreencastParagraph = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopySmall}
   color: ${({ theme }) => theme.colors.text.subdued};
   margin: ${({ theme }) => theme.innerSpacing.s1} 0;
 `
 
-const ScreenshotImage = styled.img`
+const ScreenshotVideo = styled.video`
   ${({ theme }) => theme.images.screenshots}
   width: 800px;
   max-width: 100%;
@@ -51,7 +47,7 @@ const ScreencastLink = styled(RawScreencastLink)`
   display: inline-block;
 `
 
-const Zip = ({ children: rawChildren, separator=', ', lastSeparator=' and ' }) => (
+const Sentencify = ({ children: rawChildren, separator=', ', lastSeparator=' and ' }) => (
   React.Children.toArray(rawChildren).reduce((acc, child, index, children) => {
     if (index > 0 && index < children.length - 1) {
       acc.push(separator)
@@ -74,33 +70,29 @@ export default function screencastPage(pathname) {
 
   return page(({ loggedIn }) => (
     <Page
+      title={screencast.title}
+      description={screencast.description}
       headTitle={screencast.headTitle}
       loggedIn={loggedIn}
     >
       <Wrapper>
-        <Link href="/screencasts">
-          <IndexLink>Screencasts</IndexLink>
-        </Link>
+        <ScreencastParagraph>{`Duration: ${screencast.duration}`}</ScreencastParagraph>
 
-        <ScreencastTitle>
-          {screencast.title}
-        </ScreencastTitle>
-        <ScreencastParagraph>
-          {screencast.description}
-        </ScreencastParagraph>
-
-        <ScreenshotImage src={screencast.image} />
+        <ScreenshotVideo controls playsinline preload="auto" poster={screencast.image}>
+          <source src={screencast.videos.webm} type="video/webm"/>
+          <source src={screencast.videos.mp4} type="video/mp4"/>
+        </ScreenshotVideo>
 
         {screencast.relatedDocumentation && (
           <ScreencastParagraph>
             {'Related documentation: '}
-            <Zip>
+            <Sentencify>
               {screencast.relatedDocumentation.map(({ title, url }, index) => (
                 <Link href={url} external key={index}>
                   <DocumentationLink>{title}</DocumentationLink>
                 </Link>
               ))}
-            </Zip>
+            </Sentencify>
           </ScreencastParagraph>
         )}
 
