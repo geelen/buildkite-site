@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import styled from 'styled-components'
 
 import Button from 'components/Button'
+import Link from 'components/Link'
 
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s3};
@@ -33,7 +33,7 @@ export default ({ heading, description, url, buttonTitle }) => (
     <Header>{heading}</Header>
     <Description>{description}</Description>
     <LinkSection>
-      <Link href={url} passHref><Button>{buttonTitle}</Button></Link>
+      <Link href={url}><Button>{buttonTitle}</Button></Link>
     </LinkSection>
   </Section>
 )

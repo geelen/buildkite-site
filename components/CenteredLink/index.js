@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import styled from 'styled-components'
+
+import Link from 'components/Link'
 
 const Container = styled.p`
   text-align: center;
@@ -7,6 +8,6 @@ const Container = styled.p`
 
 export default ({ href, children }) => (
   <Container>
-    <Link href={href} passHref>{children}</Link>
+    <Link href={href}>{children}</Link>
   </Container>
 )

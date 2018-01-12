@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import Link from 'next/link'
+
+import Link from 'components/Link'
 
 const ScreencastLink = styled.a`
   ${({ theme }) => theme.textStyles.navigationHyperlink}
@@ -33,7 +34,7 @@ const ScreencastDetail = styled.p`
 `
 
 export default ({ screencast, ...props }) => (
-  <Link href={screencast.pathname} passHref prefetch>
+  <Link href={screencast.pathname} prefetch>
     <ScreencastLink {...props}>
       <ScreenshotImage src={screencast.image} />
       <ScreencastTitle>
