@@ -4,6 +4,7 @@ import queryString from 'query-string';
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Callout from 'components/Callout'
 import { Grid, Cell } from 'components/Grid'
+import { Masonry, Brick } from 'components/Masonry'
 import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 import Page, { page } from 'components/Page'
 import Person from 'components/Person'
@@ -82,18 +83,6 @@ const HeadOfficeLocation = {
   z: 17,
   t: 'r'
 }
-
-const Masonry = styled.div`
-  columns: auto 18rem;
-
-  > * {
-    page-break-inside: avoid; /* Firefox compat */
-    break-inside: avoid;
-  }
-`
-const Brick = styled.div`
-  padding: ${({ theme }) => theme.textSpacing.s1};
-`
 
 const ValueParagraph = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
