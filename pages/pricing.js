@@ -148,8 +148,7 @@ export default page(({ loggedIn }) => (
           'Priority email support',
           'Free 30 day trial',
           'Teams',
-          'SSO',
-          'Annual payment discount of 20%'
+          'SSO'
         ]}
         pricing={
           <Price
@@ -169,8 +168,6 @@ export default page(({ loggedIn }) => (
       <Plan
         name="Enterprise Plan"
         inclusions={[
-          'Includes 100 users',
-          '$29 per additional user',
           'Unlimited agents',
           'Unlimited builds',
           'Unlimited artifacts',
@@ -179,7 +176,7 @@ export default page(({ loggedIn }) => (
           'Teams',
           'SSO',
           'Audit log',
-          'Live support via chat',
+          'Live chat support',
           'Technical account manager',
           'SLA',
           'Invoice payment'
