@@ -19,7 +19,7 @@ const PlanSection = styled.div`
 `
 
 const PlanBox = styled.div`
-  flex: 1 0 300px;
+  flex: 1 0 280px;
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s2};
   margin: ${({ theme }) => theme.innerSpacing.s0};
