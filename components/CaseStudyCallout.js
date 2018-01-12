@@ -20,6 +20,16 @@ const Logo = styled.img`
   max-width: 100%;
 `
 
+const Info = styled.p`
+  color: ${({ theme }) => theme.colors.text.subdued};
+  margin: ${({ theme }) => theme.textSpacing.s2} 0;
+`
+
+const Summary = styled.p`
+  margin-top: ${({ theme }) => theme.textSpacing.s2};
+  margin-bottom: ${({ theme }) => theme.textSpacing.s3};
+`
+
 const ResultPane = styled.div`
   flex: 1 2 280px;
   display: flex;
@@ -51,12 +61,14 @@ export default ({ caseStudy }) => (
         </Link>
       </h2>
 
-      <p>{caseStudy.industry} - {caseStudy.teamSize}</p>
+      <Info>{caseStudy.industry} - {caseStudy.teamSize}</Info>
 
-      <p>{caseStudy.summaryWords}</p>
+      <Summary>{caseStudy.summaryWords}</Summary>
 
       <Link href={caseStudy.pathname} prefetch>
-        <Button>{caseStudy.team} Case Study</Button>
+        <Button>
+          {caseStudy.team} Case Study
+        </Button>
       </Link>
     </InfoPane>
 
