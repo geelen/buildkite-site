@@ -13,16 +13,32 @@ const PlanCurrencyNote = styled.p`
 
 const PlanSection = styled.div`
   display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
   margin: -${({ theme }) => theme.innerSpacing.s0};
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 830px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 `
 
 const PlanBox = styled.div`
-  flex: 1 0 280px;
+  flex: 1 1 250px;
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s2};
   margin: ${({ theme }) => theme.innerSpacing.s0};
+
+  @media (min-width: 340px) {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  @media (min-width: 830px) {
+    min-width: none;
+  }
 `
 
 const PlanName = styled.h2`
@@ -147,7 +163,7 @@ export default page(({ loggedIn }) => (
   >
     <PlanCurrencyNote>All prices are in USD</PlanCurrencyNote>
     <PlanSection>
-      {/* <Plan
+      <Plan
         name="Free Plan"
         description="For open-source projects, development agencies, and teaching organizations."
         inclusions={[
@@ -155,7 +171,7 @@ export default page(({ loggedIn }) => (
           'Unlimited builds',
           'Unlimited artifacts'
         ]}
-      /> */}
+      />
       <Plan
         name="Standard Plan"
         inclusions={[
