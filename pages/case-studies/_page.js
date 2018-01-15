@@ -79,19 +79,17 @@ export default function caseStudyPage(pathname) {
 
       <hr/>
 
-      <blockquote>
-        <p>{caseStudy.testimonial.testimonial}</p>
-        <footer>
-          <cite>
-            <img src={caseStudy.testimonial.headshotImage} alt={caseStudy.testimonial.name}/>
-            <p>
-              {caseStudy.testimonial.name}
-              <br/>
-              {caseStudy.testimonial.title}
-            </p>
-          </cite>
-        </footer>
-      </blockquote>
+      <figure>
+        <blockquote>{caseStudy.testimonial.testimonial}</blockquote>
+        <figcaption>
+          <img src={caseStudy.testimonial.headshotImage} alt={caseStudy.testimonial.name}/>
+          <p>
+            {caseStudy.testimonial.name}
+            <br/>
+            {caseStudy.testimonial.title}
+          </p>
+        </figcaption>
+      </figure>
 
       <hr/>
 
