@@ -72,11 +72,23 @@ const Quotation = styled.blockquote`
   ${({ theme }) => theme.textStyles.secondLevelHeading}
   font-weight: normal;
   flex: 1 0 280px;
+  margin-top: ${({ theme }) => theme.innerSpacing.s2};
+  margin-bottom: ${({ theme }) => theme.textSpacing.s2};
+
+  @media (min-width: 620px) {
+    margin-top: 0;
+    margin-bottom: 60px;
+  }
 `
 
 const Attribution = styled.figcaption`
-  flex: 0 0 220px;
-  align-self: flex-end;
+  flex: 1 0 220px;
+
+  @media (min-width: 620px) {
+    flex-grow: 0;
+    align-self: flex-end;
+    margin-top: 60px;
+  }
 `
 
 const Headshot = styled.img`
@@ -84,8 +96,32 @@ const Headshot = styled.img`
   max-width: 100%;
 `
 
+const ImageGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 400px;
+
+  @media (min-width: 540px) {
+    position: relative;
+    margin-top: -10px;
+  }
+
+  @media (min-width: 620px) {
+    margin-top: -50px;
+  }
+`
+
+const ImageItem = styled.div`
+  flex: 1 1 250px;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+`
+
 const Image = styled.img`
   max-width: 100%;
+  max-height: 100%;
 `
 
 export default function caseStudyPage(pathname) {
@@ -151,8 +187,20 @@ export default function caseStudyPage(pathname) {
         </Attribution>
       </Testimonial>
 
-      <Image src={caseStudy.photoOne.image} alt={caseStudy.photoOne.alt} />
-      <Image src={caseStudy.photoTwo.image} alt={caseStudy.photoTwo.alt} />
+      <ImageGrid>
+        <ImageItem>
+          <Image
+            src={caseStudy.photoOne.image}
+            alt={caseStudy.photoOne.alt}
+          />
+        </ImageItem>
+        <ImageItem>
+          <Image
+            src={caseStudy.photoTwo.image}
+            alt={caseStudy.photoTwo.alt}
+          />
+        </ImageItem>
+      </ImageGrid>
     </Page>
   ))
 }
