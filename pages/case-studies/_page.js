@@ -29,6 +29,10 @@ const Logo = styled.img`
   max-width: 100%;
 `
 
+const Image = styled.img`
+  max-width: 100%;
+`
+
 export default function caseStudyPage(pathname) {
   const caseStudy = caseStudies.find((caseStudy) => caseStudy.pathname == pathname);
 
@@ -91,8 +95,8 @@ export default function caseStudyPage(pathname) {
 
       <hr/>
 
-      <img src={caseStudy.photoOne.image} alt={caseStudy.photoOne.alt} />
-      <img src={caseStudy.photoTwo.image} alt={caseStudy.photoTwo.alt} />
+      <Image src={caseStudy.photoOne.image} alt={caseStudy.photoOne.alt} />
+      <Image src={caseStudy.photoTwo.image} alt={caseStudy.photoTwo.alt} />
     </Page>
   ))
 }
