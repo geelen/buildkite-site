@@ -99,9 +99,9 @@ const Headshot = styled.img`
 const ImageGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  max-height: 400px;
 
   @media (min-width: 540px) {
+    max-height: 400px;
     position: relative;
     margin-top: -10px;
   }
@@ -111,18 +111,38 @@ const ImageGrid = styled.div`
   }
 `
 
-const ImageItem = styled.div`
+// NOTE: The following three elements, <ImageItemCell/>, <CellImage/> and
+// <ImageItem/> work around bugs in browser flexbox implementations which cause
+// images which are automatically sized within flex containers to take up their
+// entire container. To avoid this, we hide the image element itself and instead
+// employ a `contain`ed background image aligned to the center bottom.
+
+const ImageItemCell = styled.div`
   flex: 1 1 250px;
   max-height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
+  @media (min-width: 540px) {
+    background: url(${({ src }) => src}) center bottom / contain no-repeat;
+  }
 `
 
-const Image = styled.img`
+const CellImage = styled.img`
   max-width: 100%;
   max-height: 100%;
+
+  @media (min-width: 540px) {
+    opacity: 0;
+  }
 `
+
+const ImageItem = ({ src, alt, ...props }) => (
+  <ImageItemCell src={src} {...props}>
+    <CellImage src={src} alt={alt} />
+  </ImageItemCell>
+)
 
 export default function caseStudyPage(pathname) {
   const caseStudy = caseStudies.find((caseStudy) => caseStudy.pathname == pathname);
@@ -188,18 +208,14 @@ export default function caseStudyPage(pathname) {
       </Testimonial>
 
       <ImageGrid>
-        <ImageItem>
-          <Image
-            src={caseStudy.photoOne.image}
-            alt={caseStudy.photoOne.alt}
-          />
-        </ImageItem>
-        <ImageItem>
-          <Image
-            src={caseStudy.photoTwo.image}
-            alt={caseStudy.photoTwo.alt}
-          />
-        </ImageItem>
+        <ImageItem
+          src={caseStudy.photoOne.image}
+          alt={caseStudy.photoOne.alt}
+        />
+        <ImageItem
+          src={caseStudy.photoTwo.image}
+          alt={caseStudy.photoTwo.alt}
+        />
       </ImageGrid>
     </Page>
   ))
