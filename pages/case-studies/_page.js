@@ -29,6 +29,44 @@ const Logo = styled.img`
   max-width: 100%;
 `
 
+const Testimonial = styled.figure`
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  background-color: ${({ theme }) => theme.colors.backgrounds.grey};
+  padding: ${({ theme }) => theme.innerSpacing.s2};
+  overflow: hidden;
+  position: relative;
+  min-height: 16rem;
+
+  &:before {
+    content: '“';
+    color: white;
+    font-size: 288px;
+    line-height: 1;
+    position: absolute;
+    top: -.2em;
+    left: .1em;
+    pointer-events: none;
+  }
+`
+
+const Quotation = styled.blockquote`
+  ${({ theme }) => theme.textStyles.secondLevelHeading}
+  font-weight: normal;
+  flex: 1 0 280px;
+`
+
+const Attribution = styled.figcaption`
+  flex: 0 0 220px;
+  align-self: flex-end;
+`
+
+const Headshot = styled.img`
+  width: 90px;
+  max-width: 100%;
+`
+
 const Image = styled.img`
   max-width: 100%;
 `
@@ -77,21 +115,22 @@ export default function caseStudyPage(pathname) {
         </ResultsCell>
       </MediaItem>
 
-      <hr/>
-
-      <figure>
-        <blockquote>{caseStudy.testimonial.testimonial}</blockquote>
-        <figcaption>
-          <img src={caseStudy.testimonial.headshotImage} alt={caseStudy.testimonial.name}/>
+      <Testimonial>
+        <Quotation>
+          {caseStudy.testimonial.testimonial}
+        </Quotation>
+        <Attribution>
+          <Headshot
+            src={caseStudy.testimonial.headshotImage}
+            alt={caseStudy.testimonial.name}
+          />
           <p>
             {caseStudy.testimonial.name}
             <br/>
             {caseStudy.testimonial.title}
           </p>
-        </figcaption>
-      </figure>
-
-      <hr/>
+        </Attribution>
+      </Testimonial>
 
       <Image src={caseStudy.photoOne.image} alt={caseStudy.photoOne.alt} />
       <Image src={caseStudy.photoTwo.image} alt={caseStudy.photoTwo.alt} />
