@@ -15,8 +15,8 @@ export const shopify = {
   industry: 'Ecommerce',
   teamSize: '900 engineers',
   testimonial: {
-    name: 'A Person',
-    title: 'A persons title',
+    name: 'Jean-Michel Lemieux',
+    title: 'SVP of Engineering, Shopify',
     testimonial: 'A testimonial about how Buildkite has supported their organization through growth, and has been amazing for xyz.',
     headshotImage: shopifyTestimonialPhoto,
   },

@@ -6,6 +6,14 @@ import { MediaItem, ImageCell as RawImageCell, TextCell } from 'components/Media
 
 import caseStudies from './_data'
 
+const CaseStudyWords = TextCell.extend`
+  color: ${({ theme }) => theme.colors.text.subdued};
+
+  > p {
+    margin: ${({ theme }) => theme.textSpacing.s1} 0;
+  }
+`
+
 const ImageCell = RawImageCell.extend`
   flex-grow: 0;
 `
@@ -22,6 +30,15 @@ const ResultItem = styled.div`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s1};
   margin: ${({ theme }) => theme.innerSpacing.s1};
+`
+
+const ResultNumber = styled.span`
+  font-size: 48px;
+  font-weight: 800;
+`
+
+const TeamLink = styled.a`
+  ${({ theme }) => theme.textStyles.navigationHyperlink}
 `
 
 const Logo = styled.img`
@@ -85,8 +102,8 @@ export default function caseStudyPage(pathname) {
       <MediaItem>
         <TextCell>
           <h1>
-            <Link href={caseStudy.link.url}>
-              <a>{caseStudy.team}</a>
+            <Link href={caseStudy.link.url} passHref>
+              <TeamLink>{caseStudy.team}</TeamLink>
             </Link>
           </h1>
           <p>{caseStudy.industry} - {caseStudy.teamSize}</p>
@@ -101,14 +118,16 @@ export default function caseStudyPage(pathname) {
       </MediaItem>
 
       <MediaItem>
-        <TextCell>
+        <CaseStudyWords>
           {caseStudy.words}
-        </TextCell>
+        </CaseStudyWords>
 
         <ResultsCell>
           {caseStudy.results.map((result, index) => (
             <ResultItem key={index}>
-              {result.number}{result.unit}<br/>
+              <ResultNumber>
+                {result.number}{result.unit}
+              </ResultNumber><br/>
               {result.label}
             </ResultItem>
           ))}
