@@ -9,7 +9,7 @@ export default page(({ loggedIn }) => (
     description="We’re here to help."
     loggedIn={loggedIn}
   >
-    <ActionGrid columns="280px">
+    <ActionGrid>
       <ActionGridItem
         heading="Documentation"
         image="https://placeimg.com/500/500/nature"

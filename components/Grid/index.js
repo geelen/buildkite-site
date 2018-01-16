@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Grid = styled.div`
   display: grid;
-  grid-gap: ${({ theme }) => theme.innerSpacing.s1};
+  grid-gap: ${({ theme }) => theme.innerSpacing.s2} ${({ theme }) => theme.innerSpacing.s1};
   grid-template-columns: ${({ columns }) => {
     /*
      * Accept either a number of columns (which will be fixed at all sizes), or

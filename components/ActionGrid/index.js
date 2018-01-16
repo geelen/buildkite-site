@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import Button, { colors as buttonColors } from 'components/Button'
-import { Grid, Cell } from 'components/Grid'
+import { Grid as RawGrid, Cell } from 'components/Grid'
 import Link from 'components/Link'
 
 const Nav = styled.nav`
@@ -9,9 +9,17 @@ const Nav = styled.nav`
   margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
 `
 
-export const ActionGrid = ({ children, columns, ...props }) => (
+const Grid = RawGrid.extend`
+  grid-template-columns: 1;
+
+  @media (min-width: 580px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`
+
+export const ActionGrid = ({ children, ...props }) => (
   <Nav {...props}>
-    <Grid columns={columns}>
+    <Grid>
       {children}
     </Grid>
   </Nav>

@@ -184,7 +184,7 @@ export default page(({ loggedIn }) => (
       </Masonry>
     </Section>
 
-    <ActionGrid columns="280px">
+    <ActionGrid>
       <ActionGridItem
         heading="Brand Assets"
         image={brandAssetsImage}

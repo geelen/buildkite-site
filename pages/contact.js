@@ -11,7 +11,7 @@ export default page(({ loggedIn }) => (
     description="We’d love to hear from you."
     loggedIn={loggedIn}
   >
-    <ActionGrid columns="280px">
+    <ActionGrid>
       <ActionGridItem
         heading="Questions & Support"
         image="https://placeimg.com/500/500/nature"

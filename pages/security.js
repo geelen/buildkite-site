@@ -20,7 +20,7 @@ export default page(({ loggedIn }) => (
     description="TODO"
     loggedIn={loggedIn}
   >
-    <ActionGrid columns="280px">
+    <ActionGrid>
       <ActionGridItem
         heading="Report Vulnerability"
         image={vulnerabilityImage}
