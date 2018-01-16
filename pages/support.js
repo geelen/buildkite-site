@@ -28,7 +28,7 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="Community Chat"
-        image="https://placeimg.com/500/500/architecture"
+        image="https://placeimg.com/500/500/arch"
         imageAlt=""
         description="Ask questions and chat with other Buildkite users in our Slack community."
         url="https://chat.buildkite.com"

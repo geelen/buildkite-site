@@ -14,7 +14,7 @@ export default page(({ loggedIn }) => (
     <ActionGrid>
       <ActionGridItem
         heading="Questions & Support"
-        image="https://placeimg.com/500/500/nature"
+        image="https://placeimg.com/500/500/animals"
         imageAlt=""
         description="Things not going smoothly? Our team is here to help."
         url="/support"
@@ -22,7 +22,7 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="Feedback & Suggestions"
-        image="https://placeimg.com/500/500/animals"
+        image="https://placeimg.com/500/500/nature"
         imageAlt=""
         description="Have a request or idea? Let us know what you'd like to see."
         url="https://github.com/buildkite/feedback/issues"
