@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import Callout from 'components/Callout'
 import CaseStudyCallout from 'components/CaseStudyCallout'
 import Link from 'components/Link'
 import Page, { page } from 'components/Page'
@@ -263,6 +264,14 @@ export default function caseStudyPage(pathname) {
           alt={caseStudy.photoTwo.alt}
         />
       </ImageGrid>
+
+      <Callout
+        grey
+        heading="Talk to our team"
+        description="TODO"
+        url="mailto:support@buildkite.com"
+        buttonTitle="support@buildkite.com"
+      />
 
       <SectionHeader>More case studies</SectionHeader>
 
