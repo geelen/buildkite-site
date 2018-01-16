@@ -164,6 +164,13 @@ const ImageItem = ({ src, alt, ...props }) => (
   </ImageItemCell>
 )
 
+const SectionHeader = styled.h2`
+  ${({ theme }) => theme.textStyles.secondLevelHeading}
+  margin-top: 200px;
+  margin-bottom: ${({ theme }) => theme.outerSpacing.s1};
+  text-align: center;
+`
+
 export default function caseStudyPage(pathname) {
   // Split out current and other case studies
   const { caseStudy, otherCaseStudies } = caseStudies.reduce(
@@ -251,6 +258,8 @@ export default function caseStudyPage(pathname) {
           alt={caseStudy.photoTwo.alt}
         />
       </ImageGrid>
+
+      <SectionHeader>More case studies</SectionHeader>
 
       {otherCaseStudies.slice(0, 3).map((otherCaseStudy) => (
         <CaseStudyCallout
