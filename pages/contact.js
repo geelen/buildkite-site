@@ -13,6 +13,14 @@ export default page(({ loggedIn }) => (
   >
     <ActionGrid columns="280px">
       <ActionGridItem
+        heading="Questions & Support"
+        image="https://placeimg.com/500/500/nature"
+        imageAlt=""
+        description="Things not going smoothly? Our team is here to help."
+        url="/support"
+        buttonTitle="See Support"
+      />
+      <ActionGridItem
         heading="Feedback & Suggestions"
         image="https://placeimg.com/500/500/animals"
         imageAlt=""
@@ -25,16 +33,8 @@ export default page(({ loggedIn }) => (
         image={vulnerabilityImage}
         imageAlt=""
         description="Found a security issue? Request an invite to our bug bounty."
-        url="mailto:security@buildkite.com"
-        buttonTitle="security@buildkite.com"
-      />
-      <ActionGridItem
-        heading="Questions & Support"
-        image="https://placeimg.com/500/500/nature"
-        imageAlt=""
-        description="Things not going smoothly? Our team is here to help."
-        url="mailto:support@buildkite.com"
-        buttonTitle="support@buildkite.com"
+        url="/security"
+        buttonTitle="See Security Docs"
       />
       <ActionGridItem
         heading="Say Hello!"
