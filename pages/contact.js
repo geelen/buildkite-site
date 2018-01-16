@@ -2,6 +2,8 @@ import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Callout from 'components/Callout'
 import Page, { page } from 'components/Page'
 
+const vulnerabilityImage = require('../assets/images/security/vulnerability.jpg')
+
 export default page(({ loggedIn }) => (
   <Page
     headTitle="Contact Buildkite"
@@ -20,7 +22,7 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="Report a Vulnerability"
-        image=""
+        image={vulnerabilityImage}
         imageAlt=""
         description="Found a security issue? Request an invite to our bug bounty."
         url="mailto:security@buildkite.com"
