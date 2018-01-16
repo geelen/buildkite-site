@@ -2,9 +2,30 @@ import styled from 'styled-components'
 
 import Link from 'components/Link'
 import Page, { page } from 'components/Page'
-import { MediaItem, ImageCell as RawImageCell, TextCell } from 'components/MediaItem'
 
 import caseStudies from './_data'
+
+const FlexContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
+const HeadingContainer = FlexContainer.extend`
+  align-items: center;
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
+`
+
+const SpacedFlexContainer = FlexContainer.extend`
+  margin: ${({ theme }) => theme.innerSpacing.s1} -${({ theme }) => theme.innerSpacing.s1};
+
+  > * {
+    margin: 0 ${({ theme }) => theme.innerSpacing.s1};
+  }
+`
+
+const TextCell = styled.div`
+  flex: 3 1 280px;
+`
 
 const CaseStudyWords = TextCell.extend`
   color: ${({ theme }) => theme.colors.text.subdued};
@@ -14,22 +35,19 @@ const CaseStudyWords = TextCell.extend`
   }
 `
 
-const ImageCell = RawImageCell.extend`
-  flex-grow: 0;
+const ImageCell = styled.div`
+  flex: 1 2 150px;
 `
 
 const ResultsCell = ImageCell.extend`
-  display: flex;
-  flex-direction: column;
-  text-align: initial;
-  padding: ${({ theme }) => theme.innerSpacing.s1} 0;
-  margin: -${({ theme }) => theme.innerSpacing.s1};
+  display: grid;
+  align-items: center;
+  grid-gap: ${({ theme }) => theme.innerSpacing.s1};
 `
 
 const ResultItem = styled.div`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s1};
-  margin: ${({ theme }) => theme.innerSpacing.s1};
 `
 
 const ResultNumber = styled.span`
@@ -52,6 +70,7 @@ const Testimonial = styled.figure`
   flex-wrap: wrap;
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s2};
+  margin-top: ${({ theme }) => theme.innerSpacing.s1};
   overflow: hidden;
   position: relative;
   min-height: 16rem;
@@ -71,7 +90,7 @@ const Testimonial = styled.figure`
 const Quotation = styled.blockquote`
   ${({ theme }) => theme.textStyles.secondLevelHeading}
   font-weight: normal;
-  flex: 1 0 280px;
+  flex: 1 1 280px;
   margin-top: ${({ theme }) => theme.innerSpacing.s2};
   margin-bottom: ${({ theme }) => theme.textSpacing.s2};
 
@@ -82,7 +101,7 @@ const Quotation = styled.blockquote`
 `
 
 const Attribution = styled.figcaption`
-  flex: 1 0 220px;
+  flex: 1 0 200px;
 
   @media (min-width: 620px) {
     flex-grow: 0;
@@ -153,10 +172,9 @@ export default function caseStudyPage(pathname) {
       headTitle={caseStudy.headTitle}
       loggedIn={loggedIn}
     >
-      <p>Case Study</p>
-
-      <MediaItem>
+      <HeadingContainer>
         <TextCell>
+          <p>Case Study</p>
           <h1>
             <Link href={caseStudy.link.url} passHref>
               <TeamLink>{caseStudy.team}</TeamLink>
@@ -171,9 +189,9 @@ export default function caseStudyPage(pathname) {
             alt={`${caseStudy.team} logo`}
           />
         </ImageCell>
-      </MediaItem>
+      </HeadingContainer>
 
-      <MediaItem>
+      <SpacedFlexContainer>
         <CaseStudyWords>
           {caseStudy.words}
         </CaseStudyWords>
@@ -188,7 +206,7 @@ export default function caseStudyPage(pathname) {
             </ResultItem>
           ))}
         </ResultsCell>
-      </MediaItem>
+      </SpacedFlexContainer>
 
       <Testimonial>
         <Quotation>
