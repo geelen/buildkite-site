@@ -51,9 +51,14 @@ const ResultItem = styled.div`
   padding: ${({ theme }) => theme.innerSpacing.s1};
 `
 
-const ResultNumber = styled.span`
-  font-size: 48px;
+const ResultValue = styled.span`
+  font-size: 36px;
   font-weight: 800;
+  line-height: 1;
+`
+
+const ResultNumber = styled.span`
+  font-size: 72px;
 `
 
 const TeamLink = styled.a`
@@ -222,9 +227,9 @@ export default function caseStudyPage(pathname) {
         <ResultsCell>
           {caseStudy.results.map((result, index) => (
             <ResultItem key={index}>
-              <ResultNumber>
-                {result.number}{result.unit}
-              </ResultNumber><br/>
+              <ResultValue>
+                <ResultNumber>{result.number}</ResultNumber>{result.unit}
+              </ResultValue><br/>
               {result.label}
             </ResultItem>
           ))}
