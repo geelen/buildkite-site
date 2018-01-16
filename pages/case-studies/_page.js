@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import CaseStudyCallout from 'components/CaseStudyCallout'
 import Link from 'components/Link'
 import Page, { page } from 'components/Page'
 
@@ -164,7 +165,22 @@ const ImageItem = ({ src, alt, ...props }) => (
 )
 
 export default function caseStudyPage(pathname) {
-  const caseStudy = caseStudies.find((caseStudy) => caseStudy.pathname == pathname);
+  // Split out current and other case studies
+  const { caseStudy, otherCaseStudies } = caseStudies.reduce(
+    (acc, study) => {
+      if (study.pathname == pathname) {
+        acc.caseStudy = study;
+      } else {
+        acc.otherCaseStudies.push(study);
+      }
+
+      return acc;
+    },
+    {
+      caseStudy: null,
+      otherCaseStudies: []
+    }
+  );
 
   return page(({ loggedIn }) => (
     <Page
@@ -235,6 +251,13 @@ export default function caseStudyPage(pathname) {
           alt={caseStudy.photoTwo.alt}
         />
       </ImageGrid>
+
+      {otherCaseStudies.slice(0, 3).map((otherCaseStudy) => (
+        <CaseStudyCallout
+          caseStudy={otherCaseStudy}
+          key={otherCaseStudy.pathname}
+        />
+      ))}
     </Page>
   ))
 }
