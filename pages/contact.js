@@ -14,7 +14,7 @@ export default page(({ loggedIn }) => (
     <ActionGrid columns="280px">
       <ActionGridItem
         heading="Feedback & Suggestions"
-        image=""
+        image="https://placeimg.com/500/500/animals"
         imageAlt=""
         description="Have a request or idea? Let us know what you'd like to see."
         url="https://github.com/buildkite/feedback/issues"
@@ -30,7 +30,7 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="Questions & Support"
-        image=""
+        image="https://placeimg.com/500/500/nature"
         imageAlt=""
         description="Things not going smoothly? Our team is here to help."
         url="mailto:support@buildkite.com"
@@ -38,7 +38,7 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="Say Hello!"
-        image=""
+        image="https://placeimg.com/500/500/tech"
         imageAlt=""
         description="For press enquries and anything else, drop us a line."
         url="mailto:hello@buildkite.com"

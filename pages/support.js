@@ -12,7 +12,7 @@ export default page(({ loggedIn }) => (
     <ActionGrid columns="280px">
       <ActionGridItem
         heading="Documentation"
-        image=""
+        image="https://placeimg.com/500/500/nature"
         imageAlt=""
         description="Find reference pages, how-to guides, and more in our documentation."
         url="/docs"
@@ -20,7 +20,7 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="Feedback"
-        image=""
+        image="https://placeimg.com/500/500/animals"
         imageAlt=""
         description="Report bugs and find answers to solved problems in our Feedback repository."
         url="https://github.com/buildkite/feedback/issues"
@@ -28,7 +28,7 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="Community Chat"
-        image=""
+        image="https://placeimg.com/500/500/architecture"
         imageAlt=""
         description="Ask questions and chat with other Buildkite users in our Slack community."
         url="https://chat.buildkite.com"
@@ -36,7 +36,7 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="System Status"
-        image=""
+        image="https://placeimg.com/500/500/tech"
         imageAlt=""
         description="Keep track of Buildkite and connected third party services on our Status page."
         url="https://buildkitestatus.com"
