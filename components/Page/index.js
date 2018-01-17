@@ -38,17 +38,26 @@ const Image = styled.img`
 `
 
 // Helper function for setting up standard page props
-export function page(fn) {
-  fn.getInitialProps = (ctx) => {
+export function page(Component) {
+  const componentInitialProps = Component.getInitialProps;
+
+  Component.getInitialProps = (context) => {
+    // Copy in wrapped component's getInitialProps value
+    const processedProps = (
+      componentInitialProps
+        ? componentInitialProps.call(this, context)
+        : {}
+    );
+
     // Uses next-cookies to get this in either the browser or backend
-    const { bk_logged_in } = cookies(ctx)
-    
-    return {
-      loggedIn: (bk_logged_in == "true")
-    }
+    const { bk_logged_in } = cookies(context)
+
+    processedProps.loggedIn = bk_logged_in == "true";
+
+    return processedProps
   }
 
-  return fn;
+  return Component;
 }
 
 export default ({ headTitle, title, description, image, imageAlt, children, loggedIn }) => (
