@@ -14,10 +14,7 @@ const FALLBACK_STATUS_MESSAGE = {
 
 class Error extends React.Component {
   static getInitialProps(ctx) {
-    console.debug('Error#getInitialProps(ctx):', ctx);
     const { res, err, jsonPageRes } = ctx;
-
-    console.debug(err && err.statusCode)
 
     let statusCode = null;
 
