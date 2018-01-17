@@ -1,3 +1,4 @@
+import Universe from 'components/404'
 import Page, { page } from 'components/Page'
 
 const STATUS_MESSAGES = {
@@ -47,6 +48,7 @@ class Error extends React.Component {
         description={description}
         loggedIn={loggedIn}
       >
+        <Universe />
       </Page>
     )
   }
