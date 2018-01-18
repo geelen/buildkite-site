@@ -1,8 +1,8 @@
 import styled, { css, keyframes } from 'styled-components'
 
 const nebulaImage = require('../assets/images/components/404/nebula.png')
-const smallStarsImage = require('../assets/images/components/404/stars-small.png')
-const largeStarsImage = require('../assets/images/components/404/stars-large.png')
+const distantStarsImage = require('../assets/images/components/404/stars-distant.png')
+const nearbyStarsImage = require('../assets/images/components/404/stars-nearby.png')
 const tetherImage = require('../assets/images/components/404/tether.png')
 const cosmonautImage = require('../assets/images/components/404/cosmonaut.png')
 
@@ -17,10 +17,19 @@ const fastAndTheFuriousCelestialDrift = (extent) => keyframes`
 `
 
 const Universe = styled.div`
-  /* TODO: Make this shrink to the left on mobile devices */
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  margin: 0 -${({ theme }) => theme.innerSpacing.s1};
+  padding: 0 ${({ theme }) => theme.innerSpacing.s1};
 `
 
 const Supercluster = styled.div`
+  min-width: 480px;
+  right: 0;
+`
+
+const Galaxy = styled.div`
   /* This element gives us a fixed aspect ratio to work with. */
   width: 100%;
   /* 1514 * 794 is our base size, so 794 / 1514 * 100 gets us our ratio. */
@@ -29,7 +38,7 @@ const Supercluster = styled.div`
   position: relative;
 `
 
-const Galaxy = styled.div`
+const InterstellarCloud = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -65,8 +74,8 @@ const Nebula = styled.img.attrs({
   animation-name: ${fastAndTheFuriousCelestialDrift(1)};
 `
 
-const SmallStars = styled.img.attrs({
-  src: smallStarsImage
+const DistantStars = styled.img.attrs({
+  src: distantStarsImage
 })`
   ${animatedCommon}
   width: 100%; /* 1514px / 1514px * 100% */
@@ -75,8 +84,8 @@ const SmallStars = styled.img.attrs({
   animation-name: ${fastAndTheFuriousCelestialDrift(2)};
 `
 
-const LargeStars = styled.img.attrs({
-  src: largeStarsImage
+const NearbyStars = styled.img.attrs({
+  src: nearbyStarsImage
 })`
   ${animatedCommon}
   width: 74.83%; /* 1133px / 1514px * 100% */
@@ -119,13 +128,16 @@ export default () => (
   <Universe>
     <Supercluster>
       <Galaxy>
-        <Nebula />
-        <SmallStars />
-        <LargeStars />
-        <TetherGroup>
-          <Tether />
-          <Cosmonaut />
-        </TetherGroup>
+        <InterstellarCloud>
+          <Nebula />
+          <DistantStars />
+          <NearbyStars />
+          <TetherGroup>
+            {/* There's a spacecraft here, it's just off-screen, I promise */}
+            <Tether />
+            <Cosmonaut />
+          </TetherGroup>
+        </InterstellarCloud>
       </Galaxy>
     </Supercluster>
   </Universe>
