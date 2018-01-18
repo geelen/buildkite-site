@@ -39,14 +39,18 @@ const Galaxy = styled.div`
 
 const animatedCommon = css`
   position: absolute;
-  animation-duration: 30s;
+  animation-duration: 15s;
   animation-direction: alternate;
-  animation-timing-function: ease;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   user-select: none;
   user-drag: none;
 
-  @media screen and (prefers-reduced-motion) {
+  @media (min-width: 480px) {
+    animation-duration: 30s;
+  }
+
+  @media (prefers-reduced-motion) {
     animation-duration: 0;
   }
 `
