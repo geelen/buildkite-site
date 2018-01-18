@@ -10,14 +10,14 @@ const Container = styled.div`
   ${({ theme }) => theme.pageContainer}
 `
 
-const Title = styled.h1`
+export const Title = styled.h1`
   ${({ theme }) => theme.textStyles.mainCallout}
   text-align: center;
   margin-top: 0;
   margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
 `
 
-const Description = styled.p`
+export const Description = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopyLarge}
   text-align: center;
   max-width: 30em;
@@ -60,30 +60,38 @@ export function page(Component) {
   return Component;
 }
 
-export default ({ headTitle, title, description, image, imageAlt, children, loggedIn }) => (
+export const BasePage = ({ headTitle, description, image, imageAlt, children, loggedIn }) => (
   <ThemeProvider theme={buildkiteTheme}>
-    <div>
+    <React.Fragment>
       <Head>
         <title>{headTitle}</title>
       </Head>
       <Header loggedIn={loggedIn} />
       <Container>
-        <div>
-          {image && (
-            <ImageContainer>
-              <Image src={image} alt={imageAlt} />
-            </ImageContainer>
-          )}
-          {title && (
-            <Title>{title}</Title>
-          )}
-          {description && (
-            <Description>{description}</Description>
-          )}
+        <React.Fragment>
           {children}
-        </div>
+        </React.Fragment>
       </Container>
       <Footer />
-    </div>
+    </React.Fragment>
   </ThemeProvider>
+)
+
+export default (props) => (
+  <BasePage {...props}>
+    <React.Fragment>
+      {props.image && (
+        <ImageContainer>
+          <Image src={props.image} alt={props.imageAlt} />
+        </ImageContainer>
+      )}
+      {props.title && (
+        <Title>{props.title}</Title>
+      )}
+      {props.description && (
+        <Description>{props.description}</Description>
+      )}
+      {props.children}
+    </React.Fragment>
+  </BasePage>
 )

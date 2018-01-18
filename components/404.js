@@ -24,7 +24,6 @@ const Supercluster = styled.div`
   width: 100%;
   min-width: 480px;
   max-width: 757px;
-  right: 0;
 `
 
 const Galaxy = styled.div`

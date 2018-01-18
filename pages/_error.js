@@ -1,5 +1,5 @@
 import Universe from 'components/404'
-import Page, { page } from 'components/Page'
+import { BasePage, Title, Description, page } from 'components/Page'
 
 const STATUS_MESSAGES = {
   404: {
@@ -42,14 +42,16 @@ class Error extends React.Component {
     );
 
     return (
-      <Page
+      <BasePage
         headTitle={title}
         title={title}
         description={description}
         loggedIn={loggedIn}
       >
         <Universe />
-      </Page>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+      </BasePage>
     )
   }
 }
