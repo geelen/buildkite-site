@@ -43,7 +43,38 @@ const InterstellarCloud = styled.div`
   bottom: 0;
 `
 
-const animatedCommon = css`
+class Image extends React.PureComponent {
+  // Wow, it sucks that this is even necessary? Ugh.
+  static defaultProps = { 
+    onLoad() {}
+  }
+
+  handleLoad = () => {
+    this.props.onLoad()
+  }
+
+  componentDidMount() {
+    if (this.element && this.element.complete) {
+      this.handleLoad()
+    }
+  }
+
+  ref = (element) => {
+    this.element = element
+  }
+
+  render() {
+    return (
+      <img
+        {...this.props}
+        ref={this.ref}
+        onLoad={this.handleLoad}
+      />
+    )
+  }
+}
+
+const animatedShared = css`
   position: absolute;
   animation-duration: 15s;
   animation-direction: alternate;
@@ -61,30 +92,38 @@ const animatedCommon = css`
   }
 `
 
-const Nebula = styled.img.attrs({
+const deferredLoadShared = css`
+  transition: opacity 200ms ease-in;
+  opacity: ${({ show }) => show ? 1 : 0};
+`
+
+const Nebula = styled(Image).attrs({
   src: nebulaImage
 })`
-  ${animatedCommon}
+  ${animatedShared}
+  ${deferredLoadShared}
   width: 90.29%; /* 1367px / 1514px * 100% */
   top: 5.54%; /* 44px / 794px * 100% */
   left: 8.39%; /* 127px / 1514px * 100% */
   animation-name: ${fastAndTheFuriousCelestialDrift(1.25)};
 `
 
-const DistantStars = styled.img.attrs({
+const DistantStars = styled(Image).attrs({
   src: distantStarsImage
 })`
-  ${animatedCommon}
+  ${animatedShared}
+  ${deferredLoadShared}
   width: 100%; /* 1514px / 1514px * 100% */
   top: 4.16%; /* 33px / 794px * 100% */
   left: 0;
   animation-name: ${fastAndTheFuriousCelestialDrift(2.5)};
 `
 
-const NearbyStars = styled.img.attrs({
+const NearbyStars = styled(Image).attrs({
   src: nearbyStarsImage
 })`
-  ${animatedCommon}
+  ${animatedShared}
+  ${deferredLoadShared}
   width: 74.83%; /* 1133px / 1514px * 100% */
   top: 0;
   left: 13.74%; /* 208px / 1514px * 100% */
@@ -92,7 +131,8 @@ const NearbyStars = styled.img.attrs({
 `
 
 const TetherGroup = styled.div`
-  ${animatedCommon}
+  ${animatedShared}
+  ${deferredLoadShared}
   width: 38.83%; /* 588px / 1514px * 100% */
   height: 68.14%; /* 541px / 794px * 100% */
   top: 31.86%; /* 253px / 794px * 100% */
@@ -101,19 +141,19 @@ const TetherGroup = styled.div`
   transform-origin: center bottom;
 `
 
-const Tether = styled.img.attrs({
+const Tether = styled(Image).attrs({
   src: tetherImage
 })`
-  ${animatedCommon}
+  ${animatedShared}
   width: 88.44%; /* 520px / 588px * 100% */
   right: 0;
   bottom: 0;
 `
 
-const Cosmonaut = styled.img.attrs({
+const Cosmonaut = styled(Image).attrs({
   src: cosmonautImage
 })`
-  ${animatedCommon}
+  ${animatedShared}
   width: 40.82%; /* 240px / 588px * 100% */
   top: 0;
   left: 0;
@@ -121,21 +161,64 @@ const Cosmonaut = styled.img.attrs({
   transform-origin: 10% 50%;
 `
 
-export default () => (
-  <Universe>
-    <Supercluster>
-      <Galaxy>
-        <InterstellarCloud>
-          <Nebula />
-          <DistantStars />
-          <NearbyStars />
-          <TetherGroup>
-            {/* There's a spacecraft here, it's just off-screen, I promise */}
-            <Tether />
-            <Cosmonaut />
-          </TetherGroup>
-        </InterstellarCloud>
-      </Galaxy>
-    </Supercluster>
-  </Universe>
-)
+export default class Animated404 extends React.PureComponent {
+  state = {
+    nebulaReady: false,
+    distantStarsReady: false,
+    nearbyStarsReady: false,
+    tetherReady: false,
+    cosmonautReady: false
+  }
+
+  handleNebulaLoad = (evt) => {
+    this.setState({ nebulaReady: true });
+  }
+
+  handleDistantStarsLoad = (evt) => {
+    this.setState({ distantStarsReady: true });
+  }
+
+  handleNearbyStarsLoad = (evt) => {
+    this.setState({ nearbyStarsReady: true });
+  }
+
+  handleTetherLoad = (evt) => {
+    this.setState({ tetherReady: true });
+  }
+
+  handleCosmonautLoad = (evt) => {
+    this.setState({ cosmonautReady: true });
+  }
+
+  render() {
+    return (
+      <Universe>
+        <Supercluster>
+          <Galaxy>
+            <InterstellarCloud>
+              <Nebula
+                onLoad={this.handleNebulaLoad}
+                show={this.state.nebulaReady}
+              />
+              <DistantStars
+                onLoad={this.handleDistantStarsLoad}
+                show={this.state.distantStarsReady}
+              />
+              <NearbyStars
+                onLoad={this.handleNearbyStarsLoad}
+                show={this.state.nearbyStarsReady}
+              />
+              <TetherGroup
+                show={this.state.tetherReady && this.state.cosmonautReady}
+              >
+                {/* There's a spacecraft here, it's just off-screen, I promise */}
+                <Tether onLoad={this.handleTetherLoad} />
+                <Cosmonaut onLoad={this.handleCosmonautLoad} />
+              </TetherGroup>
+            </InterstellarCloud>
+          </Galaxy>
+        </Supercluster>
+      </Universe>
+    )
+  }
+}

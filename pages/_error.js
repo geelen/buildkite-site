@@ -1,4 +1,4 @@
-import Universe from 'components/404'
+import Animated404 from 'components/404'
 import { BasePage, Title, Description, page } from 'components/Page'
 
 const STATUS_MESSAGES = {
@@ -48,7 +48,7 @@ class Error extends React.Component {
         description={description}
         loggedIn={loggedIn}
       >
-        <Universe />
+        <Animated404 />
         <Title>{title}</Title>
         <Description>{description}</Description>
       </BasePage>
