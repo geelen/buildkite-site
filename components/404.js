@@ -6,13 +6,9 @@ const nearbyStarsImage = require('../assets/images/components/404/stars-nearby.p
 const tetherImage = require('../assets/images/components/404/tether.png')
 const cosmonautImage = require('../assets/images/components/404/cosmonaut.png')
 
-const fastAndTheFuriousCelestialDrift = (extent) => keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
+const fastAndTheFuriousCelestialDrift = (degrees) => keyframes`
   to {
-    transform: rotate(calc(${extent} * 1.25deg));
+    transform: rotate(${degrees}deg);
   }
 `
 
@@ -21,11 +17,13 @@ const Universe = styled.div`
   overflow: hidden;
   justify-content: center;
   margin: 0 -${({ theme }) => theme.innerSpacing.s1};
-  padding: 0 ${({ theme }) => theme.innerSpacing.s1};
+  padding: ${({ theme }) => theme.innerSpacing.s1};
 `
 
 const Supercluster = styled.div`
+  width: 100%;
   min-width: 480px;
+  max-width: 757px;
   right: 0;
 `
 
@@ -71,7 +69,7 @@ const Nebula = styled.img.attrs({
   width: 90.29%; /* 1367px / 1514px * 100% */
   top: 5.54%; /* 44px / 794px * 100% */
   left: 8.39%; /* 127px / 1514px * 100% */
-  animation-name: ${fastAndTheFuriousCelestialDrift(1)};
+  animation-name: ${fastAndTheFuriousCelestialDrift(1.25)};
 `
 
 const DistantStars = styled.img.attrs({
@@ -81,7 +79,7 @@ const DistantStars = styled.img.attrs({
   width: 100%; /* 1514px / 1514px * 100% */
   top: 4.16%; /* 33px / 794px * 100% */
   left: 0;
-  animation-name: ${fastAndTheFuriousCelestialDrift(2)};
+  animation-name: ${fastAndTheFuriousCelestialDrift(2.5)};
 `
 
 const NearbyStars = styled.img.attrs({
@@ -91,7 +89,7 @@ const NearbyStars = styled.img.attrs({
   width: 74.83%; /* 1133px / 1514px * 100% */
   top: 0;
   left: 13.74%; /* 208px / 1514px * 100% */
-  animation-name: ${fastAndTheFuriousCelestialDrift(3)};
+  animation-name: ${fastAndTheFuriousCelestialDrift(3.75)};
 `
 
 const TetherGroup = styled.div`
@@ -100,7 +98,7 @@ const TetherGroup = styled.div`
   height: 68.14%; /* 541px / 794px * 100% */
   top: 31.86%; /* 253px / 794px * 100% */
   left: 49.34%; /* 747px / 1514px * 100% */
-  animation-name: ${fastAndTheFuriousCelestialDrift(-5)};
+  animation-name: ${fastAndTheFuriousCelestialDrift(-6.25)};
   transform-origin: center bottom;
 `
 
@@ -120,7 +118,7 @@ const Cosmonaut = styled.img.attrs({
   width: 40.82%; /* 240px / 588px * 100% */
   top: 0;
   left: 0;
-  animation-name: ${fastAndTheFuriousCelestialDrift(-5)};
+  animation-name: ${fastAndTheFuriousCelestialDrift(-6.25)};
   transform-origin: 10% 50%;
 `
 
