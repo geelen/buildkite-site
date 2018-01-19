@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
+import Button from 'components/Button'
 import Page, { page } from 'components/Page'
 import Br from 'components/Br'
 import Callout from 'components/Callout'
@@ -149,7 +150,11 @@ export default page(({ loggedIn }) => (
       <Subsection>
         <SubSectionHeader>Keybase</SubSectionHeader>
         <SecurityParagraph>Find us on Keybase, where you can symetrically PGP encrypt a message before emailing it to us.</SecurityParagraph>
-        <SecurityParagraph><a href="https://keybase.io/buildkite">keybase.io/buildkite</a></SecurityParagraph>
+        <Button
+          href="https://keybase.io/buildkite"
+        >
+          keybase.io/buildkite
+        </Button>
       </Subsection>
 
       <Subsection>
