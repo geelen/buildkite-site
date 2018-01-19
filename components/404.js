@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components'
 
-const nebulaImage = require('../assets/images/components/404/nebula.png')
+const nebulaImage = require('../assets/images/components/404/nebula.jpg')
 const distantStarsImage = require('../assets/images/components/404/stars-distant.png')
 const nearbyStarsImage = require('../assets/images/components/404/stars-nearby.png')
 const tetherImage = require('../assets/images/components/404/tether.png')
