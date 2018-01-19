@@ -44,7 +44,8 @@ const SecurityParagraph = styled.p`
 
 const Monospace = SecurityParagraph.extend`
   font-family: SFMono-Regular, Monaco, Menlo, Consolas, Liberation Mono, Courier, monospace;
-  overflow-x: auto;
+  white-space: normal;
+  word-break: break-all;
   font-size: .9em;
 `.withComponent('pre')
 
@@ -166,28 +167,8 @@ export default page(({ loggedIn }) => (
         <SubSectionSubHeader>Key</SubSectionSubHeader>
         <Monospace>
           -----BEGIN PGP PUBLIC KEY BLOCK-----<br />
-          mQENBFTHL0oBCADvaU++EoRRDk4KIOmD7ckUflNla3zF1As3WLD2iR8SdnlqZvgXGuX0PyjT<br />
-          zFerS0eYO+0dyj8MqjrCH39N83Mj3hEfXCQdCO/wnzOZytmuowR0hg8T4ESy/84TXnoXo+c7<br />
-          S+1a2Wz0IX9jrf390hKa70uSTvQ20CBbdiGI7JmoqiBGE1VeWWWY+utjEznY2HKrPRU6tBJb<br />
-          EH8laAqnJQra/nIGNQJ5iUZU+be0Q6DUvVDrsg50t4zgBoJ6g/yEuWdkP2DwaYdd1RA5EGTN<br />
-          Yr4xuYYAK6h/3HCcSSHef3eYDPzH0UUEv7ttlnaXvMREhKsgsD0xb8kCyFnRqJf9TKDXABEB<br />
-          AAG0HUJ1aWxka2l0ZSA8ZGV2QGJ1aWxka2l0ZS5jb20+iQE3BBMBCgAhBQJUxy9KAhsDBQsJ<br />
-          CAcDBRUKCQgLBRYDAgEAAh4BAheAAAoJEKeSBmlkUtGYqk4H/jIEqQZN8ILAH4eukwn3wejU<br />
-          Zte+gAdmrQJ0rxwtmYlR3/dKZ4npnir1h30rUBncaB3lYIH1zyJk9ZbbnmmXQG/FuHY81qIY<br />
-          B6xdmBnQJK4OrKR8SMN3E/jDfefykK+BBtv8wOMfKLgaoJTPGbfoX0BdVj4rHta8kGVFgiKc<br />
-          mFRwozUi/oqBRTgd6z7kbQksoEcZp7zG7bO/8HuagwtYZJzF3x2UxAiFhLwcj+pGva/I8VzQ<br />
-          WjUn0YHZhT/T66arMwvoGOq1OuHXGVr+j9c1p77BNuq6JLE3zcf7/N7ipwtzM6lIxC+ulh9e<br />
-          LnE3tmkEwBUfUK4hd5lCStT5GJ5ox+u5AQ0EVMcvSgEIAKq7uI9/+MBbtEjxdbupGicqY3D3<br />
-          FaLzh1xR7to0znfpgOUTLySPGleKtFZesIIPj/UXIdSeS99gzvn35lIWfUnLjfqBb2odfLOo<br />
-          PmqWGFp3G2K72Cm53139yZWybWSgBaFtRx7otnY5g6Wmd0pmFQcNRGdYgEDp/Bxz4pTuQKLM<br />
-          InsU9eujXLRaJSQp/8gaAGI/alsTkrQ6g1NxZuw1pomiKdQ6dNAVYp4Mjs8FPPNLfR3GNrZw<br />
-          dkOWt4MYeXm7nQpf8SSyomqWg+GGPktCSJ21e/WQxtWzSURol7BsgXQlhcPuMCmwBiTdP+nx<br />
-          A7qGsI420H+Ee0bvRzBvAB5SBKUAEQEAAYkBHwQYAQoACQUCVMcvSgIbDAAKCRCnkgZpZFLR<br />
-          mAV1B/9iBTgld2tnxJZAcuUo88Lw9S1gZ600rwsmPnTOqrNpalVnd2Ac9ue6jfkFyr6AGc+t<br />
-          XzsAkb0hJy8xu49qDFHqoGDBaAri7Q1tmfeLJ3h209TXQqzom/myWsSIB+pKvbq8LNj202Id<br />
-          sc+K4mIdhjCXLqJWp1XYWAag5PkM6/yBKIckaz8UIM+SFKOxCAFHC02Wezl6v6jUnodUQxhI<br />
-          Q3pVF3NJFf41DShbtrInG8wc3XwSOcQ2q75ifcZdHTSdzmJhWQToMlr0Ii7qc1g0et6iNxtZ<br />
-          3FVyr2S2+aVtJ3oDUxtbZoib96C4AcFesjihZv++ChVBBLBoED8FwNXIvxV6<br />
+          <br />
+          mQENBFTHL0oBCADvaU++EoRRDk4KIOmD7ckUflNla3zF1As3WLD2iR8SdnlqZvgXGuX0PyjTzFerS0eYO+0dyj8MqjrCH39N83Mj3hEfXCQdCO/wnzOZytmuowR0hg8T4ESy/84TXnoXo+c7S+1a2Wz0IX9jrf390hKa70uSTvQ20CBbdiGI7JmoqiBGE1VeWWWY+utjEznY2HKrPRU6tBJbEH8laAqnJQra/nIGNQJ5iUZU+be0Q6DUvVDrsg50t4zgBoJ6g/yEuWdkP2DwaYdd1RA5EGTNYr4xuYYAK6h/3HCcSSHef3eYDPzH0UUEv7ttlnaXvMREhKsgsD0xb8kCyFnRqJf9TKDXABEBAAG0HUJ1aWxka2l0ZSA8ZGV2QGJ1aWxka2l0ZS5jb20+iQE3BBMBCgAhBQJUxy9KAhsDBQsJCAcDBRUKCQgLBRYDAgEAAh4BAheAAAoJEKeSBmlkUtGYqk4H/jIEqQZN8ILAH4eukwn3wejUZte+gAdmrQJ0rxwtmYlR3/dKZ4npnir1h30rUBncaB3lYIH1zyJk9ZbbnmmXQG/FuHY81qIYB6xdmBnQJK4OrKR8SMN3E/jDfefykK+BBtv8wOMfKLgaoJTPGbfoX0BdVj4rHta8kGVFgiKcmFRwozUi/oqBRTgd6z7kbQksoEcZp7zG7bO/8HuagwtYZJzF3x2UxAiFhLwcj+pGva/I8VzQWjUn0YHZhT/T66arMwvoGOq1OuHXGVr+j9c1p77BNuq6JLE3zcf7/N7ipwtzM6lIxC+ulh9eLnE3tmkEwBUfUK4hd5lCStT5GJ5ox+u5AQ0EVMcvSgEIAKq7uI9/+MBbtEjxdbupGicqY3D3FaLzh1xR7to0znfpgOUTLySPGleKtFZesIIPj/UXIdSeS99gzvn35lIWfUnLjfqBb2odfLOoPmqWGFp3G2K72Cm53139yZWybWSgBaFtRx7otnY5g6Wmd0pmFQcNRGdYgEDp/Bxz4pTuQKLMInsU9eujXLRaJSQp/8gaAGI/alsTkrQ6g1NxZuw1pomiKdQ6dNAVYp4Mjs8FPPNLfR3GNrZwdkOWt4MYeXm7nQpf8SSyomqWg+GGPktCSJ21e/WQxtWzSURol7BsgXQlhcPuMCmwBiTdP+nxA7qGsI420H+Ee0bvRzBvAB5SBKUAEQEAAYkBHwQYAQoACQUCVMcvSgIbDAAKCRCnkgZpZFLRmAV1B/9iBTgld2tnxJZAcuUo88Lw9S1gZ600rwsmPnTOqrNpalVnd2Ac9ue6jfkFyr6AGc+tXzsAkb0hJy8xu49qDFHqoGDBaAri7Q1tmfeLJ3h209TXQqzom/myWsSIB+pKvbq8LNj202Idsc+K4mIdhjCXLqJWp1XYWAag5PkM6/yBKIckaz8UIM+SFKOxCAFHC02Wezl6v6jUnodUQxhIQ3pVF3NJFf41DShbtrInG8wc3XwSOcQ2q75ifcZdHTSdzmJhWQToMlr0Ii7qc1g0et6iNxtZ3FVyr2S2+aVtJ3oDUxtbZoib96C4AcFesjihZv++ChVBBLBoED8FwNXIvxV6<br />
           =JFW7<br />
           -----END PGP PUBLIC KEY BLOCK-----
         </Monospace>
