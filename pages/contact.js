@@ -2,7 +2,10 @@ import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Callout from 'components/Callout'
 import Page, { page } from 'components/Page'
 
+const questionsImage = require('../assets/images/contact/questions.jpg')
+const feedbackImage = require('../assets/images/contact/feedback.jpg')
 const vulnerabilityImage = require('../assets/images/security/vulnerability.jpg')
+const sayhelloImage = require('../assets/images/contact/sayhello.jpg')
 
 export default page(({ loggedIn }) => (
   <Page
@@ -14,7 +17,8 @@ export default page(({ loggedIn }) => (
     <ActionGrid>
       <ActionGridItem
         heading="Questions & Support"
-        image="https://placeimg.com/500/500/animals"
+        image={questionsImage}
+        imageWidth={433}
         imageAlt=""
         description="Things not going smoothly? Our team is here to help."
         url="/support"
@@ -22,7 +26,8 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="Feedback & Suggestions"
-        image="https://placeimg.com/500/500/nature"
+        image={feedbackImage}
+        imageWidth={466}
         imageAlt=""
         description="Have a request or idea? Let us know what you'd like to see."
         url="https://github.com/buildkite/feedback/issues"
@@ -38,7 +43,7 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="Say Hello!"
-        image="https://placeimg.com/500/500/tech"
+        image={sayhelloImage}
         imageAlt=""
         description="For press enquries and anything else, drop us a line."
         url="mailto:hello@buildkite.com"

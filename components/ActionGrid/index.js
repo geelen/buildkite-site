@@ -34,9 +34,16 @@ const Heading = styled.h1`
   margin-bottom: ${({ theme }) => theme.textSpacing.s1};
 `
 
+const ItemImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+`
+
 const ItemImage = styled.img`
   width: 100%;
-  max-width: 250px;
+  max-width: ${({ width }) => ((width || 500) / 2)}px;
 `
 
 const Paragraph = styled.p`
@@ -58,10 +65,16 @@ const Note = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
 `
 
-export const ActionGridItem = ({ heading, description, url, buttonTitle, image, imageAlt, note }) => (
+export const ActionGridItem = ({ heading, description, url, buttonTitle, image, imageAlt, imageWidth, note }) => (
   <Cell>
     <Container>
-      <ItemImage src={image} alt={imageAlt} />
+      <ItemImageContainer>
+        <ItemImage
+          src={image}
+          alt={imageAlt}
+          width={imageWidth}
+        />
+      </ItemImageContainer>
       <Heading>{heading}</Heading>
       <Paragraph>{description}</Paragraph>
       <Link href={url}>      
