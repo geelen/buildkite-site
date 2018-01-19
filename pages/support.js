@@ -2,6 +2,11 @@ import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Callout from 'components/Callout'
 import Page, { page } from 'components/Page'
 
+const documentationImage = require('../assets/images/support/documentation.jpg')
+const feedbackImage = require('../assets/images/contact/feedback.jpg')
+const communityChatImage = require('../assets/images/support/community-chat.jpg')
+const systemStatusImage = require('../assets/images/support/system-status.jpg')
+
 export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Support"
@@ -12,7 +17,8 @@ export default page(({ loggedIn }) => (
     <ActionGrid>
       <ActionGridItem
         heading="Documentation"
-        image="https://placeimg.com/500/500/nature"
+        image={documentationImage}
+        imageWidth={455}
         imageAlt=""
         description="Find reference pages, how-to guides, and more in our documentation."
         url="/docs"
@@ -20,7 +26,8 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="Feedback"
-        image="https://placeimg.com/500/500/animals"
+        image={feedbackImage}
+        imageWidth={466}
         imageAlt=""
         description="Report bugs and find answers to solved problems in our Feedback repository."
         url="https://github.com/buildkite/feedback/issues"
@@ -28,7 +35,8 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="Community Chat"
-        image="https://placeimg.com/500/500/arch"
+        image={communityChatImage}
+        imageWidth={415}
         imageAlt=""
         description="Ask questions and chat with other Buildkite users in our Slack community."
         url="https://chat.buildkite.com"
@@ -36,7 +44,8 @@ export default page(({ loggedIn }) => (
       />
       <ActionGridItem
         heading="System Status"
-        image="https://placeimg.com/500/500/tech"
+        image={systemStatusImage}
+        imageWidth={452}
         imageAlt=""
         description="Keep track of Buildkite and connected third party services on our Status page."
         url="https://buildkitestatus.com"
