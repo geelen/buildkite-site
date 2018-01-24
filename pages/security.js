@@ -49,6 +49,11 @@ const Monospace = SecurityParagraph.extend`
   font-size: .9em;
 `.withComponent('pre')
 
+const PGPSection = Section.extend`
+  ${({ theme }) => theme.maxWidthContainer}
+  width: 560px;
+`
+
 export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Security"
@@ -144,7 +149,7 @@ export default page(({ loggedIn }) => (
       </Masonry>
     </Section>
 
-    <Section>
+    <PGPSection>
       <SectionHeader>PGP Key</SectionHeader>
       <SecurityParagraph>If you need to secure your communications with us, use our PGP details below.</SecurityParagraph>
 
@@ -173,7 +178,7 @@ export default page(({ loggedIn }) => (
           -----END PGP PUBLIC KEY BLOCK-----
         </Monospace>
       </Subsection>
-    </Section>
+    </PGPSection>
 
     <Callout
       heading="Contact Us"
