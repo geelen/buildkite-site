@@ -112,7 +112,7 @@ export default page(({ loggedIn }) => (
     </Section>
 
     <Callout
-      heading="Anyting else?"
+      heading="Anything else?"
       description="Our friendly support team can help."
       url="mailto:support@buildkite.com"
       buttonTitle="support@buildkite.com"
