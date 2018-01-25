@@ -35,20 +35,20 @@ export const shopify = {
   words: (
     <React.Fragment>
       <p>Shopify is an ecommerce platform that allows you to set up an online store to
-      sell your goods. They power more than 500,000 individual shops, and served over 100
-      million shoppers in 2016. They are based in Ottawa, Canada, but have a global
+      sell your goods. They power more than 500,000 individual shops, and in 2016 they served 
+      over 100 million shoppers. They are based in Ottawa, Canada, but have a global
       presence with over 900 engineers.</p>
       <p>Shopify had outgrown their previous hosted provider, and needed to bring their build
-      times down from 25 minutes to below 5 minutes. At the same time they were scaling their
+      times down from 25 minutes to below 5 minutes. At the same time, they were scaling their
       engineering team from 300 to 900 and expanding across multiple timezones.</p>
-      <p>With Buildkite they were able to auto-scale their build servers to match peak
-      demand for their engineering teams. This let them massively increase how many builds
-      could run concurrently - from 20 at a time to 200. Because they are able use their own build 
-      infrastructure, they optimized their build machines and could afford to run many more. 
+      <p>Changing to Buildkite enabled them to auto-scale their build servers to match 
+      their engineering teams' demand at peak. This let them massively increase how many builds
+      could run concurrently - from 20 at a time to 200. Now that they could use their own 
+      infrastructure, they optimized their build machines and were able to afford to run many more.
       At peak, Shopify runs 10,000 buildkite agents concurrently.</p>
       <p>Because Buildkite is less opinionated with how builds are structured, Shopify was
-      able to re-use and extend the Docker tooling they had built internally. With Docker
-      they improved their CI build speeds and also applied the same methodology to their
+      able to re-use and extend the Docker tooling they had built internally. With Docker,
+      they improved their CI build speeds and were able to apply the same methodology to their
       Android and iOS team's builds.</p>
     </React.Fragment>
   )
