@@ -69,42 +69,45 @@ export const rea = {
   photoTwo: { image: reaPhotoOffice, alt: "TODO" },
   indexBackgroundImage: reaPhotoOffice,
   industry: 'Ecommerce',
-  teamSize: '900 engineers',
+  teamSize: '330 engineers',
   testimonial: {
-    name: 'A Person',
-    title: 'A persons title',
-    testimonial: 'A testimonial about how Buildkite has supported their organization through growth, and has been amazing for xyz.',
+    name: 'Mike Williams',
+    title: 'Head of Operations',
+    testimonial: 'REA had more than a dozen different build clusters, each of which required care and feeding, patching, backups, etc. Buildkite has allowed us to reduce our overhead, by out-sourcing operation of the hard (stateful) bits.',
     headshotImage: reaTestimonialPhoto,
   },
   results: [
-    { number: 75, unit: '%', label: 'reduction in build wait times' },
-    { number: 4, unit: '⨉', label: 'increase in CI speed for the same budget' }
+    { number: 330, unit: '', label: 'engineers globally' },
+    { number: 80, unit: '%', label: 'reduction in team set up time' }
   ],
   summaryWords: (
     <React.Fragment>
-      A short case story about the problem, the solution, the results. Li
-      Europan lingues es membres del sam familie. Lor separat existentie es un
-      myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.
-      Li lingues differe solmen in li grammatica, li pronunciation e li plu
-      commun vocabules.
+      REA Group creates and operates property websites all over the world. 
+      Moving to Buildkite from a mix of different CI platforms and setups
+      has significantly descreased their Ops overhead, and enabled them to quickly
+      adopt best practices and better utilize their AWS and docker infrastructure. 
     </React.Fragment>
   ),
   words: (
     <React.Fragment>
-      <p>A short case story about the problem, the solution, the results.  Li
-      Europan lingues es membres del sam familie. Lor separat existentie es un
-      myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.
-      Li lingues differe solmen in li grammatica, li pronunciation e li plu
-      commun vocabules.</p>
-      <p>Omnicos directe al desirabilite de un nov lingua
-      franca: On refusa continuar payar custosi traductores. At solmen va esser
-      necessi far uniform grammatica, pronunciation e plu sommun paroles. Li
-      lingues differe solmen in li grammatica, li pronunciation e li plu commun
-      vocabules.</p>
-      <p>Omnicos directe al desirabilite de un nov lingua franca: On
-      refusa continuar payar custosi traductores. At solmen va esser necessi far
-      uniform grammatica, pronunciation e plu sommun paroles. Li lingues differe
-      solmen in li grammatica.</p>
+      <p>Melbourne, Australia-based REA Group grew from realestate.com.au, 
+      Australia's largest property website. They now operate property websites
+      in 10 countries that are used by more than 19,000 real-estate agents
+      and have approximately 8.8 million unique visitors per month.</p>
+      <p>REA's engineering teams were using a mixture of different build
+      systems (Jenkins and Bamboo) spread across more than a dozen different
+      clusters. Maintenance and management of these clusters spilled over to 
+      their central ops team. They needed a CI solution that would give their 
+      engineering teams autonomy, but also leverage existing AWS and docker 
+      infrastructure.</p>
+      <p>Working closely with the Buildkite team to set up a pilot integration, 
+      existing Jenkins and Bamboo CI installations were replaced over a few weeks. 
+      Today, Buildkite powers the majority of builds across their organisation, 
+      and is the go-to CI tool for new projects.</p>
+      <p>Instead of weeks of setup and ongoing Ops management, projects are now 
+      up and running in days. REA developers have reported an increase in 
+      productivity, and the ability to adopt best practices as they're being 
+      trialled organisation wide.</p>
     </React.Fragment>
   )
 }
