@@ -7,7 +7,8 @@ import { MediaItem as RawMediaItem, ImageCell, TextCell } from 'components/Media
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
-const buildAgentStartImage = require('../assets/images/features/build-agent-start.svg')
+import RawBuildAgentStart from 'components/animations/BuildAgentStart'
+
 const customFieldsImage = require('../assets/images/features/custom-fields.svg')
 const artifactsAndParallelismImage = require('../assets/images/features/artifacts-and-parallelism.svg')
 const dynamicPipelineImage = require('../assets/images/features/dynamic-pipeline.svg')
@@ -39,6 +40,12 @@ const MediaItem = RawMediaItem.extend`
 
 const FeatureTitle = RawFeatureTitle.withComponent('h3');
 
+const SVGAnimation = Image.extend`
+  height: auto;
+`
+
+const BuildAgentStart = SVGAnimation.withComponent(RawBuildAgentStart);
+
 export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Features"
@@ -57,7 +64,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={buildAgentStartImage} alt="" />
+          <BuildAgentStart />
           <Image src="https://placeimg.com/546/220/animals" />
         </ImageCell>
       </MediaItem>
