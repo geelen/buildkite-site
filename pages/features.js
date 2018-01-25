@@ -7,6 +7,11 @@ import { MediaItem as RawMediaItem, ImageCell, TextCell } from 'components/Media
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
+const buildAgentStartImage = require('../assets/images/features/build-agent-start.svg')
+const customFieldsImage = require('../assets/images/features/custom-fields.svg')
+const artifactsAndParallelismImage = require('../assets/images/features/artifacts-and-parallelism.svg')
+const dynamicPipelineImage = require('../assets/images/features/dynamic-pipeline.svg')
+
 const Heading = styled.h2`
   text-align: center;
   font-weight: normal;
@@ -52,7 +57,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/547/280/animals" />
+          <Image src={buildAgentStartImage} alt="" />
           <Image src="https://placeimg.com/546/220/animals" />
         </ImageCell>
       </MediaItem>
@@ -69,7 +74,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/547/280/nature" />
+          <Image src={artifactsAndParallelismImage} alt="" />
           <Image src="https://placeimg.com/548/152/nature" />
         </ImageCell>
       </MediaItem>
@@ -103,7 +108,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/542/178/nature" />
+          <Image src={customFieldsImage} alt="" />
           <Image src="https://placeimg.com/547/96/nature" />
         </ImageCell>
       </MediaItem>
@@ -114,7 +119,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/542/316/animals" />
+          <Image src={dynamicPipelineImage} alt="" />
         </ImageCell>
       </MediaItem>
       <MediaItem>

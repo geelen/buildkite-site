@@ -23,7 +23,7 @@ export const team = [
   {
     photo: photoJess,
     name: "Jessica Stokes",
-    bio: "Hi, I’m Jess! I work on frontend and backend engineering. Some cool fact about me is a bit longer than one line.",
+    bio: "Hey, I’m Jess! I work on frontend and backend engineering. Some cool fact about me is a bit longer than one line.",
     links: [
       { name: "Twitter", url: "https://twitter.com/ticky" },
       { name: "GitHub", url: "https://github.com/ticky" },
