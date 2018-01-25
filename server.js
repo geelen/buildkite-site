@@ -7,6 +7,7 @@ const path = require('path')
 const { parse } = require('url')
 const express = require('express')
 const next = require('next')
+const shrinkRay = require('shrink-ray-current')
 
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
@@ -20,6 +21,8 @@ app.prepare()
     // Don't need to report exact versions of things (for security's sake)
     server.disable('x-powered-by')
     
+    server.use(shrinkRay());
+
     // Hashed assets need their hash stripped from the URL. The hash is added by
     // babel plugin transform-assets in .babelrc
     //
