@@ -9,11 +9,27 @@ import Screencasts from 'components/sections/Screencasts'
 
 import RawBuildAgentStart from 'components/animations/BuildAgentStart'
 
+// -- Feature Section 1 --
+// Shown after styled version of RawBuildAgentStart, which is defined way below
 const pipelineRunningImage = require('../assets/images/features/pipeline-running.png')
-const customFieldsImage = require('../assets/images/features/custom-fields.svg')
+
+// -- Feature Section 2 --
 const artifactsAndParallelismImage = require('../assets/images/features/artifacts-and-parallelism.svg')
+const parallelismImage = require('../assets/images/features/parallelism.png') // TODO: Replace this image, it's rendered with subpixel antialiasing and is thus blurry
+
+// -- Feature Section 3 --
+const elasticCiStackImage = require('../assets/images/features/elastic-ci-stack.png')
+
+// -- Feature Section 5 --
+const customFieldsImage = require('../assets/images/features/custom-fields.svg')
+
+// -- Feature Section 6 --
 const dynamicPipelineImage = require('../assets/images/features/dynamic-pipeline.svg')
+
+// -- Feature Section 9 --
 const dockerWorksJustFineImage = require('../assets/images/features/docker-works-just-fine.svg')
+
+// -- Feature Section 13 --
 const customAgentHooksImage = require('../assets/images/features/custom-agent-hooks.svg')
 
 const Heading = styled.h2`
@@ -93,7 +109,7 @@ export default page(({ loggedIn }) => (
         </TextCell>
         <ImageCell>
           <Image src={artifactsAndParallelismImage} alt="" />
-          <ImageWithBorder src="https://placeimg.com/548/152/nature" />
+          <ImageWithBorder src={parallelismImage} alt="" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -103,7 +119,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src="https://placeimg.com/547/235/animals" />
+          <ImageWithBorder src={elasticCiStackImage} alt="" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
