@@ -13,6 +13,7 @@ const customFieldsImage = require('../assets/images/features/custom-fields.svg')
 const artifactsAndParallelismImage = require('../assets/images/features/artifacts-and-parallelism.svg')
 const dynamicPipelineImage = require('../assets/images/features/dynamic-pipeline.svg')
 const dockerWorksJustFineImage = require('../assets/images/features/docker-works-just-fine.svg')
+const customAgentHooksImage = require('../assets/images/features/custom-agent-hooks.svg')
 
 const Heading = styled.h2`
   text-align: center;
@@ -206,7 +207,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/542/239/animals" />
+          <Image src={customAgentHooksImage} alt="" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
