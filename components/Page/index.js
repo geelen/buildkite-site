@@ -6,6 +6,8 @@ import * as buildkiteTheme from 'theme'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
+import { fonts } from '../../theme/fonts'
+
 const Container = styled.div`
   ${({ theme }) => theme.pageContainer}
 `
@@ -65,6 +67,9 @@ export const BasePage = ({ headTitle, description, image, imageAlt, children, lo
     <React.Fragment>
       <Head>
         <title>{headTitle}</title>
+        {fonts.map((path) =>
+          <link as="font" href={path} key={path} rel="preload" type="font/woff2" crossorigin="anonymous" />
+        )}
       </Head>
       <Header loggedIn={loggedIn} />
       <Container>
