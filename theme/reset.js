@@ -1,47 +1,9 @@
 import { injectGlobal } from 'styled-components';
 
-const woffBookPath = require('../assets/fonts/lineto-circular-book.woff2');
-const woffBoldPath = require('../assets/fonts/lineto-circular-bold.woff2');
-const woffBlackPath = require('../assets/fonts/lineto-circular-black.woff2');
+import { fonts } from './fonts'
 
 injectGlobal`
-  /*
-   * Legal Disclaimer
-   *
-   * These Fonts are licensed only for use on these domains and their subdomains:
-   * www.buildkite.com
-   *
-   * It is illegal to download or use them on other websites.
-   *
-   * While the @font-face statements below may be modified by the client, this
-   * disclaimer may not be removed.
-   *
-   * Lineto.com, 2017
-   */
-
-  @font-face {
-    font-family: BK-Circular;
-    src: url(${woffBookPath}) format("woff2");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: BK-Circular;
-    src: url(${woffBoldPath}) format("woff2");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: BK-Circular;
-    src: url(${woffBlackPath}) format("woff2");
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-  }
+  ${fonts.styles}
 
   :root {
     font-family: BK-Circular, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
