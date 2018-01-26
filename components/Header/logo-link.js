@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Head from 'next/head'
 
 import Link from 'components/Link'
 
@@ -71,10 +72,16 @@ const WordMark = styled.img`
 `
 
 export default () => (
-  <Link prefetch href="/">
-    <LinkTag href="/">
-      <Mark src={markSvgPath} alt="Buildkite logo" />
-      <WordMark src={wordmarkSvgPath} alt="Buildkite" />
-    </LinkTag>
-  </Link>
+  <React.Fragment>
+    <Head>
+      <link as="image" href={markSvgPath} rel="preload" type="image/svg+xml" crossorigin="anonymous" />
+      <link as="image" href={wordmarkSvgPath} rel="preload" type="image/svg+xml" crossorigin="anonymous" />
+    </Head>
+    <Link prefetch href="/">
+      <LinkTag href="/">
+        <Mark src={markSvgPath} alt="Buildkite logo" />
+        <WordMark src={wordmarkSvgPath} alt="Buildkite" />
+      </LinkTag>
+    </Link>
+  </React.Fragment>
 )
