@@ -1,9 +1,9 @@
 import { injectGlobal } from 'styled-components';
 
-import { fonts } from './fonts'
+import { styles as fontStyles } from './fonts'
 
 injectGlobal`
-  ${fonts.styles}
+  ${fontStyles}
 
   :root {
     font-family: BK-Circular, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
