@@ -9,6 +9,7 @@ import Screencasts from 'components/sections/Screencasts'
 
 import RawBuildAgentStart from 'components/animations/BuildAgentStart'
 
+const pipelineRunningImage = require('../assets/images/features/pipeline-running.png')
 const customFieldsImage = require('../assets/images/features/custom-fields.svg')
 const artifactsAndParallelismImage = require('../assets/images/features/artifacts-and-parallelism.svg')
 const dynamicPipelineImage = require('../assets/images/features/dynamic-pipeline.svg')
@@ -29,7 +30,15 @@ const Description = styled.p`
 
 const Image = styled.img`
   max-width: 100%;
-  padding: ${({ theme }) => theme.textSpacing.s1} 0;
+  margin: .25rem 0;
+
+  &:first-child {
+    margin-top: .5rem;
+  }
+`
+
+const ImageWithBorder = Image.extend`
+  border: 1px solid black;
 `
 
 const Link = styled.a`
@@ -67,7 +76,7 @@ export default page(({ loggedIn }) => (
         </TextCell>
         <ImageCell>
           <BuildAgentStart />
-          <Image src="https://placeimg.com/546/220/animals" />
+          <ImageWithBorder src={pipelineRunningImage} alt="" />
         </ImageCell>
       </MediaItem>
     </section>
@@ -84,7 +93,7 @@ export default page(({ loggedIn }) => (
         </TextCell>
         <ImageCell>
           <Image src={artifactsAndParallelismImage} alt="" />
-          <Image src="https://placeimg.com/548/152/nature" />
+          <ImageWithBorder src="https://placeimg.com/548/152/nature" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -94,7 +103,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/547/235/animals" />
+          <ImageWithBorder src="https://placeimg.com/547/235/animals" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -104,7 +113,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/550/260/animals" />
+          <ImageWithBorder src="https://placeimg.com/550/260/animals" />
         </ImageCell>
       </MediaItem>
     </section>
@@ -118,7 +127,7 @@ export default page(({ loggedIn }) => (
         </TextCell>
         <ImageCell>
           <Image src={customFieldsImage} alt="" />
-          <Image src="https://placeimg.com/547/96/nature" />
+          <ImageWithBorder src="https://placeimg.com/547/96/nature" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -141,7 +150,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/542/348/animals" />
+          <ImageWithBorder src="https://placeimg.com/542/348/animals" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -151,7 +160,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/543/211/tech" />
+          <ImageWithBorder src="https://placeimg.com/543/211/tech" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -174,7 +183,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/542/412/animals" />
+          <ImageWithBorder src="https://placeimg.com/542/412/animals" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -184,7 +193,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/542/286/animals" />
+          <ImageWithBorder src="https://placeimg.com/542/286/animals" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -194,7 +203,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/542/238/animals" />
+          <ImageWithBorder src="https://placeimg.com/542/238/animals" />
         </ImageCell>
       </MediaItem>
     </section>
@@ -217,7 +226,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/542/191/nature" />
+          <ImageWithBorder src="https://placeimg.com/542/191/nature" />
         </ImageCell>
       </MediaItem>
     </section>
