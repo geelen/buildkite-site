@@ -12,6 +12,7 @@ import RawBuildAgentStart from 'components/animations/BuildAgentStart'
 const customFieldsImage = require('../assets/images/features/custom-fields.svg')
 const artifactsAndParallelismImage = require('../assets/images/features/artifacts-and-parallelism.svg')
 const dynamicPipelineImage = require('../assets/images/features/dynamic-pipeline.svg')
+const dockerWorksJustFineImage = require('../assets/images/features/docker-works-just-fine.svg')
 
 const Heading = styled.h2`
   text-align: center;
@@ -159,7 +160,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src="https://placeimg.com/542/317/tech" />
+          <Image src={dockerWorksJustFineImage} alt="" />
         </ImageCell>
       </MediaItem>
     </section>
