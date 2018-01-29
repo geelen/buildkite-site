@@ -35,20 +35,20 @@ export const shopify = {
   words: (
     <React.Fragment>
       <p>Shopify is an ecommerce platform that allows you to set up an online store to
-      sell your goods. They power more than 500,000 individual shops, and served over 100
-      million shoppers in 2016. They are based in Ottawa, Canada, but have a global
+      sell your goods. They power more than 500,000 individual shops, and in 2016 they served 
+      over 100 million shoppers. They are based in Ottawa, Canada, but have a global
       presence with over 900 engineers.</p>
       <p>Shopify had outgrown their previous hosted provider, and needed to bring their build
-      times down from 25 minutes to below 5 minutes. At the same time they were scaling their
+      times down from 25 minutes to below 5 minutes. At the same time, they were scaling their
       engineering team from 300 to 900 and expanding across multiple timezones.</p>
-      <p>With Buildkite they were able to auto-scale their build servers to match peak
-      demand for their engineering teams. This let them massively increase how many builds
-      could run concurrently - from 20 at a time to 200. Because they are able use their own build 
-      infrastructure, they optimized their build machines and could afford to run many more. 
+      <p>Changing to Buildkite enabled them to auto-scale their build servers to match 
+      their engineering teams' demand at peak. This let them massively increase how many builds
+      could run concurrently - from 20 at a time to 200. Now that they could use their own 
+      infrastructure, they optimized their build machines and were able to afford to run many more.
       At peak, Shopify runs 10,000 buildkite agents concurrently.</p>
       <p>Because Buildkite is less opinionated with how builds are structured, Shopify was
-      able to re-use and extend the Docker tooling they had built internally. With Docker
-      they improved their CI build speeds and also applied the same methodology to their
+      able to re-use and extend the Docker tooling they had built internally. With Docker,
+      they improved their CI build speeds and were able to apply the same methodology to their
       Android and iOS team's builds.</p>
     </React.Fragment>
   )
@@ -69,42 +69,45 @@ export const rea = {
   photoTwo: { image: reaPhotoOffice, alt: "TODO" },
   indexBackgroundImage: reaPhotoOffice,
   industry: 'Ecommerce',
-  teamSize: '900 engineers',
+  teamSize: '330 engineers',
   testimonial: {
-    name: 'A Person',
-    title: 'A persons title',
-    testimonial: 'A testimonial about how Buildkite has supported their organization through growth, and has been amazing for xyz.',
+    name: 'Mike Williams',
+    title: 'Head of Operations',
+    testimonial: 'REA had more than a dozen different build clusters, each of which required care and feeding, patching, backups, etc. Buildkite has allowed us to reduce our overhead, by out-sourcing operation of the hard (stateful) bits.',
     headshotImage: reaTestimonialPhoto,
   },
   results: [
-    { number: 75, unit: '%', label: 'reduction in build wait times' },
-    { number: 4, unit: '⨉', label: 'increase in CI speed for the same budget' }
+    { number: 330, unit: '', label: 'engineers globally' },
+    { number: 80, unit: '%', label: 'reduction in team set up time' }
   ],
   summaryWords: (
     <React.Fragment>
-      A short case story about the problem, the solution, the results. Li
-      Europan lingues es membres del sam familie. Lor separat existentie es un
-      myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.
-      Li lingues differe solmen in li grammatica, li pronunciation e li plu
-      commun vocabules.
+      REA Group creates and operates property websites all over the world. 
+      Moving to Buildkite from a mix of different CI platforms and setups
+      has significantly descreased their Ops overhead, and enabled them to quickly
+      adopt best practices and better utilize their AWS and docker infrastructure. 
     </React.Fragment>
   ),
   words: (
     <React.Fragment>
-      <p>A short case story about the problem, the solution, the results.  Li
-      Europan lingues es membres del sam familie. Lor separat existentie es un
-      myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.
-      Li lingues differe solmen in li grammatica, li pronunciation e li plu
-      commun vocabules.</p>
-      <p>Omnicos directe al desirabilite de un nov lingua
-      franca: On refusa continuar payar custosi traductores. At solmen va esser
-      necessi far uniform grammatica, pronunciation e plu sommun paroles. Li
-      lingues differe solmen in li grammatica, li pronunciation e li plu commun
-      vocabules.</p>
-      <p>Omnicos directe al desirabilite de un nov lingua franca: On
-      refusa continuar payar custosi traductores. At solmen va esser necessi far
-      uniform grammatica, pronunciation e plu sommun paroles. Li lingues differe
-      solmen in li grammatica.</p>
+      <p>Melbourne, Australia-based REA Group grew from realestate.com.au, 
+      Australia's largest property website. They now operate property websites
+      in 10 countries that are used by more than 19,000 real-estate agents
+      and have approximately 8.8 million unique visitors per month.</p>
+      <p>REA's engineering teams were using a mixture of different build
+      systems (Jenkins and Bamboo) spread across more than a dozen different
+      clusters. Maintenance and management of these clusters spilled over to 
+      their central ops team. They needed a CI solution that would give their 
+      engineering teams autonomy, but also leverage existing AWS and docker 
+      infrastructure.</p>
+      <p>Working closely with the Buildkite team to set up a pilot integration, 
+      existing Jenkins and Bamboo CI installations were replaced over a few weeks. 
+      Today, Buildkite powers the majority of builds across their organisation, 
+      and is the go-to CI tool for new projects.</p>
+      <p>Instead of weeks of setup and ongoing Ops management, projects are now 
+      up and running in days. REA developers have reported an increase in 
+      productivity, and the ability to adopt best practices as they're being 
+      trialled organisation wide.</p>
     </React.Fragment>
   )
 }
