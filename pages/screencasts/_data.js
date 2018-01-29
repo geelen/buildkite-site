@@ -1,13 +1,17 @@
 const placeholderImage = require('../../assets/images/screencasts/placeholder.png');
+const parallelismImage = require('../../assets/images/screencasts/parallelism-frame.png');
+const elasticStackImage = require('../../assets/images/screencasts/elastic-stack-frame.png');
+const stepTypesImage = require('../../assets/images/screencasts/step-types-frame.png');
+const prflowImage = require('../../assets/images/screencasts/pr-flow-frame.png');
 
 export default [
   {
     pathname: '/screencasts/pipeline-steps',
-    title: 'Running in parallel',
+    title: 'Running steps in parallel',
     headTitle: 'Parallelism screencast',
-    description: 'TODO',
+    description: 'Have you ever wanted to run 400 test steps at the same time? Introducing the parallelism attribute, this screencast steps through setting up a pipeline to run a Rails test suite in parallel. ',
     duration: '90s',
-    image: placeholderImage,
+    image: parallelismImage,
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/parallelism.webm",
       mp4: "https://d3lj8s78qytm30.cloudfront.net/parallelism.mp4",
@@ -21,11 +25,11 @@ export default [
   },
   {
     pathname: '/screencasts/elastic-ci-stack',
-    title: 'Elastic CI Stack for AWS in Action',
-    headTitle: 'Elastic CI Stack for AWS',
-    description: 'TODO',
+    title: 'Elastic CI Stack for AWS',
+    headTitle: 'Elastic CI Stack for AWS screencast',
+    description: 'Interested in the Elastic Stack, but not sure it suits your needs? In this screencast we\'ll give you a short overview of the setup and operation of an Elastic CI Stack on AWS.',
     duration: '74s',
-    image: placeholderImage,
+    image: elasticStackImage,
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
       mp4: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
@@ -38,10 +42,10 @@ export default [
   {
     pathname: '/screencasts/step-types',
     title: 'Step Types for pipelines',
-    headTitle: 'Step Types for pipelines',
+    headTitle: 'Step Types for pipelines screencast',
     description: 'TODO',
     duration: '90s',
-    image: placeholderImage,
+    image: stepTypesImage,
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/parallelism.webm",
       mp4: "https://d3lj8s78qytm30.cloudfront.net/parallelism.mp4",
@@ -57,10 +61,10 @@ export default [
   {
     pathname: '/screencasts/pr-flow',
     title: 'Pull Request Workflow',
-    headTitle: 'A pull request workflow with Github and Buildkite',
+    headTitle: 'Pull Request workflow screencast',
     description: 'TODO',
     duration: '90s',
-    image: placeholderImage,
+    image: prflowImage,
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
       mp4: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
