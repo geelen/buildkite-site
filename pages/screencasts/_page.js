@@ -6,8 +6,6 @@ import RawScreencastLink from 'components/ScreencastLink'
 
 import screencasts from './_data'
 
-const placeholderImage = require('../../assets/images/screencasts/placeholder.png')
-
 const Wrapper = styled.div`
   text-align: center;
   margin-top: -${({ theme }) => theme.outerSpacing.s1};
@@ -78,7 +76,7 @@ export default function screencastPage(pathname) {
       <Wrapper>
         <ScreencastParagraph>{`Duration: ${screencast.duration}`}</ScreencastParagraph>
 
-        <ScreenshotVideo controls playsinline preload="auto" poster={screencast.image}>
+        <ScreenshotVideo controls playsinline preload="auto" poster={screencast.images.poster}>
           <source src={screencast.videos.webm} type="video/webm"/>
           <source src={screencast.videos.mp4} type="video/mp4"/>
         </ScreenshotVideo>

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Regenerates the screencast images in assets/images/screencasts based on the
+# contents of the assets/images/screencasts/frame-exports
+#
+# Requirements:
+# * MacOS
+# * ImageOptim.app installed
+
+set -euo pipefail
+
+cd assets/images/screencasts/frame-exports || exit 1
+
+echo "Deleting previously generated images"
+rm ../*.jpg || echo "None found"
+
+for f in *.png; do
+  echo
+  echo "== $f"
+
+  echo "Generating optimized posterframe JPEG for $f"
+  sips "$f" -s format jpeg -s formatOptions 30 --out "../${f%.png}.poster.jpg"
+
+  echo "Generating optimized thumbnail JPEG for $f"
+  sips "$f" -s format jpeg -s formatOptions 50 --resampleWidth 800 --out "../${f%.png}.thumbnail.jpg"
+done
+
+echo ""
+echo "== Optimizing all the JPEGs"
+/Applications/ImageOptim.app/Contents/MacOS/ImageOptim ../*.jpg
