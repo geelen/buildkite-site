@@ -221,7 +221,8 @@ export default page(({ loggedIn }) => (
             notes={
               <React.Fragment>
                 <p>Annual payment only</p>
-                <p>Includes 100 users. Additional users $29/month (pro-rata)</p>
+                <p>Includes 100 users</p>
+                <p>Additional users $29/month (pro-rata)</p>
               </React.Fragment>
             }
           />
