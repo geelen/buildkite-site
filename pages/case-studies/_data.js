@@ -22,7 +22,7 @@ export const shopify = {
   },
   results: [
     { number: 75, unit: '%', label: 'reduction in build wait times' },
-    { number: 4, unit: '⨉', label: 'increase in CI speed for the same budget' }
+    { number: 4, unit: 'x', label: 'increase in CI speed for the same budget' }
   ],
   summaryWords: (
     <React.Fragment>
