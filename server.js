@@ -35,6 +35,13 @@ app.prepare()
       next();
     });
 
+    // TODO: /
+    // - If you're logged in, redirect to /dashboard
+
+    // TODO: /home
+    // - If you're logged in, render the home page (URL rewrite)
+    // - If you're logged out, redirect to /
+    
     // Hashed assets are immutable, so they can be cached indefinitely by
     // clients.
     //
