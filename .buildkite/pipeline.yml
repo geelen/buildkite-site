@@ -3,12 +3,12 @@ steps:
   - label: ":jest:"
     command: yarn test
     plugins:
-      docker-compose#v1.7.0:
+      docker-compose#v1.8.2:
         run: site
 
   - label: ":percy:"
     plugins:
-      docker-compose#v1.7.0:
+      docker-compose#v1.8.2:
         config: docker-compose.percy.yml
         run: percy
     skip: "Static export doesn't work with cached assets"
@@ -26,7 +26,7 @@ steps:
       ecr#v1.1.2:
         login: true
         account-ids: ${ECR_ACCOUNT_ID}
-      docker-compose#v1.7.0:
+      docker-compose#v1.8.2:
         config: docker-compose.prod.yml
         push:
           - site:${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}
