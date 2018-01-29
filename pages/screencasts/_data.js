@@ -3,8 +3,8 @@ const placeholderImage = require('../../assets/images/screencasts/placeholder.pn
 export default [
   {
     pathname: '/screencasts/pipeline-steps',
-    title: 'Parallelism',
-    headTitle: 'Running in parallel with Buildkite',
+    title: 'Running in parallel',
+    headTitle: 'Parallelism screencast',
     description: 'TODO',
     duration: '90s',
     image: placeholderImage,
