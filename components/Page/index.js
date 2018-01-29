@@ -68,7 +68,7 @@ export const BasePage = ({ headTitle, description, image, imageAlt, children, lo
       <Head>
         <title>{headTitle}</title>
         {fonts.map((path) =>
-          <link as="font" href={path} key={path} rel="preload" type="font/woff2" crossorigin="anonymous" />
+          <link as="font" href={path} key={path} rel="preload" type="font/woff2" crossOrigin="anonymous" />
         )}
       </Head>
       <Header loggedIn={loggedIn} />
