@@ -14,14 +14,15 @@ export default [
     },
     relatedDocumentation: [
       { title: 'Example code on Github', url: 'https://github.com/buildkite/rails-docker-parallel-example/tree/parallelism-demo' },
-      { title: 'Parallel builds', url: '/docs/builds/parallel-builds' },
-      { title: 'Containerised builds with Docker', url: '/docs/builds/docker-containerized-builds' },
+      { title: 'parallel builds', url: '/docs/builds/parallel-builds' },
+      { title: 'the buildkite agent', url: '/docs/agent' },
+      { title: 'containerised builds with Docker', url: '/docs/builds/docker-containerized-builds' },
     ],
   },
   {
     pathname: '/screencasts/elastic-ci-stack',
-    title: 'Elastic CI Stack',
-    headTitle: 'The Buildkite Elastic CI Stack in Action',
+    title: 'Elastic CI Stack for AWS in Action',
+    headTitle: 'Elastic CI Stack for AWS',
     description: 'TODO',
     duration: '74s',
     image: placeholderImage,
@@ -30,14 +31,14 @@ export default [
       mp4: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
     },
     relatedDocumentation: [
-      { title: 'Yet Another Doc', url: '/docs/yet-another-doc' },
-      { title: 'Some Doc', url: '/docs/some-doc' },
+      { title: 'Elastic stack quickstart', url: '/docs/quickstart/elastic-ci-stack-aws' },
+      { title: 'complete documentation on Github', url: 'https://github.com/buildkite/elastic-ci-stack-for-aws' },
     ],
   },
   {
     pathname: '/screencasts/step-types',
-    title: 'Step Types',
-    headTitle: 'Step types in Buildkite pipelines',
+    title: 'Step Types for pipelines',
+    headTitle: 'Step Types for pipelines',
     description: 'TODO',
     duration: '90s',
     image: placeholderImage,
@@ -46,8 +47,11 @@ export default [
       mp4: "https://d3lj8s78qytm30.cloudfront.net/parallelism.mp4",
     },
     relatedDocumentation: [
-      { title: 'Another Doc', url: '/docs/another-doc' },
-      { title: 'Yet Another Doc', url: '/docs/yet-another-doc' },
+      { title: 'Defining your pipeline steps', url: '/docs/pipelines/defining-steps' },
+      { title: 'command steps', url: '/docs/pipelines/command-step' },
+      { title: 'wait steps', url: '/docs/pipelines/wait-step' },
+      { title: 'block steps', url: '/docs/pipelines/block-step' },
+      { title: 'trigger steps', url: '/docs/pipelines/trigger-step' },
     ],
   },
   {
@@ -62,10 +66,9 @@ export default [
       mp4: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
     },
    relatedDocumentation: [
-      { title: 'Another Doc', url: '/docs/another-doc' },
-      { title: 'A Fourth Even More Enticing Doc', url: '/docs/a-fourth-even-more-enticing-doc' },
-      { title: 'Yet Another Doc', url: '/docs/yet-another-doc' },
-      { title: 'Some Doc', url: '/docs/some-doc' },
+      { title: 'Getting started', url: '/docs/quickstart/getting-started' },
+      { title: 'Github Enterprise setup', url: '/docs/tutorials/github-enterprise' },
+      { title: 'using a private repo', url: '/docs/quickstart/getting-started#using-a-private-repository' },
     ],
   }
 ]
