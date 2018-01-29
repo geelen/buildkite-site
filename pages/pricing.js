@@ -165,7 +165,7 @@ export default page(({ loggedIn }) => (
     <PlanSection>
       <Plan
         name="Free Plan"
-        description="For open-source projects, development agencies, and teaching organizations."
+        description="For open-source projects, students, and teaching organizations."
         inclusions={[
           'Unlimited agents',
           'Unlimited builds',
