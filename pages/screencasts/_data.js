@@ -7,7 +7,7 @@ const prflowImage = require('../../assets/images/screencasts/pr-flow-frame.png')
 export default [
   {
     pathname: '/screencasts/pipeline-steps',
-    title: 'Running in parallel',
+    title: 'Running steps in parallel',
     headTitle: 'Parallelism screencast',
     description: 'Have you ever wanted to run 400 test steps at the same time? Introducing the parallelism attribute, this screencast steps through setting up a pipeline to run a Rails test suite in parallel. ',
     duration: '90s',
@@ -27,7 +27,7 @@ export default [
     pathname: '/screencasts/elastic-ci-stack',
     title: 'Elastic CI Stack for AWS',
     headTitle: 'Elastic CI Stack for AWS screencast',
-    description: 'TODO',
+    description: 'Interested in the Elastic Stack, but not sure it suits your needs? In this screencast we\'ll give you a short overview of the setup and operation of an Elastic CI Stack on AWS.',
     duration: '74s',
     image: elasticStackImage,
     videos: {
