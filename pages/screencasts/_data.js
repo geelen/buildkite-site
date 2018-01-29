@@ -13,9 +13,9 @@ export default [
       mp4: "https://d3lj8s78qytm30.cloudfront.net/parallelism.mp4",
     },
     relatedDocumentation: [
-      { title: 'Some Doc', url: '/docs/some-doc' },
-      { title: 'Another Doc', url: '/docs/another-doc' },
-      { title: 'Yet Another Doc', url: '/docs/yet-another-doc' },
+      { title: 'Example code on Github', url: 'https://github.com/buildkite/rails-docker-parallel-example/tree/parallelism-demo' },
+      { title: 'Parallel builds', url: '/docs/builds/parallel-builds' },
+      { title: 'Containerised builds with Docker', url: '/docs/builds/docker-containerized-builds' },
     ],
   },
   {
