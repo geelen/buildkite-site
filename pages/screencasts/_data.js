@@ -1,8 +1,14 @@
-const placeholderImage = require('../../assets/images/screencasts/placeholder.png');
-const parallelismImage = require('../../assets/images/screencasts/parallelism-frame.png');
-const elasticStackImage = require('../../assets/images/screencasts/elastic-stack-frame.png');
-const stepTypesImage = require('../../assets/images/screencasts/step-types-frame.png');
-const prflowImage = require('../../assets/images/screencasts/pr-flow-frame.png');
+const parallelismPoster     = require('../../assets/images/screencasts/parallelism-frame.poster.jpg');
+const parallelismThumbail   = require('../../assets/images/screencasts/parallelism-frame.thumbnail.jpg');
+
+const elasticStackPoster    = require('../../assets/images/screencasts/elastic-stack-frame.poster.jpg');
+const elasticStackThumbnail = require('../../assets/images/screencasts/elastic-stack-frame.thumbnail.jpg');
+
+const stepTypesPoster       = require('../../assets/images/screencasts/step-types-frame.poster.jpg');
+const stepTypesThumbnail    = require('../../assets/images/screencasts/step-types-frame.thumbnail.jpg');
+
+const prflowPoster          = require('../../assets/images/screencasts/pr-flow-frame.poster.jpg');
+const prflowThumbnail       = require('../../assets/images/screencasts/pr-flow-frame.thumbnail.jpg');
 
 export default [
   {
@@ -11,7 +17,7 @@ export default [
     headTitle: 'Parallelism screencast',
     description: 'Have you ever wanted to run 400 test steps at the same time? Introducing the parallelism attribute, this screencast steps through setting up a pipeline to run a Rails test suite in parallel. ',
     duration: '90s',
-    image: parallelismImage,
+    images: { poster: parallelismPoster, thumbnail: parallelismThumbail },
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/parallelism.webm",
       mp4: "https://d3lj8s78qytm30.cloudfront.net/parallelism.mp4",
@@ -29,7 +35,7 @@ export default [
     headTitle: 'Elastic CI Stack for AWS screencast',
     description: 'Interested in the Elastic Stack, but not sure it suits your needs? In this screencast we\'ll give you a short overview of the setup and operation of an Elastic CI Stack on AWS.',
     duration: '74s',
-    image: elasticStackImage,
+    images: { poster: elasticStackPoster, thumbnail: elasticStackThumbnail },
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
       mp4: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
@@ -45,7 +51,7 @@ export default [
     headTitle: 'Step Types for pipelines screencast',
     description: 'TODO',
     duration: '90s',
-    image: stepTypesImage,
+    images: { poster: stepTypesPoster, thumbnail: stepTypesThumbnail },
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/parallelism.webm",
       mp4: "https://d3lj8s78qytm30.cloudfront.net/parallelism.mp4",
@@ -64,7 +70,7 @@ export default [
     headTitle: 'Pull Request workflow screencast',
     description: 'TODO',
     duration: '90s',
-    image: prflowImage,
+    images: { poster: prflowPoster, thumbnail: prflowThumbnail },
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
       mp4: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
