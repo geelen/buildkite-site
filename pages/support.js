@@ -59,12 +59,5 @@ export default page(({ loggedIn }) => (
       url="mailto:support@buildkite.com"
       buttonTitle="support@buildkite.com"
     />
-
-    <Callout
-      heading="Enterprise Support"
-      description="Customers on an enterprise plan have access to our Priority Support. Guaranteed 24 hour response time to any queries, and a private chat room for your team to ask questions directly to ours. "
-      url="mailto:enterprise.support@buildkite.com"
-      buttonTitle="enterprise.support@buildkite.com"
-    />
   </Page>
 ))
