@@ -90,28 +90,19 @@ export const advisors = [
   {
     photo: photoJml,
     name: "Jean-Michel Lemieux",
-    bio: "JML has experience with TODO and advises us with TODO. When not TODO'ing he likes to TODO",
-    // links: [
-    //   { name: "Twitter", url: "https://twitter.com/TODO" }
-    // ],
-    roles: ["CTO @ 99designs"]
+    bio: "JML has helped Atlassian and Shopify to massively scale their engineering teams. He's passionate about developer productivity, and (something about Ottawa/family/bi-lingual)?",
+    roles: ["SVP Engineering @ Shopify"]
   },
   {
     photo: photoMattAllen,
     name: "Matt Allen",
-    bio: "Matt has experience with TODO and advises us with TODO. When not TODO'ing he likes to TODO",
-    // links: [
-    //   { name: "Twitter", url: "https://twitter.com/TODO" }
-    // ],
-    roles: ["Startup BD @ AWSCloud"]
+    bio: "Matt is a professional business starter and people connector. When he’s not sharing stories of struggles and success, he’s meeting startups around the world and hunting down Melbourne’s finest coffee in his Tesla.",
+    roles: ["Startup BD @ Amazon Web Services"]
   },
   {
     photo: photoJohnBarton,
     name: "John Barton",
-    bio: "JB has experience with TODO and advises us with TODO. When not TODO'ing he likes to TODO",
-    // links: [
-    //   { name: "Twitter", url: "https://twitter.com/TODO" }
-    // ],
-    roles: ["SVP Engineering @ Shopify"]
+    bio: "John is an experienced engineering manager, and builder of large technical teams. He’s an avid reader, and divides his attention between people management and obscure maritime history.",
+    roles: ["CTO @ 99designs"]
   }
 ]
