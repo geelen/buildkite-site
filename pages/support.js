@@ -1,4 +1,5 @@
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
+import Br from 'components/Br'
 import Callout from 'components/Callout'
 import Page, { page } from 'components/Page'
 
@@ -20,36 +21,36 @@ export default page(({ loggedIn }) => (
         image={documentationImage}
         imageWidth={455}
         imageAlt=""
-        description="Find reference pages, how-to guides, and more in our documentation."
+        description="Find getting started guides, how-to docs, and API documentation."
         url="/docs"
         buttonTitle="View the Docs"
       />
       <ActionGridItem
-        heading="Feedback"
+        heading="Feedback & Suggestions"
         image={feedbackImage}
         imageWidth={466}
         imageAlt=""
-        description="Report bugs and find answers to solved problems in our Feedback repository."
+        description="Let us know about something you’d like added or improved in Buildkite."
         url="https://github.com/buildkite/feedback/issues"
-        buttonTitle="GitHub Issues"
+        buttonTitle="Create a GitHub Issue"
       />
       <ActionGridItem
         heading="Community Chat"
         image={communityChatImage}
         imageWidth={415}
         imageAlt=""
-        description="Ask questions and chat with other Buildkite users in our Slack community."
+        description="Chat with other developers using Buildkite in our open community Slack."
         url="https://chat.buildkite.com"
-        buttonTitle="Buildkite Chat Slack"
+        buttonTitle="Request an Invite"
       />
       <ActionGridItem
         heading="System Status"
         image={systemStatusImage}
         imageWidth={452}
         imageAlt=""
-        description="Keep track of Buildkite and connected third party services on our Status page."
+        description="Check the health of Buildkite’s critical components and services."
         url="https://buildkitestatus.com"
-        buttonTitle="buildkitestatus.com"
+        buttonTitle="Visit buildkitestatus.com"
       />
     </ActionGrid>
 
@@ -57,7 +58,7 @@ export default page(({ loggedIn }) => (
       heading="Need Help?"
       description="If you can’t find an answer to your question, send us an email and we’ll help you out."
       url="mailto:support@buildkite.com"
-      buttonTitle="support@buildkite.com"
+      buttonTitle="Email support@buildkite.com"
     />
   </Page>
 ))

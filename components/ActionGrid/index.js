@@ -27,6 +27,7 @@ export const ActionGrid = ({ children, ...props }) => (
 
 const Container = styled.div`
   text-align: center;
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
 `
 
 const Heading = styled.h1`
