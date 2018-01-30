@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import queryString from 'query-string';
 
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
+import Br from 'components/Br'
 import Callout from 'components/Callout'
 import { Grid, Cell } from 'components/Grid'
 import { Masonry, Brick } from 'components/Masonry'
@@ -14,6 +15,7 @@ import { team, leadership, advisors } from './people'
 const headOfficeImage = require('../../assets/images/about/head-office.jpg')
 const brandAssetsImage = require('../../assets/images/about/brand-assets.jpg')
 const shopImage = require('../../assets/images/about/shop.jpg')
+const aboriginalFlagImage = require('../../assets/images/about/australian-aboriginal-flag.svg')
 
 const OffscreenH2 = styled.h2`
   ${({ theme }) => theme.offscreen}
@@ -64,9 +66,24 @@ const HeadOfficeImage = styled.img`
 `
 
 const LocationParagraph = styled.section`
-  ${({ theme }) => theme.textStyles.bodyCopyLarge}
-  margin-top: ${({ theme }) => theme.textSpacing.s1};
-  color: ${({ theme }) => theme.colors.text.subdued};
+  margin: ${({ theme }) => theme.textSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s3} 0;
+  color: ${({ theme }) => theme.colors.text.green};
+  span:after {
+    content: ' →'
+  }
+`
+
+const FirstNationsSection = styled.section`
+  display: flex;
+  p {
+    ${({ theme }) => theme.textStyles.bodyCopySmall}
+    color: ${({ theme }) => theme.colors.text.subdued};
+  }
+  img {
+    width: 40px;
+    margin-top: .25rem;
+    margin-right: ${({ theme }) => theme.innerSpacing.s0};
+  }
 `
 
 const LocationLink = styled.a`
@@ -93,7 +110,7 @@ export default page(({ loggedIn }) => (
   <Page
     headTitle="About Buildkite"
     title="About"
-    description="We’re building the best software automation tools"
+    description={<span>We’re building tools to help the best<Br maxWidth='30em'/> software teams stay happy and productive.</span>}
     loggedIn={loggedIn}
     >
     <PeopleSection>
@@ -131,17 +148,23 @@ export default page(({ loggedIn }) => (
             Head Office
           </InlineSectionHeader>
           <p>
-            Our team is spread across the globe, but if you want to visit Buildkite HQ, or send us something in the post, you can find us at:
+            Our team is spread across the globe, but if you want to visit our head office, or send us something in the post, you can find us here:
           </p>
           <LocationParagraph>
             <LocationLink
               href={`https://maps.apple.com/?${queryString.stringify(HeadOfficeLocation)}`}
             >
-              149a Brunswick St<br/>
-              Fitzroy, Victoria 3065<br/>
-              Australia
+              <span>
+                149a Brunswick St<br/>
+                Fitzroy, Victoria 3065<br/>
+                Australia
+              </span>
             </LocationLink>
           </LocationParagraph>
+          <FirstNationsSection>
+            <div><img src={aboriginalFlagImage} alt="Australian Aboriginal Flag"/></div>
+            <p>Our head office is located on the traditional lands of the Wurundjeri people of the Kulin nation. We acknowledge that sovereignty was never ceded and pay our respects to elders past, present and emerging.</p>
+          </FirstNationsSection>
         </TextCell>
       </MediaItem>
     </Section>
@@ -205,7 +228,7 @@ export default page(({ loggedIn }) => (
 
     <Callout
       heading="Have a question?"
-      description="Drop us a line, we’re here to help."
+      description="Send us an email, we’re here to help."
       url="mailto:support@buildkite.com"
       buttonTitle="Email support@buildkite.com"
     />

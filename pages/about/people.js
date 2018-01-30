@@ -45,11 +45,11 @@ export const team = [
   {
     photo: photoTim,
     name: "Tim Lucas",
-    bio: "Hi, I’m Tim! I work on frontend and backend engineering. Some cool fact about me is a bit longer than one line.",
+    bio: "Hey, I’m Tim! I'm a human Venn diagram of cats, coffee, the web, design, and programming. When I'm not behind a keyboard, I can usually be found climbing rocky walls.",
     links: [
       { name: "Twitter", url: "https://twitter.com/toolmantim" },
-      { name: "GitHub", url: "https://github.com/toolmantim" },
-      { name: "Keybase", url: "https://keybase.io/toolmantim" }
+      { name: "Dribbble", url: "https://dribbble.com/toolmantim" },
+      { name: "GitHub", url: "https://github.com/toolmantim" }
     ],
     colour: "rgb(129,188,228)",
     leadership: true,
@@ -58,7 +58,7 @@ export const team = [
   {
     photo: photoKeith,
     name: "Keith Pitt",
-    bio: "Hi, I’m Keith! I work on frontend and backend engineering. Some cool fact about me is a bit longer than one line.",
+    bio: "Hey, I’m Keith! I'm always going on about how good GraphQL is. Build pipelines and developer tools are my jam, and I love jam.",
     links: [
       { name: "Twitter", url: "https://twitter.com/keithpitt" },
       { name: "GitHub", url: "https://github.com/keithpitt" },
@@ -71,11 +71,9 @@ export const team = [
   {
     photo: photoLox,
     name: "Lachlan Donald",
-    bio: "Hi, I’m Lachlan! I work on frontend and backend engineering. Some cool fact about me is a bit longer than one line.",
+    bio: "I'm Lachlan (or Lox). I love building tools that help give developers more time to do amazing things. I'm a dad, husband, huge computer geek, and a relentless advocate for the llama species.",
     links: [
-      { name: "Twitter", url: "https://twitter.com/lox" },
-      { name: "GitHub", url: "https://github.com/lox" },
-      { name: "Keybase", url: "https://keybase.io/lox" }
+      { name: "GitHub", url: "https://github.com/lox" }
     ],
     colour: "rgb(149,149,143)",
     leadership: true,
@@ -89,28 +87,19 @@ export const advisors = [
   {
     photo: photoJml,
     name: "Jean-Michel Lemieux",
-    bio: "JML has experience with TODO and advises us with TODO. When not TODO'ing he likes to TODO",
-    // links: [
-    //   { name: "Twitter", url: "https://twitter.com/TODO" }
-    // ],
-    roles: ["CTO @ 99designs"]
+    bio: "JML has helped Atlassian and Shopify to massively scale their engineering teams. He's passionate about developer productivity, and (something about Ottawa/family/bi-lingual)?",
+    roles: ["SVP Engineering @ Shopify"]
   },
   {
     photo: photoMattAllen,
     name: "Matt Allen",
-    bio: "Matt has experience with TODO and advises us with TODO. When not TODO'ing he likes to TODO",
-    // links: [
-    //   { name: "Twitter", url: "https://twitter.com/TODO" }
-    // ],
-    roles: ["Startup BD @ AWSCloud"]
+    bio: "Matt is a professional business starter and people connector. When he’s not flying the world to talk to startups, he can be found hunting down Melbourne’s finest coffee in his Tesla.",
+    roles: ["Startup BD @ Amazon Web Services"]
   },
   {
     photo: photoJohnBarton,
     name: "John Barton",
-    bio: "JB has experience with TODO and advises us with TODO. When not TODO'ing he likes to TODO",
-    // links: [
-    //   { name: "Twitter", url: "https://twitter.com/TODO" }
-    // ],
-    roles: ["SVP Engineering @ Shopify"]
+    bio: "John is an accomplished engineering manager, and builder of large technical teams. He’s an avid reader, and divides his attention between people management books, technology trends, and maritime museums.",
+    roles: ["CTO @ 99designs"]
   }
 ]

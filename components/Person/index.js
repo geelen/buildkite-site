@@ -77,7 +77,7 @@ const PersonRoles = ({ person }) => {
 
 const PersonBio = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopySmall}
-  margin: 5px 0;
+  margin: 5px 0 10px 0;
   color: ${({ theme }) => theme.colors.text.subdued};
 `;
 
@@ -86,7 +86,7 @@ const PersonStats = styled.div`
 `;
 
 const PaddedDropdown = styled.div`
-  padding: 10px 20px;
+  padding: 15px 30px calc(15px + .25em) 30px;
 `;
 
 const Links = styled.ul`
@@ -117,8 +117,6 @@ export default ({ person, showRoles, showName }) => {
       <Dropdown width={320}>
         <Headshot person={person} />
         <PaddedDropdown>
-          {name}
-          {roles}
           <PersonBio>{person.bio}</PersonBio>
           {person.links && person.links.length && (
             <nav>
