@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import queryString from 'query-string';
 
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
+import Br from 'components/Br'
 import Callout from 'components/Callout'
 import { Grid, Cell } from 'components/Grid'
 import { Masonry, Brick } from 'components/Masonry'
@@ -93,7 +94,7 @@ export default page(({ loggedIn }) => (
   <Page
     headTitle="About Buildkite"
     title="About"
-    description="We’re building the best software automation tools"
+    description={<span>We’re building the tools that help the<Br maxWidth='30em'/> best software teams stay happy and productive.</span>}
     loggedIn={loggedIn}
     >
     <PeopleSection>
