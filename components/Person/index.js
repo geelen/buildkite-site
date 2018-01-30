@@ -117,8 +117,6 @@ export default ({ person, showRoles, showName }) => {
       <Dropdown width={320}>
         <Headshot person={person} />
         <PaddedDropdown>
-          {name}
-          {roles}
           <PersonBio>{person.bio}</PersonBio>
           {person.links && person.links.length && (
             <nav>
