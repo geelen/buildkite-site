@@ -45,9 +45,10 @@ export const team = [
   {
     photo: photoTim,
     name: "Tim Lucas",
-    bio: "Hi, I’m Tim! I work on frontend and backend engineering. Some cool fact about me is a bit longer than one line.",
+    bio: "Hey, I’m Tim! I'm a Venn diagram of cats, coffee, the web, design, and programming. When I'm not behind a keyboard you can find me climbing rocky walls.",
     links: [
       { name: "Twitter", url: "https://twitter.com/toolmantim" },
+      { name: "Dribbble", url: "https://dribbble.com/toolmantim" },
       { name: "GitHub", url: "https://github.com/toolmantim" },
       { name: "Keybase", url: "https://keybase.io/toolmantim" }
     ],
