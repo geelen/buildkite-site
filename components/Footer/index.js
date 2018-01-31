@@ -46,7 +46,7 @@ export default () => (
             <FooterLink href="/case-studies">Case Studies</FooterLink>
             <FooterLink href="/brand-assets">Brand Assets</FooterLink>
             <FooterLink href="/security">Security</FooterLink>
-            <FooterLink href="https://shop.buildkite.com/">Shop</FooterLink>
+            {/* <FooterLink href="https://shop.buildkite.com/">Shop</FooterLink> */}
           </nav>
         </Cell>
         <Cell>
