@@ -23,7 +23,7 @@ export const team = [
   {
     photo: photoJess,
     name: "Jessica Stokes",
-    bio: "Hey, I’m Jess! I work on frontend and backend engineering. Some cool fact about me is a bit longer than one line.",
+    bio: "Hey, I’m Jessica! I love building useful things with people in mind. When I’m not wrangling tech for Buildkite, you can find me reviving old game consoles, or sampling a city’s vegetarian delights.",
     links: [
       { name: "Twitter", url: "https://twitter.com/ticky" },
       { name: "GitHub", url: "https://github.com/ticky" },
@@ -34,7 +34,7 @@ export const team = [
   {
     photo: photoSam,
     name: "Samuel Cochran",
-    bio: "Hi, I’m Sam! I work on frontend and backend engineering. Some cool fact about me is a bit longer than one line.",
+    bio: "Hi, I’m Sam! I love simplifying complex systems to give folks superpowers. When I’m not tending my home jungle, that is.",
     links: [
       { name: "Twitter", url: "https://twitter.com/sj26" },
       { name: "GitHub", url: "https://github.com/sj26" },
@@ -45,7 +45,7 @@ export const team = [
   {
     photo: photoTim,
     name: "Tim Lucas",
-    bio: "Hey, I’m Tim! I'm a human Venn diagram of cats, coffee, the web, design, and programming. When I'm not behind a keyboard, I can usually be found climbing rocky walls.",
+    bio: "Hey, I’m Tim! I’m a human Venn diagram of cats, coffee, the web, design, and programming. When I’m not behind a keyboard, I can usually be found climbing rocky walls.",
     links: [
       { name: "Twitter", url: "https://twitter.com/toolmantim" },
       { name: "Dribbble", url: "https://dribbble.com/toolmantim" },
@@ -58,7 +58,7 @@ export const team = [
   {
     photo: photoKeith,
     name: "Keith Pitt",
-    bio: "Hey, I’m Keith! I'm always going on about how good GraphQL is. Build pipelines and developer tools are my jam, and I love jam.",
+    bio: "Hey, I’m Keith! I’m always going on about how good GraphQL is. Build pipelines and developer tools are my jam, and I love jam.",
     links: [
       { name: "Twitter", url: "https://twitter.com/keithpitt" },
       { name: "GitHub", url: "https://github.com/keithpitt" },
@@ -71,7 +71,7 @@ export const team = [
   {
     photo: photoLox,
     name: "Lachlan Donald",
-    bio: "I'm Lachlan (or Lox). I love building tools that help give developers more time to do amazing things. I'm a dad, husband, huge computer geek, and a relentless advocate for the llama species.",
+    bio: "I’m Lachlan (or Lox). I love building tools that help give developers more time to do amazing things. I’m a dad, husband, huge computer geek, and a relentless advocate for the llama species.",
     links: [
       { name: "GitHub", url: "https://github.com/lox" }
     ],
@@ -87,7 +87,7 @@ export const advisors = [
   {
     photo: photoJml,
     name: "Jean-Michel Lemieux",
-    bio: "JML has helped Atlassian and Shopify to massively scale their engineering teams. He's passionate about developer productivity, and (something about Ottawa/family/bi-lingual)?",
+    bio: "JML has helped Atlassian and Shopify to massively scale their engineering teams. He’s passionate about developer productivity, and (something about Ottawa/family/bi-lingual)?",
     roles: ["SVP Engineering @ Shopify"]
   },
   {
