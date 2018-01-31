@@ -216,14 +216,14 @@ export default page(({ loggedIn }) => (
         url="/brand-assets"
         buttonTitle="View brand assets"
       />
-      <ActionGridItem
+      {/* <ActionGridItem
         heading="Buildkite Shop"
         image={shopImage}
         imageAlt=""
         description="Order yourself some official Buildkite stickers, t-shirts, and more."
         url="https://shop.buildkite.com/"
         buttonTitle="Browse the shop"
-      />
+      /> */}
     </ActionGrid>
 
     <Callout
