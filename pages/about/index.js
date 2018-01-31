@@ -207,7 +207,7 @@ export default page(({ loggedIn }) => (
       </Masonry>
     </Section>
 
-    <ActionGrid>
+    {/* <ActionGrid> */}
       <ActionGridItem
         heading="Brand Assets"
         image={brandAssetsImage}
@@ -224,7 +224,7 @@ export default page(({ loggedIn }) => (
         url="https://shop.buildkite.com/"
         buttonTitle="Browse the shop"
       /> */}
-    </ActionGrid>
+    {/* </ActionGrid> */}
 
     <Callout
       heading="Have a question?"
