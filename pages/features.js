@@ -29,6 +29,12 @@ const customFieldsImage = require('../assets/images/features/custom-fields.svg')
 // -- Feature Section 6 --
 const dynamicPipelineImage = require('../assets/images/features/dynamic-pipeline.svg')
 
+// -- Feature Section 7 --
+const webInterfaceImage = require('../assets/images/features/web-interface.png')
+
+// -- Feature Section 8 --
+const unblockStepImage = require('../assets/images/features/unblock-step.png')
+
 // -- Feature Section 9 --
 const dockerWorksJustFineImage = require('../assets/images/features/docker-works-just-fine.svg')
 
@@ -169,7 +175,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src="https://placeimg.com/542/348/animals" />
+          <ImageWithBorder src={webInterfaceImage} alt="" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -179,7 +185,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src="https://placeimg.com/543/211/tech" />
+          <ImageWithBorder src={unblockStepImage} alt="" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
