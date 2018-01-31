@@ -43,13 +43,14 @@ const ImageCell = styled.div`
 
 const ResultsCell = ImageCell.extend`
   display: grid;
-  align-items: center;
-  grid-gap: ${({ theme }) => theme.innerSpacing.s1};
+  align-self: flex-start;
+  grid-gap: ${({ theme }) => theme.textSpacing.s1};
 `
 
 const ResultItem = styled.div`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s1};
+  margin: ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
 const ResultValue = styled.span`
