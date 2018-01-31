@@ -41,8 +41,14 @@ const dockerWorksJustFineImage = require('../assets/images/features/docker-works
 // -- Feature Section 11 --
 const buildAnnotationsImage = require('../assets/images/features/build-annotations.png')
 
+// -- Feature Section 12 --
+const logOutputGroupingImage = require('../assets/images/features/log-output-grouping.png')
+
 // -- Feature Section 13 --
 const customAgentHooksImage = require('../assets/images/features/custom-agent-hooks.svg')
+
+// -- Feature Section 14 --
+const graphqlApiImage = require('../assets/images/features/graphql-api.png')
 
 const Heading = styled.h2`
   text-align: center;
@@ -231,7 +237,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src="https://placeimg.com/542/238/animals" />
+          <ImageWithBorder src={logOutputGroupingImage} alt="" />
         </ImageCell>
       </MediaItem>
     </section>
@@ -254,7 +260,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src="https://placeimg.com/542/191/nature" />
+          <ImageWithBorder src={graphqlApiImage} alt="" />
         </ImageCell>
       </MediaItem>
     </section>
