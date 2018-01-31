@@ -15,10 +15,13 @@ const pipelineRunningImage = require('../assets/images/features/pipeline-running
 
 // -- Feature Section 2 --
 const artifactsAndParallelismImage = require('../assets/images/features/artifacts-and-parallelism.svg')
-const parallelismImage = require('../assets/images/features/parallelism.png') // TODO: Replace this image, it's rendered with subpixel antialiasing and is thus blurry
+const parallelismImage = require('../assets/images/features/parallelism.png')
 
 // -- Feature Section 3 --
 const elasticCiStackImage = require('../assets/images/features/elastic-ci-stack.png')
+
+// -- Feature Section 4 --
+const buildkiteMetricsImage = require('../assets/images/features/buildkite-metrics.png')
 
 // -- Feature Section 5 --
 const customFieldsImage = require('../assets/images/features/custom-fields.svg')
@@ -129,7 +132,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src="https://placeimg.com/550/260/animals" />
+          <ImageWithBorder src={buildkiteMetricsImage} alt="" />
         </ImageCell>
       </MediaItem>
     </section>
