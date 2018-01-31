@@ -25,8 +25,6 @@ const wordmarkLightPng = require('../assets/images/brand-assets/buildkite-wordma
 const wordmarkDarkSvg = require('../assets/images/brand-assets/buildkite-wordmark-on-dark.svg')
 const wordmarkDarkPng = require('../assets/images/brand-assets/buildkite-wordmark-on-dark.png')
 
-const screenshotJpg = require('../assets/images/brand-assets/screenshot.jpg')
-
 const AssetListContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s2};
