@@ -77,7 +77,7 @@ const Testimonial = styled.figure`
   flex-wrap: wrap;
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s2};
-  margin-top: ${({ theme }) => theme.innerSpacing.s1};
+  margin-top: ${({ theme }) => theme.outerSpacing.s1};
   overflow: hidden;
   position: relative;
   min-height: 16rem;
@@ -125,6 +125,7 @@ const Headshot = styled.img`
 const ImageGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
 
   @media (min-width: 540px) {
     max-height: 400px;
@@ -268,9 +269,9 @@ export default function caseStudyPage(pathname) {
       <Callout
         grey
         heading="Talk to our team"
-        description="TODO"
-        url="mailto:support@buildkite.com"
-        buttonTitle="support@buildkite.com"
+        description="We're here to support your enterprise needs. Send us an email to arrange a call."
+        url="mailto:sales@buildkite.com"
+        buttonTitle="Email sales@buildkite.com"
       />
 
       <SectionHeader>More case studies</SectionHeader>

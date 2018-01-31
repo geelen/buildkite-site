@@ -65,20 +65,20 @@ export const rea = {
   link: { label: 'realestate.com.au', url: 'https://realestate.com.au/' },
   headTitle: 'REA Group CI Buildkite Case Study',
   logoImage: reaLogo,
-  photoOne: { image: reaPhotoPeople, alt: "TODO" },
-  photoTwo: { image: reaPhotoOffice, alt: "TODO" },
+  photoOne: { image: reaPhotoOffice, alt: "TODO" },
+  photoTwo: { image: reaPhotoPeople, alt: "TODO" },
   indexBackgroundImage: reaPhotoOffice,
   industry: 'Ecommerce',
   teamSize: '330 engineers',
   testimonial: {
-    name: 'Mike Williams',
-    title: 'Head of Operations',
-    testimonial: 'REA had more than a dozen different build clusters, each of which required care and feeding, patching, backups, etc. Buildkite has allowed us to reduce our overhead, by out-sourcing operation of the hard (stateful) bits.',
+    name: 'Tomas Varsavsky',
+    title: 'Chief Engineer',
+    testimonial: 'We had more than a dozen different build clusters, each of which required care and feeding (patching, backups, etc.) Buildkite allowed us to reduce overheads by outsourcing the hard (stateful) parts.',
     headshotImage: reaTestimonialPhoto,
   },
   results: [
     { number: 330, unit: '', label: 'engineers globally' },
-    { number: 80, unit: '%', label: 'reduction in team set up time' }
+    { number: 80, unit: '%', label: 'reduction in team setup time' }
   ],
   summaryWords: (
     <React.Fragment>
@@ -90,24 +90,17 @@ export const rea = {
   ),
   words: (
     <React.Fragment>
-      <p>Melbourne, Australia-based REA Group grew from realestate.com.au, 
-      Australia's largest property website. They now operate property websites
-      in 10 countries that are used by more than 19,000 real-estate agents
-      and have approximately 8.8 million unique visitors per month.</p>
-      <p>REA's engineering teams were using a mixture of different build
-      systems (Jenkins and Bamboo) spread across more than a dozen different
-      clusters. Maintenance and management of these clusters spilled over to 
-      their central ops team. They needed a CI solution that would give their 
-      engineering teams autonomy, but also leverage existing AWS and docker 
-      infrastructure.</p>
-      <p>Working closely with the Buildkite team to set up a pilot integration, 
-      existing Jenkins and Bamboo CI installations were replaced over a few weeks. 
-      Today, Buildkite powers the majority of builds across their organisation, 
-      and is the go-to CI tool for new projects.</p>
-      <p>Instead of weeks of setup and ongoing Ops management, projects are now 
-      up and running in days. REA developers have reported an increase in 
-      productivity, and the ability to adopt best practices as they're being 
-      trialled organisation wide.</p>
+      <p>REA Group started as Australia's largest property website, and now operates property websites
+      in 10 countries serving 8.8 million unique visitors per month.</p>
+      <p>Before Buildkite, REA's engineering teams were using a disparate mixture of build
+      systems, spread across a dozen
+      clusters. Management and maintenance tasks of all the clusters was left to 
+      the central ops team, creating bottlenecks and overheads. They went looking for a solution that would give back autonomy to their 
+      engineering teams, and make full use of their AWS and Docker expertise.</p>
+      <p>Over a few weeks, a number of
+      existing Jenkins and Bamboo CI installations were replaced with their own AWS based autoscaling stack using Buildkite. They found setup time for new build pipelines was reduced from weeks to days, and the centralized cluster greatly reduced ops overhead. Developers reported faster builds, tighter feedback loops, and easier adoption of new tools and practices.
+      </p>
+      <p>Today, Buildkite powers the majority of builds across their organisation, and is the go-to CI tool for new projects.</p>
     </React.Fragment>
   )
 }
