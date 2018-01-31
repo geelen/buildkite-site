@@ -27,6 +27,13 @@ const Subsection = styled.section`
   margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
 `
 
+const MaxWidthSubsection = Subsection.extend`
+  @media (min-width: 742px) {
+    ${({ theme }) => theme.maxWidthContainer}
+    width: 60%;
+  }
+`
+
 const SubSectionHeader = styled.h3`
   ${({ theme }) => theme.textStyles.thirdLevelHeading}
   margin: ${({ theme }) => theme.textSpacing.s1} 0;
@@ -86,11 +93,11 @@ export default page(({ loggedIn }) => (
 
       <SectionHeader>Platform Security</SectionHeader>
 
-      <Subsection>
+      <MaxWidthSubsection>
         <SubSectionHeader>Infrastructure</SubSectionHeader>
         <SubSectionSubHeader>Physical Access</SubSectionSubHeader>
         <SecurityParagraph>All of our services run in the cloud. Buildkite does not run it’s own routers, load balancers, DNS servers, or physical servers.</SecurityParagraph>
-      </Subsection>
+      </MaxWidthSubsection>
 
       <Subsection>
         <SubSectionHeader>Application Security</SubSectionHeader>
@@ -123,10 +130,10 @@ export default page(({ loggedIn }) => (
         </Masonry>
       </Subsection>
 
-      <Subsection>
+      <MaxWidthSubsection>
         <SubSectionHeader>Data in Transit</SubSectionHeader>
         <SecurityParagraph>All data transferred in and out of Buildkite is encrypted using hardened TLS. Buildkite is also protected by HTTP Strict Transport Security and is pre-loaded in major browsers. Additionally, data transferred to and from Buildkite’s backend database is encrypted using TLS.</SecurityParagraph>
-      </Subsection>
+      </MaxWidthSubsection>
     </Section>
 
     <Section>
