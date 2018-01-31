@@ -38,6 +38,9 @@ const unblockStepImage = require('../assets/images/features/unblock-step.png')
 // -- Feature Section 9 --
 const dockerWorksJustFineImage = require('../assets/images/features/docker-works-just-fine.svg')
 
+// -- Feature Section 11 --
+const buildAnnotationsImage = require('../assets/images/features/build-annotations.png')
+
 // -- Feature Section 13 --
 const customAgentHooksImage = require('../assets/images/features/custom-agent-hooks.svg')
 
@@ -218,7 +221,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src="https://placeimg.com/542/286/animals" />
+          <ImageWithBorder src={buildAnnotationsImage} alt="" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
