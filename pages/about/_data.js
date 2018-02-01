@@ -87,7 +87,7 @@ export const advisors = [
   {
     photo: photoJml,
     name: "Jean-Michel Lemieux",
-    bio: "JML has helped Atlassian and Shopify to massively scale their engineering teams. He’s passionate about developer productivity, and (something about Ottawa/family/bi-lingual)?",
+    bio: "JML has helped Atlassian and Shopify to massively scale their engineering teams. He’s an adopted Aussie, but had to move back to his homeland. Advising Buildkite is his secret way to stay connected with the country he loves!",
     roles: ["SVP Engineering @ Shopify"]
   },
   {
