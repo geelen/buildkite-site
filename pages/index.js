@@ -60,13 +60,10 @@ const LargeParagraph = styled.p`
   text-align: center;
 `
 
-// For this content it should be ul/li instead of div/div
-const CustomerGrid = Grid.withComponent('ul').extend`
-  list-style: none;
-  padding: 0;
-  margin: ${({ theme }) => theme.innerSpacing.s1} 0;
+const Logos = styled.p`
+  margin: ${({ theme }) => theme.innerSpacing.s2} 0 ${({ theme }) => theme.outerSpacing.s1} 0;
+  text-align: center;
 `
-const CustomerCell = Cell.withComponent('li');
 
 export default page(({ loggedIn }) => (
   <Page
@@ -98,14 +95,7 @@ export default page(({ loggedIn }) => (
       <OffscreenH1>Customers</OffscreenH1>
       <LargeParagraph>Join these teams who’ve switched to Buildkite…</LargeParagraph>
 
-      <CustomerGrid>
-        <CustomerCell>Logo 1</CustomerCell>
-        <CustomerCell>Logo 2</CustomerCell>
-        <CustomerCell>Logo 3</CustomerCell>
-        <CustomerCell>Logo 4</CustomerCell>
-        <CustomerCell>Logo 5</CustomerCell>
-        <CustomerCell>Logo 6</CustomerCell>
-      </CustomerGrid>
+      <Logos>&lt;Logos&gt;</Logos>
 
       <CenteredLink href="/case-studies">
         <Button>Read the case studies</Button>
