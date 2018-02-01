@@ -47,10 +47,10 @@ export default [
   },
   {
     pathname: '/screencasts/step-types',
-    title: 'Step Types for pipelines',
-    headTitle: 'Step Types for pipelines screencast',
-    description: 'TODO',
-    duration: '90s',
+    title: 'Step types for pipelines',
+    headTitle: 'Step types for pipelines screencast',
+    description: 'Want to take a peek inside a production-ready pipeline? In this screencast we\'ll talk through the different step types, looking at an example based on an internal Buildkite pipeline.',
+    duration: '102s',
     images: { poster: stepTypesPoster, thumbnail: stepTypesThumbnail },
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/parallelism.webm",
@@ -66,10 +66,10 @@ export default [
   },
   {
     pathname: '/screencasts/pr-flow',
-    title: 'Pull Request Workflow',
+    title: 'Pull request workflow',
     headTitle: 'Pull Request workflow screencast',
-    description: 'TODO',
-    duration: '90s',
+    description: 'Walk through an end-to-end workflow, from pushing a commit to merging a pull request. This screencast will show you what it\'s like when you connect Github and Buildkite.',
+    duration: '99s',
     images: { poster: prflowPoster, thumbnail: prflowThumbnail },
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
