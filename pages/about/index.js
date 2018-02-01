@@ -7,7 +7,7 @@ import Callout from 'components/Callout'
 import { Grid, Cell } from 'components/Grid'
 import { Masonry, Brick } from 'components/Masonry'
 import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
-import { OffscreenH1 } from 'components/OffscreenHeading'
+import { OffscreenH2 } from 'components/OffscreenHeading'
 import Page, { page } from 'components/Page'
 import Person from 'components/Person'
 
