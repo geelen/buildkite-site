@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import Page, { page } from 'components/Page'
 import { FeatureGrid, FeatureCell, FeatureTitle as RawFeatureTitle, FeatureDescription } from 'components/FeatureGrid'
-import { MediaItem as RawMediaItem, ImageCell, TextCell } from 'components/MediaItem'
+import { MediaItem as RawMediaItem, ImageCell as RawImageCell, TextCell as RawTextCell } from 'components/MediaItem'
 import { OffscreenH1 } from 'components/OffscreenHeading'
 
 import GetStarted from 'components/sections/GetStarted'
@@ -68,7 +68,7 @@ const Description = styled.p`
 `
 
 const Image = styled.img`
-  max-width: 100%;
+  width: 100%;
   margin: .25rem 0;
 
   &:first-child {
@@ -86,6 +86,14 @@ const Link = styled.a`
 
 const MediaItem = RawMediaItem.extend`
   align-items: flex-start;
+`
+
+const TextCell = RawTextCell.extend`
+  flex-grow: 2;
+`
+
+const ImageCell = RawImageCell.extend`
+  flex-grow: 4;
 `
 
 const FeatureTitle = RawFeatureTitle.withComponent('h3');
