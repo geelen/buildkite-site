@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Page, { page } from 'components/Page'
 import { FeatureGrid, FeatureCell, FeatureTitle as RawFeatureTitle, FeatureDescription } from 'components/FeatureGrid'
 import { MediaItem as RawMediaItem, ImageCell, TextCell } from 'components/MediaItem'
+import { OffscreenH1 } from 'components/OffscreenHeading'
 
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
@@ -90,6 +91,10 @@ const SVGAnimation = Image.extend`
 `
 
 const BuildAgentStart = SVGAnimation.withComponent(RawBuildAgentStart);
+
+const OtherFeaturesSection = styled.section`
+  margin: ${({ theme }) => theme.outerSpacing.s3} 0;
+`
 
 export default page(({ loggedIn }) => (
   <Page
@@ -264,8 +269,9 @@ export default page(({ loggedIn }) => (
         </ImageCell>
       </MediaItem>
     </section>
-    <section>
-      <Heading>Other Features</Heading>
+
+    <OtherFeaturesSection>
+      <OffscreenH1>Other Features</OffscreenH1>
       <FeatureGrid>
         <FeatureCell>
           <FeatureTitle>Source Control Integration</FeatureTitle>
@@ -296,11 +302,11 @@ export default page(({ loggedIn }) => (
           <FeatureDescription>Control which users have access to projects and resources from within your settings page.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Human Support</FeatureTitle>
+          <FeatureTitle>Friendly, Human Support</FeatureTitle>
           <FeatureDescription>TODO.</FeatureDescription>
         </FeatureCell>
       </FeatureGrid>
-    </section>
+    </OtherFeaturesSection>
 
     <Screencasts/>
 
