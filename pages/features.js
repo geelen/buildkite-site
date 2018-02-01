@@ -26,6 +26,7 @@ const buildkiteMetricsImage = require('../assets/images/features/buildkite-metri
 
 // -- Feature Section 5 --
 const customFieldsImage = require('../assets/images/features/custom-fields.svg')
+const customFieldsUnblockImage = require('../assets/images/features/custom-fields-unblock.png')
 
 // -- Feature Section 6 --
 const dynamicPipelineImage = require('../assets/images/features/dynamic-pipeline.svg')
@@ -166,7 +167,7 @@ export default page(({ loggedIn }) => (
         </TextCell>
         <ImageCell>
           <Image src={customFieldsImage} alt="" />
-          <ImageWithBorder src="https://placeimg.com/547/96/nature" />
+          <ImageWithBorder src={customFieldsUnblockImage} alt="" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
