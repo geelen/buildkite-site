@@ -2,6 +2,8 @@ import styled, { ThemeProvider } from 'styled-components'
 import Head from 'next/head'
 import cookies from 'next-cookies'
 
+import isLoggedIn from '../../lib/isLoggedIn'
+
 import * as buildkiteTheme from 'theme'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
@@ -51,10 +53,7 @@ export function page(Component) {
         : {}
     );
 
-    // Uses next-cookies to get this in either the browser or backend
-    const { bk_logged_in } = cookies(context)
-
-    processedProps.loggedIn = bk_logged_in == "true";
+    processedProps.loggedIn = isLoggedIn(cookies(context))
 
     return processedProps
   }
