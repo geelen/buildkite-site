@@ -15,6 +15,7 @@ import { team, leadership, advisors } from './_data'
 
 const headOfficeImage = require('../../assets/images/about/head-office.jpg')
 const brandAssetsImage = require('../../assets/images/about/brand-assets.jpg')
+const sayhelloImage = require('../../assets/images/contact/sayhello.jpg')
 const shopImage = require('../../assets/images/about/shop.jpg')
 const aboriginalFlagImage = require('../../assets/images/about/australian-aboriginal-flag.svg')
 
@@ -204,7 +205,7 @@ export default page(({ loggedIn }) => (
       </Masonry>
     </Section>
 
-    {/* <ActionGrid> */}
+    <ActionGrid>
       <ActionGridItem
         heading="Brand Assets"
         image={brandAssetsImage}
@@ -212,6 +213,14 @@ export default page(({ loggedIn }) => (
         description="Download our official logos, screenshots and media assets."
         url="/brand-assets"
         buttonTitle="View brand assets"
+      />
+      <ActionGridItem
+        heading="Say Hello!"
+        image={sayhelloImage}
+        imageAlt=""
+        description="For press enquries, or anything else you need, drop us a line and we’ll help."
+        url="mailto:hello@buildkite.com"
+        buttonTitle="Email hello@buildkite.com"
       />
       {/* <ActionGridItem
         heading="Buildkite Shop"
@@ -221,7 +230,7 @@ export default page(({ loggedIn }) => (
         url="https://shop.buildkite.com/"
         buttonTitle="Browse the shop"
       /> */}
-    {/* </ActionGrid> */}
+    </ActionGrid>
 
     <Callout
       heading="Have a question?"
