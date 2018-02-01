@@ -10,7 +10,7 @@ import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 import Page, { page } from 'components/Page'
 import Person from 'components/Person'
 
-import { team, leadership, advisors } from './people'
+import { team, leadership, advisors } from './_data'
 
 const headOfficeImage = require('../../assets/images/about/head-office.jpg')
 const brandAssetsImage = require('../../assets/images/about/brand-assets.jpg')
