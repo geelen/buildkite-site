@@ -66,6 +66,10 @@ const AssetList = ({ children }) => (
   </AssetListContainer>
 )
 
+const AssetCell = Cell.extend`
+  text-align: center;
+`
+
 const AssetImageSizer = styled.div`
   width: 100%;
   height: 0;
@@ -99,24 +103,56 @@ const AssetImage = ({ src, alt, darkBackground }) => (
   </AssetImageSizer>
 )
 
+const AssetDescription = styled.p`
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  margin: ${({ theme }) => theme.textSpacing.s2} 0;
+`
+
+const AssetLinks = styled.ul`
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
+  li > a {
+    ${({ theme }) => theme.textStyles.bodyCopySmall}
+    ${({ theme }) => theme.textStyles.navigationHyperlink}
+    color: ${({ theme }) => theme.colors.text.subdued};
+    margin: ${({ theme }) => theme.textSpacing.s1};
+    text-decoration: none;
+
+    > svg {
+      margin-right: .25em;
+    }
+  }
+`
+
 const Asset = ({ description, image, formats, darkBackground }) => (
-  <Cell>
+  <AssetCell>
     <AssetImage
       darkBackground={darkBackground}
       src={image}
       alt={description}
     />
-    <p>{description}</p>
-    <ul>
+    <AssetDescription>{description}</AssetDescription>
+    <AssetLinks>
       {Object.keys(formats).map(extension =>
         <li key={extension}>
           <Link external href={formats[extension]}>
-            <a>{extension.toUpperCase()}</a>
+            <a download>
+              <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5 6H3l3 4 3-4H7V3H5v3zm1 6A6 6 0 1 1 6 0a6 6 0 0 1 0 12z"
+                  fill="currentColor"
+                />
+              </svg>
+              {extension.toUpperCase()}
+            </a>
           </Link>
         </li>
       )}
-    </ul>
-  </Cell>
+    </AssetLinks>
+  </AssetCell>
 )
 
 export default page(({ loggedIn }) => (
@@ -141,7 +177,7 @@ export default page(({ loggedIn }) => (
     <Section>
       <SectionHeader>Main Logo</SectionHeader>
       <Paragraph>
-        If you’re putting a Buildkite logo anywhere, this is one we like to see.<br />
+        If you’re putting a Buildkite logo anywhere, this is one we like to see. <Br maxWidth='38em'/>
         It’s the official one, and the one we love the most.
       </Paragraph>
 
@@ -173,7 +209,10 @@ export default page(({ loggedIn }) => (
 
     <Section>
       <SectionHeader>Secondary Logos and Marks</SectionHeader>
-      <Paragraph>Our secondary logos can be used for making emoji, an icon, or if you need to include a small version of our mark somewhere.</Paragraph>
+      <Paragraph>
+        Our secondary logos can be used for making emoji, an icon, or if you <Br maxWidth='38em'/>
+        need to include a small version of our mark somewhere.
+      </Paragraph>
       <AssetList>
         <Asset
           description="Mark for light or transparent backgrounds"
