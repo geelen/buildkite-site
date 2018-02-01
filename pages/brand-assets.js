@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import Br from 'components/Br'
 import Callout from 'components/Callout'
+import { Grid, Cell } from 'components/Grid'
 import Link from 'components/Link'
 import Page, { page } from 'components/Page'
 
@@ -47,32 +48,64 @@ const Paragraph = styled.p`
   margin: ${({ theme }) => theme.textSpacing.s2} 0;
 `
 
-const AssetListContainer = styled.div`
+const AssetListContainer = Grid.extend`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s2};
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: ${({ theme }) => theme.innerSpacing.s2};
+
+  @media (max-width: 640px) {
+    padding: ${({ theme }) => theme.innerSpacing.s1};
+    grid-template-columns: initial;
+  }
 `
 
 const AssetList = ({ children }) => (
   <AssetListContainer>
-    <div>
-      {children}
-    </div>
+    {children}
   </AssetListContainer>
 )
 
-const AssetImageContainer = styled.div`
+const AssetImageSizer = styled.div`
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+`
+
+const AssetImageWrapper = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${props => props.darkBackground ? 'black' : 'white' };
-  img { max-width: 100%; }
+  background-color: ${({ darkBackground }) => darkBackground ? 'black' : 'white'};
+
+  img {
+    padding: ${({ theme }) => theme.innerSpacing.s2};
+    max-width: 100%;
+    max-height: 100%;
+  }
 `
 
+const AssetImage = ({ src, alt, darkBackground }) => (
+  <AssetImageSizer>
+    <AssetImageWrapper darkBackground={darkBackground}>
+      <img src={src} alt={alt} />
+    </AssetImageWrapper>
+  </AssetImageSizer>
+)
+
 const Asset = ({ description, image, formats, darkBackground }) => (
-  <div>
-    <AssetImageContainer darkBackground={darkBackground}>
-      <img src={image} alt={description} />
-    </AssetImageContainer>
+  <Cell>
+    <AssetImage
+      darkBackground={darkBackground}
+      src={image}
+      alt={description}
+    />
     <p>{description}</p>
     <ul>
       {Object.keys(formats).map(extension =>
@@ -83,14 +116,19 @@ const Asset = ({ description, image, formats, darkBackground }) => (
         </li>
       )}
     </ul>
-  </div>
+  </Cell>
 )
 
 export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Logo & Brand Assets"
     title="Brand Assets"
-    description={<span>Official versions of the Buildkite logo,<Br maxWidth='30em'/> marks, screenshots and words.</span>}
+    description={
+      <span>
+        Official versions of the Buildkite logo, <Br maxWidth='30em'/>
+        marks, screenshots and words.
+      </span>
+    }
     loggedIn={loggedIn}
   >
     <MaxWidthSection>
