@@ -4,13 +4,23 @@
 const dev = process.env.NODE_ENV !== 'production'
 
 const path = require('path')
-const { parse } = require('url')
+const url = require('url')
 const express = require('express')
 const next = require('next')
 const shrinkRay = require('shrink-ray-current')
 
+// We use the cookie lib, instead of the normal express cookies middleware,
+// because this is what next-cookies uses. One less thing that could mis-match.
+const cookie = require('cookie')
+
+const isLoggedIn = require('./lib/isLoggedIn')
+
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
+
+const nextHandler = (req, res) => {
+  handle(req, res, url.parse(req.url, true))
+}
 
 const PORT = process.env.PORT || 3000
 
@@ -20,27 +30,30 @@ app.prepare()
 
     // Don't need to report exact versions of things (for security's sake)
     server.disable('x-powered-by')
-    
-    server.use(shrinkRay());
 
-    // Hashed assets need their hash stripped from the URL. The hash is added by
-    // babel plugin transform-assets in .babelrc
+    // Compress our responses to browsers
+    server.use(shrinkRay())
+
+    // Middleware to set req.loggedIn if the magic cookie is set
+    server.use(function(req, res, next) {
+      if (req.headers.cookie) {
+        const cookies = cookie.parse(req.headers.cookie)
+        req.loggedIn = isLoggedIn(cookies)
+      }
+      next()
+    })
+
+    // Middleware that strips asset hashes from URLs. The hash is added by babel
+    // plugin transform-assets in .babelrc
     //
     // For example:
     //   /site/assets/1uT8cdz/images/brand/mark.svg ->
     //   /site/assets/images/brand/mark.svg
-    server.use('/site/assets', function(req, res, next){
+    server.use('/site/assets', (req, res, next) => {
       const originalUrl = req.url;
       req.url = req.url.replace(/\/[^/]+\//, '/');
       next();
-    });
-
-    // TODO: /
-    // - If you're logged in, redirect to /dashboard
-
-    // TODO: /home
-    // - If you're logged in, render the home page (URL rewrite)
-    // - If you're logged out, redirect to /
+    })
     
     // Hashed assets are immutable, so they can be cached indefinitely by
     // clients.
@@ -56,10 +69,30 @@ app.prepare()
 
     server.use('/site/assets', express.static('./assets', assetsOptions));
     
-    server.get('*', (req, res) => {
-      const parsedUrl = parse(req.url, true)
-      handle(req, res, parsedUrl)
+    // The homepage should redirect to dashboard for logged in users. Let's not
+    // annoy them with marketing content every day.
+    server.get('/', (req, res) => {
+      if (req.loggedIn) {
+        res.redirect(302, '/dashboard')
+      }
+      nextHandler(req, res)
+    });
+
+    // This gives us a URL that we can link to in the footer, for logged in
+    // people, so they can actually see the marketing site. They can also share
+    // this URL on Twitter and it'll redirect any new visitors to /
+    server.get('/home', (req, res) => {
+      if (req.loggedIn) {
+        // Rewrite URL so Next serves the homepage
+        req.url = "/"
+        nextHandler(req, res)
+      } else {
+        res.redirect(302, '/')
+      }
     })
+
+    // Pass everything through to Next
+    server.get('*', nextHandler)
 
     server.listen(PORT, err => {
       if (err) {
@@ -72,6 +105,7 @@ app.prepare()
 
 
 process.on('unhandledRejection', error => {
-  // We simply log any unhandled promise rejections
+  // We simply log any unhandled promise rejections. If we don't, Node
+  // complains.
   console.log('Unhandled promise rejection', error);
-});
+})
