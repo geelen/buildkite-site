@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
 import Button from 'components/Button'
+import Link from 'components/Link'
 import CenteredLink from 'components/CenteredLink'
 import { FeatureGrid, FeatureCell, FeatureTitle, FeatureDescription } from 'components/FeatureGrid'
 import { Grid, Cell } from 'components/Grid'
 import Page, { page } from 'components/Page'
+import { OffscreenH1 } from 'components/OffscreenHeading'
 
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
@@ -12,14 +14,10 @@ import Screencasts from 'components/sections/Screencasts'
 const screenshotPath = require('../assets/images/home/screenshot.png');
 
 const ScreenshotImage = styled.img`
+  ${({ theme }) => theme.images.screenshots}
   max-width: 100%;
-  border: 1px solid black;
   margin-top: ${({ theme }) => theme.innerSpacing.s1};
   margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
-`
-
-const OffscreenH1 = styled.h1`
-  ${({ theme }) => theme.offscreen}
 `
 
 const PositioningStatement = styled.h2`
@@ -46,6 +44,22 @@ const Section = styled.section`
   margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
 `
 
+const FeaturesSection = Section.extend`
+  position: relative;
+`
+
+const FeaturesButton = Button.extend`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+
+const LargeParagraph = styled.p`
+  ${({ theme }) => theme.textStyles.bodyCopyLarge}
+  text-align: center;
+`
+
 // For this content it should be ul/li instead of div/div
 const CustomerGrid = Grid.withComponent('ul').extend`
   list-style: none;
@@ -70,46 +84,19 @@ export default page(({ loggedIn }) => (
       </ExplanationStatement>
     </section>
 
-    <Section>
+    <FeaturesSection>
       <OffscreenH1>Features</OffscreenH1>
 
       <ScreenshotImage src={screenshotPath} />
 
-      <FeatureGrid>
-        <FeatureCell>
-          <FeatureTitle>buildkite-agent gives you full control</FeatureTitle>
-          <FeatureDescription>
-            Small description of what this feature even means, how it works, intrigues them to read more.
-          </FeatureDescription>
-        </FeatureCell>
-        <FeatureCell>
-          <FeatureTitle>Tools to scale and parallelize</FeatureTitle>
-          <FeatureDescription>
-            Small description of what this feature even means, how it works, intrigues them to read more.
-          </FeatureDescription>
-        </FeatureCell>      
-        <FeatureCell>
-          <FeatureTitle>Automate more than just tests</FeatureTitle>
-          <FeatureDescription>
-            Small description of what this feature even means, how it works, intrigues them to read more.
-          </FeatureDescription>
-        </FeatureCell>
-        <FeatureCell>
-          <FeatureTitle>Create beautiful build logs</FeatureTitle>
-          <FeatureDescription>
-            Small description of what this feature even means, how it works, intrigues them to read more.
-          </FeatureDescription>
-        </FeatureCell>
-      </FeatureGrid>
-
-      <CenteredLink href="/features">
-        <Button>See all the features</Button>
-      </CenteredLink>
-    </Section>
+      <Link href="/features">
+        <FeaturesButton>See all the features</FeaturesButton>
+      </Link>
+    </FeaturesSection>
 
     <Section>
       <OffscreenH1>Customers</OffscreenH1>
-      <p>Join these teams who’ve switched to Buildkite…</p>
+      <LargeParagraph>Join these teams who’ve switched to Buildkite…</LargeParagraph>
 
       <CustomerGrid>
         <CustomerCell>Logo 1</CustomerCell>

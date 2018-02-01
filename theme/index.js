@@ -67,7 +67,7 @@ export const colors = {
   }
 };
 
-const fontSizes = {
+export const fontSizes = {
   small: '16px',
   regular: '18px',
   large: '24px',
