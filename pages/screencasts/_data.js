@@ -65,8 +65,8 @@ export default [
     ],
   },
   {
-    pathname: '/screencasts/pr-flow',
-    title: 'Pull Request Workflow',
+    pathname: '/screencasts/github-pr-workflow',
+    title: 'GitHub Pull Request Workflow',
     headTitle: 'Pull Request workflow screencast',
     description: 'TODO',
     duration: '90s',
