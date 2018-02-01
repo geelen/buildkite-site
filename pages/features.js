@@ -40,6 +40,9 @@ const unblockStepImage = require('../assets/images/features/unblock-step.png')
 // -- Feature Section 9 --
 const dockerWorksJustFineImage = require('../assets/images/features/docker-works-just-fine.svg')
 
+// -- Feature Section 10 --
+const embeddableImageArtifactsImage = require('../assets/images/features/embeddable-image-artifacts.png')
+
 // -- Feature Section 11 --
 const buildAnnotationsImage = require('../assets/images/features/build-annotations.png')
 
@@ -223,7 +226,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src="https://placeimg.com/542/412/animals" />
+          <Image src={embeddableImageArtifactsImage} alt="" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -243,7 +246,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src={logOutputGroupingImage} alt="" />
+          <Image src={logOutputGroupingImage} alt="" />
         </ImageCell>
       </MediaItem>
     </section>
