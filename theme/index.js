@@ -60,7 +60,7 @@ export const colors = {
     greenHover: '#00BB64'
   },
   text: {
-    subdued: '#777777',
+    subdued: '#666666',
     black: 'black',
     green: '#14CC80',
     white: 'white',
