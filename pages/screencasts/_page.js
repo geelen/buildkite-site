@@ -27,7 +27,7 @@ const ScreencastParagraph = styled.p`
 
 const ScreenshotVideo = styled.video`
   ${({ theme }) => theme.images.screenshots}
-  width: 800px;
+  width: 960px;
   max-width: 100%;
   margin: ${({ theme }) => theme.innerSpacing.s2} 0;
 `

@@ -14,7 +14,7 @@ const prflowThumbnail       = require('../../assets/images/screencasts/pr-flow-f
 
 export default [
   {
-    pathname: '/screencasts/pipeline-steps',
+    pathname: '/screencasts/parallel-testing',
     title: 'Parallel Testing',
     description: <span>An introduction to Buildkite’s parallelism attribute <Br maxWidth='40em'/> and using it to run 15 hours of tests in under 5 minutes.</span>,
     duration: '90s',
@@ -31,7 +31,7 @@ export default [
     exampleCode: 'https://github.com/buildkite/rails-docker-parallel-example/tree/parallelism-demo'
   },
   {
-    pathname: '/screencasts/elastic-ci-stack',
+    pathname: '/screencasts/elastic-ci-stack-for-aws',
     title: 'Elastic CI Stack for AWS',
     description: 'Interested in the Elastic Stack, but not sure it suits your needs? In this screencast we\'ll give you a short overview of the setup and operation of an Elastic CI Stack on AWS.',
     duration: '74s',
@@ -46,7 +46,7 @@ export default [
     ],
   },
   {
-    pathname: '/screencasts/step-types',
+    pathname: '/screencasts/pipeline-step-types',
     title: 'Pipeline Step Types',
     description: 'Want to take a peek inside a production-ready pipeline? In this screencast we\'ll talk through the different step types, looking at an example based on an internal Buildkite pipeline.',
     duration: '102s',
