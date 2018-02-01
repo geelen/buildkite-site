@@ -13,7 +13,7 @@ export const team = [
   {
     photo: photoHarriet,
     name: "Harriet Lawrence",
-    bio: "Hi, I’m Harriet! I work on frontend and backend engineering. Some cool fact about me is a bit longer than one line.",
+    bio: "Hi, I’m Harriet! I write words about Buildkite. I can usually be found hanging out in a bouldering gym, or with my nose in a book.",
     links: [
       { name: "Twitter", url: "https://twitter.com/harrietgl" },
       { name: "GitHub", url: "https://github.com/harrietgrace" }
