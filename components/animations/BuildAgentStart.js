@@ -137,7 +137,7 @@ export default ({...props}) => (
     {TEXT_FRAGMENTS.map(({ duration, children }, index) => (
       // We concatenate each frame of children to build each subsequent frame,
       // just because I didn't want to have to repeat them a bunch in the code
-      <Frame duration={duration}>
+      <Frame duration={duration} key={index}>
         <SVGCommon {...props}>
           {
             TEXT_FRAGMENTS
