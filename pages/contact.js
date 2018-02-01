@@ -56,9 +56,9 @@ export default page(({ loggedIn }) => (
         image={questionsImage}
         imageWidth={433}
         imageAlt=""
-        description="Things not going smoothly? Our team is here to help."
+        description="Things not going smoothly, or need a hand? Our team is here to help."
         url="/support"
-        buttonTitle="See Support"
+        buttonTitle="Get Support"
       />
       <ActionGridItem
         heading="Feedback & Suggestions"
@@ -73,7 +73,7 @@ export default page(({ loggedIn }) => (
         heading="Report a Vulnerability"
         image={vulnerabilityImage}
         imageAlt=""
-        description="Found a security issue? Request an invite to our bug bounty."
+        description="Found a security issue? Request an invite to our bug bounty program."
         url="/security"
         buttonTitle="See Security Docs"
       />
@@ -81,9 +81,9 @@ export default page(({ loggedIn }) => (
         heading="Say Hello!"
         image={sayhelloImage}
         imageAlt=""
-        description="For press enquries and anything else, drop us a line."
+        description="For press enquries, or anything else you need, drop us a line and we’ll help."
         url="mailto:hello@buildkite.com"
-        buttonTitle="hello@buildkite.com"
+        buttonTitle="Email hello@buildkite.com"
       />
     </ActionGrid>
 

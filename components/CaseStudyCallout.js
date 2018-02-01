@@ -67,7 +67,7 @@ export default ({ caseStudy }) => (
 
       <Link href={caseStudy.pathname} prefetch>
         <Button>
-          {caseStudy.team} Case Study
+          View the {caseStudy.team} Case Study
         </Button>
       </Link>
     </InfoPane>

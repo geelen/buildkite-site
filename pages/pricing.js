@@ -7,7 +7,6 @@ const PlanCurrencyNote = styled.p`
   text-align: center;
   ${({ theme }) => theme.textStyles.bodyCopySmall}
   color: ${({ theme }) => theme.colors.text.subdued};
-  margin-top: calc(-1 * (${({ theme }) => theme.outerSpacing.s2} - 30px));
   margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
 `
 
@@ -158,7 +157,6 @@ export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Pricing"
     title="Pricing"
-    description="TODO"
     loggedIn={loggedIn}
   >
     <PlanCurrencyNote>All prices are in USD</PlanCurrencyNote>

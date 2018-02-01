@@ -29,6 +29,7 @@ export const Description = styled.p`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
+  color: ${({ theme }) => theme.colors.text.subdued};
 `
 
 const ImageContainer = styled.div`
