@@ -1,3 +1,5 @@
+import Br from 'components/Br'
+
 const parallelismPoster     = require('../../assets/images/screencasts/parallelism-frame.poster.jpg');
 const parallelismThumbail   = require('../../assets/images/screencasts/parallelism-frame.thumbnail.jpg');
 
@@ -13,9 +15,8 @@ const prflowThumbnail       = require('../../assets/images/screencasts/pr-flow-f
 export default [
   {
     pathname: '/screencasts/pipeline-steps',
-    title: 'Running steps in parallel',
-    headTitle: 'Parallelism screencast',
-    description: 'Have you ever wanted to run 400 test steps at the same time? Introducing the parallelism attribute, this screencast steps through setting up a pipeline to run a Rails test suite in parallel. ',
+    title: 'Parallel Testing',
+    description: <span>An introduction to Buildkite’s parallelism attribute <Br maxWidth='40em'/> and using it to run 15 hours of tests in under 5 minutes.</span>,
     duration: '90s',
     images: { poster: parallelismPoster, thumbnail: parallelismThumbail },
     videos: {
@@ -23,16 +24,15 @@ export default [
       mp4: "https://d3lj8s78qytm30.cloudfront.net/parallelism.mp4",
     },
     relatedDocumentation: [
-      { title: 'Example code on Github', url: 'https://github.com/buildkite/rails-docker-parallel-example/tree/parallelism-demo' },
-      { title: 'parallel builds', url: '/docs/builds/parallel-builds' },
-      { title: 'the buildkite agent', url: '/docs/agent' },
-      { title: 'containerised builds with Docker', url: '/docs/builds/docker-containerized-builds' },
+      { title: 'Parallel Builds', url: '/docs/builds/parallel-builds' },
+      { title: 'Buildkite Agent', url: '/docs/agent' },
+      { title: 'Containerised Builds with Docker', url: '/docs/builds/docker-containerized-builds' },
     ],
+    exampleCode: 'https://github.com/buildkite/rails-docker-parallel-example/tree/parallelism-demo'
   },
   {
     pathname: '/screencasts/elastic-ci-stack',
     title: 'Elastic CI Stack for AWS',
-    headTitle: 'Elastic CI Stack for AWS screencast',
     description: 'Interested in the Elastic Stack, but not sure it suits your needs? In this screencast we\'ll give you a short overview of the setup and operation of an Elastic CI Stack on AWS.',
     duration: '74s',
     images: { poster: elasticStackPoster, thumbnail: elasticStackThumbnail },
@@ -47,8 +47,7 @@ export default [
   },
   {
     pathname: '/screencasts/step-types',
-    title: 'Step types for pipelines',
-    headTitle: 'Step types for pipelines screencast',
+    title: 'Pipeline Step Types',
     description: 'Want to take a peek inside a production-ready pipeline? In this screencast we\'ll talk through the different step types, looking at an example based on an internal Buildkite pipeline.',
     duration: '102s',
     images: { poster: stepTypesPoster, thumbnail: stepTypesThumbnail },
@@ -66,8 +65,7 @@ export default [
   },
   {
     pathname: '/screencasts/pr-flow',
-    title: 'Pull request workflow',
-    headTitle: 'Pull Request workflow screencast',
+    title: 'Pull Request Workflow',
     description: 'Walk through an end-to-end workflow, from pushing a commit to merging a pull request. This screencast will show you what it\'s like when you connect Github and Buildkite.',
     duration: '99s',
     images: { poster: prflowPoster, thumbnail: prflowThumbnail },

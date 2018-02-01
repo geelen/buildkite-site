@@ -21,7 +21,8 @@ const IndexLink = styled.a`
 const ScreencastParagraph = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopySmall}
   color: ${({ theme }) => theme.colors.text.subdued};
-  margin: ${({ theme }) => theme.innerSpacing.s1} 0;
+  margin: ${({ theme }) => theme.innerSpacing.s1} auto;
+  max-width: 35em;
 `
 
 const ScreenshotVideo = styled.video`
@@ -33,6 +34,7 @@ const ScreenshotVideo = styled.video`
 
 const DocumentationLink = styled.a`
   ${({ theme }) => theme.textStyles.hyperlink}
+  white-space: nowrap;
 `
 
 const NextScreencastHeader = styled.h2`
@@ -70,7 +72,7 @@ export default function screencastPage(pathname) {
     <Page
       title={screencast.title}
       description={screencast.description}
-      headTitle={screencast.headTitle}
+      headTitle={`${screencast.title} - Buildkite Screencasts`}
       loggedIn={loggedIn}
     >
       <Wrapper>
@@ -93,6 +95,14 @@ export default function screencastPage(pathname) {
             </Sentencify>
           </ScreencastParagraph>
         )}
+
+        {screencast.exampleCode &&
+          <ScreencastParagraph>
+            You can read the <Link href={screencast.exampleCode} external>
+              <DocumentationLink>example code on GitHub</DocumentationLink>
+            </Link>
+          </ScreencastParagraph>
+        }
 
         <NextScreencastHeader>Next up…</NextScreencastHeader>
         <ScreencastLink screencast={nextScreencast} />
