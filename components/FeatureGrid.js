@@ -22,6 +22,6 @@ export const FeatureTitle = styled.h2`
 `
 
 export const FeatureDescription = styled.p`
-  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  ${({ theme }) => theme.textStyles.bodyCopy}
   color: ${({ theme }) => theme.colors.text.subdued};
 `
