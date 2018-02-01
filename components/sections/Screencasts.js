@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Br from 'components/Br'
 import Button from 'components/Button'
 import CenteredLink from 'components/CenteredLink'
+import { OffscreenH1 } from 'components/OffscreenHeading'
 
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s2};
@@ -10,12 +11,10 @@ const Section = styled.section`
   text-align: center;
 `
 
-const OffscreenH1 = styled.h1`
-  ${({ theme }) => theme.offscreen}
-`
-
 const Paragraph = styled.p`
-  margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
+  ${({ theme }) => theme.textStyles.bodyCopyLarge}
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
+  text-align: center;
 `
 
 export default () => (

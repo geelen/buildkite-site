@@ -7,6 +7,7 @@ import Callout from 'components/Callout'
 import { Grid, Cell } from 'components/Grid'
 import { Masonry, Brick } from 'components/Masonry'
 import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
+import { OffscreenH1 } from 'components/OffscreenHeading'
 import Page, { page } from 'components/Page'
 import Person from 'components/Person'
 
@@ -16,10 +17,6 @@ const headOfficeImage = require('../../assets/images/about/head-office.jpg')
 const brandAssetsImage = require('../../assets/images/about/brand-assets.jpg')
 const shopImage = require('../../assets/images/about/shop.jpg')
 const aboriginalFlagImage = require('../../assets/images/about/australian-aboriginal-flag.svg')
-
-const OffscreenH2 = styled.h2`
-  ${({ theme }) => theme.offscreen}
-`
 
 const SectionHeader = styled.h1`
   ${({ theme }) => theme.textStyles.secondLevelHeading}

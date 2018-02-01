@@ -3,12 +3,9 @@ import styled from 'styled-components'
 import Button from 'components/Button'
 import Link from 'components/Link'
 import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
+import { OffscreenH1 } from 'components/OffscreenHeading'
 
 const image = require('../../assets/images/get-started/get-started.jpg');
-
-const OffscreenH1 = styled.h1`
-  ${({ theme }) => theme.offscreen};
-`
 
 const Paragraph = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopyLarge};
