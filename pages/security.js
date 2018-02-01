@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
+import Br from 'components/Br'
 import Button from 'components/Button'
 import Page, { page } from 'components/Page'
-import Br from 'components/Br'
 import Callout from 'components/Callout'
 import { Masonry, Brick } from 'components/Masonry'
 
@@ -65,7 +65,7 @@ export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Security"
     title="Security"
-    description="TODO"
+    description={<span>Contact details and information about <Br maxWidth='30em'/> our security policies and procedures.</span>}
     loggedIn={loggedIn}
   >
     <ActionGrid>
@@ -82,7 +82,7 @@ export default page(({ loggedIn }) => (
         heading="Contact Security"
         image={securityImage}
         imageAlt=""
-        description="For any security questions or concerns, you can email our team"
+        description="For questions, concerns or information, don’t hestitate to email our security team"
         url="mailto:security@buildkite.com"
         buttonTitle="Email security@buildkite.com"
         note="For confidential information, please use our PGP key"
@@ -93,11 +93,15 @@ export default page(({ loggedIn }) => (
 
       <SectionHeader>Platform Security</SectionHeader>
 
-      <MaxWidthSubsection>
-        <SubSectionHeader>Infrastructure</SubSectionHeader>
-        <SubSectionSubHeader>Physical Access</SubSectionSubHeader>
-        <SecurityParagraph>All of our services run in the cloud. Buildkite does not run it’s own routers, load balancers, DNS servers, or physical servers.</SecurityParagraph>
-      </MaxWidthSubsection>
+      <Subsection>
+        <Masonry>
+          <Brick>
+            <SubSectionHeader>Infrastructure</SubSectionHeader>
+            <SubSectionSubHeader>Physical Access</SubSectionSubHeader>
+            <SecurityParagraph>All of our services run in the cloud. Buildkite does not run it’s own routers, load balancers, DNS servers, or physical servers.</SecurityParagraph>
+          </Brick>
+        </Masonry>
+      </Subsection>
 
       <Subsection>
         <SubSectionHeader>Application Security</SubSectionHeader>
@@ -130,10 +134,14 @@ export default page(({ loggedIn }) => (
         </Masonry>
       </Subsection>
 
-      <MaxWidthSubsection>
-        <SubSectionHeader>Data in Transit</SubSectionHeader>
-        <SecurityParagraph>All data transferred in and out of Buildkite is encrypted using hardened TLS. Buildkite is also protected by HTTP Strict Transport Security and is pre-loaded in major browsers. Additionally, data transferred to and from Buildkite’s backend database is encrypted using TLS.</SecurityParagraph>
-      </MaxWidthSubsection>
+      <Subsection>
+        <Masonry>
+          <Brick>
+            <SubSectionHeader>Data in Transit</SubSectionHeader>
+            <SecurityParagraph>All data transferred in and out of Buildkite is encrypted using hardened TLS. Buildkite is also protected by HTTP Strict Transport Security and is pre-loaded in major browsers. Additionally, data transferred to and from Buildkite’s backend database is encrypted using TLS.</SecurityParagraph>
+          </Brick>
+        </Masonry>
+      </Subsection>
     </Section>
 
     <Section>
