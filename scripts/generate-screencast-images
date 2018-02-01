@@ -19,7 +19,7 @@ for f in *.png; do
   echo "== $f"
 
   echo "Generating optimized posterframe JPEG for $f"
-  sips "$f" -s format jpeg -s formatOptions 30 --out "../${f%.png}.poster.jpg"
+  sips "$f" -s format jpeg -s formatOptions 50 --out "../${f%.png}.poster.jpg"
 
   echo "Generating optimized thumbnail JPEG for $f"
   sips "$f" -s format jpeg -s formatOptions 50 --resampleWidth 800 --out "../${f%.png}.thumbnail.jpg"
