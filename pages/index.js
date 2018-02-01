@@ -34,7 +34,7 @@ const PositioningStatement = styled.h2`
 const ExplanationStatement = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopyLarge}
   margin-top: ${({ theme }) => theme.innerSpacing.s1};
-  max-width: 33rem;
+  max-width: 40rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -66,7 +66,7 @@ export default page(({ loggedIn }) => (
         for all your software projects
       </PositioningStatement>
       <ExplanationStatement>
-        Buildkite makes it simple to run and scale your own continuous integration pipelines, so you can stay productive no matter how large you grow.
+        Buildkite is a platform for running fast, secure and scaleable continuous integration pipelines on your own infrastructure.
       </ExplanationStatement>
     </section>
 
