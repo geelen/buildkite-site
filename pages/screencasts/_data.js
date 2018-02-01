@@ -20,8 +20,8 @@ export default [
     duration: '90s',
     images: { poster: parallelismPoster, thumbnail: parallelismThumbail },
     videos: {
-      webm: "https://d3lj8s78qytm30.cloudfront.net/parallelism.webm",
-      mp4: "https://d3lj8s78qytm30.cloudfront.net/parallelism.mp4",
+      webm: "https://d3lj8s78qytm30.cloudfront.net/parallel-testing.webm",
+      mp4: "https://d3lj8s78qytm30.cloudfront.net/parallel-testing.mp4",
     },
     relatedDocumentation: [
       { title: 'Parallel Builds', url: '/docs/builds/parallel-builds' },
@@ -37,7 +37,7 @@ export default [
     duration: '74s',
     images: { poster: elasticStackPoster, thumbnail: elasticStackThumbnail },
     videos: {
-      webm: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
+      webm: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.webm",
       mp4: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
     },
     relatedDocumentation: [
@@ -52,8 +52,8 @@ export default [
     duration: '102s',
     images: { poster: stepTypesPoster, thumbnail: stepTypesThumbnail },
     videos: {
-      webm: "https://d3lj8s78qytm30.cloudfront.net/parallelism.webm",
-      mp4: "https://d3lj8s78qytm30.cloudfront.net/parallelism.mp4",
+      webm: "https://d3lj8s78qytm30.cloudfront.net/step-types.webm",
+      mp4: "https://d3lj8s78qytm30.cloudfront.net/step-types.mp4",
     },
     relatedDocumentation: [
       { title: 'Defining your pipeline steps', url: '/docs/pipelines/defining-steps' },
@@ -70,8 +70,8 @@ export default [
     duration: '99s',
     images: { poster: prflowPoster, thumbnail: prflowThumbnail },
     videos: {
-      webm: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
-      mp4: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
+      webm: "https://d3lj8s78qytm30.cloudfront.net/github-pr-workflow.webm",
+      mp4: "https://d3lj8s78qytm30.cloudfront.net/github-pr-workflow.mp4",
     },
    relatedDocumentation: [
       { title: 'Getting started', url: '/docs/quickstart/getting-started' },
