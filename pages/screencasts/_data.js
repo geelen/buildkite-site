@@ -50,7 +50,7 @@ export default [
     title: 'Step Types for pipelines',
     headTitle: 'Step Types for pipelines screencast',
     description: 'TODO',
-    duration: '90s',
+    duration: '102s',
     images: { poster: stepTypesPoster, thumbnail: stepTypesThumbnail },
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/parallelism.webm",
@@ -69,7 +69,7 @@ export default [
     title: 'Pull Request Workflow',
     headTitle: 'Pull Request workflow screencast',
     description: 'TODO',
-    duration: '90s',
+    duration: '99s',
     images: { poster: prflowPoster, thumbnail: prflowThumbnail },
     videos: {
       webm: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4",
