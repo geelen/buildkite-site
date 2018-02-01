@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Callout from 'components/Callout'
 import CaseStudyCallout from 'components/CaseStudyCallout'
 import Link from 'components/Link'
+import { OffscreenH2 } from 'components/OffscreenHeading'
 import Page, { page } from 'components/Page'
 
 import caseStudies from './_data'
@@ -14,6 +15,7 @@ const FlexContainer = styled.div`
 
 const HeadingContainer = FlexContainer.extend`
   align-items: center;
+  margin-top: ${({ theme }) => theme.outerSpacing.s1};
   margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
 `
 
@@ -39,6 +41,14 @@ const CaseStudyWords = TextCell.extend`
 
 const ImageCell = styled.div`
   flex: 1 2 150px;
+`
+
+const LogoCell = ImageCell.extend`
+  text-align: center;
+  @media (max-width: 620px) {
+    margin-top: ${({ theme }) => theme.innerSpacing.s2};
+    text-align: left;
+  }
 `
 
 const ResultsCell = ImageCell.extend`
@@ -68,7 +78,7 @@ const TeamLink = styled.a`
 `
 
 const Logo = styled.img`
-  width: 300px;
+  width: 200px;
   max-width: 100%;
 `
 
@@ -172,13 +182,6 @@ const ImageItem = ({ src, alt, ...props }) => (
   </ImageItemCell>
 )
 
-const SectionHeader = styled.h2`
-  ${({ theme }) => theme.textStyles.secondLevelHeading}
-  margin-top: 200px;
-  margin-bottom: ${({ theme }) => theme.outerSpacing.s1};
-  text-align: center;
-`
-
 export default function caseStudyPage(pathname) {
   // Split out current and other case studies
   const { caseStudy, otherCaseStudies } = caseStudies.reduce(
@@ -205,7 +208,6 @@ export default function caseStudyPage(pathname) {
     >
       <HeadingContainer>
         <TextCell>
-          <p>Case Study</p>
           <h1>
             <Link href={caseStudy.link.url} passHref>
               <TeamLink>{caseStudy.team}</TeamLink>
@@ -214,12 +216,12 @@ export default function caseStudyPage(pathname) {
           <p>{caseStudy.industry} - {caseStudy.teamSize}</p>
         </TextCell>
 
-        <ImageCell>
+        <LogoCell>
           <Logo
             src={caseStudy.logoImage}
             alt={`${caseStudy.team} logo`}
           />
-        </ImageCell>
+        </LogoCell>
       </HeadingContainer>
 
       <SpacedFlexContainer>
@@ -270,12 +272,12 @@ export default function caseStudyPage(pathname) {
       <Callout
         grey
         heading="Talk to our team"
-        description="We're here to support your enterprise needs. Send us an email to arrange a call."
+        description="Send us an email if you’d like to chat about how Buildkite could help you."
         url="mailto:sales@buildkite.com"
         buttonTitle="Email sales@buildkite.com"
       />
 
-      <SectionHeader>More case studies</SectionHeader>
+      <OffscreenH2>More case studies</OffscreenH2>
 
       {otherCaseStudies.slice(0, 3).map((otherCaseStudy) => (
         <CaseStudyCallout

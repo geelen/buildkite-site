@@ -1,3 +1,4 @@
+import Br from 'components/Br'
 import Page, { page } from 'components/Page'
 import CaseStudyCallout from 'components/CaseStudyCallout'
 
@@ -7,7 +8,7 @@ export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Case Studies"
     title="Case Studies"
-    description="TODO"
+    description={<span>See the results from some of the <Br maxWidth='30em'/> teams who have adopted Buildkite.</span>}
     loggedIn={loggedIn}
     >
     {caseStudies.map((caseStudy) => (
