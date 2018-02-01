@@ -226,7 +226,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={embeddableImageArtifactsImage} alt="" />
+          <ImageWithBorder src={embeddableImageArtifactsImage} alt="" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -246,7 +246,7 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={logOutputGroupingImage} alt="" />
+          <ImageWithBorder src={logOutputGroupingImage} alt="" />
         </ImageCell>
       </MediaItem>
     </section>
