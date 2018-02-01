@@ -77,7 +77,7 @@ const PersonRoles = ({ person }) => {
 
 const PersonBio = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopySmall}
-  margin: 5px 0 10px 0;
+  margin: 5px 0;
   color: ${({ theme }) => theme.colors.text.subdued};
 `;
 
@@ -97,6 +97,7 @@ const Links = styled.ul`
   justify-content: center;
   padding: 0;
   margin: -.125em 0;
+  margin-top: 10px;
   ${({ theme }) => theme.textStyles.bodyCopySmall}
 
   > li {
