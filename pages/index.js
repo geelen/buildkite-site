@@ -77,7 +77,7 @@ export default page(({ loggedIn }) => (
         for all your software projects
       </PositioningStatement>
       <ExplanationStatement>
-        Buildkite is a platform for running fast, secure and scaleable continuous integration pipelines on your own infrastructure.
+        Buildkite is a platform for running fast, secure, and scaleable continuous integration pipelines on your own infrastructure.
       </ExplanationStatement>
     </section>
 
