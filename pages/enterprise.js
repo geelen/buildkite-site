@@ -54,10 +54,10 @@ export default page(({ loggedIn }) => (
     headTitle="Buildkite Enterprise"
     title="Enterprise"
     description={
-      <span>
+      <React.Fragment>
         Everything you need to build, test and <Br maxWidth="30em" />
         deliver software at scale
-      </span>
+      </React.Fragment>
     }
     loggedIn={loggedIn}
     >

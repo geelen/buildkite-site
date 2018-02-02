@@ -160,10 +160,10 @@ export default page(({ loggedIn }) => (
     headTitle="Buildkite Logo & Brand Assets"
     title="Brand Assets"
     description={
-      <span>
+      <React.Fragment>
         Official versions of the Buildkite logo, <Br maxWidth='30em'/>
         marks, screenshots and words.
-      </span>
+      </React.Fragment>
     }
     loggedIn={loggedIn}
   >
@@ -276,7 +276,12 @@ export default page(({ loggedIn }) => (
 
     <Callout
       heading="Need something else?"
-      description={<span>Get in touch with our design team,<Br maxWidth='30em'/> and we can help you out.</span>}
+      description={
+        <React.Fragment>
+          Get in touch with our design team, <Br maxWidth='30em'/>
+          and we can help you out.
+        </React.Fragment>
+      }
       buttonTitle="Email design@buildkite.com"
       url="mailto:design@buildkite.com"
     />

@@ -65,7 +65,12 @@ export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Security"
     title="Security"
-    description={<span>Contact details and information about <Br maxWidth='30em'/> our security policies and procedures.</span>}
+    description={
+      <React.Fragment>
+        Contact details and information about <Br maxWidth='30em'/>
+        our security policies and procedures.
+      </React.Fragment>
+    }
     loggedIn={loggedIn}
   >
     <ActionGrid>
@@ -197,7 +202,12 @@ export default page(({ loggedIn }) => (
 
     <Callout
       heading="Contact Us"
-      description={<span>If you’ve got any questions,<Br maxWidth='30em'/> don’t hestitate to contact our team.</span>}
+      description={
+        <React.Fragment>
+          If you’ve got any questions, <Br maxWidth='30em'/>
+          don’t hestitate to contact our team.
+        </React.Fragment>
+      }
       url="mailto:security@buildkite.com"
       buttonTitle="Email security@buildkite.com"
     />

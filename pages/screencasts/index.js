@@ -10,10 +10,10 @@ export default page(({ loggedIn }) => (
     headTitle="Buildkite Screencasts"
     title="Screencasts"
     description={
-      <span>
+      <React.Fragment>
         See how Buildkite works in production, <Br maxWidth='30em'/>
         with this series of short videos.
-      </span>
+      </React.Fragment>
     }
     loggedIn={loggedIn}
   >

@@ -108,7 +108,12 @@ export default page(({ loggedIn }) => (
   <Page
     headTitle="About Buildkite"
     title="About"
-    description={<span>We’re building tools to help the best<Br maxWidth='30em'/> software teams stay happy and productive.</span>}
+    description={
+      <React.Fragment>
+        We’re building tools to help the best <Br maxWidth='30em'/>
+        software teams stay happy and productive.
+      </React.Fragment>
+    }
     loggedIn={loggedIn}
     >
     <PeopleSection>
