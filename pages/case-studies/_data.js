@@ -26,10 +26,7 @@ export const shopify = {
   ],
   summaryWords: (
     <React.Fragment>
-      Shopify is a global ecommerce platform serving hundreds of millions of
-      shoppers. With Buildkite they were able to reduce build times by massively
-      increasing the concurrency of their build infrastructure along-side introducing
-      Docker and tripling team size.
+      Shopify is a global ecommerce platform serving hundreds of millions of shoppers. Switching to Buildkite allowed Shopify to reduce their core application’s build times to under 5 minutes, supported an engineering team growth of 300%, and helped to smoothly transition from AWS to Google Cloud.
     </React.Fragment>
   ),
   words: (
@@ -43,13 +40,10 @@ export const shopify = {
       engineering team from 300 to 900 and expanding across multiple timezones.</p>
       <p>Changing to Buildkite enabled them to auto-scale their build servers to match 
       their engineering teams' demand at peak. This let them massively increase how many builds
-      could run concurrently - from 20 at a time to 200. Now that they could use their own 
-      infrastructure, they optimized their build machines and were able to afford to run many more.
+      could run concurrently — from 20 at a time to 200. Using their own 
+      cloud infrastructure meant they could optimize their usage, and have a much larger compute cluster for the same cost.
       At peak, Shopify runs 10,000 buildkite agents concurrently.</p>
-      <p>Because Buildkite is less opinionated with how builds are structured, Shopify was
-      able to re-use and extend the Docker tooling they had built internally. With Docker,
-      they improved their CI build speeds and were able to apply the same methodology to their
-      Android and iOS team's builds.</p>
+      <p>Shopify was able to re-use and extend the Docker tooling they had built internally, and using Buildkite’s multi-platform support were able to apply the same methodology to their Android and iOS team’s builds.</p>
     </React.Fragment>
   )
 }
@@ -84,23 +78,15 @@ export const rea = {
     <React.Fragment>
       REA Group creates and operates property websites all over the world. 
       Moving to Buildkite from a mix of different CI platforms and setups
-      has significantly descreased their Ops overhead, and enabled them to quickly
+      has significantly descreased their ops overhead, and enabled them to quickly
       adopt best practices and better utilize their AWS and docker infrastructure. 
     </React.Fragment>
   ),
   words: (
     <React.Fragment>
-      <p>REA Group started as Australia's largest property website, and now operates property websites
-      in 10 countries serving 8.8 million unique visitors per month.</p>
-      <p>Before Buildkite, REA's engineering teams were using a disparate mixture of build
-      systems, spread across a dozen
-      clusters. Management and maintenance tasks of all the clusters was left to 
-      the central ops team, creating bottlenecks and overheads. They went looking for a solution that would give back autonomy to their 
-      engineering teams, and make full use of their AWS and Docker expertise.</p>
-      <p>Over a few weeks, a number of
-      existing Jenkins and Bamboo CI installations were replaced with their own AWS based autoscaling stack using Buildkite. They found setup time for new build pipelines was reduced from weeks to days, and the centralized cluster greatly reduced ops overhead. Developers reported faster builds, tighter feedback loops, and easier adoption of new tools and practices.
-      </p>
-      <p>Today, Buildkite powers the majority of builds across their organisation, and is the go-to CI tool for new projects.</p>
+      <p>REA Group creates and operates property websites all over the world. Before Buildkite, their many engineering teams were using a mix of build systems, spread across a dozen clusters, which created high maintainence costs and bottlenecks. They went looking for a solution that would give back autonomy to their engineering teams, while making full use of their AWS and Docker expertise.</p>
+      <p>Over a few weeks, a number of existing Jenkins and Bamboo CI installations were replaced with their own Buildkite, AWS and Docker based autoscaling stack. They found setup time for new build pipelines was reduced from weeks to days, and the centralized cluster greatly reduced ops overhead.</p>
+      <p>Developers reported faster builds, tighter feedback loops, and easier adoption of new tools and practices. Today, Buildkite powers the majority of builds across their organisation, and is the go-to CI tool for new projects.</p>
     </React.Fragment>
   )
 }

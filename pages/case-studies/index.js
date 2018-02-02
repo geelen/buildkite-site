@@ -8,7 +8,7 @@ export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Case Studies"
     title="Case Studies"
-    description={<span>See the results from some of the <Br maxWidth='30em'/> teams who have adopted Buildkite.</span>}
+    description={<span>See the results from some of <Br maxWidth='30em'/> the teams using Buildkite.</span>}
     loggedIn={loggedIn}
     >
     {caseStudies.map((caseStudy) => (

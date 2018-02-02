@@ -16,7 +16,7 @@ const InfoPane = styled.div`
 `
 
 const Logo = styled.img`
-  width: 300px;
+  width: 260px;
   max-width: 100%;
 `
 
@@ -39,12 +39,19 @@ const ResultPane = styled.div`
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, .75) 0%, rgba(255, 255, 255, .75) 100%), url(${({ picture }) => picture});
   background-size: auto 100%;
   background-size: cover;
-  font-weight: 800;
+  line-height: 1;
 `
 
 const ResultNumber = styled.span`
+  display: block;
   font-size: 48px;
   font-weight: 800;
+`
+
+const ResultLabel = styled.span`
+  font-weight: 600;
+  display: block;
+  max-width: 11em;
 `
 
 export default ({ caseStudy }) => (
@@ -79,8 +86,8 @@ export default ({ caseStudy }) => (
         <div key={result.label}>
           <ResultNumber>
             {result.number + result.unit}
-          </ResultNumber><br/>
-          {result.label}
+          </ResultNumber>
+          <ResultLabel>{result.label}</ResultLabel>
         </div>
       ))}
     </ResultPane>
