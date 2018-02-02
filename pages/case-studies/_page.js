@@ -35,7 +35,8 @@ const CaseStudyWords = TextCell.extend`
   color: ${({ theme }) => theme.colors.text.subdued};
 
   > p {
-    margin: ${({ theme }) => theme.textSpacing.s1} 0;
+    max-width: 33em;
+    margin: ${({ theme }) => theme.textSpacing.s2} 0;
   }
 `
 
@@ -59,8 +60,9 @@ const ResultsCell = ImageCell.extend`
 
 const ResultItem = styled.div`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
-  padding: ${({ theme }) => theme.innerSpacing.s1};
+  padding: ${({ theme }) => theme.innerSpacing.s1} ${({ theme }) => theme.innerSpacing.s1} calc(${({ theme }) => theme.innerSpacing.s1} + .5em) calc(${({ theme }) => theme.innerSpacing.s1} + .5em);
   margin: ${({ theme }) => theme.textSpacing.s1} 0;
+  line-height: 1;
 `
 
 const ResultValue = styled.span`
@@ -71,6 +73,13 @@ const ResultValue = styled.span`
 
 const ResultNumber = styled.span`
   font-size: 72px;
+  margin-right: .1em;
+`
+
+const ResultLabel = styled.span`
+  font-weight: 600;
+  display: block;
+  max-width: 11em;
 `
 
 const TeamLink = styled.a`
@@ -235,7 +244,7 @@ export default function caseStudyPage(pathname) {
               <ResultValue>
                 <ResultNumber>{result.number}</ResultNumber>{result.unit}
               </ResultValue><br/>
-              {result.label}
+              <ResultLabel>{result.label}</ResultLabel>
             </ResultItem>
           ))}
         </ResultsCell>
