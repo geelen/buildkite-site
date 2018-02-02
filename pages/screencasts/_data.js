@@ -67,7 +67,7 @@ export default [
   {
     pathname: '/screencasts/github-pr-workflow',
     title: 'Github Pull Request Workflow',
-    description: 'Walk through an end-to-end workflow, from pushing a commit to merging a pull request. This screencast will show you what it\'s like when you connect Github and Buildkite.',
+    description: <span>A walkthrough of an end-to-end GitHub pull request <Br maxWidth='40em'/> workflow, and the GitHub settings available in Buildkite.</span>,
     duration: '99s',
     images: { poster: prflowPoster, thumbnail: prflowThumbnail },
     videos: {
