@@ -5,6 +5,7 @@ import { FeatureGrid, FeatureCell, FeatureTitle as RawFeatureTitle, FeatureDescr
 import { MediaItem as RawMediaItem, ImageCell as RawImageCell, TextCell as RawTextCell } from 'components/MediaItem'
 import { OffscreenH1 } from 'components/OffscreenHeading'
 
+import RawSVGConsoleImage from 'components/SVGConsoleImage'
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
@@ -15,7 +16,6 @@ import RawBuildAgentStart from './build-agent-start'
 const pipelineRunningImage = require('../../assets/images/features/pipeline-running.png')
 
 // -- Feature Section 2 --
-const artifactsAndParallelismImage = require('../../assets/images/features/artifacts-and-parallelism.svg')
 const parallelismImage = require('../../assets/images/features/parallelism.png')
 
 // -- Feature Section 3 --
@@ -25,7 +25,6 @@ const elasticCiStackImage = require('../../assets/images/features/elastic-ci-sta
 const buildkiteMetricsImage = require('../../assets/images/features/buildkite-metrics.png')
 
 // -- Feature Section 5 --
-const customFieldsImage = require('../../assets/images/features/custom-fields.svg')
 const customFieldsUnblockImage = require('../../assets/images/features/custom-fields-unblock.png')
 
 // -- Feature Section 6 --
@@ -108,6 +107,8 @@ const SVGAnimation = Image.extend`
 
 const BuildAgentStart = SVGAnimation.withComponent(RawBuildAgentStart);
 
+const SVGConsoleImage = SVGAnimation.withComponent(RawSVGConsoleImage);
+
 export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Features"
@@ -143,7 +144,21 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={artifactsAndParallelismImage} alt="" />
+          <SVGConsoleImage
+            name="artifactsAndParallelism"
+            width="547"
+            height="360"
+          >
+            <font color="#9B9B9B">- <font color="#00FF93">label</font>: </font>"Build"<br />
+            <font color="#9B9B9B">  <font color="#00FF93">command</font>: </font>make<br />
+            <font color="#9B9B9B">  <font color="#00FF93">artifact_paths</font>: </font>"dist/*"<br />
+            <br />
+            <font color="#9B9B9B">- </font><font color="#00FF93">wait</font><br />
+            <br />
+            <font color="#9B9B9B">- <font color="#00FF93">label</font>: </font>"Test %n"<br />
+            <font color="#9B9B9B">  <font color="#00FF93">command</font>: </font>make test<br />
+            <font color="#9B9B9B">  <font color="#00FF93">parallelism</font>: </font>300
+          </SVGConsoleImage>
           <ImageWithBorder src={parallelismImage} alt="" />
         </ImageCell>
       </MediaItem>
@@ -177,7 +192,16 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={customFieldsImage} alt="" />
+          <SVGConsoleImage
+            name="customFields"
+            width="547"
+            height="220"
+          >
+            <font color="#9B9B9B">- <font color="#00FF93">block</font>: </font>":rocket: Release"<br />
+            <font color="#9B9B9B">  <font color="#00FF93">fields</font>:</font><br />
+            <font color="#9B9B9B">    - <font color="#00FF93">text</font>: </font>"Code Name"<br />
+            <font color="#9B9B9B">      <font color="#00FF93">key</font>: </font>"release-name"<br />
+          </SVGConsoleImage>
           <ImageWithBorder src={customFieldsUnblockImage} alt="" />
         </ImageCell>
       </MediaItem>
