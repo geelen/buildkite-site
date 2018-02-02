@@ -16,7 +16,12 @@ export default [
   {
     pathname: '/screencasts/parallel-testing',
     title: 'Parallel Testing',
-    description: <span>An introduction to Buildkite’s parallelism attribute, <Br maxWidth='40em'/> using it to run 15 hours of tests in under 5 minutes.</span>,
+    description: (
+      <React.Fragment>
+        An introduction to Buildkite’s parallelism attribute, <Br maxWidth='40em'/>
+        using it to run 15 hours of tests in under 5 minutes.
+      </React.Fragment>
+    ),
     duration: '90s',
     images: { poster: parallelismPoster, thumbnail: parallelismThumbail },
     videos: {
@@ -33,7 +38,12 @@ export default [
   {
     pathname: '/screencasts/elastic-ci-stack-for-aws',
     title: 'Elastic CI Stack for AWS',
-    description: <span>An overview of the setup and operation of an Elastic CI Stack <Br maxWidth='40em'/> on AWS, and how it works with Buildkite Agents.</span>,
+    description: (
+      <React.Fragment>
+        An overview of the setup and operation of an Elastic CI Stack <Br maxWidth='40em'/>
+        on AWS, and how it works with Buildkite Agents.
+      </React.Fragment>
+    ),
     duration: '74s',
     images: { poster: elasticStackPoster, thumbnail: elasticStackThumbnail },
     videos: {
@@ -48,7 +58,12 @@ export default [
   {
     pathname: '/screencasts/pipeline-step-types',
     title: 'Pipeline Step Types',
-    description: <span>An explanation of the different step types, using <Br maxWidth='40em'/> an example based on an internal Buildkite pipeline.</span>,
+    description: (
+      <React.Fragment>
+        An explanation of the different step types, using <Br maxWidth='40em'/>
+        an example based on an internal Buildkite pipeline.
+      </React.Fragment>
+    ),
     duration: '102s',
     images: { poster: stepTypesPoster, thumbnail: stepTypesThumbnail },
     videos: {
@@ -67,7 +82,12 @@ export default [
   {
     pathname: '/screencasts/github-pr-workflow',
     title: 'Github Pull Request Workflow',
-    description: <span>A walkthrough of an end-to-end GitHub pull request <Br maxWidth='40em'/> workflow, and the GitHub settings available in Buildkite.</span>,
+    description: (
+      <React.Fragment>
+        A walkthrough of an end-to-end GitHub pull request <Br maxWidth='40em'/>
+        workflow, and the GitHub settings available in Buildkite.
+      </React.Fragment>
+    ),
     duration: '99s',
     images: { poster: prflowPoster, thumbnail: prflowThumbnail },
     videos: {
