@@ -8,7 +8,7 @@ import { OffscreenH1 } from 'components/OffscreenHeading'
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
-import BuildAgentStart from 'components/animations/BuildAgentStart'
+import RawBuildAgentStart from 'components/animations/BuildAgentStart'
 
 // -- Feature Section 1 --
 // Shown after styled version of RawBuildAgentStart, which is defined way below
@@ -101,6 +101,12 @@ const FeatureTitle = RawFeatureTitle.withComponent('h3');
 const OtherFeaturesSection = styled.section`
   margin: ${({ theme }) => theme.outerSpacing.s3} 0;
 `
+
+const SVGAnimation = Image.extend`
+  height: auto;
+`
+
+const BuildAgentStart = SVGAnimation.withComponent(RawBuildAgentStart);
 
 export default page(({ loggedIn }) => (
   <Page
