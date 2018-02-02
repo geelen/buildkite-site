@@ -49,12 +49,14 @@ const ScreencastLink = styled(RawScreencastLink)`
 
 const Sentencify = ({ children: rawChildren, separator=', ', lastSeparator=' and ' }) => (
   React.Children.toArray(rawChildren).reduce((acc, child, index, children) => {
-    if (index > 0 && index < children.length - 1) {
-      acc.push(separator)
-    }
+    if (index > 0) {
+      if (index < children.length - 1) {
+        acc.push(separator)
+      }
 
-    if (index === children.length - 1) {
-      acc.push(lastSeparator)
+      if (index === children.length - 1) {
+        acc.push(lastSeparator)
+      }
     }
 
     acc.push(child)
