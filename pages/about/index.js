@@ -172,35 +172,57 @@ export default page(({ loggedIn }) => (
       <Masonry>
         <Brick>
           <h2>Transparency</h2>
-          <ValueParagraph>We believe good work happens out in the open. Internally we believe it's important to .</ValueParagraph>
-          <ValueParagraph>Open-source, company growth / success / plans internally. Open and frank discussion about security, our infrastructure and how we plan to grow and improve areas of both strength and weakness. </ValueParagraph>
+          <ValueParagraph>
+            We believe good work happens out in the open. Internally we believe it's important to .
+          </ValueParagraph>
+          <ValueParagraph>
+            Open-source, company growth / success / plans internally. Open and frank discussion about security, our infrastructure and how we plan to grow and improve areas of both strength and weakness.
+          </ValueParagraph>
         </Brick>
         <Brick>
           <h2>Quality</h2>
-          <ValueParagraph>We think that developers need high-quality tools to build amazing products.</ValueParagraph>
+          <ValueParagraph>
+            We think that developers need high-quality tools to build amazing products.
+          </ValueParagraph>
         </Brick>
         <Brick>
           <h2>Diversity</h2>
-          <ValueParagraph>We believe that mono-cultures are bad. All the diversity.</ValueParagraph>
+          <ValueParagraph>
+            We believe that mono-cultures are bad. All the diversity.
+          </ValueParagraph>
         </Brick>
         <Brick>
           <h2>Independence</h2>
-          <ValueParagraph>We are owned by employees and funded by our local developer community, we intend to keep the company focused on providing an amazing product for these people and by these people.</ValueParagraph>
+          <ValueParagraph>
+            We are owned by employees and funded by our local developer community, we intend to keep the company focused on providing an amazing product for these people and by these people.
+          </ValueParagraph>
         </Brick>
         <Brick>
           <h2>Empathy</h2>
-          <ValueParagraph>Really great support, not just listening to customers (although we do that), but fixing things proactively and trying to deeply understand where people are coming from and what they are trying to accomplish and then being a strong partner in that.</ValueParagraph>
+          <ValueParagraph>
+            Really great support, not just listening to customers (although we do that), but fixing things proactively and trying to deeply understand where people are coming from and what they are trying to accomplish and then being a strong partner in that.
+          </ValueParagraph>
         </Brick>
         <Brick>
           <h2>Collaboration</h2>
-          <ValueParagraph>Our platform is a story that is always being written, and we love contributions from outside the Buildkite team. This is reflected in our commitment to open-source as well...</ValueParagraph>
-          <ValueParagraph>We want to know how you are using our platform, and we want to work with you to make it better!</ValueParagraph>
-          <ValueParagraph>We also like to support other projects / tools and conferences that do amazing things.</ValueParagraph>
-          <ValueParagraph>design of platform to allow external integration and customization.</ValueParagraph>
+          <ValueParagraph>
+            Our platform is a story that is always being written, and we love contributions from outside the Buildkite team. This is reflected in our commitment to open-source as well...
+          </ValueParagraph>
+          <ValueParagraph>
+            We want to know how you are using our platform, and we want to work with you to make it better!
+          </ValueParagraph>
+          <ValueParagraph>
+            We also like to support other projects / tools and conferences that do amazing things.
+          </ValueParagraph>
+          <ValueParagraph>
+            design of platform to allow external integration and customization.
+          </ValueParagraph>
         </Brick>
         <Brick>
           <h2>Sustainable Growth</h2>
-          <ValueParagraph>We believe that great companies grow sustainably. We want to build a company that grows at a pace that we can ensure sticks to our values. We believe that work/life balance and enjoying the work you do is really important. Commercial success is one thing, but we believe it shouldn't come at the expense of the humans that make it possible.</ValueParagraph>
+          <ValueParagraph>
+            We believe that great companies grow sustainably. We want to build a company that grows at a pace that we can ensure sticks to our values. We believe that work/life balance and enjoying the work you do is really important. Commercial success is one thing, but we believe it shouldn't come at the expense of the humans that make it possible.
+          </ValueParagraph>
         </Brick>
       </Masonry>
     </Section>
