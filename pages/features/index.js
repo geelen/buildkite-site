@@ -8,52 +8,52 @@ import { OffscreenH1 } from 'components/OffscreenHeading'
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
-import RawBuildAgentStart from 'components/animations/BuildAgentStart'
+import RawBuildAgentStart from './build-agent-start'
 
 // -- Feature Section 1 --
 // Shown after styled version of RawBuildAgentStart, which is defined way below
-const pipelineRunningImage = require('../assets/images/features/pipeline-running.png')
+const pipelineRunningImage = require('../../assets/images/features/pipeline-running.png')
 
 // -- Feature Section 2 --
-const artifactsAndParallelismImage = require('../assets/images/features/artifacts-and-parallelism.svg')
-const parallelismImage = require('../assets/images/features/parallelism.png')
+const artifactsAndParallelismImage = require('../../assets/images/features/artifacts-and-parallelism.svg')
+const parallelismImage = require('../../assets/images/features/parallelism.png')
 
 // -- Feature Section 3 --
-const elasticCiStackImage = require('../assets/images/features/elastic-ci-stack.png')
+const elasticCiStackImage = require('../../assets/images/features/elastic-ci-stack.png')
 
 // -- Feature Section 4 --
-const buildkiteMetricsImage = require('../assets/images/features/buildkite-metrics.png')
+const buildkiteMetricsImage = require('../../assets/images/features/buildkite-metrics.png')
 
 // -- Feature Section 5 --
-const customFieldsImage = require('../assets/images/features/custom-fields.svg')
-const customFieldsUnblockImage = require('../assets/images/features/custom-fields-unblock.png')
+const customFieldsImage = require('../../assets/images/features/custom-fields.svg')
+const customFieldsUnblockImage = require('../../assets/images/features/custom-fields-unblock.png')
 
 // -- Feature Section 6 --
-const dynamicPipelineImage = require('../assets/images/features/dynamic-pipeline.svg')
+const dynamicPipelineImage = require('../../assets/images/features/dynamic-pipeline.svg')
 
 // -- Feature Section 7 --
-const webInterfaceImage = require('../assets/images/features/web-interface.png')
+const webInterfaceImage = require('../../assets/images/features/web-interface.png')
 
 // -- Feature Section 8 --
-const unblockStepImage = require('../assets/images/features/unblock-step.png')
+const unblockStepImage = require('../../assets/images/features/unblock-step.png')
 
 // -- Feature Section 9 --
-const dockerWorksJustFineImage = require('../assets/images/features/docker-works-just-fine.svg')
+const dockerWorksJustFineImage = require('../../assets/images/features/docker-works-just-fine.svg')
 
 // -- Feature Section 10 --
-const embeddableImageArtifactsImage = require('../assets/images/features/embeddable-image-artifacts.png')
+const embeddableImageArtifactsImage = require('../../assets/images/features/embeddable-image-artifacts.png')
 
 // -- Feature Section 11 --
-const buildAnnotationsImage = require('../assets/images/features/build-annotations.png')
+const buildAnnotationsImage = require('../../assets/images/features/build-annotations.png')
 
 // -- Feature Section 12 --
-const logOutputGroupingImage = require('../assets/images/features/log-output-grouping.png')
+const logOutputGroupingImage = require('../../assets/images/features/log-output-grouping.png')
 
 // -- Feature Section 13 --
-const customAgentHooksImage = require('../assets/images/features/custom-agent-hooks.svg')
+const customAgentHooksImage = require('../../assets/images/features/custom-agent-hooks.svg')
 
 // -- Feature Section 14 --
-const graphqlApiImage = require('../assets/images/features/graphql-api.png')
+const graphqlApiImage = require('../../assets/images/features/graphql-api.png')
 
 const Heading = styled.h2`
   text-align: center;
