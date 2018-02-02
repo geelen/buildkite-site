@@ -18,8 +18,8 @@
     "react-keyframes": "^0.2.3",
     "react-transition-group": "^2.2.1",
     "shrink-ray-current": "^2.1.0",
-    "styled-components": "^3.1.0-3",
-    "styled-transition-group": "^1.0.0-rc.2"
+    "styled-components": "^3.1.5",
+    "styled-transition-group": "^1.0.0-rc.3"
   },
   "devDependencies": {
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
