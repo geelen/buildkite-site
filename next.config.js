@@ -6,13 +6,13 @@ const urlPathsToExport = [
   '/pricing',
   '/screencasts',
   '/support'
-];
+]
 
 module.exports = {
   exportPathMap: function() {
     return urlPathsToExport.reduce(function(acc, path) {
       acc[path] = { page: path }
-      return acc;
-    }, {});
+      return acc
+    }, {})
   }
 }

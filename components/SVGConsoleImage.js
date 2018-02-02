@@ -10,7 +10,7 @@ const PreInsideSVG = styled.pre`
   font-family: SFMono-Regular, SF Mono, Monaco, Menlo, Consolas, Liberation Mono, Courier, monospace;
 `
 
-export default ({ name, children, width="547", height="280", ...props }) => (
+export default ({ name, children, width = "547", height = "280", ...props }) => (
   // NOTE: We don't do any styling here, as we pass props through to the SVG,
   //       that way it can be styled using styled-components when implemented
   <svg
@@ -28,17 +28,20 @@ export default ({ name, children, width="547", height="280", ...props }) => (
           stopOpacity="0"
           offset="0%"
         />
-        <stop offset="100%"/>
+        <stop offset="100%" />
       </linearGradient>
       <linearGradient
-        x1="0" x2="0" y1="0" y2="1"
+        x1="0"
+        x2="0"
+        y1="0"
+        y2="1"
         id={`${name}-verticalGradientOverlay`}
       >
         <stop
           stopOpacity="0"
           offset="0%"
         />
-        <stop offset="100%"/>
+        <stop offset="100%" />
       </linearGradient>
     </defs>
     <g

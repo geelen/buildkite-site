@@ -136,8 +136,8 @@ const Asset = ({ description, image, formats, darkBackground }) => (
     />
     <AssetDescription>{description}</AssetDescription>
     <AssetLinks>
-      {Object.keys(formats).map(extension =>
-        <li key={extension}>
+      {Object.keys(formats).map((extension) =>
+        (<li key={extension}>
           <Link external href={formats[extension]}>
             <a download>
               <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
@@ -149,7 +149,7 @@ const Asset = ({ description, image, formats, darkBackground }) => (
               {extension.toUpperCase()}
             </a>
           </Link>
-        </li>
+        </li>)
       )}
     </AssetLinks>
   </AssetCell>
@@ -161,7 +161,7 @@ export default page(({ loggedIn }) => (
     title="Brand Assets"
     description={
       <React.Fragment>
-        Official versions of the Buildkite logo, <Br maxWidth='30em'/>
+        Official versions of the Buildkite logo, <Br maxWidth="30em" />
         marks, screenshots and words.
       </React.Fragment>
     }
@@ -177,7 +177,7 @@ export default page(({ loggedIn }) => (
     <Section>
       <SectionHeader>Main Logo</SectionHeader>
       <Paragraph>
-        If you’re putting a Buildkite logo anywhere, this is one we like to see. <Br maxWidth='38em'/>
+        If you’re putting a Buildkite logo anywhere, this is one we like to see. <Br maxWidth="38em" />
         It’s the official one, and the one we love the most.
       </Paragraph>
 
@@ -190,7 +190,7 @@ export default page(({ loggedIn }) => (
         <Asset
           description="Landscape version for dark backgrounds"
           image={logoDarkSvg}
-          darkBackground={true}
+          darkBackground
           formats={{ svg: logoDarkSvg, png: logoDarkPng }}
         />
         <Asset
@@ -201,7 +201,7 @@ export default page(({ loggedIn }) => (
         <Asset
           description="Portrait version for dark backgrounds"
           image={logoPortraitDarkSvg}
-          darkBackground={true}
+          darkBackground
           formats={{ svg: logoPortraitDarkSvg, png: logoPortraitDarkPng }}
         />
       </AssetList>
@@ -210,7 +210,7 @@ export default page(({ loggedIn }) => (
     <Section>
       <SectionHeader>Secondary Logos and Marks</SectionHeader>
       <Paragraph>
-        Our secondary logos can be used for making emoji, an icon, or if you <Br maxWidth='38em'/>
+        Our secondary logos can be used for making emoji, an icon, or if you <Br maxWidth="38em" />
         need to include a small version of our mark somewhere.
       </Paragraph>
       <AssetList>
@@ -222,7 +222,7 @@ export default page(({ loggedIn }) => (
         <Asset
           description="Mark for dark backgrounds"
           image={markDarkSvg}
-          darkBackground={true}
+          darkBackground
           formats={{ svg: markDarkSvg, png: markDarkPng }}
         />
         <Asset
@@ -233,7 +233,7 @@ export default page(({ loggedIn }) => (
         <Asset
           description="Wordmark for dark backgrounds"
           image={wordmarkDarkSvg}
-          darkBackground={true}
+          darkBackground
           formats={{ svg: wordmarkDarkSvg, png: wordmarkDarkPng }}
         />
       </AssetList>
@@ -278,7 +278,7 @@ export default page(({ loggedIn }) => (
       heading="Need something else?"
       description={
         <React.Fragment>
-          Get in touch with our design team, <Br maxWidth='30em'/>
+          Get in touch with our design team, <Br maxWidth="30em" />
           and we can help you out.
         </React.Fragment>
       }

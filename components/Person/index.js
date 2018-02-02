@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Dropdown from '../Dropdown';
+import Dropdown from '../Dropdown'
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -18,7 +18,7 @@ const ImageWrapper = styled.button`
   .Dropdown-showing &, &:hover, &:focus, &:active {
     outline: 0;
     border-color: lightgray;
-    border-color: ${props => props.colour};
+    border-color: ${(props) => props.colour};
   }
 
   &:hover, &:focus, &:active {
@@ -43,10 +43,10 @@ const Headshot = ({ person }) => (
     <Image
       src={person.photo}
       alt={`Photo of ${person.name}`}
-      style={{backgroundColor: person.colour}}
+      style={{ backgroundColor: person.colour }}
     />
   </ImageWrapper>
-);
+)
 
 const Name = styled.h3`
   margin: 0;
@@ -66,11 +66,11 @@ const PersonName = ({ person }) => (
   <Name>
     {person.name}
   </Name>
-);
+)
 
 const PersonRoles = ({ person }) => {
   if (!person.roles) {
-    return null;
+    return null
   }
 
   return (
@@ -82,21 +82,21 @@ const PersonRoles = ({ person }) => {
       ))}
     </Roles>
   )
-};
+}
 
 const PersonBio = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopySmall}
   margin: 5px 0;
   color: ${({ theme }) => theme.colors.text.subdued};
-`;
+`
 
 const PersonStats = styled.div`
   margin-top: 11px;
-`;
+`
 
 const PaddedDropdown = styled.div`
   padding: 15px 30px calc(15px + .25em) 30px;
-`;
+`
 
 const Links = styled.ul`
   display: flex;
@@ -116,11 +116,11 @@ const Links = styled.ul`
       ${({ theme }) => theme.textStyles.hyperlink}
     }
   }
-`;
+`
 
 export default ({ person, showRoles, showName }) => {
-  const name = <PersonName person={person} />;
-  const roles = <PersonRoles person={person} />;
+  const name = <PersonName person={person} />
+  const roles = <PersonRoles person={person} />
 
   return (
     <Wrapper>
@@ -150,5 +150,5 @@ export default ({ person, showRoles, showName }) => {
         </PersonStats>
       )}
     </Wrapper>
-  );
+  )
 }

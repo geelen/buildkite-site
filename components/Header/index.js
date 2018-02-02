@@ -9,7 +9,7 @@ import LogoLink from './logo-link'
 import MenuLink from './menu-link'
 import Menu from './menu'
 
-const scrollThreshold = 60;
+const scrollThreshold = 60
 
 const HeaderWrapper = styled.header`
   position: -webkit-sticky;
@@ -17,11 +17,11 @@ const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  box-shadow: ${props => props.shadow ? props.theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
+  box-shadow: ${(props) => props.shadow ? props.theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
   will-change: box-shadow;
   transition: box-shadow ${({ theme }) => theme.timings.color};
   z-index: 10;
-`;
+`
 
 const Content = styled.div`
   ${({ theme }) => theme.maxWidthContainer}
@@ -31,27 +31,27 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   line-height: 1;
-  box-shadow: ${props => props.shadow ? props.theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
+  box-shadow: ${(props) => props.shadow ? props.theme.boxShadows.menuBar : '0 0 15px rgba(0, 0, 0, 0)'};
   z-index: 1;
-`;
+`
 
 const LinkContainer = styled.div`
   flex: 2;
   display: flex;
   flex-wrap: wrap;
-  justify-content: ${props => props.left ? 'flex-start' : 'flex-end'};
-  text-align: ${props => props.left ? 'left' : 'right'};
-`;
+  justify-content: ${(props) => props.left ? 'flex-start' : 'flex-end'};
+  text-align: ${(props) => props.left ? 'left' : 'right'};
+`
 
 const HeaderLinkAnchor = styled.a`
   ${({ theme }) => theme.textStyles.navigationHyperlink}
-  margin-left: ${props => props.right ? props.theme.innerSpacing.s1 : 0};
-  margin-right: ${props => props.left ? props.theme.innerSpacing.s1 : 0};
+  margin-left: ${(props) => props.right ? props.theme.innerSpacing.s1 : 0};
+  margin-right: ${(props) => props.left ? props.theme.innerSpacing.s1 : 0};
   font-weight: bold;
   flex: none;
   white-space: nowrap;
 
-  ${props => props.widescreenOnly && css`
+  ${(props) => props.widescreenOnly && css`
     @media (max-width: 959px) {
       display: none;
     }
@@ -75,26 +75,26 @@ const HeaderLink = withRouter(({ children, router, href, external, prefetch, lef
 
 export default class Header extends React.PureComponent {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       scrolled: false,
       showMenu: false
-    };
+    }
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleWindowScroll);
-    window.addEventListener('resize', this.handleWindowResize);
-    this.checkScroll();
+    window.addEventListener('scroll', this.handleWindowScroll)
+    window.addEventListener('resize', this.handleWindowResize)
+    this.checkScroll()
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleWindowScroll);
-    window.removeEventListener('resize', this.handleWindowResize);
+    window.removeEventListener('scroll', this.handleWindowScroll)
+    window.removeEventListener('resize', this.handleWindowResize)
   }
 
   render() {
-    const shadow = this.state.scrolled || this.state.showMenu;
+    const shadow = this.state.scrolled || this.state.showMenu
 
     return (
       <HeaderWrapper shadow={shadow}>
@@ -129,47 +129,47 @@ export default class Header extends React.PureComponent {
           <Menu />
         )}
       </HeaderWrapper>
-    );
+    )
   }
-  
+
   renderLoginLinks() {
     if (this.props.loggedIn) {
       return (
         <HeaderLink right href="/dashboard">
           Dashboard
         </HeaderLink>
-      );
-    } else {
-      return (
-        [
-          <HeaderLink right widescreenOnly href="/login" external key="login">
-            Login
-          </HeaderLink>,
-          <HeaderLink right href="/sign-up" external key="signup">
-            Signup
-          </HeaderLink>
-        ]
       )
     }
+    return (
+      [
+        <HeaderLink right widescreenOnly href="/login" external key="login">
+            Login
+        </HeaderLink>,
+        <HeaderLink right href="/sign-up" external key="signup">
+            Signup
+        </HeaderLink>
+      ]
+    )
+
   }
 
   handleWindowScroll = throttle(() => this.checkScroll())
   handleWindowResize = throttle(() => this.checkResize())
 
-  handleMenuLinkClick = (e) => {
-    e.preventDefault();
+  handleMenuLinkClick = (evt) => {
+    evt.preventDefault()
     this.setState({ showMenu: !this.state.showMenu })
   }
 
   checkScroll() {
-    const scrolled = window.scrollY > scrollThreshold;
-    this.setState({ scrolled });
+    const scrolled = window.scrollY > scrollThreshold
+    this.setState({ scrolled })
   }
 
   checkResize() {
     if (this.state.showMenu) {
       if (window.outerWidth >= 960) {
-        this.setState({ showMenu: false });
+        this.setState({ showMenu: false })
       }
     }
   }

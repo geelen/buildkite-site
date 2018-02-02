@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Button, { colors as buttonColors } from 'components/Button'
+import Button from 'components/Button'
 import { Grid as RawGrid, Cell } from 'components/Grid'
 import Link from 'components/Link'
 
@@ -78,7 +78,7 @@ export const ActionGridItem = ({ heading, description, url, buttonTitle, image, 
       </ItemImageContainer>
       <Heading>{heading}</Heading>
       <Paragraph>{description}</Paragraph>
-      <Link href={url}>      
+      <Link href={url}>
         <Button>{buttonTitle}</Button>
       </Link>
       {note && <Note>{note}</Note>}

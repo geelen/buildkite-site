@@ -1,6 +1,6 @@
 steps:
 
-  - label: ":closed_lock_with_key: nsp"
+  - label: ":nsp:"
     command: .buildkite/steps/node-security-platform
     agents:
       # Because this is an hourly scheduled build, we don't want to use the
@@ -14,7 +14,7 @@ steps:
         config: docker-compose.prod.yml
         run: site
 
-  - label: ":closed_lock_with_key: retire"
+  - label: ":retirejs:"
     command: .buildkite/steps/retire
     agents:
       # Because this is an hourly scheduled build, we don't want to use the

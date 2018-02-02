@@ -60,7 +60,7 @@ export default page(({ loggedIn }) => (
       </React.Fragment>
     }
     loggedIn={loggedIn}
-    >
+  >
 
     {/* (callout to Thoughtworks Technology Radar) */}
     <FeatureSection>
@@ -83,7 +83,7 @@ export default page(({ loggedIn }) => (
 
     <Section>
       <SectionHeader>Customers</SectionHeader>
-      <SectionDescription>You’ll be in good company</SectionDescription>    
+      <SectionDescription>You’ll be in good company</SectionDescription>
       <p>(logos)</p>
     </Section>
 
@@ -103,7 +103,7 @@ export default page(({ loggedIn }) => (
           <FeatureDescription>
             Control which users have access to projects and resources from within your settings page.
           </FeatureDescription>
-        </FeatureCell>      
+        </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Audit Logging</FeatureTitle>
           <FeatureDescription>
@@ -145,7 +145,7 @@ export default page(({ loggedIn }) => (
 
     <Section>
       <SectionHeader>Case Study</SectionHeader>
-      
+
       <CaseStudyCallout caseStudy={shopify} />
 
       <p style={{ textAlign: 'center' }}>

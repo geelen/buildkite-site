@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Keyframes, Frame } from 'react-keyframes'
 
 import SVGConsoleImage from 'components/SVGConsoleImage'
@@ -18,7 +17,7 @@ const TEXT_FRAGMENTS = [
     children: (
       <React.Fragment key="starting">
         <br />
-        Starting buildkite-agent with PID: 11301<br/>
+        Starting buildkite-agent with PID: 11301<br />
         Registering agent with Buildkite...
       </React.Fragment>
     )
@@ -28,7 +27,7 @@ const TEXT_FRAGMENTS = [
     children: (
       <React.Fragment key="registered">
         <br />
-        Successfully registered agent "docker-builder-1"
+        Successfully registered agent &quot;docker-builder-1&quot;
       </React.Fragment>
     )
   },
@@ -52,7 +51,7 @@ const TEXT_FRAGMENTS = [
   }
 ]
 
-export default ({...props}) => (
+export default ({ ...props }) => (
   <Keyframes
     component={SVGConsoleImage}
     {...props}
@@ -60,10 +59,10 @@ export default ({...props}) => (
     width="547"
     height="260"
   >
-    {TEXT_FRAGMENTS.map(({ duration, children }, index) => (
+    {TEXT_FRAGMENTS.map(({ duration }, index) => (
       // We concatenate each frame of children to build each subsequent frame,
       // just because I didn't want to have to repeat them a bunch in the code
-      <Frame duration={duration} key={index}>
+      <Frame duration={duration} key={index.toString(16)}>
         {
           TEXT_FRAGMENTS
             .slice(0, index + 1)

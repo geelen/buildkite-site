@@ -17,7 +17,7 @@ export const colors = {
 
 export default styled.a`
   display: inline-block;
-  background-color: ${props => props.primary ? colors.primary.background : colors.default.background};
+  background-color: ${(props) => props.primary ? colors.primary.background : colors.default.background};
   color: ${({ theme }) => theme.colors.text.white};
   padding-left: ${({ theme }) => theme.innerSpacing.s1};
   padding-right: ${({ theme }) => theme.innerSpacing.s1};
@@ -28,6 +28,6 @@ export default styled.a`
   text-decoration: none;
   transition: background-color ${({ theme }) => theme.timings.color};
   :hover {
-    background-color: ${props => props.primary ? colors.primary.backgroundHover : colors.default.backgroundHover}
+    background-color: ${(props) => props.primary ? colors.primary.backgroundHover : colors.default.backgroundHover}
   }
 `

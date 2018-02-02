@@ -1,10 +1,10 @@
 import { css } from 'styled-components'
 
-const book = require('../assets/fonts/lineto-circular-book.woff2');
-const bold = require('../assets/fonts/lineto-circular-bold.woff2');
-const black = require('../assets/fonts/lineto-circular-black.woff2');
+const book = require('../assets/fonts/lineto-circular-book.woff2')
+const bold = require('../assets/fonts/lineto-circular-bold.woff2')
+const black = require('../assets/fonts/lineto-circular-black.woff2')
 
-export const fonts = [ book, bold, black ]
+export const fonts = [book, bold, black]
 
 export const styles = css`
   /*

@@ -1,13 +1,13 @@
-const photoHarriet = require('../../assets/images/about/harriet.jpg');
-const photoJess = require('../../assets/images/about/jess.jpg');
-const photoKeith = require('../../assets/images/about/keithpitt.jpg');
-const photoLox = require('../../assets/images/about/lox.jpg');
-const photoSam = require('../../assets/images/about/sam.jpg');
-const photoTim = require('../../assets/images/about/toolmantim.jpg');
+const photoHarriet = require('../../assets/images/about/harriet.jpg')
+const photoJess = require('../../assets/images/about/jess.jpg')
+const photoKeith = require('../../assets/images/about/keithpitt.jpg')
+const photoLox = require('../../assets/images/about/lox.jpg')
+const photoSam = require('../../assets/images/about/sam.jpg')
+const photoTim = require('../../assets/images/about/toolmantim.jpg')
 
-const photoJml = require('../../assets/images/about/jml.jpg');
-const photoMattAllen = require('../../assets/images/about/mattallen.jpg');
-const photoJohnBarton = require('../../assets/images/about/johnbarton.jpg');
+const photoJml = require('../../assets/images/about/jml.jpg')
+const photoMattAllen = require('../../assets/images/about/mattallen.jpg')
+const photoJohnBarton = require('../../assets/images/about/johnbarton.jpg')
 
 export const team = [
   {
@@ -65,7 +65,7 @@ export const team = [
       { name: "Keybase", url: "https://keybase.io/keithpitt" }
     ],
     colour: "rgb(216,138,139)",
-    leadership: true,    
+    leadership: true,
     roles: ["Founder", "CTO"]
   },
   {
@@ -79,9 +79,9 @@ export const team = [
     leadership: true,
     roles: ["COO"]
   }
-];
+]
 
-export const leadership = team.filter((t) => t.leadership);
+export const leadership = team.filter((team) => team.leadership)
 
 export const advisors = [
   {

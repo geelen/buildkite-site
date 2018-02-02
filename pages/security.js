@@ -27,13 +27,6 @@ const Subsection = styled.section`
   margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
 `
 
-const MaxWidthSubsection = Subsection.extend`
-  @media (min-width: 742px) {
-    ${({ theme }) => theme.maxWidthContainer}
-    width: 60%;
-  }
-`
-
 const SubSectionHeader = styled.h3`
   ${({ theme }) => theme.textStyles.thirdLevelHeading}
   margin: ${({ theme }) => theme.textSpacing.s1} 0;
@@ -67,7 +60,7 @@ export default page(({ loggedIn }) => (
     title="Security"
     description={
       <React.Fragment>
-        Contact details and information about <Br maxWidth='30em'/>
+        Contact details and information about <Br maxWidth="30em" />
         our security policies and procedures.
       </React.Fragment>
     }
@@ -204,7 +197,7 @@ export default page(({ loggedIn }) => (
       heading="Contact Us"
       description={
         <React.Fragment>
-          If you’ve got any questions, <Br maxWidth='30em'/>
+          If you’ve got any questions, <Br maxWidth="30em" />
           don’t hestitate to contact our team.
         </React.Fragment>
       }

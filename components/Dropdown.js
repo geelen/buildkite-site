@@ -1,13 +1,12 @@
 // @flow
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { TransitionGroup } from 'react-transition-group';
-import transition from 'styled-transition-group';
-import { easeInBack, easeOutBack } from 'eases';
+import React from 'react'
+import PropTypes from 'prop-types'
+import transition from 'styled-transition-group'
+import { easeInBack, easeOutBack } from 'eases'
 
-import Popover from './Popover';
-import calculateViewportOffsets from './Popover/calculate-viewport-offsets';
+import Popover from './Popover'
+import calculateViewportOffsets from './Popover/calculate-viewport-offsets'
 
 const DropdownContainer = transition(Popover)`
   &:enter {
@@ -31,7 +30,7 @@ const DropdownContainer = transition(Popover)`
     opacity: 0;
     transform: scaleX(.8) scaleY(.5);
   }
-`;
+`
 
 type Props = {
   children: React$Node,
@@ -81,7 +80,7 @@ export default class Dropdown extends React.PureComponent<Props, State> {
     // when hidden, we wait for the resize to be finished!
     // to do so, we clear timeouts on each event until we get
     // a good delay between them.
-    const optimizeForHidden = !this.state.showing;
+    const optimizeForHidden = !this.state.showing
 
     // when hidden, we wait 2.5 times as long between
     // recalculations, which usually means a user is
@@ -90,60 +89,60 @@ export default class Dropdown extends React.PureComponent<Props, State> {
       optimizeForHidden
         ? 250
         : 100
-    );
+    )
 
     if (optimizeForHidden && this._resizeDebounceTimeout) {
-      this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout);
+      this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout)
     }
 
     if (!this._resizeDebounceTimeout) {
-      this._resizeDebounceTimeout = setTimeout(this.handleDebouncedWindowResize, debounceTimeout);
+      this._resizeDebounceTimeout = setTimeout(this.handleDebouncedWindowResize, debounceTimeout)
     }
   };
 
   handleDebouncedWindowResize = () => {
-    this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout);
-    this.calculateViewportOffsets();
+    this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout)
+    this.calculateViewportOffsets()
   };
 
   componentDidMount() {
-    document.documentElement && document.documentElement.addEventListener('click', this.handleDocumentClick);
-    document.documentElement && document.documentElement.addEventListener('keydown', this.handleDocumentKeyDown);
-    window.addEventListener('resize', this.handleWindowResize, false);
-    this.calculateViewportOffsets();
+    document.documentElement && document.documentElement.addEventListener('click', this.handleDocumentClick)
+    document.documentElement && document.documentElement.addEventListener('keydown', this.handleDocumentKeyDown)
+    window.addEventListener('resize', this.handleWindowResize, false)
+    this.calculateViewportOffsets()
   }
 
   componentWillUnmount() {
-    document.documentElement && document.documentElement.removeEventListener('click', this.handleDocumentClick);
-    document.documentElement && document.documentElement.removeEventListener('keydown', this.handleDocumentKeyDown);
-    window.removeEventListener('resize', this.handleWindowResize);
-    this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout); // just in case
+    document.documentElement && document.documentElement.removeEventListener('click', this.handleDocumentClick)
+    document.documentElement && document.documentElement.removeEventListener('keydown', this.handleDocumentKeyDown)
+    window.removeEventListener('resize', this.handleWindowResize)
+    this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout) // just in case
   }
 
   calculateViewportOffsets = () => {
     if (this.wrapperNode) {
-      this.setState(calculateViewportOffsets(this.props.width, this.wrapperNode));
+      this.setState(calculateViewportOffsets(this.props.width, this.wrapperNode))
     }
   }
 
   handleDocumentClick = (event: MouseEvent) => {
     // NOTE: We have to cast `event.target` to a Node to use with `contains`
     //       see <https://github.com/facebook/flow/issues/4645>
-    const target: Node = (event.target: any);
+    const target: Node = (event.target: any)
 
     // NOTE: `wrapperNode`'s second element child (if any) is the popup node,
     //       and the first is always the popup button. In normal operation there
     //       will never be more than 2 element children, or fewer than one.
     const popupNode = (
       this.wrapperNode &&
-      this.wrapperNode.childElementCount == 2 &&
+      this.wrapperNode.childElementCount === 2 &&
       this.wrapperNode.lastElementChild
-    );
+    )
 
     const clickWasInComponent = (
       this.wrapperNode &&
       this.wrapperNode.contains(target)
-    );
+    )
 
     // We don't have a ref to the popup button, so to detect a click on the
     // button we detect that it "wasn't" in the popup node, leaving only the
@@ -151,34 +150,34 @@ export default class Dropdown extends React.PureComponent<Props, State> {
     const buttonWasClicked = (
       clickWasInComponent &&
       (!popupNode || !popupNode.contains(target))
-    );
+    )
 
     if (buttonWasClicked) {
-      this.setShowing(!this.state.showing);
+      this.setShowing(!this.state.showing)
     } else if (this.state.showing && !clickWasInComponent) {
-      this.setShowing(false);
+      this.setShowing(false)
     }
   };
 
   handleDocumentKeyDown = (event: KeyboardEvent) => {
     // Handle the escape key
     if (this.state.showing && event.keyCode === 27) {
-      this.setShowing(false);
+      this.setShowing(false)
     }
   };
 
   setShowing(showing: boolean) {
-    this.setState({ showing: showing });
+    this.setState({ showing: showing })
 
     if (this.props.onToggle) {
-      this.props.onToggle(this.state.showing);
+      this.props.onToggle(this.state.showing)
     }
   }
 
   renderPopover(children: React$Node): React$Node {
-    const { offsetX, width } = this.state;
-    const offsetY = this.state.offsetY + this.props.offsetY;
-    const { nibOffsetX } = this.props;
+    const { offsetX, width } = this.state
+    const offsetY = this.state.offsetY + this.props.offsetY
+    const { nibOffsetX } = this.props
 
     return (
       <DropdownContainer
@@ -187,24 +186,24 @@ export default class Dropdown extends React.PureComponent<Props, State> {
         nibOffsetX={nibOffsetX}
         width={width}
         in={this.state.showing}
-        mountOnEnter={true}
-        unmountOnExit={true}
+        mountOnEnter
+        unmountOnExit
         timeout={200}
       >
         {children}
       </DropdownContainer>
-    );
+    )
   }
 
   render() {
-    const [firstChild, ...children] = React.Children.toArray(this.props.children);
+    const [firstChild, ...children] = React.Children.toArray(this.props.children)
 
-    const wrapperStyle = Object.assign({ position: 'relative' }, this.props.style);
+    const wrapperStyle = Object.assign({ position: 'relative' }, this.props.style)
 
-    const classNames = [this.props.className];
+    const classNames = [this.props.className]
 
     if (this.state.showing) {
-      classNames.push('Dropdown-showing');
+      classNames.push('Dropdown-showing')
     }
 
     return (
@@ -216,6 +215,6 @@ export default class Dropdown extends React.PureComponent<Props, State> {
         {firstChild}
         {this.renderPopover(children)}
       </span>
-    );
+    )
   }
 }

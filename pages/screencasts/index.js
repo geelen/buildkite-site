@@ -11,17 +11,17 @@ export default page(({ loggedIn }) => (
     title="Screencasts"
     description={
       <React.Fragment>
-        See how Buildkite works in production, <Br maxWidth='30em'/>
+        See how Buildkite works in production, <Br maxWidth="30em" />
         with this series of short videos.
       </React.Fragment>
     }
     loggedIn={loggedIn}
   >
     <Grid>
-      {screencasts.map((screencast, index) => (
+      {screencasts.map((screencast) => (
         <ScreencastLink
           screencast={screencast}
-          key={index}
+          key={screencast.pathname}
         />
       ))}
     </Grid>

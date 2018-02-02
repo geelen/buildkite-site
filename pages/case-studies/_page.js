@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 import Callout from 'components/Callout'
 import CaseStudyCallout from 'components/CaseStudyCallout'
-import Link from 'components/Link'
 import { OffscreenH2 } from 'components/OffscreenHeading'
 import Page, { page } from 'components/Page'
 
@@ -195,19 +194,19 @@ export default function caseStudyPage(pathname) {
   // Split out current and other case studies
   const { caseStudy, otherCaseStudies } = caseStudies.reduce(
     (acc, study) => {
-      if (study.pathname == pathname) {
-        acc.caseStudy = study;
+      if (study.pathname === pathname) {
+        acc.caseStudy = study
       } else {
-        acc.otherCaseStudies.push(study);
+        acc.otherCaseStudies.push(study)
       }
 
-      return acc;
+      return acc
     },
     {
       caseStudy: null,
       otherCaseStudies: []
     }
-  );
+  )
 
   return page(({ loggedIn }) => (
     <Page
@@ -235,11 +234,11 @@ export default function caseStudyPage(pathname) {
         </CaseStudyWords>
 
         <ResultsCell>
-          {caseStudy.results.map((result, index) => (
-            <ResultItem key={index}>
+          {caseStudy.results.map((result) => (
+            <ResultItem key={`${result.number} ${result.unit} ${result.label}`}>
               <ResultValue>
                 <ResultNumber>{result.number}</ResultNumber>{result.unit}
-              </ResultValue><br/>
+              </ResultValue><br />
               <ResultLabel>{result.label}</ResultLabel>
             </ResultItem>
           ))}
@@ -257,7 +256,7 @@ export default function caseStudyPage(pathname) {
           />
           <p>
             {caseStudy.testimonial.name}
-            <br/>
+            <br />
             {caseStudy.testimonial.title}
           </p>
         </Attribution>

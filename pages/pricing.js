@@ -186,7 +186,7 @@ export default page(({ loggedIn }) => (
             value={15}
             period={
               <React.Fragment>
-                per user<br/>
+                per user<br />
                 per month
               </React.Fragment>
             }

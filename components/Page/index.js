@@ -44,7 +44,7 @@ const Image = styled.img`
 
 // Helper function for setting up standard page props
 export function page(Component) {
-  const componentInitialProps = Component.getInitialProps;
+  const componentInitialProps = Component.getInitialProps
 
   Component.getInitialProps = (context) => {
     // Copy in wrapped component's getInitialProps value
@@ -52,17 +52,18 @@ export function page(Component) {
       componentInitialProps
         ? componentInitialProps.call(this, context)
         : {}
-    );
+    )
 
     processedProps.loggedIn = isLoggedIn(cookies(context))
 
     return processedProps
   }
 
-  return Component;
+  return Component
 }
 
-export const BasePage = ({ headTitle, description, image, imageAlt, children, loggedIn }) => (
+/* TODO: Open Graph metadata in BasePage */
+export const BasePage = ({ headTitle, /*description, image, imageAlt,*/ children, loggedIn }) => (
   <ThemeProvider theme={buildkiteTheme}>
     <React.Fragment>
       <Head>

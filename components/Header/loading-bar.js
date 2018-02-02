@@ -4,18 +4,18 @@ import { injectGlobal } from 'styled-components'
 
 import { colors } from '../../theme'
 
-const noticeableDelay = 200;
-var noticeableDelayTimeout = null;
+const noticeableDelay = 200
+let noticeableDelayTimeout = null
 
 const showProgressBar = function() {
   // We only want to show the loading bar if they've been waiting 100ms, because
   // some pages are pre-fetched and ready to go
-  if (noticeableDelayTimeout) clearTimeout(noticeableDelayTimeout)
+  if (noticeableDelayTimeout) {clearTimeout(noticeableDelayTimeout)}
   noticeableDelayTimeout = setTimeout(function() { NProgress.start() }, noticeableDelay)
 }
 
 const finishProgressBar = function() {
-  if (noticeableDelayTimeout) clearTimeout(noticeableDelayTimeout)
+  if (noticeableDelayTimeout) {clearTimeout(noticeableDelayTimeout)}
   NProgress.done()
 }
 

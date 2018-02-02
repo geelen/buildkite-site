@@ -1,12 +1,12 @@
 // @flow
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-const upPointingWhiteNibPath = require('../../assets/images/components/Popover/up-pointing-white-nib.svg');
+const upPointingWhiteNibPath = require('../../assets/images/components/Popover/up-pointing-white-nib.svg')
 
-const NIB_WIDTH = 32;
+const NIB_WIDTH = 32
 
 const Wrapper = styled.div`
   background-color: #fff;
@@ -21,13 +21,13 @@ const Wrapper = styled.div`
   padding-top: 5px;
   position: absolute;
   z-index: 3;
-`;
+`
 
 const ScrollZone = styled.div`
   max-height: 80vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-`;
+`
 
 const Nib = styled.img`
   position: absolute;
@@ -37,7 +37,7 @@ const Nib = styled.img`
   width: ${NIB_WIDTH}px;
   height: 20px;
   z-index: 3;
-`;
+`
 
 type Props = {
   children: React$Node,
@@ -70,9 +70,9 @@ export default class Popover extends React.PureComponent<Props> {
   };
 
   render() {
-    const { children, innerRef, nibOffsetX, offsetX, offsetY: top, style, width, ...props } = this.props;
+    const { children, innerRef, nibOffsetX, offsetX, offsetY: top, style, width, ...props } = this.props
 
-    const offset = (width / 2) - offsetX;
+    const offset = (width / 2) - offsetX
 
     const popoverStyles = {
       left: `calc(50% - ${offset}px)`,
@@ -80,7 +80,7 @@ export default class Popover extends React.PureComponent<Props> {
       transformOrigin: `${offset + nibOffsetX}px -15px`,
       width,
       zIndex: 3
-    };
+    }
 
     return (
       <Wrapper
@@ -97,6 +97,6 @@ export default class Popover extends React.PureComponent<Props> {
           {children}
         </ScrollZone>
       </Wrapper>
-    );
+    )
   }
 }

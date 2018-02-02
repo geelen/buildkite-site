@@ -1,10 +1,10 @@
 // @flow
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import Popover from '.';
-import calculateViewportOffsets from './calculate-viewport-offsets';
+import Popover from '.'
+import calculateViewportOffsets from './calculate-viewport-offsets'
 
 type Props = {
   children: React$Node,
@@ -54,7 +54,7 @@ export default class AnchoredPopover extends React.PureComponent<Props, State> {
     // when hidden, we wait for the resize to be finished!
     // to do so, we clear timeouts on each event until we get
     // a good delay between them.
-    const optimizeForHidden = !this.state.showing;
+    const optimizeForHidden = !this.state.showing
 
     // when hidden, we wait 2.5 times as long between
     // recalculations, which usually means a user is
@@ -63,89 +63,91 @@ export default class AnchoredPopover extends React.PureComponent<Props, State> {
       optimizeForHidden
         ? 250
         : 100
-    );
+    )
 
     if (optimizeForHidden && this._resizeDebounceTimeout) {
-      this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout);
+      this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout)
     }
 
     if (!this._resizeDebounceTimeout) {
-      this._resizeDebounceTimeout = setTimeout(this.handleDebouncedWindowResize, debounceTimeout);
+      this._resizeDebounceTimeout = setTimeout(this.handleDebouncedWindowResize, debounceTimeout)
     }
   };
 
   handleDebouncedWindowResize = () => {
-    this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout);
-    this.calculateViewportOffsets();
+    this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout)
+    this.calculateViewportOffsets()
   };
 
   componentDidMount() {
-    window.addEventListener('resize', this.handleWindowResize, false);
-    this.calculateViewportOffsets();
+    window.addEventListener('resize', this.handleWindowResize, false)
+    this.calculateViewportOffsets()
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleWindowResize);
-    this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout); // just in case
+    window.removeEventListener('resize', this.handleWindowResize)
+    this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout) // just in case
   }
 
   calculateViewportOffsets = () => {
     if (this.wrapperNode) {
-      this.setState(calculateViewportOffsets(this.props.width, this.wrapperNode));
+      this.setState(calculateViewportOffsets(this.props.width, this.wrapperNode))
     }
   };
 
   handleMouseOver = (event: MouseEvent) => {
     // NOTE: We have to cast `event.target` to a Node to use with `contains`
     //       see <https://github.com/facebook/flow/issues/4645>
-    const target: Node = (event.target: any);
+    const target: Node = (event.target: any)
 
     if (this.wrapperNode/*p
       && this.wrapperNode.firstElementChild
       && this.wrapperNode.firstElementChild*/.contains(target)) {
-      this.setState({ showing: true });
+      this.setState({ showing: true })
     }
   };
 
   handleMouseOut = (event: MouseEvent) => {
     // NOTE: We have to cast `event.target` to a Node to use with `contains`
     //       see <https://github.com/facebook/flow/issues/4645>
-    const target: Node = (event.target: any);
+    const target: Node = (event.target: any)
 
     if (this.wrapperNode/*
       && this.wrapperNode.firstElementChild
       && this.wrapperNode.firstElementChild*/.contains(target)) {
-      this.setState({ showing: false });
+      this.setState({ showing: false })
     }
   };
 
+  onRef = (popupNode) => this.popupNode = popupNode;
+
   renderPopover(children: React$Node) {
     if (!this.state.showing) {
-      return;
+      return
     }
 
-    const { width, offsetX, offsetY } = this.state;
-    const { nibOffsetX } = this.props;
+    const { width, offsetX, offsetY } = this.state
+    const { nibOffsetX } = this.props
 
     return (
       <Popover
         offsetX={offsetX}
         offsetY={offsetY}
         nibOffsetX={nibOffsetX}
-        innerRef={(popupNode) => this.popupNode = popupNode}
+        innerRef={this.onRef}
         width={width}
       >
         {children}
       </Popover>
-    );
+    )
   }
 
   render() {
-    const { className, position, style } = this.props;
+    const { className, position, style } = this.props
 
-    const [firstChild, ...children] = React.Children.toArray(this.props.children);
+    const [firstChild, ...children] = React.Children.toArray(this.props.children)
 
-    const wrapperStyle = Object.assign({ position }, style);
+    const wrapperStyle = Object.assign({ position }, style)
 
     return (
       <span
@@ -158,6 +160,6 @@ export default class AnchoredPopover extends React.PureComponent<Props, State> {
         {firstChild}
         {this.renderPopover(children)}
       </span>
-    );
+    )
   }
 }

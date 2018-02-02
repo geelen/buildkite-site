@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled-components';
+import { injectGlobal } from 'styled-components'
 
 import { styles as fontStyles } from './fonts'
 
@@ -45,4 +45,4 @@ injectGlobal`
     padding: 0;
     list-style: none;
   }
-`;
+`
