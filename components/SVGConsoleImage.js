@@ -22,9 +22,6 @@ export default ({ name, children, width="547", height="280", ...props }) => (
   >
     <defs>
       <linearGradient
-        x1="0%"
-        y1="50%"
-        y2="50%"
         id={`${name}-horizontalGradientOverlay`}
       >
         <stop
