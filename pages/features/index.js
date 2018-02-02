@@ -5,55 +5,48 @@ import { FeatureGrid, FeatureCell, FeatureTitle as RawFeatureTitle, FeatureDescr
 import { MediaItem as RawMediaItem, ImageCell as RawImageCell, TextCell as RawTextCell } from 'components/MediaItem'
 import { OffscreenH1 } from 'components/OffscreenHeading'
 
+import RawSVGConsoleImage from 'components/SVGConsoleImage'
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
-import RawBuildAgentStart from 'components/animations/BuildAgentStart'
+import RawBuildAgentStart from './build-agent-start'
 
 // -- Feature Section 1 --
 // Shown after styled version of RawBuildAgentStart, which is defined way below
-const pipelineRunningImage = require('../assets/images/features/pipeline-running.png')
+const pipelineRunningImage = require('../../assets/images/features/pipeline-running.png')
 
 // -- Feature Section 2 --
-const artifactsAndParallelismImage = require('../assets/images/features/artifacts-and-parallelism.svg')
-const parallelismImage = require('../assets/images/features/parallelism.png')
+const parallelismImage = require('../../assets/images/features/parallelism.png')
 
 // -- Feature Section 3 --
-const elasticCiStackImage = require('../assets/images/features/elastic-ci-stack.png')
+const elasticCiStackImage = require('../../assets/images/features/elastic-ci-stack.png')
 
 // -- Feature Section 4 --
-const buildkiteMetricsImage = require('../assets/images/features/buildkite-metrics.png')
+const buildkiteMetricsImage = require('../../assets/images/features/buildkite-metrics.png')
 
 // -- Feature Section 5 --
-const customFieldsImage = require('../assets/images/features/custom-fields.svg')
-const customFieldsUnblockImage = require('../assets/images/features/custom-fields-unblock.png')
-
-// -- Feature Section 6 --
-const dynamicPipelineImage = require('../assets/images/features/dynamic-pipeline.svg')
+const customFieldsUnblockImage = require('../../assets/images/features/custom-fields-unblock.png')
 
 // -- Feature Section 7 --
-const webInterfaceImage = require('../assets/images/features/web-interface.png')
+const webInterfaceImage = require('../../assets/images/features/web-interface.png')
 
 // -- Feature Section 8 --
-const unblockStepImage = require('../assets/images/features/unblock-step.png')
+const unblockStepImage = require('../../assets/images/features/unblock-step.png')
 
 // -- Feature Section 9 --
-const dockerWorksJustFineImage = require('../assets/images/features/docker-works-just-fine.svg')
+const dockerWorksJustFineImage = require('../../assets/images/features/docker-works-just-fine.svg')
 
 // -- Feature Section 10 --
-const embeddableImageArtifactsImage = require('../assets/images/features/embeddable-image-artifacts.png')
+const embeddableImageArtifactsImage = require('../../assets/images/features/embeddable-image-artifacts.png')
 
 // -- Feature Section 11 --
-const buildAnnotationsImage = require('../assets/images/features/build-annotations.png')
+const buildAnnotationsImage = require('../../assets/images/features/build-annotations.png')
 
 // -- Feature Section 12 --
-const logOutputGroupingImage = require('../assets/images/features/log-output-grouping.png')
-
-// -- Feature Section 13 --
-const customAgentHooksImage = require('../assets/images/features/custom-agent-hooks.svg')
+const logOutputGroupingImage = require('../../assets/images/features/log-output-grouping.png')
 
 // -- Feature Section 14 --
-const graphqlApiImage = require('../assets/images/features/graphql-api.png')
+const graphqlApiImage = require('../../assets/images/features/graphql-api.png')
 
 const Heading = styled.h2`
   text-align: center;
@@ -98,15 +91,17 @@ const ImageCell = RawImageCell.extend`
 
 const FeatureTitle = RawFeatureTitle.withComponent('h3');
 
+const OtherFeaturesSection = styled.section`
+  margin: ${({ theme }) => theme.outerSpacing.s3} 0;
+`
+
 const SVGAnimation = Image.extend`
   height: auto;
 `
 
 const BuildAgentStart = SVGAnimation.withComponent(RawBuildAgentStart);
 
-const OtherFeaturesSection = styled.section`
-  margin: ${({ theme }) => theme.outerSpacing.s3} 0;
-`
+const SVGConsoleImage = SVGAnimation.withComponent(RawSVGConsoleImage);
 
 export default page(({ loggedIn }) => (
   <Page
@@ -143,7 +138,21 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={artifactsAndParallelismImage} alt="" />
+          <SVGConsoleImage
+            name="artifactsAndParallelism"
+            width="547"
+            height="360"
+          >
+            <font color="#9B9B9B">- <font color="#00FF93">label</font>: </font>"Build"<br />
+            <font color="#9B9B9B">  <font color="#00FF93">command</font>: </font>make<br />
+            <font color="#9B9B9B">  <font color="#00FF93">artifact_paths</font>: </font>"dist/*"<br />
+            <br />
+            <font color="#9B9B9B">- </font><font color="#00FF93">wait</font><br />
+            <br />
+            <font color="#9B9B9B">- <font color="#00FF93">label</font>: </font>"Test %n"<br />
+            <font color="#9B9B9B">  <font color="#00FF93">command</font>: </font>make test<br />
+            <font color="#9B9B9B">  <font color="#00FF93">parallelism</font>: </font>300
+          </SVGConsoleImage>
           <ImageWithBorder src={parallelismImage} alt="" />
         </ImageCell>
       </MediaItem>
@@ -177,7 +186,16 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={customFieldsImage} alt="" />
+          <SVGConsoleImage
+            name="customFields"
+            width="547"
+            height="220"
+          >
+            <font color="#9B9B9B">- <font color="#00FF93">block</font>: </font>":rocket: Release"<br />
+            <font color="#9B9B9B">  <font color="#00FF93">fields</font>:</font><br />
+            <font color="#9B9B9B">    - <font color="#00FF93">text</font>: </font>"Code Name"<br />
+            <font color="#9B9B9B">      <font color="#00FF93">key</font>: </font>"release-name"<br />
+          </SVGConsoleImage>
           <ImageWithBorder src={customFieldsUnblockImage} alt="" />
         </ImageCell>
       </MediaItem>
@@ -188,7 +206,22 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={dynamicPipelineImage} alt="" />
+          <SVGConsoleImage
+            name="dynamicPipeline"
+            width="547"
+            height="390"
+          >
+            <font color="#9B9B9B">$ </font>cat <font color="#00FF93">./generate-pipeline</font><br />
+            <br />
+            #!/bin/bash<br />
+            echo "steps:"<br />
+            for i in $(seq 1 100); do<br />
+            {'  '}echo "  - command: echo $i"<br />
+            done<br />
+            <br />
+            <font color="#9B9B9B">$ </font><font color="#00FF93">./generate-pipeline</font> | \<br />
+            <font color="#9B9B9B">> </font><font color="#00FF93">buildkite-agent pipeline upload</font>
+          </SVGConsoleImage>
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -221,7 +254,23 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={dockerWorksJustFineImage} alt="" />
+          <SVGConsoleImage
+            name="dockerWorksFine"
+            width="547"
+            height="420"
+          >
+            <font color="#9B9B9B">#!/bin/bash</font><br/>
+            <br/>
+            # Pull layer cache<br/>
+            <font color="#00FF93">docker pull myapp:latest</font><br/>
+            <br/>
+            # Build<br/>
+            <font color="#00FF93">{'docker build --cache_from app:latest -t "app:$BUILDKITE_COMMIT" .'}</font><br/>
+            <br/>
+            # Push to image repo<br/>
+            <font color="#00FF93">docker push "app:$BUILDKITE_COMMIT"<br/>
+            docker push app:latest</font>
+          </SVGConsoleImage>
         </ImageCell>
       </MediaItem>
     </section>
@@ -267,7 +316,20 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={customAgentHooksImage} alt="" />
+          <SVGConsoleImage
+            name="customAgentHooks"
+            width="547"
+            height="300"
+          >
+            # Check permissions<br />
+            <font color="#00FF93">if [[ ! $BUILDKITE_REPOSITORY == *"github.com" ]]; then<br />
+              echo "Repository not allowed"<br />
+              exit 1<br />
+            fi</font><br />
+            <br />
+            # Mount in our source cache<br />
+            <font color="#00FF93">ls -s /mnt/src-cache ./src</font>
+          </SVGConsoleImage>
         </ImageCell>
       </MediaItem>
       <MediaItem>
