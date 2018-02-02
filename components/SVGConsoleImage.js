@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const PreInsideSVG = styled.pre`
   text-align: left;
-  padding: 50px 40px;
+  padding: 40px;
   height: 100%;
   color: #F8F8F8;
   font-size: 18px;

@@ -28,7 +28,7 @@ const TEXT_FRAGMENTS = [
     children: (
       <React.Fragment key="registered">
         <br />
-        Successfully registered agent "website-1"
+        Successfully registered agent "docker-builder-1"
       </React.Fragment>
     )
   },
@@ -58,7 +58,7 @@ export default ({...props}) => (
     {...props}
     name="buildAgentStart"
     width="547"
-    height="280"
+    height="260"
   >
     {TEXT_FRAGMENTS.map(({ duration, children }, index) => (
       // We concatenate each frame of children to build each subsequent frame,

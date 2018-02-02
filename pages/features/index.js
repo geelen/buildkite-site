@@ -138,7 +138,7 @@ export default page(({ loggedIn }) => (
           <SVGConsoleImage
             name="artifactsAndParallelism"
             width="547"
-            height="360"
+            height="350"
           >
             <font color="#9B9B9B">- <font color="#00FF93">label</font>: </font>"Build"<br />
             <font color="#9B9B9B">  <font color="#00FF93">command</font>: </font>make<br />
@@ -186,7 +186,7 @@ export default page(({ loggedIn }) => (
           <SVGConsoleImage
             name="customFields"
             width="547"
-            height="220"
+            height="210"
           >
             <font color="#9B9B9B">- <font color="#00FF93">block</font>: </font>":rocket: Release"<br />
             <font color="#9B9B9B">  <font color="#00FF93">fields</font>:</font><br />
@@ -206,18 +206,16 @@ export default page(({ loggedIn }) => (
           <SVGConsoleImage
             name="dynamicPipeline"
             width="547"
-            height="390"
+            height="325"
           >
-            <font color="#9B9B9B">$ </font>cat <font color="#00FF93">./generate-pipeline</font><br />
-            <br />
+            <font color="#9B9B9B">$ </font>cat <font color="#00FF93">./generate-pipeline.sh</font><br />
             #!/bin/bash<br />
             echo "steps:"<br />
             for i in $(seq 1 100); do<br />
-            {'  '}echo "  - command: echo $i"<br />
+            {"  "}echo "  - command: echo $i"<br />
             done<br />
             <br />
-            <font color="#9B9B9B">$ </font><font color="#00FF93">./generate-pipeline</font> | \<br />
-            <font color="#9B9B9B">> </font><font color="#00FF93">buildkite-agent pipeline upload</font>
+            <font color="#9B9B9B">$ </font><font color="#00FF93">buildkite-agent pipeline upload</font> &lt; <font color="#00FF93">./generate-pipeline.sh</font>
           </SVGConsoleImage>
         </ImageCell>
       </MediaItem>
@@ -254,12 +252,12 @@ export default page(({ loggedIn }) => (
           <SVGConsoleImage
             name="dockerWorksFine"
             width="547"
-            height="420"
+            height="410"
           >
             <font color="#9B9B9B">#!/bin/bash</font><br/>
             <br/>
             # Pull layer cache<br/>
-            <font color="#00FF93">docker pull myapp:latest</font><br/>
+            <font color="#00FF93">docker pull app:latest</font><br/>
             <br/>
             # Build<br/>
             <font color="#00FF93">{'docker build --cache_from app:latest -t "app:$BUILDKITE_COMMIT" .'}</font><br/>
@@ -316,12 +314,12 @@ export default page(({ loggedIn }) => (
           <SVGConsoleImage
             name="customAgentHooks"
             width="547"
-            height="300"
+            height="275"
           >
             # Check permissions<br />
             <font color="#00FF93">if [[ ! $BUILDKITE_REPOSITORY == *"github.com" ]]; then<br />
-              echo "Repository not allowed"<br />
-              exit 1<br />
+            {"  "}echo "Repository not allowed"<br />
+            {"  "}exit 1<br />
             fi</font><br />
             <br />
             # Mount in our source cache<br />
