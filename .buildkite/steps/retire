@@ -4,7 +4,7 @@ set -euo pipefail
 echo "~~~ :node: Installing retire"
 
 # Install https://github.com/RetireJS/retire.js
-npm install -q -g retire
+yarn global add retire
 
 echo "+++ 🔐 Running retire security checks"
 
