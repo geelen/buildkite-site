@@ -36,7 +36,9 @@ const ResultPane = styled.div`
   flex-direction: column;
   justify-content: space-around;
   padding: ${({ theme }) => theme.innerSpacing.s2};
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, .75) 0%, rgba(255, 255, 255, .75) 100%), url(${({ picture }) => picture});
+  background-color: rgba(0,0,0,.06);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, .75) 0%, rgba(255, 255, 255, .75) 100%),
+                    url(${({ picture }) => picture});
   background-size: auto 100%;
   background-size: cover;
   line-height: 1;
