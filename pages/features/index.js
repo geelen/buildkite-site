@@ -343,36 +343,44 @@ export default page(({ loggedIn }) => (
       <OffscreenH1>Other Features</OffscreenH1>
       <FeatureGrid>
         <FeatureCell>
+          <FeatureTitle>Unlimited Language Support</FeatureTitle>
+          <FeatureDescription>It’s your infrastructure, so you’re free to run any language, toolchain or version you need, including Ruby, Xcode, Go, Node, Python, Java, Haskell, .NET or pre-release tools.</FeatureDescription>
+        </FeatureCell>
+        <FeatureCell>
+          <FeatureTitle>Cloud and Environment Agnostic</FeatureTitle>
+          <FeatureDescription>The buildkite-agent is an open-source Golang binary, and runs on a wide variety of operating systems and architectures including Linux, OSX, and Windows. Or use our optimized Docker image to run agent clusters on Kubernetes, ECS or any container platform.</FeatureDescription>
+        </FeatureCell>
+        <FeatureCell>
           <FeatureTitle>Source Control Integration</FeatureTitle>
-          <FeatureDescription>Full integration with GitHub, GitHub Enterprise, GitLab, BitBucket, and more. Pull request testing TODO.</FeatureDescription>
+          <FeatureDescription>Full integration with GitHub and GitHub Enterprise pull requests, GitLab, BitBucket, Phabricator, and more. Or use our APIs to create a custom SCM integration.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Chat Integration</FeatureTitle>
-          <FeatureDescription>Slack and HipChat integration lets your team team to monitor and control your build pipelines.</FeatureDescription>
+          <FeatureTitle>No Source Code Access</FeatureTitle>
+          <FeatureDescription>Buildkite never sees your source code or any secret keys. If you connect Buildkite with your GitHub or Bitbucket account we never request permission to read your code.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Comprehensive APIs</FeatureTitle>
-          <FeatureDescription>Build your own cli tools, write chatops bots, or integrate with your internal systems using the REST and GraphQL APIs.</FeatureDescription>
+          <FeatureTitle>Chat Support</FeatureTitle>
+          <FeatureDescription>Slack and HipChat integration lets everyone monitor their build pipelines. And use the REST and GraphQL APIs to easily create commands, or trigger and unblock pipelines straight from chat.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Environment Agnostic</FeatureTitle>
-          <FeatureDescription>Buildkite’s environment agnostic design means you can always stay current, and migrate to new technologies as you need.</FeatureDescription>
+          <FeatureTitle>Agent Plugins</FeatureTitle>
+          <FeatureDescription>Use agent plugins (v3 beta) for common tools and workflows, such as Docker and Docker Compose. Or encapsulate your own workflows in private plugins with only a few lines of bash.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Docker Support</FeatureTitle>
-          <FeatureDescription>The agent has built-in support for running build jobs via Docker Compose. Or use your own build scripts for maximum control.</FeatureDescription>
+          <FeatureTitle>Docker Pipelines</FeatureTitle>
+          <FeatureDescription>Build, test and and deploy Docker-based projects with the agent’s built in Docker Compose support, the Docker Compose agent plugin, or your own build scripts for maximum control.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Plugins</FeatureTitle>
-          <FeatureDescription>Use the agent’s new plugin system provides out of the box support for a variety of tools. And you can easily write your own.</FeatureDescription>
+          <FeatureTitle>GraphQL APIs</FeatureTitle>
+          <FeatureDescription>Create your own dashboard, cli tools, chatops bots, and other integrations using the exact same GraphQL API that powers the buildkite.com web interface.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>SSO and Permissions</FeatureTitle>
-          <FeatureDescription>Control which users have access to projects and resources from within your settings page.</FeatureDescription>
+          <FeatureTitle>Access Control and SSO</FeatureTitle>
+          <FeatureDescription>Manage teams and access controls to limit who can see and perform actions on pipelines. SSO login is supported for Google, Okta, OneLogin, ADFS (SAML) and custom SAML providers.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Friendly, Human Support</FeatureTitle>
-          <FeatureDescription>TODO.</FeatureDescription>
+          <FeatureDescription>A build system is a key part of your process, and requires a top level of support. Our support engineers are always available to help you debug problems and answer any questions.</FeatureDescription>
         </FeatureCell>
       </FeatureGrid>
     </OtherFeaturesSection>
