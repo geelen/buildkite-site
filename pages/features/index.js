@@ -33,9 +33,6 @@ const webInterfaceImage = require('../../assets/images/features/web-interface.pn
 // -- Feature Section 8 --
 const unblockStepImage = require('../../assets/images/features/unblock-step.png')
 
-// -- Feature Section 9 --
-const dockerWorksJustFineImage = require('../../assets/images/features/docker-works-just-fine.svg')
-
 // -- Feature Section 10 --
 const embeddableImageArtifactsImage = require('../../assets/images/features/embeddable-image-artifacts.png')
 
