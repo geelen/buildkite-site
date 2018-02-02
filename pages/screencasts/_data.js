@@ -48,7 +48,7 @@ export default [
   {
     pathname: '/screencasts/pipeline-step-types',
     title: 'Pipeline Step Types',
-    description: 'Want to take a peek inside a production-ready pipeline? In this screencast we\'ll talk through the different step types, looking at an example based on an internal Buildkite pipeline.',
+    description: <span>An explanation of the different step types, using <Br maxWidth='40em'/> an example based on an internal Buildkite pipeline.</span>,
     duration: '102s',
     images: { poster: stepTypesPoster, thumbnail: stepTypesThumbnail },
     videos: {
