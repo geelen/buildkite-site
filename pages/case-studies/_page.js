@@ -37,6 +37,10 @@ const CaseStudyWords = TextCell.extend`
   > p {
     max-width: 33em;
     margin: ${({ theme }) => theme.textSpacing.s2} 0;
+    a {
+      ${({ theme }) => theme.textStyles.navigationHyperlink}
+      font-weight: bold;
+    }
   }
 `
 
@@ -45,10 +49,10 @@ const ImageCell = styled.div`
 `
 
 const LogoCell = ImageCell.extend`
-  text-align: center;
+  margin-left: ${({ theme }) => theme.innerSpacing.s2};
   @media (max-width: 620px) {
     margin-top: ${({ theme }) => theme.innerSpacing.s2};
-    text-align: left;
+    margin-left: 0;
   }
 `
 
@@ -73,7 +77,7 @@ const ResultValue = styled.span`
 
 const ResultNumber = styled.span`
   font-size: 72px;
-  margin-right: .1em;
+  margin-right: .05em;
 `
 
 const ResultLabel = styled.span`
@@ -217,11 +221,7 @@ export default function caseStudyPage(pathname) {
     >
       <HeadingContainer>
         <TextCell>
-          <h1>
-            <Link href={caseStudy.link.url} passHref>
-              <TeamLink>{caseStudy.team}</TeamLink>
-            </Link>
-          </h1>
+          <h1>{caseStudy.team}</h1>
           <p>{caseStudy.industry} - {caseStudy.teamSize}</p>
         </TextCell>
 
