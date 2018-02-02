@@ -37,9 +37,9 @@ const CaseStudyWords = TextCell.extend`
   > p {
     max-width: 33em;
     margin: ${({ theme }) => theme.textSpacing.s2} 0;
-    a {
-      ${({ theme }) => theme.textStyles.navigationHyperlink}
-      font-weight: bold;
+    a, a:visited, a:active, a:hover {
+      text-decoration: underline;
+      color: inherit;    
     }
   }
 `
@@ -84,10 +84,6 @@ const ResultLabel = styled.span`
   font-weight: 600;
   display: block;
   max-width: 11em;
-`
-
-const TeamLink = styled.a`
-  ${({ theme }) => theme.textStyles.navigationHyperlink}
 `
 
 const Logo = styled.img`
