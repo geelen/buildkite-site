@@ -3,19 +3,21 @@ import { Keyframes, Frame } from 'react-keyframes'
 
 const PreInSVG = styled.pre`
   text-align: left;
+  padding: 50px 40px;
+  height: 100%;
   color: #F8F8F8;
   font-size: 18px;
   line-height: 1.65em;
   font-family: SFMono-Regular, SF Mono, Monaco, Menlo, Consolas, Liberation Mono, Courier, monospace;
 `
 
-const SVGCommon = ({ children, ...props }) => (
+const SVGCommon = ({ name, children, width="547", height="280", ...props }) => (
   // NOTE: We don't do any styling here, as we pass props through to the SVG,
   //       that way it can be styled using styled-components when implemented
   <svg
-    width="547"
-    height="280"
-    viewBox="0 0 547 280"
+    width={width}
+    height={height}
+    viewBox={`0 0 ${width} ${height}`}
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
@@ -24,7 +26,7 @@ const SVGCommon = ({ children, ...props }) => (
         x1="0%"
         y1="50%"
         y2="50%"
-        id="buildAgentStartGradient"
+        id={`${name}-gradientOverlay`}
       >
         <stop
           stopOpacity="0"
@@ -39,21 +41,21 @@ const SVGCommon = ({ children, ...props }) => (
     >
       <path
         fill="#000"
-        d="M0 0h547v280H0z"
+        d={`M0 0h${width}v${height}H0z`}
       />
       <foreignObject
-        width="506"
-        height="230"
-        x="40"
-        y="50"
+        width={width}
+        height={height}
+        x="0"
+        y="0"
       >
         <PreInSVG>
           {children}
         </PreInSVG>
       </foreignObject>
       <path
-        fill="url(#buildAgentStartGradient)"
-        d="M487 0h59v280h-59z"
+        fill={`url(#${name}-gradientOverlay)`}
+        d={`M${width - 60} 0h60v${height}h-60z`}
       />
     </g>
   </svg>
@@ -109,18 +111,16 @@ const TEXT_FRAGMENTS = [
 ]
 
 export default ({...props}) => (
-  <Keyframes component={React.Fragment}>
+  <Keyframes component={SVGCommon} {...props} name="buildAgentStart" width="547" height="280">
     {TEXT_FRAGMENTS.map(({ duration, children }, index) => (
       // We concatenate each frame of children to build each subsequent frame,
       // just because I didn't want to have to repeat them a bunch in the code
       <Frame duration={duration} key={index}>
-        <SVGCommon {...props}>
-          {
-            TEXT_FRAGMENTS
-              .slice(0, index + 1)
-              .map(({ children }) => children)
-          }
-        </SVGCommon>
+        {
+          TEXT_FRAGMENTS
+            .slice(0, index + 1)
+            .map(({ children }) => children)
+        }
       </Frame>
     ))}
   </Keyframes>
