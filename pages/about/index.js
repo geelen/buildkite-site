@@ -66,9 +66,6 @@ const HeadOfficeImage = styled.img`
 const LocationParagraph = styled.section`
   margin: ${({ theme }) => theme.textSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s3} 0;
   color: ${({ theme }) => theme.colors.text.green};
-  span:after {
-    content: ' →'
-  }
 `
 
 const FirstNationsSection = styled.section`
@@ -90,6 +87,10 @@ const LocationLink = styled.a`
 
   :hover, :active {
     text-decoration: underline;
+  }
+
+  :after {
+    content: ' →'
   }
 `
 
@@ -157,11 +158,9 @@ export default page(({ loggedIn }) => (
             <LocationLink
               href={`https://maps.apple.com/?${queryString.stringify(HeadOfficeLocation)}`}
             >
-              <span>
-                149a Brunswick St<br/>
-                Fitzroy, Victoria 3065<br/>
-                Australia
-              </span>
+              149a Brunswick St<br/>
+              Fitzroy, Victoria 3065<br/>
+              Australia
             </LocationLink>
           </LocationParagraph>
           <FirstNationsSection>
