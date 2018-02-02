@@ -2,7 +2,6 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { TransitionGroup } from 'react-transition-group'
 import transition from 'styled-transition-group'
 import { easeInBack, easeOutBack } from 'eases'
 
@@ -136,7 +135,7 @@ export default class Dropdown extends React.PureComponent<Props, State> {
     //       will never be more than 2 element children, or fewer than one.
     const popupNode = (
       this.wrapperNode &&
-      this.wrapperNode.childElementCount == 2 &&
+      this.wrapperNode.childElementCount === 2 &&
       this.wrapperNode.lastElementChild
     )
 

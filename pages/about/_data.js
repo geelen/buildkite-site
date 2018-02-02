@@ -81,7 +81,7 @@ export const team = [
   }
 ]
 
-export const leadership = team.filter((t) => t.leadership)
+export const leadership = team.filter((team) => team.leadership)
 
 export const advisors = [
   {

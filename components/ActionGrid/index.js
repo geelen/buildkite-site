@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Button, { colors as buttonColors } from 'components/Button'
+import Button from 'components/Button'
 import { Grid as RawGrid, Cell } from 'components/Grid'
 import Link from 'components/Link'
 

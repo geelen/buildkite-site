@@ -119,6 +119,8 @@ export default class AnchoredPopover extends React.PureComponent<Props, State> {
     }
   };
 
+  onRef = (popupNode) => this.popupNode = popupNode;
+
   renderPopover(children: React$Node) {
     if (!this.state.showing) {
       return
@@ -132,7 +134,7 @@ export default class AnchoredPopover extends React.PureComponent<Props, State> {
         offsetX={offsetX}
         offsetY={offsetY}
         nibOffsetX={nibOffsetX}
-        innerRef={(popupNode) => this.popupNode = popupNode}
+        innerRef={this.onRef}
         width={width}
       >
         {children}

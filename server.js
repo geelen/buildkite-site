@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
+
 // Borrowed from styled-components website:
 // https://github.com/styled-components/styled-components-website/blob/6afb14b81a3bdedebb2e7a50d8868dc0b8d32269/server.js
 
 const dev = process.env.NODE_ENV !== 'production'
 
-const path = require('path')
 const url = require('url')
 const express = require('express')
 const next = require('next')
@@ -51,7 +52,7 @@ app.prepare()
     //   /site/assets/images/brand/mark.svg
     server.use('/site/assets', (req, res, next) => {
       const originalUrl = req.url
-      req.url = req.url.replace(/\/[^/]+\//, '/')
+      req.url = originalUrl.replace(/\/[^/]+\//, '/')
       next()
     })
 

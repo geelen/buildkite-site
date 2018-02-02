@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import Button from 'components/Button'
 import Link from 'components/Link'
 import CenteredLink from 'components/CenteredLink'
-import { FeatureGrid, FeatureCell, FeatureTitle, FeatureDescription } from 'components/FeatureGrid'
-import { Grid, Cell } from 'components/Grid'
 import Page, { page } from 'components/Page'
 import { OffscreenH1 } from 'components/OffscreenHeading'
 

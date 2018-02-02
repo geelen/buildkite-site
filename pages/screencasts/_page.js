@@ -11,13 +11,6 @@ const Wrapper = styled.div`
   margin-top: -${({ theme }) => theme.outerSpacing.s1};
 `
 
-const IndexLink = styled.a`
-  ${({ theme }) => theme.textStyles.mainCallout}
-  ${({ theme }) => theme.textStyles.navigationHyperlink}
-  display: inline-block;
-  margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
-`
-
 const ScreencastParagraph = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopySmall}
   color: ${({ theme }) => theme.colors.text.subdued};
@@ -66,7 +59,7 @@ const Sentencify = ({ children: rawChildren, separator = ', ', lastSeparator = '
 )
 
 export default function screencastPage(pathname) {
-  const index = screencasts.findIndex((screencast) => screencast.pathname == pathname)
+  const index = screencasts.findIndex((screencast) => screencast.pathname === pathname)
   const screencast = screencasts[index]
   const nextScreencast = screencasts[index + 1] || screencasts[0]
 
@@ -89,8 +82,8 @@ export default function screencastPage(pathname) {
           <ScreencastParagraph>
             {'Related documentation: '}
             <Sentencify>
-              {screencast.relatedDocumentation.map(({ title, url }, index) => (
-                <Link href={url} external key={index}>
+              {screencast.relatedDocumentation.map(({ title, url }) => (
+                <Link href={url} external key={`[${title}](${url})`}>
                   <DocumentationLink>{title}</DocumentationLink>
                 </Link>
               ))}

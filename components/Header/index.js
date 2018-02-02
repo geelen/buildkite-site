@@ -156,8 +156,8 @@ export default class Header extends React.PureComponent {
   handleWindowScroll = throttle(() => this.checkScroll())
   handleWindowResize = throttle(() => this.checkResize())
 
-  handleMenuLinkClick = (e) => {
-    e.preventDefault()
+  handleMenuLinkClick = (evt) => {
+    evt.preventDefault()
     this.setState({ showMenu: !this.state.showMenu })
   }
 

@@ -127,7 +127,7 @@ rules:
   import/extensions: error
   import/unambiguous: off
   react/display-name: off
-  react/forbid-prop-types: error
+  react/forbid-prop-types: off
 
   react/jsx-boolean-value:
     - error

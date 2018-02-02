@@ -62,7 +62,8 @@ export function page(Component) {
   return Component
 }
 
-export const BasePage = ({ headTitle, description, image, imageAlt, children, loggedIn }) => (
+/* TODO: Open Graph metadata in BasePage */
+export const BasePage = ({ headTitle, /*description, image, imageAlt,*/ children, loggedIn }) => (
   <ThemeProvider theme={buildkiteTheme}>
     <React.Fragment>
       <Head>

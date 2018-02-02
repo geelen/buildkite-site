@@ -4,7 +4,7 @@ import queryString from 'query-string'
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Br from 'components/Br'
 import Callout from 'components/Callout'
-import { Grid, Cell } from 'components/Grid'
+import { Grid } from 'components/Grid'
 import { Masonry, Brick } from 'components/Masonry'
 import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 import { OffscreenH2 } from 'components/OffscreenHeading'
@@ -16,7 +16,7 @@ import { team, leadership, advisors } from './_data'
 const headOfficeImage = require('../../assets/images/about/head-office.jpg')
 const brandAssetsImage = require('../../assets/images/about/brand-assets.jpg')
 const sayhelloImage = require('../../assets/images/contact/sayhello.jpg')
-const shopImage = require('../../assets/images/about/shop.jpg')
+// const shopImage = require('../../assets/images/about/shop.jpg')
 const aboriginalFlagImage = require('../../assets/images/about/australian-aboriginal-flag.svg')
 
 const SectionHeader = styled.h1`
@@ -96,8 +96,8 @@ const LocationLink = styled.a`
 
 const HeadOfficeLocation = {
   address: '149a Brunswick St, Fitzroy, Victoria 3065, Australia',
-  z: 17,
-  t: 'r'
+  z: 17, // eslint-disable-line id-length
+  t: 'r' // eslint-disable-line id-length
 }
 
 const ValueParagraph = styled.p`
@@ -177,7 +177,7 @@ export default page(({ loggedIn }) => (
         <Brick>
           <h2>Transparency</h2>
           <ValueParagraph>
-            We believe good work happens out in the open. Internally we believe it's important to .
+            We believe good work happens out in the open. Internally we believe it’s important to .
           </ValueParagraph>
           <ValueParagraph>
             Open-source, company growth / success / plans internally. Open and frank discussion about security, our infrastructure and how we plan to grow and improve areas of both strength and weakness.
@@ -225,7 +225,7 @@ export default page(({ loggedIn }) => (
         <Brick>
           <h2>Sustainable Growth</h2>
           <ValueParagraph>
-            We believe that great companies grow sustainably. We want to build a company that grows at a pace that we can ensure sticks to our values. We believe that work/life balance and enjoying the work you do is really important. Commercial success is one thing, but we believe it shouldn't come at the expense of the humans that make it possible.
+            We believe that great companies grow sustainably. We want to build a company that grows at a pace that we can ensure sticks to our values. We believe that work/life balance and enjoying the work you do is really important. Commercial success is one thing, but we believe it shouldn’t come at the expense of the humans that make it possible.
           </ValueParagraph>
         </Brick>
       </Masonry>

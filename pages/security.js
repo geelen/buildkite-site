@@ -27,13 +27,6 @@ const Subsection = styled.section`
   margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
 `
 
-const MaxWidthSubsection = Subsection.extend`
-  @media (min-width: 742px) {
-    ${({ theme }) => theme.maxWidthContainer}
-    width: 60%;
-  }
-`
-
 const SubSectionHeader = styled.h3`
   ${({ theme }) => theme.textStyles.thirdLevelHeading}
   margin: ${({ theme }) => theme.textSpacing.s1} 0;

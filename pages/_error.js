@@ -13,7 +13,7 @@ const FALLBACK_STATUS_MESSAGE = {
   description: 'We’re not entirely sure what – try one of the links above'
 }
 
-class Error extends React.Component {
+class Error extends React.PureComponent {
   static getInitialProps(ctx) {
     const { res, err, jsonPageRes } = ctx
 

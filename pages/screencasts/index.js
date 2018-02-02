@@ -18,10 +18,10 @@ export default page(({ loggedIn }) => (
     loggedIn={loggedIn}
   >
     <Grid>
-      {screencasts.map((screencast, index) => (
+      {screencasts.map((screencast) => (
         <ScreencastLink
           screencast={screencast}
-          key={index}
+          key={screencast.pathname}
         />
       ))}
     </Grid>
