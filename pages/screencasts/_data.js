@@ -16,7 +16,7 @@ export default [
   {
     pathname: '/screencasts/parallel-testing',
     title: 'Parallel Testing',
-    description: <span>An introduction to Buildkite’s parallelism attribute <Br maxWidth='40em'/> and using it to run 15 hours of tests in under 5 minutes.</span>,
+    description: <span>An introduction to Buildkite’s parallelism attribute, <Br maxWidth='40em'/> using it to run 15 hours of tests in under 5 minutes.</span>,
     duration: '90s',
     images: { poster: parallelismPoster, thumbnail: parallelismThumbail },
     videos: {
@@ -33,7 +33,7 @@ export default [
   {
     pathname: '/screencasts/elastic-ci-stack-for-aws',
     title: 'Elastic CI Stack for AWS',
-    description: 'Interested in the Elastic Stack, but not sure it suits your needs? In this screencast we\'ll give you a short overview of the setup and operation of an Elastic CI Stack on AWS.',
+    description: <span>An overview of the setup and operation of an Elastic CI Stack <Br maxWidth='40em'/> on AWS, and how it works with Buildkite Agents.</span>,
     duration: '74s',
     images: { poster: elasticStackPoster, thumbnail: elasticStackThumbnail },
     videos: {
@@ -42,8 +42,8 @@ export default [
     },
     relatedDocumentation: [
       { title: 'Elastic stack quickstart', url: '/docs/quickstart/elastic-ci-stack-aws' },
-      { title: 'complete documentation on Github', url: 'https://github.com/buildkite/elastic-ci-stack-for-aws' },
     ],
+    exampleCode: 'https://github.com/buildkite/elastic-ci-stack-for-aws'
   },
   {
     pathname: '/screencasts/pipeline-step-types',
@@ -62,6 +62,7 @@ export default [
       { title: 'block steps', url: '/docs/pipelines/block-step' },
       { title: 'trigger steps', url: '/docs/pipelines/trigger-step' },
     ],
+    exampleCode: 'https://github.com/buildkite/screencast-examples/'
   },
   {
     pathname: '/screencasts/github-pr-workflow',
@@ -78,5 +79,6 @@ export default [
       { title: 'Github Enterprise setup', url: '/docs/tutorials/github-enterprise' },
       { title: 'using a private repo', url: '/docs/quickstart/getting-started#using-a-private-repository' },
     ],
+    exampleCode: 'https://github.com/buildkite/screencast-examples/'
   }
 ]
