@@ -11,7 +11,7 @@ import { OffscreenH1 } from 'components/OffscreenHeading'
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
-const screenshotPath = require('../assets/images/home/screenshot.png');
+const screenshotPath = require('../assets/images/home/screenshot.png')
 
 const ScreenshotImage = styled.img`
   ${({ theme }) => theme.images.screenshots}
@@ -73,7 +73,7 @@ export default page(({ loggedIn }) => (
     <section>
       <OffscreenH1>Buildkite</OffscreenH1>
       <PositioningStatement>
-        Lightning fast testing and delivery <br/>
+        Lightning fast testing and delivery <br />
         for all your software projects
       </PositioningStatement>
       <ExplanationStatement>

@@ -2,16 +2,16 @@ import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
-  static getInitialProps ({ renderPage }) {
+  static getInitialProps({ renderPage }) {
     const sheet = new ServerStyleSheet()
-    const page = renderPage(Component => props =>
+    const page = renderPage((Component) => (props) =>
       sheet.collectStyles(<Component {...props} />
-    ))
+      ))
     const styles = sheet.getStyleElement()
     return { ...page, styles }
   }
 
-  render () {
+  render() {
     return (
       <html lang="en-US">
         <Head>
@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#da936a" />
         </Head>
         <body>
-          <div className='root'>
+          <div className="root">
             <Main />
           </div>
           <NextScript />

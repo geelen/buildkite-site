@@ -18,7 +18,7 @@ const TEXT_FRAGMENTS = [
     children: (
       <React.Fragment key="starting">
         <br />
-        Starting buildkite-agent with PID: 11301<br/>
+        Starting buildkite-agent with PID: 11301<br />
         Registering agent with Buildkite...
       </React.Fragment>
     )
@@ -52,7 +52,7 @@ const TEXT_FRAGMENTS = [
   }
 ]
 
-export default ({...props}) => (
+export default ({ ...props }) => (
   <Keyframes
     component={SVGConsoleImage}
     {...props}

@@ -16,13 +16,13 @@ export default ({ href, external, prefetch, children }) => {
   if (external) {
     // External links just render the child (usually an <a> tag) but setting the href
     return React.cloneElement(child, { href: href })
-  } else {
-    // Internal links (to Next.js pages) just pass through to Next’s Link which
-    // does lots of things for us, including prefetching etc
-    return React.createElement(
-      Link,
-      { href: href, passHref: true, prefetch: prefetch },
-      children
-    )
   }
+  // Internal links (to Next.js pages) just pass through to Next’s Link which
+  // does lots of things for us, including prefetching etc
+  return React.createElement(
+    Link,
+    { href: href, passHref: true, prefetch: prefetch },
+    children
+  )
+
 }

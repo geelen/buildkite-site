@@ -78,7 +78,7 @@ export const ActionGridItem = ({ heading, description, url, buttonTitle, image, 
       </ItemImageContainer>
       <Heading>{heading}</Heading>
       <Paragraph>{description}</Paragraph>
-      <Link href={url}>      
+      <Link href={url}>
         <Button>{buttonTitle}</Button>
       </Link>
       {note && <Note>{note}</Note>}

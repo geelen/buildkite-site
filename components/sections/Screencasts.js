@@ -5,7 +5,7 @@ import Button from 'components/Button'
 import Link from 'components/Link'
 import { OffscreenH1 } from 'components/OffscreenHeading'
 
-const stepTypesThumbnail = require('../../assets/images/screencasts/step-types-frame.thumbnail.jpg');
+const stepTypesThumbnail = require('../../assets/images/screencasts/step-types-frame.thumbnail.jpg')
 
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s2};
@@ -45,7 +45,7 @@ export default () => (
   <Section>
     <OffscreenH1>Screencasts</OffscreenH1>
     <Paragraph>
-      See how it works in production, <Br maxWidth='30em'/>with our short series of 90 second videos…
+      See how it works in production, <Br maxWidth="30em" />with our short series of 90 second videos…
     </Paragraph>
     <Link href="/screencasts">
       <ScreencastLinkContainer>

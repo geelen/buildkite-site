@@ -1,7 +1,7 @@
-const shopifyLogo = require('../../assets/images/case-studies/shopify/logo.png');
-const shopifyPhotoPeople = require('../../assets/images/case-studies/shopify/people.jpg');
-const shopifyPhotoOffice = require('../../assets/images/case-studies/shopify/office.jpg');
-const shopifyTestimonialPhoto = require('../../assets/images/case-studies/shopify/testimonial-headshot.jpg');
+const shopifyLogo = require('../../assets/images/case-studies/shopify/logo.png')
+const shopifyPhotoPeople = require('../../assets/images/case-studies/shopify/people.jpg')
+const shopifyPhotoOffice = require('../../assets/images/case-studies/shopify/office.jpg')
+const shopifyTestimonialPhoto = require('../../assets/images/case-studies/shopify/testimonial-headshot.jpg')
 
 export const shopify = {
   pathname: '/case-studies/shopify',
@@ -17,7 +17,7 @@ export const shopify = {
     name: 'Jean-Michel Lemieux',
     title: 'SVP of Engineering, Shopify',
     testimonial: 'Buildkite helped us bring down our build times on shopify.com from 25 minutes to 5 minutes, and supported us growing to over 900 engineers.',
-    headshotImage: shopifyTestimonialPhoto,
+    headshotImage: shopifyTestimonialPhoto
   },
   results: [
     { number: 75, unit: '%', label: 'reduction in build wait times' },
@@ -38,10 +38,10 @@ export const shopify = {
   )
 }
 
-const reaLogo = require('../../assets/images/case-studies/rea/logo.png');
-const reaPhotoPeople = require('../../assets/images/case-studies/rea/people.jpg');
-const reaPhotoOffice = require('../../assets/images/case-studies/rea/office.jpg');
-const reaTestimonialPhoto = require('../../assets/images/case-studies/rea/testimonial-headshot.jpg');
+const reaLogo = require('../../assets/images/case-studies/rea/logo.png')
+const reaPhotoPeople = require('../../assets/images/case-studies/rea/people.jpg')
+const reaPhotoOffice = require('../../assets/images/case-studies/rea/office.jpg')
+const reaTestimonialPhoto = require('../../assets/images/case-studies/rea/testimonial-headshot.jpg')
 
 export const rea = {
   pathname: '/case-studies/rea',
@@ -57,7 +57,7 @@ export const rea = {
     name: 'Tomas Varsavsky',
     title: 'Chief Engineer',
     testimonial: 'We had more than a dozen different build clusters, each of which required care and feeding (patching, backups, etc.) Buildkite allowed us to reduce overheads by outsourcing the hard (stateful) parts.',
-    headshotImage: reaTestimonialPhoto,
+    headshotImage: reaTestimonialPhoto
   },
   results: [
     { number: 330, unit: '', label: 'engineers globally' },

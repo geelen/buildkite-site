@@ -10,12 +10,12 @@ export default page(({ loggedIn }) => (
     title="Case Studies"
     description={
       <React.Fragment>
-        See the results from some of <Br maxWidth='30em'/>
+        See the results from some of <Br maxWidth="30em" />
         the teams using Buildkite.
       </React.Fragment>
     }
     loggedIn={loggedIn}
-    >
+  >
     {caseStudies.map((caseStudy) => (
       <CaseStudyCallout
         caseStudy={caseStudy}

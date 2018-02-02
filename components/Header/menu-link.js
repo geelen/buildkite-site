@@ -25,9 +25,9 @@ export default ({ onClick }) => (
   <IconContainer onClick={onClick} aria-label="Site Navigation Menu">
     <svg width="30px" height="30px" viewBox="0 0 30 30">
       <g stroke="none" strokeWidth="1" fill="currentColor" fillRule="evenodd">
-        <rect x="5" y="7" width="20" height="2"></rect>
-        <rect x="5" y="14" width="20" height="2"></rect>
-        <rect x="5" y="21" width="20" height="2"></rect>
+        <rect x="5" y="7" width="20" height="2" />
+        <rect x="5" y="14" width="20" height="2" />
+        <rect x="5" y="21" width="20" height="2" />
       </g>
     </svg>
   </IconContainer>

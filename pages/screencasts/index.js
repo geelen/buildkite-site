@@ -11,7 +11,7 @@ export default page(({ loggedIn }) => (
     title="Screencasts"
     description={
       <React.Fragment>
-        See how Buildkite works in production, <Br maxWidth='30em'/>
+        See how Buildkite works in production, <Br maxWidth="30em" />
         with this series of short videos.
       </React.Fragment>
     }

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import queryString from 'query-string';
+import queryString from 'query-string'
 
 import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Br from 'components/Br'
@@ -111,15 +111,15 @@ export default page(({ loggedIn }) => (
     title="About"
     description={
       <React.Fragment>
-        We’re building tools to help the best <Br maxWidth='30em'/>
+        We’re building tools to help the best <Br maxWidth="30em" />
         software teams stay happy and productive.
       </React.Fragment>
     }
     loggedIn={loggedIn}
-    >
+  >
     <PeopleSection>
       <SectionHeader>Get to know the team</SectionHeader>
-      
+
       <OffscreenH2>Everyone</OffscreenH2>
       <People>
         {team.map((person) => (
@@ -158,13 +158,13 @@ export default page(({ loggedIn }) => (
             <LocationLink
               href={`https://maps.apple.com/?${queryString.stringify(HeadOfficeLocation)}`}
             >
-              149a Brunswick St<br/>
-              Fitzroy, Victoria 3065<br/>
+              149a Brunswick St<br />
+              Fitzroy, Victoria 3065<br />
               Australia
             </LocationLink>
           </LocationParagraph>
           <FirstNationsSection>
-            <div><img src={aboriginalFlagImage} alt="Australian Aboriginal Flag"/></div>
+            <div><img src={aboriginalFlagImage} alt="Australian Aboriginal Flag" /></div>
             <p>Our head office is located on the traditional lands of the Wurundjeri people of the Kulin nation. We acknowledge that sovereignty was never ceded and pay our respects to elders past, present and emerging.</p>
           </FirstNationsSection>
         </TextCell>

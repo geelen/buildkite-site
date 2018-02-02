@@ -3,10 +3,10 @@ import Head from 'next/head'
 
 import Link from 'components/Link'
 
-const showDebugOutlines = false;
+const showDebugOutlines = false
 
-const markSvgPath = require('../../assets/images/brand/mark.svg');
-const wordmarkSvgPath = require('../../assets/images/brand/wordmark.svg');
+const markSvgPath = require('../../assets/images/brand/mark.svg')
+const wordmarkSvgPath = require('../../assets/images/brand/wordmark.svg')
 
 const LinkTag = styled.a`
   position: relative;

@@ -7,11 +7,15 @@ extends:
   - plugin:react/recommended
   - plugin:flowtype/recommended
 
+settings:
+  import/resolver:
+    babel-module:
+
 globals:
-  require: true
-  Features: true
+  module: true
   process: true
-  Stripe: true
+  React: true
+  require: true
 
 env:
   es6: true
@@ -21,9 +25,6 @@ plugins:
   - import
   - react
   - flowtype
-
-ecmaFeatures:
-  modules: true
 
 rules:
   array-bracket-spacing:
@@ -125,16 +126,12 @@ rules:
 
   import/extensions: error
   import/unambiguous: off
-
-  react/display-name:
-    - error
-    - ignoreTranspilerName: false
-
-  react/forbid-prop-types: off
+  react/display-name: off
+  react/forbid-prop-types: error
 
   react/jsx-boolean-value:
     - error
-    - always
+    - never
 
   react/jsx-closing-bracket-location: error
   react/jsx-curly-spacing: error
@@ -170,7 +167,11 @@ rules:
   react/jsx-no-duplicate-props: error
   react/jsx-no-literals: off
   react/jsx-no-target-blank: error
-  react/jsx-no-undef: error
+
+  react/jsx-no-undef: 
+    - error
+    - allowGlobals: true
+
   react/jsx-pascal-case: error
   react/jsx-sort-prop-types: off
   react/jsx-sort-props: off
@@ -197,7 +198,8 @@ rules:
   react/no-unused-prop-types: error
   react/prefer-es6-class: error
   react/prefer-stateless-function: off
-  react/prop-types: error
+  react/prop-types: off
+  react/react-in-jsx-scope: off
   react/require-optimization: error
   react/require-render-return: error
   react/self-closing-comp: warn

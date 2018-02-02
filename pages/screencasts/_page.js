@@ -47,7 +47,7 @@ const ScreencastLink = styled(RawScreencastLink)`
   display: inline-block;
 `
 
-const Sentencify = ({ children: rawChildren, separator=', ', lastSeparator=' and ' }) => (
+const Sentencify = ({ children: rawChildren, separator = ', ', lastSeparator = ' and ' }) => (
   React.Children.toArray(rawChildren).reduce((acc, child, index, children) => {
     if (index > 0) {
       if (index < children.length - 1) {
@@ -66,9 +66,9 @@ const Sentencify = ({ children: rawChildren, separator=', ', lastSeparator=' and
 )
 
 export default function screencastPage(pathname) {
-  const index = screencasts.findIndex((screencast) => screencast.pathname == pathname);
-  const screencast = screencasts[index];
-  const nextScreencast = screencasts[index + 1] || screencasts[0];
+  const index = screencasts.findIndex((screencast) => screencast.pathname == pathname)
+  const screencast = screencasts[index]
+  const nextScreencast = screencasts[index + 1] || screencasts[0]
 
   return page(({ loggedIn }) => (
     <Page
@@ -81,8 +81,8 @@ export default function screencastPage(pathname) {
         <ScreencastParagraph>{`Duration: ${screencast.duration}`}</ScreencastParagraph>
 
         <ScreenshotVideo controls playsinline preload="auto" poster={screencast.images.poster}>
-          <source src={screencast.videos.webm} type="video/webm"/>
-          <source src={screencast.videos.mp4} type="video/mp4"/>
+          <source src={screencast.videos.webm} type="video/webm" />
+          <source src={screencast.videos.mp4} type="video/mp4" />
         </ScreenshotVideo>
 
         {screencast.relatedDocumentation && (

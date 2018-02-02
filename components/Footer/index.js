@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Grid, Cell } from 'components/Grid';
+import { Grid, Cell } from 'components/Grid'
 import Link from 'components/Link'
 
 const Footer = styled.footer`
@@ -55,7 +55,7 @@ export default () => (
             <FooterLink href="/support">Support</FooterLink>
             <FooterLink href="/contact">Contact Us</FooterLink>
             <FooterLink href="https://buildkitestatus.com/">System Status</FooterLink>
-         </nav>
+          </nav>
         </Cell>
       </Grid>
     </FooterInner>

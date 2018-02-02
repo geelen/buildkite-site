@@ -196,18 +196,18 @@ export default function caseStudyPage(pathname) {
   const { caseStudy, otherCaseStudies } = caseStudies.reduce(
     (acc, study) => {
       if (study.pathname == pathname) {
-        acc.caseStudy = study;
+        acc.caseStudy = study
       } else {
-        acc.otherCaseStudies.push(study);
+        acc.otherCaseStudies.push(study)
       }
 
-      return acc;
+      return acc
     },
     {
       caseStudy: null,
       otherCaseStudies: []
     }
-  );
+  )
 
   return page(({ loggedIn }) => (
     <Page
@@ -239,7 +239,7 @@ export default function caseStudyPage(pathname) {
             <ResultItem key={index}>
               <ResultValue>
                 <ResultNumber>{result.number}</ResultNumber>{result.unit}
-              </ResultValue><br/>
+              </ResultValue><br />
               <ResultLabel>{result.label}</ResultLabel>
             </ResultItem>
           ))}
@@ -257,7 +257,7 @@ export default function caseStudyPage(pathname) {
           />
           <p>
             {caseStudy.testimonial.name}
-            <br/>
+            <br />
             {caseStudy.testimonial.title}
           </p>
         </Attribution>

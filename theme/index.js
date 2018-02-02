@@ -1,28 +1,28 @@
-import { css } from 'styled-components';
+import { css } from 'styled-components'
 
-import './reset';
+import './reset'
 
 export const innerSpacing = {
   s0: '10px',
   s1: '20px',
   s2: '40px',
   negative: {
-    s1: '-20px',
-  },
-};
+    s1: '-20px'
+  }
+}
 
 export const outerSpacing = {
   s1: '100px',
   s2: '150px',
   s3: '200px',
-  s4: '300px',
-};
+  s4: '300px'
+}
 
 export const textSpacing = {
   s1: '.5rem',
   s2: '1rem',
   s3: '1.5rem'
-};
+}
 
 export const maxWidthContainer = css`
   max-width: 1024px;
@@ -30,7 +30,7 @@ export const maxWidthContainer = css`
   margin-right: auto;
   padding-left: ${innerSpacing.s1};
   padding-right: ${innerSpacing.s1};
-`;
+`
 
 export const pageContainer = css`
   ${maxWidthContainer}
@@ -63,9 +63,9 @@ export const colors = {
     subdued: '#666666',
     black: 'black',
     green: '#14CC80',
-    white: 'white',
+    white: 'white'
   }
-};
+}
 
 export const fontSizes = {
   small: '16px',
@@ -117,7 +117,7 @@ export const textStyles = {
   `,
   navigationHyperlink: css`
     text-decoration: none;
-    color: ${props => props.active ? colors.text.green : 'black'};
+    color: ${(props) => props.active ? colors.text.green : 'black'};
     transition: color ${timings.color};
     will-change: color;
 

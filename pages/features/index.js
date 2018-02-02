@@ -86,7 +86,7 @@ const ImageCell = RawImageCell.extend`
   flex-grow: 4;
 `
 
-const FeatureTitle = RawFeatureTitle.withComponent('h3');
+const FeatureTitle = RawFeatureTitle.withComponent('h3')
 
 const OtherFeaturesSection = styled.section`
   margin: ${({ theme }) => theme.outerSpacing.s3} 0;
@@ -96,9 +96,9 @@ const SVGAnimation = Image.extend`
   height: auto;
 `
 
-const BuildAgentStart = SVGAnimation.withComponent(RawBuildAgentStart);
+const BuildAgentStart = SVGAnimation.withComponent(RawBuildAgentStart)
 
-const SVGConsoleImage = SVGAnimation.withComponent(RawSVGConsoleImage);
+const SVGConsoleImage = SVGAnimation.withComponent(RawSVGConsoleImage)
 
 export default page(({ loggedIn }) => (
   <Page
@@ -254,16 +254,16 @@ export default page(({ loggedIn }) => (
             width="547"
             height="410"
           >
-            <font color="#9B9B9B">#!/bin/bash</font><br/>
-            <br/>
-            # Pull layer cache<br/>
-            <font color="#00FF93">docker pull app:latest</font><br/>
-            <br/>
-            # Build<br/>
-            <font color="#00FF93">{'docker build --cache_from app:latest -t "app:$BUILDKITE_COMMIT" .'}</font><br/>
-            <br/>
-            # Push to image repo<br/>
-            <font color="#00FF93">docker push "app:$BUILDKITE_COMMIT"<br/>
+            <font color="#9B9B9B">#!/bin/bash</font><br />
+            <br />
+            # Pull layer cache<br />
+            <font color="#00FF93">docker pull app:latest</font><br />
+            <br />
+            # Build<br />
+            <font color="#00FF93">{'docker build --cache_from app:latest -t "app:$BUILDKITE_COMMIT" .'}</font><br />
+            <br />
+            # Push to image repo<br />
+            <font color="#00FF93">docker push "app:$BUILDKITE_COMMIT"<br />
             docker push app:latest</font>
           </SVGConsoleImage>
         </ImageCell>
@@ -318,8 +318,8 @@ export default page(({ loggedIn }) => (
           >
             # Check permissions<br />
             <font color="#00FF93">if [[ ! $BUILDKITE_REPOSITORY == *"github.com" ]]; then<br />
-            {"  "}echo "Repository not allowed"<br />
-            {"  "}exit 1<br />
+              {"  "}echo "Repository not allowed"<br />
+              {"  "}exit 1<br />
             fi</font><br />
             <br />
             # Mount in our source cache<br />
@@ -385,8 +385,8 @@ export default page(({ loggedIn }) => (
       </FeatureGrid>
     </OtherFeaturesSection>
 
-    <Screencasts/>
+    <Screencasts />
 
-    <GetStarted/>
+    <GetStarted />
   </Page>
 ))

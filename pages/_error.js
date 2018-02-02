@@ -15,9 +15,9 @@ const FALLBACK_STATUS_MESSAGE = {
 
 class Error extends React.Component {
   static getInitialProps(ctx) {
-    const { res, err, jsonPageRes } = ctx;
+    const { res, err, jsonPageRes } = ctx
 
-    let statusCode = null;
+    let statusCode = null
 
     if (res) {
       statusCode = res.statusCode
@@ -31,7 +31,7 @@ class Error extends React.Component {
   }
 
   render() {
-    const { loggedIn, statusCode } = this.props;
+    const { loggedIn, statusCode } = this.props
 
     const { title, description } = (
       statusCode
@@ -39,7 +39,7 @@ class Error extends React.Component {
           STATUS_MESSAGES[statusCode] || { title: `Error ${statusCode}`, description: 'Sorry about that' }
         )
         : FALLBACK_STATUS_MESSAGE
-    );
+    )
 
     return (
       <BasePage

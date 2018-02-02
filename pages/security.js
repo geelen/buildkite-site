@@ -67,7 +67,7 @@ export default page(({ loggedIn }) => (
     title="Security"
     description={
       <React.Fragment>
-        Contact details and information about <Br maxWidth='30em'/>
+        Contact details and information about <Br maxWidth="30em" />
         our security policies and procedures.
       </React.Fragment>
     }
@@ -204,7 +204,7 @@ export default page(({ loggedIn }) => (
       heading="Contact Us"
       description={
         <React.Fragment>
-          If you’ve got any questions, <Br maxWidth='30em'/>
+          If you’ve got any questions, <Br maxWidth="30em" />
           don’t hestitate to contact our team.
         </React.Fragment>
       }

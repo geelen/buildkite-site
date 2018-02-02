@@ -50,11 +50,11 @@ app.prepare()
     //   /site/assets/1uT8cdz/images/brand/mark.svg ->
     //   /site/assets/images/brand/mark.svg
     server.use('/site/assets', (req, res, next) => {
-      const originalUrl = req.url;
-      req.url = req.url.replace(/\/[^/]+\//, '/');
-      next();
+      const originalUrl = req.url
+      req.url = req.url.replace(/\/[^/]+\//, '/')
+      next()
     })
-    
+
     // Hashed assets are immutable, so they can be cached indefinitely by
     // clients.
     //
@@ -65,10 +65,10 @@ app.prepare()
       lastModified: false,
       immutable: true,
       maxAge: '365d'
-    };
+    }
 
-    server.use('/site/assets', express.static('./assets', assetsOptions));
-    
+    server.use('/site/assets', express.static('./assets', assetsOptions))
+
     // The homepage should redirect to dashboard for logged in users. Let's not
     // annoy them with marketing content every day.
     server.get('/', (req, res) => {
@@ -76,7 +76,7 @@ app.prepare()
         res.redirect(302, '/dashboard')
       }
       nextHandler(req, res)
-    });
+    })
 
     // This gives us a URL that we can link to in the footer, for logged in
     // people, so they can actually see the marketing site. They can also share
@@ -94,7 +94,7 @@ app.prepare()
     // Pass everything through to Next
     server.get('*', nextHandler)
 
-    server.listen(PORT, err => {
+    server.listen(PORT, (err) => {
       if (err) {
         throw err
       }
@@ -104,8 +104,8 @@ app.prepare()
   })
 
 
-process.on('unhandledRejection', error => {
+process.on('unhandledRejection', (error) => {
   // We simply log any unhandled promise rejections. If we don't, Node
   // complains.
-  console.log('Unhandled promise rejection', error);
+  console.log('Unhandled promise rejection', error)
 })
