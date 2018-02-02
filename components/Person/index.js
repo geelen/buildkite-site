@@ -15,11 +15,20 @@ const ImageWrapper = styled.button`
   display: inline-flex;
   position: relative;
 
-  &:hover, &:focus {
+  .Dropdown-showing &, &:hover, &:focus, &:active {
     outline: 0;
     border-color: lightgray;
     border-color: ${props => props.colour};
-    z-index: 1;
+  }
+
+  &:hover, &:focus, &:active {
+    z-index: 2;
+  }
+
+  .Dropdown-showing & {
+    &, &:hover, &:focus, &:active {
+      z-index: 1;
+    }
   }
 `
 

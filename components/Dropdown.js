@@ -201,11 +201,17 @@ export default class Dropdown extends React.PureComponent<Props, State> {
 
     const wrapperStyle = Object.assign({ position: 'relative' }, this.props.style);
 
+    const classNames = [this.props.className];
+
+    if (this.state.showing) {
+      classNames.push('Dropdown-showing');
+    }
+
     return (
       <span
         ref={(wrapperNode) => this.wrapperNode = wrapperNode}
         style={wrapperStyle}
-        className={this.props.className}
+        className={classNames.join(' ')}
       >
         {firstChild}
         {this.renderPopover(children)}
