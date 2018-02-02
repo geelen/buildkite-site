@@ -12,7 +12,7 @@ export default page(({ loggedIn }) => (
     description={
       <span>
         See how Buildkite works in production, <Br maxWidth='30em'/>
-        with this short series of 90 second videos.
+        with this series of short videos.
       </span>
     }
     loggedIn={loggedIn}
