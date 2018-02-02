@@ -25,7 +25,17 @@ export default ({ name, children, width="547", height="280", ...props }) => (
         x1="0%"
         y1="50%"
         y2="50%"
-        id={`${name}-gradientOverlay`}
+        id={`${name}-horizontalGradientOverlay`}
+      >
+        <stop
+          stopOpacity="0"
+          offset="0%"
+        />
+        <stop offset="100%"/>
+      </linearGradient>
+      <linearGradient
+        x1="0" x2="0" y1="0" y2="1"
+        id={`${name}-verticalGradientOverlay`}
       >
         <stop
           stopOpacity="0"
@@ -53,8 +63,12 @@ export default ({ name, children, width="547", height="280", ...props }) => (
         </PreInsideSVG>
       </foreignObject>
       <path
-        fill={`url(#${name}-gradientOverlay)`}
+        fill={`url(#${name}-horizontalGradientOverlay)`}
         d={`M${width - 60} 0h60v${height}h-60z`}
+      />
+      <path
+        fill={`url(#${name}-verticalGradientOverlay)`}
+        d={`M0 ${height - 60}h${width}v60H0z`}
       />
     </g>
   </svg>

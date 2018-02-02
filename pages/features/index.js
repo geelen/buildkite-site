@@ -27,9 +27,6 @@ const buildkiteMetricsImage = require('../../assets/images/features/buildkite-me
 // -- Feature Section 5 --
 const customFieldsUnblockImage = require('../../assets/images/features/custom-fields-unblock.png')
 
-// -- Feature Section 6 --
-const dynamicPipelineImage = require('../../assets/images/features/dynamic-pipeline.svg')
-
 // -- Feature Section 7 --
 const webInterfaceImage = require('../../assets/images/features/web-interface.png')
 
@@ -47,9 +44,6 @@ const buildAnnotationsImage = require('../../assets/images/features/build-annota
 
 // -- Feature Section 12 --
 const logOutputGroupingImage = require('../../assets/images/features/log-output-grouping.png')
-
-// -- Feature Section 13 --
-const customAgentHooksImage = require('../../assets/images/features/custom-agent-hooks.svg')
 
 // -- Feature Section 14 --
 const graphqlApiImage = require('../../assets/images/features/graphql-api.png')
@@ -212,7 +206,22 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={dynamicPipelineImage} alt="" />
+          <SVGConsoleImage
+            name="dynamicPipeline"
+            width="547"
+            height="390"
+          >
+            <font color="#9B9B9B">$ </font>cat <font color="#00FF93">./generate-pipeline</font><br />
+            <br />
+            #!/bin/bash<br />
+            echo "steps:"<br />
+            for i in $(seq 1 100); do<br />
+            {'  '}echo "  - command: echo $i"<br />
+            done<br />
+            <br />
+            <font color="#9B9B9B">$ </font><font color="#00FF93">./generate-pipeline</font> | \<br />
+            <font color="#9B9B9B">> </font><font color="#00FF93">buildkite-agent pipeline upload</font>
+          </SVGConsoleImage>
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -245,7 +254,23 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={dockerWorksJustFineImage} alt="" />
+          <SVGConsoleImage
+            name="dockerWorksFine"
+            width="547"
+            height="420"
+          >
+            <font color="#9B9B9B">#!/bin/bash</font><br/>
+            <br/>
+            # Pull layer cache<br/>
+            <font color="#00FF93">docker pull myapp:latest</font><br/>
+            <br/>
+            # Build<br/>
+            <font color="#00FF93">{'docker build --cache_from app:latest -t "app:$BUILDKITE_COMMIT" .'}</font><br/>
+            <br/>
+            # Push to image repo<br/>
+            <font color="#00FF93">docker push "app:$BUILDKITE_COMMIT"<br/>
+            docker push app:latest</font>
+          </SVGConsoleImage>
         </ImageCell>
       </MediaItem>
     </section>
@@ -291,7 +316,20 @@ export default page(({ loggedIn }) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <Image src={customAgentHooksImage} alt="" />
+          <SVGConsoleImage
+            name="customAgentHooks"
+            width="547"
+            height="300"
+          >
+            # Check permissions<br />
+            <font color="#00FF93">if [[ ! $BUILDKITE_REPOSITORY == *"github.com" ]]; then<br />
+              echo "Repository not allowed"<br />
+              exit 1<br />
+            fi</font><br />
+            <br />
+            # Mount in our source cache<br />
+            <font color="#00FF93">ls -s /mnt/src-cache ./src</font>
+          </SVGConsoleImage>
         </ImageCell>
       </MediaItem>
       <MediaItem>
