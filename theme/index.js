@@ -35,7 +35,7 @@ export const maxWidthContainer = css`
 export const pageContainer = css`
   ${maxWidthContainer}
   margin-top: 10px;
-  margin-bottom: ${outerSpacing.s3};
+  margin-bottom: 30px;
 
   @media (min-width: 350px) {
     margin-top: 30px;
@@ -43,10 +43,12 @@ export const pageContainer = css`
 
   @media (min-width: 640px) {
     margin-top: 60px;
+    margin-bottom: 80px;
   }
 
   @media (min-width: 960px) {
     margin-top: ${outerSpacing.s2};
+    margin-bottom: ${outerSpacing.s3};
   }
 `
 

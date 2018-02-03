@@ -25,11 +25,23 @@ export const Description = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopyLarge}
   text-align: center;
   max-width: 30em;
-  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
   color: ${({ theme }) => theme.colors.text.subdued};
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  @media (min-width: 350px) {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 640px) {
+    margin-bottom: ${({ theme }) => theme.outerSpacing.s1};
+  }
+
+  @media (min-width: 960px) {
+    margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
+  }
 `
 
 const ImageContainer = styled.div`
