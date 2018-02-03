@@ -6,7 +6,6 @@ const shopifyTestimonialPhoto = require('../../assets/images/case-studies/shopif
 export const shopify = {
   pathname: '/case-studies/shopify',
   team: 'Shopify',
-  headTitle: 'Shopify CI Buildkite Case Study',
   logoImage: shopifyLogo,
   photoOne: { image: shopifyPhotoPeople, alt: "TODO" },
   photoTwo: { image: shopifyPhotoOffice, alt: "TODO" },
@@ -46,7 +45,6 @@ const reaTestimonialPhoto = require('../../assets/images/case-studies/rea/testim
 export const rea = {
   pathname: '/case-studies/rea',
   team: 'REA Group',
-  headTitle: 'REA Group CI Buildkite Case Study',
   logoImage: reaLogo,
   photoOne: { image: reaPhotoOffice, alt: "TODO" },
   photoTwo: { image: reaPhotoPeople, alt: "TODO" },
