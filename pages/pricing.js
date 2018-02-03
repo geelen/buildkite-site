@@ -7,7 +7,19 @@ const PlanCurrencyNote = styled.p`
   text-align: center;
   ${({ theme }) => theme.textStyles.bodyCopySmall}
   color: ${({ theme }) => theme.colors.text.subdued};
-  margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
+  margin-bottom: 50px;
+
+  @media (min-width: 350px) {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 640px) {
+    margin-bottom: ${({ theme }) => theme.outerSpacing.s1};
+  }
+
+  @media (min-width: 960px) {
+    margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
+  }
 `
 
 const PlanSection = styled.div`
