@@ -30,6 +30,8 @@ const ScreencastLinkContainer = styled.a`
   display: inline-block;
   position: relative;
   white-space: nowrap;
+  max-width: 100%;
+
   :hover ${CenteredButton} {
     background-color: ${({ theme }) => theme.colors.backgrounds.blackHover};
   }
@@ -37,6 +39,7 @@ const ScreencastLinkContainer = styled.a`
 
 const ScreencastImage = styled.img`
   ${({ theme }) => theme.images.screenshots}
+  width: 100%;
   max-width: 400px;
   margin: 0 auto;
 `
