@@ -4,4 +4,4 @@ set -euo pipefail
 
 # Defined here so it can be run in the Buildkite post-checkout hook (outside of
 # Docker) as well as via the command line in dev
-aws s3 sync s3://buildkite-site-fonts/ static/fonts
+aws s3 sync s3://buildkite-site-fonts/ assets/fonts
