@@ -7,6 +7,7 @@ import isLoggedIn from '../../lib/isLoggedIn'
 import * as buildkiteTheme from 'theme'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import Link from 'components/Link'
 
 import { fonts } from '../../theme/fonts'
 
@@ -19,6 +20,10 @@ export const Title = styled.h1`
   text-align: center;
   margin-top: 0;
   margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
+`
+
+export const TitleLink = styled.a`
+  ${({ theme }) => theme.textStyles.navigationHyperlink}
 `
 
 export const Description = styled.p`
@@ -104,7 +109,15 @@ export default (props) => (
         </ImageContainer>
       )}
       {props.title && (
-        <Title>{props.title}</Title>
+        props.titleHref ? (
+          <Title>
+            <Link href={props.titleHref}>
+              <TitleLink>{props.title}</TitleLink>
+            </Link>
+          </Title>
+        ) : (
+          <Title>{props.title}</Title>
+        )
       )}
       {props.description && (
         <Description>{props.description}</Description>

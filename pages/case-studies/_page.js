@@ -210,7 +210,8 @@ export default function caseStudyPage(pathname) {
 
   return page(({ loggedIn }) => (
     <Page
-      title={`${caseStudy.team} Case Study`}
+      title="Case Studies"
+      titleHref="/case-studies"
       headTitle={`${caseStudy.team} - Buildkite Case Study`}
       loggedIn={loggedIn}
     >
