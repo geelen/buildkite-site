@@ -8,7 +8,19 @@ import screencasts from './_data'
 
 const Wrapper = styled.div`
   text-align: center;
-  margin-top: -${({ theme }) => theme.outerSpacing.s1};
+  margin-top: 0;
+
+  @media (min-width: 350px) {
+    margin-top: -10px;
+  }
+
+  @media (min-width: 640px) {
+    margin-top: -50px;
+  }
+
+  @media (min-width: 960px) {
+    margin-top: -${({ theme }) => theme.outerSpacing.s1};
+  }
 `
 
 const ScreencastParagraph = styled.p`
