@@ -59,13 +59,18 @@ const HeaderLinkAnchor = styled.a`
 `
 
 const HeaderLink = withRouter(({ children, router, href, external, prefetch, left, right, widescreenOnly }) => {
+  // The following should both mark it as active
+  // "/case-studies" and "/case-studies"
+  // "/case-studies" and "/case-studies/shopify"
+  const active = router.pathname === href || router.pathname.indexOf(`${href}/`) === 0
+
   return (
     <Link prefetch={prefetch} href={href} external={external}>
       <HeaderLinkAnchor
         left={left}
         right={right}
         widescreenOnly={widescreenOnly}
-        active={router.pathname === href}
+        active={active}
       >
         {children}
       </HeaderLinkAnchor>
