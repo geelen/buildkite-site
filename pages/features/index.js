@@ -48,8 +48,16 @@ const graphqlApiImage = require('../../assets/images/features/graphql-api.png')
 const Heading = styled.h2`
   text-align: center;
   font-weight: normal;
-  margin-top: ${({ theme }) => theme.outerSpacing.s2};
   margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
+  margin-top: 60px;
+
+  @media (min-width: 640px) {
+    margin-top: ${({ theme }) => theme.outerSpacing.s1};
+  }
+
+  @media (min-width: 960px) {
+    margin-top: ${({ theme }) => theme.outerSpacing.s2};
+  }
 `
 
 const Description = styled.p`
