@@ -1,6 +1,8 @@
+import styled from 'styled-components'
 import { Keyframes, Frame } from 'react-keyframes'
+import RawTrackVisibility from 'react-on-screen'
 
-import SVGConsoleImage from 'components/SVGConsoleImage'
+import RawSVGConsoleImage from 'components/SVGConsoleImage'
 
 const TEXT_FRAGMENTS = [
   {
@@ -51,13 +53,27 @@ const TEXT_FRAGMENTS = [
   }
 ]
 
-export default ({ ...props }) => (
-  <Keyframes
-    component={SVGConsoleImage}
+const TrackVisibility = styled(RawTrackVisibility)`
+  height: 100%;
+`
+
+const SVGConsoleImageThatOnlyRendersWhenVisible = ({ children, ...props }) => (
+  <RawSVGConsoleImage
     {...props}
     name="buildAgentStart"
     width="547"
     height="260"
+  >
+    <TrackVisibility once>
+      {({ isVisible }) => isVisible && children}
+    </TrackVisibility>
+  </RawSVGConsoleImage>
+)
+
+export default ({ ...props }) => (
+  <Keyframes
+    component={SVGConsoleImageThatOnlyRendersWhenVisible}
+    {...props}
   >
     {TEXT_FRAGMENTS.map(({ duration }, index) => (
       // We concatenate each frame of children to build each subsequent frame,
