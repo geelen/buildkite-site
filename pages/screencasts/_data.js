@@ -79,7 +79,7 @@ export default [
   },
   {
     pathname: '/screencasts/github-pr-workflow',
-    title: 'Github Pull Request Workflow',
+    title: 'GitHub Pull Request Workflow',
     description: (
       <React.Fragment>
         A look at testing a GitHub pull request and merge,<Br maxWidth="40em" /> and other ways to use GitHub with Buildkite.
