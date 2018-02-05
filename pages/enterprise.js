@@ -27,6 +27,19 @@ const SectionDescription = styled.p`
   text-align: center;
 `
 
+const FeatureGridSectionDescription = styled.p`
+  ${({ theme }) => theme.textStyles.bodyCopyLarge}
+  text-align: center;
+  margin: ${({ theme }) => theme.innerSpacing.s1} 0 ${({ theme }) => theme.outerSpacing.s1} 0;
+  max-width: 25em;
+  margin-left: auto;
+  margin-right: auto;
+  > a {
+    ${({ theme }) => theme.textStyles.navigationHyperlink}
+    text-decoration: underline;
+  }
+`
+
 const FeatureSection = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s1};
   margin-bottom: ${({ theme }) => theme.outerSpacing.s1};
@@ -44,19 +57,22 @@ const FeatureSectionTagline = SectionDescription.extend`
 `
 
 const FeatureSectionDescription = styled.p`
-  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  ${({ theme }) => theme.textStyles.bodyCopy}
   color: ${({ theme }) => theme.colors.text.subdued};
-  margin: ${({ theme }) => theme.textSpacing.s2} 0;
+  margin: ${({ theme }) => theme.textSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s2} 0;
+  > a {
+    ${({ theme }) => theme.textStyles.navigationHyperlink}
+  }
 `
 
 export default page(({ loggedIn }) => (
   <Page
     headTitle="Buildkite Enterprise"
-    title="Enterprise"
+    title="Buildkite Enterprise"
     description={
       <React.Fragment>
-        Everything you need to build, test and <Br maxWidth="30em" />
-        deliver software at scale
+        Everything you need to build, test,<Br maxWidth="30em" /> and
+        deliver software at scale.
       </React.Fragment>
     }
     loggedIn={loggedIn}
@@ -65,82 +81,70 @@ export default page(({ loggedIn }) => (
     {/* (callout to Thoughtworks Technology Radar) */}
     <FeatureSection>
       <FeatureSectionHeader>Scale</FeatureSectionHeader>
-      <FeatureSectionTagline>Our scalable platform lets your company grow.</FeatureSectionTagline>
-      <FeatureSectionDescription>Distributed build agents with cloud scaling enables you to scale as big as you need, as soon as you need it. With elastic scaling, you no longer have to choose between power and cost savings.</FeatureSectionDescription>
+      <FeatureSectionTagline>Fundamentally built for scale.</FeatureSectionTagline>
+      <FeatureSectionDescription>Buildkite’s architecture uses modern scaling techniques, such as horizontal scaling and auto-scaling, to help you support massive engineering growth. And with Buildkite’s cloud agnostic design, you’re free to take advantage of new cloud platform features as they emerge, or even transition smoothly between cloud and compute platforms (including private cloud, and bare metal hardware).</FeatureSectionDescription>
     </FeatureSection>
 
     <FeatureSection align="right">
       <FeatureSectionHeader>Security</FeatureSectionHeader>
       <FeatureSectionTagline>Your data is our top priority.</FeatureSectionTagline>
-      <FeatureSectionDescription>Our team is uncompromising in our approach to security. Your code never passes through our servers, and you run Buildkite agents behind your own firewall. Find out more about our platform and company security on our Security page.</FeatureSectionDescription>
+      <FeatureSectionDescription>Buildkite provides clear platform boundaries where your security requirements can be enforced. The open-source buildkite-agent can be version controlled, audited, and locked down based on your requirements. And all source code stays behind your own firewall. See our <Link href="/security"><a>Security</a></Link> page for more details on our policies.</FeatureSectionDescription>
     </FeatureSection>
 
     <FeatureSection>
       <FeatureSectionHeader>Support</FeatureSectionHeader>
-      <FeatureSectionTagline>Get the most out of Buildkite.</FeatureSectionTagline>
-      <FeatureSectionDescription>Our Enterprise customers receive priority support and a dedicated account manager. A private support chat for your engineers provides help to your team as soon as they need it.</FeatureSectionDescription>
+      <FeatureSectionTagline>Consider us your Build Ops team.</FeatureSectionTagline>
+      <FeatureSectionDescription>Get the support you need. Your team has live chat access to engineers via a shared Slack channel, a monthly call with a dedicated account manager, and pager access for undetected platform faults.</FeatureSectionDescription>
     </FeatureSection>
 
     <Section>
-      <SectionHeader>Customers</SectionHeader>
-      <SectionDescription>You’ll be in good company</SectionDescription>
-      <p>(logos)</p>
-    </Section>
-
-    <Section>
       <SectionHeader>Enterprise plan features</SectionHeader>
-      <SectionDescription>All the features your organisation needs.</SectionDescription>
+      <FeatureGridSectionDescription>All of Buildkite’s <Link href="/features"><a>standard features</a></Link>, with additional levels of security and support.</FeatureGridSectionDescription>
 
       <FeatureGrid>
         <FeatureCell>
           <FeatureTitle>Single Sign On</FeatureTitle>
           <FeatureDescription>
-            Support for the type of Single Sign On your company uses, including login, provisioning, Okta, SAML, etc.
+            SSO for provisioning and login is supported for Google, Okta, OneLogin, ADFS (SAML) and custom SAML providers.
           </FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Granular Access Control</FeatureTitle>
+          <FeatureTitle>Access Control and Teams</FeatureTitle>
           <FeatureDescription>
-            Control which users have access to projects and resources from within your settings page.
+            Manage permissions and teams with fine grained access control. And provide your organization with a default team for easy open sharing.
           </FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Audit Logging</FeatureTitle>
           <FeatureDescription>
-            All the interactions your team members have with Buildkite are logged. Explore and export these logs with our extensive APIs.
-          </FeatureDescription>
-        </FeatureCell>
-        <FeatureCell>
-          <FeatureTitle>Team Management</FeatureTitle>
-          <FeatureDescription>
-            Self-manage your team’s permissions and automate provisioning for new team members with our granular team management settings.
+            Available only on the Enterprise plan, audit logging keeps a record of actions taken by users. The log can be explored via the web, or exported via the GraphQL API.
           </FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Reporting and Visibility</FeatureTitle>
           <FeatureDescription>
-          Some words about how provides a single record of truth, with APIs allowing for extensive visibility.
+            Buildkite’s centralized platform platform gives you insight across your entire company’s engineering. And the GraphQL API allows you to easily create your own internal tools and metrics.
           </FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Service Level Agreement</FeatureTitle>
           <FeatureDescription>
-            An uptime SLA of 99.95%, and a maximum response time of 24 hours for support requests.
+            TODO
           </FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Platform Agnostic</FeatureTitle>
+          <FeatureTitle>Account Manager</FeatureTitle>
           <FeatureDescription>
-            Public cloud and private cloud support, containers, functions, Lambda, monkeys and all the future magic.
-          </FeatureDescription>
-        </FeatureCell>
-        <FeatureCell>
-          <FeatureTitle>Integrations</FeatureTitle>
-          <FeatureDescription>
-            In-built integration with GitHub Enterprise, BitBucket, Phabricator, GitLab, Slack, and HipChat.
+            TODO
           </FeatureDescription>
         </FeatureCell>
       </FeatureGrid>
+    </Section>
+
+    <Section>
+      <SectionHeader>Customers</SectionHeader>
+      <SectionDescription>You’ll be in good company</SectionDescription>
+      <p>(logos)</p>
     </Section>
 
     <Section>
