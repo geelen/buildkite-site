@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { Grid, Cell } from 'components/Grid'
 import Link from 'components/Link'
 
+const portraitLogo = require('../../assets/images/brand-assets/buildkite-logo-portrait-on-light.svg')
+
 const Footer = styled.footer`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   box-shadow: 0 50px 50px ${({ theme }) => theme.colors.backgrounds.grey};
@@ -27,35 +29,50 @@ const FooterLink = ({ children, href, external }) => (
   </Link>
 )
 
+const SmallNav = styled.nav`
+  ${({ theme }) => theme.textStyles.bodyCopySmall}
+  ${FooterLinkAnchor} {
+    margin-bottom: .25em;
+  }
+`
+
+const LogoImage = styled.img`
+  max-width: 80px;
+`
+
 export default () => (
   <Footer>
     <FooterInner>
-      <Grid columns="180px">
+      <Grid columns="200px">
+        <Cell>
+          <Link href="/">
+            <a><LogoImage src={portraitLogo} alt="Buildkite" /></a>
+          </Link>
+        </Cell>
         <Cell>
           <nav>
-            <FooterLink href="/">Home</FooterLink>
             <FooterLink href="/features">Features</FooterLink>
             <FooterLink href="/screencasts">Screencasts</FooterLink>
+            <FooterLink href="/case-studies">Case Studies</FooterLink>
             <FooterLink href="/pricing">Pricing</FooterLink>
-            <FooterLink href="/enterprise">Enterprise</FooterLink>
           </nav>
         </Cell>
         <Cell>
-          <nav>
+          <SmallNav>
             <FooterLink href="/about">About</FooterLink>
-            <FooterLink href="/case-studies">Case Studies</FooterLink>
             <FooterLink href="/brand-assets">Brand Assets</FooterLink>
             <FooterLink href="/security">Security</FooterLink>
+            <FooterLink href="/enterprise">Enterprise</FooterLink>
             {/* <FooterLink href="https://shop.buildkite.com/">Shop</FooterLink> */}
-          </nav>
+          </SmallNav>
         </Cell>
         <Cell>
-          <nav>
+          <SmallNav>
             <FooterLink href="/docs" external>Documentation</FooterLink>
             <FooterLink href="/support">Support</FooterLink>
             <FooterLink href="/contact">Contact Us</FooterLink>
             <FooterLink href="https://buildkitestatus.com/">System Status</FooterLink>
-          </nav>
+          </SmallNav>
         </Cell>
       </Grid>
     </FooterInner>
