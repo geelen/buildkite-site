@@ -81,7 +81,7 @@ export default page(({ loggedIn }) => (
     {/* (callout to Thoughtworks Technology Radar) */}
     <FeatureSection>
       <FeatureSectionHeader>Scale</FeatureSectionHeader>
-      <FeatureSectionTagline>Fundamentally built for scale.</FeatureSectionTagline>
+      <FeatureSectionTagline>Architected for scale.</FeatureSectionTagline>
       <FeatureSectionDescription>Buildkite’s architecture uses modern scaling techniques, such as horizontal scaling and auto-scaling, to help you support massive engineering growth. And with Buildkite’s cloud agnostic design, you’re free to take advantage of new cloud platform features as they emerge, or even transition smoothly between cloud and compute platforms (including private cloud, and bare metal hardware).</FeatureSectionDescription>
     </FeatureSection>
 
