@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
       <html lang="en-US">
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-          <meta name="theme-color" content="#da936a" />
+          <meta name="theme-color" content="#00D974" />
         </Head>
         <body>
           <div className="root">
