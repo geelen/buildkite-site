@@ -40,8 +40,7 @@ export default [
     title: 'Elastic CI Stack for AWS',
     description: (
       <React.Fragment>
-        An overview of the setup and operation of an Elastic CI Stack <Br maxWidth="40em" />
-        on AWS, and how it works with Buildkite Agents.
+        Running an autoscaling build cluster in your own<Br maxWidth="40em" /> AWS account, using the Elastic CI Stack for AWS.
       </React.Fragment>
     ),
     duration: '74s',
@@ -51,7 +50,7 @@ export default [
       mp4: "https://d3lj8s78qytm30.cloudfront.net/elastic-ci-stack.mp4"
     },
     relatedDocumentation: [
-      { title: 'Elastic stack quickstart', url: '/docs/quickstart/elastic-ci-stack-aws' }
+      { title: 'Elastic Stack for AWS Quickstart', url: '/docs/quickstart/elastic-ci-stack-aws' }
     ],
     exampleCode: 'https://github.com/buildkite/elastic-ci-stack-for-aws'
   },
