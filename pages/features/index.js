@@ -119,10 +119,10 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            Run the open-source buildkite-agent on your own infrastructure for maximum speed, control, and security. And your source code never leaves your machine.
+            Run the open-source <Link external href="https://buildkite.com/docs/agent">buildkite-agent</Link> on your own infrastructure for maximum speed, control, and security. The agent checks out your source code, executes custom hooks and overrides, and then runs your build jobs. Your source code never leaves your infrastructure 🔒
           </Description>
           <Description>
-            You can install the agent easily using one of our installers or binaries for almost every platform and architecture, including Ubuntu, Debian, Mac, Windows, Docker, and more.
+            You can <Link external href="/docs/agent/installation">install the agent</Link> using one of our packages and binaries for almost every platform and architecture, including Ubuntu, Debian, Mac, Windows, Docker, and more.
           </Description>
         </TextCell>
         <ImageCell>
@@ -136,10 +136,10 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            The agent’s <Link external href="/docs/builds/artifacts" external>artifact</Link> and <Link external href="/docs/builds/build-meta-data">meta-data</Link> storage allows for share-nothing, state-free build jobs that can be easily distributed across any number of agents.
+            The agent’s <Link external href="/docs/builds/artifacts" external>artifact</Link> and <Link external href="/docs/builds/build-meta-data">meta-data</Link> storage allows for share-nothing, state-free build jobs that can be easily distributed and scaled across any number of agents ⚡️
           </Description>
           <Description>
-            Run up to 10,000 simultaneously connected build agents without breaking a sweat.
+            Run as many build agents as you need (up to 10,000 connected per account), without breaking a sweat.
           </Description>
         </TextCell>
         <ImageCell>
@@ -164,7 +164,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            The <Link external href="/docs/quickstart/elastic-ci-stack-aws">Elastic CI Stack for AWS</Link> gives you an easy to maintain, elastically scaling CI stack for your entire organization in minutes. Or use the same ops infrastructure you do for production, such as Packer and Terraform.
+            The open-source <Link external href="/docs/quickstart/elastic-ci-stack-aws">Elastic CI Stack for AWS</Link> gives you an easy-to-maintain, elastically scaling CI stack in your own AWS account. Or if you prefer to roll your own, you can use the tools you're already familiar with in your production environments (such as Packer and Terraform) 🛠
           </Description>
         </TextCell>
         <ImageCell>
@@ -174,7 +174,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            The buildkite-metrics collector allows you to send aggregated build activity to CloudWatch or StatsD. Scale up your testing infrastructure during busy times, and scale down to reduce costs during quiet times.
+            The <Link external href="https://github.com/buildkite/buildkite-metrics">buildkite-metrics</Link> collector is a Golang binary and Lambda function that send aggregated build activity to CloudWatch or StatsD. Scale up your testing infrastructure during busy times, and scale down to reduce costs during quiet times 📉
           </Description>
         </TextCell>
         <ImageCell>
@@ -187,7 +187,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            Model delivery pipelines or ops tasks with <Link external href="/docs/pipelines/block-step">custom fields</Link>, and unblock them via the web or the API with a full log of who did what when.
+            Automate complicated delivery pipelines or ops tasks with <Link external href="/docs/pipelines/block-step">custom fields</Link>, and unblock them via the web or the API with a full log of who did what when 📃
           </Description>
         </TextCell>
         <ImageCell>
@@ -207,7 +207,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            <Link external href="/docs/pipelines/defining-steps#dynamic-pipelines">Dynamically generate pipeline steps</Link>, and even modify running pipelines. Or build your own abstractions and tools for common delivery workflows.
+            <Link external href="/docs/pipelines/defining-steps#dynamic-pipelines">Dynamic pipeline definitions</Link> allow you to generate pipelines with your own code, and even modify running pipelines. Build your own abstractions to automate common workflows and tools within your team 📦
           </Description>
         </TextCell>
         <ImageCell>
@@ -233,7 +233,7 @@ export default page(({ loggedIn }) => (
             Buildkite’s <Link href="https://github.com/buildkite/frontend">open-source web interface</Link> allows you to monitor, control and visualize all your pipelines in one place, whilst still having quick access to your own builds.
           </Description>
           <Description>
-            You can also <Link external href="/docs/pipelines/permissions">create teams</Link>, ensuring only the people with the correct permissions have access to sensitive pipelines.
+            You can also <Link external href="/docs/pipelines/permissions">create teams</Link>, ensuring only the people with the correct permissions have access to sensitive pipelines 🕶
           </Description>
         </TextCell>
         <ImageCell>
@@ -243,7 +243,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            Treat infrastructure as code with <Link external href="/docs/builds/scheduled-builds">scheduled builds</Link>, separate <Link external href="/docs/agent/queues">agent queues</Link>, <Link external href="/docs/builds/controlling-concurrency">concurrency controls</Link>, and <Link external href="/docs/pipelines/defining-steps#dynamic-pipelines">dynamic pipeline logic</Link>. All using your existing ops scripts and infrastructure.
+            Treat infrastructure as code with <Link external href="/docs/builds/scheduled-builds">scheduled builds</Link>, separate <Link external href="/docs/agent/queues">agent queues</Link>, <Link external href="/docs/builds/controlling-concurrency">concurrency controls</Link>, and <Link external href="/docs/pipelines/defining-steps#dynamic-pipelines">dynamic pipeline logic</Link>. All using your existing ops scripts and infrastructure 📝
           </Description>
         </TextCell>
         <ImageCell>
@@ -253,7 +253,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            Full control of your environment allows you take full advantage of the latest version of tools, so you can use Docker, SDK betas and pre-release operating systems without any constraints.
+            Full control of your environment allows you take advantage of the latest version of tools, so you can use Docker, SDK betas and pre-release operating systems without any constraints 📱
           </Description>
         </TextCell>
         <ImageCell>
@@ -282,7 +282,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            <Link external href="/docs/builds/images-in-log-output">Embeddable image artifacts</Link>, with inline gif support, means that you can show failures visually, and link directly to the failing piece of code.
+            <Link external href="/docs/builds/images-in-log-output">Embeddable image artifacts</Link>, with inline gif support, means that you can show failures visually, and link directly to the failing piece of code 💖
           </Description>
         </TextCell>
         <ImageCell>
@@ -292,7 +292,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            Add your own custom build annotations using Markdown or HTML. Link to deployments, summarise test failures, or report on your own flakey test analysis.
+            Add your own custom build annotations using Markdown or HTML. Link to deployments, summarise test failures, or report on your own flakey test analysis 🚩
           </Description>
         </TextCell>
         <ImageCell>
@@ -302,7 +302,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            <Link external href="/docs/builds/managing-log-output">Log output grouping</Link>, emoji support, and detailed timing information.
+            <Link external href="/docs/builds/managing-log-output">Group log output</Link>, add your own <Link external href="https://github.com/buildkite/emojis">custom emojis</Link>, and get detailed timing information ⏱
           </Description>
         </TextCell>
         <ImageCell>
@@ -315,7 +315,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            The buildkite-agent exposes customizable <Link external href="/docs/agent/hooks">agent hooks</Link>, allowing you to add your own high performing checkout logic, integrate with a secret store, expose environment variables, or add your own security checks.
+            The buildkite-agent exposes customizable <Link external href="/docs/agent/hooks">agent hooks</Link>, allowing you to add your own high performing checkout logic, integrate with a secret store, expose environment variables, or add your own security checks 🔐
           </Description>
         </TextCell>
         <ImageCell>
@@ -338,7 +338,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            <Link external href="/docs/webhooks">Webhooks</Link>, <Link external href="/docs/rest-api">REST APIs</Link> and <Link external href="/docs/graphql-api">GraphQL APIs</Link> allow you to create your own tools and workflows, to fit your team’s needs.
+            <Link external href="/docs/webhooks">Webhooks</Link>, <Link external href="/docs/rest-api">REST APIs</Link> and <Link external href="/docs/graphql-api">GraphQL APIs</Link> allow you to create your own tools and workflows, to fit your team’s needs 🎛
           </Description>
         </TextCell>
         <ImageCell>
@@ -356,11 +356,11 @@ export default page(({ loggedIn }) => (
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Cloud and Environment Agnostic</FeatureTitle>
-          <FeatureDescription>The buildkite-agent is an open-source Golang binary, and runs on a wide variety of operating systems and architectures including Linux, OSX, and Windows. Or use our optimized Docker image to run agent clusters on Kubernetes, ECS or any container platform.</FeatureDescription>
+          <FeatureDescription>The agent is an open-source Golang binary, and runs on a wide variety of operating systems and architectures including Linux, OSX, and Windows. Or use our optimized Docker image to run agent clusters on Kubernetes, ECS or any container platform.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Source Control Integration</FeatureTitle>
-          <FeatureDescription>Full integration with GitHub and GitHub Enterprise pull requests, GitLab, BitBucket, Phabricator, and more. Or use our APIs to create a custom SCM integration.</FeatureDescription>
+          <FeatureDescription>Integration with GitHub and GitHub Enterprise pull requests, GitLab, BitBucket, Phabricator, and more. Or use our APIs to create a custom SCM integration.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>No Source Code Access</FeatureTitle>
@@ -372,11 +372,11 @@ export default page(({ loggedIn }) => (
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Agent Plugins</FeatureTitle>
-          <FeatureDescription>Use agent plugins (v3 beta) for common tools and workflows, such as Docker and Docker Compose. Or encapsulate your own workflows in private plugins with only a few lines of bash.</FeatureDescription>
+          <FeatureDescription>Use agent plugins (v3 beta only) for common tools and workflows, such as Docker and Docker Compose. Or DRY your own workflows in private plugins with only a few lines of bash.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Docker Pipelines</FeatureTitle>
-          <FeatureDescription>Build, test and and deploy Docker-based projects with the agent’s built in Docker Compose support, the Docker Compose agent plugin, or your own build scripts for maximum control.</FeatureDescription>
+          <FeatureDescription>Build, test and and deploy Docker-based projects with the agent’s built in Docker Compose support, or your own build scripts for maximum control.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>GraphQL APIs</FeatureTitle>
@@ -384,11 +384,11 @@ export default page(({ loggedIn }) => (
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Access Control and SSO</FeatureTitle>
-          <FeatureDescription>Manage teams and access controls to limit who can see and perform actions on pipelines. SSO login is supported for Google, Okta, OneLogin, ADFS (SAML) and custom SAML providers.</FeatureDescription>
+          <FeatureDescription>Manage teams to limit who can see and perform actions on pipelines. Login via SSO is supported for Google, Okta, OneLogin, ADFS (SAML) and custom SAML providers.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Friendly, Human Support</FeatureTitle>
-          <FeatureDescription>A build system is a key part of your process, and requires a top level of support. Our support engineers are always available to help you debug problems and answer any questions.</FeatureDescription>
+          <FeatureDescription>Consider us your outsourced build support team, and a solid platform and great support. Our support engineers can help debug problems and answer any questions.</FeatureDescription>
         </FeatureCell>
       </FeatureGrid>
     </OtherFeaturesSection>

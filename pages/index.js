@@ -85,7 +85,7 @@ export default page(({ loggedIn }) => (
       <ScreenshotImage src={screenshotPath} />
 
       <Link href="/features">
-        <FeaturesButton>See all the features</FeaturesButton>
+        <FeaturesButton>See the features</FeaturesButton>
       </Link>
     </FeaturesSection>
 
@@ -94,10 +94,6 @@ export default page(({ loggedIn }) => (
       <LargeParagraph>Join these teams who’ve switched to Buildkite…</LargeParagraph>
 
       <Logos>&lt;Logos&gt;</Logos>
-
-      <CenteredLink href="/case-studies">
-        <Button>Read the case studies</Button>
-      </CenteredLink>
     </Section>
 
     <Section>

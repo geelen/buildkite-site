@@ -48,7 +48,7 @@ export default () => (
   <Section>
     <OffscreenH1>Screencasts</OffscreenH1>
     <Paragraph>
-      See how it works in production, <Br maxWidth="30em" />with our short series of 90 second videos…
+      See how Buildkite works in production, <Br maxWidth="30em" />with our series of short videos…
     </Paragraph>
     <Link href="/screencasts">
       <ScreencastLinkContainer>
