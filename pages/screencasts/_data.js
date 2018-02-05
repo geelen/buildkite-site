@@ -59,8 +59,7 @@ export default [
     title: 'Pipeline Step Types',
     description: (
       <React.Fragment>
-        An explanation of the different step types, using <Br maxWidth="40em" />
-        an example based on an internal Buildkite pipeline.
+        A look at all the different step types you<Br maxWidth="40em" /> can use in your Buildkite pipelines.
       </React.Fragment>
     ),
     duration: '102s',
@@ -70,11 +69,11 @@ export default [
       mp4: "https://d3lj8s78qytm30.cloudfront.net/step-types.mp4"
     },
     relatedDocumentation: [
-      { title: 'Defining your pipeline steps', url: '/docs/pipelines/defining-steps' },
-      { title: 'command steps', url: '/docs/pipelines/command-step' },
-      { title: 'wait steps', url: '/docs/pipelines/wait-step' },
-      { title: 'block steps', url: '/docs/pipelines/block-step' },
-      { title: 'trigger steps', url: '/docs/pipelines/trigger-step' }
+      { title: 'Defining Your Pipeline Steps', url: '/docs/pipelines/defining-steps' },
+      { title: 'Command Steps', url: '/docs/pipelines/command-step' },
+      { title: 'Wait Steps', url: '/docs/pipelines/wait-step' },
+      { title: 'Block Steps', url: '/docs/pipelines/block-step' },
+      { title: 'Trigger Steps', url: '/docs/pipelines/trigger-step' }
     ],
     exampleCode: 'https://github.com/buildkite/screencast-examples/'
   },
