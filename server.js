@@ -92,6 +92,16 @@ app.prepare()
       }
     })
 
+    server.get('/robots.txt', (req, res) => {
+      res.set('Content-Type', 'text/plain');
+
+      if (req.hostname !== 'buildkite.com') {
+        res.send("User-agent: *\nDisallow: /")
+      } else {
+        res.send("")
+      }
+    })
+
     // Pass everything through to Next
     server.get('*', nextHandler)
 
