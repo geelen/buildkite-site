@@ -152,7 +152,7 @@ export default page(({ loggedIn }) => (
             Head Office
           </InlineSectionHeader>
           <p>
-            Our team is spread across the globe, but if you want to visit our head office, or send us something in the post, you can find us here:
+            Our team is spread across the globe, but our head office is based in Melbourne Australia. You can find us here:
           </p>
           <LocationParagraph>
             <LocationLink
@@ -165,7 +165,7 @@ export default page(({ loggedIn }) => (
           </LocationParagraph>
           <FirstNationsSection>
             <div><img src={aboriginalFlagImage} alt="Australian Aboriginal Flag" /></div>
-            <p>Our head office is located on the traditional lands of the Wurundjeri people of the Kulin nation. We acknowledge that sovereignty was never ceded and pay our respects to elders past, present and emerging.</p>
+            <p>Our office is located on the traditional lands of the Wurundjeri people of the Kulin nation. We acknowledge that sovereignty was never ceded and pay our respects to elders past, present and future.</p>
           </FirstNationsSection>
         </TextCell>
       </MediaItem>
