@@ -45,7 +45,7 @@ const SectionHeader = styled.h2`
 
 const Paragraph = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
-  margin: ${({ theme }) => theme.textSpacing.s2} 0;
+  margin: ${({ theme }) => theme.textSpacing.s1} 0 ${({ theme }) => theme.innerSpacing.s2} 0;
 `
 
 const AssetListContainer = Grid.extend`
@@ -73,7 +73,7 @@ const AssetCell = Cell.extend`
 const AssetImageSizer = styled.div`
   width: 100%;
   height: 0;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 66%; /* 16:9 */
   position: relative;
 `
 
@@ -90,13 +90,13 @@ const AssetImageWrapper = styled.div`
 
   img {
     padding: ${({ theme }) => theme.innerSpacing.s2};
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 66%;
+    max-height: 66%;
   }
 `
 
-const AssetImage = ({ src, alt, darkBackground }) => (
-  <AssetImageSizer>
+const AssetImage = ({ src, alt, darkBackground, proportion }) => (
+  <AssetImageSizer proportion={proportion}>
     <AssetImageWrapper darkBackground={darkBackground}>
       <img src={src} alt={alt} />
     </AssetImageWrapper>
@@ -105,7 +105,7 @@ const AssetImage = ({ src, alt, darkBackground }) => (
 
 const AssetDescription = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopySmall}
-  margin: ${({ theme }) => theme.textSpacing.s2} 0;
+  margin: ${({ theme }) => theme.textSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
 const AssetLinks = styled.ul`
@@ -170,12 +170,12 @@ export default page(({ loggedIn }) => (
     <MaxWidthSection>
       <SectionHeader>Guidelines and Rules</SectionHeader>
       <Paragraph>
-        Our logo and mark are trademarks, and we need to protect them. If you’d like to use our logo or mark anywhere, we’ve provided files here for you. Please don’t alter the files in any way—we’ve put a lot of love into them and appreciate everyone using them only in the ways we’ve covered on this page.
+        Our logo and mark are trademarks, and we need to protect them. If you’d like to use our logo or mark anywhere, we’ve provided files here for you. Please don’t alter the files in any way—we’ve put a lot of love into them and appreciate everyone using them only in the ways we’ve covered on this page ❤️
       </Paragraph>
     </MaxWidthSection>
 
     <Section>
-      <SectionHeader>Main Logo</SectionHeader>
+      <SectionHeader>Primary Logo</SectionHeader>
       <Paragraph>
         If you’re putting a Buildkite logo anywhere, this is one we like to see. <Br maxWidth="38em" />
         It’s the official one, and the one we love the most.
@@ -208,10 +208,10 @@ export default page(({ loggedIn }) => (
     </Section>
 
     <Section>
-      <SectionHeader>Secondary Logos and Marks</SectionHeader>
+      <SectionHeader>Secondary Logos</SectionHeader>
       <Paragraph>
-        Our secondary logos can be used for making emoji, an icon, or if you <Br maxWidth="38em" />
-        need to include a small version of our mark somewhere.
+        Our secondary logos (our mark and wordmark) can be used for making emoji, an icon, or if you <Br maxWidth="38em" />
+        need to work in a small space.
       </Paragraph>
       <AssetList>
         <Asset
