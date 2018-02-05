@@ -25,7 +25,7 @@ const Section = styled.section`
 const Header = styled.h1`
   ${({ theme }) => theme.textStyles.secondLevelHeading}
   margin-top: 0;
-  margin-bottom: ${({ theme }) => theme.textSpacing.s1};
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
 `
 
 const SocialAnchor = styled.a`
@@ -33,8 +33,13 @@ const SocialAnchor = styled.a`
 `
 
 const SocialImage = styled.img`
-  width: 75px;
+  width: 45px;
   vertical-align: middle;
+  filter: grayscale(100%);
+  transition: filter ${({ theme }) => theme.timings.color};
+  &:hover {
+    filter: none;
+  }
 `
 
 const SocialLink = ({ href, src, alt }) => (
@@ -90,9 +95,9 @@ export default page(({ loggedIn }) => (
     <Section>
       <Header>Find us on…</Header>
       <SocialLink
-        href="https://www.facebook.com/buildkite/"
-        src={facebookLogoImage}
-        alt="Facebook"
+        href="https://twitter.com/buildkite"
+        src={twitterLogoImage}
+        alt="Twitter"
       />
       <SocialLink
         href="https://github.com/buildkite"
@@ -105,9 +110,9 @@ export default page(({ loggedIn }) => (
         alt="Keybase"
       />
       <SocialLink
-        href="https://twitter.com/buildkite"
-        src={twitterLogoImage}
-        alt="Twitter"
+        href="https://www.facebook.com/buildkite/"
+        src={facebookLogoImage}
+        alt="Facebook"
       />
     </Section>
 
