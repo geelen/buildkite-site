@@ -45,7 +45,7 @@ export const team = [
   {
     photo: photoTim,
     name: "Tim Lucas",
-    bio: "Hey, I’m Tim! I’m a human Venn diagram of cats, coffee, the web, design, and programming. When I’m not behind a keyboard, I can usually be found climbing rocky walls.",
+    bio: "Hey, I’m Tim! I’m a Venn diagram of cats, coffee, the web, design, and programming. When I’m not behind a keyboard, I can usually be found climbing rocky walls.",
     links: [
       { name: "Twitter", url: "https://twitter.com/toolmantim" },
       { name: "Dribbble", url: "https://dribbble.com/toolmantim" },
@@ -100,6 +100,6 @@ export const advisors = [
     photo: photoJohnBarton,
     name: "John Barton",
     bio: "John is an accomplished engineering manager, and builder of large technical teams. He’s an avid reader, and divides his attention between people management books, technology trends, and maritime museums.",
-    roles: ["CTO @ 99designs"]
+    roles: ["VP Engineering @ 99designs"]
   }
 ]

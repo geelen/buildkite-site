@@ -171,7 +171,7 @@ export default page(({ loggedIn }) => (
       </MediaItem>
     </Section>
 
-    <Section>
+    {/* <Section>
       <SectionHeader>Our Values</SectionHeader>
       <Masonry>
         <Brick>
@@ -229,22 +229,22 @@ export default page(({ loggedIn }) => (
           </ValueParagraph>
         </Brick>
       </Masonry>
-    </Section>
+    </Section> */}
 
     <ActionGrid>
       <ActionGridItem
         heading="Brand Assets"
         image={brandAssetsImage}
         imageAlt=""
-        description="Download our official logos, screenshots and media assets."
+        description="Download versions of our official logos to use as you need."
         url="/brand-assets"
-        buttonTitle="View brand assets"
+        buttonTitle="View Brand Assets"
       />
       <ActionGridItem
         heading="Say Hello!"
         image={sayhelloImage}
         imageAlt=""
-        description="For press enquries, or anything else you need, drop us a line and we’ll help."
+        description="If you have any questions, or press enquries, don't hestitate to get in touch."
         url="mailto:hello@buildkite.com"
         buttonTitle="Email hello@buildkite.com"
       />
