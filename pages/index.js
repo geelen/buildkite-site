@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 import Button from 'components/Button'
 import Link from 'components/Link'
-import CenteredLink from 'components/CenteredLink'
 import Page, { page } from 'components/Page'
 import { OffscreenH1 } from 'components/OffscreenHeading'
 

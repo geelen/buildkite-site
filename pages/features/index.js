@@ -136,7 +136,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            The agent’s <Link external href="/docs/builds/artifacts" external>artifact</Link> and <Link external href="/docs/builds/build-meta-data">meta-data</Link> storage allows for share-nothing, state-free build jobs that can be easily distributed and scaled across any number of agents ⚡️
+            The agent’s <Link external href="/docs/builds/artifacts">artifact</Link> and <Link external href="/docs/builds/build-meta-data">meta-data</Link> storage allows for share-nothing, state-free build jobs that can be easily distributed and scaled across any number of agents ⚡️
           </Description>
           <Description>
             Run as many build agents as you need (up to 10,000 connected per account), without breaking a sweat.
@@ -164,7 +164,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            The open-source <Link external href="/docs/quickstart/elastic-ci-stack-aws">Elastic CI Stack for AWS</Link> gives you an easy-to-maintain, elastically scaling CI stack in your own AWS account. Or if you prefer to roll your own, you can use the tools you're already familiar with in your production environments (such as Packer and Terraform) 🛠
+            The open-source <Link external href="/docs/quickstart/elastic-ci-stack-aws">Elastic CI Stack for AWS</Link> gives you an easy-to-maintain, elastically scaling CI stack in your own AWS account. Or if you prefer to roll your own, you can use the tools you’re already familiar with in your production environments (such as Packer and Terraform) 🛠
           </Description>
         </TextCell>
         <ImageCell>

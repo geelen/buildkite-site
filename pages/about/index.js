@@ -5,7 +5,7 @@ import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Br from 'components/Br'
 import Callout from 'components/Callout'
 import { Grid } from 'components/Grid'
-import { Masonry, Brick } from 'components/Masonry'
+// import { Masonry, Brick } from 'components/Masonry'
 import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 import { OffscreenH2 } from 'components/OffscreenHeading'
 import Page, { page } from 'components/Page'
@@ -100,10 +100,10 @@ const HeadOfficeLocation = {
   t: 'r' // eslint-disable-line id-length
 }
 
-const ValueParagraph = styled.p`
-  color: ${({ theme }) => theme.colors.text.subdued};
-  padding: ${({ theme }) => theme.textSpacing.s1} 0;
-`
+// const ValueParagraph = styled.p`
+//   color: ${({ theme }) => theme.colors.text.subdued};
+//   padding: ${({ theme }) => theme.textSpacing.s1} 0;
+// `
 
 export default page(({ loggedIn }) => (
   <Page
