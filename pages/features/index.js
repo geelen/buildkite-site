@@ -136,7 +136,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            The agent’s <Link href="/docs/builds/artifacts">artifact</Link> and <Link href="/docs/builds/build-meta-data">meta-data</Link> storage allows for share-nothing, state-free build jobs that can be easily distributed across any number of agents.
+            The agent’s <Link external href="/docs/builds/artifacts" external>artifact</Link> and <Link external href="/docs/builds/build-meta-data">meta-data</Link> storage allows for share-nothing, state-free build jobs that can be easily distributed across any number of agents.
           </Description>
           <Description>
             Run up to 10,000 simultaneously connected build agents without breaking a sweat.
@@ -164,7 +164,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            The <Link href="/docs/quickstart/elastic-ci-stack-aws">Elastic CI Stack for AWS</Link> gives you an easy to maintain, elastically scaling CI stack for your entire organization in minutes. Or use the same ops infrastructure you do for production, such as Packer and Terraform.
+            The <Link external href="/docs/quickstart/elastic-ci-stack-aws">Elastic CI Stack for AWS</Link> gives you an easy to maintain, elastically scaling CI stack for your entire organization in minutes. Or use the same ops infrastructure you do for production, such as Packer and Terraform.
           </Description>
         </TextCell>
         <ImageCell>
@@ -187,7 +187,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            Model delivery pipelines or ops tasks with <Link href="/docs/pipelines/block-step">custom fields</Link>, and unblock them via the web or the API with a full log of who did what when.
+            Model delivery pipelines or ops tasks with <Link external href="/docs/pipelines/block-step">custom fields</Link>, and unblock them via the web or the API with a full log of who did what when.
           </Description>
         </TextCell>
         <ImageCell>
@@ -207,7 +207,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            <Link href="/docs/pipelines/defining-steps#dynamic-pipelines">Dynamically generate pipeline steps</Link>, and even modify running pipelines. Or build your own abstractions and tools for common delivery workflows.
+            <Link external href="/docs/pipelines/defining-steps#dynamic-pipelines">Dynamically generate pipeline steps</Link>, and even modify running pipelines. Or build your own abstractions and tools for common delivery workflows.
           </Description>
         </TextCell>
         <ImageCell>
@@ -233,7 +233,7 @@ export default page(({ loggedIn }) => (
             Buildkite’s <Link href="https://github.com/buildkite/frontend">open-source web interface</Link> allows you to monitor, control and visualize all your pipelines in one place, whilst still having quick access to your own builds.
           </Description>
           <Description>
-            You can also <Link href="/docs/pipelines/permissions">create teams</Link>, ensuring only the people with the correct permissions have access to sensitive pipelines.
+            You can also <Link external href="/docs/pipelines/permissions">create teams</Link>, ensuring only the people with the correct permissions have access to sensitive pipelines.
           </Description>
         </TextCell>
         <ImageCell>
@@ -243,7 +243,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            Treat infrastructure as code with <Link href="/docs/builds/scheduled-builds">scheduled builds</Link>, separate <Link href="/docs/agent/queues">agent queues</Link>, <Link href="/docs/builds/controlling-concurrency">concurrency controls</Link>, and <Link href="/docs/pipelines/defining-steps#dynamic-pipelines">dynamic pipeline logic</Link>. All using your existing ops scripts and infrastructure.
+            Treat infrastructure as code with <Link external href="/docs/builds/scheduled-builds">scheduled builds</Link>, separate <Link external href="/docs/agent/queues">agent queues</Link>, <Link external href="/docs/builds/controlling-concurrency">concurrency controls</Link>, and <Link external href="/docs/pipelines/defining-steps#dynamic-pipelines">dynamic pipeline logic</Link>. All using your existing ops scripts and infrastructure.
           </Description>
         </TextCell>
         <ImageCell>
@@ -282,7 +282,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            <Link href="/docs/builds/images-in-log-output">Embeddable image artifacts</Link>, with inline gif support, means that you can show failures visually, and link directly to the failing piece of code.
+            <Link external href="/docs/builds/images-in-log-output">Embeddable image artifacts</Link>, with inline gif support, means that you can show failures visually, and link directly to the failing piece of code.
           </Description>
         </TextCell>
         <ImageCell>
@@ -302,7 +302,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            <Link href="/docs/builds/managing-log-output">Log output grouping</Link>, emoji support, and detailed timing information.
+            <Link external href="/docs/builds/managing-log-output">Log output grouping</Link>, emoji support, and detailed timing information.
           </Description>
         </TextCell>
         <ImageCell>
@@ -315,7 +315,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            The buildkite-agent exposes customizable <Link href="/docs/agent/hooks">agent hooks</Link>, allowing you to add your own high performing checkout logic, integrate with a secret store, expose environment variables, or add your own security checks.
+            The buildkite-agent exposes customizable <Link external href="/docs/agent/hooks">agent hooks</Link>, allowing you to add your own high performing checkout logic, integrate with a secret store, expose environment variables, or add your own security checks.
           </Description>
         </TextCell>
         <ImageCell>
@@ -338,7 +338,7 @@ export default page(({ loggedIn }) => (
       <MediaItem>
         <TextCell>
           <Description>
-            <Link href="/docs/webhooks">Webhooks</Link>, <Link href="/docs/rest-api">REST APIs</Link> and <Link href="/docs/graphql-api">GraphQL APIs</Link> allow you to create your own tools and workflows, to fit your team’s needs.
+            <Link external href="/docs/webhooks">Webhooks</Link>, <Link external href="/docs/rest-api">REST APIs</Link> and <Link external href="/docs/graphql-api">GraphQL APIs</Link> allow you to create your own tools and workflows, to fit your team’s needs.
           </Description>
         </TextCell>
         <ImageCell>
