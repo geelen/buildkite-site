@@ -82,8 +82,7 @@ export default [
     title: 'Github Pull Request Workflow',
     description: (
       <React.Fragment>
-        A walkthrough of an end-to-end GitHub pull request <Br maxWidth="40em" />
-        workflow, and the GitHub settings available in Buildkite.
+        A look at testing a GitHub pull request and merge,<Br maxWidth="40em" /> and other ways to use GitHub with Buildkite.
       </React.Fragment>
     ),
     duration: '99s',
@@ -93,9 +92,7 @@ export default [
       mp4: "https://d3lj8s78qytm30.cloudfront.net/github-pr-workflow.mp4"
     },
     relatedDocumentation: [
-      { title: 'Getting started', url: '/docs/quickstart/getting-started' },
-      { title: 'Github Enterprise setup', url: '/docs/tutorials/github-enterprise' },
-      { title: 'using a private repo', url: '/docs/quickstart/getting-started#using-a-private-repository' }
+      { title: 'Getting Started', url: '/docs/quickstart/getting-started' }
     ],
     exampleCode: 'https://github.com/buildkite/screencast-examples/'
   }
