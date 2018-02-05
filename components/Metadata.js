@@ -1,6 +1,4 @@
 const stringifyReactComponent = (component) => {
-  debugger
-
   // This does the equivalent of a "textContent" on the React element
   if (component.props && component.props.children) {
     if (typeof component.props.children === 'string') {
@@ -20,8 +18,6 @@ const stringifyReactComponent = (component) => {
 
 export default ({ headTitle, headDescription, description/*, image, imageAlt*/ }) => {
   let availableDescription = (headDescription || description)
-
-  debugger
 
   if (React.isValidElement(availableDescription)) {
     availableDescription = stringifyReactComponent(availableDescription)
