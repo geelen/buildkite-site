@@ -79,8 +79,7 @@ export function page(Component) {
   return Component
 }
 
-/* TODO: Open Graph metadata in BasePage */
-export const BasePage = ({ headTitle, /*description, image, imageAlt,*/ children, loggedIn }) => (
+export const BasePage = ({ headTitle, description, /*image, imageAlt,*/ children, loggedIn }) => (
   <ThemeProvider theme={buildkiteTheme}>
     <React.Fragment>
       <Head>
@@ -88,6 +87,13 @@ export const BasePage = ({ headTitle, /*description, image, imageAlt,*/ children
         {fonts.map((path) =>
           <link as="font" href={path} key={path} rel="preload" type="font/woff2" crossOrigin="anonymous" />
         )}
+
+        <meta name="description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={headTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:site_name" content="Buildkite" />
+        <meta property="og:locale" content="en_US" />
       </Head>
       <Header loggedIn={loggedIn} />
       <Container>
