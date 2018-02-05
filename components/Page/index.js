@@ -6,6 +6,7 @@ import isLoggedIn from '../../lib/isLoggedIn'
 
 import * as buildkiteTheme from 'theme'
 import Header from 'components/Header'
+import Metadata from 'components/Metadata'
 import Footer from 'components/Footer'
 import Link from 'components/Link'
 
@@ -79,7 +80,7 @@ export function page(Component) {
   return Component
 }
 
-export const BasePage = ({ headTitle, description, /*image, imageAlt,*/ children, loggedIn }) => (
+export const BasePage = ({ headTitle, description, headDescription, /*image, imageAlt,*/ children, loggedIn }) => (
   <ThemeProvider theme={buildkiteTheme}>
     <React.Fragment>
       <Head>
@@ -88,18 +89,15 @@ export const BasePage = ({ headTitle, description, /*image, imageAlt,*/ children
           <link as="font" href={path} key={path} rel="preload" type="font/woff2" crossOrigin="anonymous" />
         )}
 
-        <meta name="description" content={description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={headTitle} />
-        <meta property="og:description" content={description} />
-        <meta property="og:site_name" content="Buildkite" />
-        <meta property="og:locale" content="en_US" />
+        <Metadata
+          headTitle={headTitle}
+          description={description}
+          headDescription={headDescription}
+        />
       </Head>
       <Header loggedIn={loggedIn} />
       <Container>
-        <React.Fragment>
-          {children}
-        </React.Fragment>
+        {children}
       </Container>
       <Footer />
     </React.Fragment>

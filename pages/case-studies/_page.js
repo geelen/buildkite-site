@@ -212,6 +212,7 @@ export default function caseStudyPage(pathname) {
     <Page
       title="Case Studies"
       titleHref="/case-studies"
+      headDescription={caseStudy.summaryWords}
       headTitle={`${caseStudy.team} - Buildkite Case Study`}
       loggedIn={loggedIn}
     >
