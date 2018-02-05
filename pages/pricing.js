@@ -58,6 +58,7 @@ const PlanName = styled.h2`
 
 const PlanDescription = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopySmall}
+  color: ${({ theme }) => theme.colors.text.subdued};
   margin: ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
@@ -80,28 +81,29 @@ const PlanInclusions = styled.ul`
 `
 
 const PriceContainer = styled.div`
-  text-align: center;
-  margin-top: ${({ theme }) => theme.textSpacing.s3};
+  margin-top: ${({ theme }) => theme.innerSpacing.s2};
 `
 
 const PriceBox = styled.div`
   ${({ theme }) => theme.textStyles.thirdLevelHeading}
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  line-height: 1.5;
+  font-weight: 600;
+  line-height: 1;
+`
+
+const PriceCurrency = styled.span`
+  font-weight: 800;
+  vertical-align: super;
 `
 
 const PriceValue = styled.span`
   font-size: 48px;
-  font-weight: normal;
-  line-height: 1;
+  padding-left: .05em;
 `
 
 const PricePeriod = styled.span`
   ${({ theme }) => theme.textStyles.bodyCopySmall}
   font-weight: 800;
-  line-height: 1;
+  white-space: nowrap;
 `
 
 const PriceNotes = styled.div`
@@ -119,9 +121,10 @@ const PriceNotes = styled.div`
 const Price = ({ value, period, notes }) => (
   <PriceContainer>
     <PriceBox>
-      $<PriceValue>{value}</PriceValue>
+      <PriceCurrency>$</PriceCurrency><PriceValue>{value}</PriceValue>
+      {" "}
+      <PricePeriod>{period}</PricePeriod>
     </PriceBox>
-    <PricePeriod>{period}</PricePeriod>
     {notes && (
       <PriceNotes>{notes}</PriceNotes>
     )}
@@ -190,16 +193,15 @@ export default page(({ loggedIn }) => (
           'Unlimited artifacts',
           'Priority email support',
           'Free 30 day trial',
-          'Teams',
-          'SSO'
+          'Teams permissions',
+          'Single Sign On'
         ]}
         pricing={
           <Price
             value={15}
             period={
               <React.Fragment>
-                per user<br />
-                per month
+                per user per month
               </React.Fragment>
             }
             notes={
@@ -216,9 +218,9 @@ export default page(({ loggedIn }) => (
           'Unlimited artifacts',
           'Priority email support',
           'Free 30 day trial',
-          'Teams',
-          'SSO',
-          'Audit log',
+          'Teams permissions',
+          'Single Sign On',
+          'Audit logging',
           'Live chat support',
           'Technical account manager',
           'SLA',
@@ -231,8 +233,7 @@ export default page(({ loggedIn }) => (
             notes={
               <React.Fragment>
                 <p>Annual payment only</p>
-                <p>Includes 100 users</p>
-                <p>Additional users $29/month (pro-rata)</p>
+                <p>Includes 100 users. Additional users $29/month (pro-rata)</p>
               </React.Fragment>
             }
           />
