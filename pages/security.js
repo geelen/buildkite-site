@@ -34,12 +34,12 @@ const SubSectionHeader = styled.h3`
 
 const SubSectionSubHeader = styled.h4`
   ${({ theme }) => theme.textStyles.bodyCopy}
-  margin: ${({ theme }) => theme.textSpacing.s1} 0;
+  margin: ${({ theme }) => theme.textSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
 const SecurityParagraph = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
-  margin: ${({ theme }) => theme.textSpacing.s2} 0;
+  margin: ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
 const Monospace = SecurityParagraph.extend`
@@ -51,7 +51,7 @@ const Monospace = SecurityParagraph.extend`
 
 const PGPSection = Section.extend`
   ${({ theme }) => theme.maxWidthContainer}
-  width: 560px;
+  max-width: 560px;
 `
 
 export default page(({ loggedIn }) => (
