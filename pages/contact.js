@@ -51,6 +51,7 @@ const SocialLink = ({ href, src, alt }) => (
 export default page((props) => (
   <Page
     headTitle="Contact Buildkite"
+    headDescription="Buildkite contact details"
     title="Contact Us"
     description="We’d love to hear from you."
     {...props}
