@@ -268,7 +268,7 @@ export default page(({ loggedIn }) => (
             <font color="#00FF93">docker pull app:latest</font><br />
             <br />
             # Build<br />
-            <font color="#00FF93">{'docker build --cache_from app:latest -t "app:$BUILDKITE_COMMIT" .'}</font><br />
+            <font color="#00FF93">{'docker build --cache-from app:latest -t "app:$BUILDKITE_COMMIT" .'}</font><br />
             <br />
             # Push to image repo<br />
             <font color="#00FF93">docker push &quot;app:$BUILDKITE_COMMIT&quot;<br />
