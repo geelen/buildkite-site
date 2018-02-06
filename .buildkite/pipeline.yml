@@ -26,6 +26,8 @@ steps:
         run: percy
     skip: "Static export doesn't work with cached assets"
 
+  - wait
+
   - label: ":pipeline::closed_lock_with_key:"
     command: "buildkite-agent pipeline upload .buildkite/pipeline.security.yml"
 
