@@ -5,8 +5,33 @@ import { Grid as RawGrid, Cell } from 'components/Grid'
 import Link from 'components/Link'
 
 const Nav = styled.nav`
-  margin-top: ${({ theme }) => theme.outerSpacing.s3};
-  margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  @media (min-width: 350px) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 640px) {
+    margin-top: ${({ theme }) => theme.outerSpacing.s2};
+    margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
+  }
+
+  @media (min-width: 960px) {
+    margin-top: ${({ theme }) => theme.outerSpacing.s3};
+    margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
+  }
+
+  &:nth-child(3) {
+    @media (min-width: 640px) {
+      margin-top: ${({ theme }) => theme.outerSpacing.s1};
+    }
+
+    @media (min-width: 960px) {
+      margin-top: ${({ theme }) => theme.outerSpacing.s1};
+    }
+  }
 `
 
 const Grid = RawGrid.extend`
