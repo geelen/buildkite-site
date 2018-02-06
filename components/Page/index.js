@@ -80,24 +80,28 @@ export function page(Component) {
   return Component
 }
 
-export const BasePage = ({ headTitle, description, headDescription, /*image, imageAlt,*/ children, loggedIn }) => (
+export const BasePage = (props) => (
   <ThemeProvider theme={buildkiteTheme}>
     <React.Fragment>
       <Head>
-        <title>{headTitle}</title>
-        {fonts.map((path) =>
-          <link as="font" href={path} key={path} rel="preload" type="font/woff2" crossOrigin="anonymous" />
-        )}
-
-        <Metadata
-          headTitle={headTitle}
-          description={description}
-          headDescription={headDescription}
-        />
+        <title>{props.headTitle}</title>
+        <Metadata {...props} />
+        {fonts.map((path) => (
+          <link
+            as="font"
+            href={path}
+            key={path}
+            rel="preload"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        ))}
       </Head>
-      <Header loggedIn={loggedIn} />
+      <Header
+        loggedIn={props.loggedIn}
+      />
       <Container>
-        {children}
+        {props.children}
       </Container>
       <Footer />
     </React.Fragment>
