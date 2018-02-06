@@ -29,6 +29,11 @@ const wordmarkDarkPng = require('../assets/images/brand-assets/buildkite-wordmar
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s3};
   margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
+
+  @media (min-width: 350px) {
+    margin-top: ${({ theme }) => theme.outerSpacing.s1};
+    margin-bottom: ${({ theme }) => theme.outerSpacing.s1};
+  }
 `
 
 const MaxWidthSection = Section.extend`

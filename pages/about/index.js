@@ -236,7 +236,7 @@ export default page(({ loggedIn }) => (
         heading="Brand Assets"
         image={brandAssetsImage}
         imageAlt=""
-        description="Download versions of our official logos to use as you need."
+        description={<span>Download versions of our official<br /> logos to use as you need.</span>}
         url="/brand-assets"
         buttonTitle="View Brand Assets"
       />
@@ -244,7 +244,7 @@ export default page(({ loggedIn }) => (
         heading="Say Hello!"
         image={sayhelloImage}
         imageAlt=""
-        description="If you have any questions, or press enquries, don't hestitate to get in touch."
+        description="If you have any questions or queries, don't hestitate to get in touch."
         url="mailto:hello@buildkite.com"
         buttonTitle="Email hello@buildkite.com"
       />
@@ -260,7 +260,7 @@ export default page(({ loggedIn }) => (
 
     <Callout
       heading="Have a question?"
-      description="Send us an email, we’re here to help."
+      description="Send us an email, we’re here to help."
       url="mailto:support@buildkite.com"
       buttonTitle="Email support@buildkite.com"
     />

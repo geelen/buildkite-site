@@ -70,7 +70,7 @@ export default page(({ loggedIn }) => (
         image={feedbackImage}
         imageWidth={466}
         imageAlt=""
-        description="Have a request or idea? Let us know what you'd like to see."
+        description="Have some feedback or an idea? Let us know in our feedback issues repo."
         url="https://github.com/buildkite/feedback/issues"
         buttonTitle="Open a GitHub Issue"
       />

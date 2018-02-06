@@ -9,7 +9,8 @@ import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
 const screenshotPath = require('../assets/images/home/screenshot.png')
-const logosPath = require('../assets/images/home/logos-wide.png')
+const logosNarrowPath = require('../assets/images/home/homepage-logos-narrow.png')
+const logosWidePath = require('../assets/images/home/homepage-logos-wide.png')
 
 const ScreenshotImage = styled.img`
   ${({ theme }) => theme.images.screenshots}
@@ -43,6 +44,7 @@ const Section = styled.section`
 `
 
 const FeaturesSection = Section.extend`
+  margin-top: ${({ theme }) => theme.outerSpacing.s1};
   position: relative;
 `
 
@@ -60,18 +62,27 @@ const LargeParagraph = styled.p`
 `
 
 const Logos = styled.p`
-  margin: ${({ theme }) => theme.innerSpacing.s1} 0 ${({ theme }) => theme.outerSpacing.s1} 0;
-  text-align: center;
-`
-
-const LogosImage = styled.img`
+  margin: ${({ theme }) => theme.innerSpacing.s1} auto;
   max-width: 100%;
-
   @media (min-width: 580px) {
     max-width: 85%;
   }
   @media (min-width: 780px) {
     max-width: 70%;
+  }
+`
+
+const LogoImages = styled.div`
+  background-image: url(${logosNarrowPath});
+  padding-bottom: ${1175 / 832 * 100}%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+
+  @media (min-width: 400px) {
+    background-image: url(${logosWidePath});
+    padding-bottom: ${599 / 1632 * 100}%;
   }
 `
 
@@ -104,9 +115,9 @@ export default page(({ loggedIn }) => (
 
     <Section>
       <OffscreenH1>Customers</OffscreenH1>
-      <LargeParagraph>Join these teams who’ve switched to Buildkite…</LargeParagraph>
+      <LargeParagraph>Join these teams who’ve switched to Buildkite…</LargeParagraph>
 
-      <Logos><LogosImage src={logosPath} /></Logos>
+      <Logos><LogoImages /></Logos>
     </Section>
 
     <Section>
