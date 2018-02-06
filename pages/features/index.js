@@ -223,7 +223,7 @@ export default page(({ loggedIn }) => (
             {"  "}echo &quot;  - command: echo $i&quot;<br />
             done<br />
             <br />
-            <font color="#9B9B9B">$ </font><font color="#00FF93">buildkite-agent pipeline upload</font> &lt; <font color="#00FF93">./generate-pipeline.sh</font>
+            <font color="#9B9B9B">$ </font><font color="#00FF93">buildkite-agent pipeline upload</font> &lt;(<font color="#00FF93">./generate-pipeline.sh</font>)
           </SVGConsoleImage>
         </ImageCell>
       </MediaItem>
