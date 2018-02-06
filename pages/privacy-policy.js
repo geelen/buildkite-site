@@ -1,100 +1,5 @@
-import styled from 'styled-components'
-
 import Page, { page } from 'components/Page'
-
-const LastUpdatedParagraph = styled.p`
-  color: ${({ theme }) => theme.colors.text.subdued};
-  text-align: center;
-`
-
-const PrivacyPolicyContainer = styled.div`
-  li, p {
-    max-width: 40em;
-  }
-  h2, h3, ol li:before {
-    ${({ theme }) => theme.textStyles.thirdLevelHeading}
-  }
-  ol, li { margin: 0; padding: 0; }
-
-  .PrivacyPolicy__heading-list {
-    counter-reset: section;
-    .PrivacyPolicy__list {
-      margin-top: ${({ theme }) => theme.innerSpacing.s1};
-    }
-    > li {
-      margin: ${({ theme }) => theme.innerSpacing.s2} 0;
-      list-style: none;
-      > h2, > h3 {
-        display: inline;
-      }
-      &:before {
-        counter-increment: section;
-        content: counter(section, decimal) ". ";
-        font-weight: 600;
-        margin-right: .25em;
-        margin-bottom: .5em;
-      }
-    }
-  }
-
-  .PrivacyPolicy__heading-list--extra {
-    counter-reset: extrasection;
-    > li {
-      &:before {
-        counter-increment: extrasection;
-        content: counter(extrasection, upper-alpha) ". ";
-      }
-    }
-    .PrivacyPolicy__list {
-      > li {
-        &:before {
-          content: counter(extrasection, upper-alpha) "." counter(section, decimal) ". ";
-        }
-      }
-    }
-  }
-
-  // Counts A, B, C, etc
-  .PrivacyPolicy__extras-heading-list {
-    counter-reset: section;
-  }
-
-  .PrivacyPolicy__list {
-    counter-reset: section;
-    li {
-      list-style-type: none;
-      position: relative;
-      margin-left: 0;
-      padding-left: 2.5rem;
-      margin-top: ${({ theme }) => theme.textSpacing.s1};
-      &:before {
-        counter-increment: section;
-        position: absolute;
-        left: 0;
-        font-weight: 400;
-        font-size: 1rem;
-        content: counters(section, ".") ". ";
-      }
-      ol {
-        counter-reset: subsection;
-        li {
-          padding-left: 2rem;
-        }
-        li:before {
-          counter-increment: subsection;
-          content: "(" counter(subsection, lower-alpha) ") ";
-        }
-        li ol {
-          counter-reset: subsubsection;
-          li:before {
-            counter-increment: subsubsection;
-            content: counter(subsubsection, lower-roman) ". ";
-          }
-        }
-      }
-    }
-  }
-`
+import PolicyDocument, { LastUpdated } from 'components/PolicyDocument'
 
 export default page(({ loggedIn }) => (
   <Page
@@ -102,11 +7,11 @@ export default page(({ loggedIn }) => (
     title="Privacy Policy"
     loggedIn={loggedIn}
   >
-    <LastUpdatedParagraph>Last Updated: July 16<sup>th</sup>, 2015</LastUpdatedParagraph>
+    <LastUpdated>Last Updated: July 16<sup>th</sup>, 2015</LastUpdated>
 
-    <PrivacyPolicyContainer>
+    <PolicyDocument>
       <ol className="PrivacyPolicy__heading-list">
-        <li className="PrivacyPolicy__js-heading" id="1-purpose">
+        <li id="1-purpose">
           <h2>Purpose Of Our Policy</h2>
           <ol className="PrivacyPolicy__list">
             <li>
@@ -120,7 +25,7 @@ export default page(({ loggedIn }) => (
             <li>By publishing this Privacy Policy we aim to make it easy for our customers and the public to understand what Personal Information we collect and store, why we do so, how we receive and/or obtain that information, and the rights an individual has with respect to their Personal Information in our possession.</li>
           </ol>
         </li>
-        <li className="PrivacyPolicy__js-heading" id="2-who-and-what">
+        <li id="2-who-and-what">
           <h2>Who And What This Policy Applies To</h2>
           <ol className="PrivacyPolicy__list">
             <li>Our Privacy Policy deals with how we handle “personal information” as it is defined in the Privacy Act (<strong>Personal Information</strong>).</li>
@@ -130,7 +35,7 @@ export default page(({ loggedIn }) => (
             <li>If, at any time, an individual provides Personal Information or other information about someone other than himself or herself, the individual warrants that they have that person's consent to provide such information for the purpose specified.</li>
           </ol>
         </li>
-        <li className="PrivacyPolicy__js-heading" id="3-info-we-collect">
+        <li id="3-info-we-collect">
           <h2>The Information We Collect</h2>
           <ol className="PrivacyPolicy__list">
             <li>
@@ -147,7 +52,7 @@ export default page(({ loggedIn }) => (
             <li>We may also collect non-Personal Information about an individual such as information regarding their computer, network and browser.  This may include their IP address. Where non-Personal Information is collected the Australian Privacy Principles do not apply.</li>
           </ol>
         </li>
-        <li className="PrivacyPolicy__js-heading" id="4-how-info-is-collected">
+        <li id="4-how-info-is-collected">
           <h2>How Information Is Collected</h2>
           <ol className="PrivacyPolicy__list">
             <li>
@@ -165,7 +70,7 @@ export default page(({ loggedIn }) => (
             <li>Where we obtain Personal Information without an individual’s knowledge (such as by accidental acquisition from a client) we will either delete/destroy the information, or inform the individual that we hold such information, in accordance with the Australian Privacy Principles.</li>
           </ol>
         </li>
-        <li className="PrivacyPolicy__js-heading" id="5-when-info-is-disclosed">
+        <li id="5-when-info-is-disclosed">
           <h2>When Personal Information Is Used &amp; Disclosed</h2>
           <ol className="PrivacyPolicy__list">
             <li>In general, the primary principle is that we will not use any Personal Information other than for the purpose for which it was collected other than with the individual’s permission.  The purpose of collection is determined by the circumstances in which the information was collected and/or submitted.</li>
@@ -198,7 +103,7 @@ export default page(({ loggedIn }) => (
             <li>We may utilise third-pay service providers (such as Gmail from Google, Inc., and MailChimp from The Rocket Science Group LLC) to communicate with an individual and to store contact details about an individual. These service providers are located in the United States of America. No Health Information is stored in any third-party services in Australia or elsewhere.</li>
           </ol>
         </li>
-        <li className="PrivacyPolicy__js-heading" id="6-opting-in-or-out">
+        <li id="6-opting-in-or-out">
           <h2>Opting “In” Or “Out”</h2>
           <ol className="PrivacyPolicy__list">
             <li>
@@ -211,7 +116,7 @@ export default page(({ loggedIn }) => (
             <li>If an individual believes that they have received information from us that they did not opt in or out to receive, they should contact us on the details below.</li>
           </ol>
         </li>
-        <li className="PrivacyPolicy__js-heading" id="7-safety-and-security">
+        <li id="7-safety-and-security">
           <h2>The Safety &amp; Security Of Personal Information</h2>
           <ol className="PrivacyPolicy__list">
             <li>We may appoint a Privacy Officer to oversee the management of this Privacy Policy and compliance with the Australian Privacy Principles and the Privacy Act.  This officer may have other duties within our business and also be assisted by internal and external professionals and advisors.</li>
@@ -222,7 +127,7 @@ export default page(({ loggedIn }) => (
             <li>We are not liable for any loss, damage or claim arising out of another person’s use of the Personal Information where we were authorised to provide that person with the Personal Information.</li>
           </ol>
         </li>
-        <li className="PrivacyPolicy__js-heading" id="8-how-to-access-info">
+        <li id="8-how-to-access-info">
           <h2>How To Access And/or Update Information</h2>
           <ol className="PrivacyPolicy__list">
             <li>Users of Buildkite can update their Personal Information from within Buildkite.</li>
@@ -232,7 +137,7 @@ export default page(({ loggedIn }) => (
             <li>We may charge an individual a reasonable fee for our costs incurred in meeting any of their requests to disclose the Personal Information we hold about them.</li>
           </ol>
         </li>
-        <li className="PrivacyPolicy__js-heading" id="9-complaints-and-disputes">
+        <li id="9-complaints-and-disputes">
           <h2>Complaints And Disputes</h2>
           <ol className="PrivacyPolicy__list">
             <li>If an individual has a complaint about our handling of their Personal Information, they should address their complaint in writing to the details below.</li>
@@ -240,13 +145,13 @@ export default page(({ loggedIn }) => (
             <li>If we become aware of any unauthorised access to an individual’s Personal Information we will inform them at the earliest practical opportunity once we have established what was accessed and how it was accessed.</li>
           </ol>
         </li>
-        <li className="PrivacyPolicy__js-heading" id="10-contacting-individuals">
+        <li id="10-contacting-individuals">
           <h2>Contacting Individuals</h2>
           <ol className="PrivacyPolicy__list">
             <li>From time to time, we may send an individual important notices, such as changes to our terms, conditions and policies. Because this information is important to the individual’s interaction with us, they may not opt out of receiving these communications.</li>
           </ol>
         </li>
-        <li className="PrivacyPolicy__js-heading" id="11-contacting-us">
+        <li id="11-contacting-us">
           <h2>Contacting Us</h2>
           <ol className="PrivacyPolicy__list">
             <li>
@@ -261,7 +166,7 @@ export default page(({ loggedIn }) => (
             </li>
           </ol>
         </li>
-        <li className="PrivacyPolicy__js-heading" id="12-additions">
+        <li id="12-additions">
           <h2>Additions To This Policy</h2>
           <ol className="PrivacyPolicy__list">
             <li>If we decide to change this Privacy Policy, we will post the changes on our webpage at www.buildkite.com/privacy-policy. Please refer back to this Privacy Policy to review any amendments.</li>
@@ -269,6 +174,6 @@ export default page(({ loggedIn }) => (
           </ol>
         </li>
       </ol>
-    </PrivacyPolicyContainer>
+    </PolicyDocument>
   </Page>
 ))
