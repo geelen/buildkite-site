@@ -80,7 +80,7 @@ const FeatureSectionDescription = styled.p`
 export default page((props) => (
   <Page
     headTitle="Buildkite Enterprise"
-    headDescriptions="Buildkite's Enterprise plan gives you everything you need to build, test, and deliver software at scale."
+    headDescription="Buildkite's Enterprise plan gives you everything you need to build, test, and deliver software at scale."
     title="Buildkite Enterprise"
     description={
       <React.Fragment>

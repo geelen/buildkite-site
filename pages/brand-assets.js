@@ -163,7 +163,7 @@ const Asset = ({ description, image, formats, darkBackground }) => (
 export default page((props) => (
   <Page
     headTitle="Buildkite Logo & Brand Assets"
-    headDescription="Official versions of the Buildkite logo"
+    headDescription="Official versions of the Buildkite logo."
     title="Brand Assets"
     description={
       <React.Fragment>
