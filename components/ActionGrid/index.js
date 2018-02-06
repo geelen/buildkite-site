@@ -25,11 +25,11 @@ const Nav = styled.nav`
 
   &:nth-child(3) {
     @media (min-width: 640px) {
-      margin-top: ${({ theme }) => theme.outerSpacing.s1};
+      margin-top: -50px;
     }
 
     @media (min-width: 960px) {
-      margin-top: ${({ theme }) => theme.outerSpacing.s1};
+      margin-top: -50px;
     }
   }
 `
