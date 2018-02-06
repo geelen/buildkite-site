@@ -5,6 +5,8 @@ import ScreencastLink from 'components/ScreencastLink'
 
 import screencasts from './_data'
 
+const openGraphImage = require('../../assets/images/open-graph/screencasts.png')
+
 export default page((props) => (
   <Page
     headTitle="Buildkite Screencasts"
@@ -15,6 +17,7 @@ export default page((props) => (
         with this series of short videos.
       </React.Fragment>
     }
+    headImage={openGraphImage}
     {...props}
   >
     <Grid>

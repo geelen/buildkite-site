@@ -80,6 +80,8 @@ export default function screencastPage(pathname) {
       title={screencast.title}
       description={screencast.description}
       headTitle={`${screencast.title} - Buildkite Screencasts`}
+      headImage={screencast.images.poster}
+      video={screencast.videos.mp4}
       {...props}
     >
       <Wrapper>

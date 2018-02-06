@@ -51,7 +51,7 @@ export default (props) => {
         <meta property="og:video" content={video} />
       )}
       <meta property="og:image" content={image} />
-      <meta property="og:image:alt" content={headImageAlt || imageAlt || fallbackDescription} />
+      <meta property="og:image:alt" content={headImageAlt || imageAlt || description || fallbackDescription} />
       <meta property="og:site_name" content="Buildkite" />
       <meta property="og:locale" content="en_US" />
     </React.Fragment>
