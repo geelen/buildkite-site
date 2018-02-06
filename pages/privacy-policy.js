@@ -32,7 +32,7 @@ export default page(({ loggedIn }) => (
             <li>We handle Personal Information in our own right and also for and on behalf of our customers and users.</li>
             <li>Our Privacy Policy does not apply to information we collect about businesses or companies, however it does apply to information about the people in those businesses or companies which we store. </li>
             <li>The Privacy Policy applies to all forms of information, physical and digital, whether collected or stored electronically or in hardcopy.</li>
-            <li>If, at any time, an individual provides Personal Information or other information about someone other than himself or herself, the individual warrants that they have that person's consent to provide such information for the purpose specified.</li>
+            <li>If, at any time, an individual provides Personal Information or other information about someone other than himself or herself, the individual warrants that they have that person’s consent to provide such information for the purpose specified.</li>
           </ol>
         </li>
         <li id="3-info-we-collect">
