@@ -9,6 +9,7 @@ import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
 const screenshotPath = require('../assets/images/home/screenshot.png')
+const logosPath = require('../assets/images/home/logos-wide.png')
 
 const ScreenshotImage = styled.img`
   ${({ theme }) => theme.images.screenshots}
@@ -59,8 +60,19 @@ const LargeParagraph = styled.p`
 `
 
 const Logos = styled.p`
-  margin: ${({ theme }) => theme.innerSpacing.s2} 0 ${({ theme }) => theme.outerSpacing.s1} 0;
+  margin: ${({ theme }) => theme.innerSpacing.s1} 0 ${({ theme }) => theme.outerSpacing.s1} 0;
   text-align: center;
+`
+
+const LogosImage = styled.img`
+  max-width: 100%;
+
+  @media (min-width: 580px) {
+    max-width: 85%;
+  }
+  @media (min-width: 780px) {
+    max-width: 70%;
+  }
 `
 
 export default page(({ loggedIn }) => (
@@ -94,7 +106,7 @@ export default page(({ loggedIn }) => (
       <OffscreenH1>Customers</OffscreenH1>
       <LargeParagraph>Join these teams who’ve switched to Buildkite…</LargeParagraph>
 
-      <Logos>&lt;Logos&gt;</Logos>
+      <Logos><LogosImage src={logosPath} /></Logos>
     </Section>
 
     <Section>
