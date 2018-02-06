@@ -75,12 +75,12 @@ export default function screencastPage(pathname) {
   const screencast = screencasts[index]
   const nextScreencast = screencasts[index + 1] || screencasts[0]
 
-  return page(({ loggedIn }) => (
+  return page((props) => (
     <Page
       title={screencast.title}
       description={screencast.description}
       headTitle={`${screencast.title} - Buildkite Screencasts`}
-      loggedIn={loggedIn}
+      {...props}
     >
       <Wrapper>
         <ScreencastParagraph>{`Duration: ${screencast.duration}`}</ScreencastParagraph>

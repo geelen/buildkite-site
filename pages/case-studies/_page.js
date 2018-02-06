@@ -208,13 +208,13 @@ export default function caseStudyPage(pathname) {
     }
   )
 
-  return page(({ loggedIn }) => (
+  return page((props) => (
     <Page
       title="Case Studies"
       titleHref="/case-studies"
       headDescription={caseStudy.summaryWords}
       headTitle={`${caseStudy.team} - Buildkite Case Study`}
-      loggedIn={loggedIn}
+      {...props}
     >
       <HeadingContainer>
         <TextCell>

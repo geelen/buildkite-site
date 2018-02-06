@@ -48,12 +48,12 @@ const SocialLink = ({ href, src, alt }) => (
   </SocialAnchor>
 )
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="Contact Buildkite"
     title="Contact Us"
     description="We’d love to hear from you."
-    loggedIn={loggedIn}
+    {...props}
   >
     <ActionGrid>
       <ActionGridItem

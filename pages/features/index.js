@@ -108,11 +108,11 @@ const BuildAgentStart = SVGAnimation.withComponent(RawBuildAgentStart)
 
 const SVGConsoleImage = SVGAnimation.withComponent(RawSVGConsoleImage)
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="Buildkite Features"
     title="Features"
-    loggedIn={loggedIn}
+    {...props}
   >
     <section>
       <Heading>Build agents that give you full control</Heading>

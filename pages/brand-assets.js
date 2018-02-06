@@ -160,7 +160,7 @@ const Asset = ({ description, image, formats, darkBackground }) => (
   </AssetCell>
 )
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="Buildkite Logo & Brand Assets"
     title="Brand Assets"
@@ -170,7 +170,7 @@ export default page(({ loggedIn }) => (
         marks, screenshots and words.
       </React.Fragment>
     }
-    loggedIn={loggedIn}
+    {...props}
   >
     <MaxWidthSection>
       <SectionHeader>Guidelines and Rules</SectionHeader>

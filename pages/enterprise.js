@@ -77,7 +77,7 @@ const FeatureSectionDescription = styled.p`
   }
 `
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="Buildkite Enterprise"
     title="Buildkite Enterprise"
@@ -87,7 +87,7 @@ export default page(({ loggedIn }) => (
         deliver software at scale.
       </React.Fragment>
     }
-    loggedIn={loggedIn}
+    {...props}
   >
 
     {/* (callout to Thoughtworks Technology Radar) */}

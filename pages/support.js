@@ -7,12 +7,12 @@ const feedbackImage = require('../assets/images/contact/feedback.jpg')
 const communityChatImage = require('../assets/images/support/community-chat.jpg')
 const systemStatusImage = require('../assets/images/support/system-status.jpg')
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="Buildkite Support"
     title="Support"
     description="We’re here to help."
-    loggedIn={loggedIn}
+    {...props}
   >
     <ActionGrid>
       <ActionGridItem

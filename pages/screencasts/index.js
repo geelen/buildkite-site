@@ -5,7 +5,7 @@ import ScreencastLink from 'components/ScreencastLink'
 
 import screencasts from './_data'
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="Buildkite Screencasts"
     title="Screencasts"
@@ -15,7 +15,7 @@ export default page(({ loggedIn }) => (
         with this series of short videos.
       </React.Fragment>
     }
-    loggedIn={loggedIn}
+    {...props}
   >
     <Grid>
       {screencasts.map((screencast) => (

@@ -168,11 +168,11 @@ const FAQParagraph = styled.p`
   padding: ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="Buildkite Pricing"
     title="Pricing"
-    loggedIn={loggedIn}
+    {...props}
   >
     <PlanCurrencyNote>All prices are in USD</PlanCurrencyNote>
     <PlanSection>

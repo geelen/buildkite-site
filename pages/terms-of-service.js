@@ -1,11 +1,11 @@
 import Page, { page } from 'components/Page'
 import PolicyDocument, { LastUpdated } from 'components/PolicyDocument'
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="Buildkite Terms of Service"
     title="Terms of Service"
-    loggedIn={loggedIn}
+    {...props}
   >
     <LastUpdated>Last Updated: July 16<sup>th</sup>, 2015</LastUpdated>
 

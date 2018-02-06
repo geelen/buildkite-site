@@ -54,7 +54,7 @@ const PGPSection = Section.extend`
   max-width: 560px;
 `
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="Buildkite Security"
     title="Security"
@@ -64,7 +64,7 @@ export default page(({ loggedIn }) => (
         our security policies and procedures.
       </React.Fragment>
     }
-    loggedIn={loggedIn}
+    {...props}
   >
     <ActionGrid>
       <ActionGridItem

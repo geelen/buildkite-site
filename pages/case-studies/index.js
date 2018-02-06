@@ -4,7 +4,7 @@ import CaseStudyCallout from 'components/CaseStudyCallout'
 
 import caseStudies from './_data'
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="Buildkite Case Studies"
     title="Case Studies"
@@ -14,7 +14,7 @@ export default page(({ loggedIn }) => (
         the teams using Buildkite.
       </React.Fragment>
     }
-    loggedIn={loggedIn}
+    {...props}
   >
     {caseStudies.map((caseStudy) => (
       <CaseStudyCallout

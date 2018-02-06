@@ -31,7 +31,7 @@ class Error extends React.PureComponent {
   }
 
   render() {
-    const { loggedIn, statusCode } = this.props
+    const { statusCode, ...props } = this.props
 
     const { title, description } = (
       statusCode
@@ -46,7 +46,7 @@ class Error extends React.PureComponent {
         headTitle={title}
         title={title}
         description={description}
-        loggedIn={loggedIn}
+        {...props}
       >
         <Animated404 />
         <Title>{title}</Title>

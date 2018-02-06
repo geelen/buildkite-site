@@ -74,6 +74,11 @@ export function page(Component) {
 
     processedProps.loggedIn = isLoggedIn(cookies(context))
 
+    // Set `siteOrigin`. Note that this only occurs server-side.
+    if (context.req) {
+      processedProps.siteOrigin = `${context.req.protocol}://${context.req.get('host')}`
+    }
+
     return processedProps
   }
 

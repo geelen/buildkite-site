@@ -105,7 +105,7 @@ const HeadOfficeLocation = {
 //   padding: ${({ theme }) => theme.textSpacing.s1} 0;
 // `
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="About Buildkite"
     title="About"
@@ -115,7 +115,7 @@ export default page(({ loggedIn }) => (
         software teams stay happy and productive.
       </React.Fragment>
     }
-    loggedIn={loggedIn}
+    {...props}
   >
     <PeopleSection>
       <SectionHeader>Get to know the team</SectionHeader>

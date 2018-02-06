@@ -1,5 +1,5 @@
 const fallbackOpenGraphImage = require('../assets/images/open-graph/default.png')
-const fallbackOpenGraphImageAlt = "Lightning fast testing and delivery for all your software projects"
+const fallbackDescription = "Lightning fast testing and delivery for all your software projects"
 
 const stringifyReactComponent = (component) => {
   // This does the equivalent of a "textContent" on the React element
@@ -21,11 +21,12 @@ const stringifyReactComponent = (component) => {
 
 export default (props) => {
   const {
+    siteOrigin,
     headTitle,
-    headImage,
     headImageAlt,
-    image,
-    imageAlt
+    imageAlt,
+    openGraphType,
+    video
   } = props
 
   let description = (props.headDescription || props.description)
@@ -34,18 +35,23 @@ export default (props) => {
     description = stringifyReactComponent(description)
   }
 
+  let image = props.headImage || props.image || fallbackOpenGraphImage
+
+  if (image && image.indexOf('://') < 4) {
+    image = siteOrigin + image
+  }
+
   return (
     <React.Fragment>
-      {description && (
-        <meta name="description" content={description} />
-      )}
-      <meta property="og:type" content="website" />
+      <meta name="description" content={description || fallbackDescription} />
+      <meta property="og:type" content={openGraphType || (video ? 'video.other' : 'website')} />
       <meta property="og:title" content={headTitle} />
-      {description && (
-        <meta property="og:description" content={description} />
+      <meta property="og:description" content={description || fallbackDescription} />
+      {video && (
+        <meta property="og:video" content={video} />
       )}
-      <meta property="og:image" content={headImage || image || fallbackOpenGraphImage} />
-      <meta property="og:image:alt" content={headImageAlt || imageAlt || fallbackOpenGraphImageAlt} />
+      <meta property="og:image" content={image} />
+      <meta property="og:image:alt" content={headImageAlt || imageAlt || fallbackDescription} />
       <meta property="og:site_name" content="Buildkite" />
       <meta property="og:locale" content="en_US" />
     </React.Fragment>

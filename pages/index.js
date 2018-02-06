@@ -86,11 +86,11 @@ const LogoImages = styled.div`
   }
 `
 
-export default page(({ loggedIn }) => (
+export default page((props) => (
   <Page
     headTitle="Buildkite"
     headDescription="Buildkite is a platform for running fast, secure, and scaleable continuous integration pipelines on your own infrastructure."
-    loggedIn={loggedIn}
+    {...props}
   >
     <section>
       <OffscreenH1>Buildkite</OffscreenH1>
