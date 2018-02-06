@@ -106,7 +106,10 @@ export default page((props) => (
     <FeaturesSection>
       <OffscreenH1>Features</OffscreenH1>
 
-      <ScreenshotImage src={screenshotPath} />
+      <ScreenshotImage
+        src={screenshotPath}
+        alt="A screenshot of Buildkite in action"
+      />
 
       <Link href="/features">
         <FeaturesButton>See the features</FeaturesButton>
