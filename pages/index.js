@@ -61,7 +61,7 @@ const LargeParagraph = styled.p`
   text-align: center;
 `
 
-const Logos = styled.p`
+const Logos = styled.div`
   margin: ${({ theme }) => theme.innerSpacing.s1} auto;
   max-width: 100%;
   @media (min-width: 580px) {
