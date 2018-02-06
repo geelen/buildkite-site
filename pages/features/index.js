@@ -113,6 +113,7 @@ const SVGConsoleImage = SVGAnimation.withComponent(RawSVGConsoleImage)
 export default page((props) => (
   <Page
     headTitle="Buildkite Features"
+    headDescription="Discover the Buildkite tools."
     title="Features"
     headImage={openGraphImage}
     {...props}

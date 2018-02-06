@@ -171,6 +171,7 @@ const FAQParagraph = styled.p`
 export default page((props) => (
   <Page
     headTitle="Buildkite Pricing"
+    headDescription="Buildkite plan pricing and frequently asked questions."
     title="Pricing"
     {...props}
   >

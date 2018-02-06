@@ -57,6 +57,7 @@ const PGPSection = Section.extend`
 export default page((props) => (
   <Page
     headTitle="Buildkite Security"
+    headDescription="Security policies, contact details, and vulnerability reporting."
     title="Security"
     description={
       <React.Fragment>

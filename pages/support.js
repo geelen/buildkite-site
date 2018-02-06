@@ -10,6 +10,7 @@ const systemStatusImage = require('../assets/images/support/system-status.jpg')
 export default page((props) => (
   <Page
     headTitle="Buildkite Support"
+    headDescription="Support resources and Buildkite system status."
     title="Support"
     description="We’re here to help."
     {...props}
