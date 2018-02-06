@@ -7,7 +7,7 @@ export default page(({ loggedIn }) => (
     title="Terms of Service"
     loggedIn={loggedIn}
   >
-    <LastUpdated><em>Last Updated: July 16<sup>th</sup>, 2015</em></LastUpdated>
+    <LastUpdated>Last Updated: July 16<sup>th</sup>, 2015</LastUpdated>
 
     <PolicyDocument>
       <div id="1-introduction">

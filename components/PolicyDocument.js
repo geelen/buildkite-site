@@ -9,6 +9,9 @@ export default styled.div`
   li, p {
     max-width: 40em;
   }
+  h2, h3 {
+    margin: ${({ theme }) => theme.innerSpacing.s2} 0 ${({ theme }) => theme.innerSpacing.s1} 0;
+  }
   h2, h3, ol li:before {
     ${({ theme }) => theme.textStyles.thirdLevelHeading}
   }
