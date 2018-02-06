@@ -7,7 +7,7 @@ const Menu = styled.nav`
   position: absolute;
   width: 100%;
   background-color: rgba(255,255,255,.98);
-  padding: ${({ theme }) => theme.innerSpacing.s2} ${({ theme }) => theme.innerSpacing.s1};
+  padding: 30px ${({ theme }) => theme.innerSpacing.s1};
   box-shadow: ${({ theme }) => theme.boxShadows.menuBar};
 `
 
