@@ -8,7 +8,7 @@ import Link from 'components/Link'
 import Page, { page } from 'components/Page'
 import { FeatureGrid, FeatureCell, FeatureTitle, FeatureDescription } from 'components/FeatureGrid'
 
-import { shopify } from './case-studies/_data'
+import { rea, shopify } from './case-studies/_data'
 
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s3};
@@ -19,6 +19,14 @@ const SectionHeader = styled.h2`
   ${({ theme }) => theme.textStyles.secondLevelHeading}
   margin: ${({ theme }) => theme.textSpacing.s1} 0;
   text-align: center;
+`
+
+const CaseStudiesHeader = SectionHeader.extend`
+  margin-bottom: 0;
+`
+
+const CaseStudyWrapper = styled.div`
+  margin: ${({ theme }) => theme.innerSpacing.s2} 0;
 `
 
 const SectionDescription = styled.p`
@@ -46,6 +54,11 @@ const FeatureSection = styled.section`
   text-align: ${({ align }) => align || 'left'};
   margin-${({ align }) => align === 'right' ? 'left' : 'right'}: auto;
   max-width: 30rem;
+  @media (max-width: 550px) {
+    text-align: left;
+    margin-top: ${({ theme }) => theme.innerSpacing.s2};
+    margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
+  }
 `
 
 const FeatureSectionHeader = SectionHeader.extend`
@@ -99,7 +112,7 @@ export default page(({ loggedIn }) => (
 
     <Section>
       <SectionHeader>Enterprise plan features</SectionHeader>
-      <FeatureGridSectionDescription>All of Buildkite’s <Link href="/features"><a>standard features</a></Link>, with additional levels of security and support.</FeatureGridSectionDescription>
+      <FeatureGridSectionDescription>All of Buildkite’s <Link href="/features"><a>standard features</a></Link>,<Br maxWidth='25rem' /> with additional levels of security and support.</FeatureGridSectionDescription>
 
       <FeatureGrid>
         <FeatureCell>
@@ -142,21 +155,9 @@ export default page(({ loggedIn }) => (
     </Section>
 
     <Section>
-      <SectionHeader>Customers</SectionHeader>
-      <SectionDescription>You’ll be in good company</SectionDescription>
-      <p>(logos)</p>
-    </Section>
-
-    <Section>
-      <SectionHeader>Case Study</SectionHeader>
-
-      <CaseStudyCallout caseStudy={shopify} />
-
-      <p style={{ textAlign: 'center' }}>
-        <Link href="/case-studies">
-          <Button>View more case studies</Button>
-        </Link>
-      </p>
+      <CaseStudiesHeader>Case Studies</CaseStudiesHeader>
+      <CaseStudyWrapper><CaseStudyCallout noMargin caseStudy={shopify} /></CaseStudyWrapper>
+      <CaseStudyWrapper><CaseStudyCallout noMargin caseStudy={rea} /></CaseStudyWrapper>
     </Section>
 
     <Callout

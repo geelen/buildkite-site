@@ -5,7 +5,7 @@ import Link from 'components/Link'
 
 const Wrapper = styled.div`
   display: flex;
-  margin: ${({ theme }) => theme.outerSpacing.s1} 0;
+  margin: ${({ noMargin, theme }) => noMargin ? 0 : theme.outerSpacing.s1} 0;
   flex-wrap: wrap;
 `
 
@@ -56,8 +56,8 @@ const ResultLabel = styled.span`
   max-width: 11em;
 `
 
-export default ({ caseStudy }) => (
-  <Wrapper>
+export default ({ caseStudy, noMargin }) => (
+  <Wrapper noMargin={noMargin}>
     <InfoPane>
       <h2>
         <Link href={caseStudy.pathname}>
