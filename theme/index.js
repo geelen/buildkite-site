@@ -38,7 +38,7 @@ export const pageContainer = css`
   margin-bottom: ${outerSpacing.s1};
 
   @media (min-width: 350px) {
-    margin-top: 30px;
+    margin-top: 60px;
   }
 
   @media (min-width: 640px) {
