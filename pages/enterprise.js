@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import Br from 'components/Br'
-import Button from 'components/Button'
 import Callout from 'components/Callout'
 import CaseStudyCallout from 'components/CaseStudyCallout'
 import Link from 'components/Link'
@@ -112,7 +111,7 @@ export default page(({ loggedIn }) => (
 
     <Section>
       <SectionHeader>Enterprise plan features</SectionHeader>
-      <FeatureGridSectionDescription>All of Buildkite’s <Link href="/features"><a>standard features</a></Link>,<Br maxWidth='25rem' /> with additional levels of security and support.</FeatureGridSectionDescription>
+      <FeatureGridSectionDescription>All of Buildkite’s <Link href="/features"><a>standard features</a></Link>,<Br maxWidth="25rem" /> with additional levels of security and support.</FeatureGridSectionDescription>
 
       <FeatureGrid>
         <FeatureCell>
