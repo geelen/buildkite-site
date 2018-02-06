@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Button from 'components/Button'
 import Link from 'components/Link'
 import Page, { page } from 'components/Page'
-import { OffscreenH1 } from 'components/OffscreenHeading'
+import { OffscreenH1, OffscreenP } from 'components/OffscreenHeading'
 
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
@@ -117,7 +117,7 @@ export default page(({ loggedIn }) => (
       <OffscreenH1>Customers</OffscreenH1>
       <LargeParagraph>Join these teams who’ve switched to Buildkite…</LargeParagraph>
 
-      <Logos><LogoImages /></Logos>
+      <Logos><LogoImages><OffscreenP>Airbnb, Shopify, Digital Ocean, Intercom, Basecamp, Venmo, 99designs, Envato, Canva, MYOB, Cochlear, REA Group, Discord, LIFX, Webflow, Sendgrid, Bugsnag, Code Climate, Pivotal Tracker, SourceGroup</OffscreenP></LogoImages></Logos>
     </Section>
 
     <Section>
