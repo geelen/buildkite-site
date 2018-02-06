@@ -9,6 +9,8 @@ import RawSVGConsoleImage from 'components/SVGConsoleImage'
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
+const openGraphImage = require('../../assets/images/open-graph/features.png')
+
 import RawBuildAgentStart from './build-agent-start'
 
 // -- Feature Section 1 --
@@ -112,6 +114,7 @@ export default page((props) => (
   <Page
     headTitle="Buildkite Features"
     title="Features"
+    headImage={openGraphImage}
     {...props}
   >
     <section>
