@@ -37,11 +37,20 @@ export default () => (
     <MenuLink href="/screencasts">
       Screencasts
     </MenuLink>
-    <MenuLink href="/support">
-      Support
+    <MenuLink href="/case-studies">
+      Case Studies
     </MenuLink>
     <MenuLink href="/pricing">
       Pricing
+    </MenuLink>
+    <MenuLink href="/docs">
+      Documentation
+    </MenuLink>
+    <MenuLink href="/support">
+      Support
+    </MenuLink>
+    <MenuLink href="/about">
+      About
     </MenuLink>
     <MenuLink href="/login" external>
       Login
