@@ -59,6 +59,7 @@ export default () => (
         </Cell>
         <Cell>
           <SmallNav>
+            <FooterLink href="/docs" external>Documentation</FooterLink>
             <FooterLink href="/about">About</FooterLink>
             <FooterLink href="/brand-assets">Brand Assets</FooterLink>
             <FooterLink href="/security">Security</FooterLink>
@@ -68,9 +69,10 @@ export default () => (
         </Cell>
         <Cell>
           <SmallNav>
-            <FooterLink href="/docs" external>Documentation</FooterLink>
             <FooterLink href="/support">Support</FooterLink>
             <FooterLink href="/contact">Contact Us</FooterLink>
+            <FooterLink href="/terms-of-service">Terms of Service</FooterLink>
+            <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
             <FooterLink href="https://buildkitestatus.com/">System Status</FooterLink>
           </SmallNav>
         </Cell>
