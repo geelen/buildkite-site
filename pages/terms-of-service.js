@@ -91,7 +91,8 @@ export default page(({ loggedIn }) => (
                 <ol>
                   <li>If the Customer does not pay the full Fees as required, the Company may suspend all User access to Buildkite for that Account.</li>
                   <li>If Fees are not brought out of arrears within 28 days of becoming overdue, the Company may terminate the Customer’s Account in Buildkite without notice and end this Agreement.</li>
-                  <li>The User agrees that the Company shall not be responsible or liable in any way for:
+                  <li>
+                    The User agrees that the Company shall not be responsible or liable in any way for:
                     <ol>
                       <li>Interruptions to the availability of Buildkite in the event of (a);</li>
                       <li>Loss of Customer Data in the event of (b).</li>
@@ -212,11 +213,11 @@ export default page(({ loggedIn }) => (
                       <li>all business and marketing plans and projections, details of agreements and arrangements with third parties, and User and supplier information and lists;</li>
                       <li>all financial information, pricing schedules and structures, product margins, remuneration details and investment outlays;</li>
                       <li>all information concerning any employee, customer, contractor, supplier or agent of the relevant party;</li>
-                      <li>the party's policies and procedures; and</li>
+                      <li>the party’s policies and procedures; and</li>
                       <li>all information contained in this document,</li>
                       <li className="no-counter">but excludes information that the other party can establish</li>
                       <li>but excludes information that the other party can establish:</li>
-                      <li>is known by or is in the other party's possession or control other than through a breach of this document and is not subject to any obligation of confidence; or</li>
+                      <li>is known by or is in the other party’s possession or control other than through a breach of this document and is not subject to any obligation of confidence; or</li>
                       <li>is in the public domain other than by a breach of this document or any obligations of confidence.</li>
                     </ol>
                   </li>
@@ -515,6 +516,6 @@ export default page(({ loggedIn }) => (
           </li>
         </ol>
       </div>
-    <PolicyDocument>
+    </PolicyDocument>
   </Page>
 ))
