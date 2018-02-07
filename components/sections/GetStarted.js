@@ -35,7 +35,7 @@ export default () => (
         <OffscreenH1>Get Started</OffscreenH1>
         <Paragraph>Sign up for free, and connect your first agent.</Paragraph>
         <p>
-          <Link href="/sign-up" external>
+          <Link href="/signup" external>
             <Button primary>Get Started →</Button>
           </Link>
         </p>
