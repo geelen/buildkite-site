@@ -134,7 +134,7 @@ export default page((props) => (
         <FeatureCell>
           <FeatureTitle>99.95% SLA</FeatureTitle>
           <FeatureDescription>
-            We understand that when your CI is down, your team can't work. We offer an uptime SLA on our key components, along with monitoring and alerting for your team.
+            We understand that when your CI is down, your team can&apos;t work. We offer an uptime SLA on our key components, along with monitoring and alerting for your team.
           </FeatureDescription>
         </FeatureCell>
 
