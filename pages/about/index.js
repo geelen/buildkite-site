@@ -70,14 +70,16 @@ const LocationParagraph = styled.section`
 
 const FirstNationsSection = styled.section`
   display: flex;
+  margin: 0 ${({ theme }) => theme.innerSpacing.s1};
   p {
     ${({ theme }) => theme.textStyles.bodyCopySmall}
     color: ${({ theme }) => theme.colors.text.subdued};
+    max-width: 27em;
   }
   img {
     width: 40px;
-    margin-top: .25rem;
-    margin-right: ${({ theme }) => theme.innerSpacing.s0};
+    margin-top: .35rem;
+    margin-right: ${({ theme }) => theme.innerSpacing.s1};
   }
 `
 
