@@ -4,7 +4,7 @@ export const MediaItem = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: ${({ alignItems }) => alignItems ? alignItems : 'center'};
   margin: -${({ theme }) => theme.innerSpacing.s1};
 `
 

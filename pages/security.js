@@ -71,7 +71,7 @@ export default page((props) => (
       <ActionGridItem
         heading="Report Vulnerability"
         image={vulnerabilityImage}
-        imageAlt=""
+        imageAlt="Two people holding a bug they found inside a computer"
         description="Request an invite to our responsible disclosure program on Hacker One"
         url="mailto:security@buildkite.com?subject=Vulnerability reporting invite"
         buttonTitle="Request Invite"
@@ -80,7 +80,7 @@ export default page((props) => (
       <ActionGridItem
         heading="Contact Security"
         image={securityImage}
-        imageAlt=""
+        imageAlt="Person carrying confidential briefcase"
         description="For questions, concerns or information, don’t hestitate to email our security team"
         url="mailto:security@buildkite.com"
         buttonTitle="Email security@buildkite.com"

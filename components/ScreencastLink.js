@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import Link from 'components/Link'
+import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 
 const ScreencastLink = styled.a`
   ${({ theme }) => theme.textStyles.navigationHyperlink}
@@ -11,11 +12,11 @@ const ScreencastLink = styled.a`
   padding: ${({ theme }) => theme.innerSpacing.s1};
 `
 
-const ScreenshotImage = styled.img`
+const ThumbnailImageContainer = ResponsiveImageContainer.extend`
   ${({ theme }) => theme.images.screenshots}
   width: 400px;
-  max-width: 100%;
   margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
+  background-color: white;
 `
 
 const ScreencastTitle = styled.h2`
@@ -36,7 +37,9 @@ const ScreencastDetail = styled.p`
 export default ({ screencast, ...props }) => (
   <Link href={screencast.pathname} prefetch>
     <ScreencastLink {...props}>
-      <ScreenshotImage src={screencast.images.thumbnail} alt="" />
+      <ThumbnailImageContainer width={800} height={450}>
+        <img src={screencast.images.thumbnail} alt={screencast.title} />
+      </ThumbnailImageContainer>
       <ScreencastTitle>
         {screencast.title}
       </ScreencastTitle>

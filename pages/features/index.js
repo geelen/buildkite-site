@@ -4,6 +4,7 @@ import Page, { page } from 'components/Page'
 import { FeatureGrid, FeatureCell, FeatureTitle as RawFeatureTitle, FeatureDescription } from 'components/FeatureGrid'
 import { MediaItem as RawMediaItem, ImageCell as RawImageCell, TextCell as RawTextCell } from 'components/MediaItem'
 import { OffscreenH1 } from 'components/OffscreenHeading'
+import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 
 import RawSVGConsoleImage from 'components/SVGConsoleImage'
 import GetStarted from 'components/sections/GetStarted'
@@ -80,6 +81,12 @@ const ImageWithBorder = Image.extend`
   border: 1px solid black;
 `
 
+const ScreenshotImage = ({ width, height, src, alt }) => (
+  <ResponsiveImageContainer width={width} height={height}>
+    <ImageWithBorder src={src} alt={alt} />
+  </ResponsiveImageContainer>
+)
+
 const Link = styled.a`
   ${({ theme }) => theme.textStyles.hyperlink}
 `
@@ -131,7 +138,7 @@ export default page((props) => (
         </TextCell>
         <ImageCell>
           <BuildAgentStart />
-          <ImageWithBorder src={pipelineRunningImage} alt="" />
+          <ScreenshotImage width={1092} height={440} src={pipelineRunningImage} alt="A build pipeline running a step" />
         </ImageCell>
       </MediaItem>
     </section>
@@ -162,7 +169,7 @@ export default page((props) => (
             <font color="#9B9B9B">  <font color="#00FF93">command</font>: </font>make test<br />
             <font color="#9B9B9B">  <font color="#00FF93">parallelism</font>: </font>300
           </SVGConsoleImage>
-          <ImageWithBorder src={parallelismImage} alt="" />
+          <ScreenshotImage width={1072} height={306} src={parallelismImage} alt="Many test steps running in parallel" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -172,7 +179,7 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src={elasticCiStackImage} alt="" />
+          <ScreenshotImage width={990} height={419} src={elasticCiStackImage} alt="The 'Launch Stack' button of the Elastic CI Stack for AWS" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -182,7 +189,7 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src={buildkiteMetricsImage} alt="" />
+          <ScreenshotImage width={1100} height={520} src={buildkiteMetricsImage} alt="CloudWatch metrics showing busy, idle and total agents" />
         </ImageCell>
       </MediaItem>
     </section>
@@ -205,7 +212,7 @@ export default page((props) => (
             <font color="#9B9B9B">    - <font color="#00FF93">text</font>: </font>&quot;Code Name&quot;<br />
             <font color="#9B9B9B">      <font color="#00FF93">key</font>: </font>&quot;release-name&quot;<br />
           </SVGConsoleImage>
-          <ImageWithBorder src={customFieldsUnblockImage} alt="" />
+          <ScreenshotImage width={1085} height={192} src={customFieldsUnblockImage} alt="A 'Release' manual unblock step" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -241,7 +248,7 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src={webInterfaceImage} alt="" />
+          <ScreenshotImage width={1084} height={572} src={webInterfaceImage} alt="The pipelines list showing pipeline build statistics" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -251,7 +258,7 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src={unblockStepImage} alt="" />
+          <ScreenshotImage width={1038} height={458} src={unblockStepImage} alt="Clicking 'Apply to Production' Terraform unblock step" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -290,7 +297,7 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src={embeddableImageArtifactsImage} alt="" />
+          <ScreenshotImage width={1376} height={893} src={embeddableImageArtifactsImage} alt="An embedded image artifact in log output" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -300,7 +307,7 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src={buildAnnotationsImage} alt="" />
+          <ScreenshotImage width={1084} height={643} src={buildAnnotationsImage} alt="A build annotation at the top of a build showing a test failure summary" />
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -310,7 +317,7 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src={logOutputGroupingImage} alt="" />
+          <ScreenshotImage width={1082} height={622} src={logOutputGroupingImage} alt="Console output of jobs with groups and timings" />
         </ImageCell>
       </MediaItem>
     </section>
@@ -346,7 +353,7 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <ImageWithBorder src={graphqlApiImage} alt="" />
+          <ScreenshotImage width={1079} height={387} src={graphqlApiImage} alt="A GraphQL query and response" />
         </ImageCell>
       </MediaItem>
     </section>
