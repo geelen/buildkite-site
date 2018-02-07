@@ -160,7 +160,7 @@ export default page((props) => (
         <FeatureCell>
           <FeatureTitle>Reporting and Visibility</FeatureTitle>
           <FeatureDescription>
-            Buildkite’s centralized platform gives you insight across your entire company’s engineering. And the GraphQL API allows you to easily create your own internal tools and metrics.
+            Buildkite’s centralized platform gives you insight across your entire company’s engineering, and the GraphQL API allows you to easily create your own internal tools and metrics.
           </FeatureDescription>
         </FeatureCell>
       </FeatureGrid>
