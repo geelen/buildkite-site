@@ -150,7 +150,7 @@ export default class Header extends React.PureComponent {
         <HeaderLink right widescreenOnly href="/login" external key="login">
             Login
         </HeaderLink>,
-        <HeaderLink right href="/sign-up" external key="signup">
+        <HeaderLink right href="/signup" external key="signup">
             Signup
         </HeaderLink>
       ]
