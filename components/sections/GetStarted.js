@@ -30,7 +30,7 @@ export default () => (
     <MediaItem>
       <ImageCell>
         <ImageContainer width={800} height={437}>
-          <img src={image} alt="Scientists launching a pod" />
+          <img src={image} alt="Two people launching a pod" />
         </ImageContainer>
       </ImageCell>
       <GetStartedText>

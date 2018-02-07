@@ -148,7 +148,7 @@ export default page((props) => (
       <MediaItem alignItems="top">
         <ImageCell>
           <HeadOfficeImageContainer width={1000} height={589}>
-            <img src={headOfficeImage} alt="Scientist looking at points around a globe" />
+            <img src={headOfficeImage} alt="Person looking at points around a globe" />
           </HeadOfficeImageContainer>
         </ImageCell>
         <TextCell>
@@ -239,7 +239,7 @@ export default page((props) => (
       <ActionGridItem
         heading="Brand Assets"
         image={brandAssetsImage}
-        imageAlt=""
+        imageAlt="Illustration of the Buildkite logo"
         description={<span>Download versions of our official<br /> logos to use as you need.</span>}
         url="/brand-assets"
         buttonTitle="View Brand Assets"
@@ -247,7 +247,7 @@ export default page((props) => (
       <ActionGridItem
         heading="Say Hello!"
         image={sayhelloImage}
-        imageAlt=""
+        imageAlt="People waving hello"
         description="If you have any questions or queries, don't hestitate to get in touch."
         url="mailto:hello@buildkite.com"
         buttonTitle="Email hello@buildkite.com"
@@ -255,7 +255,7 @@ export default page((props) => (
       {/* <ActionGridItem
         heading="Buildkite Shop"
         image={shopImage}
-        imageAlt=""
+        imageAlt="Illustration of a shop full of items"
         description="Order yourself some official Buildkite stickers, t-shirts, and more."
         url="https://shop.buildkite.com/"
         buttonTitle="Browse the shop"
