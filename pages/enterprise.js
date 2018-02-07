@@ -120,7 +120,7 @@ export default page((props) => (
         <FeatureCell>
           <FeatureTitle>Prioritized Support</FeatureTitle>
           <FeatureDescription>
-            Enterprise customers get priority support, including a dedicated private chat channel and guarantees around response times on high-priority issues.
+            Enterprise customers get priority support, including a dedicated private chat channel and guaranteed response times for high-priority issues.
           </FeatureDescription>
         </FeatureCell>
 
@@ -154,13 +154,13 @@ export default page((props) => (
         <FeatureCell>
           <FeatureTitle>Audit Logging</FeatureTitle>
           <FeatureDescription>
-            Available only on the Enterprise plan, audit logging keeps a record of actions taken by users. The log can be explored via the web, or exported via the GraphQL API.
+            Available only on the Enterprise plan, audit logging keeps a record actions taken by users across your organization. The log can be explored via the web, or exported via the GraphQL API.
           </FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Reporting and Visibility</FeatureTitle>
           <FeatureDescription>
-            Buildkite’s centralized platform platform gives you insight across your entire company’s engineering. And the GraphQL API allows you to easily create your own internal tools and metrics.
+            Buildkite’s centralized platform gives you insight across your entire company’s engineering. And the GraphQL API allows you to easily create your own internal tools and metrics.
           </FeatureDescription>
         </FeatureCell>
       </FeatureGrid>
