@@ -10,6 +10,7 @@ import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 import { OffscreenH2 } from 'components/OffscreenHeading'
 import Page, { page } from 'components/Page'
 import Person from 'components/Person'
+import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 
 import { team, leadership, advisors } from './_data'
 
@@ -58,9 +59,8 @@ const People = styled.div`
   }
 `
 
-const HeadOfficeImage = styled.img`
-  width: 500px;
-  max-width: 100%;
+const HeadOfficeImageContainer = ResponsiveImageContainer.extend`
+  max-width: 500px;
 `
 
 const LocationParagraph = styled.section`
@@ -145,9 +145,11 @@ export default page((props) => (
     </PeopleSection>
 
     <Section>
-      <MediaItem>
+      <MediaItem alignItems="top">
         <ImageCell>
-          <HeadOfficeImage src={headOfficeImage} />
+          <HeadOfficeImageContainer width={1000} height={589}>
+            <img src={headOfficeImage} alt="Scientist looking at points around a globe" />
+          </HeadOfficeImageContainer>
         </ImageCell>
         <TextCell>
           <InlineSectionHeader>

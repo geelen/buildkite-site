@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import Link from 'components/Link'
 import Page, { page } from 'components/Page'
+import { ResponsiveVideoContainer } from 'components/ResponsiveContainer'
 import RawScreencastLink from 'components/ScreencastLink'
 
 import screencasts from './_data'
@@ -30,10 +31,9 @@ const ScreencastParagraph = styled.p`
   max-width: 35em;
 `
 
-const ScreenshotVideo = styled.video`
+const VideoContainer = ResponsiveVideoContainer.extend`
   ${({ theme }) => theme.images.screenshots}
   width: 960px;
-  max-width: 100%;
   margin: ${({ theme }) => theme.innerSpacing.s2} 0;
 `
 
@@ -87,10 +87,17 @@ export default function screencastPage(pathname) {
       <Wrapper>
         <ScreencastParagraph>{`Duration: ${screencast.duration}`}</ScreencastParagraph>
 
-        <ScreenshotVideo controls playsinline preload="auto" poster={screencast.images.poster}>
-          <source src={screencast.videos.webm} type="video/webm" />
-          <source src={screencast.videos.mp4} type="video/mp4" />
-        </ScreenshotVideo>
+        <VideoContainer width={1920} height={1080}>
+          <video
+            controls
+            playsinline
+            preload="auto"
+            poster={screencast.images.poster}
+          >
+            <source src={screencast.videos.webm} type="video/webm" />
+            <source src={screencast.videos.mp4} type="video/mp4" />
+          </video>
+        </VideoContainer>
 
         {screencast.relatedDocumentation && (
           <ScreencastParagraph>

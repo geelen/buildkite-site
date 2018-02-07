@@ -4,6 +4,7 @@ import Button from 'components/Button'
 import Link from 'components/Link'
 import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 import { OffscreenH1 } from 'components/OffscreenHeading'
+import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 
 const image = require('../../assets/images/get-started/get-started.jpg')
 
@@ -20,16 +21,17 @@ const GetStartedText = TextCell.extend`
   }
 `
 
-const Image = styled.img`
+const ImageContainer = ResponsiveImageContainer.extend`
   width: 400px;
-  max-width: 100%;
 `
 
 export default () => (
   <section>
     <MediaItem>
       <ImageCell>
-        <Image src={image} alt="" />
+        <ImageContainer width={800} height={437}>
+          <img src={image} alt="Scientists launching a pod" />
+        </ImageContainer>
       </ImageCell>
       <GetStartedText>
         <OffscreenH1>Get Started</OffscreenH1>
