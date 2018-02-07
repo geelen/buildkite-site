@@ -79,19 +79,15 @@ const FeatureSectionDescription = styled.p`
 
 export default page((props) => (
   <Page
-    headTitle="Buildkite Enterprise"
+    headTitle="Built for Enterprise"
     headDescription="Buildkite's Enterprise plan gives you everything you need to build, test, and deliver software at scale."
-    title="Buildkite Enterprise"
+    title="Built for Enterprise"
     description={
       <React.Fragment>
-        Everything you need to build, test,<Br maxWidth="30em" /> and
-        deliver software at scale.
-      </React.Fragment>
+        Buildkite Enterprise provides the reliability and features that are needed for delivering software at scale.</React.Fragment>
     }
     {...props}
   >
-
-    {/* (callout to Thoughtworks Technology Radar) */}
     <FeatureSection>
       <FeatureSectionHeader>Scale</FeatureSectionHeader>
       <FeatureSectionTagline>Architected for scale.</FeatureSectionTagline>
@@ -111,10 +107,37 @@ export default page((props) => (
     </FeatureSection>
 
     <Section>
-      <SectionHeader>Enterprise plan features</SectionHeader>
+      <SectionHeader>Exclusively on Buildkite Enterprise</SectionHeader>
       <FeatureGridSectionDescription>All of Buildkite’s <Link href="/features"><a>standard features</a></Link>,<Br maxWidth="25rem" /> with additional levels of security and support.</FeatureGridSectionDescription>
 
       <FeatureGrid>
+        <FeatureCell>
+          <FeatureTitle>24/7 Emergency Help</FeatureTitle>
+          <FeatureDescription>
+            Our standard technical support is during business hours, but with Buildkite Enterprise you get access to 24/7 help for emergency issues.
+          </FeatureDescription>
+        </FeatureCell>
+        <FeatureCell>
+          <FeatureTitle>Prioritized Support</FeatureTitle>
+          <FeatureDescription>
+            Enterprise customers get priority support, including a dedicated private chat channel and guarantees around response times on high-priority issues.
+          </FeatureDescription>
+        </FeatureCell>
+
+        <FeatureCell>
+          <FeatureTitle>Private Consultations</FeatureTitle>
+          <FeatureDescription>
+            Regular consultation with our Engineering and Account Management team. Help your team stay up to date with best practices and learn what features and developments are coming soon.
+          </FeatureDescription>
+        </FeatureCell>
+
+        <FeatureCell>
+          <FeatureTitle>99.95% SLA</FeatureTitle>
+          <FeatureDescription>
+            We understand that when your CI is down, your team can't work. We offer an uptime SLA on our key components, along with monitoring and alerting for your team.
+          </FeatureDescription>
+        </FeatureCell>
+
         <FeatureCell>
           <FeatureTitle>Single Sign On</FeatureTitle>
           <FeatureDescription>
@@ -127,6 +150,7 @@ export default page((props) => (
             Manage permissions and teams with fine grained access control. And provide your organization with a default team for easy open sharing.
           </FeatureDescription>
         </FeatureCell>
+
         <FeatureCell>
           <FeatureTitle>Audit Logging</FeatureTitle>
           <FeatureDescription>
@@ -137,18 +161,6 @@ export default page((props) => (
           <FeatureTitle>Reporting and Visibility</FeatureTitle>
           <FeatureDescription>
             Buildkite’s centralized platform platform gives you insight across your entire company’s engineering. And the GraphQL API allows you to easily create your own internal tools and metrics.
-          </FeatureDescription>
-        </FeatureCell>
-        <FeatureCell>
-          <FeatureTitle>Service Level Agreement</FeatureTitle>
-          <FeatureDescription>
-            TODO
-          </FeatureDescription>
-        </FeatureCell>
-        <FeatureCell>
-          <FeatureTitle>Account Manager</FeatureTitle>
-          <FeatureDescription>
-            TODO
           </FeatureDescription>
         </FeatureCell>
       </FeatureGrid>
