@@ -41,7 +41,7 @@ export default page((props) => (
         imageWidth={415}
         imageAlt="Chat bubbles"
         description="Chat with other developers using Buildkite in our open community Slack."
-        url="https://chat.buildkite.com"
+        url="https://chat.buildkite.community"
         buttonTitle="Request an Invite"
       />
       <ActionGridItem
