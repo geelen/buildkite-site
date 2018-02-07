@@ -38,7 +38,7 @@ export default ({ screencast, ...props }) => (
   <Link href={screencast.pathname} prefetch>
     <ScreencastLink {...props}>
       <ThumbnailImageContainer width={800} height={450}>
-        <img src={screencast.images.thumbnail} alt="" />
+        <img src={screencast.images.thumbnail} alt={screencast.title} />
       </ThumbnailImageContainer>
       <ScreencastTitle>
         {screencast.title}

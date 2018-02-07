@@ -52,7 +52,7 @@ export default () => (
     </Paragraph>
     <Link href="/screencasts">
       <ScreencastLinkContainer>
-        <ScreencastImage src={stepTypesThumbnail} alt="" />
+        <ScreencastImage src={stepTypesThumbnail} alt="Screenshot of the step types screencast" />
         <CenteredButton>View the screencasts</CenteredButton>
       </ScreencastLinkContainer>
     </Link>
