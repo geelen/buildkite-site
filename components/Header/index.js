@@ -140,7 +140,7 @@ export default class Header extends React.PureComponent {
   renderLoginLinks() {
     if (this.props.loggedIn) {
       return (
-        <HeaderLink right href="/dashboard">
+        <HeaderLink right href="/dashboard" external>
           Dashboard
         </HeaderLink>
       )
