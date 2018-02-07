@@ -68,4 +68,4 @@ steps:
   
   - label: ":partyparrot:"
     branches: master
-    command: "buildkite-agent annotate --style success ':partyparrot: Deployed to https://new-site.buildkite.com/'"
+    command: "buildkite-agent annotate --style success ':partyparrot: Deployed to https://buildkite.com/'"
