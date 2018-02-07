@@ -38,6 +38,7 @@
   "scripts": {
     "test": "env NODE_ENV=test jest",
     "lint": "eslint . --color",
+    "lint:fix": "eslint . --color --fix",
     "build": "next build",
     "export": "next export",
     "start": "node server.js"
