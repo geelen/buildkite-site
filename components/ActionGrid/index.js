@@ -91,7 +91,7 @@ const Note = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
 `
 
-export const ActionGridItem = ({ heading, description, url, buttonTitle, image, imageAlt, imageWidth, note }) => (
+export const ActionGridItem = ({ heading, description, url, external, buttonTitle, image, imageAlt, imageWidth, note }) => (
   <Cell>
     <Container>
       <ItemImageContainer>
@@ -103,7 +103,7 @@ export const ActionGridItem = ({ heading, description, url, buttonTitle, image, 
       </ItemImageContainer>
       <Heading>{heading}</Heading>
       <Paragraph>{description}</Paragraph>
-      <Link href={url}>
+      <Link href={url} external={external}>
         <Button>{buttonTitle}</Button>
       </Link>
       {note && <Note>{note}</Note>}

@@ -23,6 +23,7 @@ export default page((props) => (
         imageAlt="Schematic diagram of a rocket"
         description="Find getting started guides, how-to docs, and API documentation."
         url="/docs"
+        external
         buttonTitle="View the Docs"
       />
       <ActionGridItem
