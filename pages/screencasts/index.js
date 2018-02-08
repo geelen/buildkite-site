@@ -20,7 +20,7 @@ export default page((props) => (
     headImage={openGraphImage}
     {...props}
   >
-    <Grid>
+    <Grid columns={2} minWidth="400px">
       {screencasts.map((screencast) => (
         <ScreencastLink
           screencast={screencast}
