@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import Br from 'components/Br'
 import Page, { page } from 'components/Page'
 import { FeatureGrid, FeatureCell, FeatureTitle as RawFeatureTitle, FeatureDescription } from 'components/FeatureGrid'
 import { MediaItem as RawMediaItem, ImageCell as RawImageCell, TextCell as RawTextCell } from 'components/MediaItem'
@@ -143,7 +144,7 @@ export default page((props) => (
       </MediaItem>
     </section>
     <section>
-      <Heading>Tools to scale across hundreds or thousands of agents</Heading>
+      <Heading>Tools to scale across hundreds or <Br minWidth="25em" /> thousands of agents</Heading>
       <MediaItem>
         <TextCell>
           <Description>
@@ -289,7 +290,7 @@ export default page((props) => (
       </MediaItem>
     </section>
     <section>
-      <Heading>Build logs that are beautiful and powerful</Heading>
+      <Heading>Build logs that are <Br minWidth="25em" /> beautiful and powerful</Heading>
       <MediaItem>
         <TextCell>
           <Description>

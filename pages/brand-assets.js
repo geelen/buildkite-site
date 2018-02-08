@@ -173,7 +173,7 @@ export default page((props) => (
     {...props}
   >
     <MaxWidthSection>
-      <SectionHeader>Guidelines and Rules</SectionHeader>
+      <SectionHeader>Guidelines and Rules</SectionHeader>
       <Paragraph>
         Our logo and mark are trademarks, and we need to protect them. If you’d like to use our logo or mark anywhere, we’ve provided files here for you. Please don’t alter the files in any way—we’ve put a lot of love into them and appreciate everyone using them only in the ways we’ve covered on this page ❤️
       </Paragraph>
@@ -280,11 +280,11 @@ export default page((props) => (
     </Section> */}
 
     <Callout
-      heading="Need something else?"
+      heading="Need something else?"
       description={
         <React.Fragment>
           Get in touch with our design team, <Br maxWidth="30em" />
-          and we can help you out.
+          and we can help{' '}you{' '}out.
         </React.Fragment>
       }
       buttonTitle="Email design@buildkite.com"

@@ -120,7 +120,7 @@ export default page((props) => (
     {...props}
   >
     <PeopleSection>
-      <SectionHeader>Get to know the team</SectionHeader>
+      <SectionHeader>Get to know the team</SectionHeader>
 
       <OffscreenH2>Everyone</OffscreenH2>
       <People>
@@ -264,7 +264,7 @@ export default page((props) => (
 
     <Callout
       heading="Have a question?"
-      description="Send us an email, we’re here to help."
+      description="Send us an email, we’re here to help."
       url="mailto:support@buildkite.com"
       buttonTitle="Email support@buildkite.com"
     />

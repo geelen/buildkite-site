@@ -119,7 +119,7 @@ export default page((props) => (
 
     <Callout
       heading="Anything else?"
-      description="Our friendly support team can help."
+      description="Our friendly support team can help."
       url="mailto:support@buildkite.com"
       buttonTitle="support@buildkite.com"
     />

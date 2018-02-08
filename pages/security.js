@@ -199,7 +199,7 @@ export default page((props) => (
       description={
         <React.Fragment>
           If you’ve got any questions, <Br maxWidth="30em" />
-          don’t hestitate to contact our team.
+          don’t hestitate to contact our{' '}team.
         </React.Fragment>
       }
       url="mailto:security@buildkite.com"

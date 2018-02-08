@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import Br from 'components/Br'
 import Button from 'components/Button'
 import Link from 'components/Link'
 import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
@@ -35,7 +36,7 @@ export default () => (
       </ImageCell>
       <GetStartedText>
         <OffscreenH1>Get Started</OffscreenH1>
-        <Paragraph>Sign up for free, and connect your first agent.</Paragraph>
+        <Paragraph>Sign up for free, and <Br minWidth="30em" /> connect your first agent.</Paragraph>
         <p>
           <Link href="/signup" external>
             <Button primary>Get Started →</Button>
