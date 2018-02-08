@@ -29,7 +29,7 @@ const MenuLink = ({ children, href, external }) => (
   </Link>
 )
 
-export default () => (
+export default ({ loggedIn }) => (
   <Menu>
     <MenuLink href="/features">
       Features
@@ -52,8 +52,10 @@ export default () => (
     <MenuLink href="/about">
       About
     </MenuLink>
-    <MenuLink href="/login" external>
-      Login
-    </MenuLink>
+    {loggedIn || (
+      <MenuLink href="/login" external>
+        Login
+      </MenuLink>
+    )}
   </Menu>
 )
