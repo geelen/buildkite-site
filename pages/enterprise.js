@@ -80,11 +80,11 @@ const FeatureSectionDescription = styled.p`
 export default page((props) => (
   <Page
     headTitle="Built for Enterprise"
-    headDescription="Buildkite's Enterprise plan gives you everything you need to build, test, and deliver software at scale."
+    headDescription="Buildkite’s Enterprise plan gives you everything you need to build, test, and deliver software at scale."
     title="Built for Enterprise"
     description={
       <React.Fragment>
-        Buildkite Enterprise provides the reliability and features that are needed for delivering software at scale.</React.Fragment>
+        Buildkite Enterprise provides the reliability <Br maxWidth="30em" /> and features you need for delivering software at scale.</React.Fragment>
     }
     {...props}
   >
@@ -174,7 +174,7 @@ export default page((props) => (
 
     <Callout
       heading="Talk to our team"
-      description="We're here to support your enterprise needs. Send us an email to arrange a call."
+      description="We’re here to support your enterprise needs. Send us an email to arrange a call."
       url="mailto:sales@buildkite.com"
       buttonTitle="Email sales@buildkite.com"
     />
