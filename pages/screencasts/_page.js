@@ -33,7 +33,6 @@ const ScreencastParagraph = styled.p`
 
 const VideoContainer = ResponsiveVideoContainer.extend`
   ${({ theme }) => theme.images.screenshots}
-  width: 960px;
   margin: ${({ theme }) => theme.innerSpacing.s2} 0;
 `
 

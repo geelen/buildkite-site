@@ -25,5 +25,7 @@ export const ResponsiveVideoContainer = ResponsiveContainer.extend`
     left: 0;
     width: 100%;
     height: 100%;
+    /* paper over any discrepancies in display size vs container size */
+    object-fit: cover;
   }
 `
