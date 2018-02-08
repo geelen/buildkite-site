@@ -90,7 +90,7 @@ export default function screencastPage(pathname) {
         <VideoContainer width={1920} height={1080}>
           <video
             controls
-            playsinline
+            playsInline
             preload="auto"
             poster={screencast.images.poster}
           >
