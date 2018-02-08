@@ -14,7 +14,6 @@ const ScreencastLink = styled.a`
 
 const ThumbnailImageContainer = ResponsiveImageContainer.extend`
   ${({ theme }) => theme.images.screenshots}
-  width: 400px;
   margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
   background-color: white;
 `

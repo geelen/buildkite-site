@@ -15,6 +15,18 @@ export const Grid = styled.div`
 
     return `repeat(auto-fit, minmax(${columns}, 1fr))`
   }};
+
+  ${({ minWidth }) => {
+    // Support for dropping down to a single column if the max device width is
+    // less than the minWidth value
+    if (minWidth) {
+      return `
+        @media (max-width: ${minWidth}) {
+          grid-template-columns: repeat(1, 1fr)
+        }
+      `
+    }
+  }};
   `
 
 Grid.defaultProps = {
