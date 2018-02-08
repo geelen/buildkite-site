@@ -43,7 +43,7 @@ export default () => (
     <MenuLink href="/pricing">
       Pricing
     </MenuLink>
-    <MenuLink href="/docs">
+    <MenuLink href="/docs" external>
       Documentation
     </MenuLink>
     <MenuLink href="/support">
