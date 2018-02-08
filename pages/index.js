@@ -62,7 +62,7 @@ const LargeParagraph = styled.p`
 `
 
 const Logos = styled.div`
-  margin: ${({ theme }) => theme.innerSpacing.s1} auto;
+  margin: ${({ theme }) => theme.innerSpacing.s2} auto 0 auto;
   max-width: 100%;
   @media (min-width: 580px) {
     max-width: 85%;

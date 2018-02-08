@@ -22,7 +22,7 @@ const GetStartedText = TextCell.extend`
 `
 
 const ImageContainer = ResponsiveImageContainer.extend`
-  width: 400px;
+  max-width: 400px;
 `
 
 export default () => (
