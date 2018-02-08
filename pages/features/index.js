@@ -399,7 +399,7 @@ export default page((props) => (
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Friendly, Human Support</FeatureTitle>
-          <FeatureDescription>Consider us your outsourced build support team, and a solid platform and great support. Our support engineers can help debug problems and answer any questions.</FeatureDescription>
+          <FeatureDescription>Consider us your outsourced build support team, with a solid platform and great support. Our support engineers can help debug problems and answer any questions.</FeatureDescription>
         </FeatureCell>
       </FeatureGrid>
     </OtherFeaturesSection>
