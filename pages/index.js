@@ -36,6 +36,10 @@ const ExplanationStatement = styled.p`
   margin-right: auto;
   text-align: center;
   color: ${({ theme }) => theme.colors.text.subdued};
+
+  @media (max-width: 400px) {
+    margin-top: ${({ theme }) => theme.innerSpacing.s2};
+  }
 `
 
 const Section = styled.section`
