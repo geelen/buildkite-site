@@ -1,3 +1,4 @@
+import { withRouter } from 'next/router'
 import styled from 'styled-components'
 
 import Link from 'components/Link'
@@ -23,11 +24,22 @@ const MenuLinkAnchor = styled.a`
   }
 `
 
-const MenuLink = ({ children, href, external }) => (
-  <Link href={href} external={external}>
-    <MenuLinkAnchor>{children}</MenuLinkAnchor>
-  </Link>
-)
+const MenuLink = withRouter(({ children, router, href, external }) => {
+  // The following should both mark it as active
+  // "/case-studies" and "/case-studies"
+  // "/case-studies" and "/case-studies/shopify"
+  const active = router.pathname === href || router.pathname.indexOf(`${href}/`) === 0
+
+  return (
+    <Link href={href} external={external}>
+      <MenuLinkAnchor
+        active={active}
+      >
+        {children}
+      </MenuLinkAnchor>
+    </Link>
+  )
+})
 
 export default ({ loggedIn }) => (
   <Menu>
