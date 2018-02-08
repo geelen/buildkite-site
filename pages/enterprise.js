@@ -120,7 +120,7 @@ export default page((props) => (
         <FeatureCell>
           <FeatureTitle>Prioritized Support</FeatureTitle>
           <FeatureDescription>
-            Enterprise customers get priority support, including a dedicated private chat channel and guaranteed response times for high-priority issues.
+            Enterprise customers get priority support, including a dedicated private chat channel and guaranteed response times for high priority issues.
           </FeatureDescription>
         </FeatureCell>
 
@@ -141,13 +141,13 @@ export default page((props) => (
         <FeatureCell>
           <FeatureTitle>Single Sign On</FeatureTitle>
           <FeatureDescription>
-            SSO for provisioning and login is supported for Google, Okta, OneLogin, ADFS (SAML) and custom SAML providers.
+            SSO for provisioning and login is supported for Google, Okta, OneLogin, ADFS (SAML) and custom SAML providers. Also available on the standard plan.
           </FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Access Control and Teams</FeatureTitle>
           <FeatureDescription>
-            Manage permissions and teams with fine grained access control. And provide your organization with a default team for easy open sharing.
+            Manage permissions and teams with fine grained access control. And provide your organization with a default team for easy open sharing. Also available on the standard plan.
           </FeatureDescription>
         </FeatureCell>
 

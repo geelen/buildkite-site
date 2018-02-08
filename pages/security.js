@@ -169,7 +169,7 @@ export default page((props) => (
 
       <Subsection>
         <SubSectionHeader>Keybase</SubSectionHeader>
-        <SecurityParagraph>Find us on Keybase, where you can symetrically PGP encrypt a message before emailing it to us.</SecurityParagraph>
+        <SecurityParagraph>Find us on Keybase, where you can symmetrically PGP encrypt a message before emailing it to us.</SecurityParagraph>
         <Button
           href="https://keybase.io/buildkite"
         >

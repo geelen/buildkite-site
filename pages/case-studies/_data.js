@@ -30,7 +30,7 @@ export const shopify = {
   words: (
     <React.Fragment>
       <p><a href="https://shopify.com/" rel="nofollow">Shopify</a> is a global ecommerce platform powering more than 500,000 online stores, and in 2016 they served over 100 million shoppers. They are based in Ottawa, Canada, but have a global presence with over 900 engineers.</p>
-      <p>Having outgrown their previous hosted CI provider, Shopify needed to reduce their build times from 25 minutes to less than 5 minutes. At the same time, they were scaling their engineering team from 300 to 900 and expanding across multiple timezones.</p>
+      <p>Having outgrown their previous hosted CI provider, Shopify needed to reduce their build times from 25 minutes to less than 5 minutes. At the same time, they were scaling their engineering team from 300 to 900 and expanding across multiple time zones.</p>
       <p>Buildkite enabled Shopify to auto-scale their build servers to match their engineering teams’ peak demand, and they now run almost 10,000 concurrent build agents. Buildkite’s agent architecture allowed them to take full advantage of cloud cost reduction features, providing a much larger compute capacity for the same cost, and allowed them to smoothly transition from AWS to Google Cloud.</p>
       <p>In the face of 300% team growth, Shopify has maintained their targets of keeping build times under 5 minutes, and have been able to apply the same scaling techniques to their key Android and iOS projects.</p>
     </React.Fragment>
@@ -71,7 +71,7 @@ export const rea = {
   words: (
     <React.Fragment>
       <p><a href="https://www.rea-group.com/" rel="nofollow">REA Group</a> is a multinational digital advertising business specialising in property. REA’s engineers develop and operate Australia and China’s leading real estate websites <a href="https://www.realestate.com.au/" rel="nofollow">realestate.com.au</a> and <a href="https://myfun.com/" rel="nofollow">myfun.com</a>.</p>
-      <p>Before Buildkite, REA’s engineering teams were using a mix of build systems, spread across a dozen clusters, which created problems of high maintainence costs and bottlenecks. They needed a solution that would give autonomy back to their engineering teams, and allow them to make full use of their AWS and Docker expertise.</p>
+      <p>Before Buildkite, REA’s engineering teams were using a mix of build systems, spread across a dozen clusters, which created problems of high maintenance costs and bottlenecks. They needed a solution that would give autonomy back to their engineering teams, and allow them to make full use of their AWS and Docker expertise.</p>
       <p>In only a few weeks, REA was able to replace a number of Jenkins and Bamboo CI installations with their own autoscaling stack based on Buildkite, AWS and Docker. They found setup time for new build pipelines was reduced from weeks to days, and the centralized cluster greatly reduced their ops overhead.</p>
       <p>Buildkite has helped their teams have faster builds, tighter feedback loops, and easier adoption of new tools and practices. Today, Buildkite powers the majority of builds across their organisation, and is the go-to CI tool for new projects.</p>
     </React.Fragment>

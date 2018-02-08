@@ -87,7 +87,7 @@ export default page((props) => (
         heading="Say Hello!"
         image={sayhelloImage}
         imageAlt="People waving hello"
-        description="For press enquries, or anything else you need, drop us a line and we’ll help."
+        description="For press enquiries, or anything else you need, drop us a line and we’ll help."
         url="mailto:hello@buildkite.com"
         buttonTitle="Email hello@buildkite.com"
       />

@@ -93,7 +93,7 @@ const LogoImages = styled.div`
 export default page((props) => (
   <Page
     headTitle="Buildkite"
-    headDescription="Buildkite is a platform for running fast, secure, and scaleable continuous integration pipelines on your own infrastructure."
+    headDescription="Buildkite is a platform for running fast, secure, and scalable continuous integration pipelines on your own infrastructure."
     {...props}
   >
     <section>
@@ -103,7 +103,7 @@ export default page((props) => (
         for all your software projects
       </PositioningStatement>
       <ExplanationStatement>
-        Buildkite is a platform for running fast, secure, and scaleable continuous integration pipelines on your own infrastructure.
+        Buildkite is a platform for running fast, secure, and scalable continuous integration pipelines on your own infrastructure.
       </ExplanationStatement>
     </section>
 
