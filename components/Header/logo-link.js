@@ -16,7 +16,7 @@ const LinkTag = styled.a`
   display: inline-block;
   ${showDebugOutlines && 'outline: 1px solid red'};
 
-  @media (max-width: 349px) {
+  @media (max-width: 399px) {
     width: 45px;
     flex-basis: 45px;
   }
@@ -30,7 +30,7 @@ const Mark = styled.img`
   height: 30px;
   ${showDebugOutlines && 'outline: 1px solid green'};
 
-  @media (min-width: 350px) {
+  @media (min-width: 400px) {
     left: 52px;
     pointer-events: none;
     will-change: transform;
@@ -52,10 +52,10 @@ const WordMark = styled.img`
   ${showDebugOutlines && 'outline: 1px solid blue'};
   display: none;
 
-  @media (min-width: 350px) {
+  @media (min-width: 400px) {
     display: inline-block;
     pointer-events: none;
-    opacity: 0;    
+    opacity: 0;
     transform: translateX(-20px);
     perspective: 20px;
     transform-origin: left top;
