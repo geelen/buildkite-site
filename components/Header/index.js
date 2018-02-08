@@ -116,7 +116,7 @@ export default class Header extends React.PureComponent {
               Case Studies
             </HeaderLink>
           </LinkContainer>
-          <LogoLink />
+          <LogoLink loggedIn={this.props.loggedIn} />
           <LinkContainer right>
             <HeaderLink right prefetch widescreenOnly href="/pricing">
               Pricing

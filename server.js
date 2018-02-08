@@ -84,8 +84,6 @@ app.prepare()
     // this URL on Twitter and it'll redirect any new visitors to /
     server.get('/home', (req, res) => {
       if (req.loggedIn) {
-        // Rewrite URL so Next serves the homepage
-        req.url = "/"
         nextHandler(req, res)
       } else {
         res.redirect(302, '/')

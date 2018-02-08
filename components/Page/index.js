@@ -108,7 +108,7 @@ export const BasePage = (props) => (
       <Container>
         {props.children}
       </Container>
-      <Footer />
+      <Footer loggedIn={props.loggedIn} />
     </React.Fragment>
   </ThemeProvider>
 )
