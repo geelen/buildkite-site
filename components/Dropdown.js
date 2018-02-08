@@ -107,6 +107,7 @@ export default class Dropdown extends React.PureComponent<Props, State> {
 
   componentDidMount() {
     document.documentElement && document.documentElement.addEventListener('click', this.handleDocumentClick)
+    document.documentElement && document.documentElement.addEventListener('touchstart', this.handleDocumentTouchstart)
     document.documentElement && document.documentElement.addEventListener('keydown', this.handleDocumentKeyDown)
     window.addEventListener('resize', this.handleWindowResize, false)
     this.calculateViewportOffsets()
@@ -114,6 +115,7 @@ export default class Dropdown extends React.PureComponent<Props, State> {
 
   componentWillUnmount() {
     document.documentElement && document.documentElement.removeEventListener('click', this.handleDocumentClick)
+    document.documentElement && document.documentElement.removeEventListener('touchstart', this.handleDocumentTouchstart)
     document.documentElement && document.documentElement.removeEventListener('keydown', this.handleDocumentKeyDown)
     window.removeEventListener('resize', this.handleWindowResize)
     this._resizeDebounceTimeout = clearTimeout(this._resizeDebounceTimeout) // just in case
@@ -125,7 +127,7 @@ export default class Dropdown extends React.PureComponent<Props, State> {
     }
   }
 
-  handleDocumentClick = (event: MouseEvent) => {
+  getEventScope = (event: Event) => {
     // NOTE: We have to cast `event.target` to a Node to use with `contains`
     //       see <https://github.com/facebook/flow/issues/4645>
     const target: Node = (event.target: any)
@@ -139,24 +141,59 @@ export default class Dropdown extends React.PureComponent<Props, State> {
       this.wrapperNode.lastElementChild
     )
 
-    const clickWasInComponent = (
+    const wasInComponent = (
       this.wrapperNode &&
       this.wrapperNode.contains(target)
     )
 
-    // We don't have a ref to the popup button, so to detect a click on the
+    // We don't have a ref to the popup button, so to detect an event on the
     // button we detect that it "wasn't" in the popup node, leaving only the
     // button that it could have been in
-    const buttonWasClicked = (
-      clickWasInComponent &&
+    const wasInButton = (
+      wasInComponent &&
       (!popupNode || !popupNode.contains(target))
     )
 
-    if (buttonWasClicked) {
+    return {
+      wasInComponent,
+      wasInButton
+    }
+  };
+
+  handleDocumentClick = (event: MouseEvent) => {
+    const { wasInComponent, wasInButton } = this.getEventScope(event)
+
+    if (wasInButton) {
       this.setShowing(!this.state.showing)
-    } else if (this.state.showing && !clickWasInComponent) {
+    } else if (this.state.showing && !wasInComponent) {
       this.setShowing(false)
     }
+  };
+
+  handleDocumentTouchstart = (event: TouchEvent) => {
+    const { wasInButton } = this.getEventScope(event)
+
+    if (!wasInButton) {
+      return
+    }
+
+    // If this `touchstart` event was within the button, calculate how long it
+    // was between this and the last `touchstart` event
+    const timeDifference = (
+      event.timeStamp - (this.lastEventTime || event.timeStamp)
+    )
+
+    // Keep track of the last event's time
+    this.lastEventTime = event.timeStamp
+
+    // If we've not seen more than one touch event, or it's been longer than
+    // 500ms, or if this touch event involves multiple fingers, do nothing
+    if (!timeDifference || timeDifference > 500 || event.touches.length > 1) {
+      return
+    }
+
+    // Finally, if we meet all those conditions, abort the touchstart event
+    event.preventDefault()
   };
 
   handleDocumentKeyDown = (event: KeyboardEvent) => {
