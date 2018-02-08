@@ -131,7 +131,7 @@ export default class Header extends React.PureComponent {
           </LinkContainer>
         </Content>
         {this.state.showMenu && (
-          <Menu loggedIn={true || this.props.loggedIn} />
+          <Menu loggedIn={this.props.loggedIn} />
         )}
       </HeaderWrapper>
     )
