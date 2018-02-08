@@ -40,12 +40,12 @@ const LogoImage = styled.img`
   max-width: 80px;
 `
 
-export default () => (
+export default ({ loggedIn }) => (
   <Footer>
     <FooterInner>
       <Grid columns="200px">
         <Cell>
-          <Link href="/">
+          <Link href={loggedIn ? "/home" : "/"}>
             <a><LogoImage src={portraitLogo} alt="Buildkite" /></a>
           </Link>
         </Cell>

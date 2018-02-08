@@ -71,14 +71,14 @@ const WordMark = styled.img`
   }
 `
 
-export default () => (
+export default ({ loggedIn }) => (
   <React.Fragment>
     <Head>
       <link as="image" href={markSvgPath} rel="preload" type="image/svg+xml" crossOrigin="anonymous" />
       <link as="image" href={wordmarkSvgPath} rel="preload" type="image/svg+xml" crossOrigin="anonymous" />
     </Head>
-    <Link prefetch href="/">
-      <LinkTag href="/">
+    <Link prefetch href={loggedIn ? "/home" : "/"}>
+      <LinkTag>
         <Mark src={markSvgPath} alt="Buildkite logo" />
         <WordMark src={wordmarkSvgPath} alt="Buildkite" />
       </LinkTag>
