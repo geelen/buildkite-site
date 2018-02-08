@@ -70,7 +70,7 @@ export const rea = {
   ),
   words: (
     <React.Fragment>
-      <p><a href="https://www.rea-group.com/" rel="nofollow">REA Group</a> is a multinational digital advertising business specialising in property. REA’s engineers develop and operate Australia and China’s leading real estate websites <a href="https://www.realestate.com.au/" rel="nofollow">realestate.com.au</a> and <a href="https://myfun.com/" rel="nofollow">myfun.com</a>.</p>
+      <p><a href="https://www.rea-group.com/" rel="nofollow">REA Group</a> is a multinational digital advertising business specialising in property. REA’s engineers develop and operate leading property websites in Australia and Asia, including <a href="https://www.realestate.com.au/" rel="nofollow">realestate.com.au</a> and <a href="https://iproperty.com.my/" rel="nofollow">iproperty.com.my</a>.</p>
       <p>Before Buildkite, REA’s engineering teams were using a mix of build systems, spread across a dozen clusters, which created problems of high maintenance costs and bottlenecks. They needed a solution that would give autonomy back to their engineering teams, and allow them to make full use of their AWS and Docker expertise.</p>
       <p>In only a few weeks, REA was able to replace a number of Jenkins and Bamboo CI installations with their own autoscaling stack based on Buildkite, AWS and Docker. They found setup time for new build pipelines was reduced from weeks to days, and the centralized cluster greatly reduced their ops overhead.</p>
       <p>Buildkite has helped their teams have faster builds, tighter feedback loops, and easier adoption of new tools and practices. Today, Buildkite powers the majority of builds across their organisation, and is the go-to CI tool for new projects.</p>
