@@ -15,7 +15,7 @@ export const shopify = {
   testimonial: {
     name: 'Jean-Michel Lemieux',
     title: 'SVP of Engineering, Shopify',
-    testimonial: 'Buildkite helped us bring down our build times from 40 minutes to 10 minutes. We love the pipelines feature and run tests across 100 agents on each master and branch build. Buildkite has supported us growing to over 900 engineers.',
+    testimonial: 'Buildkite helped us bring down our build times from 40 minutes to 10 minutes. We love the pipelines feature and run tests across 100 agents on each master and branch build.',
     headshotImage: shopifyTestimonialPhoto
   },
   results: [
