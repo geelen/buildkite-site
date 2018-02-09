@@ -169,8 +169,12 @@ export default class Header extends React.PureComponent {
     this.toggleMenu()
   }
 
-  handleMenuClick = () => {
-    this.toggleMenu()
+  handleMenuClick = (evt) => {
+    if (evt.target !== evt.currentTarget) {
+      this.toggleMenu()
+    } else {
+      evt.preventDefault()
+    }
   }
 
   toggleMenu = () => {

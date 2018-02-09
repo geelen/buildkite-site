@@ -10,6 +10,7 @@ const Menu = styled.nav`
   background-color: rgba(255,255,255,.98);
   padding: ${({ theme }) => theme.innerSpacing.s1};
   box-shadow: ${({ theme }) => theme.boxShadows.menuBar};
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 `
 
 const MenuLinkAnchor = styled.a`
@@ -19,6 +20,7 @@ const MenuLinkAnchor = styled.a`
   display: block;
   line-height: 1;
   padding: ${({ theme }) => theme.innerSpacing.s0} 0;
+  -webkit-tap-highlight-color: initial;
 `
 
 const MenuLink = withRouter(({ children, router, href, external }) => {
