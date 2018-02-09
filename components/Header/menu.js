@@ -8,7 +8,7 @@ const Menu = styled.nav`
   position: absolute;
   width: 100%;
   background-color: rgba(255,255,255,.98);
-  padding: 30px ${({ theme }) => theme.innerSpacing.s1};
+  padding: ${({ theme }) => theme.innerSpacing.s1};
   box-shadow: ${({ theme }) => theme.boxShadows.menuBar};
 `
 
@@ -18,10 +18,7 @@ const MenuLinkAnchor = styled.a`
   font-weight: bold;
   display: block;
   line-height: 1;
-
-  & + * {
-    margin-top: ${({ theme }) => theme.innerSpacing.s1};
-  }
+  padding: ${({ theme }) => theme.innerSpacing.s0} 0;
 `
 
 const MenuLink = withRouter(({ children, router, href, external }) => {
