@@ -170,10 +170,9 @@ export default class Header extends React.PureComponent {
   }
 
   handleMenuClick = (evt) => {
+    // Only toggle for clicks within children of the menu
     if (evt.target !== evt.currentTarget) {
       this.toggleMenu()
-    } else {
-      evt.preventDefault()
     }
   }
 
