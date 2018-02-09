@@ -19,6 +19,13 @@ steps:
         run: site
     skip: "TODO"
 
+  - name: ":package::mag:"
+    command: yarn bundle-analyze
+    artifact_paths: "bundle-analysis/*"
+    plugins:
+      docker-compose#v1.8.2:
+        run: site
+
   - label: ":percy:"
     plugins:
       docker-compose#v1.8.2:
