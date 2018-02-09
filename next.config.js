@@ -1,6 +1,5 @@
 /* global __dirname */
 const path = require('path')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { ANALYZE } = process.env
 
 // These are used to export pages using Next’s built in `yarn export`. The
@@ -16,6 +15,7 @@ const urlPathsToExport = [
 module.exports = {
   webpack: function(config) {
     if (ANALYZE) {
+      const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
       config.plugins.push(new BundleAnalyzerPlugin({
         analyzerMode: 'static',
         reportFilename: path.resolve(__dirname, 'bundle-analysis/bundle-analyzer-report.html'),
