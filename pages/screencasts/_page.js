@@ -49,6 +49,8 @@ const NextScreencastHeader = styled.h2`
 
 const ScreencastLink = styled(RawScreencastLink)`
   display: inline-block;
+  width: 100%;
+  max-width: 440px;
 `
 
 const Sentencify = ({ children: rawChildren, separator = ', ', lastSeparator = ' and ' }) => (
