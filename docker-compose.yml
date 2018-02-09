@@ -7,4 +7,4 @@ services:
     environment:
       - CI # Makes sure Jest doesn't do interactive cli when run in Buildkite
     volumes:
-      - "./bundle-analysis:/bundle-analysis"
+      - "./bundle-analysis:/app/bundle-analysis"
