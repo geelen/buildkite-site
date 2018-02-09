@@ -193,7 +193,12 @@ export default class Dropdown extends React.PureComponent<Props, State> {
     }
 
     // Finally, if we meet all those conditions, abort the touchstart event
+    // (this prevents double-tap zooming on the item)
     event.preventDefault()
+
+    // And simulate the "click" behaviour by toggling the dropdown
+    // (effectively making it possible to "click" faster than the OS would let us!)
+    this.setShowing(!this.state.showing)
   };
 
   handleDocumentKeyDown = (event: KeyboardEvent) => {
