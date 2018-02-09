@@ -169,7 +169,7 @@ export default class Header extends React.PureComponent {
     this.toggleMenu()
   }
 
-  handleMenuClick = (evt) => {
+  handleMenuClick = () => {
     this.toggleMenu()
   }
 
