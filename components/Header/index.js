@@ -131,7 +131,10 @@ export default class Header extends React.PureComponent {
           </LinkContainer>
         </Content>
         {this.state.showMenu && (
-          <Menu loggedIn={this.props.loggedIn} />
+          <Menu
+            onClick={this.handleMenuClick}
+            loggedIn={this.props.loggedIn}
+          />
         )}
       </HeaderWrapper>
     )
@@ -163,6 +166,14 @@ export default class Header extends React.PureComponent {
 
   handleMenuLinkClick = (evt) => {
     evt.preventDefault()
+    this.toggleMenu()
+  }
+
+  handleMenuClick = (evt) => {
+    this.toggleMenu()
+  }
+
+  toggleMenu = () => {
     this.setState({ showMenu: !this.state.showMenu })
   }
 

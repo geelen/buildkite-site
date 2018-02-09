@@ -41,8 +41,8 @@ const MenuLink = withRouter(({ children, router, href, external }) => {
   )
 })
 
-export default ({ loggedIn }) => (
-  <Menu>
+export default ({ loggedIn, ...props }) => (
+  <Menu {...props}>
     <MenuLink href="/features">
       Features
     </MenuLink>
