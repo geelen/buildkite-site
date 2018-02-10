@@ -3,8 +3,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import transition from 'styled-transition-group'
-import { easings } from 'postcss-easings'
-const { easeInBack, easeOutBack } = easings
+const easeInBack = 'cubic-bezier(0.6, -0.28, 0.735, 0.045)'
+const easeOutBack = 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
 
 import Popover from './Popover'
 import calculateViewportOffsets from './Popover/calculate-viewport-offsets'
