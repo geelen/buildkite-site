@@ -3,7 +3,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import transition from 'styled-transition-group'
-import { easeInBack, easeOutBack } from 'eases'
+import { easings } from 'postcss-easings'
+const { easeInBack, easeOutBack } = easings
 
 import Popover from './Popover'
 import calculateViewportOffsets from './Popover/calculate-viewport-offsets'
