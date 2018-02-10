@@ -15,7 +15,7 @@ export const shopify = {
   testimonial: {
     name: 'Jean-Michel Lemieux',
     title: 'SVP of Engineering, Shopify',
-    testimonial: 'Buildkite helped us bring down our build times on shopify.com from 25 minutes to 5 minutes, and supported us growing to over 900 engineers.',
+    testimonial: 'Buildkite helped us bring down our build times from 40 minutes to 10 minutes. We love the pipelines feature and run tests across 100 agents on each master and branch build.',
     headshotImage: shopifyTestimonialPhoto
   },
   results: [
@@ -29,10 +29,10 @@ export const shopify = {
   ),
   words: (
     <React.Fragment>
-      <p><a href="https://shopify.com/" rel="nofollow">Shopify</a> is a global ecommerce platform powering more than 500,000 online stores, and in 2016 they served over 100 million shoppers. They are based in Ottawa, Canada, but have a global presence with over 900 engineers.</p>
-      <p>Having outgrown their previous hosted CI provider, Shopify needed to reduce their build times from 25 minutes to less than 5 minutes. At the same time, they were scaling their engineering team from 300 to 900 and expanding across multiple time zones.</p>
+      <p><a href="https://shopify.com/" rel="nofollow">Shopify</a> is a global commerce platform powering more than 500,000 entrepreneurs and businesses, and in 2016 they served over 100 million shoppers. They are based in Ottawa, Canada, but have a global presence with over 900 engineers.</p>
+      <p>Having outgrown their previous hosted CI provider, Shopify needed to reduce their build times from 40 minutes to less than 10 minutes. At the same time, they were scaling their engineering team from 300 to 900 and expanding across multiple time zones.</p>
       <p>Buildkite enabled Shopify to auto-scale their build servers to match their engineering teams’ peak demand, and they now run almost 10,000 concurrent build agents. Buildkite’s agent architecture allowed them to take full advantage of cloud cost reduction features, providing a much larger compute capacity for the same cost, and allowed them to smoothly transition from AWS to Google Cloud.</p>
-      <p>In the face of 300% team growth, Shopify has maintained their targets of keeping build times under 5 minutes, and have been able to apply the same scaling techniques to their key Android and iOS projects.</p>
+      <p>In the face of 300% team growth, Shopify has maintained their targets of keeping build times under 10 minutes, and have been able to apply the same scaling techniques to their key Android and iOS projects.</p>
     </React.Fragment>
   )
 }
