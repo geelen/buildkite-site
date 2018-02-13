@@ -58,8 +58,8 @@ export const colors = {
     blackHover: 'black',
     grey: '#F8F8F8',
     greyHover: '#F1F1F1',
-    green: '#00D974',
-    greenHover: '#00BB64'
+    green: '#03a562',
+    greenHover: '#028e54'
   },
   text: {
     subdued: '#666666',
