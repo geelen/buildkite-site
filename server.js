@@ -29,8 +29,11 @@ app.prepare()
   .then(() => {
     const server = express()
 
-    // Don't need to report exact versions of things (for security's sake)
+    // Tell express not to add x-powered-by headers so we don't reveal what we're running
     server.disable('x-powered-by')
+
+    // Tell next.js not to add x-powered-by headers so we don't reveal what we're running
+    app.config.poweredByHeader = false
 
     // Compress our responses to browsers
     server.use(shrinkRay())
