@@ -47,6 +47,18 @@ app.prepare()
       next()
     })
 
+    // Add strict transport and content security headers for parity with rails
+    // app and to prevent leakage.
+    server.use(function(req, res, next) {
+      res.header('X-Frame-Options', 'SAMEORIGIN')
+      res.header('X-XSS-Protection', '1; mode=block')
+      res.header('X-Content-Type-Options', 'nosniff')
+      if (!dev) {
+        res.header('Strict-Transport-Security', 'max-age=31536000; includeSubdomains; preload')
+      }
+      next()
+    })
+
     // Middleware that strips asset hashes from URLs. The hash is added by babel
     // plugin transform-assets in .babelrc
     //
