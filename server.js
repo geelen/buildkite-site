@@ -29,8 +29,11 @@ app.prepare()
   .then(() => {
     const server = express()
 
-    // Don't need to report exact versions of things (for security's sake)
+    // Tell express not to add x-powered-by headers so we don't reveal what we're running
     server.disable('x-powered-by')
+
+    // Tell next.js not to add x-powered-by headers so we don't reveal what we're running
+    app.config.poweredByHeader = false
 
     // Compress our responses to browsers
     server.use(shrinkRay())
@@ -40,6 +43,18 @@ app.prepare()
       if (req.headers.cookie) {
         const cookies = cookie.parse(req.headers.cookie)
         req.loggedIn = isLoggedIn(cookies)
+      }
+      next()
+    })
+
+    // Add strict transport and content security headers for parity with rails
+    // app and to prevent leakage.
+    server.use(function(req, res, next) {
+      res.header('X-Frame-Options', 'SAMEORIGIN')
+      res.header('X-XSS-Protection', '1; mode=block')
+      res.header('X-Content-Type-Options', 'nosniff')
+      if (!dev) {
+        res.header('Strict-Transport-Security', 'max-age=31536000; includeSubdomains; preload')
       }
       next()
     })
