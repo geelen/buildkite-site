@@ -1,5 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "~~~ 🎁 Downloading fonts"
-./scripts/download-fonts
+if [[ "$BUILDKITE_LABEL" != ":pipeline:" ]]; then
+  echo "~~~ 🎁 Downloading fonts"
+  ./scripts/download-fonts
+fi
