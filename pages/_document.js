@@ -2,13 +2,13 @@ import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
+  static getInitialProps({ req, renderPage }) {
     const sheet = new ServerStyleSheet()
     const page = renderPage((Component) => (props) =>
       sheet.collectStyles(<Component {...props} />
       ))
     const styles = sheet.getStyleElement()
-    return { ...page, styles }
+    return { ...page, styles, req }
   }
 
   render() {
@@ -23,6 +23,16 @@ export default class MyDocument extends Document {
             <Main />
           </div>
           <NextScript />
+          {this.renderAnalytics()}
+        </body>
+      </html>
+    )
+  }
+
+  renderAnalytics() {
+    if (!this.props.req.loggedIn) {
+      return (
+        <React.Fragment>
           <script
             async
             src="https://www.google-analytics.com/analytics.js"
@@ -36,8 +46,8 @@ export default class MyDocument extends Document {
               `
             }}
           />
-        </body>
-      </html>
-    )
+        </React.Fragment>
+      )
+    }
   }
 }
