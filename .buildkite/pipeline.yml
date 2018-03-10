@@ -1,11 +1,5 @@
 steps:
 
-  - label: ":jest:"
-    command: yarn test
-    plugins:
-      docker-compose#v1.8.2:
-        run: site
-
   - name: ":eslint:"
     command: yarn lint
     plugins:
