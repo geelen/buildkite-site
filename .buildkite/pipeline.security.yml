@@ -1,7 +1,7 @@
 steps:
 
   - label: ":nsp:"
-    command: .buildkite/steps/node-security-platform
+    command: yarn run nsp
     agents:
       # Because this is an hourly scheduled build, we don't want to use the
       # elastic agents because then the stack will never scale in. The
@@ -15,7 +15,7 @@ steps:
         run: site
 
   - label: ":retirejs:"
-    command: .buildkite/steps/retire
+    command: yarn run retire
     agents:
       # Because this is an hourly scheduled build, we don't want to use the
       # elastic agents because then the stack will never scale in. The
