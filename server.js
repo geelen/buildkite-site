@@ -9,6 +9,7 @@ const url = require('url')
 const express = require('express')
 const next = require('next')
 const shrinkRay = require('shrink-ray-current')
+const vary = require('vary')
 
 // We use the cookie lib, instead of the normal express cookies middleware,
 // because this is what next-cookies uses. One less thing that could mis-match.
@@ -88,6 +89,7 @@ app.prepare()
     // The homepage should redirect to dashboard for logged in users. Let's not
     // annoy them with marketing content every day.
     server.get('/', (req, res) => {
+      vary(res, 'Cookie')
       if (req.loggedIn) {
         res.redirect(302, '/dashboard')
       }
@@ -98,6 +100,7 @@ app.prepare()
     // people, so they can actually see the marketing site. They can also share
     // this URL on Twitter and it'll redirect any new visitors to /
     server.get('/home', (req, res) => {
+      vary(res, 'Cookie')
       if (req.loggedIn) {
         nextHandler(req, res)
       } else {
