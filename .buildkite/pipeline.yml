@@ -1,4 +1,6 @@
 steps:
+  - label: ":pipeline::closed_lock_with_key:"
+    command: "buildkite-agent pipeline upload .buildkite/pipeline.security.yml"
 
   - name: ":eslint:"
     command: yarn lint
@@ -19,18 +21,6 @@ steps:
     plugins:
       docker-compose#v1.8.2:
         run: site
-
-  - label: ":percy:"
-    plugins:
-      docker-compose#v1.8.2:
-        config: docker-compose.percy.yml
-        run: percy
-    skip: "Static export doesn't work with cached assets"
-
-  - wait
-
-  - label: ":pipeline::closed_lock_with_key:"
-    command: "buildkite-agent pipeline upload .buildkite/pipeline.security.yml"
 
   - wait
 

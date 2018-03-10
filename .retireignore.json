@@ -1,0 +1,7 @@
+[
+  {
+    "component": "hoek",
+    "version": "2.16.3",
+    "justification": "old library, deep dependency, unlikely vulnerable"
+  }
+]
