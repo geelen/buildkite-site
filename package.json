@@ -27,8 +27,7 @@
     "retire": "^1.6.0",
     "shrink-ray-current": "^2.1.0",
     "styled-components": "^3.1.5",
-    "styled-transition-group": "^1.0.0-rc.3",
-    "vary": "~1.1.2"
+    "styled-transition-group": "^1.0.0-rc.3"
   },
   "resolutions": {
     "request/*/hoek": "^4.2.1"
