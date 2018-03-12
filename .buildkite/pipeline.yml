@@ -23,6 +23,8 @@ steps:
         run: site
 
   - name: ":hammer:"
+    agents:
+      queue: elastic-builders
     plugins:
       docker-compose#v1.8.2:
         run: tests
@@ -34,6 +36,8 @@ steps:
     branches:
       - master
       - deploy-on-ecs
+    agents:
+      queue: elastic-builders
     plugins:
       ecr#v1.1.2:
         login: true
