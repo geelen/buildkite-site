@@ -33,11 +33,3 @@ NODE_ENV=production yarn build && NODE_ENV=production yarn start
 # Or with docker...
 # docker-compose -f docker-compose.prod.yml up
 ```
-
-## Creating Percy snapshots
-
-```shell
-export PERCY_TOKEN=...
-export PERCY_PROJECT=...
-docker-compose -f docker-compose.percy.yml run percy
-```
