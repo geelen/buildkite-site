@@ -7,8 +7,7 @@ services:
       dockerfile: Dockerfile.integration-tests
     volumes:
       - "./integration-tests:/integration-tests"
-    working_dir: /integration-tests
-    command: mocha --recursive .
+    command: mocha --recursive integration-tests
     environment:
       - DEBUG
       - TEST_HOST

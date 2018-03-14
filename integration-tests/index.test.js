@@ -1,13 +1,16 @@
 /* eslint-env node, mocha */
 /* eslint no-console: "off" */
 
+const fs = require('fs')
 const assert = require('assert')
 const puppeteer = require('puppeteer')
 
-// Define global variables
+const HOST = process.env.TEST_HOST || "http://site:3000"
+const DOMAIN = HOST.replace(/https?:\/\//, '')
+const SCREENSHOTS_PATH = 'integration-tests/screenshots'
+
 let browser = null
 let page = null
-const host = process.env.TEST_HOST || "http://site:3000"
 
 before(async() => {
   browser = await puppeteer.launch({
@@ -22,31 +25,32 @@ before(async() => {
 
   const browserVersion = await browser.version()
   console.log(`Started ${browserVersion}`)
+})
 
+beforeEach(async() => {
   page = await browser.newPage()
   await page.setViewport({ width: 1280, height: 960 })
 
-  page.on('pageerror', (err) => {
-    assert.fail(err)
-  })
-
   page.on('console', (msg) => {
-    if (msg.type() === 'error') {
-      assert.fail(`console.${msg.type()} detected: ${msg.text()}`)
-    }
+    assert.fail(`console.${msg.type()} not allowed in production: ${msg.text()}`)
   })
 })
 
-after(async() => {
+afterEach(async() => {
   await page.close()
+  page = undefined
+})
+
+after(async() => {
   await browser.close()
+  browser = undefined
 })
 
 describe('Home', () => {
   let response
 
-  before(async() => {
-    response = await page.goto(`${host}/`)
+  beforeEach(async() => {
+    response = await page.goto(`${HOST}/`)
   })
 
   it('renders the tagline', async() => {
@@ -65,34 +69,47 @@ describe('Home', () => {
     assert.equal(headers['x-frame-options'], 'SAMEORIGIN')
     assert.equal(headers['x-xss-protection'], '1; mode=block')
   })
+
+  it('renders the same page with and without Javascript', async() => {
+    await page.goto(`${HOST}/`)
+    await page.screenshot({ path: `${SCREENSHOTS_PATH}/home-js-enabled.png` })
+    const enabledImageStat = fs.statSync(`${SCREENSHOTS_PATH}/home-js-enabled.png`)
+
+    await page.setJavaScriptEnabled(false)
+    await page.goto(`${HOST}/`)
+    await page.screenshot({ path: `${SCREENSHOTS_PATH}/home-js-disabled.png` })
+    const disabledImageStat = fs.statSync(`${SCREENSHOTS_PATH}/home-js-disabled.png`)
+
+    assert.equal(disabledImageStat.size, enabledImageStat.size)
+  })
 })
 
 describe('Logged in cookie behaviours', () => {
   describe('without the logged in cookie', () => {
     it('has a link to signup', async() => {
-      await page.goto(`${host}/`)
+      await page.goto(`${HOST}/`)
       const signupLink = await page.$('a[href="/signup"]')
       assert(signupLink)
     })
   })
 
   describe('with the logged in cookie', () => {
-    before(async() => {
+    beforeEach(async() => {
       await page.setCookie({
         name: 'bk_logged_in',
         value: 'true',
-        path: '/'
+        domain: DOMAIN
       })
     })
 
-    after(async() => {
+    afterEach(async() => {
       await page.deleteCookie({
         name: 'bk_logged_in'
       })
     })
 
     it('has a link to dashboard', async() => {
-      await page.goto(`${host}/`)
+      await page.goto(`${HOST}/`)
       const dashboardLink = await page.$('a[href="/dashboard"]')
       assert(dashboardLink)
     })

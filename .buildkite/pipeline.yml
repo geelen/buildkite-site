@@ -25,6 +25,7 @@ steps:
   - name: ":hammer:"
     agents:
       queue: elastic-builders
+    artifact_paths: "integration-tests/screenshots/*"
     plugins:
       docker-compose#v1.8.2:
         run: tests
