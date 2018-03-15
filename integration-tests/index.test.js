@@ -139,7 +139,10 @@ Object.entries(pagesToCheck).forEach(([title, url]) => {
   describe(title, () => {
     it('responds ok', async() => {
       const response = await page.goto(url)
-      assert(response.ok())
+
+      const status = response.status()
+      assert(status === 200 || status === 304, `Response should be 200 or 304 but was ${response.status()}`)
+
       await page.screenshot({ path: `${SCREENSHOTS_PATH}/${url.replace(`${HOST}/`, '').replace('/', '-')}.png` })
     })
   })
