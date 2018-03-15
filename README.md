@@ -38,10 +38,5 @@ NODE_ENV=production yarn build && NODE_ENV=production yarn start
 
 ```shell
 docker-compose -f docker-compose.integration-tests.yml run tests
-```
-
-To run on the live site:
-
-```shell
-env TEST_HOST=https://buildkite.com docker-compose -f docker-compose.integration-tests.yml run tests
+docker-compose -f docker-compose.integration-tests.yml run production-tests
 ```

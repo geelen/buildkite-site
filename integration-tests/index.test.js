@@ -7,14 +7,15 @@ const puppeteer = require('puppeteer')
 
 const HOST = (process.env.TEST_HOST || "http://site:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
-const SCREENSHOTS_PATH = 'integration-tests/screenshots'
+const SCREENSHOTS_PATH = './screenshots'
 
-let browser = null
-let page = null
+let browser
+let page
 
 before(async() => {
   browser = await puppeteer.launch({
     args: [
+      // Required for Docker version of Puppeteer
       '--no-sandbox',
       '--disable-setuid-sandbox',
       // This will write shared memory files into /tmp instead of /dev/shm,
