@@ -5,7 +5,7 @@ const fs = require('fs')
 const assert = require('assert')
 const puppeteer = require('puppeteer')
 
-const HOST = process.env.TEST_HOST || "http://site:3000"
+const HOST = (process.env.TEST_HOST || "http://site:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
 const SCREENSHOTS_PATH = 'integration-tests/screenshots'
 
@@ -90,6 +90,7 @@ describe('Logged in cookie behaviours', () => {
       await page.goto(`${HOST}/`)
       const signupLink = await page.$('a[href="/signup"]')
       assert(signupLink)
+      await page.screenshot({ path: `${SCREENSHOTS_PATH}/home-logged-out.png` })
     })
   })
 
@@ -109,9 +110,37 @@ describe('Logged in cookie behaviours', () => {
     })
 
     it('has a link to dashboard', async() => {
-      await page.goto(`${HOST}/`)
+      await page.goto(`${HOST}/home`)
       const dashboardLink = await page.$('a[href="/dashboard"]')
       assert(dashboardLink)
+      await page.screenshot({ path: `${SCREENSHOTS_PATH}/home-logged-in.png` })
+    })
+  })
+})
+
+const pagesToCheck = {
+  'About': `${HOST}/about`,
+  'Brand Assets': `${HOST}/brand-assets`,
+  'Case Studies - Shopify': `${HOST}/case-studies/shopify`,
+  'Case Studies': `${HOST}/case-studies`,
+  'Contact Us': `${HOST}/contact`,
+  'Enterprise': `${HOST}/enterprise`,
+  'Features': `${HOST}/features`,
+  'Home': `${HOST}/home`,
+  'Pricing': `${HOST}/pricing`,
+  'Privacy Policy': `${HOST}/privacy-policy`,
+  'Screencasts - Parallel Testing': `${HOST}/screencasts/parallel-testing`,
+  'Screencasts': `${HOST}/screencasts`,
+  'Security': `${HOST}/security`,
+  'Support': `${HOST}/support`,
+}
+
+Object.entries(pagesToCheck).forEach(([title, url]) => {
+  describe(title, () => {
+    it('responds ok', async() => {
+      const response = await page.goto(url)
+      assert(response.ok())
+      await page.screenshot({ path: `${SCREENSHOTS_PATH}/${url.replace(`${HOST}/`, '').replace('/', '-')}.png` })
     })
   })
 })
