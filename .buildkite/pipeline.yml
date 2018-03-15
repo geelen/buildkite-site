@@ -55,7 +55,8 @@ steps:
         run: site
 
   - name: ":chrome::hammer:"
-    artifact_paths: "integration-tests/screenshots/*"
+    artifact_paths: "integration-tests/screenshots/*.png"
+    timeout_in_minutes: 1
     plugins:
       docker-compose#2b920f79:
         run: tests
@@ -102,10 +103,11 @@ steps:
 
   - name: ":chrome::zap::hammer:"
     branches: master add-integration-tests
+    timeout_in_minutes: 2
     plugins:
       docker-compose#2b920f79:
         run: tests
         config: docker-compose.integration-tests.yml
-    artifact_paths: "integration-tests/screenshots/*"
+    artifact_paths: "integration-tests/screenshots/*.png"
     env:
       - "TEST_HOST=https://buildkite.com"

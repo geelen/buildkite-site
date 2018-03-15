@@ -6,8 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile.integration-tests
     volumes:
-      - "./integration-tests:/integration-tests:rw"
-    command: mocha --recursive integration-tests
+      - "./integration-tests:/home/pptruser/integration-tests"
+    working_dir: /home/pptruser
+    command: mocha integration-tests --no-timeout
     environment:
       - DEBUG
       - TEST_HOST
