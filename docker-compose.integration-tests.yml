@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile.integration-tests
     volumes:
-      - "./integration-tests:/integration-tests"
+      - "./integration-tests:/integration-tests:rw"
     command: mocha --recursive integration-tests
     environment:
       - DEBUG

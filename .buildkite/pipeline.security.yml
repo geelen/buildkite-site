@@ -8,7 +8,7 @@ steps:
       # docker builders are our next best thing.
       queue: elastic-builders
     plugins:
-      docker-compose#v1.8.2:
+      docker-compose#v1.8.4:
         # We check for node dep vulnerabilities in our prod image, because
         # that's whats running the site
         config: docker-compose.prod.yml
@@ -22,7 +22,7 @@ steps:
       # docker builders are our next best thing.
       queue: elastic-builders
     plugins:
-      docker-compose#v1.8.2:
+      docker-compose#v1.8.4:
         # We check for frontend JS dep vulnerabilities in our dev image, because
         # that's before packaging etc
         config: docker-compose.yml

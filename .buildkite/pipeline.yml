@@ -1,17 +1,49 @@
 steps:
+
+  - name: ":docker:"
+    agents:
+      queue: elastic-builders
+    plugins:
+      docker-compose#2b920f79:
+        build: site
+        image-repository: buildkiteci/site
+        image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-dev"
+
+  - label: ":docker::zap:"
+    agents:
+      queue: elastic-builders
+    plugins:
+      docker-compose#2b920f79:
+        config: docker-compose.prod.yml
+        build: site
+        image-repository: buildkiteci/site
+        image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-prod"
+
+  - name: ":docker::chrome:"
+    agents:
+      queue: elastic-builders
+    plugins:
+      docker-compose#2b920f79:
+        config: docker-compose.integration-tests.yml
+        build: tests
+        image-repository: buildkiteci/site
+        image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"
+
+  - wait
+
   - label: ":pipeline::closed_lock_with_key:"
     command: "buildkite-agent pipeline upload .buildkite/pipeline.security.yml"
 
   - name: ":eslint:"
     command: yarn lint
     plugins:
-      docker-compose#v1.8.2:
+      docker-compose#2b920f79:
         run: site
 
   - name: ":flowtype:"
     command: yarn flow
     plugins:
-      docker-compose#v1.8.2:
+      docker-compose#2b920f79:
         run: site
     skip: "TODO"
 
@@ -19,31 +51,25 @@ steps:
     command: yarn bundle-analyze
     artifact_paths: "bundle-analysis/*"
     plugins:
-      docker-compose#v1.8.2:
+      docker-compose#2b920f79:
         run: site
 
   - name: ":chrome::hammer:"
-    agents:
-      queue: elastic-builders
     artifact_paths: "integration-tests/screenshots/*"
     plugins:
-      docker-compose#v1.8.2:
+      docker-compose#2b920f79:
         run: tests
         config: docker-compose.integration-tests.yml
 
   - wait
 
   - label: ":docker: :package:"
-    branches:
-      - master
-      - deploy-on-ecs
-    agents:
-      queue: elastic-builders
+    branches: master
     plugins:
       ecr#v1.1.2:
         login: true
         account-ids: ${ECR_ACCOUNT_ID}
-      docker-compose#v1.8.2:
+      docker-compose#2b920f79:
         config: docker-compose.prod.yml
         push:
           - site:${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}
@@ -74,14 +100,12 @@ steps:
 
   - wait
 
-  - name: ":chrome::lightning:"
-    branches: master
-    agents:
-      queue: elastic-builders
-    artifact_paths: "integration-tests/screenshots/*"
-    environment:
-      - "TEST_HOST=https://buildkite.com"
+  - name: ":chrome::zap::hammer:"
+    branches: master add-integration-tests
     plugins:
-      docker-compose#v1.8.2:
+      docker-compose#2b920f79:
         run: tests
         config: docker-compose.integration-tests.yml
+    artifact_paths: "integration-tests/screenshots/*"
+    env:
+      - "TEST_HOST=https://buildkite.com"
