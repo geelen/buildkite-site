@@ -13,7 +13,7 @@ import Screencasts from 'components/sections/Screencasts'
 
 const openGraphImage = require('../../assets/images/open-graph/features.png')
 
-import RawBuildAgentStart from './build-agent-start'
+import RawBuildAgentStart from './_build-agent-start'
 
 // -- Feature Section 1 --
 // Shown after styled version of RawBuildAgentStart, which is defined way below
