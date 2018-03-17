@@ -33,3 +33,10 @@ NODE_ENV=production yarn build && NODE_ENV=production yarn start
 # Or with docker...
 # docker-compose -f docker-compose.prod.yml up
 ```
+
+## Running the integration tests
+
+```shell
+docker-compose -f docker-compose.integration-tests.yml run tests
+docker-compose -f docker-compose.integration-tests.yml run production-tests
+```

@@ -3,3 +3,4 @@
 /assets/fonts
 /out
 /bundle-analysis
+/integration-tests/screenshots/*.png

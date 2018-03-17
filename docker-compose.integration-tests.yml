@@ -1,0 +1,40 @@
+version: '3.2'
+services:
+
+  tests:
+    &tests
+    build:
+      context: .
+      dockerfile: Dockerfile.integration-tests
+    volumes:
+      - "./integration-tests:/tests"
+    working_dir: /tests
+    command: mocha --recursive --no-timeouts .
+    environment:
+      - DEBUG
+    links:
+      - site
+
+  tests-with-site-prebuilt:
+    << : *tests
+    links:
+      - "prebuilt-site:site"
+
+  production-tests:
+    << : *tests
+    links: []
+    environment:
+      - DEBUG
+      - "TEST_HOST=https://buildkite.com"
+
+  site:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    expose:
+      - "3000"
+
+  prebuilt-site:
+    image: "buildkiteci/site:site-build-${BUILDKITE_BUILD_NUMBER}-prod"
+    expose:
+      - "3000"
