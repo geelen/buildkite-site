@@ -31,7 +31,7 @@ const ScrollZone = styled.div`
 
 const Nib = styled.img`
   position: absolute;
-  /* pointer-events: none; */
+  pointer-events: none;
   left: 50%;
   top: -20px;
   width: ${NIB_WIDTH}px;
