@@ -4,3 +4,4 @@
 /out
 /bundle-analysis
 /integration-tests/screenshots/*.png
+/yarn-error.log
