@@ -2,6 +2,14 @@
 
 set -euo pipefail
 
-# Defined here so it can be run in the Buildkite post-checkout hook (outside of
-# Docker) as well as via the command line in dev
+# This replaces the dummy zero-byte font files that are checked in with actual
+# fonts contained in the private S3 bucket, ensuring that we respect our license
+# for the font files. It's designed to be run after checkout in CI, or manually
+# in development using aws-vault.
+
+rm -r assets/fonts
+
 aws s3 sync s3://buildkite-site-fonts/ assets/fonts
+
+# Make sure that `git status` doesn't pick up the newly downloaded font files
+git update-index --assume-unchanged assets/fonts/*
