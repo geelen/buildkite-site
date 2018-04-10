@@ -16,6 +16,8 @@ export const Grid = styled.div`
     return `repeat(auto-fit, minmax(${columns}, 1fr))`
   }};
 
+  /* eslint bug? */
+  /* eslint-disable-next-line indent */
   ${({ minWidth }) => {
     // Support for dropping down to a single column if the max device width is
     // less than the minWidth value
@@ -23,11 +25,10 @@ export const Grid = styled.div`
       return `
         @media (max-width: ${minWidth}) {
           grid-template-columns: repeat(1, 1fr)
-        }
-      `
+        }`
     }
   }};
-  `
+`
 
 Grid.defaultProps = {
   columns: '280px'

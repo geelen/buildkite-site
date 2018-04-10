@@ -2,6 +2,9 @@
 const { ANALYZE } = process.env
 
 module.exports = {
+  // Don't reveal what we're running
+  poweredByHeader: false,
+
   webpack: function(config) {
     if (ANALYZE) {
       const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')

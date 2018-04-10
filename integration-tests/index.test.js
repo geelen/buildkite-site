@@ -133,7 +133,7 @@ const pagesToCheck = {
   'Screencasts - Parallel Testing': `${HOST}/screencasts/parallel-testing`,
   'Screencasts': `${HOST}/screencasts`,
   'Security': `${HOST}/security`,
-  'Support': `${HOST}/support`,
+  'Support': `${HOST}/support`
 }
 
 Object.entries(pagesToCheck).forEach(([title, url]) => {
