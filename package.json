@@ -14,7 +14,6 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-react": "^7.6.1",
     "express": "^4.16.2",
-    "hoek": "^5.0.3",
     "next": "^5.1.0",
     "next-cookies": "^1.0.2",
     "nprogress": "^0.2.0",
@@ -28,9 +27,6 @@
     "shrink-ray-current": "^2.1.0",
     "styled-components": "^3.1.5",
     "styled-transition-group": "^1.0.0-rc.3"
-  },
-  "resolutions": {
-    "request/*/hoek": "^4.2.1"
   },
   "devDependencies": {
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
