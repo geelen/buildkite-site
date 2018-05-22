@@ -186,7 +186,7 @@ export default page((props) => (
       <MediaItem>
         <TextCell>
           <Description>
-            The <Link external href="https://github.com/buildkite/buildkite-metrics">buildkite-metrics</Link> collector is a Golang binary and Lambda function that send aggregated build activity to CloudWatch or StatsD. Scale up your testing infrastructure during busy times, and scale down to reduce costs during quiet times 📉
+            The <Link external href="https://github.com/buildkite/buildkite-metrics">buildkite-metrics</Link> collector is a Golang binary and Lambda function that sends aggregated build activity to CloudWatch or StatsD. Scale up your testing infrastructure during busy times, and scale down to reduce costs during quiet times 📉
           </Description>
         </TextCell>
         <ImageCell>
