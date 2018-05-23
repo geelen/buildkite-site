@@ -6,47 +6,47 @@ const TEXT_FRAGMENTS = [
   {
     duration: 300,
     children: (
-      < key="prompt">
+      <React.Fragment key="prompt">
         <font color="#9B9B9B">{'$ '}</font>
         <font color="#00FF93">buildkite-agent start</font>
-      </>
+      </React.Fragment>
     )
   },
   {
     duration: 150,
     children: (
-      < key="starting">
+      <React.Fragment key="starting">
         <br />
         Starting buildkite-agent with PID: 11301<br />
         Registering agent with Buildkite...
-      </>
+      </React.Fragment>
     )
   },
   {
     duration: 2500,
     children: (
-      < key="registered">
+      <React.Fragment key="registered">
         <br />
         Successfully registered agent &quot;docker-builder-1&quot;
-      </>
+      </React.Fragment>
     )
   },
   {
     duration: 700,
     children: (
-      < key="waiting">
+      <React.Fragment key="waiting">
         <br />
         Waiting for work...
-      </>
+      </React.Fragment>
     )
   },
   {
     duration: 300,
     children: (
-      < key="assigned">
+      <React.Fragment key="assigned">
         <br />
         Assigned job 69f662c7-b990-489e-8e77-8e02550
-      </>
+      </React.Fragment>
     )
   }
 ]
