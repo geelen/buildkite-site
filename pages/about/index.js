@@ -112,10 +112,10 @@ export default page((props) => (
     headTitle="About Buildkite"
     title="About"
     description={
-      <React.Fragment>
+      <>
         We’re building tools to help the best <Br maxWidth="30em" />
         software teams stay happy and productive.
-      </React.Fragment>
+      </>
     }
     {...props}
   >

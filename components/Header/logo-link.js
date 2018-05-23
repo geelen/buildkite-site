@@ -72,7 +72,7 @@ const WordMark = styled.img`
 `
 
 export default ({ loggedIn }) => (
-  <React.Fragment>
+  <>
     <Head>
       <link as="image" href={markSvgPath} rel="preload" type="image/svg+xml" crossOrigin="anonymous" />
       <link as="image" href={wordmarkSvgPath} rel="preload" type="image/svg+xml" crossOrigin="anonymous" />
@@ -83,5 +83,5 @@ export default ({ loggedIn }) => (
         <WordMark src={wordmarkSvgPath} alt="Buildkite" />
       </LinkTag>
     </Link>
-  </React.Fragment>
+  </>
 )

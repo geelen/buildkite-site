@@ -83,8 +83,8 @@ export default page((props) => (
     headDescription="Buildkite’s Enterprise plan gives you everything you need to build, test, and deliver software at scale."
     title="Built for Enterprise"
     description={
-      <React.Fragment>
-        Buildkite Enterprise provides the reliability <Br maxWidth="30em" /> and features you need for delivering software at scale.</React.Fragment>
+      <>
+        Buildkite Enterprise provides the reliability <Br maxWidth="30em" /> and features you need for delivering software at scale.</>
     }
     {...props}
   >

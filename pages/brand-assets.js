@@ -166,9 +166,9 @@ export default page((props) => (
     headDescription="Official versions of the Buildkite logo."
     title="Brand Assets"
     description={
-      <React.Fragment>
+      <>
         Official versions of the Buildkite logo.
-      </React.Fragment>
+      </>
     }
     {...props}
   >
@@ -282,10 +282,10 @@ export default page((props) => (
     <Callout
       heading="Need something else?"
       description={
-        <React.Fragment>
+        <>
           Get in touch with our design team, <Br maxWidth="30em" />
           and we can help{' '}you{' '}out.
-        </React.Fragment>
+        </>
       }
       buttonTitle="Email design@buildkite.com"
       url="mailto:design@buildkite.com"

@@ -87,7 +87,7 @@ export function page(Component) {
 
 export const BasePage = (props) => (
   <ThemeProvider theme={buildkiteTheme}>
-    <React.Fragment>
+    <>
       <Head>
         <title>{props.headTitle}</title>
         <Metadata {...props} />
@@ -109,13 +109,13 @@ export const BasePage = (props) => (
         {props.children}
       </Container>
       <Footer loggedIn={props.loggedIn} />
-    </React.Fragment>
+    </>
   </ThemeProvider>
 )
 
 export default (props) => (
   <BasePage {...props}>
-    <React.Fragment>
+    <>
       {props.image && (
         <ImageContainer>
           <Image src={props.image} alt={props.imageAlt} />
@@ -136,6 +136,6 @@ export default (props) => (
         <Description>{props.description}</Description>
       )}
       {props.children}
-    </React.Fragment>
+    </>
   </BasePage>
 )

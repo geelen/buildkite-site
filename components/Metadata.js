@@ -42,7 +42,7 @@ export default (props) => {
   }
 
   return (
-    <React.Fragment>
+    <>
       <meta name="description" content={description || fallbackDescription} />
       <meta property="og:type" content={openGraphType || (video ? 'video.other' : 'website')} />
       <meta property="og:title" content={headTitle} />
@@ -54,6 +54,6 @@ export default (props) => {
       <meta property="og:image:alt" content={headImageAlt || imageAlt || description || fallbackDescription} />
       <meta property="og:site_name" content="Buildkite" />
       <meta property="og:locale" content="en_US" />
-    </React.Fragment>
+    </>
   )
 }

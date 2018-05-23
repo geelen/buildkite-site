@@ -60,10 +60,10 @@ export default page((props) => (
     headDescription="Security policies, contact details, and vulnerability reporting."
     title="Security"
     description={
-      <React.Fragment>
+      <>
         Contact details and information about <Br maxWidth="30em" />
         our security policies and procedures.
-      </React.Fragment>
+      </>
     }
     {...props}
   >
@@ -197,10 +197,10 @@ export default page((props) => (
     <Callout
       heading="Contact Us"
       description={
-        <React.Fragment>
+        <>
           If you’ve got any questions, <Br maxWidth="30em" />
           don’t hestitate to contact our{' '}team.
-        </React.Fragment>
+        </>
       }
       url="mailto:security@buildkite.com"
       buttonTitle="Email security@buildkite.com"

@@ -9,10 +9,10 @@ export default page((props) => (
     headTitle="Buildkite Case Studies"
     title="Case Studies"
     description={
-      <React.Fragment>
+      <>
         See the results from some of <Br maxWidth="30em" />
         the teams using Buildkite.
-      </React.Fragment>
+      </>
     }
     {...props}
   >

@@ -17,10 +17,10 @@ export default [
     pathname: '/screencasts/parallel-testing',
     title: 'Parallel Testing',
     description: (
-      <React.Fragment>
+      <>
         An introduction to Buildkite’s parallelism attribute, <Br maxWidth="40em" />
         using it to run 15 hours of tests in under 5 minutes.
-      </React.Fragment>
+      </>
     ),
     duration: '90s',
     images: { poster: parallelismPoster, thumbnail: parallelismThumbail },
@@ -39,9 +39,9 @@ export default [
     pathname: '/screencasts/elastic-ci-stack-for-aws',
     title: 'Elastic CI Stack for AWS',
     description: (
-      <React.Fragment>
+      <>
         Running an autoscaling build cluster in your own<Br maxWidth="40em" /> AWS account, using the Elastic CI Stack for AWS.
-      </React.Fragment>
+      </>
     ),
     duration: '74s',
     images: { poster: elasticStackPoster, thumbnail: elasticStackThumbnail },
@@ -58,9 +58,9 @@ export default [
     pathname: '/screencasts/pipeline-step-types',
     title: 'Pipeline Step Types',
     description: (
-      <React.Fragment>
+      <>
         A look at all the different step types you<Br maxWidth="40em" /> can use in your Buildkite pipelines.
-      </React.Fragment>
+      </>
     ),
     duration: '102s',
     images: { poster: stepTypesPoster, thumbnail: stepTypesThumbnail },
@@ -81,9 +81,9 @@ export default [
     pathname: '/screencasts/github-pr-workflow',
     title: 'GitHub Pull Request Workflow',
     description: (
-      <React.Fragment>
+      <>
         A look at testing a GitHub pull request and merge,<Br maxWidth="40em" /> and other ways to use GitHub with Buildkite.
-      </React.Fragment>
+      </>
     ),
     duration: '99s',
     images: { poster: prflowPoster, thumbnail: prflowThumbnail },
