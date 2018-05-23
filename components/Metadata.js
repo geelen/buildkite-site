@@ -1,4 +1,5 @@
-const fallbackOpenGraphImage = require('../assets/images/open-graph/default.png')
+import fallbackOpenGraphImage from '../assets/images/open-graph/default.png'
+
 const fallbackDescription = "Lightning fast testing and delivery for all your software projects"
 
 const stringifyReactComponent = (component) => {

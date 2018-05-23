@@ -1,10 +1,10 @@
 import styled, { css, keyframes } from 'styled-components'
 
-const nebulaImage = require('../assets/images/components/404/nebula.jpg')
-const distantStarsImage = require('../assets/images/components/404/stars-distant.png')
-const nearbyStarsImage = require('../assets/images/components/404/stars-nearby.png')
-const tetherImage = require('../assets/images/components/404/tether.png')
-const cosmonautImage = require('../assets/images/components/404/cosmonaut.png')
+import nebulaImage from '../assets/images/components/404/nebula.jpg'
+import distantStarsImage from '../assets/images/components/404/stars-distant.png'
+import nearbyStarsImage from '../assets/images/components/404/stars-nearby.png'
+import tetherImage from '../assets/images/components/404/tether.png'
+import cosmonautImage from '../assets/images/components/404/cosmonaut.png'
 
 const fastAndTheFuriousCelestialDrift = (degrees) => keyframes`
   to {

@@ -5,7 +5,7 @@ import ScreencastLink from 'components/ScreencastLink'
 
 import screencasts from './_data'
 
-const openGraphImage = require('../../assets/images/open-graph/screencasts.png')
+import openGraphImage from '../../assets/images/open-graph/screencasts.png'
 
 export default page((props) => (
   <Page

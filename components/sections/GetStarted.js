@@ -7,7 +7,7 @@ import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 import { OffscreenH1 } from 'components/OffscreenHeading'
 import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 
-const image = require('../../assets/images/get-started/get-started.jpg')
+import image from '../../assets/images/get-started/get-started.jpg'
 
 const Paragraph = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopyLarge};

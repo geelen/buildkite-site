@@ -4,15 +4,15 @@ import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Callout from 'components/Callout'
 import Page, { page } from 'components/Page'
 
-const questionsImage = require('../assets/images/contact/questions.jpg')
-const feedbackImage = require('../assets/images/contact/feedback.jpg')
-const vulnerabilityImage = require('../assets/images/security/vulnerability.jpg')
-const sayhelloImage = require('../assets/images/contact/sayhello.jpg')
+import questionsImage from '../assets/images/contact/questions.jpg'
+import feedbackImage from '../assets/images/contact/feedback.jpg'
+import vulnerabilityImage from '../assets/images/security/vulnerability.jpg'
+import sayhelloImage from '../assets/images/contact/sayhello.jpg'
 
-const facebookLogoImage = require('../assets/images/contact/facebook-logo.svg')
-const githubLogoImage = require('../assets/images/contact/github-logo.svg')
-const keybaseLogoImage = require('../assets/images/contact/keybase-logo.svg')
-const twitterLogoImage = require('../assets/images/contact/twitter-logo.svg')
+import facebookLogoImage from '../assets/images/contact/facebook-logo.svg'
+import githubLogoImage from '../assets/images/contact/github-logo.svg'
+import keybaseLogoImage from '../assets/images/contact/keybase-logo.svg'
+import twitterLogoImage from '../assets/images/contact/twitter-logo.svg'
 
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s2};

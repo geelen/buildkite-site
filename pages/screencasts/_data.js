@@ -1,16 +1,16 @@
 import Br from 'components/Br'
 
-const parallelismPoster = require('../../assets/images/screencasts/parallelism-frame.poster.jpg')
-const parallelismThumbail = require('../../assets/images/screencasts/parallelism-frame.thumbnail.jpg')
+import parallelismPoster from '../../assets/images/screencasts/parallelism-frame.poster.jpg'
+import parallelismThumbail from '../../assets/images/screencasts/parallelism-frame.thumbnail.jpg'
 
-const elasticStackPoster = require('../../assets/images/screencasts/elastic-stack-frame.poster.jpg')
-const elasticStackThumbnail = require('../../assets/images/screencasts/elastic-stack-frame.thumbnail.jpg')
+import elasticStackPoster from '../../assets/images/screencasts/elastic-stack-frame.poster.jpg'
+import elasticStackThumbnail from '../../assets/images/screencasts/elastic-stack-frame.thumbnail.jpg'
 
-const stepTypesPoster = require('../../assets/images/screencasts/step-types-frame.poster.jpg')
-const stepTypesThumbnail = require('../../assets/images/screencasts/step-types-frame.thumbnail.jpg')
+import stepTypesPoster from '../../assets/images/screencasts/step-types-frame.poster.jpg'
+import stepTypesThumbnail from '../../assets/images/screencasts/step-types-frame.thumbnail.jpg'
 
-const prflowPoster = require('../../assets/images/screencasts/pr-flow-frame.poster.jpg')
-const prflowThumbnail = require('../../assets/images/screencasts/pr-flow-frame.thumbnail.jpg')
+import prflowPoster from '../../assets/images/screencasts/pr-flow-frame.poster.jpg'
+import prflowThumbnail from '../../assets/images/screencasts/pr-flow-frame.thumbnail.jpg'
 
 export default [
   {

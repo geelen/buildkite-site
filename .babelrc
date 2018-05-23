@@ -37,11 +37,6 @@
         "components": "./components",
         "theme": "./theme"
       }
-    }],
-    ["transform-assets", {
-      "extensions": ["svg", "woff2", "png", "jpg"],
-      "name": "/site/assets/[sha512:hash:base64:7]/[1]",
-      "regExp": ".*/assets/(.+)"
     }]
   ]
 }

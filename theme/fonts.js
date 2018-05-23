@@ -1,8 +1,8 @@
 import { css } from 'styled-components'
 
-const book = require('../assets/fonts/lineto-circular-book.woff2')
-const bold = require('../assets/fonts/lineto-circular-bold.woff2')
-const black = require('../assets/fonts/lineto-circular-black.woff2')
+import book from '../assets/fonts/lineto-circular-book.woff2'
+import bold from '../assets/fonts/lineto-circular-bold.woff2'
+import black from '../assets/fonts/lineto-circular-black.woff2'
 
 export const fonts = [book, bold, black]
 

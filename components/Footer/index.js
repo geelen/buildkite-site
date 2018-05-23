@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Grid, Cell } from 'components/Grid'
 import Link from 'components/Link'
 
-const portraitLogo = require('../../assets/images/brand-assets/buildkite-logo-portrait-on-light.svg')
+import portraitLogo from '../../assets/images/brand-assets/buildkite-logo-portrait-on-light.svg'
 
 const Footer = styled.footer`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};

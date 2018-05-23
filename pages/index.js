@@ -9,9 +9,9 @@ import { OffscreenH1, OffscreenP } from 'components/OffscreenHeading'
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
-const screenshotPath = require('../assets/images/home/screenshot.png')
-const logosNarrowPath = require('../assets/images/home/homepage-logos-narrow.png')
-const logosWidePath = require('../assets/images/home/homepage-logos-wide.png')
+import screenshotPath from '../assets/images/home/screenshot.png'
+import logosNarrowPath from '../assets/images/home/homepage-logos-narrow.png'
+import logosWidePath from '../assets/images/home/homepage-logos-wide.png'
 
 const ScreenshotImageContainer = ResponsiveImageContainer.extend`
   ${({ theme }) => theme.images.screenshots}

@@ -7,8 +7,8 @@ import Page, { page } from 'components/Page'
 import Callout from 'components/Callout'
 import { Masonry, Brick } from 'components/Masonry'
 
-const vulnerabilityImage = require('../assets/images/security/vulnerability.jpg')
-const securityImage = require('../assets/images/security/contact.jpg')
+import vulnerabilityImage from '../assets/images/security/vulnerability.jpg'
+import securityImage from '../assets/images/security/contact.jpg'
 
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s3};

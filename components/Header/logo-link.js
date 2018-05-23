@@ -5,8 +5,8 @@ import Link from 'components/Link'
 
 const showDebugOutlines = false
 
-const markSvgPath = require('../../assets/images/brand/mark.svg')
-const wordmarkSvgPath = require('../../assets/images/brand/wordmark.svg')
+import markSvgPath from '../../assets/images/brand/mark.svg'
+import wordmarkSvgPath from '../../assets/images/brand/wordmark.svg'
 
 const LinkTag = styled.a`
   position: relative;

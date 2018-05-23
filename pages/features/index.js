@@ -11,43 +11,43 @@ import RawSVGConsoleImage from 'components/SVGConsoleImage'
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
-const openGraphImage = require('../../assets/images/open-graph/features.png')
+import openGraphImage from '../../assets/images/open-graph/features.png'
 
 import RawBuildAgentStart from './_build-agent-start'
 
 // -- Feature Section 1 --
 // Shown after styled version of RawBuildAgentStart, which is defined way below
-const pipelineRunningImage = require('../../assets/images/features/pipeline-running.png')
+import pipelineRunningImage from '../../assets/images/features/pipeline-running.png'
 
 // -- Feature Section 2 --
-const parallelismImage = require('../../assets/images/features/parallelism.png')
+import parallelismImage from '../../assets/images/features/parallelism.png'
 
 // -- Feature Section 3 --
-const elasticCiStackImage = require('../../assets/images/features/elastic-ci-stack.png')
+import elasticCiStackImage from '../../assets/images/features/elastic-ci-stack.png'
 
 // -- Feature Section 4 --
-const buildkiteMetricsImage = require('../../assets/images/features/buildkite-metrics.png')
+import buildkiteMetricsImage from '../../assets/images/features/buildkite-metrics.png'
 
 // -- Feature Section 5 --
-const customFieldsUnblockImage = require('../../assets/images/features/custom-fields-unblock.png')
+import customFieldsUnblockImage from '../../assets/images/features/custom-fields-unblock.png'
 
 // -- Feature Section 7 --
-const webInterfaceImage = require('../../assets/images/features/web-interface.png')
+import webInterfaceImage from '../../assets/images/features/web-interface.png'
 
 // -- Feature Section 8 --
-const unblockStepImage = require('../../assets/images/features/unblock-step.png')
+import unblockStepImage from '../../assets/images/features/unblock-step.png'
 
 // -- Feature Section 10 --
-const embeddableImageArtifactsImage = require('../../assets/images/features/embeddable-image-artifacts.png')
+import embeddableImageArtifactsImage from '../../assets/images/features/embeddable-image-artifacts.png'
 
 // -- Feature Section 11 --
-const buildAnnotationsImage = require('../../assets/images/features/build-annotations.png')
+import buildAnnotationsImage from '../../assets/images/features/build-annotations.png'
 
 // -- Feature Section 12 --
-const logOutputGroupingImage = require('../../assets/images/features/log-output-grouping.png')
+import logOutputGroupingImage from '../../assets/images/features/log-output-grouping.png'
 
 // -- Feature Section 14 --
-const graphqlApiImage = require('../../assets/images/features/graphql-api.png')
+import graphqlApiImage from '../../assets/images/features/graphql-api.png'
 
 const Heading = styled.h2`
   text-align: center;

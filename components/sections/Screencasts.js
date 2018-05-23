@@ -5,7 +5,7 @@ import Button from 'components/Button'
 import Link from 'components/Link'
 import { OffscreenH1 } from 'components/OffscreenHeading'
 
-const stepTypesThumbnail = require('../../assets/images/screencasts/step-types-frame.thumbnail.jpg')
+import stepTypesThumbnail from '../../assets/images/screencasts/step-types-frame.thumbnail.jpg'
 
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s2};

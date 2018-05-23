@@ -1,7 +1,7 @@
-const shopifyLogo = require('../../assets/images/case-studies/shopify/logo.png')
-const shopifyPhotoPeople = require('../../assets/images/case-studies/shopify/people.jpg')
-const shopifyPhotoOffice = require('../../assets/images/case-studies/shopify/office.jpg')
-const shopifyTestimonialPhoto = require('../../assets/images/case-studies/shopify/testimonial-headshot.jpg')
+import shopifyLogo from '../../assets/images/case-studies/shopify/logo.png'
+import shopifyPhotoPeople from '../../assets/images/case-studies/shopify/people.jpg'
+import shopifyPhotoOffice from '../../assets/images/case-studies/shopify/office.jpg'
+import shopifyTestimonialPhoto from '../../assets/images/case-studies/shopify/testimonial-headshot.jpg'
 
 export const shopify = {
   pathname: '/case-studies/shopify',
@@ -37,10 +37,10 @@ export const shopify = {
   )
 }
 
-const reaLogo = require('../../assets/images/case-studies/rea/logo.png')
-const reaPhotoPeople = require('../../assets/images/case-studies/rea/people.jpg')
-const reaPhotoOffice = require('../../assets/images/case-studies/rea/office.jpg')
-const reaTestimonialPhoto = require('../../assets/images/case-studies/rea/testimonial-headshot.jpg')
+import reaLogo from '../../assets/images/case-studies/rea/logo.png'
+import reaPhotoPeople from '../../assets/images/case-studies/rea/people.jpg'
+import reaPhotoOffice from '../../assets/images/case-studies/rea/office.jpg'
+import reaTestimonialPhoto from '../../assets/images/case-studies/rea/testimonial-headshot.jpg'
 
 export const rea = {
   pathname: '/case-studies/rea',

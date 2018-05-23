@@ -2,10 +2,10 @@ import { ActionGrid, ActionGridItem } from 'components/ActionGrid'
 import Callout from 'components/Callout'
 import Page, { page } from 'components/Page'
 
-const documentationImage = require('../assets/images/support/documentation.jpg')
-const feedbackImage = require('../assets/images/contact/feedback.jpg')
-const communityChatImage = require('../assets/images/support/community-chat.jpg')
-const systemStatusImage = require('../assets/images/support/system-status.jpg')
+import documentationImage from '../assets/images/support/documentation.jpg'
+import feedbackImage from '../assets/images/contact/feedback.jpg'
+import communityChatImage from '../assets/images/support/community-chat.jpg'
+import systemStatusImage from '../assets/images/support/system-status.jpg'
 
 export default page((props) => (
   <Page
