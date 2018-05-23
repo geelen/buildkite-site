@@ -186,7 +186,7 @@ export default page((props) => (
       <MediaItem>
         <TextCell>
           <Description>
-            The <Link external href="https://github.com/buildkite/buildkite-metrics">buildkite-metrics</Link> collector is a Golang binary and Lambda function that send aggregated build activity to CloudWatch or StatsD. Scale up your testing infrastructure during busy times, and scale down to reduce costs during quiet times 📉
+            The <Link external href="https://github.com/buildkite/buildkite-metrics">buildkite-metrics</Link> collector is a Golang binary and Lambda function that sends aggregated build activity to CloudWatch or StatsD. Scale up your testing infrastructure during busy times, and scale down to reduce costs during quiet times 📉
           </Description>
         </TextCell>
         <ImageCell>
@@ -384,7 +384,7 @@ export default page((props) => (
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Agent Plugins</FeatureTitle>
-          <FeatureDescription>Use agent plugins (v3 beta only) for common tools and workflows, such as Docker and Docker Compose. Or DRY your own workflows in private plugins with only a few lines of bash.</FeatureDescription>
+          <FeatureDescription>Use agent <Link external href="/docs/agent/plugins">plugins</Link> for common tools and workflows, such as Docker and Docker Compose. Or DRY your own workflows in private plugins with only a few lines of bash.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
           <FeatureTitle>Docker Pipelines</FeatureTitle>
