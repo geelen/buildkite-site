@@ -7,8 +7,8 @@ import Page, { page } from 'components/Page'
 import Callout from 'components/Callout'
 import { Masonry, Brick } from 'components/Masonry'
 
-const vulnerabilityImage = require('../assets/images/security/vulnerability.jpg')
-const securityImage = require('../assets/images/security/contact.jpg')
+import vulnerabilityImage from '../assets/images/security/vulnerability.jpg'
+import securityImage from '../assets/images/security/contact.jpg'
 
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s3};
@@ -60,10 +60,10 @@ export default page((props) => (
     headDescription="Security policies, contact details, and vulnerability reporting."
     title="Security"
     description={
-      <React.Fragment>
+      <>
         Contact details and information about <Br maxWidth="30em" />
         our security policies and procedures.
-      </React.Fragment>
+      </>
     }
     {...props}
   >
@@ -197,10 +197,10 @@ export default page((props) => (
     <Callout
       heading="Contact Us"
       description={
-        <React.Fragment>
+        <>
           If you’ve got any questions, <Br maxWidth="30em" />
           don’t hestitate to contact our{' '}team.
-        </React.Fragment>
+        </>
       }
       url="mailto:security@buildkite.com"
       buttonTitle="Email security@buildkite.com"

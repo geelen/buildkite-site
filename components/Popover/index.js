@@ -4,7 +4,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const upPointingWhiteNibPath = require('../../assets/images/components/Popover/up-pointing-white-nib.svg')
+import upPointingWhiteNibPath from '../../assets/images/components/Popover/up-pointing-white-nib.svg'
 
 const NIB_WIDTH = 32
 

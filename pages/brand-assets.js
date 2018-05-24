@@ -6,25 +6,25 @@ import { Grid, Cell } from 'components/Grid'
 import Link from 'components/Link'
 import Page, { page } from 'components/Page'
 
-const logoLightSvg = require('../assets/images/brand-assets/buildkite-logo-on-light.svg')
-const logoLightPng = require('../assets/images/brand-assets/buildkite-logo-on-light.png')
-const logoDarkSvg = require('../assets/images/brand-assets/buildkite-logo-on-dark.svg')
-const logoDarkPng = require('../assets/images/brand-assets/buildkite-logo-on-dark.png')
+import logoLightSvg from '../assets/images/brand-assets/buildkite-logo-on-light.svg'
+import logoLightPng from '../assets/images/brand-assets/buildkite-logo-on-light.png'
+import logoDarkSvg from '../assets/images/brand-assets/buildkite-logo-on-dark.svg'
+import logoDarkPng from '../assets/images/brand-assets/buildkite-logo-on-dark.png'
 
-const logoPortraitLightSvg = require('../assets/images/brand-assets/buildkite-logo-portrait-on-light.svg')
-const logoPortraitLightPng = require('../assets/images/brand-assets/buildkite-logo-portrait-on-light.png')
-const logoPortraitDarkSvg = require('../assets/images/brand-assets/buildkite-logo-portrait-on-dark.svg')
-const logoPortraitDarkPng = require('../assets/images/brand-assets/buildkite-logo-portrait-on-dark.png')
+import logoPortraitLightSvg from '../assets/images/brand-assets/buildkite-logo-portrait-on-light.svg'
+import logoPortraitLightPng from '../assets/images/brand-assets/buildkite-logo-portrait-on-light.png'
+import logoPortraitDarkSvg from '../assets/images/brand-assets/buildkite-logo-portrait-on-dark.svg'
+import logoPortraitDarkPng from '../assets/images/brand-assets/buildkite-logo-portrait-on-dark.png'
 
-const markLightSvg = require('../assets/images/brand-assets/buildkite-mark-on-light.svg')
-const markLightPng = require('../assets/images/brand-assets/buildkite-mark-on-light.png')
-const markDarkSvg = require('../assets/images/brand-assets/buildkite-mark-on-dark.svg')
-const markDarkPng = require('../assets/images/brand-assets/buildkite-mark-on-dark.png')
+import markLightSvg from '../assets/images/brand-assets/buildkite-mark-on-light.svg'
+import markLightPng from '../assets/images/brand-assets/buildkite-mark-on-light.png'
+import markDarkSvg from '../assets/images/brand-assets/buildkite-mark-on-dark.svg'
+import markDarkPng from '../assets/images/brand-assets/buildkite-mark-on-dark.png'
 
-const wordmarkLightSvg = require('../assets/images/brand-assets/buildkite-wordmark-on-light.svg')
-const wordmarkLightPng = require('../assets/images/brand-assets/buildkite-wordmark-on-light.png')
-const wordmarkDarkSvg = require('../assets/images/brand-assets/buildkite-wordmark-on-dark.svg')
-const wordmarkDarkPng = require('../assets/images/brand-assets/buildkite-wordmark-on-dark.png')
+import wordmarkLightSvg from '../assets/images/brand-assets/buildkite-wordmark-on-light.svg'
+import wordmarkLightPng from '../assets/images/brand-assets/buildkite-wordmark-on-light.png'
+import wordmarkDarkSvg from '../assets/images/brand-assets/buildkite-wordmark-on-dark.svg'
+import wordmarkDarkPng from '../assets/images/brand-assets/buildkite-wordmark-on-dark.png'
 
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s3};
@@ -166,9 +166,9 @@ export default page((props) => (
     headDescription="Official versions of the Buildkite logo."
     title="Brand Assets"
     description={
-      <React.Fragment>
+      <>
         Official versions of the Buildkite logo.
-      </React.Fragment>
+      </>
     }
     {...props}
   >
@@ -282,10 +282,10 @@ export default page((props) => (
     <Callout
       heading="Need something else?"
       description={
-        <React.Fragment>
+        <>
           Get in touch with our design team, <Br maxWidth="30em" />
           and we can help{' '}you{' '}out.
-        </React.Fragment>
+        </>
       }
       buttonTitle="Email design@buildkite.com"
       url="mailto:design@buildkite.com"

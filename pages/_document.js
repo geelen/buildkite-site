@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
   renderAnalytics() {
     if (!this.props.req.loggedIn) {
       return (
-        <React.Fragment>
+        <>
           <script
             async
             src="https://www.google-analytics.com/analytics.js"
@@ -46,7 +46,7 @@ export default class MyDocument extends Document {
               `
             }}
           />
-        </React.Fragment>
+        </>
       )
     }
   }

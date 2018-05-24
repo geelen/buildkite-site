@@ -14,11 +14,11 @@ import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 
 import { team, leadership, advisors } from './_data'
 
-const headOfficeImage = require('../../assets/images/about/head-office.jpg')
-const brandAssetsImage = require('../../assets/images/about/brand-assets.jpg')
-const sayhelloImage = require('../../assets/images/contact/sayhello.jpg')
-// const shopImage = require('../../assets/images/about/shop.jpg')
-const aboriginalFlagImage = require('../../assets/images/about/australian-aboriginal-flag.svg')
+import headOfficeImage from '../../assets/images/about/head-office.jpg'
+import brandAssetsImage from '../../assets/images/about/brand-assets.jpg'
+import sayhelloImage from '../../assets/images/contact/sayhello.jpg'
+// import shopImage from '../../assets/images/about/shop.jpg'
+import aboriginalFlagImage from '../../assets/images/about/australian-aboriginal-flag.svg'
 
 const SectionHeader = styled.h1`
   ${({ theme }) => theme.textStyles.secondLevelHeading}
@@ -112,10 +112,10 @@ export default page((props) => (
     headTitle="About Buildkite"
     title="About"
     description={
-      <React.Fragment>
+      <>
         We’re building tools to help the best <Br maxWidth="30em" />
         software teams stay happy and productive.
-      </React.Fragment>
+      </>
     }
     {...props}
   >

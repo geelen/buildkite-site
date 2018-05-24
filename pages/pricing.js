@@ -201,9 +201,9 @@ export default page((props) => (
           <Price
             value={15}
             period={
-              <React.Fragment>
+              <>
                 per user per month
-              </React.Fragment>
+              </>
             }
             notes={
               <p>Pay annually for a 15% discount</p>
@@ -232,10 +232,10 @@ export default page((props) => (
             value={2999}
             period="per month"
             notes={
-              <React.Fragment>
+              <>
                 <p>Annual payment only</p>
                 <p>Includes 100 users. Additional users $29/month (pro-rata)</p>
-              </React.Fragment>
+              </>
             }
           />
         }

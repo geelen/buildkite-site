@@ -1,13 +1,13 @@
-const photoHarriet = require('../../assets/images/about/harriet.jpg')
-const photoJess = require('../../assets/images/about/jess.jpg')
-const photoKeith = require('../../assets/images/about/keithpitt.jpg')
-const photoLox = require('../../assets/images/about/lox.jpg')
-const photoSam = require('../../assets/images/about/sam.jpg')
-const photoTim = require('../../assets/images/about/toolmantim.jpg')
+import photoHarriet from '../../assets/images/about/harriet.jpg'
+import photoJess from '../../assets/images/about/jess.jpg'
+import photoKeith from '../../assets/images/about/keithpitt.jpg'
+import photoLox from '../../assets/images/about/lox.jpg'
+import photoSam from '../../assets/images/about/sam.jpg'
+import photoTim from '../../assets/images/about/toolmantim.jpg'
 
-const photoJml = require('../../assets/images/about/jml.jpg')
-const photoMattAllen = require('../../assets/images/about/mattallen.jpg')
-const photoJohnBarton = require('../../assets/images/about/johnbarton.jpg')
+import photoJml from '../../assets/images/about/jml.jpg'
+import photoMattAllen from '../../assets/images/about/mattallen.jpg'
+import photoJohnBarton from '../../assets/images/about/johnbarton.jpg'
 
 export const team = [
   {

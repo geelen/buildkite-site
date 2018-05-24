@@ -58,31 +58,13 @@ app.prepare()
       next()
     })
 
-    // Middleware that strips asset hashes from URLs. The hash is added by babel
-    // plugin transform-assets in .babelrc
-    //
-    // For example:
-    //   /site/assets/1uT8cdz/images/brand/mark.svg ->
-    //   /site/assets/images/brand/mark.svg
-    server.use('/site/assets', (req, res, next) => {
-      const originalUrl = req.url
-      req.url = originalUrl.replace(/\/[^/]+\//, '/')
+    // These URls have a content hash thanks to the webpack file-loader, so can
+    // be long-expired.
+    server.use('/_next/static/assets', function(req, res, next) {
+      res.header('Cache-Control', 'public, max-age=31536000, immutable')
+      res.header('Last-Modified', 'Mon, 01 Jan 2000 00:00:00 GMT')
       next()
     })
-
-    // Hashed assets are immutable, so they can be cached indefinitely by
-    // clients.
-    //
-    // For some reason in dev the `transform-assets` babel plugin doesn't update
-    // the hashed URL (perhaps a node loader cache?), so we have to disable the
-    // long expires header so the browser refetches when you reload the page.
-    const assetsOptions = dev ? {} : {
-      lastModified: false,
-      immutable: true,
-      maxAge: '365d'
-    }
-
-    server.use('/site/assets', express.static('./assets', assetsOptions))
 
     // The homepage should redirect to dashboard for logged in users. Let's not
     // annoy them with marketing content every day.

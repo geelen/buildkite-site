@@ -15,6 +15,18 @@ module.exports = {
       }))
     }
 
+    config.module.rules.push({
+      test: /\.(jpg|png|gif|svg|ico|woff|woff2)$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[path][name]-[hash:8].[ext]',
+          publicPath: '/_next/static/assets/',
+          outputPath: 'static/assets/'
+        }
+      }]
+    })
+
     return config
   }
 }
