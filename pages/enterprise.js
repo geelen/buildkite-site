@@ -6,8 +6,15 @@ import CaseStudyCallout from 'components/CaseStudyCallout'
 import Link from 'components/Link'
 import Page, { page } from 'components/Page'
 import { FeatureGrid, FeatureCell, FeatureTitle, FeatureDescription } from 'components/FeatureGrid'
+import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 
 import { rea, shopify } from './case-studies/_data'
+
+import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
+
+const scaleImage = require('../assets/images/enterprise/scale.jpg')
+const securityImage = require('../assets/images/enterprise/security.jpg')
+const supportImage = require('../assets/images/enterprise/support.jpg')
 
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s3};
@@ -47,21 +54,30 @@ const FeatureGridSectionDescription = styled.p`
   }
 `
 
+const FeatureImageCell = ImageCell.extend`
+  max-width: ${({ maxWidth }) => maxWidth ? maxWidth : '100%'};
+`
+
 const FeatureSection = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s1};
   margin-bottom: ${({ theme }) => theme.outerSpacing.s1};
-  text-align: ${({ align }) => align || 'left'};
-  margin-${({ align }) => align === 'right' ? 'left' : 'right'}: auto;
-  max-width: 30rem;
-  @media (max-width: 550px) {
-    text-align: left;
-    margin-top: ${({ theme }) => theme.innerSpacing.s2};
-    margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
+  margin-left: auto;
+  margin-right: auto;
+
+  ${TextCell} { order: 2; padding-top: 0; }
+  ${FeatureImageCell} { order: 1; margin-top: ${({ theme }) => theme.textSpacing.s1}; }
+  ${MediaItem} { justify-content: left; }
+
+  @media (min-width: 500px) {
+    max-width: 40em;
+    ${TextCell} { order: 1; padding-top: ${({ theme }) => theme.textSpacing.s1}; }
+    ${FeatureImageCell} { order: 2; padding-left: 40px; }
   }
 `
 
 const FeatureSectionHeader = SectionHeader.extend`
   text-align: inherit;
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
 `
 
 const FeatureSectionTagline = SectionDescription.extend`
@@ -90,20 +106,47 @@ export default page((props) => (
   >
     <FeatureSection>
       <FeatureSectionHeader>Scale</FeatureSectionHeader>
-      <FeatureSectionTagline>Architected for scale.</FeatureSectionTagline>
-      <FeatureSectionDescription>Buildkite’s architecture uses modern scaling techniques, such as horizontal scaling and auto-scaling, to help you support massive engineering growth. And with Buildkite’s cloud agnostic design, you’re free to take advantage of new cloud platform features as they emerge, or even transition smoothly between cloud and compute platforms (including private cloud, and bare metal hardware).</FeatureSectionDescription>
+      <MediaItem>
+        <TextCell>
+          <FeatureSectionTagline>Architected for scale.</FeatureSectionTagline>
+          <FeatureSectionDescription>Buildkite’s architecture uses modern scaling techniques, such as horizontal scaling and auto-scaling, to help you support massive engineering growth. And with Buildkite’s cloud agnostic design, you’re free to take advantage of new cloud platform features as they emerge, or even transition smoothly between cloud and compute platforms (including private cloud, and bare metal hardware).</FeatureSectionDescription>
+        </TextCell>
+        <FeatureImageCell maxWidth="240px">
+          <ResponsiveImageContainer width={616} height={437}>
+            <img src={scaleImage} alt="Graph trending up and to the right" />
+          </ResponsiveImageContainer>
+        </FeatureImageCell>
+      </MediaItem>
     </FeatureSection>
 
-    <FeatureSection align="right">
+    <FeatureSection>
       <FeatureSectionHeader>Security</FeatureSectionHeader>
-      <FeatureSectionTagline>Your data is our top priority.</FeatureSectionTagline>
-      <FeatureSectionDescription>Buildkite provides clear platform boundaries where your security requirements can be enforced. The open-source buildkite-agent can be version controlled, audited, and locked down based on your requirements. And all source code stays behind your own firewall. See our <Link href="/security"><a>Security</a></Link> page for more details on our policies.</FeatureSectionDescription>
+      <MediaItem>
+        <TextCell>
+          <FeatureSectionTagline>Your data is our top priority.</FeatureSectionTagline>
+          <FeatureSectionDescription>Buildkite provides clear platform boundaries where your security requirements can be enforced. The open-source buildkite-agent can be version controlled, audited, and locked down based on your requirements. And all source code stays behind your own firewall. See our <Link href="/security"><a>Security</a></Link> page for more details on our policies.</FeatureSectionDescription>
+        </TextCell>
+        <FeatureImageCell maxWidth="210px">
+          <ResponsiveImageContainer width={532} height={509}>
+            <img src={securityImage} alt="Safe with padlock" />
+          </ResponsiveImageContainer>
+        </FeatureImageCell>
+      </MediaItem>
     </FeatureSection>
 
     <FeatureSection>
       <FeatureSectionHeader>Support</FeatureSectionHeader>
-      <FeatureSectionTagline>Consider us your Build Ops team.</FeatureSectionTagline>
-      <FeatureSectionDescription>Get the support you need. Your team has live chat access to engineers via a shared Slack channel, a monthly call with a dedicated account manager, and pager access for undetected platform faults.</FeatureSectionDescription>
+      <MediaItem>
+        <TextCell>
+          <FeatureSectionTagline>Consider us your Build Ops team.</FeatureSectionTagline>
+          <FeatureSectionDescription>Get the support you need. Your team has live chat access to engineers via a shared Slack channel, a monthly call with a dedicated account manager, and pager access for undetected platform faults.</FeatureSectionDescription>
+        </TextCell>
+        <FeatureImageCell maxWidth="200px">
+          <ResponsiveImageContainer width={491} height={394}>
+            <img src={supportImage} alt="Chat speech bubble" />
+          </ResponsiveImageContainer>
+        </FeatureImageCell>
+      </MediaItem>
     </FeatureSection>
 
     <Section>
