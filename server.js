@@ -8,7 +8,7 @@ const dev = process.env.NODE_ENV !== 'production'
 const url = require('url')
 const express = require('express')
 const next = require('next')
-const shrinkRay = require('shrink-ray-current')
+const compression = require('compression')
 
 // We use the cookie lib, instead of the normal express cookies middleware,
 // because this is what next-cookies uses. One less thing that could mis-match.
@@ -33,7 +33,7 @@ app.prepare()
     server.disable('x-powered-by')
 
     // Compress our responses to browsers
-    server.use(shrinkRay())
+    server.use(compression())
 
     // Middleware to set req.loggedIn if the magic cookie is set
     server.use(function(req, res, next) {
