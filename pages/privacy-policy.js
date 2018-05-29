@@ -34,7 +34,7 @@ export default page((...props) => (
         <li id="2-who-and-what">
           <h2>Who And What This Policy Applies To</h2>
           <ol className="PrivacyPolicy__list">
-            <li>Our Privacy Policy deals with how we handle “personal information” and "personal data" as it is defined in the Privacy Act and the GDPR respectively (<strong>Personal Information</strong>).</li>
+            <li>Our Privacy Policy deals with how we handle “personal information” and “personal data” as it is defined in the Privacy Act and the GDPR respectively (<strong>Personal Information</strong>).</li>
             <li>We handle Personal Information in our own right and also for and on behalf of our customers and users.</li>
             <li>Our Privacy Policy does not apply to information we collect about businesses or companies, however it does apply to information about the people in those businesses or companies which we store. </li>
             <li>The Privacy Policy applies to all forms of information, physical and digital, whether collected or stored electronically or in hardcopy.</li>
