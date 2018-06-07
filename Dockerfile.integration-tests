@@ -1,3 +1,0 @@
-FROM buildkite/puppeteer:1.1.1
-RUN  npm i mocha@5
-ENV  PATH="${PATH}:/node_modules/.bin"
