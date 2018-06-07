@@ -1,7 +1,9 @@
-version: '3.2'
+version: '3.4'
 services:
   site:
-    build: .
+    build:
+      context: .
+      target: development
     ports:
       - "3000:3000"
     environment:
