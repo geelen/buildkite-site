@@ -49,7 +49,7 @@ steps:
 
   - name: ":chrome::hammer::zap:"
     artifact_paths: "integration-tests/screenshots/*.png"
-    timeout_in_minutes: 1
+    timeout_in_minutes: 2
     plugins:
       docker-compose#4062dd5b:
         run: tests-with-site-prebuilt
@@ -96,7 +96,7 @@ steps:
 
   - name: ":chrome::hammer::zap::zap:"
     branches: master
-    timeout_in_minutes: 1
+    timeout_in_minutes: 2
     plugins:
       docker-compose#4062dd5b:
         run: production-tests
