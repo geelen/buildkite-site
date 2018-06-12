@@ -1,5 +1,5 @@
 # docker-compose plugin pinned to:
-# https://github.com/buildkite-plugins/docker-compose-buildkite-plugin/commit/4062dd5b4c49fa5c3895cecba5ad1fef86fd6e9f
+# https://github.com/buildkite-plugins/docker-compose-buildkite-plugin/commit/v2.4.04c49fa5c3895cecba5ad1fef86fd6e9f
 
 steps:
 
@@ -7,7 +7,7 @@ steps:
     agents:
       queue: elastic-builders
     plugins:
-      docker-compose#4062dd5b:
+      docker-compose#v2.4.0:
         build: site
         image-repository: buildkiteci/site
         image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-dev"
@@ -16,7 +16,7 @@ steps:
     agents:
       queue: elastic-builders
     plugins:
-      docker-compose#4062dd5b:
+      docker-compose#v2.4.0:
         config: docker-compose.prod.yml
         build: site
         image-repository: buildkiteci/site
@@ -30,13 +30,13 @@ steps:
   - name: ":eslint:"
     command: yarn lint
     plugins:
-      docker-compose#4062dd5b:
+      docker-compose#v2.4.0:
         run: site
 
   - name: ":flowtype:"
     command: yarn flow
     plugins:
-      docker-compose#4062dd5b:
+      docker-compose#v2.4.0:
         run: site
     skip: "TODO"
 
@@ -44,14 +44,14 @@ steps:
     command: yarn bundle-analyze
     artifact_paths: "bundle-analysis/*"
     plugins:
-      docker-compose#4062dd5b:
+      docker-compose#v2.4.0:
         run: site
 
   - name: ":chrome::hammer::zap:"
     artifact_paths: "integration-tests/screenshots/*.png"
     timeout_in_minutes: 2
     plugins:
-      docker-compose#4062dd5b:
+      docker-compose#v2.4.0:
         run: tests-with-site-prebuilt
         config: docker-compose.integration-tests.yml
 
@@ -63,7 +63,7 @@ steps:
       ecr#v1.1.4:
         login: true
         account-ids: ${ECR_ACCOUNT_ID}
-      docker-compose#4062dd5b:
+      docker-compose#v2.4.0:
         config: docker-compose.prod.yml
         push:
           - site:${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}
@@ -98,7 +98,7 @@ steps:
     branches: master
     timeout_in_minutes: 2
     plugins:
-      docker-compose#4062dd5b:
+      docker-compose#v2.4.0:
         run: production-tests
         config: docker-compose.integration-tests.yml
     artifact_paths: "integration-tests/screenshots/*.png"
