@@ -181,7 +181,7 @@ export default page((props) => (
         <Brick>
           <h2>Transparency</h2>
           <ValueParagraph>
-            We default to working in the open, allowing everyone to understand context and contribute. We're open about both our strengths and weaknesses.
+            We default to working in the open, allowing everyone to understand context and contribute. We’re open about both our strengths and weaknesses.
           </ValueParagraph>
         </Brick>
         <Brick>
@@ -236,7 +236,7 @@ export default page((props) => (
         heading="Say Hello!"
         image={sayhelloImage}
         imageAlt="People waving hello"
-        description="If you have any questions or queries, don't hesitate to get in touch."
+        description="If you have any questions or queries, don’t hesitate to get in touch."
         url="mailto:hello@buildkite.com"
         buttonTitle="Email hello@buildkite.com"
       />
