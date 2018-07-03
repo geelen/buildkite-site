@@ -7,7 +7,7 @@ steps:
     agents:
       queue: elastic-builders
     plugins:
-      docker-compose#v2.4.1:
+      docker-compose#v2.5.0:
         build: site
         image-repository: buildkiteci/site
         image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-dev"
@@ -16,7 +16,7 @@ steps:
     agents:
       queue: elastic-builders
     plugins:
-      docker-compose#v2.4.1:
+      docker-compose#v2.5.0:
         config: docker-compose.prod.yml
         build: site
         image-repository: buildkiteci/site
@@ -30,13 +30,13 @@ steps:
   - name: ":eslint:"
     command: yarn lint
     plugins:
-      docker-compose#v2.4.1:
+      docker-compose#v2.5.0:
         run: site
 
   - name: ":flowtype:"
     command: yarn flow
     plugins:
-      docker-compose#v2.4.1:
+      docker-compose#v2.5.0:
         run: site
     skip: "TODO"
 
@@ -44,14 +44,14 @@ steps:
     command: yarn bundle-analyze
     artifact_paths: "bundle-analysis/*"
     plugins:
-      docker-compose#v2.4.1:
+      docker-compose#v2.5.0:
         run: site
 
   - name: ":chrome::hammer::zap:"
     artifact_paths: "integration-tests/screenshots/*.png"
     timeout_in_minutes: 2
     plugins:
-      docker-compose#v2.4.1:
+      docker-compose#v2.5.0:
         run: tests-with-site-prebuilt
         config: docker-compose.integration-tests.yml
 
@@ -98,7 +98,7 @@ steps:
     branches: master
     timeout_in_minutes: 2
     plugins:
-      docker-compose#v2.4.1:
+      docker-compose#v2.5.0:
         run: production-tests
         config: docker-compose.integration-tests.yml
     artifact_paths: "integration-tests/screenshots/*.png"
