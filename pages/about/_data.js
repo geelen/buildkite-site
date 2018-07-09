@@ -4,6 +4,7 @@ import photoKeith from '../../assets/images/about/keithpitt.jpg'
 import photoLox from '../../assets/images/about/lox.jpg'
 import photoSam from '../../assets/images/about/sam.jpg'
 import photoTim from '../../assets/images/about/toolmantim.jpg'
+import photoCath from '../../assets/images/about/cath.jpg'
 
 import photoJml from '../../assets/images/about/jml.jpg'
 import photoMattAllen from '../../assets/images/about/mattallen.jpg'
@@ -41,6 +42,17 @@ export const team = [
       { name: "Keybase", url: "https://keybase.io/sj26" }
     ],
     colour: "rgb(179,166,187)"
+  },
+  {
+    photo: photoCath,
+    name: "Cath Jones",
+    bio: "Hey, I’m Cath. I am passionate about people, technology and diversity & inclusion. When I am not supporting the Buildkite team you can find me exploring the world, playing board games or knitting a sweater for my sausage dog.",
+    links: [
+      { name: "Twitter", url: "https://twitter.com/cathjones0" },
+      { name: "GitHub", url: "https://github.com/catherine-jones" },
+      { name: "Medium", url: "https://medium.com/@bitgirl" }
+    ],
+    colour: "rgb(232,211,254)"
   },
   {
     photo: photoTim,
