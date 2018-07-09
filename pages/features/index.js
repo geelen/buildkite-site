@@ -304,7 +304,7 @@ export default page((props) => (
       <MediaItem>
         <TextCell>
           <Description>
-            Add your own custom build annotations using Markdown or HTML. Link to deployments, summarise test failures, or report on your own flakey test analysis 🚩
+            Add your own custom build annotations using Markdown. Link to deployments, summarise test failures, or report on your own flakey test analysis 🚩
           </Description>
         </TextCell>
         <ImageCell>
