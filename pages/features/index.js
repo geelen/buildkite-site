@@ -162,7 +162,7 @@ export default page((props) => (
           >
             <font color="#9B9B9B">- <font color="#00FF93">label</font>: </font>&quot;Build&quot;<br />
             <font color="#9B9B9B">  <font color="#00FF93">command</font>: </font>make<br />
-            <font color="#9B9B9B">  <font color="#00FF93">artifact_paths</font>: </font>&quot;dist/*&quot;<br />
+            <font color="#9B9B9B">  <font color="#00FF93">artifact_paths</font>: </font>&quot;dist&quot;<br />
             <br />
             <font color="#9B9B9B">- </font><font color="#00FF93">wait</font><br />
             <br />
@@ -343,7 +343,7 @@ export default page((props) => (
             fi</font><br />
             <br />
             # Mount in our source cache<br />
-            <font color="#00FF93">ls -s /mnt/src-cache ./src</font>
+            <font color="#00FF93">ln -s /mnt/src-cache ./src</font>
           </SVGConsoleImage>
         </ImageCell>
       </MediaItem>
