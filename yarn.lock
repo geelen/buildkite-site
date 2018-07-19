@@ -4460,9 +4460,9 @@ ret@~0.1.10:
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
 
-retire@1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/retire/-/retire-1.6.1.tgz#78e5b3b00b876ba446a16598437b4e385497e871"
+retire@1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/retire/-/retire-1.6.2.tgz#05f1b032f4c35d8438a4864bc7af8aa17eb135b7"
   dependencies:
     commander "2.5.x"
     read-installed "^4.0.3"
