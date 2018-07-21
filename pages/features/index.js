@@ -343,7 +343,7 @@ export default page((props) => (
             fi</font><br />
             <br />
             # Mount in our source cache<br />
-            <font color="#00FF93">ls -s /mnt/src-cache ./src</font>
+            <font color="#00FF93">ln -s /mnt/src-cache ./src</font>
           </SVGConsoleImage>
         </ImageCell>
       </MediaItem>
