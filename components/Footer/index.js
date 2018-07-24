@@ -54,6 +54,7 @@ export default ({ loggedIn }) => (
             <FooterLink href="/features">Features</FooterLink>
             <FooterLink href="/screencasts">Screencasts</FooterLink>
             <FooterLink href="/case-studies">Case Studies</FooterLink>
+            <FooterLink href="/enterprise">Enterprise</FooterLink>
             <FooterLink href="/pricing">Pricing</FooterLink>
           </nav>
         </Cell>
@@ -61,10 +62,10 @@ export default ({ loggedIn }) => (
           <SmallNav>
             <FooterLink href="/docs" external>Documentation</FooterLink>
             <FooterLink href="/about">About</FooterLink>
-            <FooterLink href="/brand-assets">Brand Assets</FooterLink>
             <FooterLink href="/security">Security</FooterLink>
-            <FooterLink href="/enterprise">Enterprise</FooterLink>
-            {/* <FooterLink href="https://shop.buildkite.com/">Shop</FooterLink> */}
+            <FooterLink href="/brand-assets">Brand Assets</FooterLink>
+            <FooterLink href="https://building.buildkite.com/">Blog</FooterLink>
+            <FooterLink href="https://shop.buildkite.com/">Shop</FooterLink>
           </SmallNav>
         </Cell>
         <Cell>
