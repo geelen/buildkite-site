@@ -29,7 +29,7 @@
     "eslint-plugin-babel": "5.1.0",
     "eslint-plugin-flowtype": "2.50.0",
     "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-react": "7.11.0",
+    "eslint-plugin-react": "7.11.1",
     "webpack-bundle-analyzer": "2.13.1"
   },
   "scripts": {
