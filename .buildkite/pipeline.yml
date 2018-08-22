@@ -96,7 +96,7 @@ steps:
 
   - name: ":chrome::hammer::zap::zap:"
     branches: master
-    timeout_in_minutes: 2
+    timeout_in_minutes: 3
     plugins:
       docker-compose#v2.5.1:
         run: production-tests
