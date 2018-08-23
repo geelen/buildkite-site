@@ -100,7 +100,7 @@ export const team = [
       { name: "GitHub", url: "https://github.com/eleanorakh" },
       { name: "Twitter", url: "https://twiter.com/eleanorkh" }
     ],
-    colour: "rgb(149,149,143)"
+    colour: "rgb(153,153,255)"
   }
 ]
 
