@@ -5,6 +5,7 @@ import photoLox from '../../assets/images/about/lox.jpg'
 import photoSam from '../../assets/images/about/sam.jpg'
 import photoTim from '../../assets/images/about/toolmantim.jpg'
 import photoCath from '../../assets/images/about/cath.jpg'
+import photoEleanor from '../../assets/images/about/eleanor.jpg'
 
 import photoJml from '../../assets/images/about/jml.jpg'
 import photoMattAllen from '../../assets/images/about/mattallen.jpg'
@@ -90,6 +91,16 @@ export const team = [
     colour: "rgb(149,149,143)",
     leadership: true,
     roles: ["COO"]
+  },
+  {
+    photo: photoEleanor,
+    name: "Eleanor Kiefel Haggerty",
+    bio: "Hey, I'm Eleanor! I'm a classicist turned developer and I love to craft meaningful software. I'm an avid adventurer and an enthusiastic dog patter.",
+    links: [
+      { name: "GitHub", url: "https://github.com/eleanorakh" },
+      { name: "Twitter", url: "https://twiter.com/eleanorkh" }
+    ],
+    colour: "rgb(153,153,255)"
   }
 ]
 
