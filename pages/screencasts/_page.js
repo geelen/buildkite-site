@@ -31,7 +31,7 @@ const ScreencastParagraph = styled.p`
   max-width: 35em;
 `
 
-const VideoContainer = ResponsiveVideoContainer.extend`
+const VideoContainer = styled(ResponsiveVideoContainer)`
   ${({ theme }) => theme.images.screenshots}
   margin: ${({ theme }) => theme.innerSpacing.s2} 0;
 `

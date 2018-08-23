@@ -12,13 +12,13 @@ const FlexContainer = styled.div`
   flex-wrap: wrap;
 `
 
-const HeadingContainer = FlexContainer.extend`
+const HeadingContainer = styled(FlexContainer)`
   align-items: center;
   margin-top: ${({ theme }) => theme.outerSpacing.s1};
   margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
 `
 
-const SpacedFlexContainer = FlexContainer.extend`
+const SpacedFlexContainer = styled(FlexContainer)`
   margin: ${({ theme }) => theme.innerSpacing.s1} -${({ theme }) => theme.innerSpacing.s1};
 
   > * {
@@ -30,7 +30,7 @@ const TextCell = styled.div`
   flex: 3 1 280px;
 `
 
-const CaseStudyWords = TextCell.extend`
+const CaseStudyWords = styled(TextCell)`
   color: ${({ theme }) => theme.colors.text.subdued};
 
   > p {
@@ -47,7 +47,7 @@ const ImageCell = styled.div`
   flex: 1 2 150px;
 `
 
-const LogoCell = ImageCell.extend`
+const LogoCell = styled(ImageCell)`
   margin-left: ${({ theme }) => theme.innerSpacing.s2};
   @media (max-width: 620px) {
     margin-top: ${({ theme }) => theme.innerSpacing.s2};
@@ -55,7 +55,7 @@ const LogoCell = ImageCell.extend`
   }
 `
 
-const ResultsCell = ImageCell.extend`
+const ResultsCell = styled(ImageCell)`
   display: grid;
   align-self: flex-start;
   grid-gap: ${({ theme }) => theme.textSpacing.s1};

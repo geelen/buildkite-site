@@ -13,7 +13,7 @@ import screenshotPath from '../assets/images/home/screenshot.png'
 import logosNarrowPath from '../assets/images/home/homepage-logos-narrow.png'
 import logosWidePath from '../assets/images/home/homepage-logos-wide.png'
 
-const ScreenshotImageContainer = ResponsiveImageContainer.extend`
+const ScreenshotImageContainer = styled(ResponsiveImageContainer)`
   ${({ theme }) => theme.images.screenshots}
   margin-top: ${({ theme }) => theme.innerSpacing.s1};
   margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
@@ -47,12 +47,12 @@ const Section = styled.section`
   margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
 `
 
-const FeaturesSection = Section.extend`
+const FeaturesSection = styled(Section)`
   margin-top: ${({ theme }) => theme.outerSpacing.s1};
   position: relative;
 `
 
-const FeaturesButton = Button.extend`
+const FeaturesButton = styled(Button)`
   position: absolute;
   top: 50%;
   left: 50%;

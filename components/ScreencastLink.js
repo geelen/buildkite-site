@@ -12,7 +12,7 @@ const ScreencastLink = styled.a`
   padding: ${({ theme }) => theme.innerSpacing.s1};
 `
 
-const ThumbnailImageContainer = ResponsiveImageContainer.extend`
+const ThumbnailImageContainer = styled(ResponsiveImageContainer)`
   ${({ theme }) => theme.images.screenshots}
   margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
   background-color: white;

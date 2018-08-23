@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { Grid, Cell } from 'components/Grid'
 
-export const FeatureGrid = Grid.extend`
+export const FeatureGrid = styled(Grid)`
   margin: ${({ theme }) => theme.innerSpacing.s1} 0;
   grid-template-columns: repeat(2, 1fr);
 
@@ -11,7 +11,7 @@ export const FeatureGrid = Grid.extend`
   }
 `
 
-export const FeatureCell = Cell.extend`
+export const FeatureCell = styled(Cell)`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s2};
 `

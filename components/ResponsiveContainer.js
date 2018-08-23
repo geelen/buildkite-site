@@ -8,7 +8,7 @@ const ResponsiveContainer = styled.span`
   padding-bottom: ${({ width, height }) => height / width * 100}%;
 `
 
-export const ResponsiveImageContainer = ResponsiveContainer.extend`
+export const ResponsiveImageContainer = styled(ResponsiveContainer)`
   > img {
     position: absolute;
     top: 0;
@@ -18,7 +18,7 @@ export const ResponsiveImageContainer = ResponsiveContainer.extend`
   }
 `
 
-export const ResponsiveVideoContainer = ResponsiveContainer.extend`
+export const ResponsiveVideoContainer = styled(ResponsiveContainer)`
   > video {
     position: absolute;
     top: 0;

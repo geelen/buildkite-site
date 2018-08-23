@@ -14,7 +14,7 @@ const Paragraph = styled.p`
   margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
 `
 
-const GetStartedText = TextCell.extend`
+const GetStartedText = styled(TextCell)`
   text-align: center;
 
   @media (min-width: 600px) {
@@ -22,7 +22,7 @@ const GetStartedText = TextCell.extend`
   }
 `
 
-const ImageContainer = ResponsiveImageContainer.extend`
+const ImageContainer = styled(ResponsiveImageContainer)`
   max-width: 400px;
 `
 

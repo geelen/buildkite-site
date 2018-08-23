@@ -19,7 +19,7 @@ const Paragraph = styled.p`
   text-align: center;
 `
 
-const CenteredButton = Button.withComponent('span').extend`
+const CenteredButton = styled(Button.withComponent('span'))`
   position: absolute;
   top: 50%;
   left: 50%;
