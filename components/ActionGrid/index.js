@@ -34,7 +34,7 @@ const Nav = styled.nav`
   }
 `
 
-const Grid = RawGrid.extend`
+const Grid = styled(RawGrid)`
   grid-template-columns: 1;
 
   @media (min-width: 580px) {

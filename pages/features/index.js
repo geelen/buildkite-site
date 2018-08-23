@@ -78,7 +78,7 @@ const Image = styled.img`
   }
 `
 
-const ImageWithBorder = Image.extend`
+const ImageWithBorder = styled(Image)`
   border: 1px solid black;
 `
 
@@ -92,15 +92,15 @@ const Link = styled.a`
   ${({ theme }) => theme.textStyles.hyperlink}
 `
 
-const MediaItem = RawMediaItem.extend`
+const MediaItem = styled(RawMediaItem)`
   align-items: flex-start;
 `
 
-const TextCell = RawTextCell.extend`
+const TextCell = styled(RawTextCell)`
   flex-grow: 2;
 `
 
-const ImageCell = RawImageCell.extend`
+const ImageCell = styled(RawImageCell)`
   flex-grow: 4;
 `
 
@@ -110,7 +110,7 @@ const OtherFeaturesSection = styled.section`
   margin: ${({ theme }) => theme.outerSpacing.s3} 0;
 `
 
-const SVGAnimation = Image.extend`
+const SVGAnimation = styled(Image)`
   height: auto;
 `
 

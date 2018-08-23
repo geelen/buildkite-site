@@ -27,7 +27,7 @@ const SectionHeader = styled.h1`
   text-align: center;
 `
 
-const InlineSectionHeader = SectionHeader.extend`
+const InlineSectionHeader = styled(SectionHeader)`
   margin-top: 0;
   text-align: left;
   margin-bottom: ${({ theme }) => theme.textSpacing.s1};
@@ -45,7 +45,7 @@ const Section = styled.section`
   margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
 `
 
-const PeopleSection = Section.extend`
+const PeopleSection = styled(Section)`
   text-align: center;
 `
 
@@ -59,7 +59,7 @@ const People = styled.div`
   }
 `
 
-const HeadOfficeImageContainer = ResponsiveImageContainer.extend`
+const HeadOfficeImageContainer = styled(ResponsiveImageContainer)`
   max-width: 500px;
 `
 

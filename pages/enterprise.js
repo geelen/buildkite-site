@@ -27,7 +27,7 @@ const SectionHeader = styled.h2`
   text-align: center;
 `
 
-const CaseStudiesHeader = SectionHeader.extend`
+const CaseStudiesHeader = styled(SectionHeader)`
   margin-bottom: 0;
 `
 
@@ -54,7 +54,7 @@ const FeatureGridSectionDescription = styled.p`
   }
 `
 
-const FeatureImageCell = ImageCell.extend`
+const FeatureImageCell = styled(ImageCell)`
   max-width: ${({ maxWidth }) => maxWidth ? maxWidth : '100%'};
 `
 
@@ -75,12 +75,12 @@ const FeatureSection = styled.section`
   }
 `
 
-const FeatureSectionHeader = SectionHeader.extend`
+const FeatureSectionHeader = styled(SectionHeader)`
   text-align: inherit;
   margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
 `
 
-const FeatureSectionTagline = SectionDescription.extend`
+const FeatureSectionTagline = styled(SectionDescription)`
   text-align: inherit;
 `
 

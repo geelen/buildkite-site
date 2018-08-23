@@ -36,7 +36,7 @@ const Section = styled.section`
   }
 `
 
-const MaxWidthSection = Section.extend`
+const MaxWidthSection = styled(Section)`
   @media (min-width: 742px) {
     ${({ theme }) => theme.maxWidthContainer}
     width: 60%;
@@ -53,7 +53,7 @@ const Paragraph = styled.p`
   margin: ${({ theme }) => theme.textSpacing.s1} 0 ${({ theme }) => theme.innerSpacing.s2} 0;
 `
 
-const AssetListContainer = Grid.extend`
+const AssetListContainer = styled(Grid)`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
   padding: ${({ theme }) => theme.innerSpacing.s2};
   grid-template-columns: repeat(2, 1fr);
@@ -71,7 +71,7 @@ const AssetList = ({ children }) => (
   </AssetListContainer>
 )
 
-const AssetCell = Cell.extend`
+const AssetCell = styled(Cell)`
   text-align: center;
 `
 

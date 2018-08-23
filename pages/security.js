@@ -42,14 +42,14 @@ const SecurityParagraph = styled.p`
   margin: ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
-const Monospace = SecurityParagraph.extend`
+const Monospace = styled(SecurityParagraph)`
   font-family: SFMono-Regular, Monaco, Menlo, Consolas, Liberation Mono, Courier, monospace;
   white-space: normal;
   word-break: break-all;
   font-size: .9em;
 `.withComponent('pre')
 
-const PGPSection = Section.extend`
+const PGPSection = styled(Section)`
   ${({ theme }) => theme.maxWidthContainer}
   max-width: 560px;
 `
