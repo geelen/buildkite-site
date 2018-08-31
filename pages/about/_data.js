@@ -98,7 +98,7 @@ export const team = [
     bio: "Hey, I’m Eleanor! I’m a classicist turned developer and I love to craft meaningful software. I’m an avid adventurer and an enthusiastic dog patter.",
     links: [
       { name: "GitHub", url: "https://github.com/eleanorakh" },
-      { name: "Twitter", url: "https://twiter.com/eleanorkh" }
+      { name: "Twitter", url: "https://twitter.com/eleanorkh" }
     ],
     colour: "rgb(153,153,255)"
   }
