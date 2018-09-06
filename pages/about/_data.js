@@ -6,6 +6,7 @@ import photoSam from '../../assets/images/about/sam.jpg'
 import photoTim from '../../assets/images/about/toolmantim.jpg'
 import photoCath from '../../assets/images/about/cath.jpg'
 import photoEleanor from '../../assets/images/about/eleanor.jpg'
+import photoMatthew from '../../assets/images/about/matthew.jpg'
 
 import photoJml from '../../assets/images/about/jml.jpg'
 import photoMattAllen from '../../assets/images/about/mattallen.jpg'
@@ -56,6 +57,29 @@ export const team = [
     colour: "rgb(232,211,254)"
   },
   {
+    photo: photoEleanor,
+    name: "Eleanor Kiefel Haggerty",
+    bio: "Hey, I’m Eleanor! I’m a classicist turned developer and I love to craft meaningful software. I’m an avid adventurer and an enthusiastic dog patter.",
+    links: [
+      { name: "GitHub", url: "https://github.com/eleanorakh" },
+      { name: "Twitter", url: "https://twitter.com/eleanorkh" }
+    ],
+    colour: "rgb(153,153,255)"
+  },
+  {
+    photo: photoMatthew,
+    name: "Matthew Draper",
+    bio: "Hey, I’m Matthew.",
+    links: [
+      { name: "GitHub", url: "https://github.com/matthewd" },
+      { name: "Twitter", url: "https://twitter.com/_matthewd" }
+    ],
+    colour: "rgb(173,199,255)"
+  }
+]
+
+export const leadership = [
+  {
     photo: photoTim,
     name: "Tim Lucas",
     bio: "Hey, I’m Tim! I’m a Venn diagram of cats, coffee, the web, design, and programming. When I’m not behind a keyboard, I can usually be found climbing rocky walls.",
@@ -65,7 +89,6 @@ export const team = [
       { name: "GitHub", url: "https://github.com/toolmantim" }
     ],
     colour: "rgb(129,188,228)",
-    leadership: true,
     roles: ["Founder", "CEO"]
   },
   {
@@ -78,7 +101,6 @@ export const team = [
       { name: "Keybase", url: "https://keybase.io/keithpitt" }
     ],
     colour: "rgb(216,138,139)",
-    leadership: true,
     roles: ["Founder", "CTO"]
   },
   {
@@ -89,22 +111,9 @@ export const team = [
       { name: "GitHub", url: "https://github.com/lox" }
     ],
     colour: "rgb(149,149,143)",
-    leadership: true,
     roles: ["COO"]
-  },
-  {
-    photo: photoEleanor,
-    name: "Eleanor Kiefel Haggerty",
-    bio: "Hey, I’m Eleanor! I’m a classicist turned developer and I love to craft meaningful software. I’m an avid adventurer and an enthusiastic dog patter.",
-    links: [
-      { name: "GitHub", url: "https://github.com/eleanorakh" },
-      { name: "Twitter", url: "https://twitter.com/eleanorkh" }
-    ],
-    colour: "rgb(153,153,255)"
   }
 ]
-
-export const leadership = team.filter((team) => team.leadership)
 
 export const advisors = [
   {
