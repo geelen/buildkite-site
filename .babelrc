@@ -6,8 +6,7 @@
       ],
       "plugins": [
         ["babel-plugin-styled-components", {
-          "displayName": true,
-          "ssr": true
+          "displayName": true
         }]
       ]
     },
@@ -17,8 +16,7 @@
       ],
       "plugins": [
         ["babel-plugin-styled-components", {
-          "displayName": true,
-          "ssr": true
+          "displayName": true
         }]
       ]
     },
