@@ -1,0 +1,9 @@
+version: '3.4'
+services:
+  integration-tests:
+    image: "buildkiteci/site:site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"
+    volumes:
+      - "./integration-tests:/tests"
+    environment:
+      - DEBUG
+      - "TEST_HOST=https://buildkite.com"

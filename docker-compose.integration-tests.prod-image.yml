@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+  integration-tests:
+    image: "buildkiteci/site:site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"
+    volumes:
+      - "./integration-tests:/tests"
+    environment:
+      - DEBUG
+    links:
+      - site
+
+  site:
+    image: "buildkiteci/site:site-build-${BUILDKITE_BUILD_NUMBER}-prod"
+    expose:
+      - "3000"

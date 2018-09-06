@@ -30,9 +30,11 @@ FROM development as test
 # -- Integration tests
 # Has headless chrome and puppeteer, and adds in Mocha so we can run our tests
 # directly inside it
-FROM puppeteer AS integration-tests
-RUN  npm i -g mocha@5
-ENV  PATH="${PATH}:/node_modules/.bin"
+FROM     puppeteer AS integration-tests
+RUN      npm i -g mocha@5
+ENV      PATH="${PATH}:/node_modules/.bin"
+WORKDIR  /tests
+CMD      ["mocha", "--recursive", "--no-timeouts", "."]
 
 # -- Default target
 FROM production
