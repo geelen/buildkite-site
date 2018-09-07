@@ -6,6 +6,7 @@ services:
       - "./integration-tests:/tests"
     environment:
       - DEBUG
+      - IGNORE_HTTPS_ERRORS=true
     links:
       - site
 

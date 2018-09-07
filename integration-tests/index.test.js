@@ -8,12 +8,14 @@ const puppeteer = require('puppeteer')
 const HOST = (process.env.TEST_HOST || "http://site:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
 const SCREENSHOTS_PATH = './screenshots'
+const IGNORE_HTTPS_ERRORS = process.env.IGNORE_HTTPS_ERRORS === 'true'
 
 let browser
 let page
 
 before(async() => {
   browser = await puppeteer.launch({
+    ignoreHTTPSErrors: IGNORE_HTTPS_ERRORS,
     args: [
       // Required for Docker version of Puppeteer
       '--no-sandbox',
