@@ -1,6 +1,6 @@
 # -- Base images
 # Pinned to specific versions, and updated by Renovate
-FROM node:8.11.4-alpine@sha256:338284233a8707f540938d05ab94cd68d9ce8a2adb100beb6728f901d59c274d AS node
+FROM node:8.11.4-alpine@sha256:1c38d992f89ae389450bc69799a0f2b7d1f9f2e6c445080a4648448e6449e8e4 AS node
 FROM buildkite/puppeteer:v1.8.0@sha256:e1702ed3a5a57564aefb5550ffa9dd5a45c5e38773ae932c5a260d9c85e0b4a0 AS puppeteer
 
 # -- Production environment
