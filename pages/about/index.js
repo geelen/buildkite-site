@@ -120,7 +120,7 @@ export default page((props) => (
     {...props}
   >
     <PeopleSection>
-      <SectionHeader>Get to know the team</SectionHeader>
+      <SectionHeader>Our Team</SectionHeader>
 
       <OffscreenH2>Everyone</OffscreenH2>
       <People>
@@ -129,7 +129,7 @@ export default page((props) => (
         ))}
       </People>
 
-      <SectionSecondLevelHeader>Leadership Team</SectionSecondLevelHeader>
+      <SectionSecondLevelHeader>Leadership</SectionSecondLevelHeader>
       <Grid columns="200px">
         {leadership.map((person) => (
           <Person person={person} key={person.name} showName showRoles />
