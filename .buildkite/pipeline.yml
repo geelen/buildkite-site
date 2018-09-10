@@ -101,10 +101,10 @@ steps:
   - wait
 
   - name: ":chrome::hammer::zap::zap:"
-    branches: master
+    branches: master fix-production-check
     timeout_in_minutes: 3
     plugins:
       docker-compose#v2.5.1:
-        run: integration-tests-production
+        run: integration-tests
         config: docker-compose.integration-tests.prod-site.yml
     artifact_paths: "integration-tests/screenshots/*.png"
