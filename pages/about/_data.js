@@ -69,12 +69,12 @@ export const team = [
   {
     photo: photoMatthew,
     name: "Matthew Draper",
-    bio: "Hey, I’m Matthew.",
+    bio: "Hi, I'm Matthew! I'm at my best when using technology to solve things and make problems. In my free time, I contribute to open source projects like Ruby on Rails.",
     links: [
       { name: "GitHub", url: "https://github.com/matthewd" },
       { name: "Twitter", url: "https://twitter.com/_matthewd" }
     ],
-    colour: "rgb(173,199,255)"
+    colour: "rgb(173,196,235)"
   }
 ]
 
