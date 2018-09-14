@@ -97,7 +97,7 @@ export default page((props) => (
           <Brick>
             <SubSectionHeader>Infrastructure</SubSectionHeader>
             <SubSectionSubHeader>Physical Access</SubSectionSubHeader>
-            <SecurityParagraph>All of our services run in the cloud. Buildkite does not run it’s own routers, load balancers, DNS servers, or physical servers.</SecurityParagraph>
+            <SecurityParagraph>All of our services run in the cloud. Buildkite does not run its own routers, load balancers, DNS servers, or physical servers.</SecurityParagraph>
           </Brick>
         </Masonry>
       </Subsection>
