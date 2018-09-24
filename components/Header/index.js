@@ -28,6 +28,8 @@ const Content = styled.div`
   position: relative;
   background-color: white;
   padding: ${({ theme }) => theme.innerSpacing.s1};
+  padding-left: calc(env(safe-area-inset-left) + ${({ theme }) => theme.innerSpacing.s1});
+  padding-right: calc(env(safe-area-inset-right) + ${({ theme }) => theme.innerSpacing.s1});
   display: flex;
   align-items: center;
   line-height: 1;
