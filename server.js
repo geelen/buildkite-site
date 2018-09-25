@@ -50,9 +50,9 @@ app.prepare()
       res.header('X-Frame-Options', 'SAMEORIGIN')
       res.header('X-XSS-Protection', '1; mode=block')
       res.header('X-Content-Type-Options', 'nosniff')
-      res.header('Content-Security-Policy', "default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; img-src 'self' 'unsafe-inline' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; media-src 'self' https://d3lj8s78qytm30.cloudfront.net")
       res.header('Referrer-Policy', 'origin-when-cross-origin')
       if (!dev) {
+        res.header('Content-Security-Policy', "default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; img-src 'self' 'unsafe-inline' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; media-src 'self' https://d3lj8s78qytm30.cloudfront.net")
         res.header('Strict-Transport-Security', 'max-age=31536000; includeSubdomains; preload')
       }
       next()
