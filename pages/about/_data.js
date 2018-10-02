@@ -85,9 +85,9 @@ export const team = [
       { name: "GitHub", url: "https://github.com/plasticine" },
       { name: "Twitter", url: "https://twitter.com/plasticine" },
       { name: "Keybase", url: "https://keybase.io/plasticine" },
-      { name: "Dribbble", url: "https://dribbble.com/justinmorris" },
+      { name: "Dribbble", url: "https://dribbble.com/justinmorris" }
     ],
-    colour: "rgb(238,198,77)" // TODO
+    colour: "rgb(238,198,77)"
   }
 ]
 
