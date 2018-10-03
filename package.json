@@ -7,10 +7,10 @@
     "babel-plugin-styled-components": "1.8.0",
     "babel-plugin-transform-flow-strip-types": "6.22.0",
     "compression": "1.7.3",
+    "cookie": "^0.3.1",
     "express": "4.16.3",
     "file-loader": "2.0.0",
     "next": "7.0.1",
-    "next-cookies": "1.0.2",
     "nprogress": "0.2.0",
     "query-string": "6.1.0",
     "raf-throttle": "2.0.3",
@@ -40,7 +40,7 @@
     "start": "node server.js",
     "bundle-analyze": "NODE_ENV=production ANALYZE=1 next build",
     "security": "yarn run nsp && yarn run retire",
-    "nsp": "echo '--- 📦 Updating nsp' && yarn global add nsp && echo '--- :nsp: Checking node vulns' && nsp check",
-    "retire": "echo '--- 📦 Updating retire' && yarn global add retire && echo '--- :retirejs: Checking front-end vulns' && retire"
+    "nsp": "echo '--- :nsp: Checking node vulns' && npx nsp check",
+    "retire": "echo '--- :retirejs: Checking front-end vulns' && npx retire"
   }
 }
