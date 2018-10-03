@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+
+# Fixes https://hackerone.com/reports/417874 whilst we wait for Next.js to be
+# updated
+
+if ! grep -s jsesc node_modules/next/dist/server/document.js; then
+  echo '--- 🐛 Patching Next.js'
+  patch -p0 -i npm_patches/next-htmlescape.patch
+fi

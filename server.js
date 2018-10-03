@@ -10,10 +10,6 @@ const express = require('express')
 const next = require('next')
 const compression = require('compression')
 
-// We use the cookie lib, instead of the normal express cookies middleware,
-// because this is what next-cookies uses. One less thing that could mis-match.
-const cookie = require('cookie')
-
 const isLoggedIn = require('./lib/isLoggedIn')
 
 const app = next({ dir: '.', dev })
@@ -35,24 +31,15 @@ app.prepare()
     // Compress our responses to browsers
     server.use(compression())
 
-    // Middleware to set req.loggedIn if the magic cookie is set
-    server.use(function(req, res, next) {
-      if (req.headers.cookie) {
-        const cookies = cookie.parse(req.headers.cookie)
-        req.loggedIn = isLoggedIn(cookies)
-      }
-      next()
-    })
-
     // Add strict transport and content security headers for parity with rails
     // app and to prevent leakage.
     server.use(function(req, res, next) {
       res.header('X-Frame-Options', 'SAMEORIGIN')
       res.header('X-XSS-Protection', '1; mode=block')
       res.header('X-Content-Type-Options', 'nosniff')
-      res.header('Content-Security-Policy', "default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; img-src 'self' 'unsafe-inline' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; media-src 'self' https://d3lj8s78qytm30.cloudfront.net")
       res.header('Referrer-Policy', 'origin-when-cross-origin')
       if (!dev) {
+        res.header('Content-Security-Policy', "default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; img-src 'self' 'unsafe-inline' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; media-src 'self' https://d3lj8s78qytm30.cloudfront.net")
         res.header('Strict-Transport-Security', 'max-age=31536000; includeSubdomains; preload')
       }
       next()
@@ -70,7 +57,7 @@ app.prepare()
     // annoy them with marketing content every day.
     server.get('/', (req, res) => {
       res.vary('Cookie')
-      if (req.loggedIn) {
+      if (isLoggedIn(req)) {
         res.redirect(302, '/dashboard')
       }
       nextHandler(req, res)
@@ -81,7 +68,7 @@ app.prepare()
     // this URL on Twitter and it'll redirect any new visitors to /
     server.get('/home', (req, res) => {
       res.vary('Cookie')
-      if (req.loggedIn) {
+      if (isLoggedIn(req)) {
         nextHandler(req, res)
       } else {
         res.redirect(302, '/')

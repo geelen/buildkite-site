@@ -1,6 +1,5 @@
 import styled, { ThemeProvider } from 'styled-components'
 import Head from 'next/head'
-import cookies from 'next-cookies'
 
 import isLoggedIn from '../../lib/isLoggedIn'
 
@@ -72,7 +71,7 @@ export function page(Component) {
         : {}
     )
 
-    processedProps.loggedIn = isLoggedIn(cookies(context))
+    processedProps.loggedIn = isLoggedIn(context.req)
 
     // Set `siteOrigin`. Note that this only occurs server-side.
     if (context.req) {
