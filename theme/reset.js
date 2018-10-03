@@ -1,8 +1,8 @@
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 import { styles as fontStyles } from './fonts'
 
-injectGlobal`
+export default createGlobalStyle`
   ${fontStyles}
 
   :root {

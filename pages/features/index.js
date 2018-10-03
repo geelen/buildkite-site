@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import Br from 'components/Br'
 import Page, { page } from 'components/Page'
-import { FeatureGrid, FeatureCell, FeatureTitle as RawFeatureTitle, FeatureDescription } from 'components/FeatureGrid'
+import { FeatureGrid, FeatureCell, FeatureTitle, FeatureDescription } from 'components/FeatureGrid'
 import { MediaItem as RawMediaItem, ImageCell as RawImageCell, TextCell as RawTextCell } from 'components/MediaItem'
 import { OffscreenH1 } from 'components/OffscreenHeading'
 import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
@@ -104,8 +104,6 @@ const ImageCell = styled(RawImageCell)`
   flex-grow: 4;
 `
 
-const FeatureTitle = RawFeatureTitle.withComponent('h3')
-
 const OtherFeaturesSection = styled.section`
   margin: ${({ theme }) => theme.outerSpacing.s3} 0;
 `
@@ -113,10 +111,6 @@ const OtherFeaturesSection = styled.section`
 const SVGAnimation = styled(Image)`
   height: auto;
 `
-
-const BuildAgentStart = SVGAnimation.withComponent(RawBuildAgentStart)
-
-const SVGConsoleImage = SVGAnimation.withComponent(RawSVGConsoleImage)
 
 export default page((props) => (
   <Page
@@ -138,7 +132,7 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <BuildAgentStart />
+          <SVGAnimation as={RawBuildAgentStart} />
           <ScreenshotImage width={1092} height={440} src={pipelineRunningImage} alt="A build pipeline running a step" />
         </ImageCell>
       </MediaItem>
@@ -155,7 +149,8 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <SVGConsoleImage
+          <SVGAnimation
+            as={RawSVGConsoleImage}
             name="artifactsAndParallelism"
             width="547"
             height="350"
@@ -169,7 +164,7 @@ export default page((props) => (
             <font color="#9B9B9B">- <font color="#00FF93">label</font>: </font>&quot;Test %n&quot;<br />
             <font color="#9B9B9B">  <font color="#00FF93">command</font>: </font>make test<br />
             <font color="#9B9B9B">  <font color="#00FF93">parallelism</font>: </font>300
-          </SVGConsoleImage>
+          </SVGAnimation>
           <ScreenshotImage width={1072} height={306} src={parallelismImage} alt="Many test steps running in parallel" />
         </ImageCell>
       </MediaItem>
@@ -203,7 +198,8 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <SVGConsoleImage
+          <SVGAnimation
+            as={RawSVGConsoleImage}
             name="customFields"
             width="547"
             height="210"
@@ -212,7 +208,7 @@ export default page((props) => (
             <font color="#9B9B9B">  <font color="#00FF93">fields</font>:</font><br />
             <font color="#9B9B9B">    - <font color="#00FF93">text</font>: </font>&quot;Code Name&quot;<br />
             <font color="#9B9B9B">      <font color="#00FF93">key</font>: </font>&quot;release-name&quot;<br />
-          </SVGConsoleImage>
+          </SVGAnimation>
           <ScreenshotImage width={1085} height={192} src={customFieldsUnblockImage} alt="A 'Release' manual unblock step" />
         </ImageCell>
       </MediaItem>
@@ -223,7 +219,8 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <SVGConsoleImage
+          <SVGAnimation
+            as={RawSVGConsoleImage}
             name="dynamicPipeline"
             width="547"
             height="325"
@@ -236,7 +233,7 @@ export default page((props) => (
             done<br />
             <br />
             <font color="#9B9B9B">$ </font><font color="#00FF93">buildkite-agent pipeline upload</font> &lt;(<font color="#00FF93">./generate-pipeline.sh</font>)
-          </SVGConsoleImage>
+          </SVGAnimation>
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -269,7 +266,8 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <SVGConsoleImage
+          <SVGAnimation
+            as={RawSVGConsoleImage}
             name="dockerWorksFine"
             width="547"
             height="410"
@@ -285,7 +283,7 @@ export default page((props) => (
             # Push to image repo<br />
             <font color="#00FF93">docker push &quot;app:$BUILDKITE_COMMIT&quot;<br />
             docker push app:latest</font>
-          </SVGConsoleImage>
+          </SVGAnimation>
         </ImageCell>
       </MediaItem>
     </section>
@@ -331,7 +329,8 @@ export default page((props) => (
           </Description>
         </TextCell>
         <ImageCell>
-          <SVGConsoleImage
+          <SVGAnimation
+            as={RawSVGConsoleImage}
             name="customAgentHooks"
             width="547"
             height="275"
@@ -344,7 +343,7 @@ export default page((props) => (
             <br />
             # Mount in our source cache<br />
             <font color="#00FF93">ln -s /mnt/src-cache ./src</font>
-          </SVGConsoleImage>
+          </SVGAnimation>
         </ImageCell>
       </MediaItem>
       <MediaItem>
@@ -363,43 +362,43 @@ export default page((props) => (
       <OffscreenH1>Other Features</OffscreenH1>
       <FeatureGrid>
         <FeatureCell>
-          <FeatureTitle>Unlimited Language Support</FeatureTitle>
+          <FeatureTitle as="h3">Unlimited Language Support</FeatureTitle>
           <FeatureDescription>It’s your infrastructure, so you’re free to run any language, toolchain or version you need, including Ruby, Xcode, Go, Node, Python, Java, Haskell, .NET or pre-release tools.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Cloud and Environment Agnostic</FeatureTitle>
+          <FeatureTitle as="h3">Cloud and Environment Agnostic</FeatureTitle>
           <FeatureDescription>The agent is an open-source Golang binary, and runs on a wide variety of operating systems and architectures including Linux, OSX, and Windows. Or use our optimized Docker image to run agent clusters on Kubernetes, ECS or any container platform.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Source Control Integration</FeatureTitle>
+          <FeatureTitle as="h3">Source Control Integration</FeatureTitle>
           <FeatureDescription>Integration with GitHub and GitHub Enterprise pull requests, GitLab, BitBucket, Phabricator, and more. Or use our APIs to create a custom SCM integration.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>No Source Code Access</FeatureTitle>
+          <FeatureTitle as="h3">No Source Code Access</FeatureTitle>
           <FeatureDescription>Buildkite never sees your source code or any secret keys. If you connect Buildkite with your GitHub or Bitbucket account we never request permission to read your code.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Chat Support</FeatureTitle>
+          <FeatureTitle as="h3">Chat Support</FeatureTitle>
           <FeatureDescription>Slack and HipChat integration lets everyone monitor their build pipelines. And use the REST and GraphQL APIs to easily create commands, or trigger and unblock pipelines straight from chat.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Agent Plugins</FeatureTitle>
+          <FeatureTitle as="h3">Agent Plugins</FeatureTitle>
           <FeatureDescription>Use agent <Link external href="/docs/agent/plugins">plugins</Link> for common tools and workflows, such as Docker and Docker Compose. Or DRY your own workflows in private plugins with only a few lines of bash.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Docker Pipelines</FeatureTitle>
+          <FeatureTitle as="h3">Docker Pipelines</FeatureTitle>
           <FeatureDescription>Build, test and and deploy Docker-based projects with the agent’s built in Docker Compose support, or your own build scripts for maximum control.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>GraphQL APIs</FeatureTitle>
+          <FeatureTitle as="h3">GraphQL APIs</FeatureTitle>
           <FeatureDescription>Create your own dashboard, cli tools, chatops bots, and other integrations using the exact same GraphQL API that powers the buildkite.com web interface.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Access Control and SSO</FeatureTitle>
+          <FeatureTitle as="h3">Access Control and SSO</FeatureTitle>
           <FeatureDescription>Manage teams to limit who can see and perform actions on pipelines. Login via SSO is supported for Google, Okta, OneLogin, ADFS (SAML) and custom SAML providers.</FeatureDescription>
         </FeatureCell>
         <FeatureCell>
-          <FeatureTitle>Friendly, Human Support</FeatureTitle>
+          <FeatureTitle as="h3">Friendly, Human Support</FeatureTitle>
           <FeatureDescription>Consider us your outsourced build support team, with a solid platform and great support. Our support engineers can help debug problems and answer any questions.</FeatureDescription>
         </FeatureCell>
       </FeatureGrid>

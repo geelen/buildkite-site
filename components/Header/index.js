@@ -4,7 +4,7 @@ import throttle from 'raf-throttle'
 
 import Link from 'components/Link'
 
-import './loading-bar'
+import LoadingBarStyles from './loading-bar-styles'
 import LogoLink from './logo-link'
 import MenuLink from './menu-link'
 import Menu from './menu'
@@ -105,6 +105,7 @@ export default class Header extends React.PureComponent {
 
     return (
       <HeaderWrapper shadow={shadow}>
+        <LoadingBarStyles />
         <Content shadow={this.state.showMenu}>
           <LinkContainer left>
             <MenuLink onClick={this.handleMenuLinkClick} />

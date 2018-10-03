@@ -1,7 +1,5 @@
 import { css } from 'styled-components'
 
-import './reset'
-
 export const innerSpacing = {
   s0: '10px',
   s1: '20px',
