@@ -10,6 +10,7 @@ import Footer from 'components/Footer'
 import Link from 'components/Link'
 
 import { fonts } from '../../theme/fonts'
+import Reset from '../../theme/reset'
 
 const Container = styled.div`
   ${({ theme }) => theme.pageContainer}
@@ -101,6 +102,7 @@ export const BasePage = (props) => (
           />
         ))}
       </Head>
+      <Reset />
       <Header
         loggedIn={props.loggedIn}
       />

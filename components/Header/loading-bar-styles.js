@@ -1,6 +1,6 @@
 import NProgress from 'nprogress'
 import Router from 'next/router'
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 import { colors } from '../../theme'
 
@@ -23,7 +23,7 @@ Router.onRouteChangeStart = () => showProgressBar()
 Router.onRouteChangeComplete = () => finishProgressBar()
 Router.onRouteChangeError = () => finishProgressBar()
 
-injectGlobal`
+export default createGlobalStyle`
   #nprogress { pointer-events: none; }
   #nprogress .bar {
     background: ${colors.text.green};

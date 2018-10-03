@@ -19,7 +19,7 @@ const Paragraph = styled.p`
   text-align: center;
 `
 
-const CenteredButton = styled(Button.withComponent('span'))`
+const CenteredButton = styled(Button)`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -53,7 +53,7 @@ export default () => (
     <Link href="/screencasts">
       <ScreencastLinkContainer>
         <ScreencastImage src={stepTypesThumbnail} alt="Screenshot of the step types screencast" />
-        <CenteredButton>View the screencasts</CenteredButton>
+        <CenteredButton as="span">View the screencasts</CenteredButton>
       </ScreencastLinkContainer>
     </Link>
   </Section>
