@@ -43,6 +43,6 @@
     "security": "yarn run nsp && yarn run retire",
     "nsp": "echo '--- :nsp: Checking node vulns' && npx nsp check",
     "retire": "echo '--- :retirejs: Checking front-end vulns' && npx retire",
-    "postinstall": "if ! grep -s jsesc node_modules/next/dist/server/document.js; then echo '--- 🐛 Patching Next.js' && patch -p0 -i npm_patches/next-htmlescape.patch; fi"
+    "postinstall": "./scripts/yarn-postinstall"
   }
 }
