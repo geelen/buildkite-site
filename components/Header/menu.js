@@ -9,6 +9,8 @@ const Menu = styled.nav`
   width: 100%;
   background-color: rgba(255,255,255,.98);
   padding: ${({ theme }) => theme.innerSpacing.s1};
+  padding-left: calc(env(safe-area-inset-left) + ${({ theme }) => theme.innerSpacing.s1});
+  padding-right: calc(env(safe-area-inset-right) + ${({ theme }) => theme.innerSpacing.s1});
   box-shadow: ${({ theme }) => theme.boxShadows.menuBar};
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 `

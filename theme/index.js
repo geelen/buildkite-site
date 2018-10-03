@@ -29,7 +29,9 @@ export const maxWidthContainer = css`
   margin-left: auto;
   margin-right: auto;
   padding-left: ${innerSpacing.s1};
+  padding-left: calc(env(safe-area-inset-left) + ${innerSpacing.s1});
   padding-right: ${innerSpacing.s1};
+  padding-right: calc(env(safe-area-inset-right) + ${innerSpacing.s1});
 `
 
 export const pageContainer = css`
