@@ -7,6 +7,7 @@ import photoTim from '../../assets/images/about/toolmantim.jpg'
 import photoCath from '../../assets/images/about/cath.jpg'
 import photoEleanor from '../../assets/images/about/eleanor.jpg'
 import photoMatthew from '../../assets/images/about/matthew.jpg'
+import photoBen from '../../assets/images/about/ben.jpg'
 
 import photoJml from '../../assets/images/about/jml.jpg'
 import photoMattAllen from '../../assets/images/about/mattallen.jpg'
@@ -75,6 +76,17 @@ export const team = [
       { name: "Twitter", url: "https://twitter.com/_matthewd" }
     ],
     colour: "rgb(173,196,235)"
+  },
+  {
+    photo: photoBen,
+    name: "Ben Christensen",
+    bio: "Hello, I’m Ben. I make images, design products, and create beautiful spaces. I vastly prefer the outdoors to the indoors, and escape the city as often as I can.",
+    links: [
+      { name: "Portfolio", url: "http://www.benchristensen.co" },
+      { name: "Instagram", url: "https://www.instagram.com/bravonovember/" },
+      { name: "Twitter", url: "https://twitter.com/bravonovember" }
+    ],
+    colour: "rgb(242,172,144)"
   }
 ]
 
