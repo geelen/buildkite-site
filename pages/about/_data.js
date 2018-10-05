@@ -80,7 +80,7 @@ export const team = [
   {
     photo: photoBen,
     name: "Ben Christensen",
-    bio: "Hello, I’m Ben. I make images, design products, and make beautiful spaces. I vastly prefer the outdoors to the indoors, and spend too much money on awesome food.",
+    bio: "Hello, I’m Ben. I make images, design products, and create beautiful spaces. I vastly prefer the outdoors to the indoors, and escape the city as often as I can.",
     links: [
       { name: "Portfolio", url: "http://www.benchristensen.co" },
       { name: "Instagram", url: "https://www.instagram.com/bravonovember/" },
