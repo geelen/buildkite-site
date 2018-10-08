@@ -8,6 +8,7 @@ import photoCath from '../../assets/images/about/cath.jpg'
 import photoEleanor from '../../assets/images/about/eleanor.jpg'
 import photoMatthew from '../../assets/images/about/matthew.jpg'
 import photoBen from '../../assets/images/about/ben.jpg'
+import photoJustin from '../../assets/images/about/justin.jpg'
 
 import photoJml from '../../assets/images/about/jml.jpg'
 import photoMattAllen from '../../assets/images/about/mattallen.jpg'
@@ -86,6 +87,18 @@ export const team = [
       { name: "Instagram", url: "hhttps://www.instagram.com/christensen__photo/" }
     ],
     colour: "rgb(242,172,144)"
+  },
+  {
+    photo: photoJustin,
+    name: "Justin Morris",
+    bio: "Hey there, I’m Justin! I’m a passionate problem solver who believes deeply in technology. Away from a screen I’m probably riding a mountain bike.",
+    links: [
+      { name: "GitHub", url: "https://github.com/plasticine" },
+      { name: "Twitter", url: "https://twitter.com/plasticine" },
+      { name: "Keybase", url: "https://keybase.io/plasticine" },
+      { name: "Dribbble", url: "https://dribbble.com/justinmorris" }
+    ],
+    colour: "rgb(238,198,77)"
   }
 ]
 
