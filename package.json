@@ -11,7 +11,7 @@
     "express": "4.16.4",
     "file-loader": "2.0.0",
     "jsesc": "2.5.1",
-    "next": "7.0.1",
+    "next": "7.0.2",
     "nprogress": "0.2.0",
     "query-string": "6.2.0",
     "raf-throttle": "2.0.3",
@@ -42,7 +42,6 @@
     "bundle-analyze": "NODE_ENV=production ANALYZE=1 next build",
     "security": "yarn run nsp && yarn run retire",
     "nsp": "echo '--- :nsp: Checking node vulns' && npx nsp check",
-    "retire": "echo '--- :retirejs: Checking front-end vulns' && npx retire",
-    "postinstall": "./scripts/yarn-postinstall"
+    "retire": "echo '--- :retirejs: Checking front-end vulns' && npx retire"
   }
 }
