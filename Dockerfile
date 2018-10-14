@@ -9,8 +9,6 @@ ENV     NODE_ENV=production
 EXPOSE  3000
 WORKDIR /app
 COPY    package.json yarn.lock .yarnclean /app/
-COPY    npm_patches /app/npm_patches
-COPY    scripts /app/scripts
 RUN     apk --no-cache --virtual build-dependencies add python make g++ && \
         yarn install --frozen-lockfile --silent && \
         apk del build-dependencies
