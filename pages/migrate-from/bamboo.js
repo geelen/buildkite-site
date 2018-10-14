@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 import Page, { page } from 'components/Page'
 
-const photoColinpanisset = "todo"
+import photoColinPanisset from '../../assets/images/migrate-from/bamboo/colinpanisset.jpg'
+
 const photoJml = "todo"
 const iconSpeedGauge = "todo"
 const iconCloud = "todo"
@@ -14,11 +15,20 @@ const iconKey = "todo"
 const iconDownload = "todo"
 const buildkiteCustomers = "todo"
 
+const InlinePhoto = styled.span`
+  width: 75px;
+  height: 75px;
+  background: url(${({ image }) => image});
+  background-size: 100%;
+  border-radius: 50%;
+  display: inline-block;
+`
+
 const Testimonial = ({ words, by, image }) => (
   <div className="my4 pt3 pb2">
     <div className="max-width-2 mx-auto flex">
       <div className="flex-none">
-        <span className="circle inline-block" style={{ width: 75, height: 75, background: `url(#{image})`, backgroundSize: "100%" }} />
+        <InlinePhoto image={image} />
       </div>
       <div className="mx2">
         <p className="m0 dark-gray" style={{ lineHeight: 1.25 }}>{words}</p>
@@ -54,7 +64,7 @@ export default page((props) => (
     </div>
 
     <Testimonial
-      image={photoColinpanisset}
+      image={photoColinPanisset}
       words="Moving from Bamboo to Buildkite has given us the benefits of secure, on-premise build agents with the ease of not having to manage databases and master nodes—and our build configurations are part of our code, so they’re portable. So much easier!"
       by="Colin Panisset, Global Infrastructure Lead, REA Group"
     />
