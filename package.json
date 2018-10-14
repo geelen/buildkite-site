@@ -42,7 +42,6 @@
     "bundle-analyze": "NODE_ENV=production ANALYZE=1 next build",
     "security": "yarn run nsp && yarn run retire",
     "nsp": "echo '--- :nsp: Checking node vulns' && npx nsp check",
-    "retire": "echo '--- :retirejs: Checking front-end vulns' && npx retire",
-    "postinstall": "./scripts/yarn-postinstall"
+    "retire": "echo '--- :retirejs: Checking front-end vulns' && npx retire"
   }
 }
