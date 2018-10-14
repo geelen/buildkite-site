@@ -14,8 +14,33 @@ const iconKey = "todo"
 const iconDownload = "todo"
 const buildkiteCustomers = "todo"
 
-const Testimonial = styled.div``
-const Feature = styled.div``
+const Testimonial = ({ words, by, image }) => (
+  <div className="my4 pt3 pb2">
+    <div className="max-width-2 mx-auto flex">
+      <div className="flex-none">
+        <span className="circle inline-block" style={{ width: 75, height: 75, background: `url(#{image})`, backgroundSize: "100%" }} />
+      </div>
+      <div className="mx2">
+        <p className="m0 dark-gray" style={{ lineHeight: 1.25 }}>{words}</p>
+        <p className="mt1 mb0 h5 black">— {by}</p>
+      </div>
+    </div>
+  </div>
+)
+
+const Feature = ({ name, description, icon }) => (
+  <div className="my1 flex px1">
+    <div className="flex-none" style={{ width: 30, paddingRight: 10 }}>
+      <span className="inline-block dark-gray" style={{ padding: 2, opacity: 0.35, marginTop: -2 }}>
+        {icon && <img src={icon} alt={name} />}
+      </span>
+    </div>
+    <div>
+      <h3 className="h4 m0 mb1 regular">{name}</h3>
+      <p className="h5 m0 dark-gray" style={{ lineHeight: 1.4 }}>{description}</p>
+    </div>
+  </div>
+)
 
 export default page((props) => (
   <Page
@@ -24,8 +49,8 @@ export default page((props) => (
     {...props}
   >
     <div className="center my4 py2">
-      <h1 className="m0 mb1 h2 light letter-spacing-1" style={{ color: "#7ca1dc" }}>Bamboo Cloud Sunset Migration Assistance</h1>
-      <p className="m0 max-width-2 mx-auto" style={{ lineHeight: 1.5 }}>We’re offering free support and an extended 30 day trial to help migrate your projects from Bamboo Cloud before it is discontinued. See our <a style={{ color: "#7ca1dc" }} href="/docs/guides/migrating-from-bamboo">migration guide</a> or <a href="mailto:support@buildkite.com" style={{ color: "#7ca1dc" }}>email our support team</a> for assistance.</p>
+      <h1 className="m0 mb1 h2 light letter-spacing-1">Bamboo Cloud Sunset Migration Assistance</h1>
+      <p className="m0 max-width-2 mx-auto" style={{ lineHeight: 1.5 }}>We’re offering free support and an extended 30 day trial to help migrate your projects from Bamboo Cloud before it is discontinued. See our <a href="/docs/guides/migrating-from-bamboo">migration guide</a> or <a href="mailto:support@buildkite.com">email our support team</a> for assistance.</p>
     </div>
 
     <Testimonial
