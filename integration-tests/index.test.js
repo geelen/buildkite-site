@@ -135,7 +135,9 @@ const pagesToCheck = {
   'Screencasts - Parallel Testing': `${HOST}/screencasts/parallel-testing`,
   'Screencasts': `${HOST}/screencasts`,
   'Security': `${HOST}/security`,
-  'Support': `${HOST}/support`
+  'Support': `${HOST}/support`,
+  'Migrate From (Redirect)': `${HOST}/migrate-from`,
+  'Migrate From - Bamboo': `${HOST}/migrate-from/bamboo`
 }
 
 Object.entries(pagesToCheck).forEach(([title, url]) => {
@@ -144,7 +146,7 @@ Object.entries(pagesToCheck).forEach(([title, url]) => {
       const response = await page.goto(url)
 
       const status = response.status()
-      assert(status === 200 || status === 304, `Response should be 200 or 304 but was ${response.status()}`)
+      assert(status === 200 || status === 304, `Response should be 200 or 304 but was ${status}`)
 
       await page.screenshot({ path: `${SCREENSHOTS_PATH}/${url.replace(`${HOST}/`, '').replace('/', '-')}.png` })
     })
