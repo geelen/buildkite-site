@@ -1,4 +1,5 @@
 version: '3.4'
+
 services:
   integration-tests:
     image: "buildkiteci/site:site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"

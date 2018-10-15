@@ -75,6 +75,10 @@ app.prepare()
       }
     })
 
+    server.get('/migrate-from', (req, res) => {
+      res.redirect(302, '/migrate-from/bamboo')
+    })
+
     server.get('/robots.txt', (req, res) => {
       res.set('Content-Type', 'text/plain')
 
