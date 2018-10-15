@@ -137,7 +137,8 @@ const pagesToCheck = {
   'Security': `${HOST}/security`,
   'Support': `${HOST}/support`,
   'Migrate From (Redirect)': `${HOST}/migrate-from`,
-  'Migrate From - Bamboo': `${HOST}/migrate-from/bamboo`
+  'Migrate From - Bamboo': `${HOST}/migrate-from/bamboo`,
+  'Migrate From - Bamboo Cloud (redirect)': `${HOST}/migrate-from/bamboo-cloud`
 }
 
 Object.entries(pagesToCheck).forEach(([title, url]) => {

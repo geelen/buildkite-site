@@ -79,6 +79,10 @@ app.prepare()
       res.redirect(302, '/migrate-from/bamboo')
     })
 
+    server.get('/migrate-from/bamboo-cloud', (req, res) => {
+      res.redirect(301, '/migrate-from/bamboo')
+    })
+
     server.get('/robots.txt', (req, res) => {
       res.set('Content-Type', 'text/plain')
 
