@@ -25,8 +25,9 @@ steps:
     plugins:
       docker-compose#v2.5.1:
         config: docker-compose.integration-tests.yml
-        push:
-          - integration-tests
+        build: integration-tests
+        image-repository: buildkiteci/site
+        image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"
 
   - wait
 
