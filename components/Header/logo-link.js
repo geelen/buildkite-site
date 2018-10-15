@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Head from 'next/head'
 
 import Link from 'components/Link'
 
@@ -73,10 +72,6 @@ const WordMark = styled.img`
 
 export default ({ loggedIn }) => (
   <>
-    <Head>
-      <link as="image" href={markSvgPath} rel="preload" type="image/svg+xml" crossOrigin="anonymous" />
-      <link as="image" href={wordmarkSvgPath} rel="preload" type="image/svg+xml" crossOrigin="anonymous" />
-    </Head>
     <Link prefetch href={loggedIn ? "/home" : "/"}>
       <LinkTag>
         <Mark src={markSvgPath} alt="Buildkite logo" />
