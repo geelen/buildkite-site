@@ -59,7 +59,7 @@ steps:
     plugins:
       docker-compose#v2.5.1:
         run: integration-tests
-        config: docker-compose.integration-tests.prod-image.yml
+        config: docker-compose.integration-tests.yml
 
   - wait
 

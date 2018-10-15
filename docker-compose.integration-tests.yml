@@ -6,3 +6,15 @@ services:
       context: .
       target: integration-tests
     image: "buildkiteci/site:site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"
+    volumes:
+      - "./integration-tests:/tests"
+    environment:
+      - DEBUG
+      - IGNORE_HTTPS_ERRORS=true
+    links:
+      - site
+
+  site:
+    build: .
+    expose:
+      - "3000"
