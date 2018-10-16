@@ -31,7 +31,7 @@
     "eslint-plugin-flowtype": "3.0.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-react": "7.11.1",
-    "webpack-bundle-analyzer": "3.0.2"
+    "webpack-bundle-analyzer": "3.0.3"
   },
   "scripts": {
     "lint": "eslint . --color",
