@@ -197,7 +197,7 @@ export default page((props) => (
         <FeatureCell>
           <FeatureTitle>Audit Logging</FeatureTitle>
           <FeatureDescription>
-            Available only on the Enterprise plan, audit logging keeps a record actions taken by users across your organization. The log can be explored via the web, or exported via the GraphQL API.
+            Available only on the Enterprise plan, audit logging keeps a record of actions taken by users across your organization. The log can be explored via the web, or exported via the GraphQL API.
           </FeatureDescription>
         </FeatureCell>
         <FeatureCell>
