@@ -85,7 +85,6 @@ steps:
       queue: deploy
     command: scripts/deploy-ecs
 
-    # 🤔
     # plugins:
     #   ecs-deploy#v1.0.0:
     #     cluster: site-example
