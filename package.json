@@ -10,7 +10,7 @@
     "cookie": "0.3.1",
     "express": "4.16.4",
     "file-loader": "2.0.0",
-    "jsesc": "2.5.1",
+    "jsesc": "2.5.2",
     "next": "7.0.2",
     "nprogress": "0.2.0",
     "query-string": "6.2.0",
