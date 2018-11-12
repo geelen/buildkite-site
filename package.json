@@ -43,5 +43,8 @@
     "security": "yarn run nsp && yarn run retire",
     "nsp": "echo '--- :nsp: Checking node vulns' && npx nsp check",
     "retire": "echo '--- :retirejs: Checking front-end vulns' && npx retire"
+  },
+  "resolutions": {
+    "**/lodash": "4.17.11"
   }
 }
