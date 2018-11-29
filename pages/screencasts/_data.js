@@ -104,7 +104,7 @@ export default [
     title: 'Docker',
     description: (
       <>
-        An introduction to using Docker in your Buildkite pipelines and how to use the Buildkite Docker plugins.
+        Building, testing and deploying Docker <br maxWidth="40em" />applications with Buildkite pipelines.
       </>
     ),
     duration: '102s',
