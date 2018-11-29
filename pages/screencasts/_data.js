@@ -104,7 +104,7 @@ export default [
     title: 'Docker',
     description: (
       <>
-        Docker,<Br maxWidth="40em" /> Docker
+        An introduction to using Docker in your Buildkite pipelines and how to use the Buildkite Docker plugins.
       </>
     ),
     duration: '102s',
@@ -114,7 +114,10 @@ export default [
       mp4: "https://d3lj8s78qytm30.cloudfront.net/docker.mp4"
     },
     relatedDocumentation: [
-      { title: 'Docker-Based Builds', url: '/docs/tutorials/docker-containerized-builds' }
+      { title: 'Docker-Based Builds', url: '/docs/tutorials/docker-containerized-builds' },
+      { title: 'Docker Compose Buildkite Plugin', url: 'https://github.com/buildkite-plugins/docker-compose-buildkite-plugin' },
+      { title: 'Docker Buildkite Plugin', url: 'https://github.com/buildkite-plugins/docker-buildkite-plugin' },
+      { title: 'Docker Login Buildkite Plugin', url: 'https://github.com/buildkite-plugins/docker-login-buildkite-plugin' }
     ],
     exampleCode: 'https://github.com/buildkite/screencast-examples/'
   }
