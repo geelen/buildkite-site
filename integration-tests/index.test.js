@@ -4,6 +4,7 @@
 const fs = require('fs')
 const assert = require('assert')
 const puppeteer = require('puppeteer')
+const { percySnapshot } = require('@percy/puppeteer')
 
 const HOST = (process.env.TEST_HOST || "http://site:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
@@ -98,6 +99,8 @@ describe('Home', () => {
     await page.screenshot({ path: `${SCREENSHOTS_PATH}/home-js-disabled.png` })
     const disabledImageStat = fs.statSync(`${SCREENSHOTS_PATH}/home-js-disabled.png`)
 
+    await percySnapshot(page, 'Home - JS Disabled')
+
     assert.equal(disabledImageStat.size, enabledImageStat.size)
   })
 })
@@ -164,6 +167,8 @@ Object.entries(pagesToCheck).forEach(([title, url]) => {
 
       const status = response.status()
       assert(status === 200 || status === 304, `Response should be 200 or 304 but was ${status}`)
+
+      await percySnapshot(page, title)
 
       await page.screenshot({ path: `${SCREENSHOTS_PATH}/${url.replace(`${HOST}/`, '').replace('/', '-')}.png` })
     })

@@ -10,6 +10,7 @@ services:
     environment:
       - DEBUG
       - IGNORE_HTTPS_ERRORS=true
+      - PERCY_TOKEN
     links:
       - site
 
