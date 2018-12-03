@@ -193,7 +193,7 @@ export default page((props) => (
           'Unlimited builds',
           'Unlimited artifacts',
           'Priority email support',
-          'Free 30 day trial',
+          'Free 14 day trial',
           'Teams permissions',
           'Single Sign On'
         ]}
@@ -218,7 +218,7 @@ export default page((props) => (
           'Unlimited builds',
           'Unlimited artifacts',
           'Priority email support',
-          'Free 30 day trial',
+          'Free 14 day trial',
           'Teams permissions',
           'Single Sign On',
           'Audit logging',
