@@ -49,7 +49,7 @@
     "security": "yarn audit && yarn run retire",
     "retire": "npx retire",
     "integration": "percy exec -- mocha --recursive --no-timeouts integration-tests/*",
-    "integration:production": "env PRODUCTION_HEADERS=true HOST=https://buildkite.com/ yarn run integration"
+    "integration:production": "env PRODUCTION_HEADERS=true TEST_HOST=https://buildkite.com/ yarn run integration"
   },
   "resolutions": {
     "**/lodash": "4.17.11"
