@@ -5,3 +5,4 @@ services:
     environment:
       - DEBUG
       - "TEST_HOST=https://buildkite.com"
+      - "PRODUCTION_HEADERS=true"

@@ -7,8 +7,8 @@ services:
       - "TEST_HOST=http://site:3000"
       - DEBUG
       - PERCY_TOKEN
-      - IGNORE_HTTPS_ERRORS=true
-      - PRODUCTION_HEADERS=true
+      - "IGNORE_HTTPS_ERRORS=true"
+      - "PRODUCTION_HEADERS=true"
       - BUILDKITE
       - BUILDKITE_COMMIT
       - BUILDKITE_BRANCH
