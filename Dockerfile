@@ -28,13 +28,10 @@ RUN  yarn install
 FROM development as test
 
 # -- Integration tests
-# Has headless chrome and puppeteer, and adds in Mocha so we can run our tests
-# directly inside it
 FROM     puppeteer AS integration-tests
-RUN      npm i mocha@5 @percy/agent @percy/puppeteer puppeteer
-ENV      PATH="${PATH}:/node_modules/.bin"
-WORKDIR  /tests
-CMD      ["percy", "exec", "--", "mocha", "--recursive", "--no-timeouts", "."]
+COPY     --from=development /app /app
+WORKDIR  /app
+CMD      ["yarn", "run", "integration"]
 
 # -- Default target
 FROM production

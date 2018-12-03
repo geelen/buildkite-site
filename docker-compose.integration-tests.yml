@@ -5,12 +5,11 @@ services:
     build:
       context: .
       target: integration-tests
-    volumes:
-      - "./integration-tests:/tests"
     environment:
       - DEBUG
-      - IGNORE_HTTPS_ERRORS=true
       - PERCY_TOKEN
+      - "TEST_HOST=http://site:3000"
+      - IGNORE_HTTPS_ERRORS=true
     links:
       - site
 

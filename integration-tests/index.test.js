@@ -6,9 +6,9 @@ const assert = require('assert')
 const puppeteer = require('puppeteer')
 const { percySnapshot } = require('@percy/puppeteer')
 
-const HOST = (process.env.TEST_HOST || "http://site:3000").replace(/\/$/, '')
+const HOST = (process.env.TEST_HOST || "http://localhost:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
-const SCREENSHOTS_PATH = './screenshots'
+const SCREENSHOTS_PATH = `${__dirname}/screenshots`
 const IGNORE_HTTPS_ERRORS = process.env.IGNORE_HTTPS_ERRORS === 'true'
 
 let browser
@@ -84,9 +84,12 @@ describe('Home', () => {
 
   it('has the security headers', async() => {
     const headers = response.headers()
-    assert.equal(headers['strict-transport-security'], 'max-age=31536000; includeSubdomains; preload')
     assert.equal(headers['x-frame-options'], 'SAMEORIGIN')
     assert.equal(headers['x-xss-protection'], '1; mode=block')
+    if (process.env.PRODUCTION_HEADERS) {
+      assert.equal(headers['content-security-policy'], "default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; img-src 'self' 'unsafe-inline' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; media-src 'self' https://d3lj8s78qytm30.cloudfront.net")
+      assert.equal(headers['strict-transport-security'], 'max-age=31536000; includeSubdomains; preload')
+    }
   })
 
   it('renders the same page with and without Javascript', async() => {
@@ -98,8 +101,6 @@ describe('Home', () => {
     await page.goto(`${HOST}/`)
     await page.screenshot({ path: `${SCREENSHOTS_PATH}/home-js-disabled.png` })
     const disabledImageStat = fs.statSync(`${SCREENSHOTS_PATH}/home-js-disabled.png`)
-
-    await percySnapshot(page, 'Home - JS Disabled')
 
     assert.equal(disabledImageStat.size, enabledImageStat.size)
   })

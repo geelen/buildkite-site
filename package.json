@@ -24,6 +24,8 @@
     "styled-transition-group": "1.0.0"
   },
   "devDependencies": {
+    "@percy/agent": "^0.1.4",
+    "@percy/puppeteer": "^1.0.0-beta.5",
     "babel-eslint": "10.0.1",
     "eslint": "5.11.1",
     "eslint-import-resolver-babel-module": "5.0.0-beta.1",
@@ -33,6 +35,8 @@
     "eslint-plugin-react": "7.12.0",
     "js-yaml": "3.12.0",
     "node-fetch": "2.3.0",
+    "mocha": "^5.2.0",
+    "puppeteer": "^1.11.0",
     "webpack-bundle-analyzer": "3.0.3"
   },
   "scripts": {
@@ -43,7 +47,9 @@
     "start": "node server.js",
     "bundle-analyze": "NODE_ENV=production ANALYZE=1 next build",
     "security": "yarn audit && yarn run retire",
-    "retire": "npx retire"
+    "retire": "npx retire",
+    "integration": "percy exec -- mocha --recursive --no-timeouts integration-tests/*",
+    "integration:production": "env PRODUCTION_HEADERS=true HOST=https://buildkite.com/ yarn run integration"
   },
   "resolutions": {
     "**/lodash": "4.17.11"
