@@ -104,7 +104,7 @@ export default [
     title: 'Docker',
     description: (
       <>
-        Building, testing and deploying Docker <br maxWidth="40em" />applications with Buildkite pipelines.
+        Building, testing and deploying Docker <br maxWidth="40em" />images with Buildkite pipelines.
       </>
     ),
     duration: '102s',
