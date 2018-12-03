@@ -12,6 +12,9 @@ import stepTypesThumbnail from '../../assets/images/screencasts/step-types-frame
 import prflowPoster from '../../assets/images/screencasts/pr-flow-frame.poster.jpg'
 import prflowThumbnail from '../../assets/images/screencasts/pr-flow-frame.thumbnail.jpg'
 
+import dockerPoster from '../../assets/images/screencasts/docker.poster.jpg'
+import dockerThumbnail from '../../assets/images/screencasts/docker.thumbnail.jpg'
+
 export default [
   {
     pathname: '/screencasts/parallel-testing',
@@ -93,6 +96,28 @@ export default [
     },
     relatedDocumentation: [
       { title: 'Getting Started', url: '/docs/quickstart/getting-started' }
+    ],
+    exampleCode: 'https://github.com/buildkite/screencast-examples/'
+  },
+  {
+    pathname: '/screencasts/docker',
+    title: 'Docker',
+    description: (
+      <>
+        Building, testing and deploying Docker <br maxWidth="40em" />images with Buildkite pipelines.
+      </>
+    ),
+    duration: '102s',
+    images: { poster: dockerPoster, thumbnail: dockerThumbnail },
+    videos: {
+      webm: "https://d3lj8s78qytm30.cloudfront.net/docker.webm",
+      mp4: "https://d3lj8s78qytm30.cloudfront.net/docker.mp4"
+    },
+    relatedDocumentation: [
+      { title: 'Docker-Based Builds', url: '/docs/tutorials/docker-containerized-builds' },
+      { title: 'Docker Compose Buildkite Plugin', url: 'https://github.com/buildkite-plugins/docker-compose-buildkite-plugin' },
+      { title: 'Docker Buildkite Plugin', url: 'https://github.com/buildkite-plugins/docker-buildkite-plugin' },
+      { title: 'Docker Login Buildkite Plugin', url: 'https://github.com/buildkite-plugins/docker-login-buildkite-plugin' }
     ],
     exampleCode: 'https://github.com/buildkite/screencast-examples/'
   }
