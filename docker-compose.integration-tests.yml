@@ -6,10 +6,15 @@ services:
       context: .
       target: integration-tests
     environment:
+      - "TEST_HOST=http://site:3000"
       - DEBUG
       - PERCY_TOKEN
-      - "TEST_HOST=http://site:3000"
       - IGNORE_HTTPS_ERRORS=true
+      - BUILDKITE
+      - BUILDKITE_COMMIT
+      - BUILDKITE_BRANCH
+      - BUILDKITE_PULL_REQUEST
+      - BUILDKITE_BUILD_ID
     links:
       - site
 
