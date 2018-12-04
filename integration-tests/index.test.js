@@ -44,8 +44,8 @@ beforeEach(async() => {
   })
 
   // We need to rewrite all responses that have a CSP header to allow connect to the percy agent
-  // page.setRequestInterception(true)
-  // page.on('request', percyCSPRequestInterceptor)
+  page.setRequestInterception(true)
+  page.on('request', percyCSPRequestInterceptor)
 })
 
 afterEach(async() => {
