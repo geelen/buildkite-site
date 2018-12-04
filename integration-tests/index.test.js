@@ -40,13 +40,6 @@ beforeEach(async() => {
     // We can't assert.fail from here, so we store the messages for the afterEach
     consoleMessages.push(`${msg.type()}: ${msg.text()}`)
   })
-
-  // We need to rewrite all responses that have a CSP header to allow connect to the percy agent
-  page.setRequestInterception(true)
-  page.on('request', (interceptedRequest) => {
-    console.log(`Intercepted`, { url: interceptedRequest.url(), method: interceptedRequest.method() })
-    interceptedRequest.continue()
-  })
 })
 
 afterEach(async() => {
