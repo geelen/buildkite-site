@@ -37,6 +37,7 @@
     "node-fetch": "2.3.0",
     "mocha": "^5.2.0",
     "puppeteer": "^1.11.0",
+    "request": "^2.88.0",
     "webpack-bundle-analyzer": "3.0.3"
   },
   "scripts": {
