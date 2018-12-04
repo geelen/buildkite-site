@@ -6,34 +6,32 @@ const request = require('request')
 // gear to capture the requests, fetch the response ourselves, and rewrite it on
 // the way through.
 module.exports = function percyCSPRequestInterceptor(interceptedRequest) {
-  console.log(`Intercepted`, { url: interceptedRequest.url(), method: interceptedRequest.method() })
-  interceptedRequest.continue()
-  // if (interceptedRequest.resourceType() === 'document' && interceptedRequest.method() === 'GET') {
-  //   request({
-  //     uri: interceptedRequest.url(),
-  //     method: interceptedRequest.method(),
-  //     headers: interceptedRequest.headers(),
-  //     body: interceptedRequest.postData()
-  //   }, (error, response, body) => {
-  //     console.log(`Received ${response.statusCode} response`)
-  //     if (error) {
-  //       interceptedRequest.abort()
-  //     } else {
-  //       const cspHeader = response.headers['content-security-policy']
-  //       if (cspHeader) {
-  //         // Add the percy agent to the list of allowed connect sources
-  //         response.headers['content-security-policy'] = cspHeader.replace('connect-src ', 'connect-src http://localhost:5338 ')
-  //         console.log('Rewrote CSP header')
-  //       }
-  //       interceptedRequest.respond({
-  //         status: response.statusCode,
-  //         contentType: response.headers['content-type'],
-  //         headers: response.headers,
-  //         body: body
-  //       })
-  //     }
-  //   })
-  // } else {
-  //   interceptedRequest.continue()
-  // }
+  if (interceptedRequest.resourceType() === 'document' && interceptedRequest.method() === 'GET') {
+    request({
+      uri: interceptedRequest.url(),
+      method: interceptedRequest.method(),
+      headers: interceptedRequest.headers(),
+      body: interceptedRequest.postData()
+    }, (error, response, body) => {
+      console.log(`Received ${response.statusCode} response`)
+      if (error) {
+        interceptedRequest.abort()
+      } else {
+        const cspHeader = response.headers['content-security-policy']
+        if (cspHeader) {
+          // Add the percy agent to the list of allowed connect sources
+          response.headers['content-security-policy'] = cspHeader.replace('connect-src ', 'connect-src http://localhost:5338 ')
+          console.log('Rewrote CSP header')
+        }
+        interceptedRequest.respond({
+          status: response.statusCode,
+          contentType: response.headers['content-type'],
+          headers: response.headers,
+          body: body
+        })
+      }
+    })
+  } else {
+    interceptedRequest.continue()
+  }
 }

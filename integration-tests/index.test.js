@@ -6,8 +6,6 @@ const assert = require('assert')
 const puppeteer = require('puppeteer')
 const { percySnapshot } = require('@percy/puppeteer')
 
-const percyCSPRequestInterceptor = require('./lib/percy-csp-request-interceptor')
-
 const HOST = (process.env.TEST_HOST || "http://localhost:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
 const SCREENSHOTS_PATH = `${__dirname}/screenshots`
@@ -45,7 +43,10 @@ beforeEach(async() => {
 
   // We need to rewrite all responses that have a CSP header to allow connect to the percy agent
   page.setRequestInterception(true)
-  page.on('request', percyCSPRequestInterceptor)
+  page.on('request', (interceptedRequest) => {
+    console.log(`Intercepted`, { url: interceptedRequest.url(), method: interceptedRequest.method() })
+    interceptedRequest.continue()
+  })
 })
 
 afterEach(async() => {
