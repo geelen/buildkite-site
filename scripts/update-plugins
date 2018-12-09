@@ -27,13 +27,13 @@ query {
             text
           }
         }
-        # repositoryTopics(first: 10) {
-        #   nodes {
-        #     topic {
-        #       name
-        #     }
-        #   }
-        # }
+        repositoryTopics(first: 10) {
+          nodes {
+            topic {
+              name
+            }
+          }
+        }
         releases(first: 1, orderBy: {field:NAME, direction:DESC}) {
           nodes {
             publishedAt
