@@ -70,6 +70,7 @@ export const colors = {
 }
 
 export const fontSizes = {
+  tiny: '14px',
   small: '16px',
   regular: '18px',
   large: '24px',
@@ -122,10 +123,14 @@ export const textStyles = {
     color: ${(props) => props.active ? colors.text.green : 'black'};
     transition: color ${timings.color};
     will-change: color;
-
     &:hover, &:focus {
       color: ${colors.text.green};
     }
+  `,
+  smallAllCaps: css`
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
   `
 }
 

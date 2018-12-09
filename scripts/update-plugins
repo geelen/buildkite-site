@@ -1,0 +1,1135 @@
+#!/usr/bin/env node
+/* eslint-disable no-console */
+/* global __dirname */
+
+const fs = require('fs')
+const path = require('path')
+const yaml = require('js-yaml')
+
+// TODO: Make this automated, and paginated
+// eslint-disable-next-line no-unused-vars
+const gql = `
+query { 
+  search(query:"topic:buildkite-plugin", first: 100, type:REPOSITORY) {
+    repositoryCount
+    nodes {
+      ...on Repository {
+        name
+        stargazers {
+          totalCount
+        }
+        owner {
+          login
+          avatarUrl
+        }
+        object(expression:"master:plugin.yml") {
+          ... on Blob{
+            text
+          }
+        }
+        # repositoryTopics(first: 10) {
+        #   nodes {
+        #     topic {
+        #       name
+        #     }
+        #   }
+        # }
+        releases(first: 1, orderBy: {field:NAME, direction:DESC}) {
+          nodes {
+            publishedAt
+            tag {
+              name
+            }
+          }
+        }
+        pushedAt
+      }
+    }
+  }
+}
+`
+
+const results = {
+  "data": {
+    "search": {
+      "repositoryCount": 49,
+      "nodes": [
+        {
+          "name": "docker-compose-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 51
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Docker Compose\ndescription: Run any CI step in isolated Docker containers using Docker Compose\nauthor: https://github.com/buildkite\nrequirements:\n  - docker\n  - docker-compose\nconfiguration:\n  properties:\n    run:\n      type: string\n    build:\n      type: [ string, array ]\n      minimum: 1\n    push:\n      type: [ string, array ]\n      minimum: 1\n    pull:\n      type: [ string, array ]\n      minimum: 1\n    config:\n      type: [ string, array ]\n      minimum: 1\n    env:\n      type: [ string, array ]\n      minimum: 1\n    environment:\n      type: [ string, array ]\n      minimum: 1\n    args:\n      type: [ string, array ]\n      minimum: 1\n    image-repository:\n      type: string\n    image-name:\n      type: string\n    pull-retries:\n      type: integer\n    push-retries:\n      type: integer\n    cache-from:\n      type: [ string, array ]\n      minimum: 1\n    volumes:\n      type: [ string, array ]\n      minimum: 1\n    leave-volumes:\n      type: boolean\n    no-cache:\n      type: boolean\n    tty:\n      type: boolean\n    dependencies:\n      type: boolean\n    ansi:\n      type: boolean\n    verbose:\n      type: boolean\n    workdir:\n      type: string\n  oneOf:\n    - required:\n      - run\n    - required:\n      - build\n    - required:\n      - push\n  additionalProperties: false\n  dependencies:\n    pull: [ run ]\n    image-repository: [ build ]\n    image-name: [ build ]\n    env: [ run ]\n    environment: [ run ]\n    pull-retries: [ build, run ]\n    push-retries: [ push ]\n    cache-from: [ build ]\n    volumes: [ run ]\n    leave-volumes: [ run ]\n    no-cache: [ build ]\n    dependencies: [ run ]\n    ansi: [ run ]\n    tty: [ run ]\n    workdir: [ run ]\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-07-20T09:42:13Z",
+                "tag": {
+                  "name": "v2.5.1"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-28T09:17:38Z"
+        },
+        {
+          "name": "monorepo-diff-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 25
+          },
+          "owner": {
+            "login": "chronotc",
+            "avatarUrl": "https://avatars2.githubusercontent.com/u/7519144?v=4"
+          },
+          "object": {
+            "text": "name: Monorepo Diff\ndescription: Trigger pipelines on changes in watched folders\nauthor: https://github.com/chronotc\nrequirements:\n  - git\nconfiguration:\n  properties:\n    diff:\n      type: string\n    watch:\n      type: array\n      properties:\n        path:\n          type: string\n        config:\n          type: object\n          properties:\n            trigger:\n              type: string\n            async:\n              type: boolean\n            build:\n              type: object\n              properties:\n                message:\n                  type: string\n                commit:\n                  type: string\n                branch:\n                  type: string\n                env:\n                  type: array\n    wait:\n      type: boolean\n    hooks:\n      type: array\n      properties:\n        command:\n          type: string\n  required:\n    - watch"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-10-04T13:15:38Z",
+                "tag": {
+                  "name": "v1.0.0"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-10-04T13:21:38Z"
+        },
+        {
+          "name": "docker-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 18
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Docker\ndescription: Runs your build steps in Docker containers\nauthor: https://github.com/buildkite\nrequirements:\n  - docker\nconfiguration:\n  properties:\n    additional-groups:\n      type: array\n    always-pull:\n      type: boolean\n    command:\n      type: array\n    debug:\n      type: boolean\n    entrypoint:\n      type: string\n    environment:\n      type: array\n    image:\n      type: string\n    mount-buildkite-agent:\n      type: boolean\n    network:\n      type: string\n    runtime:\n      type: string\n    shell:\n      type: [boolean, array]\n    tty:\n      type: boolean\n    user:\n      type: string\n    volumes:\n      type: [boolean, array]\n    workdir:\n      type: string\n    propagate-environment:\n      type: boolean\n    privileged:\n      type: boolean\n  required:\n    - image\n  additionalProperties: false\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-11-23T02:41:36Z",
+                "tag": {
+                  "name": "v2.1.0"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-23T02:41:40Z"
+        },
+        {
+          "name": "test-summary-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 15
+          },
+          "owner": {
+            "login": "bugcrowd",
+            "avatarUrl": "https://avatars1.githubusercontent.com/u/3765077?v=4"
+          },
+          "object": {
+            "text": "name: Test Summary\ndescription: Collates test results as a buildkite annotation\nauthor: \"@tessereth\"\nrequirements:\n  - docker\nconfiguration:\n  properties:\n    inputs:\n      type: array\n      items:\n        type: object\n        properties:\n          label:\n            type: string\n          artifact_path:\n            type: string\n          type:\n            type: string\n            enum:\n              - junit\n              - checkstyle\n              - tap\n              - oneline\n          encoding:\n            type: string\n          strip_colors:\n            type: boolean\n          crop:\n            type: object\n            properties:\n              start:\n                type: number\n              end:\n                type: number\n          summary:\n            type: object\n            properties:\n              format:\n                type: string\n              details_regex:\n                type: string\n            additionalProperties: false\n        required:\n          - label\n          - artifact_path\n          - type\n        additionalProperties: false\n    formatter:\n      type: object\n      properties:\n        type:\n          type: string\n          enum:\n            - summary\n            - details\n        show_first:\n          type: number\n      additionalProperties: false\n    context:\n      type: string\n    style:\n      type: string\n    fail_on_error:\n      type: boolean\n  required:\n    - inputs\n  additionalProperties: false\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-11-19T23:25:03Z",
+                "tag": {
+                  "name": "v1.7.2"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-19T23:24:11Z"
+        },
+        {
+          "name": "aws-assume-role-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 14
+          },
+          "owner": {
+            "login": "cultureamp",
+            "avatarUrl": "https://avatars2.githubusercontent.com/u/141531?v=4"
+          },
+          "object": {
+            "text": "name: AWS Assume Role\ndescription: Assumes an IAM Role before running the build command.\nauthor: https://github.com/cultureamp\nrequirements:\n  - aws\nconfiguration:\n  properties:\n    duration:\n      type: string\n    role:\n      type: string\n  required:\n    - role\n  additionalProperties: false\n"
+          },
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-10-29T05:43:56Z"
+        },
+        {
+          "name": "ecr-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 10
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: ECR\ndescription: Login to ECR in your build steps\nauthor: https://github.com/lox\nrequirements:\n  - curl\n  - bash\n  - aws\nconfiguration:\n  properties:\n    login:\n      type: boolean\n    account-ids:\n      type:\n        - string\n        - array\n      minItems: 1\n    no-include-email:\n      type: boolean\n    region:\n      type: string\n  required:\n    - login"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-05-01T11:48:04Z",
+                "tag": {
+                  "name": "v1.1.4"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-10-17T09:03:30Z"
+        },
+        {
+          "name": "github-merged-pr-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 7
+          },
+          "owner": {
+            "login": "seek-oss",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/22927121?v=4"
+          },
+          "object": {
+            "text": "name: github-merged-pr\ndescription: Checks out the GitHub PR merge ref rather than the branch HEAD\nauthor: https://github.com/seek-oss\nrequirements: []\nconfiguration:\n  properties:\n    cd:\n      type: string\n  required: []\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-06-13T00:20:05Z",
+                "tag": {
+                  "name": "v0.0.5"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-15T20:07:47Z"
+        },
+        {
+          "name": "artifacts-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 5
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Artifacts\ndescription: Upload and download artifacts\nauthor: https://github.com/buildkite\nrequirements: []\nconfiguration:\n  properties:\n    upload:\n      type: [ string, array ]\n    download:\n      type: [ string, array ]\n    step:\n      type: string\n    build:\n      type: string\n  oneOf:\n    - required:\n      - upload\n    - required:\n      - download\n  additionalProperties: false"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-06-26T03:03:55Z",
+                "tag": {
+                  "name": "v1.2.0"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-29T20:57:09Z"
+        },
+        {
+          "name": "aws-sm-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 4
+          },
+          "owner": {
+            "login": "seek-oss",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/22927121?v=4"
+          },
+          "object": {
+            "text": "name: aws-sm\ndescription: Read secrets from AWS Secrets Manager\nauthor: https://github.com/seek-oss\nrequirements:\n  - docker\n  - jq\nconfiguration:\n  properties:\n    env:\n      type: object\n    file:\n      type: array\n  required: []\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-08-31T04:57:43Z",
+                "tag": {
+                  "name": "v0.0.5"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-08T07:08:25Z"
+        },
+        {
+          "name": "git-commit-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 4
+          },
+          "owner": {
+            "login": "thedyrt",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/16685518?v=4"
+          },
+          "object": {
+            "text": "name: Git Commit\ndescription: A Buildkite plugin to commit and push the results of a command to a git repository.\nauthor: https://github.com/reidab\nrequirements: []\nconfiguration:\n  properties:\n    add:\n      type: string\n    branch:\n      type: string\n    create-branch:\n      type: boolean\n    message:\n      type: string\n    remote:\n      type: string\n    user:\n      type: object\n      properties:\n        email:\n          type: string\n        name:\n          type: string\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-06-09T06:36:29Z",
+                "tag": {
+                  "name": "v0.3.0"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-06-09T06:34:39Z"
+        },
+        {
+          "name": "junit-annotate-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 3
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Junit Annotate\ndescription: Annotates your build using JUnit XML reports\nauthor: https://github.com/buildkite\nrequirements:\n  - docker\nconfiguration:\n  properties:\n    artifacts:\n      type: string\n    job-uuid-file-pattern:\n      type: string\n    failure-format:\n      type: string\n      enum:\n        - classname\n        - file\n    fail-build-on-error:\n      type: boolean\n  required:\n    - artifacts\n  additionalProperties: false\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-11-28T09:39:48Z",
+                "tag": {
+                  "name": "v1.5.0"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-28T09:39:53Z"
+        },
+        {
+          "name": "docker-login-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 3
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Docker Login\ndescription: Login to Docker registries in your build steps\nauthor: https://github.com/lox\nrequirements:\n  - bash\n  - docker\nconfiguration:\n  properties:\n    username:\n      type: string\n    server:\n      type: string\n  required:\n    - username"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-08-27T23:05:07Z",
+                "tag": {
+                  "name": "v2.0.1"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-21T13:17:18Z"
+        },
+        {
+          "name": "plugin-linter-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 3
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Plugin Linter\ndescription: A plugin to lint your Buildkite plugins\nauthor: \"https://github.com/buildkite\"\nrequirements:\n  - docker\nconfiguration:\n  properties:\n    id:\n      type: string\n    readme:\n      type: string\n  required:\n    - id\n  additionalProperties: false"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-05-15T11:25:54Z",
+                "tag": {
+                  "name": "v2.0.0"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-29T21:37:11Z"
+        },
+        {
+          "name": "shellcheck-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 3
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Shellcheck\ndescription: Run shellcheck over your shell scripts\nauthor: https://github.com/lox\nrequirements:\n  - bash\n  - docker\nconfiguration:\n  properties:\n    files:\n      type: [string, array]\n      minItems: 1\n    options:\n      type: [string, array]\n      minItems: 1\n  required:\n    - files"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-11-21T12:33:27Z",
+                "tag": {
+                  "name": "v1.1.2"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-21T12:33:32Z"
+        },
+        {
+          "name": "gopath-checkout-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 3
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: GOPATH Checkout\ndescription: Checkout your code into the correct GOPATH, for running Go commands directly on an agent machine\nauthor: https://github.com/buildkite\nrequirements:\n  - go\nconfiguration:\n  properties:\n    import:\n      type: string\n  additionalProperties: false"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-06-13T13:21:43Z",
+                "tag": {
+                  "name": "v1.0.1"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-21T13:21:28Z"
+        },
+        {
+          "name": "ecs-deploy-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 3
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: ECS Deploy\ndescription: Deploy to ECS\nauthor: https://github.com/buildkite\nrequirements:\n  - aws\n  - jq\nconfiguration:\n  properties:\n    cluster:\n      type: string\n    service:\n      type: string\n    task-definition:\n      type: string\n    task-family:\n      type: string\n    image:\n      type: string\n  required:\n    - cluster\n    - service\n    - task-definition\n    - task-family\n    - image"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": null,
+                "tag": null
+              }
+            ]
+          },
+          "pushedAt": "2018-11-21T13:19:36Z"
+        },
+        {
+          "name": "anka-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 3
+          },
+          "owner": {
+            "login": "chef",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/29740?v=4"
+          },
+          "object": {
+            "text": "name: Anka\ndescription: Runs your build steps in Anka virtual machines\nauthor: https://github.com/chef\nrequirements:\n  - anka\nconfiguration:\n  properties:\n    vm-name:\n      type: string\n    vm-registry-tag:\n      type: string\n    vm-registry-version:\n      type: integer\n    always-pull:\n      type: string\n    inherit-environment-vars:\n      type: boolean\n    environment-file:\n      type: string\n    no-volume:\n      type: boolean\n    volume:\n      type: string\n    wait-network:\n      type: boolean\n    workdir:\n      type: string\n    debug:\n      type: boolean\n  required:\n    - vm-name\nadditionalProperties: false\n"
+          },
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-10-04T20:50:09Z"
+        },
+        {
+          "name": "sauce-connect-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 2
+          },
+          "owner": {
+            "login": "joscha",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/188038?v=4"
+          },
+          "object": {
+            "text": "name: Sauce Connect\ndescription: Runs sauce-connect for a given step\nauthor: https://github.com/joscha\nrequirements:\n  - buildkite-agent\npublic: true\nconfiguration:\n  properties:\n    tunnel-identifier:\n      type: string\n    sauce-connect-version:\n      type: string\n  required: []\n  additionalProperties: false"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-05-09T14:29:52Z",
+                "tag": {
+                  "name": "v2.0.2"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-08-21T03:52:03Z"
+        },
+        {
+          "name": "codeclimate-test-reporter-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 2
+          },
+          "owner": {
+            "login": "jobready",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/286351?v=4"
+          },
+          "object": {
+            "text": "name: Code Climate Test Reporter\ndescription: A Buildkite plugin to report coverage with the Code Climate test reporter\nauthor: https://github.com/jobready\nrequirements: []\nconfiguration:\n  properties:\n    artifact:\n      type: string\n    input_type:\n      type: string\n    prefix:\n      type: string\n    version:\n      type: string\n    parts:\n      type: integer\n    debug:\n      type: string\n  required: [artifact, input_type]\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-01-23T03:15:15Z",
+                "tag": {
+                  "name": "v1.0"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-05-15T13:48:50Z"
+        },
+        {
+          "name": "skip-checkout-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 2
+          },
+          "owner": {
+            "login": "thedyrt",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/16685518?v=4"
+          },
+          "object": {
+            "text": "name: Skip Checkout\ndescription: Skips the default Buildkite and optionally changes to a specified directory\nauthor: https://github.com/reidab\nrequirements: []\nconfiguration:\n  properties:\n    cd:\n      type: string\n  required: []\n"
+          },
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-07-12T21:36:04Z"
+        },
+        {
+          "name": "golang-cross-compile-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 2
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Golang Build\ndescription: Building golang binaries against different versions of golang\nauthor: https://github.com/buildkite\nrequirements:\n  - docker\nconfiguration:\n  properties:\n    build:\n      type: string\n    import:\n      type: string\n    targets:\n      type: array\n      items:\n        type: object\n        properties:\n          version:\n            type: string\n          goos:\n            type: string\n          goarch:\n            type: string\n          goarm:\n            type: number\n          gomodule:\n            type: string\n  required: []\n  additionalProperties: false\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-09-29T03:04:11Z",
+                "tag": {
+                  "name": "v1.3.0"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-21T13:23:01Z"
+        },
+        {
+          "name": "github-pull-request-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 2
+          },
+          "owner": {
+            "login": "envato",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/14786?v=4"
+          },
+          "object": {
+            "text": "name: Github Pull Request\ndescription: A Buildkite plugin that opens Github pull requests\nauthor: https://github.com/envato\nrequirements:\n  - curl\n  - jq\nconfiguration:\n  properties:\n    base:\n      type: string\n    body:\n      type: string\n    head:\n      type: string\n    labels:\n      type: [ string, array ]\n    repo:\n      type: string\n    reviewers:\n      type: [ string, array ]\n    team-reviewers:\n      type: [ string, array ]\n    title:\n      type: string\n  required:\n    - title\n\n"
+          },
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-11-24T10:13:53Z"
+        },
+        {
+          "name": "win-docker-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 2
+          },
+          "owner": {
+            "login": "zsims",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/1764368?v=4"
+          },
+          "object": {
+            "text": "name: win-docker\ndescription: Provides a way for working with Windows Docker containers from a Linux Host. Designed to work with the Elastic CI stack\nauthor: https://github.com/zsims\nrequirements: []\nconfiguration:\n  properties:\n    aws_instance_type:\n      type: string\n  required:\n    - host\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-07-15T23:41:12Z",
+                "tag": {
+                  "name": "v0.0.5"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-07-16T00:41:54Z"
+        },
+        {
+          "name": "detect-clowns-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 1
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Detect Clowns\ndescription: Detects clown emojis in your codebase\nauthor: https://github.com/buildkite\nrequirements: []\nconfiguration:\n  properties: {}\n  additionalProperties: false"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": null,
+                "tag": null
+              }
+            ]
+          },
+          "pushedAt": "2018-11-29T13:10:53Z"
+        },
+        {
+          "name": "buildkite-plugin-tester",
+          "stargazers": {
+            "totalCount": 1
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": null,
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-08-28T07:13:50Z"
+        },
+        {
+          "name": "golang-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 1
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Golang\ndescription: Run a command in a specific golang docker container\nauthor: https://github.com/buildkite\nrequirements:\n  - docker\nconfiguration:\n  properties:\n    version:\n      type: string\n    import:\n      type: string\n    environment:\n      type: array\n  required: []\n\n"
+          },
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-11-21T13:18:44Z"
+        },
+        {
+          "name": "kustomize-job-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "MYOB-Technology",
+            "avatarUrl": "https://avatars1.githubusercontent.com/u/1910591?v=4"
+          },
+          "object": {
+            "text": "name: kustomize-job\ndescription: Runs your build step as a kustomized kubernetes job\nauthor: https://github.com/pr8kerl\nrequirements:\n  - kubectl\n  - kustomize\nconfiguration:\n  properties:\n    name:\n      type: string\n    overlay:\n      type: array\n    debug:\n      type: string\n    secret-name:\n      type: string\n    secret-key:\n      type: string\n    timeout:\n      type: integer\n    init-image:\n      type: string\n    init-image-tag:\n      type: string\n  required:\n    - name\n    - overlay\n  additionalProperties: false\n"
+          },
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-10-29T00:32:08Z"
+        },
+        {
+          "name": "git-clean-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Git Clean\ndescription: Overrides the git clean flags for a job.\nauthor: https://github.com/buildkite\nrequirements: []\nconfiguration:\n  properties:\n    flags:\n      type: string\n    additionalProperties: false\n  required:\n    - flags\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-06-18T08:06:08Z",
+                "tag": {
+                  "name": "v0.0.1"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-28T10:12:46Z"
+        },
+        {
+          "name": "sentry-dsym-upload-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "cysp",
+            "avatarUrl": "https://avatars1.githubusercontent.com/u/742696?v=4"
+          },
+          "object": null,
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2017-08-21T08:48:54Z"
+        },
+        {
+          "name": "bundle-update-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "envato",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/14786?v=4"
+          },
+          "object": {
+            "text": "name: Bundle Update\ndescription: A Buildkite plugin that runs bundle update\nauthor: https://github.com/envato\nrequirements:\n  - docker\nconfiguration:\n  properties:\n    image:\n      type: string\n    pull-request:\n      type: integer\n      minimum: 1\n    pull-request-metadata-key:\n      type: string\n    repository:\n      type: string\n    update:\n      type: boolean\n  oneOf:\n    - required:\n      - annotate\n    - required:\n      - update\n  dependencies:\n    image: [ update ]\n    pull-request: [ annotate ]\n    repository: [ annotate ]\n"
+          },
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-11-28T06:24:14Z"
+        },
+        {
+          "name": "change-directory-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "thedyrt",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/16685518?v=4"
+          },
+          "object": {
+            "text": "name: Change Directory\ndescription: Changes the working directory before running command\nauthor: https://github.com/reidab\nrequirements: []\nconfiguration:\n  properties:\n    cd:\n      type: string\n  required:\n    - cd\n"
+          },
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-07-12T21:35:56Z"
+        },
+        {
+          "name": "aptly-publish-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "opx-infra",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/38967315?v=4"
+          },
+          "object": null,
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-11-28T23:34:20Z"
+        },
+        {
+          "name": "kustomize-job-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "pr8kerl",
+            "avatarUrl": "https://avatars2.githubusercontent.com/u/3182572?v=4"
+          },
+          "object": {
+            "text": "name: kustomize-job\ndescription: Runs your build step as a kustomized kubernetes job\nauthor: https://github.com/pr8kerl\nrequirements:\n  - kubectl\n  - kustomize\nconfiguration:\n  properties:\n    name:\n      type: string\n    overlay:\n      type: array\n    debug:\n      type: string\n    secret-name:\n      type: string\n    secret-key:\n      type: string\n    timeout:\n      type: integer\n    init-image:\n      type: string\n    init-image-tag:\n      type: string\n  required:\n    - name\n    - overlay\n  additionalProperties: false\n"
+          },
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-10-29T00:24:37Z"
+        },
+        {
+          "name": "smoke-test-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "opx-infra",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/38967315?v=4"
+          },
+          "object": null,
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-10-19T21:35:42Z"
+        },
+        {
+          "name": "hockeyapp-upload-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "cysp",
+            "avatarUrl": "https://avatars1.githubusercontent.com/u/742696?v=4"
+          },
+          "object": null,
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2017-07-03T06:08:59Z"
+        },
+        {
+          "name": "rsync-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "uw-ipd",
+            "avatarUrl": "https://avatars2.githubusercontent.com/u/39229126?v=4"
+          },
+          "object": {
+            "text": "name: Artifacts\ndescription: Upload and download artifacts\nauthor: https://github.com/buildkite\nrequirements: []\nconfiguration:\n  properties:\n    upload:\n      type: [ string, array ]\n    download:\n      type: [ string, array ]\n    step:\n      type: string\n    build:\n      type: string\n  oneOf:\n    - required:\n      - upload\n    - required:\n      - download\n  additionalProperties: false"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-07-27T20:58:55Z",
+                "tag": {
+                  "name": "v0.1"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-07-27T20:58:55Z"
+        },
+        {
+          "name": "library-example-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Library Example\ndescription: An example plugin for adding your own library of commands to expose to build jobs\nauthor: https://github.com/buildkite\nrequirements:\n  - docker\nconfiguration:\n  properties: {}\n  additionalProperties: false\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-07-06T01:38:49Z",
+                "tag": {
+                  "name": "v1.0.0"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-21T13:22:24Z"
+        },
+        {
+          "name": "github-status-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "praveensastry",
+            "avatarUrl": "https://avatars2.githubusercontent.com/u/501335?v=4"
+          },
+          "object": null,
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-10-02T01:20:39Z"
+        },
+        {
+          "name": "gcp-metadata-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "kfirz",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/34888176?v=4"
+          },
+          "object": null,
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-04-15T21:54:31Z",
+                "tag": {
+                  "name": "v1"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-04-15T21:54:31Z"
+        },
+        {
+          "name": "lambda-deploy-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "envato",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/14786?v=4"
+          },
+          "object": {
+            "text": "name: LambdaDeployer\ndescription: Deploy Lambda Code\nauthor: https://github.com/envato\nrequirements: []\nconfiguration:\n  properties:\n    function_name:\n      type: string\n    zip_file:\n      type: string\n    path:\n      type: string\n    s3_bucket:\n      type: string\n    s3_key:\n      type: string\n  required:\n    - function_name\n    - zip_file\n  additionalProperties: false\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-12-01T00:49:57Z",
+                "tag": {
+                  "name": "v1.1.1"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-12-01T00:49:57Z"
+        },
+        {
+          "name": "datadog-event-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "seek-oss",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/22927121?v=4"
+          },
+          "object": {
+            "text": "name: datadog-event\ndescription: Send a deployment complete event to datadog\nauthor: https://github.com/seek-oss\nconfiguration:\n  properties:\n    title:\n      type: string\n    tags:\n      type: string\n    priority:\n      type: string\n    alert-type:\n      type: string\n    env:\n      type: string\n  required:\n    - title\n    - tags\n    - env\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-11-20T02:47:23Z",
+                "tag": {
+                  "name": "v0.0.1"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-21T02:21:24Z"
+        },
+        {
+          "name": "hooks-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "SpencerSharkey",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/4871369?v=4"
+          },
+          "object": {
+            "text": "name: hooks\ndescription: Run scripts as hooks\nauthor: https://github.com/SpencerSharkey\nconfiguration:\n  properties:\n    precommand:\n      type: string\n  additionalProperties: false"
+          },
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-11-23T11:42:54Z"
+        },
+        {
+          "name": "calibre-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "buildkite-plugins",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/17957497?v=4"
+          },
+          "object": {
+            "text": "name: Calibre\ndescription: Easily create Calibre site snapshots from deploy pipelines\nauthor: https://github.com/buildkite\nrequirements:\n\t- curl\nconfiguration:\n\tproperties:\n\t\tsnapshot:\n\t\t\ttype: string\n\t\tapi-key-from:\n\t\t\ttype: string\n\trequired:\n\t\t- snapshot"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2017-05-28T12:20:17Z",
+                "tag": {
+                  "name": "v1.0.0"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-11-28T09:47:37Z"
+        },
+        {
+          "name": "cloudformation-output-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "envato",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/14786?v=4"
+          },
+          "object": {
+            "text": "name: CloudformationOptions\ndescription: Gather Cloudformation output and export them as env vars\nauthor: https://github.com/envato\nrequirements: []\nconfiguration:\n  properties:\n    output:\n      type: array\n  required:\n    - output\n  additionalProperties: false\n"
+          },
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-12-01T01:04:39Z",
+                "tag": {
+                  "name": "v2.0.0"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-12-01T01:04:39Z"
+        },
+        {
+          "name": "cloud-builder-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "sgringwe",
+            "avatarUrl": "https://avatars3.githubusercontent.com/u/2362370?v=4"
+          },
+          "object": null,
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-06-04T22:56:14Z"
+        },
+        {
+          "name": "kubernetes-logs-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "CampusJob",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/10159846?v=4"
+          },
+          "object": null,
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-10-12T01:58:55Z"
+        },
+        {
+          "name": "babsg-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "COzero",
+            "avatarUrl": "https://avatars1.githubusercontent.com/u/7324812?v=4"
+          },
+          "object": null,
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2017-11-23T00:16:03Z",
+                "tag": {
+                  "name": "v0.0.2"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-01-11T21:53:00Z"
+        },
+        {
+          "name": "stop-the-line-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "envato",
+            "avatarUrl": "https://avatars0.githubusercontent.com/u/14786?v=4"
+          },
+          "object": {
+            "text": "name: Stop The Line\ndescription: A Buildkite plugin that stops the build if metadata is set to a given value.\nauthor: https://github.com/envato\nrequirements: []\nconfiguration:\n  properties:\n    if:\n      type: object\n      properties:\n        key:\n          type: string\n        value:\n          type: string\n      required:\n        - key\n        - value\n    unless:\n      type: object\n      properties:\n        key:\n          type: string\n        value:\n          type: string\n      required:\n        - key\n        - value\n    style:\n      type: string\n  oneOf:\n    - required:\n      - if\n    - required:\n      - unless\n  required:\n    - style\n"
+          },
+          "releases": {
+            "nodes": []
+          },
+          "pushedAt": "2018-11-26T15:03:50Z"
+        },
+        {
+          "name": "arrakis-buildkite-plugin",
+          "stargazers": {
+            "totalCount": 0
+          },
+          "owner": {
+            "login": "COzero",
+            "avatarUrl": "https://avatars1.githubusercontent.com/u/7324812?v=4"
+          },
+          "object": null,
+          "releases": {
+            "nodes": [
+              {
+                "publishedAt": "2018-04-10T04:33:43Z",
+                "tag": {
+                  "name": "v0.4.1"
+                }
+              }
+            ]
+          },
+          "pushedAt": "2018-04-10T04:33:44Z"
+        }
+      ]
+    }
+  }
+}
+
+const plugins = results.data.search.nodes.map((node) => {
+  if (!node.object) { console.error(`Ignoring ${node.owner.login}/${node.name} - no plugin YML`); return }
+
+  let pluginYml
+
+  try {
+    pluginYml = node.object && node.object.text && yaml.safeLoad(node.object.text);
+  } catch (error) {
+    console.error(`Ignoring ${node.owner.login}/${node.name} - invalid plugin YML`, error);
+    return
+  }
+  if (!pluginYml.name) { console.error(`Ignoring ${node.owner.login}/${node.name} - no name in plugin YML`, pluginYml); return }
+  if (!pluginYml.description) { console.error(`Ignoring ${node.owner.login}/${node.name} - no description in plugin YML`, pluginYml); return }
+
+  // Ignore draft releases
+  // const lastRelease = node.releases.nodes.filter((release) => release.publishedAt)[0]
+
+  return {
+    name: pluginYml.name,
+    description: pluginYml.description,
+    repo: node.name,
+    owner: {
+      login: node.owner.login,
+      avatar: node.owner.avatarUrl
+    },
+    stars: node.stargazers.totalCount,
+    pushedAt: new Date(node.pushedAt)
+    // lastRelease: lastRelease && {
+    //   version: lastRelease.tag.name,
+    //   publishedAt: lastRelease.publishedAt
+    // }
+  }
+})
+  // Filter out all the failures
+  .filter((plugin) => plugin)
+  // Sort based on the number of stars, then last pushedAt
+  .sort((p1, p2) => {
+    if (p1.stars < p2.stars) { return -1 }
+    if (p1.stars > p2.stars) { return 1 }
+    if (p1.stars === p2.stars) {
+      if (p1.pushedAt < p2.pushedAt) { return -1 }
+      if (p1.pushedAt > p2.pushedAt) { return 1 }
+      return 0
+    }
+  })
+  .reverse()
+
+const dataJsFile = `/* eslint-disable */
+module.exports = ${JSON.stringify(plugins)};
+`
+
+fs.writeFile(path.join(__dirname, "../pages/plugins/_data.js"), dataJsFile, function(error) {
+  if (error) {
+    return console.log(error)
+  }
+  console.log("Plugin data saved to plugins/_data.json")
+})
