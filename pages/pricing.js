@@ -206,7 +206,10 @@ export default page((props) => (
               </>
             }
             notes={
-              <p>Pay annually for a 15% discount</p>
+              <>
+                <p>Up to 200 users</p>
+                <p>Pay annually for a 15% discount</p>
+              </>
             }
           />
         }
