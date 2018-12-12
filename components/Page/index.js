@@ -90,7 +90,6 @@ export const BasePage = (props) => (
     <>
       <Head>
         <title>{props.headTitle}</title>
-        <Metadata {...props} />
         {fonts.map((path) => (
           <link
             as="font"
@@ -101,6 +100,7 @@ export const BasePage = (props) => (
             crossOrigin="anonymous"
           />
         ))}
+        <Metadata {...props} />
       </Head>
       <Reset />
       <Header
