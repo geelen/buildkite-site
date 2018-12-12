@@ -1,7 +1,6 @@
 steps:
-
-  - label: ":nsp:"
-    command: yarn run nsp
+  - label: ":yarn: Audit"
+    command: yarn audit
     agents:
       # Because this is an hourly scheduled build, we don't want to use the
       # elastic agents because then the stack will never scale in. The
@@ -15,7 +14,7 @@ steps:
         run: site
 
   - label: ":retirejs:"
-    command: yarn run retire
+    commands: yarn run retire
     agents:
       # Because this is an hourly scheduled build, we don't want to use the
       # elastic agents because then the stack will never scale in. The
