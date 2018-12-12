@@ -1,8 +1,6 @@
 steps:
   - label: ":yarn: Audit"
-    command:
-      - "echo '--- :nsp: Checking node vulns'"
-      - yarn audit
+    command: yarn audit
     agents:
       # Because this is an hourly scheduled build, we don't want to use the
       # elastic agents because then the stack will never scale in. The
@@ -16,9 +14,7 @@ steps:
         run: site
 
   - label: ":retirejs:"
-    commands:
-      - "echo '--- :retirejs: Checking front-end vulns'"
-      - yarn run retire
+    commands: yarn run retire
     agents:
       # Because this is an hourly scheduled build, we don't want to use the
       # elastic agents because then the stack will never scale in. The
