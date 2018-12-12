@@ -1,7 +1,24 @@
 steps:
+  - label: ":yarn: Audit"
+    command:
+      - "echo '--- :nsp: Checking node vulns'"
+      - yarn audit
+    agents:
+      # Because this is an hourly scheduled build, we don't want to use the
+      # elastic agents because then the stack will never scale in. The
+      # docker builders are our next best thing.
+      queue: elastic-builders
+    plugins:
+      docker-compose#v2.5.1:
+        # We check for node dep vulnerabilities in our prod image, because
+        # that's whats running the site
+        config: docker-compose.prod.yml
+        run: site
 
   - label: ":retirejs:"
-    command: yarn run retire
+    commands:
+      - "echo '--- :retirejs: Checking front-end vulns'"
+      - yarn run retire
     agents:
       # Because this is an hourly scheduled build, we don't want to use the
       # elastic agents because then the stack will never scale in. The

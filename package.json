@@ -40,7 +40,8 @@
     "export": "next export",
     "start": "node server.js",
     "bundle-analyze": "NODE_ENV=production ANALYZE=1 next build",
-    "retire": "echo '--- :retirejs: Checking front-end vulns' && npx retire"
+    "security": "yarn audit && yarn run retire",
+    "retire": "npx retire"
   },
   "resolutions": {
     "**/lodash": "4.17.11"
