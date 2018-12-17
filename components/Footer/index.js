@@ -61,21 +61,22 @@ export default ({ loggedIn }) => (
         <Cell>
           <SmallNav>
             <FooterLink href="/docs" external>Documentation</FooterLink>
-            <FooterLink href="/about">About</FooterLink>
+            <FooterLink href="/support">Support</FooterLink>
+            <FooterLink href="/plugins" external>Plugins</FooterLink>
+            <FooterLink href="https://buildkite.com/changelog" external>Changelog</FooterLink>
             <FooterLink href="/security">Security</FooterLink>
-            <FooterLink href="/brand-assets">Brand Assets</FooterLink>
-            <FooterLink href="https://building.buildkite.com/">Blog</FooterLink>
-            <FooterLink href="https://shop.buildkite.com/">Shop</FooterLink>
+            <FooterLink href="https://forum.buildkite.community/" external>Community Forum</FooterLink>
+            <FooterLink href="https://buildkitestatus.com/" external>System Status</FooterLink>
           </SmallNav>
         </Cell>
         <Cell>
           <SmallNav>
-            <FooterLink href="/support">Support</FooterLink>
+            <FooterLink href="/about">About</FooterLink>
             <FooterLink href="/contact">Contact Us</FooterLink>
-            <FooterLink href="https://forum.buildkite.community/">Community Forum</FooterLink>
+            <FooterLink href="/brand-assets">Brand Assets</FooterLink>
             <FooterLink href="/terms-of-service">Terms of Service</FooterLink>
             <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
-            <FooterLink href="https://buildkitestatus.com/">System Status</FooterLink>
+            <FooterLink href="https://shop.buildkite.com/" external>Shop</FooterLink>
           </SmallNav>
         </Cell>
       </Grid>
