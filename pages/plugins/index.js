@@ -141,6 +141,7 @@ export default page((props) => (
     </PluginGrid>
 
     <Callout
+      grey
       heading="Create a Plugin"
       description={
         <>
