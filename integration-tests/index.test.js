@@ -130,6 +130,7 @@ const pagesToCheck = {
   'Enterprise': `${HOST}/enterprise`,
   'Features': `${HOST}/features`,
   'Home': `${HOST}/home`,
+  'Plugins': `${HOST}/plugins`,
   'Pricing': `${HOST}/pricing`,
   'Privacy Policy': `${HOST}/privacy-policy`,
   'Screencasts - Parallel Testing': `${HOST}/screencasts/parallel-testing`,
