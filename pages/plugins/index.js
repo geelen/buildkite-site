@@ -141,7 +141,7 @@ export default page((props) => (
     </PluginGrid>
 
     <Callout
-      heading="Write Your Own Plugin"
+      heading="Create a Plugin"
       description={
         <>
           Learn how to write your own <Br maxWidth="30em" /> plugin, and publish it to GitHub.
