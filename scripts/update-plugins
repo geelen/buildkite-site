@@ -7,6 +7,8 @@ const path = require('path')
 const yaml = require('js-yaml')
 const fetch = require('node-fetch')
 
+const pluginsToIgnore = ['pr8kerl/kustomize-job-buildkite-plugin']
+
 // TODO: Make this paginated
 fetch('https://api.github.com/graphql', {
   method: 'POST',
@@ -52,6 +54,19 @@ function query() {
                 publishedAt
                 tag {
                   name
+                  target {
+                    oid
+                  }
+                }
+              }
+            }
+            refs(refPrefix: "refs/tags/", first: 1, orderBy: {field:ALPHABETICAL, direction:DESC}) {
+              nodes {
+                name
+                target {
+                  ... on Commit {
+                    pushedDate
+                  }
                 }
               }
             }
@@ -93,6 +108,8 @@ function processResults(results) {
 }
 
 function transformRepositoryNode(node) {
+  if (pluginsToIgnore.indexOf(`${node.owner.login}/${node.name}`) !== -1) { console.error(`Ignoring ${node.owner.login}/${node.name} - is in the list of ignored plugins`); return }
+
   if (!node.object) { console.error(`Ignoring ${node.owner.login}/${node.name} - no plugin YML`); return }
 
   let pluginYml
@@ -107,21 +124,32 @@ function transformRepositoryNode(node) {
   if (!pluginYml.description) { console.error(`Ignoring ${node.owner.login}/${node.name} - no description in plugin YML`, pluginYml); return }
 
   // Ignore draft releases
-  // const lastRelease = node.releases.nodes.filter((release) => release.publishedAt)[0]
+  const lastRelease = node.releases.nodes.filter((release) => release.publishedAt)[0]
+  const lastTag = node.refs.nodes[0]
+
+  const description = (() => {
+    // Add a full stop if they didn't add one themselves
+    const endsWithFullStop = pluginYml.description.indexOf('.', pluginYml.description.length - 1) !== -1
+    return endsWithFullStop ? pluginYml.description : pluginYml.description + '.'
+  })()
 
   return {
     name: pluginYml.name,
-    description: pluginYml.description,
+    description: description,
     repo: node.name,
     owner: {
       login: node.owner.login,
       avatar: node.owner.avatarUrl
     },
     stars: node.stargazers.totalCount,
-    pushedAt: new Date(node.pushedAt)
-    // lastRelease: lastRelease && {
-    //   version: lastRelease.tag.name,
-    //   publishedAt: lastRelease.publishedAt
-    // }
+    pushedAt: new Date(node.pushedAt),
+    lastRelease: lastRelease && {
+      version: lastRelease.tag.name
+      // commit: lastRelease.tag.target.oid,
+      // publishedAt: new Date(lastRelease.publishedAt)
+    },
+    lastTag: lastTag && {
+      version: lastTag.name
+    }
   }
 }

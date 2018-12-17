@@ -1,5 +1,8 @@
+import { memo } from 'react'
 import styled from 'styled-components'
 
+import Br from 'components/Br'
+import Callout from 'components/Callout'
 import Page, { page } from 'components/Page'
 import { Grid, Cell } from 'components/Grid'
 
@@ -31,14 +34,6 @@ const Description = styled.p`
   margin: ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
-const Avatar = styled.img`
-  border-radius: 3px;
-  width: 18px;
-  height: 18px;
-  vertical-align: middle;
-  margin-right: 8px;
-`
-
 const Ellipsis = styled.div`
   flex: 1;
   min-width: 0;
@@ -63,17 +58,36 @@ const Repo = styled.p`
   }
 `
 
-const Stars = styled.p`
+const OwnerLink = styled.a`
   float: right;
-  margin: 0 0 0 10px;
-  font-size: ${({ theme }) => theme.fontSizes.regular};
+  margin: 0 0 5px 10px;
 `
 
-// const dateFormat = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+const Avatar = styled.img`
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+`
 
-// const formatDateString = (dateString) => (
-//   dateFormat.format(new Date(dateString))
-// )
+const Meta = styled.p`
+  margin: ${({ theme }) => theme.textSpacing.s1} 0 0 0;
+  font-size: ${({ theme }) => theme.fontSizes.tiny};
+  color: ${({ theme }) => theme.colors.text.subdued};
+
+  ${Link} {
+    color: inherit;
+  }
+  ${Link}:hover, ${Link}:active {
+    color: ${({ theme }) => theme.colors.text.green};
+  }
+`
+
+const dateFormat = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+
+const FormattedDate = memo(({ dateString }) => (
+  <span>{dateFormat.format(new Date(dateString))}</span>
+))
 
 const DocsLink = styled.a`
   &, &:visited {
@@ -83,6 +97,10 @@ const DocsLink = styled.a`
     color: black;
   }
 `
+
+const releaseUrl = ({ plugin, tag }) => (
+  `https://github.com/${plugin.owner.login}/${plugin.repo}/releases/tag/${tag}`
+)
 
 export default page((props) => (
   <Page
@@ -95,16 +113,42 @@ export default page((props) => (
     <PluginGrid columns={2}>
       {plugins.map((plugin) => (
         <Plugin key={`${plugin.owner.login}/${plugin.repo}`}>
-          {plugin.stars > 0 && <Stars>{`★ `}<span>{plugin.stars}</span></Stars>}
+          <OwnerLink href={`https://github.com/${plugin.owner.login}`}>
+            <Avatar src={plugin.owner.avatar} alt={plugin.owner.login} />
+          </OwnerLink>
           <Title>
             <Link href={`https://github.com/${plugin.owner.login}/${plugin.repo}`}>{plugin.name}</Link>
           </Title>
           <Description>{plugin.description}</Description>
           <Ellipsis>
-            <Repo><Link href={`https://github.com/${plugin.owner.login}/${plugin.repo}`}><Avatar src={plugin.owner.avatar} alt={plugin.owner.login} />{`github.com/${plugin.owner.login}/${plugin.repo}`}</Link></Repo>
+            <Repo>
+              <Link href={`https://github.com/${plugin.owner.login}/${plugin.repo}`}>
+                {`github.com/${plugin.owner.login}/${plugin.repo}`}
+              </Link>
+            </Repo>
           </Ellipsis>
+          <Meta>
+            {plugin.stars > 0 && `★ ${plugin.stars} · `}
+            Updated <FormattedDate dateString={plugin.pushedAt} />
+            {plugin.lastRelease ?
+              <Link href={releaseUrl({ plugin, tag: plugin.lastRelease.version })}>{` · ${plugin.lastRelease.version}`}</Link>
+              :
+              (plugin.lastTag && <Link href={releaseUrl({ plugin, tag: plugin.lastTag.version })}>{` · ${plugin.lastTag.version}`}</Link>)
+            }
+          </Meta>
         </Plugin>
       ))}
     </PluginGrid>
+
+    <Callout
+      heading="Write Your Own Plugin"
+      description={
+        <>
+          Learn how to write your own <Br maxWidth="30em" /> plugin, and publish it to GitHub.
+        </>
+      }
+      url="/docs/pipelines/plugins#developing-a-plugin"
+      buttonTitle="Plugin Documentation"
+    />
   </Page>
 ))
