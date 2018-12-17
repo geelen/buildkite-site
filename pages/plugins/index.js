@@ -83,6 +83,7 @@ const Meta = styled.p`
   }
 `
 
+// Initialize this just once, for performance, and re-use it every time inside the component below
 const dateFormat = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
 
 const FormattedDate = memo(({ dateString }) => (
