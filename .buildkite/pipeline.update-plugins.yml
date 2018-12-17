@@ -1,0 +1,25 @@
+steps:
+  - name: "Update plugin data"
+    command: "./scripts/update-plugins"
+    artifact_paths: "pages/plugins/_data.js"
+    env:
+      # Fix a weird issue where git hangs on elastic stack
+      TERM: ansi
+    plugins:
+      - docker-compose#v2.5.1:
+          run: site
+          env:
+            - GITHUB_API_TOKEN
+          volumes:
+            - "./pages/plugins:/app/pages/plugins"
+      - thedyrt/git-commit#8477bc5819ca664473915979b4d6e067889c9f5f: # v0.3.0
+          add: pages/plugins/_data.js
+          message: "Sync plugin data"
+          user:
+            name: "${BUILDKITE_BUILD_CREATOR}"
+            email: "${BUILDKITE_BUILD_CREATOR_EMAIL}"
+    agents:
+      # Because this is a scheduled build, we don't want to use the
+      # elastic agents because then the stack will never scale in. The
+      # docker builders are our next best thing.
+      queue: elastic-builders

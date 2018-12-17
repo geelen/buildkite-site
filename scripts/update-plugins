@@ -19,8 +19,12 @@ fetch('https://api.github.com/graphql', {
   body: JSON.stringify({ query: query() })
 })
   .then((res) => res.json())
-  .then((data) => { console.log({ data }); return data })
+  .then((data) => { console.log(JSON.stringify(data)); return data })
   .then((data) => processResults(data))
+  .catch((err) => {
+    console.error(err)
+    process.exit(1)
+  })
 
 function query() {
   return `

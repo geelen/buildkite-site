@@ -148,7 +148,7 @@ export default page((props) => (
           Learn how to write your own <Br maxWidth="30em" /> plugin, and publish it to GitHub.
         </>
       }
-      url="/docs/pipelines/plugins#developing-a-plugin"
+      url="/docs/pipelines/plugins"
       buttonTitle="Plugin Documentation"
     />
   </Page>
