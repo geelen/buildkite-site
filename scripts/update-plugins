@@ -1,0 +1,159 @@
+#!/usr/bin/env node
+/* eslint-disable no-console */
+/* global __dirname */
+
+const fs = require('fs')
+const path = require('path')
+const yaml = require('js-yaml')
+const fetch = require('node-fetch')
+
+const pluginsToIgnore = ['pr8kerl/kustomize-job-buildkite-plugin']
+
+// TODO: Make this paginated
+fetch('https://api.github.com/graphql', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${process.env.GITHUB_API_TOKEN}`
+  },
+  body: JSON.stringify({ query: query() })
+})
+  .then((res) => res.json())
+  .then((data) => { console.log(JSON.stringify(data)); return data })
+  .then((data) => processResults(data))
+  .catch((err) => {
+    console.error(err)
+    process.exit(1)
+  })
+
+function query() {
+  return `
+    query {
+      search(query:"topic:buildkite-plugin", first: 100, type:REPOSITORY) {
+        repositoryCount
+        nodes {
+          ...on Repository {
+            name
+            stargazers {
+              totalCount
+            }
+            owner {
+              login
+              avatarUrl
+            }
+            object(expression:"master:plugin.yml") {
+              ... on Blob{
+                text
+              }
+            }
+            repositoryTopics(first: 10) {
+              nodes {
+                topic {
+                  name
+                }
+              }
+            }
+            releases(first: 1, orderBy: {field:NAME, direction:DESC}) {
+              nodes {
+                publishedAt
+                tag {
+                  name
+                  target {
+                    oid
+                  }
+                }
+              }
+            }
+            refs(refPrefix: "refs/tags/", first: 1, orderBy: {field:ALPHABETICAL, direction:DESC}) {
+              nodes {
+                name
+                target {
+                  ... on Commit {
+                    pushedDate
+                  }
+                }
+              }
+            }
+            pushedAt
+          }
+        }
+      }
+    }
+  `
+}
+
+function processResults(results) {
+  const plugins = results.data.search.nodes
+    .map(transformRepositoryNode)
+    // Filter out all the failures
+    .filter((plugin) => plugin)
+    // Sort based on the number of stars, then last pushedAt
+    .sort((p1, p2) => {
+      if (p1.stars < p2.stars) { return -1 }
+      if (p1.stars > p2.stars) { return 1 }
+      if (p1.stars === p2.stars) {
+        if (p1.pushedAt < p2.pushedAt) { return -1 }
+        if (p1.pushedAt > p2.pushedAt) { return 1 }
+        return 0
+      }
+    })
+    .reverse()
+
+  const dataJsFile = `/* eslint-disable */
+  module.exports = ${JSON.stringify(plugins)};
+  `
+
+  fs.writeFile(path.join(__dirname, "../pages/plugins/_data.js"), dataJsFile, function(error) {
+    if (error) {
+      return console.log(error)
+    }
+    console.log("Plugin data saved to plugins/_data.json")
+  })
+}
+
+function transformRepositoryNode(node) {
+  if (pluginsToIgnore.indexOf(`${node.owner.login}/${node.name}`) !== -1) { console.error(`Ignoring ${node.owner.login}/${node.name} - is in the list of ignored plugins`); return }
+
+  if (!node.object) { console.error(`Ignoring ${node.owner.login}/${node.name} - no plugin YML`); return }
+
+  let pluginYml
+
+  try {
+    pluginYml = node.object && node.object.text && yaml.safeLoad(node.object.text);
+  } catch (error) {
+    console.error(`Ignoring ${node.owner.login}/${node.name} - invalid plugin YML`, error);
+    return
+  }
+  if (!pluginYml.name) { console.error(`Ignoring ${node.owner.login}/${node.name} - no name in plugin YML`, pluginYml); return }
+  if (!pluginYml.description) { console.error(`Ignoring ${node.owner.login}/${node.name} - no description in plugin YML`, pluginYml); return }
+
+  // Ignore draft releases
+  const lastRelease = node.releases.nodes.filter((release) => release.publishedAt)[0]
+  const lastTag = node.refs.nodes[0]
+
+  const description = (() => {
+    // Add a full stop if they didn't add one themselves
+    const endsWithFullStop = pluginYml.description.indexOf('.', pluginYml.description.length - 1) !== -1
+    return endsWithFullStop ? pluginYml.description : pluginYml.description + '.'
+  })()
+
+  return {
+    name: pluginYml.name,
+    description: description,
+    repo: node.name,
+    owner: {
+      login: node.owner.login,
+      avatar: node.owner.avatarUrl
+    },
+    stars: node.stargazers.totalCount,
+    pushedAt: new Date(node.pushedAt),
+    lastRelease: lastRelease && {
+      version: lastRelease.tag.name
+      // commit: lastRelease.tag.target.oid,
+      // publishedAt: new Date(lastRelease.publishedAt)
+    },
+    lastTag: lastTag && {
+      version: lastTag.name
+    }
+  }
+}

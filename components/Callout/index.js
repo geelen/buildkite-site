@@ -8,6 +8,9 @@ const Section = styled.section`
   margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
   padding-top: ${({ theme }) => theme.outerSpacing.s1};
   padding-bottom: ${({ theme }) => theme.outerSpacing.s1};
+  padding-left: ${({ theme, grey }) => (grey ? theme.innerSpacing.s1 : 0)} };
+  padding-right: ${({ theme, grey }) => (grey ? theme.innerSpacing.s1 : 0)} };
+
   text-align: center;
   background-color: ${({ theme, grey }) => grey ? theme.colors.backgrounds.grey : 'transparent' }
 `
