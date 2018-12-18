@@ -12,6 +12,7 @@ const IGNORE_HTTPS_ERRORS = process.env.IGNORE_HTTPS_ERRORS === 'true'
 
 let browser
 let page
+let consoleMessages = []
 
 before(async() => {
   browser = await puppeteer.launch({
@@ -35,13 +36,27 @@ beforeEach(async() => {
   await page.setViewport({ width: 1280, height: 960 })
 
   page.on('console', (msg) => {
-    assert.fail(`console.${msg.type()} not allowed in production: ${msg.text()}`)
+    // We can't assert.fail from here, so we store the messages for the afterEach
+    consoleMessages.push(`${msg.type()}: ${msg.text()}`)
   })
 })
 
 afterEach(async() => {
+  if (consoleMessages.length) {
+    // This will stop Mocha running any subsequent tests, and finish with an
+    // error. Ideally it'd just make the one test fail, and continue to the rest
+    // of the suite, but that isn't supported
+    // (https://github.com/mochajs/mocha/issues/1635).
+    //
+    // Perhaps there's another way, but at least now this fails the text suite,
+    // rather than just printing an error to the console and never failing the
+    // test.
+    assert.fail(`Console messages aren't allowed: ${consoleMessages.join()}`)
+  }
+
   await page.close()
   page = undefined
+  consoleMessages = []
 })
 
 after(async() => {
