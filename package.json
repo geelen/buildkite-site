@@ -9,7 +9,7 @@
     "compression": "1.7.3",
     "cookie": "0.3.1",
     "express": "4.16.4",
-    "file-loader": "2.0.0",
+    "file-loader": "3.0.1",
     "jsesc": "2.5.2",
     "next": "7.0.2",
     "nprogress": "0.2.0",
