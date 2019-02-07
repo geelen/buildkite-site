@@ -71,9 +71,9 @@ export default page((props) => (
         image={feedbackImage}
         imageWidth={466}
         imageAlt="Post-it note"
-        description="Have some feedback or an idea? Let us know in our feedback issues repo."
-        url="https://github.com/buildkite/feedback/issues"
-        buttonTitle="Open a GitHub Issue"
+        description="Have some feedback or an idea? Let us know in our discussion forum."
+        url="https://forum.buildkite.community/"
+        buttonTitle="Create a Topic"
       />
       <ActionGridItem
         heading="Report a Vulnerability"
