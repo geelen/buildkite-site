@@ -43,7 +43,7 @@ app.prepare()
         // user images. We've made it explicit, in case other bad things are
         // hosted on that domain, and the plugins page test will start failing
         // if GitHub change avatar host URLs.
-        res.header('Content-Security-Policy', "default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; img-src 'self' 'unsafe-inline' data: https://www.google-analytics.com https://avatars0.githubusercontent.com https://avatars1.githubusercontent.com https://avatars2.githubusercontent.com https://avatars3.githubusercontent.com; connect-src 'self' https://www.google-analytics.com; media-src 'self' https://d3lj8s78qytm30.cloudfront.net")
+        res.header('Content-Security-Policy', "default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://analytics.buildkite.com; img-src 'self' 'unsafe-inline' data: https://analytics.buildkite.com https://avatars0.githubusercontent.com https://avatars1.githubusercontent.com https://avatars2.githubusercontent.com https://avatars3.githubusercontent.com; connect-src 'self' https://analytics.buildkite.com; media-src 'self' https://d3lj8s78qytm30.cloudfront.net")
         res.header('Strict-Transport-Security', 'max-age=31536000; includeSubdomains; preload')
       }
       next()

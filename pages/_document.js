@@ -34,18 +34,17 @@ export default class MyDocument extends Document {
       return (
         <>
           <script
-            async
-            src="https://www.google-analytics.com/analytics.js"
-          />
-          <script
             dangerouslySetInnerHTML={{
               __html: `
-                window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-                ga('create', 'UA-43649972-1', 'auto');
-                ga('send', 'pageview');
-              `
+                var _paq = _paq || [];
+                _paq.push(['trackPageView']);
+                _paq.push(['enableLinkTracking']);
+                _paq.push(['setTrackerUrl', 'https://analytics.buildkite.com/track']);
+                _paq.push(['setSiteId', '1']);
+               `
             }}
           />
+          <script async defer src="https://analytics.buildkite.com/tracker.js" />
         </>
       )
     }
