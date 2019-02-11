@@ -124,7 +124,7 @@ export default page((props) => (
           </Brick>
           <Brick>
             <SubSectionSubHeader>User Logins</SubSectionSubHeader>
-            <SecurityParagraph>We protect against brute force attacks with rate limiting technology. All sensitive data such as password and API tokens are filtered out of logs and exception trackers. User passwords are one-way encrypted and salted before being stored in our database.</SecurityParagraph>
+            <SecurityParagraph>We protect against brute force attacks with rate limiting technology. All sensitive data such as password and API tokens are filtered out of logs and exception trackers. User passwords are cryptographically hashed and salted before being stored in our database.</SecurityParagraph>
           </Brick>
           <Brick>
             <SubSectionSubHeader>Penetration Testing</SubSectionSubHeader>
