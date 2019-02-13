@@ -23,31 +23,8 @@ export default class MyDocument extends Document {
             <Main />
           </div>
           <NextScript />
-          {this.renderAnalytics()}
         </body>
       </html>
     )
-  }
-
-  renderAnalytics() {
-    if (!this.props.req.loggedIn) {
-      return (
-        <>
-          <script
-            async
-            src="https://www.google-analytics.com/analytics.js"
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-                ga('create', 'UA-43649972-1', 'auto');
-                ga('send', 'pageview');
-              `
-            }}
-          />
-        </>
-      )
-    }
   }
 }
