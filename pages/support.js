@@ -32,8 +32,8 @@ export default page((props) => (
         imageWidth={466}
         imageAlt="Post-it note"
         description="Let us know about something you’d like added or improved in Buildkite."
-        url="https://github.com/buildkite/feedback/issues"
-        buttonTitle="Create a GitHub Issue"
+        url="https://forum.buildkite.community/c/feature-requests"
+        buttonTitle="Post a Topic"
       />
       <ActionGridItem
         heading="Community Chat"
