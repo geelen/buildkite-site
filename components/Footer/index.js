@@ -62,7 +62,7 @@ export default ({ loggedIn }) => (
           <SmallNav>
             <FooterLink href="/docs" external>Documentation</FooterLink>
             <FooterLink href="/support">Support</FooterLink>
-            <FooterLink href="/plugins" external>Plugins</FooterLink>
+            <FooterLink href="/plugins">Plugins</FooterLink>
             <FooterLink href="https://buildkite.com/changelog" external>Changelog</FooterLink>
             <FooterLink href="/security">Security</FooterLink>
             <FooterLink href="https://forum.buildkite.community/" external>Community Forum</FooterLink>

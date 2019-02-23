@@ -1,5 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components'
 import Head from 'next/head'
+import Router from 'next/router'
 
 import isLoggedIn from '../../lib/isLoggedIn'
 
@@ -11,6 +12,15 @@ import Link from 'components/Link'
 
 import { fonts } from '../../theme/fonts'
 import Reset from '../../theme/reset'
+
+import { trackPageLoadStart, trackPageLoadEnd, trackPageView, trackReferrer } from '../../lib/matomo'
+
+// Track page load times
+Router.events.on('routeChangeStart', () => trackPageLoadStart())
+Router.events.on('routeChangeComplete', () => trackPageLoadEnd())
+
+// Track referrers
+Router.events.on('beforeHistoryChange', () => trackReferrer(String(window.location)))
 
 const Container = styled.div`
   ${({ theme }) => theme.pageContainer}
@@ -114,29 +124,39 @@ export const BasePage = (props) => (
   </ThemeProvider>
 )
 
-export default (props) => (
-  <BasePage {...props}>
-    <>
-      {props.image && (
-        <ImageContainer>
-          <Image src={props.image} alt={props.imageAlt} />
-        </ImageContainer>
-      )}
-      {props.title && (
-        props.titleHref ? (
-          <Title>
-            <Link href={props.titleHref}>
-              <TitleLink>{props.title}</TitleLink>
-            </Link>
-          </Title>
-        ) : (
-          <Title>{props.title}</Title>
-        )
-      )}
-      {props.description && (
-        <Description>{props.description}</Description>
-      )}
-      {props.children}
-    </>
-  </BasePage>
-)
+export default class Page extends React.PureComponent {
+  componentDidMount() {
+    trackPageView({ title: this.props.headTitle, url: Router.pathname })
+  }
+
+  render() {
+    const props = this.props
+
+    return (
+      <BasePage {...props}>
+        <>
+          {props.image && (
+            <ImageContainer>
+              <Image src={props.image} alt={props.imageAlt} />
+            </ImageContainer>
+          )}
+          {props.title && (
+            props.titleHref ? (
+              <Title>
+                <Link href={props.titleHref}>
+                  <TitleLink>{props.title}</TitleLink>
+                </Link>
+              </Title>
+            ) : (
+              <Title>{props.title}</Title>
+            )
+          )}
+          {props.description && (
+            <Description>{props.description}</Description>
+          )}
+          {props.children}
+        </>
+      </BasePage>
+    )
+  }
+}

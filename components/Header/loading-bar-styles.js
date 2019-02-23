@@ -19,9 +19,9 @@ const finishProgressBar = function() {
   NProgress.done()
 }
 
-Router.onRouteChangeStart = () => showProgressBar()
-Router.onRouteChangeComplete = () => finishProgressBar()
-Router.onRouteChangeError = () => finishProgressBar()
+Router.events.on('routeChangeStart', () => showProgressBar())
+Router.events.on('routeChangeComplete', () => finishProgressBar())
+Router.events.on('routeChangeError', () => finishProgressBar())
 
 export default createGlobalStyle`
   #nprogress { pointer-events: none; }
