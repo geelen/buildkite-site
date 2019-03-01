@@ -1,89 +1,105 @@
 steps:
 
-  - name: ":docker:"
-    agents:
-      queue: elastic-builders
-    plugins:
-      docker-compose#v3.0.0:
-        build: site
-        image-repository: buildkiteci/site
-        image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-dev"
+  - group: Build
+    steps:
+      - name: ":docker:"
+        agents:
+          queue: elastic-builders
+        plugins:
+          docker-compose#v3.0.0:
+            build: site
+            image-repository: buildkiteci/site
+            image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-dev"
 
-  - name: ":docker::zap:"
-    agents:
-      queue: elastic-builders
-    plugins:
-      docker-compose#v3.0.0:
-        config: docker-compose.prod.yml
-        build: site
-        image-repository: buildkiteci/site
-        image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-prod"
+      - name: ":docker::zap:"
+        agents:
+          queue: elastic-builders
+        plugins:
+          docker-compose#v3.0.0:
+            config: docker-compose.prod.yml
+            build: site
+            image-repository: buildkiteci/site
+            image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-prod"
 
-  - name: ":docker::chrome:"
-    agents:
-      queue: elastic-builders
-    plugins:
-      docker-compose#v3.0.0:
-        config: docker-compose.integration-tests.yml
-        build: integration-tests
-        image-repository: buildkiteci/site
-        image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"
-
-  - wait
-
-  - label: ":pipeline::closed_lock_with_key:"
-    command: "buildkite-agent pipeline upload .buildkite/pipeline.security.yml"
-
-  - name: ":eslint:"
-    command: yarn lint
-    plugins:
-      docker-compose#v3.0.0:
-        run: site
-
-  - name: ":flowtype:"
-    command: yarn flow
-    plugins:
-      docker-compose#v3.0.0:
-        run: site
-    skip: "TODO"
-
-  - name: ":package::mag:"
-    command: yarn bundle-analyze
-    artifact_paths: "bundle-analysis/*"
-    plugins:
-      docker-compose#v3.0.0:
-        run: site
-
-  - name: ":chrome::hammer::zap:"
-    artifact_paths: "integration-tests/screenshots/*.png"
-    timeout_in_minutes: 3
-    plugins:
-      docker-compose#v3.0.0:
-        run: integration-tests
-        config: docker-compose.integration-tests.prod-image.yml
+      - name: ":docker::chrome:"
+        agents:
+          queue: elastic-builders
+        plugins:
+          docker-compose#v3.0.0:
+            config: docker-compose.integration-tests.yml
+            build: integration-tests
+            image-repository: buildkiteci/site
+            image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"
 
   - wait
 
-  - label: ":docker::package:"
-    branches: master
-    plugins:
-      ecr#v1.2.0:
-        login: true
-        account-ids: ${ECR_ACCOUNT_ID}
-      docker-compose#v2.4.0:
-        config: docker-compose.prod.yml
-        push:
-          - site:${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}
+  - group: Tests
+    steps:
+      - label: ":pipeline::closed_lock_with_key:"
+        command: "buildkite-agent pipeline upload .buildkite/pipeline.security.yml"
+
+      - name: ":eslint:"
+        command: yarn lint
+        plugins:
+          docker-compose#v3.0.0:
+            run: site
+
+      - name: ":flowtype:"
+        command: yarn flow
+        plugins:
+          docker-compose#v3.0.0:
+            run: site
+        skip: "TODO"
+
+      - name: ":package::mag:"
+        command: yarn bundle-analyze
+        artifact_paths: "bundle-analysis/*"
+        plugins:
+          docker-compose#v3.0.0:
+            run: site
+
+      - name: ":chrome::hammer::zap:"
+        artifact_paths: "integration-tests/screenshots/*.png"
+        timeout_in_minutes: 3
+        plugins:
+          docker-compose#v3.0.0:
+            run: integration-tests
+            config: docker-compose.integration-tests.prod-image.yml
 
   - wait
 
-  - label: ":docker::rocket:"
-    branches: master
-    concurrency: 1
-    concurrency_group: site-deploy
-    agents:
-      queue: deploy
-    command: scripts/deploy-ecs
+  - group: Deploy
+    steps:
+      - label: ":docker::package:"
+        branches: master
+        plugins:
+          ecr#v1.2.0:
+            login: true
+            account-ids: ${ECR_ACCOUNT_ID}
+          docker-compose#v2.4.0:
+            config: docker-compose.prod.yml
+            push:
+              - site:${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}
+
+  - wait
+
+  - group: Deploy
+    steps:
+      - label: ":docker::rocket:"
+        branches: master
+        concurrency: 1
+        concurrency_group: site-deploy
+        agents:
+          queue: deploy
+        command: scripts/deploy-ecs
+
+  - wait
+      
+  - group: Deploy
+    steps:
+      - label: ":partyparrot:"
+        branches: master
+        command: "buildkite-agent annotate --style success ':partyparrot: Deployed to https://buildkite.com/'"
 
     # plugins:
     #   ecs-deploy#v1.0.0:
@@ -93,18 +109,14 @@ steps:
     #     image: ${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}
 
   - wait
-  
-  - label: ":partyparrot:"
-    branches: master
-    command: "buildkite-agent annotate --style success ':partyparrot: Deployed to https://buildkite.com/'"
 
-  - wait
-
-  - name: ":chrome::hammer::zap::zap:"
-    branches: master
-    timeout_in_minutes: 3
-    plugins:
-      docker-compose#v3.0.0:
-        run: integration-tests
-        config: docker-compose.integration-tests.prod-site.yml
-    artifact_paths: "integration-tests/screenshots/*.png"
+  - group: Production Tests
+    steps:
+      - name: ":chrome::hammer::zap::zap:"
+        branches: master
+        timeout_in_minutes: 3
+        plugins:
+          docker-compose#v3.0.0:
+            run: integration-tests
+            config: docker-compose.integration-tests.prod-site.yml
+        artifact_paths: "integration-tests/screenshots/*.png"
