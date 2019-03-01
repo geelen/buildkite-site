@@ -239,7 +239,7 @@ export default page((props) => (
       <MediaItem>
         <TextCell>
           <Description>
-            Buildkite’s <Link href="https://github.com/buildkite/frontend">open-source web interface</Link> allows you to monitor, control and visualize all your pipelines in one place, whilst still having quick access to your own builds.
+            Buildkite’s web interface allows you to monitor, control and visualize all your pipelines in one place, while still having quick access to your own builds.
           </Description>
           <Description>
             You can also <Link external href="/docs/pipelines/permissions">create teams</Link>, ensuring only the people with the correct permissions have access to sensitive pipelines 🕶

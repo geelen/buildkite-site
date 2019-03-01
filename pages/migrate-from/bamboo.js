@@ -111,7 +111,7 @@ export default page((props) => (
       <Brick>
         <Feature
           name="Powerful pipeline support"
-          description="Configure automated and manual pipelines for Dockerized applications, mobile builds, and existing legacy and on-premise environments. Pipelines can run test scripts, perform deployments, pause for manual intervention, and trigger dependent pipelines; all whilst taking advantage of a distributed artifact and key-value store."
+          description="Configure automated and manual pipelines for Dockerized applications, mobile builds, and existing legacy and on-premise environments. Pipelines can run test scripts, perform deployments, pause for manual intervention, and trigger dependent pipelines; all while taking advantage of a distributed artifact and key-value store."
         />
       </Brick>
       <Brick>
