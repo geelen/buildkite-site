@@ -94,6 +94,7 @@ export default function screencastPage(pathname) {
             playsInline
             preload="auto"
             poster={screencast.images.poster}
+            data-matomo-title={`Screencast - ${screencast.title}`}
           >
             <source src={screencast.videos.webm} type="video/webm" />
             <source src={screencast.videos.mp4} type="video/mp4" />
