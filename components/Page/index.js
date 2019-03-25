@@ -100,6 +100,7 @@ export const BasePage = (props) => (
     <>
       <Head>
         <title>{props.headTitle}</title>
+        <link rel="dns-prefetch" href="//analytics.buildkite.com" />
         {fonts.map((path) => (
           <link
             as="font"
