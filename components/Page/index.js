@@ -127,7 +127,7 @@ export const BasePage = (props) => (
 
 export default class Page extends React.PureComponent {
   componentDidMount() {
-    trackPageView({ title: this.props.headTitle, url: Router.pathname })
+    trackPageView({ title: this.props.headTitle, url: Router.asPath })
   }
 
   render() {
