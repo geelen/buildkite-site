@@ -21,7 +21,7 @@
     "react-transition-group": "2.7.0",
     "retire": "2.0.2",
     "styled-components": "4.2.0",
-    "styled-transition-group": "1.0.0"
+    "styled-transition-group": "2.0.0"
   },
   "devDependencies": {
     "babel-eslint": "10.0.1",
