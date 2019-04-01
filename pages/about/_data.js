@@ -84,7 +84,7 @@ export const team = [
     bio: "Hello, I’m Ben. I make images, design products, and create beautiful spaces. I vastly prefer the outdoors to the indoors, and escape the city as often as I can.",
     links: [
       { name: "Portfolio", url: "http://www.benchristensen.co" },
-      { name: "Instagram", url: "hhttps://www.instagram.com/christensen__photo/" }
+      { name: "Instagram", url: "https://www.instagram.com/christensen__photo/" }
     ],
     colour: "rgb(242,172,144)"
   },
