@@ -18,7 +18,7 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-keyframes": "0.2.3",
-    "react-transition-group": "2.7.1",
+    "react-transition-group": "2.8.0",
     "retire": "2.0.2",
     "styled-components": "4.2.0",
     "styled-transition-group": "2.0.0"
