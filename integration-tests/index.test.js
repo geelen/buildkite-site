@@ -174,7 +174,7 @@ Object.entries(pagesToCheck).forEach(([title, path]) => {
   // test with CSP disabled.
   describe(title, () => {
     it('Percy snapshot', async() => {
-      page.setBypassCSP(true)
+      await page.setBypassCSP(true)
 
       const response = await page.goto(`${HOST}${path}`)
 
