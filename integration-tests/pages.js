@@ -1,0 +1,20 @@
+module.exports = {
+  'About': `/about`,
+  'Brand Assets': `/brand-assets`,
+  'Case Studies - Shopify': `/case-studies/shopify`,
+  'Case Studies': `/case-studies`,
+  'Contact Us': `/contact`,
+  'Enterprise': `/enterprise`,
+  'Features': `/features`,
+  'Home': `/home`,
+  'Plugins': `/plugins`,
+  'Pricing': `/pricing`,
+  'Privacy Policy': `/privacy-policy`,
+  'Screencasts - Parallel Testing': `/screencasts/parallel-testing`,
+  'Screencasts': `/screencasts`,
+  'Security': `/security`,
+  'Support': `/support`,
+  'Migrate From (Redirect)': `/migrate-from`,
+  'Migrate From - Bamboo': `/migrate-from/bamboo`,
+  'Migrate From - Bamboo Cloud (redirect)': `/migrate-from/bamboo-cloud`
+}

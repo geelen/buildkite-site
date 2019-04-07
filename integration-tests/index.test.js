@@ -4,7 +4,8 @@
 const fs = require('fs')
 const assert = require('assert')
 const puppeteer = require('puppeteer')
-const { percySnapshot } = require('@percy/puppeteer')
+
+const pagesToCheck = require('./pages')
 
 const HOST = (process.env.TEST_HOST || "http://localhost:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
@@ -137,27 +138,6 @@ describe('Logged in cookie behaviours', () => {
   })
 })
 
-const pagesToCheck = {
-  'About': `/about`,
-  'Brand Assets': `/brand-assets`,
-  'Case Studies - Shopify': `/case-studies/shopify`,
-  'Case Studies': `/case-studies`,
-  'Contact Us': `/contact`,
-  'Enterprise': `/enterprise`,
-  'Features': `/features`,
-  'Home': `/home`,
-  'Plugins': `/plugins`,
-  'Pricing': `/pricing`,
-  'Privacy Policy': `/privacy-policy`,
-  'Screencasts - Parallel Testing': `/screencasts/parallel-testing`,
-  'Screencasts': `/screencasts`,
-  'Security': `/security`,
-  'Support': `/support`,
-  'Migrate From (Redirect)': `/migrate-from`,
-  'Migrate From - Bamboo': `/migrate-from/bamboo`,
-  'Migrate From - Bamboo Cloud (redirect)': `/migrate-from/bamboo-cloud`
-}
-
 Object.entries(pagesToCheck).forEach(([title, path]) => {
   describe(title, () => {
     it('responds ok', async() => {
@@ -167,24 +147,6 @@ Object.entries(pagesToCheck).forEach(([title, path]) => {
       assert(status === 200 || status === 304, `Response should be 200 or 304 but was ${status}`)
 
       await page.screenshot({ path: `${SCREENSHOTS_PATH}/${path.replace(/^\//, '').replace('/', '-')}.png` })
-    })
-  })
-
-  // Percy needs to inject an inline script tag, so we run a whole separate
-  // test with CSP disabled.
-  describe(title, () => {
-    it('Percy snapshot', async() => {
-      await page.setBypassCSP(true)
-
-      const response = await page.goto(`${HOST}${path}`)
-
-      const status = response.status()
-
-      // The above test already fails on response status error, so we just let
-      // it pass if there is one.
-      if (status === 200 || status === 304) {
-        await percySnapshot(page, title)
-      }
     })
   })
 })

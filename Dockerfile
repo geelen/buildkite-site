@@ -21,7 +21,7 @@ CMD     ["yarn", "run", "start"]
 # deps.
 FROM production as development
 ENV  NODE_ENV=development
-RUN  yarn install
+RUN  yarn install --frozen-lockfile --silent
 
 # -- Test
 # Same deps as development

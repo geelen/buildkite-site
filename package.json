@@ -48,7 +48,8 @@
     "bundle-analyze": "NODE_ENV=production ANALYZE=1 next build",
     "security": "yarn audit && yarn run retire",
     "retire": "npx retire",
-    "integration": "percy exec -- mocha --recursive --no-timeouts integration-tests/*",
+    "integration": "mocha --no-timeouts integration-tests/index.test.js",
+    "percy": "percy exec -- mocha --no-timeouts integration-tests/percy.test.js",
     "integration:production": "TEST_HOST=https://buildkite.com/ yarn run integration"
   },
   "resolutions": {
