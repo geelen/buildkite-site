@@ -70,6 +70,7 @@ describe('Home', () => {
   let response
 
   beforeEach(async() => {
+    console.log(`Navigating to: ${HOST}/`)
     response = await page.goto(`${HOST}/`)
   })
 
@@ -141,6 +142,7 @@ describe('Logged in cookie behaviours', () => {
 Object.entries(pagesToCheck).forEach(([title, path]) => {
   describe(title, () => {
     it('responds ok', async() => {
+      console.log(`Navigating to: ${HOST}${path}`)
       const response = await page.goto(`${HOST}${path}`)
 
       const status = response.status()

@@ -1,8 +1,8 @@
 version: '3.4'
+
 services:
   integration-tests:
     image: "buildkiteci/site:site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"
-    command: "yarn run integration:production"
     environment:
       - DEBUG
       - PERCY_TOKEN

@@ -1,8 +1,6 @@
 /* eslint-env node, mocha */
 /* eslint no-console: "off" */
 
-// These percy tests need to be in their own file
-
 const assert = require('assert')
 const puppeteer = require('puppeteer')
 const { percySnapshot } = require('@percy/puppeteer')
@@ -11,6 +9,7 @@ const pagesToCheck = require('./pages')
 
 const HOST = (process.env.TEST_HOST || "http://localhost:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
+const IGNORE_HTTPS_ERRORS = process.env.IGNORE_HTTPS_ERRORS === 'true'
 
 let browser
 let page
@@ -18,7 +17,7 @@ let consoleMessages = []
 
 before(async() => {
   browser = await puppeteer.launch({
-    ignoreHTTPSErrors: true,
+    ignoreHTTPSErrors: IGNORE_HTTPS_ERRORS,
     args: [
       // Required for Docker version of Puppeteer
       '--no-sandbox',

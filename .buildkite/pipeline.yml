@@ -122,6 +122,7 @@ steps:
   - group: Production Tests
     steps:
       - name: ":chrome::zap:"
+        command: "yarn run integration:production"
         branches: master
         timeout_in_minutes: 3
         plugins:

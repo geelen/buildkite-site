@@ -3,9 +3,7 @@ version: '3.4'
 services:
   integration-tests:
     image: "buildkiteci/site:site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"
-    command: "yarn run integration"
     environment:
-      - TEST_HOST="http://site:3000/"
       - DEBUG
       - IGNORE_HTTPS_ERRORS=true
       - PERCY_TOKEN
@@ -15,6 +13,7 @@ services:
       - BUILDKITE_BRANCH
       - BUILDKITE_PULL_REQUEST
       - BUILDKITE_BUILD_ID
+      - TEST_HOST="http://site:3000/"
     links:
       - site
 
