@@ -36,8 +36,8 @@
     "js-yaml": "3.13.1",
     "mocha": "^6.0.2",
     "node-fetch": "2.3.0",
-    "webpack-bundle-analyzer": "3.2.0",
-    "puppeteer": "^1.14.0"
+    "puppeteer": "^1.14.0",
+    "webpack-bundle-analyzer": "3.2.0"
   },
   "scripts": {
     "lint": "eslint . --color",
@@ -52,6 +52,6 @@
     "integration:production": "TEST_HOST=https://buildkite.com/ yarn run integration"
   },
   "resolutions": {
-    "**/lodash": "4.17.11"
+    "**/js-yaml": ">=3.13.0"
   }
 }
