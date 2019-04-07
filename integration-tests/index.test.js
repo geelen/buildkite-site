@@ -4,10 +4,11 @@
 const fs = require('fs')
 const assert = require('assert')
 const puppeteer = require('puppeteer')
+const { percySnapshot } = require('@percy/puppeteer')
 
-const HOST = (process.env.TEST_HOST || "http://site:3000").replace(/\/$/, '')
+const HOST = (process.env.TEST_HOST || "http://localhost:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
-const SCREENSHOTS_PATH = './screenshots'
+const SCREENSHOTS_PATH = `${__dirname}/screenshots`
 const IGNORE_HTTPS_ERRORS = process.env.IGNORE_HTTPS_ERRORS === 'true'
 
 let browser
@@ -166,6 +167,22 @@ Object.entries(pagesToCheck).forEach(([title, url]) => {
       assert(status === 200 || status === 304, `Response should be 200 or 304 but was ${status}`)
 
       await page.screenshot({ path: `${SCREENSHOTS_PATH}/${url.replace(`${HOST}/`, '').replace('/', '-')}.png` })
+    })
+
+    // Percy needs to inject an inline script tag, so we run a whole separate
+    // test with CSP disabled.
+    it('snapshots percy with CSP disabled', async() => {
+      page.setBypassCSP(true)
+
+      const response = await page.goto(url)
+
+      const status = response.status()
+
+      // The above test already fails on response status error, so we just let
+      // it pass if there is one.
+      if (status === 200 || status === 304) {
+        await percySnapshot(page, title)
+      }
     })
   })
 })

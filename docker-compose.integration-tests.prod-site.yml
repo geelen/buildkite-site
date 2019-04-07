@@ -2,8 +2,13 @@ version: '3.4'
 services:
   integration-tests:
     image: "buildkiteci/site:site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"
-    volumes:
-      - "./integration-tests:/tests"
+    command: "yarn run integration:production"
     environment:
       - DEBUG
-      - "TEST_HOST=https://buildkite.com"
+      - PERCY_TOKEN
+      - PERCY_PROJECT
+      - BUILDKITE
+      - BUILDKITE_COMMIT
+      - BUILDKITE_BRANCH
+      - BUILDKITE_PULL_REQUEST
+      - BUILDKITE_BUILD_ID
