@@ -82,7 +82,7 @@ steps:
       - label: ":docker::package:"
         branches: master
         plugins:
-          ecr#v1.2.0:
+          ecr#v2.0.0:
             login: true
             account-ids: ${ECR_ACCOUNT_ID}
           docker-compose#v2.4.0:
