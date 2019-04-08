@@ -5,8 +5,6 @@ const fs = require('fs')
 const assert = require('assert')
 const puppeteer = require('puppeteer')
 
-const pagesToCheck = require('./pages')
-
 const HOST = (process.env.TEST_HOST || "http://localhost:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
 const SCREENSHOTS_PATH = `${__dirname}/screenshots`
@@ -138,6 +136,27 @@ describe('Logged in cookie behaviours', () => {
     })
   })
 })
+
+const pagesToCheck = {
+  'About': `/about`,
+  'Brand Assets': `/brand-assets`,
+  'Case Studies - Shopify': `/case-studies/shopify`,
+  'Case Studies': `/case-studies`,
+  'Contact Us': `/contact`,
+  'Enterprise': `/enterprise`,
+  'Features': `/features`,
+  'Home': `/home`,
+  'Plugins': `/plugins`,
+  'Pricing': `/pricing`,
+  'Privacy Policy': `/privacy-policy`,
+  'Screencasts - Parallel Testing': `/screencasts/parallel-testing`,
+  'Screencasts': `/screencasts`,
+  'Security': `/security`,
+  'Support': `/support`,
+  'Migrate From (Redirect)': `/migrate-from`,
+  'Migrate From - Bamboo': `/migrate-from/bamboo`,
+  'Migrate From - Bamboo Cloud (redirect)': `/migrate-from/bamboo-cloud`
+}
 
 Object.entries(pagesToCheck).forEach(([title, path]) => {
   describe(title, () => {
