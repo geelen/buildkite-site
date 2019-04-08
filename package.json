@@ -24,8 +24,8 @@
     "styled-transition-group": "2.0.0"
   },
   "devDependencies": {
-    "@percy/agent": "^0.2.1",
-    "@percy/puppeteer": "^1.0.7",
+    "@percy/agent": "0.2.1",
+    "@percy/puppeteer": "1.0.7",
     "babel-eslint": "10.0.1",
     "eslint": "5.16.0",
     "eslint-import-resolver-babel-module": "5.0.1",
@@ -34,9 +34,9 @@
     "eslint-plugin-import": "2.16.0",
     "eslint-plugin-react": "7.12.4",
     "js-yaml": "3.13.1",
-    "mocha": "^6.0.2",
+    "mocha": "6.0.2",
     "node-fetch": "2.3.0",
-    "puppeteer": "^1.14.0",
+    "puppeteer": "1.14.0",
     "webpack-bundle-analyzer": "3.2.0"
   },
   "scripts": {
