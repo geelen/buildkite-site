@@ -5,9 +5,9 @@ const fs = require('fs')
 const assert = require('assert')
 const puppeteer = require('puppeteer')
 
-const HOST = (process.env.TEST_HOST || "http://site:3000").replace(/\/$/, '')
+const HOST = (process.env.TEST_HOST || "http://localhost:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
-const SCREENSHOTS_PATH = './screenshots'
+const SCREENSHOTS_PATH = `${__dirname}/screenshots`
 const IGNORE_HTTPS_ERRORS = process.env.IGNORE_HTTPS_ERRORS === 'true'
 
 let browser
@@ -68,6 +68,7 @@ describe('Home', () => {
   let response
 
   beforeEach(async() => {
+    console.log(`Navigating to: ${HOST}/`)
     response = await page.goto(`${HOST}/`)
   })
 
@@ -137,35 +138,36 @@ describe('Logged in cookie behaviours', () => {
 })
 
 const pagesToCheck = {
-  'About': `${HOST}/about`,
-  'Brand Assets': `${HOST}/brand-assets`,
-  'Case Studies - Shopify': `${HOST}/case-studies/shopify`,
-  'Case Studies': `${HOST}/case-studies`,
-  'Contact Us': `${HOST}/contact`,
-  'Enterprise': `${HOST}/enterprise`,
-  'Features': `${HOST}/features`,
-  'Home': `${HOST}/home`,
-  'Plugins': `${HOST}/plugins`,
-  'Pricing': `${HOST}/pricing`,
-  'Privacy Policy': `${HOST}/privacy-policy`,
-  'Screencasts - Parallel Testing': `${HOST}/screencasts/parallel-testing`,
-  'Screencasts': `${HOST}/screencasts`,
-  'Security': `${HOST}/security`,
-  'Support': `${HOST}/support`,
-  'Migrate From (Redirect)': `${HOST}/migrate-from`,
-  'Migrate From - Bamboo': `${HOST}/migrate-from/bamboo`,
-  'Migrate From - Bamboo Cloud (redirect)': `${HOST}/migrate-from/bamboo-cloud`
+  'About': `/about`,
+  'Brand Assets': `/brand-assets`,
+  'Case Studies - Shopify': `/case-studies/shopify`,
+  'Case Studies': `/case-studies`,
+  'Contact Us': `/contact`,
+  'Enterprise': `/enterprise`,
+  'Features': `/features`,
+  'Home': `/home`,
+  'Plugins': `/plugins`,
+  'Pricing': `/pricing`,
+  'Privacy Policy': `/privacy-policy`,
+  'Screencasts - Parallel Testing': `/screencasts/parallel-testing`,
+  'Screencasts': `/screencasts`,
+  'Security': `/security`,
+  'Support': `/support`,
+  'Migrate From (Redirect)': `/migrate-from`,
+  'Migrate From - Bamboo': `/migrate-from/bamboo`,
+  'Migrate From - Bamboo Cloud (redirect)': `/migrate-from/bamboo-cloud`
 }
 
-Object.entries(pagesToCheck).forEach(([title, url]) => {
+Object.entries(pagesToCheck).forEach(([title, path]) => {
   describe(title, () => {
     it('responds ok', async() => {
-      const response = await page.goto(url)
+      console.log(`Navigating to: ${HOST}${path}`)
+      const response = await page.goto(`${HOST}${path}`)
 
       const status = response.status()
       assert(status === 200 || status === 304, `Response should be 200 or 304 but was ${status}`)
 
-      await page.screenshot({ path: `${SCREENSHOTS_PATH}/${url.replace(`${HOST}/`, '').replace('/', '-')}.png` })
+      await page.screenshot({ path: `${SCREENSHOTS_PATH}/${path.replace(/^\//, '').replace('/', '-')}.png` })
     })
   })
 })

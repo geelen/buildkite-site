@@ -3,11 +3,17 @@ version: '3.4'
 services:
   integration-tests:
     image: "buildkiteci/site:site-build-${BUILDKITE_BUILD_NUMBER}-integration-tests"
-    volumes:
-      - "./integration-tests:/tests"
     environment:
       - DEBUG
       - IGNORE_HTTPS_ERRORS=true
+      - PERCY_TOKEN
+      - PERCY_PROJECT
+      - BUILDKITE
+      - BUILDKITE_COMMIT
+      - BUILDKITE_BRANCH
+      - BUILDKITE_PULL_REQUEST
+      - BUILDKITE_BUILD_ID
+      - "TEST_HOST=http://site:3000/"
     links:
       - site
 

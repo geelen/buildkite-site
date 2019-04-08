@@ -5,8 +5,6 @@ services:
     build:
       context: .
       target: integration-tests
-    volumes:
-      - "./integration-tests:/tests"
     environment:
       - DEBUG
       - IGNORE_HTTPS_ERRORS=true

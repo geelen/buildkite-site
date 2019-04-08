@@ -21,20 +21,17 @@ CMD     ["yarn", "run", "start"]
 # deps.
 FROM production as development
 ENV  NODE_ENV=development
-RUN  yarn install
+RUN  yarn install --frozen-lockfile --silent
 
 # -- Test
 # Same deps as development
 FROM development as test
 
 # -- Integration tests
-# Has headless chrome and puppeteer, and adds in Mocha so we can run our tests
-# directly inside it
 FROM     puppeteer AS integration-tests
-RUN      npm i -g mocha@5
-ENV      PATH="${PATH}:/node_modules/.bin"
-WORKDIR  /tests
-CMD      ["mocha", "--recursive", "--no-timeouts", "."]
+COPY     --from=development /app /app
+WORKDIR  /app
+CMD      ["yarn", "run", "integration"]
 
 # -- Default target
 FROM production
