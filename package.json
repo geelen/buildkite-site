@@ -24,7 +24,7 @@
     "styled-transition-group": "2.0.0"
   },
   "devDependencies": {
-    "@percy/agent": "0.2.1",
+    "@percy/agent": "0.2.2",
     "@percy/puppeteer": "1.0.7",
     "babel-eslint": "10.0.1",
     "eslint": "5.16.0",
