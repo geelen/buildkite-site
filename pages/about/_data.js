@@ -156,6 +156,6 @@ export const advisors = [
     photo: photoJohnBarton,
     name: "John Barton",
     bio: "John is an accomplished engineering manager, and builder of large technical teams. He’s an avid reader, and divides his attention between people management books, technology trends, and maritime museums.",
-    roles: ["VP Engineering @ 99designs"]
+    roles: ["Founder @ Hecate"]
   }
 ]
