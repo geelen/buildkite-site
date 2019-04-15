@@ -815,10 +815,10 @@
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.4.tgz#b740f68609dfae8aa71c3a6cab15d816407ba493"
   integrity sha512-60CHpq+eqnTxLZQ4PGHYNwUX572hgpMHGPtTWMjdTMsAvlm69lZV/4ly6O3sAYkomo4NggGcomrDpBe34rxUqw==
 
-"@percy/agent@0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@percy/agent/-/agent-0.2.2.tgz#868084a2664e2f1b3ca5a773c4701acc3763a18a"
-  integrity sha512-LsjFg72avalNVuwJqNy7eGy3OrBokhngK1QPcNRkEWK715otNcC10Dn5Y1YxkSvQIZd/E/p32yx7POve4DlXPg==
+"@percy/agent@0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@percy/agent/-/agent-0.2.3.tgz#afee2147bdbc6237c91a8d2e29e5b667329f7b04"
+  integrity sha512-iXyDMZMHBHkljqDNHrhn/3ugyuUehuv33NbP9pA/mw9TZcbNUW3RelZ4/oAa7tFbOgo8sojj1pY3eeRqOO+Lvg==
   dependencies:
     "@oclif/command" "^1"
     "@oclif/config" "^1"
@@ -835,7 +835,7 @@
     js-yaml "^3.13.1"
     percy-client "^3.0.3"
     puppeteer "^1.13.0"
-    retry-axios "^0.4.1"
+    retry-axios "^0.5.0"
     winston "^2.0.0"
 
 "@percy/agent@^0.1.18":
@@ -5605,6 +5605,11 @@ retry-axios@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/retry-axios/-/retry-axios-0.4.1.tgz#22ee392c6f20ae858d06650fa06091ea4f3406e5"
   integrity sha512-h3mdzDUw4MlvzjxJ96mysapyxcHzAmGVywrBtU5oAtXI2aBxMEgcmyepkKfoVXK6we2padRl1BwwvL1N7+lPwA==
+
+retry-axios@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/retry-axios/-/retry-axios-0.5.0.tgz#599e722bbfce6a9568830f25451536c61e06932b"
+  integrity sha512-z1pPucA5/owlZB7MSPVOHk3qQIxwfZQ5yWM/WIgQVIza7FNYOJrItwc0P4nwBn4SMfuUtH7OulRKxyCqfjVO2A==
 
 rimraf@2.6.3, rimraf@^2.2.8, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2:
   version "2.6.3"
