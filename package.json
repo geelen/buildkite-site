@@ -19,7 +19,7 @@
     "react-dom": "16.8.6",
     "react-keyframes": "0.2.3",
     "react-transition-group": "4.0.0",
-    "retire": "2.0.2",
+    "retire": "2.0.3",
     "styled-components": "4.2.0",
     "styled-transition-group": "2.0.0"
   },
