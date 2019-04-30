@@ -6,7 +6,7 @@ steps:
       # Fix a weird issue where git hangs on elastic stack
       TERM: ansi
     plugins:
-      - docker-compose#v3.0.2:
+      - docker-compose#v3.0.3:
           run: site
           env:
             - GITHUB_API_TOKEN

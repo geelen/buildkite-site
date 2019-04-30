@@ -6,7 +6,7 @@ steps:
         agents:
           queue: elastic-builders
         plugins:
-          docker-compose#v3.0.2:
+          docker-compose#v3.0.3:
             build: site
             image-repository: buildkiteci/site
             image-name: "site-build-${BUILDKITE_BUILD_NUMBER}-dev"
@@ -15,7 +15,7 @@ steps:
         agents:
           queue: elastic-builders
         plugins:
-          docker-compose#v3.0.2:
+          docker-compose#v3.0.3:
             config: docker-compose.prod.yml
             build: site
             image-repository: buildkiteci/site
@@ -25,7 +25,7 @@ steps:
         agents:
           queue: elastic-builders
         plugins:
-          docker-compose#v3.0.2:
+          docker-compose#v3.0.3:
             config: docker-compose.integration-tests.yml
             build: integration-tests
             image-repository: buildkiteci/site
@@ -41,13 +41,13 @@ steps:
       - name: ":eslint:"
         command: yarn run lint
         plugins:
-          docker-compose#v3.0.2:
+          docker-compose#v3.0.3:
             run: site
 
       - name: ":flowtype:"
         command: yarn run flow
         plugins:
-          docker-compose#v3.0.2:
+          docker-compose#v3.0.3:
             run: site
         skip: "TODO"
 
@@ -55,7 +55,7 @@ steps:
         command: yarn run bundle-analyze
         artifact_paths: "bundle-analysis/*"
         plugins:
-          docker-compose#v3.0.2:
+          docker-compose#v3.0.3:
             run: site
 
       - name: ":chrome:"
@@ -63,7 +63,7 @@ steps:
         artifact_paths: "integration-tests/screenshots/*.png"
         timeout_in_minutes: 3
         plugins:
-          docker-compose#v3.0.2:
+          docker-compose#v3.0.3:
             run: integration-tests
             config: docker-compose.integration-tests.prod-image.yml
 
@@ -71,7 +71,7 @@ steps:
         command: yarn run percy
         timeout_in_minutes: 3
         plugins:
-          docker-compose#v3.0.2:
+          docker-compose#v3.0.3:
             run: integration-tests
             config: docker-compose.integration-tests.prod-image.yml
 
@@ -126,7 +126,7 @@ steps:
         branches: master
         timeout_in_minutes: 3
         plugins:
-          docker-compose#v3.0.2:
+          docker-compose#v3.0.3:
             run: integration-tests
             config: docker-compose.integration-tests.prod-site.yml
         artifact_paths: "integration-tests/screenshots/*.png"
