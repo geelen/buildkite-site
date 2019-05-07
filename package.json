@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@percy/agent": "0.4.4",
-    "@percy/puppeteer": "1.0.7",
+    "@percy/puppeteer": "1.0.8",
     "babel-eslint": "10.0.1",
     "eslint": "5.16.0",
     "eslint-import-resolver-babel-module": "5.1.0",
