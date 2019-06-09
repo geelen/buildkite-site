@@ -1,5 +1,7 @@
+const webpack = require('webpack')
+
 /* global __dirname */
-const { ANALYZE } = process.env
+const { ANALYZE, NODE_ENV } = process.env
 
 module.exports = {
   // Don't reveal what we're running
@@ -14,6 +16,13 @@ module.exports = {
         openAnalyzer: false
       }))
     }
+
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        // Make sure only prod traffic gets to the prod site in Matomo
+        BK_ANALYTICS_SITE_ID: NODE_ENV === 'production' ? 1 : 2
+      })
+    )
 
     config.module.rules.push({
       test: /\.(jpg|png|gif|svg|ico|woff|woff2)$/,
