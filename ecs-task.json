@@ -1,0 +1,16 @@
+[{
+  "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+          "awslogs-group": "ecs-site-test",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "site"
+      }
+  },
+  "portMappings": [{
+    "containerPort": 3000,
+    "protocol": "tcp"
+  }],
+  "memoryReservation": 128,
+  "name": "site"
+}]
