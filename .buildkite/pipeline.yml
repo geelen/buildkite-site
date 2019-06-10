@@ -100,13 +100,14 @@ steps:
         concurrency_group: site-deploy
         agents:
           queue: deploy
-        plugins:
-          ecs-deploy#v1.2.0:
-            cluster: buildkite-ecs
-            service: site
-            task-definition: ecs-task.json
-            task-family: buildkite-site
-            image: "${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}"
+        # plugins:
+        #   ecs-deploy#v1.2.0:
+        #     cluster: buildkite-ecs
+        #     service: site
+        #     task-definition: ecs-task.json
+        #     task-family: buildkite-site
+        #     image: "${ECR_REPOSITORY}:${BUILDKITE_BUILD_NUMBER}"
+        command: scripts/deploy-ecs
 
   - wait
       
