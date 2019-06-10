@@ -59,8 +59,10 @@ const People = styled.div`
   }
 `
 
-const HeadOfficeImageContainer = styled(ResponsiveImageContainer)`
+const HeadOfficeImageContainer = styled.div`
   max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 `
 
 const LocationParagraph = styled.section`
@@ -147,8 +149,10 @@ export default page((props) => (
     <Section>
       <MediaItem alignItems="top">
         <ImageCell>
-          <HeadOfficeImageContainer width={1000} height={589}>
-            <img src={headOfficeImage} alt="Person looking at points around a globe" />
+          <HeadOfficeImageContainer>
+            <ResponsiveImageContainer width={1000} height={589}>
+              <img src={headOfficeImage} alt="Person looking at points around a globe" />
+            </ResponsiveImageContainer>
           </HeadOfficeImageContainer>
         </ImageCell>
         <TextCell>

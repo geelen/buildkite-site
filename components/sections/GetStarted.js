@@ -22,16 +22,20 @@ const GetStartedText = styled(TextCell)`
   }
 `
 
-const ImageContainer = styled(ResponsiveImageContainer)`
+const ImageContainer = styled.div`
   max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 `
 
 export default () => (
   <section>
     <MediaItem>
       <ImageCell>
-        <ImageContainer width={800} height={437}>
-          <img src={image} alt="Two people launching a pod" />
+        <ImageContainer>
+          <ResponsiveImageContainer width={800} height={437}>
+            <img src={image} alt="Two people launching a pod" />
+          </ResponsiveImageContainer>
         </ImageContainer>
       </ImageCell>
       <GetStartedText>
