@@ -135,7 +135,7 @@ export const leadership = [
       { name: "GitHub", url: "https://github.com/lox" }
     ],
     colour: "rgb(149,149,143)",
-    roles: ["COO"]
+    roles: ["Founder", "COO"]
   }
 ]
 
