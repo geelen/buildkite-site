@@ -34,7 +34,7 @@
     "eslint-plugin-import": "2.18.0",
     "eslint-plugin-react": "7.14.2",
     "js-yaml": "3.13.1",
-    "mocha": "6.1.4",
+    "mocha": "6.2.0",
     "node-fetch": "2.6.0",
     "puppeteer": "1.18.1",
     "webpack-bundle-analyzer": "3.3.2"
