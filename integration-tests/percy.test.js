@@ -37,12 +37,10 @@ beforeEach(async() => {
 
 afterEach(async() => {
   await page.close()
-  page = undefined
 })
 
 after(async() => {
   await browser.close()
-  browser = undefined
 })
 
 const pagesToSnapshot = {

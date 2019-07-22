@@ -12,7 +12,7 @@ const IGNORE_HTTPS_ERRORS = process.env.IGNORE_HTTPS_ERRORS === 'true'
 
 let browser
 let page
-let consoleMessages = []
+let consoleMessages
 
 before(async() => {
   browser = await puppeteer.launch({
@@ -35,6 +35,8 @@ beforeEach(async() => {
   page = await browser.newPage()
   await page.setViewport({ width: 1280, height: 960 })
 
+  consoleMessages = []
+
   page.on('console', (msg) => {
     // We can't assert.fail from here, so we store the messages for the afterEach
     consoleMessages.push(`${msg.type()}: ${msg.text()}`)
@@ -55,13 +57,10 @@ afterEach(async() => {
   }
 
   await page.close()
-  page = undefined
-  consoleMessages = []
 })
 
 after(async() => {
   await browser.close()
-  browser = undefined
 })
 
 describe('Home', () => {
