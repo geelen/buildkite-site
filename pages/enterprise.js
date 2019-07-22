@@ -8,7 +8,7 @@ import Page, { page } from 'components/Page'
 import { FeatureGrid, FeatureCell, FeatureTitle, FeatureDescription } from 'components/FeatureGrid'
 import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
 
-import { rea, shopify } from './case-studies/_data'
+import { rea, shopify } from '../lib/data/case-studies'
 
 import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 

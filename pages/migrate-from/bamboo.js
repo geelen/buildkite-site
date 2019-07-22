@@ -6,7 +6,7 @@ import CaseStudyCallout from 'components/CaseStudyCallout'
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
 
-import { rea } from '../case-studies/_data'
+import { rea } from '../../lib/data/case-studies'
 
 import photoColinPanisset from '../../assets/images/migrate-from/bamboo/colinpanisset.jpg'
 

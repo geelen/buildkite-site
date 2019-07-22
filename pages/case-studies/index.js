@@ -2,7 +2,7 @@ import Br from 'components/Br'
 import Page, { page } from 'components/Page'
 import CaseStudyCallout from 'components/CaseStudyCallout'
 
-import caseStudies from './_data'
+import caseStudies from '../../lib/data/case-studies'
 
 export default page((props) => (
   <Page

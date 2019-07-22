@@ -5,7 +5,7 @@ import CaseStudyCallout from 'components/CaseStudyCallout'
 import { OffscreenH2 } from 'components/OffscreenHeading'
 import Page, { page } from 'components/Page'
 
-import caseStudies from './_data'
+import caseStudies from '../../lib/data/case-studies'
 
 const FlexContainer = styled.div`
   display: flex;
