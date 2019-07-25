@@ -4,6 +4,7 @@
 const fs = require('fs')
 const assert = require('assert')
 const puppeteer = require('puppeteer')
+const inspect = require('util').inspect
 
 const HOST = (process.env.TEST_HOST || "http://localhost:3000").replace(/\/$/, '')
 const DOMAIN = HOST.replace(/https?:\/\//, '')
@@ -53,7 +54,7 @@ afterEach(async() => {
     // Perhaps there's another way, but at least now this fails the text suite,
     // rather than just printing an error to the console and never failing the
     // test.
-    assert.fail(`Console messages aren't allowed: ${consoleMessages.join()}`)
+    assert.fail("Console messages aren't allowed", inspect(consoleMessages))
   }
 
   await page.close()
