@@ -73,7 +73,7 @@ export default page((props) => (
         imageAlt="Post-it note"
         description="Have some feedback or an idea? Let us know in our feedback forum."
         url="https://forum.buildkite.community/c/feature-requests"
-        external={true}
+        external
         buttonTitle="Post a Topic"
       />
       <ActionGridItem

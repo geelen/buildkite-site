@@ -33,7 +33,7 @@ export default page((props) => (
         imageAlt="Post-it note"
         description="Let us know about something you’d like added or improved in Buildkite."
         url="https://forum.buildkite.community/c/feature-requests"
-        external={true}
+        external
         buttonTitle="Post a Topic"
       />
       <ActionGridItem
