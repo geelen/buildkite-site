@@ -1,3 +1,3 @@
-import caseStudyPage from './_page'
+import caseStudyPage from 'components/Page/case-study'
 
 export default caseStudyPage('/case-studies/rea')

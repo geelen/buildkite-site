@@ -40,7 +40,7 @@ beforeEach(async() => {
 
   page.on('console', (msg) => {
     // We can't assert.fail from here, so we store the messages for the afterEach
-    consoleMessages.push(`${msg.type()}: ${msg.text()}`)
+    consoleMessages.push(msg)
   })
 })
 

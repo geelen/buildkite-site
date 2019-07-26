@@ -10,10 +10,9 @@ import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 import RawSVGConsoleImage from 'components/SVGConsoleImage'
 import GetStarted from 'components/sections/GetStarted'
 import Screencasts from 'components/sections/Screencasts'
+import RawBuildAgentStart from 'components/BuildAgentImage'
 
 import openGraphImage from '../../assets/images/open-graph/features.png'
-
-import RawBuildAgentStart from './_build-agent-start'
 
 // -- Feature Section 1 --
 // Shown after styled version of RawBuildAgentStart, which is defined way below
