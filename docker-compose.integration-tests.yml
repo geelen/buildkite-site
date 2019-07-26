@@ -8,6 +8,7 @@ services:
     environment:
       - DEBUG
       - IGNORE_HTTPS_ERRORS=true
+      - "TEST_HOST=http://site:3000"
     links:
       - site
 

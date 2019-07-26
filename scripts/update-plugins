@@ -103,11 +103,11 @@ function processResults(results) {
   module.exports = ${JSON.stringify(plugins)};
   `
 
-  fs.writeFile(path.join(__dirname, "../pages/plugins/_data.js"), dataJsFile, function(error) {
+  fs.writeFile(path.join(__dirname, "../lib/data/plugins.js"), dataJsFile, function(error) {
     if (error) {
       return console.log(error)
     }
-    console.log("Plugin data saved to plugins/_data.json")
+    console.log("Plugin data saved to lib/data/plugins.js")
   })
 }
 

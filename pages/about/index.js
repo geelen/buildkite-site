@@ -12,7 +12,7 @@ import Page, { page } from 'components/Page'
 import Person from 'components/Person'
 import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 
-import { team, leadership, advisors } from './_data'
+import { team, leadership, advisors } from '../../lib/data/people'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
 import brandAssetsImage from '../../assets/images/about/brand-assets.jpg'

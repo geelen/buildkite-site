@@ -5,7 +5,7 @@ import Page, { page } from 'components/Page'
 import { ResponsiveVideoContainer } from 'components/ResponsiveContainer'
 import RawScreencastLink from 'components/ScreencastLink'
 
-import screencasts from './_data'
+import screencasts from '../../lib/data/screencasts'
 
 const Wrapper = styled.div`
   text-align: center;

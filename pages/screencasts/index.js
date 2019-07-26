@@ -3,7 +3,7 @@ import Page, { page } from 'components/Page'
 import Br from 'components/Br'
 import ScreencastLink from 'components/ScreencastLink'
 
-import screencasts from './_data'
+import screencasts from '../../lib/data/screencasts'
 
 import openGraphImage from '../../assets/images/open-graph/screencasts.png'
 

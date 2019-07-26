@@ -6,7 +6,7 @@ import Callout from 'components/Callout'
 import Page, { page } from 'components/Page'
 import { Grid, Cell } from 'components/Grid'
 
-import plugins from './_data'
+import plugins from '../../lib/data/plugins'
 
 const PluginGrid = styled(Grid)`
   grid-template-columns: repeat(2, 1fr);
