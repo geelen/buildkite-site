@@ -17,7 +17,7 @@ import { team, leadership, advisors } from '../../lib/data/people'
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
 import brandAssetsImage from '../../assets/images/about/brand-assets.jpg'
 import sayhelloImage from '../../assets/images/contact/sayhello.jpg'
-// import shopImage from '../../assets/images/about/shop.jpg'
+import shopImage from '../../assets/images/about/shop.jpg'
 import aboriginalFlagImage from '../../assets/images/about/australian-aboriginal-flag.svg'
 
 const SectionHeader = styled.h1`
@@ -247,14 +247,14 @@ export default page((props) => (
         url="mailto:hello@buildkite.com"
         buttonTitle="Email hello@buildkite.com"
       />
-      {/* <ActionGridItem
+      <ActionGridItem
         heading="Buildkite Shop"
         image={shopImage}
         imageAlt="Illustration of a shop full of items"
         description="Order yourself some official Buildkite stickers, t-shirts, and more."
         url="https://shop.buildkite.com/"
         buttonTitle="Browse the shop"
-      /> */}
+      />
     </ActionGrid>
 
     <Callout
