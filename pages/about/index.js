@@ -18,6 +18,7 @@ import headOfficeImage from '../../assets/images/about/head-office.jpg'
 import brandAssetsImage from '../../assets/images/about/brand-assets.jpg'
 import sayhelloImage from '../../assets/images/contact/sayhello.jpg'
 import shopImage from '../../assets/images/about/shop.jpg'
+import careersImage from '../../assets/images/about/careers.jpg'
 import aboriginalFlagImage from '../../assets/images/about/australian-aboriginal-flag.svg'
 
 const SectionHeader = styled.h1`
@@ -55,7 +56,7 @@ const People = styled.div`
   flex-wrap: wrap;
   max-width: 720px;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 
   > * {
     margin: -18px -12px;
@@ -254,6 +255,14 @@ export default page((props) => (
         description="Order yourself some official Buildkite stickers, t-shirts, and more."
         url="https://shop.buildkite.com/"
         buttonTitle="Browse the shop"
+      />
+      <ActionGridItem
+        heading="Careers"
+        image={careersImage}
+        imageAlt="Illustration of people playing an arcade game"
+        description="Want to join the Buildkite team? Check out our current open positions."
+        url="/careers"
+        buttonTitle="View Careers"
       />
     </ActionGrid>
 
