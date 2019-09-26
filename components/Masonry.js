@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Masonry = styled.div`
   columns: auto 18rem;
@@ -13,4 +13,9 @@ export const Masonry = styled.div`
 
 export const Brick = styled.div`
   padding: ${({ theme }) => theme.textSpacing.s1} 0;
+
+  ${props => props.icon && css`
+    background: url(${props.icon}) 0 1.6rem no-repeat;
+    padding-left: 65px;
+  `}
 `

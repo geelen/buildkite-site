@@ -8,6 +8,13 @@ import Callout from 'components/Callout'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
 
+import healthCoverIcon from '../../assets/images/careers/streamline-icon-hospital-house@48x48.svg'
+import homeOfficeIcon from '../../assets/images/careers/streamline-icon-office-desk@48x48.svg'
+import learningIcon from '../../assets/images/careers/streamline-icon-tools-box@48x48.svg'
+import parentalLeaveIcon from '../../assets/images/careers/streamline-icon-baby-care-body@48x48.svg'
+import profitShareIcon from '../../assets/images/careers/streamline-icon-saving-piggy-dollars@48x48-2.svg'
+import wellnessIcon from '../../assets/images/careers/streamline-icon-messages-bubble-smile@48x48.svg'
+
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s3};
   margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
@@ -88,27 +95,39 @@ export default page((props) => (
       <SectionHeader>Benefits</SectionHeader>
       <Subsection>
         <Masonry>
-          <Brick>
+          <Brick
+            icon={learningIcon}
+          >
             <SubSectionHeader>Learning & Development</SubSectionHeader>
             <CareersParagraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae ornare lectus. Aenean sit amet condimentum leo. Integer sit amet odio lectus.</CareersParagraph>
           </Brick>
-          <Brick>
+          <Brick
+            icon={healthCoverIcon}
+          >
             <SubSectionHeader>Health Cover</SubSectionHeader>
             <CareersParagraph>Phasellus in hendrerit felis. In tempor eleifend semper. Aenean ac ex ut lorem dapibus blandit. Proin placerat sollicitudin leo.</CareersParagraph>
           </Brick>
-          <Brick>
+          <Brick
+            icon={parentalLeaveIcon}
+          >
             <SubSectionHeader>Parental Leave</SubSectionHeader>
             <CareersParagraph>Vivamus nunc eros, gravida eu tempor non, finibus tempor arcu. Quisque venenatis imperdiet tellus sed varius. Praesent vitae ornare sem.</CareersParagraph>
           </Brick>
-          <Brick>
+          <Brick
+            icon={homeOfficeIcon}
+          >
             <SubSectionHeader>Home Office & Coworking</SubSectionHeader>
             <CareersParagraph>In convallis consequat sapien, dignissim aliquet dui auctor ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</CareersParagraph>
           </Brick>
-          <Brick>
+          <Brick
+            icon={wellnessIcon}
+          >
             <SubSectionHeader>Wellness</SubSectionHeader>
             <CareersParagraph>Fusce ut eleifend nibh. Cras orci diam, auctor id nulla nec, posuere pretium massa. Suspendisse pellentesque felis sit amet congue lacinia. Nunc gravida velit dolor.</CareersParagraph>
           </Brick>
-          <Brick>
+          <Brick
+            icon={profitShareIcon}
+          >
             <SubSectionHeader>Profit Share & Ownership</SubSectionHeader>
             <CareersParagraph>Nam porttitor enim at arcu ornare facilisis. Nullam varius vehicula erat vitae egestas. In tempor ac lorem justo molestie vehicula. Proin convallis euismod risus ac feugiat.</CareersParagraph>
           </Brick>
