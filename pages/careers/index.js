@@ -13,12 +13,12 @@ const Section = styled.section`
   margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
 `
 
-// const SectionHeader = styled.h2`
-//   ${({ theme }) => theme.textStyles.secondLevelHeading}
-//   margin-top: ${({ theme }) => theme.innerSpacing.s2};
-//   margin-bottom: ${({ theme }) => theme.outerSpacing.s1};
-//   text-align: center;
-// `
+const SectionHeader = styled.h2`
+  ${({ theme }) => theme.textStyles.secondLevelHeading}
+  margin-top: ${({ theme }) => theme.innerSpacing.s2};
+  margin-bottom: ${({ theme }) => theme.outerSpacing.s1};
+  text-align: center;
+`
 
 const Subsection = styled.section`
   margin-top: ${({ theme }) => theme.innerSpacing.s2};
@@ -79,6 +79,38 @@ export default page((props) => (
           <Brick>
             <SubSectionHeader>Skills and Growth</SubSectionHeader>
             <CareersParagraph>Something about not needing a degree, making people from all backgrounds feel welcome, valuing different perspectives, opinions, strengths and capabilities.</CareersParagraph>
+          </Brick>
+        </Masonry>
+      </Subsection>
+    </Section>
+
+    <Section>
+      <SectionHeader>Benefits</SectionHeader>
+      <Subsection>
+        <Masonry>
+          <Brick>
+            <SubSectionHeader>Learning & Development</SubSectionHeader>
+            <CareersParagraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae ornare lectus. Aenean sit amet condimentum leo. Integer sit amet odio lectus.</CareersParagraph>
+          </Brick>
+          <Brick>
+            <SubSectionHeader>Health Cover</SubSectionHeader>
+            <CareersParagraph>Phasellus in hendrerit felis. In tempor eleifend semper. Aenean ac ex ut lorem dapibus blandit. Proin placerat sollicitudin leo.</CareersParagraph>
+          </Brick>
+          <Brick>
+            <SubSectionHeader>Parental Leave</SubSectionHeader>
+            <CareersParagraph>Vivamus nunc eros, gravida eu tempor non, finibus tempor arcu. Quisque venenatis imperdiet tellus sed varius. Praesent vitae ornare sem.</CareersParagraph>
+          </Brick>
+          <Brick>
+            <SubSectionHeader>Home Office & Coworking</SubSectionHeader>
+            <CareersParagraph>In convallis consequat sapien, dignissim aliquet dui auctor ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</CareersParagraph>
+          </Brick>
+          <Brick>
+            <SubSectionHeader>Wellness</SubSectionHeader>
+            <CareersParagraph>Fusce ut eleifend nibh. Cras orci diam, auctor id nulla nec, posuere pretium massa. Suspendisse pellentesque felis sit amet congue lacinia. Nunc gravida velit dolor.</CareersParagraph>
+          </Brick>
+          <Brick>
+            <SubSectionHeader>Profit Share & Ownership</SubSectionHeader>
+            <CareersParagraph>Nam porttitor enim at arcu ornare facilisis. Nullam varius vehicula erat vitae egestas. In tempor ac lorem justo molestie vehicula. Proin convallis euismod risus ac feugiat.</CareersParagraph>
           </Brick>
         </Masonry>
       </Subsection>
