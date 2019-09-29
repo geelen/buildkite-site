@@ -1,9 +1,10 @@
 const webpack = require('webpack')
 
 /* global __dirname */
-const { ANALYZE, NODE_ENV } = process.env
+const { ANALYZE, NODE_ENV, FAB_BUILD } = process.env
 
 module.exports = {
+  target: FAB_BUILD ? 'serverless' : 'server',
   // Don't reveal what we're running
   poweredByHeader: false,
 

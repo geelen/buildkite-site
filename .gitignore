@@ -5,3 +5,5 @@
 /bundle-analysis
 /integration-tests/screenshots/*.png
 /yarn-error.log
+.fab
+fab.zip
