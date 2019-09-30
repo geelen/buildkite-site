@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fab/nextjs": "^0.4.0",
     "babel-plugin-module-resolver": "3.2.0",
     "babel-plugin-styled-components": "1.10.6",
     "babel-plugin-transform-flow-strip-types": "6.22.0",
@@ -43,6 +44,8 @@
     "lint": "eslint . --color",
     "lint:fix": "eslint . --color --fix",
     "build": "next build",
+    "build:fab": "FAB_BUILD=true npm run build && npm run fab:compile",
+    "fab:compile": "FAB_BUILD=true fab-nextjs build",
     "export": "next export",
     "start": "node server.js",
     "bundle-analyze": "NODE_ENV=production ANALYZE=1 next build",
