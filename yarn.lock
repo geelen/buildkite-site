@@ -890,7 +890,7 @@
     typescript "^3.3.1"
     webpack "^4.29.0"
 
-"@fab/nextjs@^0.4.0":
+"@fab/nextjs@0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@fab/nextjs/-/nextjs-0.4.0.tgz#431bf7d8e53cc0dcd971bbb3a8081b98018a7eca"
   integrity sha512-HTv3LK+5p+Z1b1UmwA8EUU59BWWip78DJnPK8+tU9rJcDkiV5OgcrWaiuWQtyFFqbUitwY+zmnrAiLDa1ugsLA==
