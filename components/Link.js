@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { Children } from 'react'
+import styled from 'styled-components'
 
 // Our own Link higher order component. It differs from the standard Next one in
 // the following ways:
@@ -26,3 +27,7 @@ export default ({ href, external, children }) => {
   )
 
 }
+
+export const TextLink = styled.a`
+  ${({ theme }) => theme.textStyles.hyperlink}
+`

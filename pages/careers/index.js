@@ -1,9 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Br from 'components/Br'
 // import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 
 import Page, { page } from 'components/Page'
 import { Masonry, Brick } from 'components/Masonry'
+import { TextLink } from 'components/Link'
 import Callout from 'components/Callout'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
@@ -18,12 +19,16 @@ import wellnessIcon from '../../assets/images/careers/streamline-icon-messages-b
 const Section = styled.section`
   margin-top: ${({ theme }) => theme.outerSpacing.s3};
   margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
+
+  ${(props) => props.small && css`
+    margin: ${({ theme }) => theme.outerSpacing.s3} auto;
+    max-width: 510px;
+  `}
 `
 
 const SectionHeader = styled.h2`
   ${({ theme }) => theme.textStyles.secondLevelHeading}
   margin-top: ${({ theme }) => theme.innerSpacing.s2};
-  margin-bottom: ${({ theme }) => theme.outerSpacing.s1};
   text-align: center;
 `
 
@@ -37,11 +42,36 @@ const SubSectionHeader = styled.h3`
   margin: ${({ theme }) => theme.textSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
+const CareersSectionParagraph = styled.p`
+  ${({ theme }) => theme.textStyles.bodyCopy};
+  color: ${({ theme }) => theme.colors.text.subdued};
+  margin: ${({ theme }) => theme.textSpacing.s3} 0 0;
+`
+
 const CareersParagraph = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
   margin: ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
+const OrderedList = styled.ol`
+  ${({ theme }) => theme.textStyles.bodyCopyLarge}
+  columns: auto 13.2rem;
+  column-gap: 1rem;
+  counter-reset: subdued-numbers;
+  margin: ${({ theme }) => theme.textSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s1} 0;
+`
+
+const OrderedListItem = styled.li`
+  counter-increment: subdued-numbers;
+  margin: 0 0 ${({ theme }) => theme.textSpacing.s1} 0;
+
+  &:before  {
+    ${({ theme }) => theme.textStyles.bodyCopy}
+    color: ${({ theme }) => theme.colors.text.subdued};
+    content: "0" counter(subdued-numbers) " ";
+    padding-right: 0.6rem;
+  }
+`
 
 export default page((props) => (
   <Page
@@ -91,6 +121,22 @@ export default page((props) => (
       </Subsection>
     </Section>
 
+    <Section small>
+      <SectionHeader>Our Values</SectionHeader>
+      <CareersSectionParagraph>Buildkite’s values guide our priorities, product, hiring, the way we treat our customers, and the way we treat each other. You can read all about them on our <TextLink href="/about">about page.</TextLink></CareersSectionParagraph>
+
+      <Subsection>
+        <OrderedList>
+          <OrderedListItem>Transparency</OrderedListItem>
+          <OrderedListItem>Quality</OrderedListItem>
+          <OrderedListItem>Diversity</OrderedListItem>
+          <OrderedListItem>Independence</OrderedListItem>
+          <OrderedListItem>Empathy</OrderedListItem>
+          <OrderedListItem>Collaboration</OrderedListItem>
+          <OrderedListItem>Sustainable Growth</OrderedListItem>
+        </OrderedList>
+      </Subsection>
+    </Section>
     <Section>
       <SectionHeader>Benefits</SectionHeader>
       <Subsection>
