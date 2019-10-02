@@ -1,13 +1,15 @@
 import styled, { css } from 'styled-components'
 import Br from 'components/Br'
-// import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 
 import Page, { page } from 'components/Page'
+import { Testimonial, Quotation, Attribution, Headshot, ImageGrid, ImageItem } from 'components/Page/case-study'
 import { Masonry, Brick } from 'components/Masonry'
 import { TextLink } from 'components/Link'
 import Callout from 'components/Callout'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
+import testimonialImage from '../../assets/images/careers/pretend-koalas.jpg'
+import testimonialAvatar from '../../assets/images/about/eleanor.jpg'
 
 import healthCoverIcon from '../../assets/images/careers/streamline-icon-hospital-house@48x48.svg'
 import homeOfficeIcon from '../../assets/images/careers/streamline-icon-office-desk@48x48.svg'
@@ -119,6 +121,35 @@ export default page((props) => (
           </Brick>
         </Masonry>
       </Subsection>
+    </Section>
+
+    <Section>
+
+      <Testimonial>
+        <Quotation>
+          Sometimes we pretend to be koalas. Sometimes we pretend to be koalas. Sometimes we pretend to be koalas. Sometimes we pretend to be koalas. Sometimes we pretend to be koalas.
+        </Quotation>
+        <Attribution>
+          <Headshot
+            src={testimonialAvatar}
+            alt="Headshot of Eleanor."
+          />
+          <p>
+            Eleanor
+            <br />
+            Engineer
+          </p>
+        </Attribution>
+      </Testimonial>
+
+      <ImageGrid>
+        <ImageItem />
+        <ImageItem
+          src={testimonialImage}
+          alt="Buildkittens in trees, pretending to be koalas."
+        />
+      </ImageGrid>
+
     </Section>
 
     <Section small>

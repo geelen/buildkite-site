@@ -38,7 +38,7 @@ const CaseStudyWords = styled(TextCell)`
     margin: ${({ theme }) => theme.textSpacing.s2} 0;
     a, a:visited, a:active, a:hover {
       text-decoration: underline;
-      color: inherit;    
+      color: inherit;
     }
   }
 `
@@ -90,7 +90,7 @@ const Logo = styled.img`
   max-width: 100%;
 `
 
-const Testimonial = styled.figure`
+export const Testimonial = styled.figure`
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
@@ -113,7 +113,7 @@ const Testimonial = styled.figure`
   }
 `
 
-const Quotation = styled.blockquote`
+export const Quotation = styled.blockquote`
   ${({ theme }) => theme.textStyles.secondLevelHeading}
   font-weight: normal;
   flex: 1 1 280px;
@@ -126,7 +126,7 @@ const Quotation = styled.blockquote`
   }
 `
 
-const Attribution = styled.figcaption`
+export const Attribution = styled.figcaption`
   flex: 1 0 200px;
 
   @media (min-width: 620px) {
@@ -136,12 +136,12 @@ const Attribution = styled.figcaption`
   }
 `
 
-const Headshot = styled.img`
+export const Headshot = styled.img`
   width: 90px;
   max-width: 100%;
 `
 
-const ImageGrid = styled.div`
+export const ImageGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
@@ -184,7 +184,7 @@ const CellImage = styled.img`
   }
 `
 
-const ImageItem = ({ src, alt, ...props }) => (
+export const ImageItem = ({ src, alt, ...props }) => (
   <ImageItemCell src={src} {...props}>
     <CellImage src={src} alt={alt} />
   </ImageItemCell>
