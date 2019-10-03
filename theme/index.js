@@ -4,6 +4,8 @@ export const innerSpacing = {
   s0: '10px',
   s1: '20px',
   s2: '40px',
+  s3: '50px',
+  s4: '70px',
   negative: {
     s1: '-20px'
   }

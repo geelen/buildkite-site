@@ -75,6 +75,46 @@ const OrderedListItem = styled.li`
   }
 `
 
+const ApplicationProcess = styled.dl`
+  counter-reset: steps;
+  padding:
+    ${({ theme }) => theme.innerSpacing.s1};
+`
+
+const ApplicationStep = styled.dt`
+  padding: 0 0 0 ${({ theme }) => theme.innerSpacing.s4};
+  position: relative;
+
+  &:before {
+    color: ${({ theme }) => theme.colors.text.subdued};
+    content: "Step " counter(steps);
+    counter-increment: steps;
+    left: 0;
+    position: absolute;
+  }
+`
+
+const ApplicationStepDescription = styled.dd`
+  border-left: 1px solid ${({ theme }) => theme.colors.text.subdued};
+  color: ${({ theme }) => theme.colors.text.subdued};
+  margin:
+    ${({ theme }) => theme.textSpacing.s1}
+    0
+    ${({ theme }) => theme.textSpacing.s1}
+    ${({ theme }) => theme.innerSpacing.s1};
+  padding:
+     ${({ theme }) => theme.textSpacing.s1}
+     0
+     ${({ theme }) => theme.textSpacing.s2}
+     ${({ theme }) => theme.innerSpacing.s3};
+
+  &:last-of-type {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+`
+
 export default page((props) => (
   <Page
     headTitle="Work at Buildkite"
@@ -210,6 +250,28 @@ export default page((props) => (
           </Brick>
         </Masonry>
       </Subsection>
+    </Section>
+
+    <Section small>
+      <SectionHeader>Application Process</SectionHeader>
+      <CareersSectionParagraph>This is a short statement about the principles behind our application process aka why we’ve done what we’ve done.</CareersSectionParagraph>
+
+      <Subsection>
+        <ApplicationProcess>
+          <ApplicationStep>Submit an application</ApplicationStep>
+          <ApplicationStepDescription>First step is submitting an application using Applied. It’s anonymized and we ask a number of written questions to test skill and experience. No CV required.</ApplicationStepDescription>
+
+          <ApplicationStep>First video interview</ApplicationStep>
+          <ApplicationStepDescription>Two people from the team, at least one of who you’ll be working with, will join you on a video call for an hour.</ApplicationStepDescription>
+
+          <ApplicationStep>Second video interview</ApplicationStep>
+          <ApplicationStepDescription>Another two people from the team, usually a founder and a person who you’ll be working with, will join you on a video call for an hour.</ApplicationStepDescription>
+
+          <ApplicationStep>Offer</ApplicationStep>
+          <ApplicationStepDescription>We’ll send you an offer and have a video call to go through all the details with you.</ApplicationStepDescription>
+        </ApplicationProcess>
+      </Subsection>
+
     </Section>
 
     <Callout
