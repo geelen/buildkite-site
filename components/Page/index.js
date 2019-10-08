@@ -9,7 +9,7 @@ import Header from 'components/Header'
 import Metadata from 'components/Metadata'
 import Footer from 'components/Footer'
 import Link from 'components/Link'
-import { ResponsiveImageContainer }  from 'components/ResponsiveContainer'
+import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 
 import { fonts } from '../../theme/fonts'
 import Reset from '../../theme/reset'
