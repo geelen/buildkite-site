@@ -34,7 +34,7 @@ const ScreencastDetail = styled.p`
 `
 
 export default ({ screencast, ...props }) => (
-  <Link href={screencast.pathname} prefetch>
+  <Link href={screencast.pathname}>
     <ScreencastLink {...props}>
       <ThumbnailImageContainer width={800} height={450}>
         <img src={screencast.images.thumbnail} alt={screencast.title} />

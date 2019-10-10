@@ -74,7 +74,7 @@ export default ({ caseStudy, noMargin }) => (
 
       <Summary>{caseStudy.summaryWords}</Summary>
 
-      <Link href={caseStudy.pathname} prefetch>
+      <Link href={caseStudy.pathname}>
         <Button>
           Read the Case Study
         </Button>

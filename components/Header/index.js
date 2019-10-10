@@ -60,14 +60,14 @@ const HeaderLinkAnchor = styled.a`
   `}
 `
 
-const HeaderLink = withRouter(({ children, router, href, external, prefetch, left, right, widescreenOnly }) => {
+const HeaderLink = withRouter(({ children, router, href, external, left, right, widescreenOnly }) => {
   // The following should both mark it as active
   // "/case-studies" and "/case-studies"
   // "/case-studies" and "/case-studies/shopify"
   const active = router.pathname === href || router.pathname.indexOf(`${href}/`) === 0
 
   return (
-    <Link prefetch={prefetch} href={href} external={external}>
+    <Link href={href} external={external}>
       <HeaderLinkAnchor
         left={left}
         right={right}
@@ -109,25 +109,25 @@ export default class Header extends React.PureComponent {
         <Content shadow={this.state.showMenu}>
           <LinkContainer left>
             <MenuLink onClick={this.handleMenuLinkClick} />
-            <HeaderLink left prefetch widescreenOnly href="/features">
+            <HeaderLink left widescreenOnly href="/features">
               Features
             </HeaderLink>
-            <HeaderLink left prefetch widescreenOnly href="/screencasts">
+            <HeaderLink left widescreenOnly href="/screencasts">
               Screencasts
             </HeaderLink>
-            <HeaderLink left prefetch widescreenOnly href="/case-studies">
+            <HeaderLink left widescreenOnly href="/case-studies">
               Case Studies
             </HeaderLink>
           </LinkContainer>
           <LogoLink loggedIn={this.props.loggedIn} />
           <LinkContainer right>
-            <HeaderLink right prefetch widescreenOnly href="/pricing">
+            <HeaderLink right widescreenOnly href="/pricing">
               Pricing
             </HeaderLink>
-            <HeaderLink right prefetch widescreenOnly href="/support">
+            <HeaderLink right widescreenOnly href="/support">
               Support
             </HeaderLink>
-            <HeaderLink right prefetch widescreenOnly href="/about">
+            <HeaderLink right widescreenOnly href="/about">
               About
             </HeaderLink>
             {this.renderLoginLinks()}

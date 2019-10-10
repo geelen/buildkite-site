@@ -9,7 +9,7 @@ import React, { Children } from 'react'
 // We could probably get away with not having this component if we didn't mix
 // Next and non-Next page requests on buildkite.com
 
-export default ({ href, external, prefetch, children }) => {
+export default ({ href, external, children }) => {
   // This will return the first child, if multiple are provided it will throw an error
   const child = Children.only(children)
 
@@ -21,7 +21,7 @@ export default ({ href, external, prefetch, children }) => {
   // does lots of things for us, including prefetching etc
   return React.createElement(
     Link,
-    { href: href, passHref: true, prefetch: prefetch },
+    { href: href, passHref: true },
     children
   )
 
