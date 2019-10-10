@@ -72,7 +72,7 @@ const WordMark = styled.img`
 
 export default ({ loggedIn }) => (
   <>
-    <Link prefetch href={loggedIn ? "/home" : "/"}>
+    <Link href={loggedIn ? "/home" : "/"}>
       <LinkTag>
         <Mark src={markSvgPath} alt="Buildkite logo" />
         <WordMark src={wordmarkSvgPath} alt="Buildkite" />
