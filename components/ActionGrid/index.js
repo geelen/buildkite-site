@@ -68,8 +68,9 @@ const ItemImageContainer = styled.div`
 `
 
 const ItemImage = styled.img`
-  width: 100%;
+  margin-left: ${({ adjustLeft }) => adjustLeft}px;
   max-width: ${({ width }) => ((width || 500) / 2)}px;
+  width: 100%;
 `
 
 const Paragraph = styled.p`
@@ -91,13 +92,14 @@ const Note = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
 `
 
-export const ActionGridItem = ({ heading, description, url, external, buttonTitle, image, imageAlt, imageWidth, note }) => (
+export const ActionGridItem = ({ heading, description, url, external, buttonTitle, image, imageAlt, imageWidth, note, adjustLeft }) => (
   <Cell>
     <Container>
       <ItemImageContainer>
         <ItemImage
-          src={image}
+          adjustLeft={adjustLeft}
           alt={imageAlt}
+          src={image}
           width={imageWidth}
         />
       </ItemImageContainer>

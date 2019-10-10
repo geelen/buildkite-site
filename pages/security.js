@@ -76,6 +76,7 @@ export default page((props) => (
         url="mailto:security@buildkite.com?subject=Vulnerability reporting invite"
         buttonTitle="Request Invite"
         note="For confidential information, please use our PGP key"
+        imageWidth={540}
       />
       <ActionGridItem
         heading="Contact Security"
@@ -85,6 +86,7 @@ export default page((props) => (
         url="mailto:security@buildkite.com"
         buttonTitle="Email security@buildkite.com"
         note="For confidential information, please use our PGP key"
+        adjustLeft={-6}
       />
     </ActionGrid>
 

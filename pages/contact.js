@@ -75,6 +75,7 @@ export default page((props) => (
         url="https://forum.buildkite.community/c/feature-requests"
         external
         buttonTitle="Post a Topic"
+        adjustLeft={-18}
       />
       <ActionGridItem
         heading="Report a Vulnerability"
@@ -83,6 +84,7 @@ export default page((props) => (
         description="Found a security issue? Request an invite to our bug bounty program."
         url="/security"
         buttonTitle="See Security Docs"
+        imageWidth={540}
       />
       <ActionGridItem
         heading="Say Hello!"
@@ -91,6 +93,8 @@ export default page((props) => (
         description="For press enquiries, or anything else you need, drop us a line and we’ll help."
         url="mailto:hello@buildkite.com"
         buttonTitle="Email hello@buildkite.com"
+        adjustLeft={25}
+        imageWidth={460}
       />
     </ActionGrid>
 

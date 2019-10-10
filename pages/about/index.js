@@ -247,6 +247,8 @@ export default page((props) => (
         description="If you have any questions or queries, don’t hesitate to get in touch."
         url="mailto:hello@buildkite.com"
         buttonTitle="Email hello@buildkite.com"
+        adjustLeft={25}
+        imageWidth={460}
       />
       <ActionGridItem
         heading="Buildkite Shop"
@@ -263,6 +265,8 @@ export default page((props) => (
         description="Want to join the Buildkite team? Check out our current open positions."
         url="/careers"
         buttonTitle="View Careers"
+        adjustLeft={15}
+        imageWidth={650}
       />
     </ActionGrid>
 
