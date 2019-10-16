@@ -59,14 +59,14 @@ const CareersParagraph = styled.p`
 const OrderedList = styled.ol`
   ${({ theme }) => theme.textStyles.bodyCopyLarge}
   columns: auto 13.2rem;
-  column-gap: 1rem;
+  column-gap: .5rem;
   counter-reset: subdued-numbers;
   margin: ${({ theme }) => theme.textSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
 const OrderedListItem = styled.li`
   counter-increment: subdued-numbers;
-  margin: 0 0 ${({ theme }) => theme.textSpacing.s1} 0;
+  margin: ${({ theme }) => theme.textSpacing.s1} 0;
 
   &:before  {
     ${({ theme }) => theme.textStyles.bodyCopy}
