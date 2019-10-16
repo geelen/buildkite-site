@@ -97,6 +97,7 @@ const ApplicationStep = styled.dt`
 
 const ApplicationStepDescription = styled.dd`
   border-left: 1px solid ${({ theme }) => theme.colors.text.subdued};
+  font-size: ${({ theme }) => theme.fontSizes.small};
   color: ${({ theme }) => theme.colors.text.subdued};
   margin:
     ${({ theme }) => theme.textSpacing.s1}
@@ -104,9 +105,9 @@ const ApplicationStepDescription = styled.dd`
     ${({ theme }) => theme.textSpacing.s1}
     ${({ theme }) => theme.innerSpacing.s1};
   padding:
-     ${({ theme }) => theme.textSpacing.s1}
      0
-     ${({ theme }) => theme.textSpacing.s2}
+     0
+     ${({ theme }) => theme.textSpacing.s3}
      ${({ theme }) => theme.innerSpacing.s3};
 
   &:last-of-type {
@@ -232,25 +233,25 @@ export default page((props) => (
           <Brick
             icon={learningIcon}
           >
-            <SubSectionHeader>Learning & Development</SubSectionHeader>
+            <SubSectionHeader>Learning & development</SubSectionHeader>
             <CareersParagraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae ornare lectus. Aenean sit amet condimentum leo. Integer sit amet odio lectus.</CareersParagraph>
           </Brick>
           <Brick
             icon={healthCoverIcon}
           >
-            <SubSectionHeader>Health Cover</SubSectionHeader>
-            <CareersParagraph>Phasellus in hendrerit felis. In tempor eleifend semper. Aenean ac ex ut lorem dapibus blandit. Proin placerat sollicitudin leo.</CareersParagraph>
+            <SubSectionHeader>Health cover</SubSectionHeader>
+            <CareersParagraph>We provide health cover </CareersParagraph>
           </Brick>
           <Brick
             icon={parentalLeaveIcon}
           >
-            <SubSectionHeader>Parental Leave</SubSectionHeader>
+            <SubSectionHeader>Parental leave</SubSectionHeader>
             <CareersParagraph>Vivamus nunc eros, gravida eu tempor non, finibus tempor arcu. Quisque venenatis imperdiet tellus sed varius. Praesent vitae ornare sem.</CareersParagraph>
           </Brick>
           <Brick
             icon={homeOfficeIcon}
           >
-            <SubSectionHeader>Home Office & Coworking</SubSectionHeader>
+            <SubSectionHeader>Home office & co-working</SubSectionHeader>
             <CareersParagraph>In convallis consequat sapien, dignissim aliquet dui auctor ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</CareersParagraph>
           </Brick>
           <Brick
@@ -262,7 +263,7 @@ export default page((props) => (
           <Brick
             icon={profitShareIcon}
           >
-            <SubSectionHeader>Profit Share & Ownership</SubSectionHeader>
+            <SubSectionHeader>Profit share & ownership</SubSectionHeader>
             <CareersParagraph>Nam porttitor enim at arcu ornare facilisis. Nullam varius vehicula erat vitae egestas. In tempor ac lorem justo molestie vehicula. Proin convallis euismod risus ac feugiat.</CareersParagraph>
           </Brick>
         </Masonry>
