@@ -137,29 +137,45 @@ export default page((props) => (
       <Subsection>
         <Masonry>
           <Brick>
-            <SubSectionHeader>Customers First</SubSectionHeader>
-            <CareersParagraph>Work closely with customers, and help on support. We treat our customers like partners, and ship features that make their lives better every day.</CareersParagraph>
+            <SubSectionHeader>Small team, global impact</SubSectionHeader>
+            <CareersParagraph>We believe small companies are beautiful, and that small teams can achieve big things. This makes everyone on the team an important part of Buildkite.</CareersParagraph>
           </Brick>
           <Brick>
+            <SubSectionHeader>Flexible work hours</SubSectionHeader>
+            <CareersParagraph>We don’t keep set office hours, so you can shift your hours around life’s commitments and non-work activities. Take time out of work for exercise, family or whatever life throws at you.</CareersParagraph>
+          </Brick>
+          <Brick>
+            <SubSectionHeader>Support and growth</SubSectionHeader>
+            <CareersParagraph>In a small but growing company, you’ll have the opportunity to work on a wide range of projects, and ship work that directly affects customers.</CareersParagraph>
+          </Brick>
+          <Brick>
+            <SubSectionHeader>Work from anywhere</SubSectionHeader>
+            <CareersParagraph>We’re a globally distributed, remote-first company, and all our work happens over chat and video calls. Work from your home office, a co-working space, or your local cat café.</CareersParagraph>
+          </Brick>
+          {/* <Brick>
             <SubSectionHeader>Work From Anywhere</SubSectionHeader>
-            <CareersParagraph>We’re a distributed, remote-first company, and all our work happens over chat and video calls. Work from your home office, a co-working space, or your local cat café.</CareersParagraph>
+            <CareersParagraph>We’re a distributed, remote-first company. Work from your home office, a co-working space, or your local cat café.</CareersParagraph>
           </Brick>
           <Brick>
-            <SubSectionHeader>Small Company Big Impact</SubSectionHeader>
-            <CareersParagraph>We believe small companies are beautiful, and that small teams can achieve big things. This makes everyone on the team a really important part of Buildkite.</CareersParagraph>
-          </Brick>
-          <Brick>
-            <SubSectionHeader>Ship Work You’re Proud Of</SubSectionHeader>
-            <CareersParagraph>We have an extensive set of automated testing procedures that are run for every code change.</CareersParagraph>
-          </Brick>
-          <Brick>
-            <SubSectionHeader>No Set Office Hours</SubSectionHeader>
-            <CareersParagraph>We don’t keep set office hours, letting you shift your hours around life’s commitments and non-work activities. Take time out of work for exercise, family or whatever life throws at you.</CareersParagraph>
+            <SubSectionHeader>Flexible Work Hours</SubSectionHeader>
+            <CareersParagraph>Shift your hours around life’s commitments, whether it be exercise, family or whatever life throws at you.</CareersParagraph>
           </Brick>
           <Brick>
             <SubSectionHeader>Skills and Growth</SubSectionHeader>
-            <CareersParagraph>Something about not needing a degree, making people from all backgrounds feel welcome, valuing different perspectives, opinions, strengths and capabilities.</CareersParagraph>
+            <CareersParagraph>We’ve people that are self-taught and have phd, valuing different perspectives, opinions, strengths and capabilities.</CareersParagraph>
           </Brick>
+          <Brick>
+            <SubSectionHeader>Work Closely with Customers</SubSectionHeader>
+            <CareersParagraph>We think of ourselves as close partners to our customers. This means  an extension of our customer’s businesses. This means help on support, and ship work that makes their lives better every day.</CareersParagraph>
+          </Brick>
+          <Brick>
+            <SubSectionHeader>Small Company Big Impact</SubSectionHeader>
+            <CareersParagraph>Small teams can have a huge impact, and theres, a can achieve big things. Everyone on the team becomes an important part of Buildkite.</CareersParagraph>
+          </Brick>
+          <Brick>
+            <SubSectionHeader>Ship Work You’re Proud Of</SubSectionHeader>
+            <CareersParagraph>Design, engineering and doing a </CareersParagraph>
+          </Brick> */}
         </Masonry>
       </Subsection>
     </Section>
