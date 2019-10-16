@@ -146,7 +146,7 @@ export default page((props) => (
           </Brick>
           <Brick>
             <SubSectionHeader>Support and growth</SubSectionHeader>
-            <CareersParagraph>In a small but growing company, you’ll have the opportunity to work on a wide range of projects, and ship work that directly affects customers.</CareersParagraph>
+            <CareersParagraph>In a small but growing company, you’ll have the opportunity to work on a wide range of projects, and ship work that helps customers.</CareersParagraph>
           </Brick>
           <Brick>
             <SubSectionHeader>Work from anywhere</SubSectionHeader>
@@ -211,7 +211,7 @@ export default page((props) => (
 
     <Section small>
       <SectionHeader>Our Values</SectionHeader>
-      <CareersSectionParagraph>Buildkite’s values guide our priorities, product, hiring, the way we treat our customers, and the way we treat each other. You can read all about them on our <TextLink href="/about">about page.</TextLink></CareersSectionParagraph>
+      <CareersSectionParagraph>Buildkite’s values guide our priorities, products, hiring, the way we treat our customers, and the way we treat each other. You can read all about them on our <TextLink href="/about">about page.</TextLink></CareersSectionParagraph>
 
       <Subsection>
         <OrderedList>
