@@ -43,7 +43,7 @@ const LogoImage = styled.img`
 export default ({ loggedIn }) => (
   <Footer>
     <FooterInner>
-      <Grid columns="200px">
+      <Grid columns="142px" minWidth="667px">
         <Cell>
           <Link href={loggedIn ? "/home" : "/"}>
             <a><LogoImage src={portraitLogo} alt="Buildkite" /></a>
