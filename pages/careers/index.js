@@ -9,7 +9,7 @@ import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
-import testimonialImage from '../../assets/images/careers/pretend-koalas.jpg'
+import testimonialImage from '../../assets/images/careers/team-photo.jpg'
 import testimonialAvatar from '../../assets/images/about/eleanor.jpg'
 
 import healthCoverIcon from '../../assets/images/careers/streamline-icon-hospital-house@48x48.svg'
