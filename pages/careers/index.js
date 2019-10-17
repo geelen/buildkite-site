@@ -273,13 +273,7 @@ export default page((props) => (
       <Subsection>
         <LinkList>
           <LinkListItem>
-            <LinkListItemLink href="https://beapplied.co/">Support Engineer</LinkListItemLink>
-          </LinkListItem>
-          <LinkListItem>
-            <LinkListItemLink href="https://beapplied.co/">Site Reliability Engineer</LinkListItemLink>
-          </LinkListItem>
-          <LinkListItem>
-            <LinkListItemLink href="https://beapplied.co/">Designer</LinkListItemLink>
+            <LinkListItemLink href="https://beapplied.co/">Senior Product Designer</LinkListItemLink>
           </LinkListItem>
           <LinkListItem>
             <LinkListItemLink href="https://beapplied.co/">Head of Marketing</LinkListItemLink>
