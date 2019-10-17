@@ -248,12 +248,12 @@ export default page((props) => (
 
     <Section small>
       <SectionHeader>Application Process</SectionHeader>
-      <CareersSectionParagraph>This is a short statement about the principles behind our application process aka why we’ve done what we’ve done.</CareersSectionParagraph>
+      <CareersSectionParagraph>We respect your time when applying for a position, and we’ll give you feedback at every stage. Most applications go through the following four steps.</CareersSectionParagraph>
 
       <Subsection>
         <ApplicationProcess>
           <ApplicationStep>Submit an application</ApplicationStep>
-          <ApplicationStepDescription>First step is submitting an application using Applied. It’s anonymized and we ask a number of written questions to test skill and experience. No CV required.</ApplicationStepDescription>
+          <ApplicationStepDescription>First step is submitting an application using Applied. It’s anonymized and we ask a number of written questions to assess your skills. No CV required.</ApplicationStepDescription>
 
           <ApplicationStep>First video interview</ApplicationStep>
           <ApplicationStepDescription>Two people from the team, at least one of who you’ll be working with, will join you on a video call for an hour.</ApplicationStepDescription>
