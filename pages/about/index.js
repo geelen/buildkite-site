@@ -53,6 +53,9 @@ const People = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto; 
 
   > * {
     margin: -18px -12px;
