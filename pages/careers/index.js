@@ -227,7 +227,7 @@ export default page((props) => (
           <Brick
             icon={homeOfficeIcon}
           >
-            <SubSectionHeader>Home office & co-working</SubSectionHeader>
+            <SubSectionHeader>Home office & coworking</SubSectionHeader>
             <CareersParagraph>In convallis consequat sapien, dignissim aliquet dui auctor ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</CareersParagraph>
           </Brick>
           <Brick
