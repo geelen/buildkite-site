@@ -2,15 +2,12 @@ import styled, { css } from 'styled-components'
 import Br from 'components/Br'
 
 import Page, { page } from 'components/Page'
-import { Testimonial, Quotation, Attribution, Headshot, ImageGrid, ImageItem } from 'components/Page/case-study'
+import BodyCopy from 'components/BodyCopy'
 import { Masonry, Brick } from 'components/Masonry'
-import { TextLink } from 'components/Link'
 import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
-import testimonialImage from '../../assets/images/careers/team-photo.jpg'
-import testimonialAvatar from '../../assets/images/about/eleanor.jpg'
 
 import healthCoverIcon from '../../assets/images/careers/streamline-icon-hospital-house@48x48.svg'
 import homeOfficeIcon from '../../assets/images/careers/streamline-icon-office-desk@48x48.svg'
@@ -53,26 +50,7 @@ const CareersSectionParagraph = styled.p`
 
 const CareersParagraph = styled.p`
   color: ${({ theme }) => theme.colors.text.subdued};
-`
-
-const OrderedList = styled.ol`
-  ${({ theme }) => theme.textStyles.bodyCopyLarge}
-  columns: auto 13.2rem;
-  column-gap: .5rem;
-  counter-reset: subdued-numbers;
-  margin: ${({ theme }) => theme.textSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s1} 0;
-`
-
-const OrderedListItem = styled.li`
-  counter-increment: subdued-numbers;
   margin: ${({ theme }) => theme.textSpacing.s1} 0;
-
-  &:before  {
-    ${({ theme }) => theme.textStyles.bodyCopy}
-    color: ${({ theme }) => theme.colors.text.subdued};
-    content: "0" counter(subdued-numbers) " ";
-    padding-right: 0.6rem;
-  }
 `
 
 const ApplicationProcess = styled.dl`
@@ -116,19 +94,14 @@ const ApplicationStepDescription = styled.dd`
   }
 `
 
-const BenefitsBrick = styled(Brick)`
-  background: url(${(props) => props.icon}) 0 1.6rem no-repeat;
-  padding-left: 70px;
-`
-
 export default page((props) => (
   <Page
-    headTitle="Work at Buildkite"
+    headTitle="Senior Product Designer"
     image={headOfficeImage}
     imageAlt="Person looking at points around a globe"
     imageHeight="220"
     imageWidth="374"
-    title="Work at Buildkite"
+    title="Senior Product Designer"
     description={
       <>
         Build tools for the best <Br maxWidth="30em" />
@@ -137,8 +110,78 @@ export default page((props) => (
     }
     {...props}
   >
+    <Section>
+      <BodyCopy>
+
+        <table>
+          <tr>
+            <th>Salary:</th>
+            <td>
+              AUD $130K &mdash; $160K salary<br/>
+              USD $90K &mdash; $110K salary<br/>
+              €80 &mdash; 100K salary<br/>
+              Depending on experience, plus benefits, for 38 hours per week (pro-rata for part-time). Salary amount excludes superannuation / 401k.
+            </td>
+          </tr>
+          <tr>
+            <th>Location:</th>
+            <td>Remote with at least 3 hours of overlap with UTC+10 mornings (you'll be working with people in Vancouver, Perth, and Melbourne)</td>
+          </tr>
+          <tr>
+            <th>Hours:</th>
+            <td>22.5 &mdash; 38 hours a week depending on your preferences and availability</td>
+          </tr>
+          <tr>
+            <th>Role closes:</th>
+            <td>11:59pm, 8th Sep 2019 AEST (Australia/Sydney)</td>
+          </tr>
+        </table>
+
+        <p>Buildkite is a continuous delivery platform that helps development teams ship quality code, fast. Making developers happy and productive makes us happy, and we&lsquo;re lucky to work closely with some of the best software teams in the world, including Airbnb, Shopify, Wayfair, Intercom, PagerDuty, and Basecamp.</p>
+
+        <p>We are an independently owned, profitable company that values sustainable growth, transparency and work-life balance. We&lsquo;re currently a distributed team of eleven, and we work remotely from Melbourne, Vancouver, Perth, Sydney, and Adelaide.</p>
+
+        <p>As a Senior Product Designer at Buildkite you'll work on a small team with a big impact, and help shape a tool that thousands of developers use every day. You'll report to Tim Lucas, our co-founder and design lead, and you'll be working alongside an existing senior product designer and print designer. In this small team you'll have the chance to influence all corners of Buildkite's product and brand.</p>
+
+        <h3>A typical day for a Senior Product Designer might look like:</h3>
+
+        <ul>
+          <li>Pairing with a product engineer on Zoom to talk through a new feature being worked on, and working on improvements to UI, copy, and user flows.</li>
+          <li>Mocking up user interface ideas in Sketch or Figma, and posting them to Basecamp, to help clarify discussions between everyone on the team.</li>
+          <li>Collaborating on a scope doc for a new feature, and helping to explore the possible solutions and tradeoffs.</li>
+          <li>Helping polish a new UI animation, pairing with a frontend engineer over Zoom.</li>
+          <li>Writing a post to the team on Basecamp with some design strategies and ideas, and getting feedback from a range of perspectives on the team.</li>
+          <li>Giving feedback on and helping to iterate our UI component libraries, helping to empower the rest of the team with great design tools.</li>
+          <li>Creating polished design assets for product launches, and designing changes to the Buildkite marketing site.</li>
+          <li>oining in the weekly design catchup over Zoom, giving feedback on a commissioned illustration project for a new conference sticker, contributing to a sponsorship booth design idea, and demonstrating designs you've been working on.</li>
+          <li>Pairing on support to answer customer questions, and venturing into the far corners of Buildkite's product, tools and documentation to understand how things are working in practice.</li>
+        </ul>
+
+        <h3>This job is for you if you:</h3>
+
+        <ul>
+          <li>An eye for detail, and feel comfortable advocating for the user through the lens of great design.</li>
+          <li>The ability to navigate ambiguity, create clarity through design, and lead by example.</li>
+          <li>Experience working closely with frontend and backend engineers, and enjoy participating in the process of bringing your design ideas to life.</li>
+          <li>Interest working in remote, cross-functional teams.</li>
+          <li>Worked on an existing product, helping to iterate it towards an overarching vision.</li>
+          <li>Confidence to seek critical feedback, ask questions, and participate in decision making.</li>
+          <li>Experience with leading discussions about tradeoffs in the product development process, and helping to ensure a cohesive product experience in the face of challenges.</li>
+          <li>An interest in helping build a small company with big impact, and influencing many aspects of the business with great design.</li>
+          <li>Proficiency in Sketch, Figma, Illustrator, or other design tools.</li>
+          <li>Basic proficiency in HTML and CSS.</li>
+        </ul>
+      </BodyCopy>
+
+      <Callout
+        url="https://beapplied.co"
+        buttonTitle="Apply for this position"
+      />
+
+    </Section>
 
     <Section>
+      <SectionHeader>Why Apply?</SectionHeader>
       <Subsection>
         <Masonry>
           <Brick>
@@ -162,97 +205,52 @@ export default page((props) => (
     </Section>
 
     <Section>
-
-      <Testimonial>
-        <Quotation>
-          Working at Buildkite has given me the freedom to grow and flourish in all aspects of my life, personally and professionally. I’m proud to be a part of such a passionate and supportive team.
-        </Quotation>
-        <Attribution>
-          <Headshot
-            src={testimonialAvatar}
-            alt="Headshot of Eleanor."
-          />
-          <p>
-            Eleanor
-            <br />
-            Engineer
-          </p>
-        </Attribution>
-      </Testimonial>
-
-      <ImageGrid>
-        <ImageItem />
-        <ImageItem
-          src={testimonialImage}
-          alt="Buildkittens in trees, pretending to be koalas."
-        />
-      </ImageGrid>
-
-    </Section>
-
-    <Section small>
-      <SectionHeader>Our Values</SectionHeader>
-      <CareersSectionParagraph>Buildkite’s values guide our priorities, products, hiring, the way we treat our customers, and the way we treat each other. You can read all about them on our <TextLink href="/about">about page</TextLink>.</CareersSectionParagraph>
-
-      <Subsection>
-        <OrderedList>
-          <OrderedListItem>Transparency</OrderedListItem>
-          <OrderedListItem>Quality</OrderedListItem>
-          <OrderedListItem>Diversity</OrderedListItem>
-          <OrderedListItem>Independence</OrderedListItem>
-          <OrderedListItem>Empathy</OrderedListItem>
-          <OrderedListItem>Collaboration</OrderedListItem>
-          <OrderedListItem>Sustainable Growth</OrderedListItem>
-        </OrderedList>
-      </Subsection>
-    </Section>
-    <Section>
       <SectionHeader>Benefits</SectionHeader>
       <Subsection>
         <Masonry>
-          <BenefitsBrick
+          <Brick
             icon={learningIcon}
           >
             <SubSectionHeader>Learning & development</SubSectionHeader>
-            <CareersParagraph>Invest in your personal and professional development with a yearly budget of AU$5,000 to spend on travel, conferences, workshops, courses, and books.</CareersParagraph>
-          </BenefitsBrick>
-          <BenefitsBrick
+            <CareersParagraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae ornare lectus. Aenean sit amet condimentum leo. Integer sit amet odio lectus.</CareersParagraph>
+          </Brick>
+          <Brick
             icon={healthCoverIcon}
           >
             <SubSectionHeader>Health cover</SubSectionHeader>
-            <CareersParagraph>We’ll make sure that you and your family have access to comprehensive health and hospital cover, no matter which country you live in.</CareersParagraph>
-          </BenefitsBrick>
-          <BenefitsBrick
+            <CareersParagraph>We provide health cover </CareersParagraph>
+          </Brick>
+          <Brick
             icon={parentalLeaveIcon}
           >
             <SubSectionHeader>Parental leave</SubSectionHeader>
-            <CareersParagraph>Take time out to set up a new family, with 6 months of paid leave if you’re the primary carer, and 3 months if you’re secondary. You can use it flexibly, change between primary and secondary, and take the same leave for a still birth. We also keep paying super/401k for 6 months if you take unpaid leave.</CareersParagraph>
-          </BenefitsBrick>
-          <BenefitsBrick
+            <CareersParagraph>Vivamus nunc eros, gravida eu tempor non, finibus tempor arcu. Quisque venenatis imperdiet tellus sed varius. Praesent vitae ornare sem.</CareersParagraph>
+          </Brick>
+          <Brick
             icon={homeOfficeIcon}
           >
             <SubSectionHeader>Home office & coworking</SubSectionHeader>
-            <CareersParagraph>Set yourself up with a great work environment, either at home or in a co-working space, with a budget of AU$3000 for a desk and chair, and a new computer and phone every 24 months. We’ll also cover the cost of plants, art, or anything else you need to set yourself up with a beautiful and productive work environment.</CareersParagraph>
-          </BenefitsBrick>
-          <BenefitsBrick
+            <CareersParagraph>In convallis consequat sapien, dignissim aliquet dui auctor ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</CareersParagraph>
+          </Brick>
+          <Brick
             icon={wellnessIcon}
           >
-            <SubSectionHeader>Wellness & paid time off</SubSectionHeader>
-            <CareersParagraph>Take care of your health and wellbeing away from the screen, with 6 weeks of paid leave per year, the ability to take time out of work for fitness, and a budget of AU$2000 per year to spend on things like yoga, climbing, personal training, or at day at the zoo.</CareersParagraph>
-          </BenefitsBrick>
-          <BenefitsBrick
+            <SubSectionHeader>Wellness</SubSectionHeader>
+            <CareersParagraph>Fusce ut eleifend nibh. Cras orci diam, auctor id nulla nec, posuere pretium massa. Suspendisse pellentesque felis sit amet congue lacinia. Nunc gravida velit dolor.</CareersParagraph>
+          </Brick>
+          <Brick
             icon={profitShareIcon}
           >
             <SubSectionHeader>Profit share & ownership</SubSectionHeader>
-            <CareersParagraph>Share in the company’s success, and have a stake in what you’re helping to build. Everyone on the team receives a percentage share of the company profits each quarter, and an equity stake through our employee share program.</CareersParagraph>
-          </BenefitsBrick>
+            <CareersParagraph>Nam porttitor enim at arcu ornare facilisis. Nullam varius vehicula erat vitae egestas. In tempor ac lorem justo molestie vehicula. Proin convallis euismod risus ac feugiat.</CareersParagraph>
+          </Brick>
         </Masonry>
       </Subsection>
     </Section>
 
     <Section small>
       <SectionHeader>Application Process</SectionHeader>
-      <CareersSectionParagraph>We respect your time when applying for a position, and we’ll give you feedback at every stage. Most applications go through the following four steps:</CareersSectionParagraph>
+      <CareersSectionParagraph>We respect your time when applying for a position, and we’ll give you feedback at every stage. Most applications go through the following four steps.</CareersSectionParagraph>
 
       <Subsection>
         <ApplicationProcess>
@@ -272,13 +270,10 @@ export default page((props) => (
     </Section>
 
     <Section>
-      <SectionHeader>Open Positions</SectionHeader>
+      <SectionHeader>Other Open Positions</SectionHeader>
 
       <Subsection>
         <LinkList>
-          <LinkListItem>
-            <LinkListItemLink href="/careers/senior-product-designer">Senior Product Designer</LinkListItemLink>
-          </LinkListItem>
           <LinkListItem>
             <LinkListItemLink href="/careers/head-of-marketing">Head of Marketing</LinkListItemLink>
           </LinkListItem>
@@ -288,7 +283,7 @@ export default page((props) => (
 
     <Callout
       heading="Get in touch"
-      description="If you’ve got any questions, say hi &mdash; we’d love to hear from you."
+      description="If you've got any questions or issues with the application process, please let us know."
       url="mailto:careers@buildkite.com"
       buttonTitle="Email careers@buildkite.com"
     />
