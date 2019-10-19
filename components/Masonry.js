@@ -16,6 +16,6 @@ export const Brick = styled.div`
 
   ${(props) => props.icon && css`
     background: url(${props.icon}) 0 1.6rem no-repeat;
-    padding-left: 65px;
+    padding-left: 70px;
   `}
 `
