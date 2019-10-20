@@ -271,7 +271,7 @@ export default page((props) => (
       </Subsection>
     </Section>
 
-    <Section>
+    {/* <Section>
       <SectionHeader>Open Positions</SectionHeader>
 
       <Subsection>
@@ -284,7 +284,7 @@ export default page((props) => (
           </LinkListItem>
         </LinkList>
       </Subsection>
-    </Section>
+    </Section> */}
 
     <Callout
       heading="Get in touch"
