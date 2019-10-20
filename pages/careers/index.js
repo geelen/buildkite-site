@@ -5,7 +5,7 @@ import Page, { page } from 'components/Page'
 import { Testimonial, Quotation, Attribution, Headshot, ImageGrid, ImageItem } from 'components/Page/case-study'
 import { Masonry, Brick } from 'components/Masonry'
 import { TextLink } from 'components/Link'
-import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
+// import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
