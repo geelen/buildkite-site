@@ -246,6 +246,7 @@ export default page((props) => (
         imageAlt="People waving hello"
         description="If you have any questions or queries, don’t hesitate to get in touch."
         url="mailto:hello@buildkite.com"
+        external
         buttonTitle="Email hello@buildkite.com"
         adjustLeft={25}
         imageWidth={460}
@@ -256,6 +257,7 @@ export default page((props) => (
         imageAlt="Illustration of a shop full of items"
         description="Order yourself some official Buildkite stickers, t-shirts, and more."
         url="https://shop.buildkite.com/"
+        external
         buttonTitle="Browse the shop"
       />
       <ActionGridItem

@@ -80,11 +80,11 @@ const Image = styled.img`
 export function page(Component) {
   const componentInitialProps = Component.getInitialProps
 
-  Component.getInitialProps = (context) => {
+  Component.getInitialProps = async(context) => {
     // Copy in wrapped component's getInitialProps value
     const processedProps = (
       componentInitialProps
-        ? componentInitialProps.call(this, context)
+        ? await componentInitialProps.call(this, context)
         : {}
     )
 

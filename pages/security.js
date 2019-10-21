@@ -74,6 +74,7 @@ export default page((props) => (
         imageAlt="Two people holding a bug they found inside a computer"
         description="Request an invite to our responsible disclosure program on Hacker One"
         url="mailto:security@buildkite.com?subject=Vulnerability reporting invite"
+        external
         buttonTitle="Request Invite"
         note="For confidential information, please use our PGP key"
         imageWidth={540}
@@ -84,6 +85,7 @@ export default page((props) => (
         imageAlt="Person carrying confidential briefcase"
         description="For questions, concerns or information, don’t hestitate to email our security team"
         url="mailto:security@buildkite.com"
+        external
         buttonTitle="Email security@buildkite.com"
         note="For confidential information, please use our PGP key"
         adjustLeft={-6}
@@ -205,6 +207,7 @@ export default page((props) => (
         </>
       }
       url="mailto:security@buildkite.com"
+      external
       buttonTitle="Email security@buildkite.com"
     />
   </Page>

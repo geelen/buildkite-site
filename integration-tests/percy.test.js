@@ -48,6 +48,8 @@ const pagesToSnapshot = {
   'About': `/about`,
   'Brand Assets': `/brand-assets`,
   'Careers': `/careers`,
+  'Head of Marketing': `/careers/head-of-marketing`,
+  'Senior Product Designer': `/careers/senior-product-designer`,
   'Case Studies - Shopify': `/case-studies/shopify`,
   'Case Studies': `/case-studies`,
   'Contact Us': `/contact`,

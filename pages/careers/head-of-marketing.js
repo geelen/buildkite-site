@@ -3,12 +3,12 @@ import Br from 'components/Br'
 
 import Page, { page } from 'components/Page'
 import { Section, SectionHeader, Subsection, SubSectionHeader } from 'components/sections/sections'
+import BodyCopy from 'components/BodyCopy'
 import { Masonry, Brick } from 'components/Masonry'
-import { TextLink } from 'components/Link'
 import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
 import Benefits, { CareersParagraph } from 'components/Benefits'
-import CareersTestimonialSection from 'components/CareersTestimonialSection'
+import CareersAboutUs from 'components/CareersAboutUs'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
 
@@ -16,26 +16,6 @@ const CareersSectionParagraph = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopy};
   color: ${({ theme }) => theme.colors.text.subdued};
   margin: ${({ theme }) => theme.textSpacing.s3} 0 0;
-`
-
-const OrderedList = styled.ol`
-  ${({ theme }) => theme.textStyles.bodyCopyLarge}
-  columns: auto 13.2rem;
-  column-gap: .5rem;
-  counter-reset: subdued-numbers;
-  margin: ${({ theme }) => theme.textSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s1} 0;
-`
-
-const OrderedListItem = styled.li`
-  counter-increment: subdued-numbers;
-  margin: ${({ theme }) => theme.textSpacing.s1} 0;
-
-  &:before  {
-    ${({ theme }) => theme.textStyles.bodyCopy}
-    color: ${({ theme }) => theme.colors.text.subdued};
-    content: "0" counter(subdued-numbers) " ";
-    padding-right: 0.6rem;
-  }
 `
 
 const ApplicationProcess = styled.dl`
@@ -81,12 +61,12 @@ const ApplicationStepDescription = styled.dd`
 
 export default page((props) => (
   <Page
-    headTitle="Work at Buildkite"
+    headTitle="Head of Marketing"
     image={headOfficeImage}
     imageAlt="Person looking at points around a globe"
     imageHeight="220"
     imageWidth="374"
-    title="Work at Buildkite"
+    title="Head of Marketing"
     description={
       <>
         Build tools for the best <Br maxWidth="30em" />
@@ -95,8 +75,66 @@ export default page((props) => (
     }
     {...props}
   >
+    <Section>
+      <BodyCopy>
+        <table>
+          <tr>
+            <th>Salary</th>
+            <td>
+              AUD $130–160K salary<br />
+              USD $90–110K salary<br />
+              EUR €80–100K salary<br />
+              Depending on experience, plus benefits, for 38 hours per week (pro-rata for part-time). Salary amount excludes superannuation / 401k.
+            </td>
+          </tr>
+          <tr>
+            <th>Timezone</th>
+            <td>Remote with at least 3 hours of overlap with UTC+10 (you’ll be working with people in Vancouver, Perth, and Melbourne)</td>
+          </tr>
+          <tr>
+            <th>Hours</th>
+            <td>22.5–38 hours a week depending on your preferences and availability</td>
+          </tr>
+        </table>
+
+        <p>As the Head of Marketing, you&lsquo;ll accelerate Buildkite&lsquo;s growth and help support our vibrant developer community. You&lsquo;ll be our first marketing hire, so you&lsquo;ll have lots of autonomy and impact.</p>
+
+        <h3>A typical day for a Head of Marketing might look like:</h3>
+
+        <ul>
+          <li>Developing new marketing and community strategies, and collaborating on them with leadership and the team.</li>
+          <li>Working with engineering and product teams to help spread the word to our community about product launches and changes.</li>
+          <li>Developing programs, content and campaigns to help our customers create the fastest developer workflows for their teams.</li>
+          <li>Identifying case studies and stories from our community, highlighting some of the most interesting ways in which Buildkite is helping developers build software.</li>
+          <li>Spending time with customers and the community, becoming an expert in messaging and positioning Buildkite.</li>
+          <li>Collaborating with our team and community on event sponsorship and speaking opportunities.</li>
+          <li>Building and managing scalable marketing campaigns across paid advertising, social media and content marketing.</li>
+          <li>Managing a guest content program from and for our community, helping teach technical topics, best practices, integrations, and new development tools.</li>
+        </ul>
+
+        <h3>This job is for you if you:</h3>
+
+        <ul>
+          <li>Are experienced with building product for developers in marketing, demand generation, or community.</li>
+          <li>Have a passion for marketing technical products.</li>
+          <li>Enjoy analysing data, and developing strategies to shift numbers in the right direction.</li>
+          <li>Have worked remotely, and value clear and open written and verbal communication. You should value empathy and kindness, and be able to articulate your ideas and feelings when writing or speaking.</li>
+          <li>Are self-motivated. You&rsquo;re comfortable stepping into gaps in the planning, and taking initiative on what needs to be done and how to get it done.</li>
+          <li>Learn fast. You might not be an expert in everything we do initially, but you will quickly become an expert in some aspects, learn other bits you haven&rsquo;t done before and generally dive into things even if they are new to you.</li>
+        </ul>
+
+        <CareersAboutUs />
+      </BodyCopy>
+
+      <Callout
+        url="https://beapplied.co"
+        buttonTitle="Apply for this position"
+      />
+
+    </Section>
 
     <Section>
+      <SectionHeader>Why Apply?</SectionHeader>
       <Subsection>
         <Masonry>
           <Brick>
@@ -119,25 +157,6 @@ export default page((props) => (
       </Subsection>
     </Section>
 
-    <CareersTestimonialSection />
-
-    <Section small>
-      <SectionHeader>Our Values</SectionHeader>
-      <CareersSectionParagraph>Buildkite’s values guide our priorities, products, hiring, the way we treat our customers, and the way we treat each other. You can read all about them on our <TextLink href="/about">about page</TextLink>.</CareersSectionParagraph>
-
-      <Subsection>
-        <OrderedList>
-          <OrderedListItem>Transparency</OrderedListItem>
-          <OrderedListItem>Quality</OrderedListItem>
-          <OrderedListItem>Diversity</OrderedListItem>
-          <OrderedListItem>Independence</OrderedListItem>
-          <OrderedListItem>Empathy</OrderedListItem>
-          <OrderedListItem>Collaboration</OrderedListItem>
-          <OrderedListItem>Sustainable Growth</OrderedListItem>
-        </OrderedList>
-      </Subsection>
-    </Section>
-
     <Section>
       <SectionHeader>Benefits</SectionHeader>
       <Subsection>
@@ -147,7 +166,7 @@ export default page((props) => (
 
     <Section small>
       <SectionHeader>Application Process</SectionHeader>
-      <CareersSectionParagraph>We respect your time when applying for a position, and we’ll give you feedback at every stage. Most applications go through the following four steps:</CareersSectionParagraph>
+      <CareersSectionParagraph>We respect your time when applying for a position, and we’ll give you feedback at every stage. Most applications go through the following four steps.</CareersSectionParagraph>
 
       <Subsection>
         <ApplicationProcess>
@@ -167,23 +186,20 @@ export default page((props) => (
     </Section>
 
     <Section>
-      <SectionHeader>Open Positions</SectionHeader>
+      <SectionHeader>Other Open Positions</SectionHeader>
 
       <Subsection>
         <LinkList>
           <LinkListItem>
             <LinkListItemLink href="/careers/senior-product-designer">Senior Product Designer</LinkListItemLink>
           </LinkListItem>
-          {/* <LinkListItem>
-            <LinkListItemLink href="/careers/head-of-marketing">Head of Marketing</LinkListItemLink>
-          </LinkListItem> */}
         </LinkList>
       </Subsection>
     </Section>
 
     <Callout
       heading="Get in touch"
-      description="If you’ve got any questions, say hi—we’d love to hear from you."
+      description="If you’ve got any questions or issues with the application process, please let us know."
       url="mailto:careers@buildkite.com"
       external
       buttonTitle="Email careers@buildkite.com"

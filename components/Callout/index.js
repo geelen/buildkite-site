@@ -34,12 +34,12 @@ const LinkSection = styled.p`
   margin: 0;
 `
 
-export default ({ heading, description, url, buttonTitle, ...props }) => (
+export default ({ heading, description, url, external, buttonTitle, ...props }) => (
   <Section {...props}>
     <Header>{heading}</Header>
     <Description>{description}</Description>
     <LinkSection>
-      <Link href={url}><Button>{buttonTitle}</Button></Link>
+      <Link href={url} external={external}><Button>{buttonTitle}</Button></Link>
     </LinkSection>
   </Section>
 )

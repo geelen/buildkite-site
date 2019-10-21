@@ -63,6 +63,7 @@ export default page((props) => (
       heading="Need Help?"
       description="If you can’t find an answer to your question, send us an email and we’ll help you out."
       url="mailto:support@buildkite.com"
+      external
       buttonTitle="Email support@buildkite.com"
     />
   </Page>
