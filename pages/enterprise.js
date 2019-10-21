@@ -219,6 +219,7 @@ export default page((props) => (
       heading="Talk to our team"
       description="We’re here to support your enterprise needs. Send us an email to arrange a call."
       url="mailto:sales@buildkite.com"
+      external
       buttonTitle="Email sales@buildkite.com"
     />
   </Page>

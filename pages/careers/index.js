@@ -144,7 +144,7 @@ export default page((props) => (
         <ImageItem />
         <ImageItem
           src={testimonialImage}
-          alt="Buildkittens in trees, pretending to be koalas."
+          alt="Some of the team on a Zoom video call."
         />
       </ImageGrid>
 
@@ -203,17 +203,18 @@ export default page((props) => (
           <LinkListItem>
             <LinkListItemLink href="/careers/senior-product-designer">Senior Product Designer</LinkListItemLink>
           </LinkListItem>
-          <LinkListItem>
+          {/* <LinkListItem>
             <LinkListItemLink href="/careers/head-of-marketing">Head of Marketing</LinkListItemLink>
-          </LinkListItem>
+          </LinkListItem> */}
         </LinkList>
       </Subsection>
     </Section>
 
     <Callout
       heading="Get in touch"
-      description="If you’ve got any questions, say hi &mdash; we’d love to hear from you."
+      description="If you’ve got any questions, say hi—we’d love to hear from you."
       url="mailto:careers@buildkite.com"
+      external
       buttonTitle="Email careers@buildkite.com"
     />
   </Page>

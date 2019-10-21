@@ -280,6 +280,7 @@ export default function caseStudyPage(pathname) {
         heading="Talk to our team"
         description="Send us an email if you’d like to chat about how Buildkite could help you."
         url="mailto:sales@buildkite.com"
+        external
         buttonTitle="Email sales@buildkite.com"
       />
 

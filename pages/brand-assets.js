@@ -289,6 +289,7 @@ export default page((props) => (
       }
       buttonTitle="Email design@buildkite.com"
       url="mailto:design@buildkite.com"
+      external
     />
   </Page>
 ))

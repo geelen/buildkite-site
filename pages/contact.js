@@ -92,6 +92,7 @@ export default page((props) => (
         imageAlt="People waving hello"
         description="For press enquiries, or anything else you need, drop us a line and we’ll help."
         url="mailto:hello@buildkite.com"
+        external
         buttonTitle="Email hello@buildkite.com"
         adjustLeft={25}
         imageWidth={460}
@@ -126,6 +127,7 @@ export default page((props) => (
       heading="Anything else?"
       description="Our friendly support team can help."
       url="mailto:support@buildkite.com"
+      external
       buttonTitle="support@buildkite.com"
     />
   </Page>

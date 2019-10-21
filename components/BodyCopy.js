@@ -9,7 +9,7 @@ export default styled.div`
   h3 {
     ${({ theme }) => theme.textStyles.bodyCopy}
     font-weight: 700;
-    margin: ${({ theme }) => theme.innerSpacing.s3} 0 ${({ theme }) => theme.textSpacing.s1} 0;
+    margin: ${({ theme }) => theme.innerSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s1} 0;
   }
 
   p, ul {
@@ -24,9 +24,9 @@ export default styled.div`
     padding: 0;
 
     li {
-      list-style-position: inside;
-      list-style-type: disc;
-      margin: 0 0 ${({ theme }) => theme.textSpacing.s1} 0;
+      list-style-type: square;
+      margin: 0 0 ${({ theme }) => theme.textSpacing.s1} ${({ theme }) => theme.textSpacing.s3};
+      padding: 0;
     }
   }
 

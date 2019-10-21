@@ -8,6 +8,7 @@ import { Masonry, Brick } from 'components/Masonry'
 import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
 import Benefits, { CareersParagraph } from 'components/Benefits'
+import CareersAboutUs from 'components/CareersAboutUs'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
 
@@ -15,6 +16,10 @@ const CareersSectionParagraph = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopy};
   color: ${({ theme }) => theme.colors.text.subdued};
   margin: ${({ theme }) => theme.textSpacing.s3} 0 0;
+`
+
+const OfferSummary = styled.div`
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s3};
 `
 
 const ApplicationProcess = styled.dl`
@@ -58,7 +63,7 @@ const ApplicationStepDescription = styled.dd`
   }
 `
 
-export default page((props) => (
+const RolePage = (props) => (
   <Page
     headTitle="Senior Product Designer"
     image={headOfficeImage}
@@ -75,37 +80,37 @@ export default page((props) => (
     {...props}
   >
     <Section>
+      <OfferSummary>
+        <BodyCopy>
+          <table>
+            <tbody>
+              <tr>
+                <th>Salary</th>
+                <td>
+                  AUD $130–160K salary<br />
+                  USD $90–110K salary<br />
+                  EUR €80–100K salary<br />
+                  Depending on experience, plus benefits, for 38 hours per week (pro-rata for part-time). Salary amount excludes superannuation / 401k.
+                </td>
+              </tr>
+              <tr>
+                <th>Timezone</th>
+                <td>Remote with at least 3 hours of overlap with UTC+10 mornings (you’ll be working with people in Vancouver, Perth, and Melbourne)</td>
+              </tr>
+              <tr>
+                <th>Hours</th>
+                <td>22.5–38 hours a week depending on your preferences and availability</td>
+              </tr>
+              <tr>
+                <th>Applications close</th>
+                <td>8pm, 28th Oct 2019 UTC</td>
+              </tr>
+            </tbody>
+          </table>
+        </BodyCopy>
+      </OfferSummary>
       <BodyCopy>
-
-        <table>
-          <tr>
-            <th>Salary:</th>
-            <td>
-              AUD $130K &mdash; $160K salary<br />
-              USD $90K &mdash; $110K salary<br />
-              €80 &mdash; 100K salary<br />
-              Depending on experience, plus benefits, for 38 hours per week (pro-rata for part-time). Salary amount excludes superannuation / 401k.
-            </td>
-          </tr>
-          <tr>
-            <th>Location:</th>
-            <td>Remote with at least 3 hours of overlap with UTC+10 mornings (you&rsquo;ll be working with people in Vancouver, Perth, and Melbourne)</td>
-          </tr>
-          <tr>
-            <th>Hours:</th>
-            <td>22.5 &mdash; 38 hours a week depending on your preferences and availability</td>
-          </tr>
-          <tr>
-            <th>Role closes:</th>
-            <td>11:59pm, 8th Sep 2019 AEST (Australia/Sydney)</td>
-          </tr>
-        </table>
-
-        <p>Buildkite is a continuous delivery platform that helps development teams ship quality code, fast. Making developers happy and productive makes us happy, and we&lsquo;re lucky to work closely with some of the best software teams in the world, including Airbnb, Shopify, Wayfair, Intercom, PagerDuty, and Basecamp.</p>
-
-        <p>We are an independently owned, profitable company that values sustainable growth, transparency and work-life balance. We&lsquo;re currently a distributed team of eleven, and we work remotely from Melbourne, Vancouver, Perth, Sydney, and Adelaide.</p>
-
-        <p>As a Senior Product Designer at Buildkite you&rsquo;ll work on a small team with a big impact, and help shape a tool that thousands of developers use every day. You&rsquo;ll report to Tim Lucas, our co-founder and design lead, and you&rsquo;ll be working alongside an existing senior product designer and print designer. In this small team you&rsquo;ll have the chance to influence all corners of Buildkite&rsquo;s product and brand.</p>
+        <p>As a Senior Product Designer at Buildkite you’ll work on a small team with a big impact, and help shape a tool that thousands of developers use every day. You’ll report to Tim Lucas, our co-founder and design lead, and you’ll be working alongside an existing senior product designer and print designer. In this small team you’ll have the chance to influence all corners of Buildkite’s product and brand.</p>
 
         <h3>A typical day for a Senior Product Designer might look like:</h3>
 
@@ -117,31 +122,34 @@ export default page((props) => (
           <li>Writing a post to the team on Basecamp with some design strategies and ideas, and getting feedback from a range of perspectives on the team.</li>
           <li>Giving feedback on and helping to iterate our UI component libraries, helping to empower the rest of the team with great design tools.</li>
           <li>Creating polished design assets for product launches, and designing changes to the Buildkite marketing site.</li>
-          <li>Joining in the weekly design catchup over Zoom, giving feedback on a commissioned illustration project for a new conference sticker, contributing to a sponsorship booth design idea, and demonstrating designs you&rsquo;ve been working on.</li>
-          <li>Pairing on support to answer customer questions, and venturing into the far corners of Buildkite&rsquo;s product, tools and documentation to understand how things are working in practice.</li>
+          <li>Joining in the weekly design catchup over Zoom, giving feedback on a commissioned illustration project for a new conference sticker, contributing to a sponsorship booth design idea, and demonstrating designs you’ve been working on.</li>
+          <li>Pairing on support to answer customer questions, and venturing into the far corners of Buildkite’s product, tools and documentation to understand how things are working in practice.</li>
         </ul>
 
-        <h3>This job is for you if you:</h3>
+        <h3>This job is for you if you have:</h3>
 
         <ul>
           <li>An eye for detail, and feel comfortable advocating for the user through the lens of great design.</li>
           <li>The ability to navigate ambiguity, create clarity through design, and lead by example.</li>
           <li>Experience working closely with frontend and backend engineers, and enjoy participating in the process of bringing your design ideas to life.</li>
-          <li>Interest working in remote, cross-functional teams.</li>
+          <li>An interest in working in remote, cross-functional teams.</li>
           <li>Worked on an existing product, helping to iterate it towards an overarching vision.</li>
           <li>Confidence to seek critical feedback, ask questions, and participate in decision making.</li>
           <li>Experience with leading discussions about tradeoffs in the product development process, and helping to ensure a cohesive product experience in the face of challenges.</li>
           <li>An interest in helping build a small company with big impact, and influencing many aspects of the business with great design.</li>
           <li>Proficiency in Sketch, Figma, Illustrator, or other design tools.</li>
-          <li>Basic proficiency in HTML and CSS.</li>
+          <li>Basic proficiency in HTML, CSS and Javascript.</li>
+          <li>Basic proficiency working with Ruby on Rails or similar web app framework.</li>
         </ul>
+
+        <CareersAboutUs />
       </BodyCopy>
 
       <Callout
-        url="https://beapplied.co"
+        url={`https://app.beapplied.com/apply/wwyp05k9oz?utm_source=${props.utmSource || 'site'}`}
+        external
         buttonTitle="Apply for this position"
       />
-
     </Section>
 
     <Section>
@@ -196,7 +204,7 @@ export default page((props) => (
       </Subsection>
     </Section>
 
-    <Section>
+    {/* <Section>
       <SectionHeader>Other Open Positions</SectionHeader>
 
       <Subsection>
@@ -206,13 +214,22 @@ export default page((props) => (
           </LinkListItem>
         </LinkList>
       </Subsection>
-    </Section>
+    </Section> */}
 
     <Callout
       heading="Get in touch"
-      description="If you've got any questions or issues with the application process, please let us know."
+      description="If you’ve got any questions or issues with the application process, please let us know."
       url="mailto:careers@buildkite.com"
+      external
       buttonTitle="Email careers@buildkite.com"
     />
   </Page>
-))
+)
+
+RolePage.getInitialProps = async({ query }) => {
+  return {
+    utmSource: query && query.utm_source
+  }
+}
+
+export default page(RolePage)

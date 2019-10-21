@@ -8,6 +8,7 @@ import { Masonry, Brick } from 'components/Masonry'
 import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
 import Benefits, { CareersParagraph } from 'components/Benefits'
+import CareersAboutUs from 'components/CareersAboutUs'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
 
@@ -76,29 +77,25 @@ export default page((props) => (
   >
     <Section>
       <BodyCopy>
-
         <table>
           <tr>
-            <th>Salary:</th>
-            <td>AUD $160K &mdash; $200K salary (ex. super) plus benefits</td>
+            <th>Salary</th>
+            <td>
+              AUD $130–160K salary<br />
+              USD $90–110K salary<br />
+              EUR €80–100K salary<br />
+              Depending on experience, plus benefits, for 38 hours per week (pro-rata for part-time). Salary amount excludes superannuation / 401k.
+            </td>
           </tr>
           <tr>
-            <th>Location:</th>
-            <td>Remote with at least 3 hours of overlap with an Australian timezone</td>
+            <th>Timezone</th>
+            <td>Remote with at least 3 hours of overlap with UTC+10 (you’ll be working with people in Vancouver, Perth, and Melbourne)</td>
           </tr>
           <tr>
-            <th>Hours:</th>
-            <td>22.5 &mdash; 38 hours a week depending on your preferences and availability</td>
-          </tr>
-          <tr>
-            <th>Role closes:</th>
-            <td>11:59pm, 8th Sep 2019 AEST (Australia/Sydney)</td>
+            <th>Hours</th>
+            <td>22.5–38 hours a week depending on your preferences and availability</td>
           </tr>
         </table>
-
-        <p>Buildkite is a continuous delivery platform that helps development teams ship quality code, fast. Making developers happy and productive makes us happy, and we&lsquo;re lucky to work closely with some of the best software teams in the world, including Airbnb, Shopify, Wayfair, Intercom, PagerDuty, and Basecamp.</p>
-
-        <p>We are an independently owned, profitable company that values sustainable growth, transparency and work-life balance. We&lsquo;re currently a distributed team of eleven, and we work remotely from Melbourne, Vancouver, Perth, Sydney, and Adelaide.</p>
 
         <p>As the Head of Marketing, you&lsquo;ll accelerate Buildkite&lsquo;s growth and help support our vibrant developer community. You&lsquo;ll be our first marketing hire, so you&lsquo;ll have lots of autonomy and impact.</p>
 
@@ -125,6 +122,8 @@ export default page((props) => (
           <li>Are self-motivated. You&rsquo;re comfortable stepping into gaps in the planning, and taking initiative on what needs to be done and how to get it done.</li>
           <li>Learn fast. You might not be an expert in everything we do initially, but you will quickly become an expert in some aspects, learn other bits you haven&rsquo;t done before and generally dive into things even if they are new to you.</li>
         </ul>
+
+        <CareersAboutUs />
       </BodyCopy>
 
       <Callout
@@ -200,8 +199,9 @@ export default page((props) => (
 
     <Callout
       heading="Get in touch"
-      description="If you've got any questions or issues with the application process, please let us know."
+      description="If you’ve got any questions or issues with the application process, please let us know."
       url="mailto:careers@buildkite.com"
+      external
       buttonTitle="Email careers@buildkite.com"
     />
   </Page>
