@@ -22,7 +22,7 @@ const CareersSectionParagraph = styled.p`
 `
 
 const OfferSummary = styled.div`
-  margin-bottom: ${({ theme }) => theme.innerSpacing.s3};
+  margin-top: ${({ theme }) => theme.innerSpacing.s3};
 `
 
 const ApplicationProcess = styled.dl`
@@ -88,35 +88,6 @@ const RolePage = (props) => (
     {...props}
   >
     <Section>
-      <OfferSummary>
-        <BodyCopy>
-          <table>
-            <tbody>
-              <tr>
-                <th>Salary</th>
-                <td>
-                  AUD $130–160K salary<br />
-                  USD $90–110K salary<br />
-                  EUR €80–100K salary<br />
-                  Depending on experience, plus benefits, for 38 hours per week (pro-rata for part-time). Salary amount excludes superannuation / 401k.
-                </td>
-              </tr>
-              <tr>
-                <th>Timezone</th>
-                <td>Remote with at least 3 hours of overlap with UTC+10 mornings (you’ll be working with people in Vancouver, Perth, and Melbourne)</td>
-              </tr>
-              <tr>
-                <th>Hours</th>
-                <td>22.5–38 hours a week depending on your preferences and availability</td>
-              </tr>
-              <tr>
-                <th>Applications close</th>
-                <td>8pm, 28th Oct 2019 UTC</td>
-              </tr>
-            </tbody>
-          </table>
-        </BodyCopy>
-      </OfferSummary>
       <BodyCopy>
         <p>As a Senior Product Designer at Buildkite you’ll work on a small team with a big impact, and help shape a tool that thousands of developers use every day. You’ll report to Tim Lucas, our co-founder and design lead, and you’ll be working alongside an existing senior product designer and print designer. In this small team you’ll have the chance to influence all corners of Buildkite’s product and brand.</p>
 
@@ -152,6 +123,36 @@ const RolePage = (props) => (
 
         <CareersAboutUs />
       </BodyCopy>
+
+      <OfferSummary>
+        <BodyCopy>
+          <table>
+            <tbody>
+              <tr>
+                <th>Salary</th>
+                <td>
+                  AUD $130–160K salary<br />
+                  USD $90–110K salary<br />
+                  EUR €80–100K salary<br />
+                  Depending on experience, plus benefits, for 38 hours per week (pro-rata for part-time). Salary amount excludes superannuation / 401k.
+                </td>
+              </tr>
+              <tr>
+                <th>Timezone</th>
+                <td>Remote with at least 3 hours of overlap with UTC+10 mornings (you’ll be working with people in Vancouver, Perth, and Melbourne)</td>
+              </tr>
+              <tr>
+                <th>Hours</th>
+                <td>22.5–38 hours a week depending on your preferences and availability</td>
+              </tr>
+              <tr>
+                <th>Applications close</th>
+                <td>8pm, 28th Oct 2019 UTC</td>
+              </tr>
+            </tbody>
+          </table>
+        </BodyCopy>
+      </OfferSummary>
 
       <ApplySubsection>
         <Link href={`https://app.beapplied.com/apply/wwyp05k9oz?utm_source=${props.utmSource || 'site'}`} external>
