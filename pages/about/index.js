@@ -201,7 +201,7 @@ export default page((props) => (
         <Brick>
           <h2>Diversity</h2>
           <ValueParagraph>
-            We believe diversity of experience and thought leads to better solutions, and creates more sustainable cultures. The tools we build must be accessible to people of all abilities and backgrounds.
+            We believe diversity of experience leads to better solutions, and creates more sustainable cultures. The tools we build must be accessible to people of all abilities and backgrounds.
           </ValueParagraph>
         </Brick>
         <Brick>
