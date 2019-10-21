@@ -23,6 +23,12 @@ const CareersSectionParagraph = styled.p`
 
 const OfferSummary = styled.div`
   margin-top: ${({ theme }) => theme.innerSpacing.s3};
+  @media (max-width: 640px) {
+    th, td {
+      display: block;
+      padding: 0 0 ${({ theme }) => theme.innerSpacing.s1} 0;
+    }
+  }
 `
 
 const ApplicationProcess = styled.dl`
