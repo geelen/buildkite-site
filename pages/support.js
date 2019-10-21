@@ -35,6 +35,7 @@ export default page((props) => (
         url="https://forum.buildkite.community/c/feature-requests"
         external
         buttonTitle="Post a Topic"
+        adjustLeft={-18}
       />
       <ActionGridItem
         heading="Community Chat"
@@ -44,6 +45,7 @@ export default page((props) => (
         description="Chat with other developers using Buildkite in our open community Slack."
         url="https://chat.buildkite.community"
         buttonTitle="Request an Invite"
+        adjustLeft={-4}
       />
       <ActionGridItem
         heading="System Status"
@@ -53,6 +55,7 @@ export default page((props) => (
         description="Check the health of Buildkite’s critical components and services."
         url="https://buildkitestatus.com"
         buttonTitle="Visit buildkitestatus.com"
+        adjustLeft={6}
       />
     </ActionGrid>
 

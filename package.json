@@ -57,6 +57,7 @@
     "integration:production": "TEST_HOST=https://buildkite.com/ yarn run integration"
   },
   "resolutions": {
-    "**/js-yaml": ">=3.13.0"
+    "**/js-yaml": ">=3.13.0",
+    "**/https-proxy-agent": ">=3.0.0"
   }
 }

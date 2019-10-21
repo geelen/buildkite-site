@@ -140,6 +140,7 @@ describe('Logged in cookie behaviours', () => {
 const pagesToCheck = {
   'About': `/about`,
   'Brand Assets': `/brand-assets`,
+  'Careers': `/careers`,
   'Case Studies - Shopify': `/case-studies/shopify`,
   'Case Studies': `/case-studies`,
   'Contact Us': `/contact`,

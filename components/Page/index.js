@@ -9,6 +9,7 @@ import Header from 'components/Header'
 import Metadata from 'components/Metadata'
 import Footer from 'components/Footer'
 import Link from 'components/Link'
+import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
 
 import { fonts } from '../../theme/fonts'
 import Reset from '../../theme/reset'
@@ -60,8 +61,13 @@ export const Description = styled.p`
   }
 `
 
-const ImageContainer = styled.div`
-  text-align: center;
+const CentredImageContainer = styled.div`
+  max-width: ${({ maxWidth }) => maxWidth + "px"};
+  margin:
+    0
+    auto
+    ${({ theme }) => theme.outerSpacing.s1};
+    auto;
 `
 
 const Image = styled.img`
@@ -137,9 +143,11 @@ export default class Page extends React.PureComponent {
       <BasePage {...props}>
         <>
           {props.image && (
-            <ImageContainer>
-              <Image src={props.image} alt={props.imageAlt} />
-            </ImageContainer>
+            <CentredImageContainer maxWidth={props.imageWidth}>
+              <ResponsiveImageContainer width={props.imageWidth} height={props.imageHeight}>
+                <Image src={props.image} alt={props.imageAlt} width={props.imageWidth} height={props.imageHeight} />
+              </ResponsiveImageContainer>
+            </CentredImageContainer>
           )}
           {props.title && (
             props.titleHref ? (

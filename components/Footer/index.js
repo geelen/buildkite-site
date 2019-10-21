@@ -43,7 +43,7 @@ const LogoImage = styled.img`
 export default ({ loggedIn }) => (
   <Footer>
     <FooterInner>
-      <Grid columns="200px">
+      <Grid columns="142px" minWidth="667px">
         <Cell>
           <Link href={loggedIn ? "/home" : "/"}>
             <a><LogoImage src={portraitLogo} alt="Buildkite" /></a>
@@ -76,6 +76,7 @@ export default ({ loggedIn }) => (
             <FooterLink href="/brand-assets">Brand Assets</FooterLink>
             <FooterLink href="/terms-of-service">Terms of Service</FooterLink>
             <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
+            <FooterLink href="/careers">Careers</FooterLink>
             <FooterLink href="https://shop.buildkite.com/" external>Shop</FooterLink>
           </SmallNav>
         </Cell>
