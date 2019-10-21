@@ -9,6 +9,7 @@ import { Masonry, Brick } from 'components/Masonry'
 import Callout from 'components/Callout'
 import Benefits, { CareersParagraph } from 'components/Benefits'
 import CareersAboutUs from 'components/CareersAboutUs'
+import CareersTestimonialSection from 'components/CareersTestimonialSection'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
 
@@ -146,6 +147,7 @@ const RolePage = (props) => (
       </BodyCopy>
 
       <Callout
+        marginTop={'0px'}
         url={`https://app.beapplied.com/apply/wwyp05k9oz?utm_source=${props.utmSource || 'site'}`}
         external
         buttonTitle="Apply for this position"
@@ -203,6 +205,8 @@ const RolePage = (props) => (
         </ApplicationProcess>
       </Subsection>
     </Section>
+
+    <CareersTestimonialSection />
 
     {/* <Section>
       <SectionHeader>Other Open Positions</SectionHeader>

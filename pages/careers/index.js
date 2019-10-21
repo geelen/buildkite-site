@@ -3,16 +3,14 @@ import Br from 'components/Br'
 
 import Page, { page } from 'components/Page'
 import { Section, SectionHeader, Subsection, SubSectionHeader } from 'components/sections/sections'
-import { Testimonial, Quotation, Attribution, Headshot, ImageGrid, ImageItem } from 'components/Page/case-study'
 import { Masonry, Brick } from 'components/Masonry'
 import { TextLink } from 'components/Link'
 import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
 import Benefits, { CareersParagraph } from 'components/Benefits'
+import CareersTestimonialSection from 'components/CareersTestimonialSection'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
-import testimonialImage from '../../assets/images/careers/team-photo.jpg'
-import testimonialAvatar from '../../assets/images/about/eleanor.jpg'
 
 const CareersSectionParagraph = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopy};
@@ -121,34 +119,7 @@ export default page((props) => (
       </Subsection>
     </Section>
 
-    <Section>
-
-      <Testimonial>
-        <Quotation>
-          Working at Buildkite has given me the freedom to grow and flourish in all aspects of my life, personally and professionally. I’m proud to be a part of such a passionate and supportive team.
-        </Quotation>
-        <Attribution>
-          <Headshot
-            src={testimonialAvatar}
-            alt="Headshot of Eleanor."
-          />
-          <p>
-            Eleanor
-            <br />
-            Engineer
-          </p>
-        </Attribution>
-      </Testimonial>
-
-      <ImageGrid>
-        <ImageItem />
-        <ImageItem
-          src={testimonialImage}
-          alt="Some of the team on a Zoom video call."
-        />
-      </ImageGrid>
-
-    </Section>
+    <CareersTestimonialSection />
 
     <Section small>
       <SectionHeader>Our Values</SectionHeader>
