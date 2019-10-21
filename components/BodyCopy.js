@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export default styled.div`
-  color: ${({ theme }) => theme.colors.text.subdued};
   line-height: 1.5;
   margin: 0 auto;
   max-width: 40em;
