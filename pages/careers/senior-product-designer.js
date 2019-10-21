@@ -3,7 +3,9 @@ import Br from 'components/Br'
 
 import Page, { page } from 'components/Page'
 import { Section, SectionHeader, Subsection, SubSectionHeader } from 'components/sections/sections'
+import Button from 'components/Button'
 import BodyCopy from 'components/BodyCopy'
+import Link from 'components/Link'
 import { Masonry, Brick } from 'components/Masonry'
 // import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
@@ -62,6 +64,11 @@ const ApplicationStepDescription = styled.dd`
     margin-bottom: 0;
     padding-bottom: 0;
   }
+`
+
+const ApplySubsection = styled.div`
+  margin: ${({ theme }) => theme.outerSpacing.s1} 0;
+  text-align: center;
 `
 
 const RolePage = (props) => (
@@ -146,12 +153,13 @@ const RolePage = (props) => (
         <CareersAboutUs />
       </BodyCopy>
 
-      <Callout
-        marginTop={'0px'}
-        url={`https://app.beapplied.com/apply/wwyp05k9oz?utm_source=${props.utmSource || 'site'}`}
-        external
-        buttonTitle="Apply for this position"
-      />
+      <ApplySubsection>
+        <Link href={`https://app.beapplied.com/apply/wwyp05k9oz?utm_source=${props.utmSource || 'site'}`} external>
+          <Button primary>
+            Apply for this position →
+          </Button>
+        </Link>
+      </ApplySubsection>
     </Section>
 
     <Section>

@@ -4,7 +4,7 @@ import Button from 'components/Button'
 import Link from 'components/Link'
 
 const Section = styled.section`
-  margin-top: ${({ theme, marginTop }) => (marginTop ? marginTop : theme.outerSpacing.s2)};
+  margin-top: ${({ theme }) => theme.outerSpacing.s2};
   margin-bottom: ${({ theme }) => theme.outerSpacing.s2};
   padding-top: ${({ theme }) => theme.outerSpacing.s1};
   padding-bottom: ${({ theme }) => theme.outerSpacing.s1};
