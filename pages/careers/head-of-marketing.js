@@ -1,56 +1,20 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import Br from 'components/Br'
 
 import Page, { page } from 'components/Page'
+import { Section, SectionHeader, Subsection, SubSectionHeader } from 'components/sections/sections'
 import BodyCopy from 'components/BodyCopy'
 import { Masonry, Brick } from 'components/Masonry'
 import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
+import Benefits, { CareersParagraph } from 'components/Benefits'
 
 import headOfficeImage from '../../assets/images/about/head-office.jpg'
-
-import healthCoverIcon from '../../assets/images/careers/streamline-icon-hospital-house@48x48.svg'
-import homeOfficeIcon from '../../assets/images/careers/streamline-icon-office-desk@48x48.svg'
-import learningIcon from '../../assets/images/careers/streamline-icon-tools-box@48x48.svg'
-import parentalLeaveIcon from '../../assets/images/careers/streamline-icon-baby-care-body@48x48.svg'
-import profitShareIcon from '../../assets/images/careers/streamline-icon-saving-piggy-dollars@48x48-2.svg'
-import wellnessIcon from '../../assets/images/careers/streamline-icon-messages-bubble-smile@48x48.svg'
-
-const Section = styled.section`
-  margin-top: ${({ theme }) => theme.outerSpacing.s3};
-  margin-bottom: ${({ theme }) => theme.outerSpacing.s3};
-
-  ${(props) => props.small && css`
-    margin: ${({ theme }) => theme.outerSpacing.s3} auto;
-    max-width: 510px;
-  `}
-`
-
-const SectionHeader = styled.h2`
-  ${({ theme }) => theme.textStyles.secondLevelHeading}
-  margin-top: ${({ theme }) => theme.innerSpacing.s2};
-  text-align: center;
-`
-
-const Subsection = styled.section`
-  margin-top: ${({ theme }) => theme.innerSpacing.s2};
-  margin-bottom: ${({ theme }) => theme.innerSpacing.s2};
-`
-
-const SubSectionHeader = styled.h3`
-  ${({ theme }) => theme.textStyles.bodyCopy}
-  margin: ${({ theme }) => theme.textSpacing.s2} 0 ${({ theme }) => theme.textSpacing.s1} 0;
-`
 
 const CareersSectionParagraph = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopy};
   color: ${({ theme }) => theme.colors.text.subdued};
   margin: ${({ theme }) => theme.textSpacing.s3} 0 0;
-`
-
-const CareersParagraph = styled.p`
-  color: ${({ theme }) => theme.colors.text.subdued};
-  margin: ${({ theme }) => theme.textSpacing.s1} 0;
 `
 
 const ApplicationProcess = styled.dl`
@@ -158,8 +122,8 @@ export default page((props) => (
           <li>Have a passion for marketing technical products.</li>
           <li>Enjoy analysing data, and developing strategies to shift numbers in the right direction.</li>
           <li>Have worked remotely, and value clear and open written and verbal communication. You should value empathy and kindness, and be able to articulate your ideas and feelings when writing or speaking.</li>
-          <li>Are self-motivated. You're comfortable stepping into gaps in the planning, and taking initiative on what needs to be done and how to get it done.</li>
-          <li>Learn fast. You might not be an expert in everything we do initially, but you will quickly become an expert in some aspects, learn other bits you haven't done before and generally dive into things even if they are new to you.</li>
+          <li>Are self-motivated. You&rsquo;re comfortable stepping into gaps in the planning, and taking initiative on what needs to be done and how to get it done.</li>
+          <li>Learn fast. You might not be an expert in everything we do initially, but you will quickly become an expert in some aspects, learn other bits you haven&rsquo;t done before and generally dive into things even if they are new to you.</li>
         </ul>
       </BodyCopy>
 
@@ -197,44 +161,7 @@ export default page((props) => (
     <Section>
       <SectionHeader>Benefits</SectionHeader>
       <Subsection>
-        <Masonry>
-          <Brick
-            icon={learningIcon}
-          >
-            <SubSectionHeader>Learning & development</SubSectionHeader>
-            <CareersParagraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae ornare lectus. Aenean sit amet condimentum leo. Integer sit amet odio lectus.</CareersParagraph>
-          </Brick>
-          <Brick
-            icon={healthCoverIcon}
-          >
-            <SubSectionHeader>Health cover</SubSectionHeader>
-            <CareersParagraph>We provide health cover </CareersParagraph>
-          </Brick>
-          <Brick
-            icon={parentalLeaveIcon}
-          >
-            <SubSectionHeader>Parental leave</SubSectionHeader>
-            <CareersParagraph>Vivamus nunc eros, gravida eu tempor non, finibus tempor arcu. Quisque venenatis imperdiet tellus sed varius. Praesent vitae ornare sem.</CareersParagraph>
-          </Brick>
-          <Brick
-            icon={homeOfficeIcon}
-          >
-            <SubSectionHeader>Home office & coworking</SubSectionHeader>
-            <CareersParagraph>In convallis consequat sapien, dignissim aliquet dui auctor ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</CareersParagraph>
-          </Brick>
-          <Brick
-            icon={wellnessIcon}
-          >
-            <SubSectionHeader>Wellness</SubSectionHeader>
-            <CareersParagraph>Fusce ut eleifend nibh. Cras orci diam, auctor id nulla nec, posuere pretium massa. Suspendisse pellentesque felis sit amet congue lacinia. Nunc gravida velit dolor.</CareersParagraph>
-          </Brick>
-          <Brick
-            icon={profitShareIcon}
-          >
-            <SubSectionHeader>Profit share & ownership</SubSectionHeader>
-            <CareersParagraph>Nam porttitor enim at arcu ornare facilisis. Nullam varius vehicula erat vitae egestas. In tempor ac lorem justo molestie vehicula. Proin convallis euismod risus ac feugiat.</CareersParagraph>
-          </Brick>
-        </Masonry>
+        <Benefits />
       </Subsection>
     </Section>
 
