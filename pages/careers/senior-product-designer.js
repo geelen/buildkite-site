@@ -95,7 +95,7 @@ const RolePage = (props) => (
   >
     <Section>
       <BodyCopy>
-        <p>As a Senior Product Designer at Buildkite you’ll work on a small team with a big impact, and help shape a tool that thousands of developers use every day. You’ll report to Tim Lucas, our co-founder and design lead, and you’ll be working alongside an existing senior product designer and print designer. In this small team you’ll have the chance to influence all corners of Buildkite’s product and brand.</p>
+        <p>As a Senior Product Designer at Buildkite you’ll work in a small team with a big impact, and help shape a tool that thousands of developers use every day. You’ll report to Tim Lucas, our co-founder and design lead, and you’ll be working alongside an existing senior product designer and print designer. In this small team you’ll have the chance to influence all corners of Buildkite’s product and brand.</p>
 
         <h3>A typical day for a Senior Product Designer might look like:</h3>
 
