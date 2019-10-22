@@ -48,7 +48,7 @@ export default () => (
       icon={wellnessIcon}
     >
       <SubSectionHeader>Wellness & paid time off</SubSectionHeader>
-      <CareersParagraph>Take care of your health and wellbeing away from the screen, with 6 weeks of paid leave per year, the ability to take time out of work for fitness, and a budget of AU$2000 per year to spend on things like yoga, climbing, personal training, or at day at the zoo.</CareersParagraph>
+      <CareersParagraph>Take care of your health and wellbeing away from the screen, with 6 weeks of paid leave per year, the ability to take time out of work for fitness, and a budget of AU$2000 per year to spend on things like yoga, climbing, personal training, or a day at the zoo.</CareersParagraph>
     </BenefitsBrick>
     <BenefitsBrick
       icon={profitShareIcon}
