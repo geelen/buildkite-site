@@ -7,7 +7,7 @@ import Button from 'components/Button'
 import BodyCopy from 'components/BodyCopy'
 import Link from 'components/Link'
 import { Masonry, Brick } from 'components/Masonry'
-// import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
+import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
 import Benefits, { CareersParagraph } from 'components/Benefits'
 import CareersAboutUs from 'components/CareersAboutUs'
@@ -223,7 +223,7 @@ const RolePage = (props) => (
 
     <CareersTestimonialSection />
 
-    {/* <Section>
+    <Section>
       <SectionHeader>Other Open Positions</SectionHeader>
 
       <Subsection>
@@ -233,7 +233,7 @@ const RolePage = (props) => (
           </LinkListItem>
         </LinkList>
       </Subsection>
-    </Section> */}
+    </Section>
 
     <Callout
       heading="Get in touch"

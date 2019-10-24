@@ -174,9 +174,9 @@ export default page((props) => (
           <LinkListItem>
             <LinkListItemLink href="/careers/senior-product-designer">Senior Product Designer</LinkListItemLink>
           </LinkListItem>
-          {/* <LinkListItem>
+          <LinkListItem>
             <LinkListItemLink href="/careers/head-of-marketing">Head of Marketing</LinkListItemLink>
-          </LinkListItem> */}
+          </LinkListItem>
         </LinkList>
       </Subsection>
     </Section>
