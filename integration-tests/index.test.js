@@ -141,6 +141,8 @@ const pagesToCheck = {
   'About': `/about`,
   'Brand Assets': `/brand-assets`,
   'Careers': `/careers`,
+  'Careers - Senior Product Designer': `/careers/senior-product-designer`,
+  'Careers - Head of Marketing': `/careers/head-of-marketing`,
   'Case Studies - Shopify': `/case-studies/shopify`,
   'Case Studies': `/case-studies`,
   'Contact Us': `/contact`,
