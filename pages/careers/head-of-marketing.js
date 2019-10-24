@@ -104,7 +104,7 @@ const RolePage = (props) => (
       </OfferSummary>
 
       <ApplySubsection>
-        <Link href="mailto:careers@buildkite.com" external>
+        <Link href="mailto:careers@buildkite.com?subject=Head of Marketing role" external>
           <Button primary>
             Email Us to Apply →
           </Button>
