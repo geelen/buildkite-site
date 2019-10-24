@@ -4,7 +4,7 @@ import Br from 'components/Br'
 import Page, { page } from 'components/Page'
 import { Section, SectionHeader, Subsection, SubSectionHeader } from 'components/sections/sections'
 import { Masonry, Brick } from 'components/Masonry'
-import { TextLink } from 'components/Link'
+import Link from 'components/Link'
 import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
 import Benefits, { CareersParagraph } from 'components/Benefits'
@@ -16,6 +16,10 @@ const CareersSectionParagraph = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopy};
   color: ${({ theme }) => theme.colors.text.subdued};
   margin: ${({ theme }) => theme.textSpacing.s3} 0 0;
+
+  a {
+    ${({ theme }) => theme.textStyles.hyperlink}
+  }
 `
 
 const OrderedList = styled.ol`
@@ -123,7 +127,7 @@ export default page((props) => (
 
     <Section small>
       <SectionHeader>Our Values</SectionHeader>
-      <CareersSectionParagraph>Buildkite’s values guide our priorities, products, hiring, the way we treat our customers, and the way we treat each other. You can read all about them on our <TextLink href="/about">about page</TextLink>.</CareersSectionParagraph>
+      <CareersSectionParagraph>Buildkite’s values guide our priorities, products, hiring, the way we treat our customers, and the way we treat each other. You can read all about them on our <Link href="/about"><a>about page</a></Link>.</CareersSectionParagraph>
 
       <Subsection>
         <OrderedList>
@@ -172,10 +176,14 @@ export default page((props) => (
       <Subsection>
         <LinkList>
           <LinkListItem>
-            <LinkListItemLink href="/careers/senior-product-designer">Senior Product Designer</LinkListItemLink>
+            <Link href="/careers/senior-product-designer">
+              <LinkListItemLink>Senior Product Designer</LinkListItemLink>
+            </Link>
           </LinkListItem>
           <LinkListItem>
-            <LinkListItemLink href="/careers/head-of-marketing">Head of Marketing</LinkListItemLink>
+            <Link href="/careers/head-of-marketing">
+              <LinkListItemLink>Head of Marketing</LinkListItemLink>
+            </Link>
           </LinkListItem>
         </LinkList>
       </Subsection>

@@ -229,7 +229,9 @@ const RolePage = (props) => (
       <Subsection>
         <LinkList>
           <LinkListItem>
-            <LinkListItemLink href="/careers/head-of-marketing">Head of Marketing</LinkListItemLink>
+            <Link href="/careers/head-of-marketing">
+              <LinkListItemLink>Head of Marketing</LinkListItemLink>
+            </Link>
           </LinkListItem>
         </LinkList>
       </Subsection>
