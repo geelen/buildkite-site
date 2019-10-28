@@ -151,19 +151,15 @@ const RolePage = (props) => (
                 <th>Hours</th>
                 <td>22.5–38 hours a week depending on your preferences and availability</td>
               </tr>
-              <tr>
-                <th>Applications close</th>
-                <td>8pm, 28th Oct 2019 UTC</td>
-              </tr>
             </tbody>
           </table>
         </BodyCopy>
       </OfferSummary>
 
       <ApplySubsection>
-        <Link href={`https://app.beapplied.com/apply/wwyp05k9oz?utm_source=${props.utmSource || 'site'}`} external>
+        <Link href="mailto:careers@buildkite.com?subject=Senior Product Designer role" external>
           <Button primary>
-            Apply for this position →
+            Email Us to Apply →
           </Button>
         </Link>
       </ApplySubsection>
