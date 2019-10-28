@@ -82,15 +82,6 @@ const RolePage = (props) => (
           <table>
             <tbody>
               <tr>
-                <th>Salary</th>
-                <td>
-                  AUD $160–200K salary<br />
-                  USD $110–140K salary<br />
-                  EUR €100–130K salary<br />
-                  Depending on experience, plus benefits, for 38 hours per week (pro-rata for part-time). Salary amount excludes superannuation / 401k.
-                </td>
-              </tr>
-              <tr>
                 <th>Timezone</th>
                 <td>Remote with at least 3 hours of overlap with UTC+10</td>
               </tr>
