@@ -138,16 +138,6 @@ const RolePage = (props) => (
 
     <Section>
       <SectionHeader>Other Open Positions</SectionHeader>
-
-      <Subsection>
-        <LinkList>
-          <LinkListItem>
-            <Link href="/careers/senior-product-designer">
-              <LinkListItemLink>Senior Product Designer</LinkListItemLink>
-            </Link>
-          </LinkListItem>
-        </LinkList>
-      </Subsection>
     </Section>
 
     <Callout
