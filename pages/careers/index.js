@@ -176,11 +176,6 @@ export default page((props) => (
       <Subsection>
         <LinkList>
           <LinkListItem>
-            <Link href="/careers/senior-product-designer">
-              <LinkListItemLink>Senior Product Designer</LinkListItemLink>
-            </Link>
-          </LinkListItem>
-          <LinkListItem>
             <Link href="/careers/head-of-marketing">
               <LinkListItemLink>Head of Marketing</LinkListItemLink>
             </Link>
