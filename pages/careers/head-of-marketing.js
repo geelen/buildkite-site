@@ -7,7 +7,6 @@ import Button from 'components/Button'
 import BodyCopy from 'components/BodyCopy'
 import Link from 'components/Link'
 import { Masonry, Brick } from 'components/Masonry'
-import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
 import Benefits, { CareersParagraph } from 'components/Benefits'
 import CareersAboutUs from 'components/CareersAboutUs'
@@ -138,16 +137,6 @@ const RolePage = (props) => (
 
     <Section>
       <SectionHeader>Other Open Positions</SectionHeader>
-
-      <Subsection>
-        <LinkList>
-          <LinkListItem>
-            <Link href="/careers/senior-product-designer">
-              <LinkListItemLink>Senior Product Designer</LinkListItemLink>
-            </Link>
-          </LinkListItem>
-        </LinkList>
-      </Subsection>
     </Section>
 
     <Callout
