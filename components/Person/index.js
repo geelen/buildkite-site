@@ -118,7 +118,7 @@ const Links = styled.ul`
   }
 `
 
-export default ({ person, showRoles, showName }) => {
+export default ({ person, showName }) => {
   const name = <PersonName person={person} />
   const roles = <PersonRoles person={person} />
 
@@ -143,10 +143,9 @@ export default ({ person, showRoles, showName }) => {
           )}
         </PaddedDropdown>
       </Dropdown>
-      {(showName || showRoles) && (
+      {(showName) && (
         <PersonStats>
           {showName && name}
-          {showRoles && roles}
         </PersonStats>
       )}
     </Wrapper>
