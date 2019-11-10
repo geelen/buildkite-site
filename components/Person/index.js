@@ -53,36 +53,11 @@ const Name = styled.h3`
   ${({ theme }) => theme.textStyles.bodyCopy}
 `
 
-const Roles = styled.ul`
-  ${({ theme }) => theme.textStyles.bodyCopySmall}
-  list-style: none;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  color: ${({ theme }) => theme.colors.text.subdued};
-`
-
 const PersonName = ({ person }) => (
   <Name>
     {person.name}
   </Name>
 )
-
-const PersonRoles = ({ person }) => {
-  if (!person.roles) {
-    return null
-  }
-
-  return (
-    <Roles>
-      {person.roles.map((role) => (
-        <li key={role}>
-          {role}
-        </li>
-      ))}
-    </Roles>
-  )
-}
 
 const PersonBio = styled.p`
   ${({ theme }) => theme.textStyles.bodyCopySmall}
@@ -120,7 +95,6 @@ const Links = styled.ul`
 
 export default ({ person, showName }) => {
   const name = <PersonName person={person} />
-  const roles = <PersonRoles person={person} />
 
   return (
     <Wrapper>
