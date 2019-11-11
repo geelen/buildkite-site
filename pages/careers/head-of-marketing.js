@@ -135,9 +135,9 @@ const RolePage = (props) => (
 
     <CareersTestimonialSection />
 
-    <Section>
+    {/* <Section>
       <SectionHeader>Other Open Positions</SectionHeader>
-    </Section>
+    </Section> */}
 
     <Callout
       heading="Get in touch"
