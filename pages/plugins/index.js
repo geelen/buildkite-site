@@ -2,9 +2,15 @@ import { memo } from 'react'
 import styled from 'styled-components'
 
 import Br from 'components/Br'
-import Callout from 'components/Callout'
+import Button from 'components/Button'
 import Page, { page } from 'components/Page'
 import { Grid, Cell } from 'components/Grid'
+import { MediaItem, ImageCell, TextCell } from 'components/MediaItem'
+import { OffscreenH1 } from 'components/OffscreenHeading'
+import { ResponsiveImageContainer } from 'components/ResponsiveContainer'
+import { Section } from 'components/sections/sections'
+
+import image from '../../assets/images/plugins/plugin.png'
 
 import plugins from '../../lib/data/plugins'
 
@@ -103,6 +109,25 @@ const releaseUrl = ({ plugin, tag }) => (
   `https://github.com/${plugin.owner.login}/${plugin.repo}/releases/tag/${tag}`
 )
 
+const Paragraph = styled.p`
+  ${({ theme }) => theme.textStyles.bodyCopyLarge};
+  margin-bottom: ${({ theme }) => theme.innerSpacing.s1};
+`
+
+const GetStartedText = styled(TextCell)`
+  text-align: center;
+
+  @media (min-width: 600px) {
+    text-align: initial;
+  }
+`
+
+const ImageContainer = styled.div`
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+`
+
 export default page((props) => (
   <Page
     headTitle="Buildkite Plugins"
@@ -141,16 +166,26 @@ export default page((props) => (
       ))}
     </PluginGrid>
 
-    <Callout
-      grey
-      heading="Create a Plugin"
-      description={
-        <>
-          Learn how to write your own <Br maxWidth="30em" /> plugin, and publish it to GitHub.
-        </>
-      }
-      url="/docs/pipelines/plugins"
-      buttonTitle="Plugin Documentation"
-    />
+    <Section>
+      <MediaItem>
+        <ImageCell>
+          <ImageContainer>
+            <ResponsiveImageContainer width={800} height={437}>
+              <img src={image} alt="A person looking at parts while reading a blueprint" />
+            </ResponsiveImageContainer>
+          </ImageContainer>
+        </ImageCell>
+        <GetStartedText>
+          <OffscreenH1>Write Your Own Plugins</OffscreenH1>
+          <Paragraph>Write, test and release your own <Br minWidth="30em" /> Buildkite plugins.</Paragraph>
+          <p>
+            <Link href="/docs/pipelines/plugins" external>
+              <Button primary>Read the Plugin Documentation →</Button>
+            </Link>
+          </p>
+        </GetStartedText>
+      </MediaItem>
+    </Section>
+
   </Page>
 ))
