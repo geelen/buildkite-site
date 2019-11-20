@@ -29,9 +29,7 @@ const PluginListHeading = styled.h2`
   margin: 0 0 ${({ theme }) => theme.textSpacing.s1} ${({ theme }) => theme.textSpacing.s1};
 `
 
-const PluginList = styled.ul`
-
-`
+const PluginList = styled.ul``
 
 const PluginListItem = styled.li`
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
@@ -96,10 +94,6 @@ const Repo = styled.p`
   }
 `
 
-const OwnerLink = styled.a`
-  float: right;
-`
-
 const CategoryIcon = styled.img`
   border-radius: 3px;
   height: 30px;
@@ -109,9 +103,6 @@ const CategoryIcon = styled.img`
   ${Title} & {
     margin: 0 10px -5px 0;
   }
-`
-const Avatar = styled(CategoryIcon)`
-  margin-bottom: -22px;
 `
 
 const Meta = styled.p`
@@ -230,9 +221,6 @@ export default page((props) => (
     <Grid columns={2} minWidth="414px">
       {plugins.map((plugin) => (
         <Plugin key={`${plugin.owner.login}/${plugin.repo}`}>
-          <OwnerLink href={`https://github.com/${plugin.owner.login}`}>
-            <Avatar src={plugin.owner.avatar} alt={plugin.owner.login} />
-          </OwnerLink>
           <Title>
             <CategoryIcon src={plugin.owner.avatar} alt={plugin.owner.login} />
             <Link href={`https://github.com/${plugin.owner.login}/${plugin.repo}`}>{plugin.name}</Link>
