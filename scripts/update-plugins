@@ -2,6 +2,12 @@
 /* eslint-disable no-console */
 /* global __dirname */
 
+/*
+  To run/test this locally, create a GitHub personal access token and run the
+  following:
+    env GITHUB_API_TOKEN=xxx ./scripts/update-plugins
+*/
+
 const fs = require('fs')
 const path = require('path')
 const yaml = require('js-yaml')
@@ -33,6 +39,7 @@ function query() {
         repositoryCount
         nodes {
           ...on Repository {
+            createdAt
             name
             stargazers {
               totalCount
@@ -146,6 +153,9 @@ function transformRepositoryNode(node) {
       avatar: node.owner.avatarUrl
     },
     stars: node.stargazers.totalCount,
+    // this could be improved, by using the date the plugin first became
+    // visible/published, rather than when it was created
+    createdAt: node.createdAt,
     pushedAt: new Date(node.pushedAt),
     lastRelease: lastRelease && {
       version: lastRelease.tag.name
