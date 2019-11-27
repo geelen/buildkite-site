@@ -12,7 +12,7 @@ import { Section } from 'components/sections/sections'
 
 import image from '../../assets/images/plugins/plugin.png'
 
-import plugins from '../../lib/data/plugins'
+import { all as allPlugins, mostStarred, newlyAdded, recentlyUpdated } from '../../lib/data/plugins'
 
 const Link = styled.a`
   ${({ theme }) => theme.textStyles.navigationHyperlink};
@@ -175,7 +175,7 @@ export default page((props) => (
       <PluginListContainer>
         <PluginListHeading>Most Starred</PluginListHeading>
         <PluginList>
-          {plugins.slice(0, 3).map((plugin) => (
+          {mostStarred.map((plugin) => (
             <PluginListItem key={`${plugin.owner.login}/${plugin.repo}`}>
               <Link href={`https://github.com/${plugin.owner.login}`}>
                 <CategoryIcon src={plugin.owner.avatar} alt={plugin.owner.login} />
@@ -191,7 +191,7 @@ export default page((props) => (
       <PluginListContainer>
         <PluginListHeading>Newly Added</PluginListHeading>
         <PluginList>
-          {plugins.slice(0, 3).map((plugin) => (
+          {newlyAdded.map((plugin) => (
             <PluginListItem key={`${plugin.owner.login}/${plugin.repo}`}>
               <Link href={`https://github.com/${plugin.owner.login}`}>
                 <CategoryIcon src={plugin.owner.avatar} alt={plugin.owner.login} />
@@ -205,7 +205,7 @@ export default page((props) => (
       <PluginListContainer>
         <PluginListHeading>Recently Updated</PluginListHeading>
         <PluginList>
-          {plugins.slice(0, 3).map((plugin) => (
+          {recentlyUpdated.map((plugin) => (
             <PluginListItem key={`${plugin.owner.login}/${plugin.repo}`}>
               <Link href={`https://github.com/${plugin.owner.login}`}>
                 <CategoryIcon src={plugin.owner.avatar} alt={plugin.owner.login} />
@@ -219,7 +219,7 @@ export default page((props) => (
     </Grid>
 
     <Grid columns={2} minWidth="414px">
-      {plugins.map((plugin) => (
+      {allPlugins.map((plugin) => (
         <Plugin key={`${plugin.owner.login}/${plugin.repo}`}>
           <Title>
             <CategoryIcon src={plugin.owner.avatar} alt={plugin.owner.login} />

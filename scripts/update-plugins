@@ -94,7 +94,8 @@ function processResults(results) {
     .map(transformRepositoryNode)
     // Filter out all the failures
     .filter((plugin) => plugin)
-    // Sort based on the number of stars, then last pushedAt
+
+  const all = plugins // Sort based on the number of stars, then last pushedAt
     .sort((p1, p2) => {
       if (p1.stars < p2.stars) { return -1 }
       if (p1.stars > p2.stars) { return 1 }
@@ -106,8 +107,38 @@ function processResults(results) {
     })
     .reverse()
 
+  const mostStarred = all.slice(0, 3)
+
+  const newlyAdded = all
+    .slice() // creates a copy for the sort
+    .sort((p1, p2) => {
+      if (p1.createdAt < p2.createdAt) { return -1 }
+      if (p1.createdAt > p2.createdAt) { return 1 }
+      if (p1.createdAt === p2.createdAt) {
+        if (p1.pushedAt < p2.pushedAt) { return -1 }
+        if (p1.pushedAt > p2.pushedAt) { return 1 }
+        return 0
+      }
+    })
+    .reverse()
+    .slice(0, 3)
+
+  const recentlyUpdated = all
+    .slice() // creates a copy for the sort
+    .sort((p1, p2) => {
+      if (p1.pushedAt < p2.pushedAt) { return 1 }
+      if (p1.pushedAt > p2.pushedAt) { return -1 }
+      return 0
+    })
+    .slice(0, 3)
+
   const dataJsFile = `/* eslint-disable */
-  module.exports = ${JSON.stringify(plugins)};
+  module.exports = {
+    mostStarred: ${JSON.stringify(mostStarred)},
+    newlyAdded: ${JSON.stringify(newlyAdded)},
+    recentlyUpdated: ${JSON.stringify(recentlyUpdated)},
+    all: ${JSON.stringify(all)}
+  };
   `
 
   fs.writeFile(path.join(__dirname, "../lib/data/plugins.js"), dataJsFile, function(error) {
