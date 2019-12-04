@@ -54,12 +54,12 @@ const People = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 720px;
+  max-width: 880px;
   margin-left: auto;
   margin-right: auto;
 
   > * {
-    margin: -18px -12px;
+    margin: -10px -10px;
   }
 `
 
