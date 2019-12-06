@@ -136,6 +136,10 @@ const DocsLink = styled.a`
 `
 
 const pluginUrl = ({ plugin }) => (
+  `/plugins/${plugin.owner.login}-${plugin.repo}`
+)
+
+const githubUrl = ({ plugin }) => (
   `https://github.com/${plugin.owner.login}/${plugin.repo}`
 )
 
@@ -231,7 +235,7 @@ export default page((props) => (
           <Description>{plugin.description}</Description>
           <Ellipsis>
             <Repo>
-              <Link href={pluginUrl({ plugin })}>
+              <Link href={githubUrl({ plugin })}>
                 {`github.com/${plugin.owner.login}/${plugin.repo}`}
               </Link>
             </Repo>

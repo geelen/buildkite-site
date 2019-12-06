@@ -92,10 +92,10 @@ export default function pluginPage(pathname) {
 
   return page((props) => (
     <Page
-      title={`${plugin.name} plugin`}
+      title={plugin.name}
       titleHref="/plugins"
-      headDescription=""
-      headTitle={`- Buildkite plugin`}
+      headDescription={plugin.description}
+      headTitle={`${plugin.name} - Buildkite plugin`}
       {...props}
     >
       <Grid columns={1} minWidth="414px">
