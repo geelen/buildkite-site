@@ -34,4 +34,6 @@ Grid.defaultProps = {
   columns: '280px'
 }
 
-export const Cell = styled.div``
+export const Cell = styled.div`
+  min-width: 0;
+`

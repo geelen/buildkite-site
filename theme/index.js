@@ -130,7 +130,7 @@ export const textStyles = {
     }
   `,
   smallAllCaps: css`
-    font-size: 12px;
+    font-size: ${fontSizes.tiny};
     text-transform: uppercase;
     font-weight: bold;
   `

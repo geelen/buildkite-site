@@ -5,7 +5,7 @@ import Page, { page } from 'components/Page'
 import { Section, SectionHeader, Subsection, SubSectionHeader } from 'components/sections/sections'
 import { Masonry, Brick } from 'components/Masonry'
 import Link from 'components/Link'
-import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
+// import { LinkList, LinkListItem, LinkListItemLink } from 'components/LinkList'
 import Callout from 'components/Callout'
 import Benefits, { CareersParagraph } from 'components/Benefits'
 import CareersTestimonialSection from 'components/CareersTestimonialSection'
@@ -170,7 +170,7 @@ export default page((props) => (
       </Subsection>
     </Section>
 
-    <Section>
+    {/* <Section>
       <SectionHeader>Open Positions</SectionHeader>
 
       <Subsection>
@@ -182,7 +182,7 @@ export default page((props) => (
           </LinkListItem>
         </LinkList>
       </Subsection>
-    </Section>
+    </Section> */}
 
     <Callout
       heading="Get in touch"

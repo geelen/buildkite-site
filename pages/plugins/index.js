@@ -12,27 +12,60 @@ import { Section } from 'components/sections/sections'
 
 import image from '../../assets/images/plugins/plugin.png'
 
-import plugins from '../../lib/data/plugins'
+import { all as allPlugins, mostStarred, newlyAdded, recentlyUpdated } from '../../lib/data/plugins'
 
-const PluginGrid = styled(Grid)`
-  grid-template-columns: repeat(2, 1fr);
+const Link = styled.a`
+  ${({ theme }) => theme.textStyles.navigationHyperlink};
+`
 
-  @media (max-width: 640px) {
-    grid-template-columns: initial;
-  }
+const PluginListContainer = styled(Cell)`
+  margin: 0 0 ${({ theme }) => theme.outerSpacing.s1} 0;
+`
+
+const PluginListHeading = styled.h2`
+  ${({ theme }) => theme.textStyles.smallAllCaps};
+  color: ${({ theme }) => theme.colors.text.subdued};
+  line-height: 1;
+  margin: 0 0 ${({ theme }) => theme.textSpacing.s2} ${({ theme }) => theme.textSpacing.s2};
+`
+
+const PluginList = styled.ul``
+
+const PluginListItem = styled.li`
+  background-color: ${({ theme }) => theme.colors.backgrounds.grey};
+  display: flex;
+  padding: ${({ theme }) => theme.innerSpacing.s1};
+  margin: 0 0 ${({ theme }) => theme.innerSpacing.s1} 0;
+`
+
+const PluginListTitle = styled.h3`
+  font-size: ${({ theme }) => theme.fontSizes.regular};
+  line-height: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-right: ${({ theme }) => theme.textSpacing.s1};
+`
+
+const PluginListMeta = styled.span`
+  color: ${({ theme }) => theme.colors.text.subdued};
+  font-size: ${({ theme }) => theme.fontSizes.tiny};
+  flex: none;
+  margin-left: auto;
 `
 
 const Plugin = styled(Cell)`
-  min-width: 0;
-  position: relative;
-  padding: ${({ theme }) => theme.innerSpacing.s2};
-  text-decoration: none;
   background-color: ${({ theme }) => theme.colors.backgrounds.grey};
+  margin: 0 0 ${({ theme }) => theme.innerSpacing.s1} 0;
+  min-width: 0;
+  padding: ${({ theme }) => theme.innerSpacing.s2};
+  position: relative;
+  text-decoration: none;
 `
 
-const Title = styled.h2`
-  ${({ theme }) => theme.textStyles.bodyCopyLarge};
-  margin: 0 0 ${({ theme }) => theme.textSpacing.s1} 0;
+const Title = styled.h3`
+  font-size: ${({ theme }) => theme.fontSizes.large};
+  font-weight: 600;
   line-height: 1;
 `
 
@@ -43,10 +76,6 @@ const Description = styled.p`
 const Ellipsis = styled.div`
   flex: 1;
   min-width: 0;
-`
-
-const Link = styled.a`
-  ${({ theme }) => theme.textStyles.navigationHyperlink};
 `
 
 const Repo = styled.p`
@@ -64,16 +93,12 @@ const Repo = styled.p`
   }
 `
 
-const OwnerLink = styled.a`
+const CategoryIcon = styled.img`
   float: right;
-  margin: 0 0 5px 10px;
-`
-
-const Avatar = styled.img`
   border-radius: 3px;
-  width: 30px;
   height: 30px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  width: 30px;
 `
 
 const Meta = styled.p`
@@ -89,11 +114,16 @@ const Meta = styled.p`
   }
 `
 
-// Initialize this just once, for performance, and re-use it every time inside the component below
+// Initialize each of these just once, for performance, and re-use them every time inside the components below
 const dateFormat = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+const shortDateFormat = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' })
 
 const FormattedDate = memo(({ dateString }) => (
-  <span>{dateFormat.format(new Date(dateString))}</span>
+  dateFormat.format(new Date(dateString))
+))
+
+const ShortFormattedDate = memo(({ dateString }) => (
+  shortDateFormat.format(new Date(dateString))
 ))
 
 const DocsLink = styled.a`
@@ -104,6 +134,10 @@ const DocsLink = styled.a`
     color: black;
   }
 `
+
+const pluginUrl = ({ plugin }) => (
+  `https://github.com/${plugin.owner.login}/${plugin.repo}`
+)
 
 const releaseUrl = ({ plugin, tag }) => (
   `https://github.com/${plugin.owner.login}/${plugin.repo}/releases/tag/${tag}`
@@ -136,19 +170,68 @@ export default page((props) => (
     description={<>{"Extend your pipelines with "}<DocsLink href="/docs/pipelines/plugins">Buildkite Plugins</DocsLink></>}
     {...props}
   >
-    <PluginGrid columns={2}>
-      {plugins.map((plugin) => (
+
+    <Grid columns={3} minWidth="800px">
+      <PluginListContainer>
+        <PluginListHeading>Most Starred</PluginListHeading>
+        <PluginList>
+          {mostStarred.map((plugin) => (
+            <Link key={`${plugin.owner.login}/${plugin.repo}`} href={pluginUrl({ plugin })}>
+              <PluginListItem>
+                <PluginListTitle>{plugin.name}</PluginListTitle>
+                <PluginListMeta>
+                  {plugin.stars > 0 && `★ ${plugin.stars}`}
+                </PluginListMeta>
+              </PluginListItem>
+            </Link>
+          ))}
+        </PluginList>
+      </PluginListContainer>
+      <PluginListContainer>
+        <PluginListHeading>Newly Added</PluginListHeading>
+        <PluginList>
+          {newlyAdded.map((plugin) => (
+            <Link key={`${plugin.owner.login}/${plugin.repo}`} href={pluginUrl({ plugin })}>
+              <PluginListItem>
+                <PluginListTitle>{plugin.name}</PluginListTitle>
+                <PluginListMeta>
+                  <ShortFormattedDate dateString={plugin.pushedAt} />
+                </PluginListMeta>
+              </PluginListItem>
+            </Link>
+          ))}
+        </PluginList>
+      </PluginListContainer>
+      <PluginListContainer>
+        <PluginListHeading>Recently Updated</PluginListHeading>
+        <PluginList>
+          {recentlyUpdated.map((plugin) => (
+            <Link key={`${plugin.owner.login}/${plugin.repo}`} href={pluginUrl({ plugin })}>
+              <PluginListItem>
+                <PluginListTitle>{plugin.name}</PluginListTitle>
+                <PluginListMeta>
+                  <ShortFormattedDate dateString={plugin.pushedAt} />
+                </PluginListMeta>
+              </PluginListItem>
+            </Link>
+          ))}
+        </PluginList>
+      </PluginListContainer>
+    </Grid>
+
+    <Grid columns={2} minWidth="414px">
+      {allPlugins.map((plugin) => (
         <Plugin key={`${plugin.owner.login}/${plugin.repo}`}>
-          <OwnerLink href={`https://github.com/${plugin.owner.login}`}>
-            <Avatar src={plugin.owner.avatar} alt={plugin.owner.login} />
-          </OwnerLink>
           <Title>
-            <Link href={`https://github.com/${plugin.owner.login}/${plugin.repo}`}>{plugin.name}</Link>
+            <Link href={`https://github.com/${plugin.owner.login}`}>
+              <CategoryIcon src={plugin.owner.avatar} alt={plugin.owner.login} />
+            </Link>
+            <Link href={pluginUrl({ plugin })}>{plugin.name}</Link>
           </Title>
           <Description>{plugin.description}</Description>
           <Ellipsis>
             <Repo>
-              <Link href={`https://github.com/${plugin.owner.login}/${plugin.repo}`}>
+              <Link href={pluginUrl({ plugin })}>
                 {`github.com/${plugin.owner.login}/${plugin.repo}`}
               </Link>
             </Repo>
@@ -164,7 +247,7 @@ export default page((props) => (
           </Meta>
         </Plugin>
       ))}
-    </PluginGrid>
+    </Grid>
 
     <Section>
       <MediaItem>
@@ -177,10 +260,10 @@ export default page((props) => (
         </ImageCell>
         <GetStartedText>
           <OffscreenH1>Write Your Own Plugins</OffscreenH1>
-          <Paragraph>Write, test and release your own <Br minWidth="30em" /> Buildkite plugins.</Paragraph>
+          <Paragraph>Write, test and <Br minWidth="30em" /> release your own <Br minWidth="30em" /> Buildkite plugins.</Paragraph>
           <p>
             <Link href="/docs/pipelines/plugins" external>
-              <Button primary>Read the Plugin Documentation →</Button>
+              <Button primary>Read the Plugin Documentation →</Button>
             </Link>
           </p>
         </GetStartedText>
