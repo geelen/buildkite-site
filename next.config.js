@@ -32,7 +32,8 @@ module.exports = {
         options: {
           name: '[path][name]-[hash:8].[ext]',
           publicPath: '/_next/static/assets/',
-          outputPath: 'static/assets/'
+          outputPath: 'static/assets/',
+          esModule: false
         }
       }]
     })
