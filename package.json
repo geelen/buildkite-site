@@ -58,6 +58,7 @@
   },
   "resolutions": {
     "**/js-yaml": ">=3.13.0",
-    "**/https-proxy-agent": ">=3.0.0"
+    "**/https-proxy-agent": ">=3.0.0",
+    "**/serialize-javascript": ">=2.1.1"
   }
 }
