@@ -11,3 +11,8 @@ export default function specifyPlugin() {
   }
   return null
 }
+
+specifyPlugin.getInitialProps = () => {
+  console.log("Is this enough to make this dynamic?")
+  return {}
+}
