@@ -45,7 +45,7 @@
     "lint:fix": "eslint . --color --fix",
     "build": "next build",
     "build:fab": "FAB_BUILD=true npm run build && npm run fab:compile",
-    "prefab:compile": "rm .next/static/assets/assets/fonts/* && echo 'NOTE: Clearing fonts so they dont get auto-served by @fab/compile'",
+    "prefab:compile": "rm -f .next/static/assets/assets/fonts/* && echo 'NOTE: Clearing fonts so they dont get auto-served by @fab/compile'",
     "fab:compile": "FAB_BUILD=true fab-nextjs build --server=fab-server.js",
     "export": "next export",
     "start": "node server.js",
